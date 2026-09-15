@@ -172,4 +172,7 @@ console.log(`历史日报版式已统一: ${rebuilt} 篇`);
 
 const sizeMb = (Buffer.byteLength(indexHtml) / 1024 / 1024).toFixed(1);
 console.log(`固定入口大小: ${sizeMb} MB`);
+// index 体积只由「当日」三个板块决定（几乎全部是当日资讯的内嵌图片），
+// 与历史日报数量无关（历史日报是独立文件，此处只放链接）。
+if (Number(sizeMb) > 50) console.warn(`⚠ 固定入口 ${sizeMb} MB 已超过 50MB 目标：主因是当日资讯内嵌图片过多，请在资讯侧压缩或减少内嵌图片后重跑。`);
 console.log(`历史日报链接数: ${listReportDates(dateStr).length}`);

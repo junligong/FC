@@ -1,103 +1,261 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FC27 市场扫描日报 2026-09-15（partial）</title>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC27 市场扫描 2026-09-15</title>
 <style>
-:root { color-scheme: dark; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #0d1117; color: #e6edf3; font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; padding: 24px; line-height: 1.6; }
-h1 { font-size: 22px; margin-bottom: 4px; }
-.sub { color: #8b949e; font-size: 13px; margin-bottom: 20px; }
-.badge { display: inline-block; background: #9e6a03; color: #ffd469; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin-left: 8px; vertical-align: middle; }
-h2 { font-size: 17px; margin: 26px 0 12px; padding-left: 10px; border-left: 4px solid #58a6ff; }
-.card { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 16px; margin-bottom: 14px; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-th { text-align: left; color: #8b949e; font-weight: 500; padding: 8px 10px; border-bottom: 1px solid #30363d; }
-td { padding: 8px 10px; border-bottom: 1px solid #21262d; }
-.c-name a { color: #58a6ff; text-decoration: none; }
-.c-pos { color: #a5d6ff; }
-.c-ver { color: #8b949e; }
-.empty { color: #8b949e; font-size: 13px; padding: 12px; border: 1px dashed #30363d; border-radius: 8px; margin: 10px 0; }
-.note { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 12px 14px; font-size: 13px; color: #d29922; margin: 14px 0; }
-ul { padding-left: 20px; }
-li { margin: 4px 0; }
-.footer { color: #6e7681; font-size: 12px; margin-top: 26px; border-top: 1px solid #30363d; padding-top: 12px; }
-</style>
-</head>
-<body>
-<h1>FC27 市场扫描日报 <span class="badge">PARTIAL</span></h1>
-<div class="sub">数据日期 2026-09-15 · 生成 2026-09-15 16:10 · 平台默认 Cross（PC 已核验无价格数据，未单独成表）· 来源 FUTBIN</div>
+:root{color-scheme:dark;--bg:#0b0708;--surface:#161113;--surface2:#1d1619;--line:rgba(255,255,255,.08);
+--text:#f4eff1;--muted:#a89aa0;--quiet:#786b73;--red:#c8102e;--gold:#e9c84a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:22px 26px;line-height:1.6}
+h1{font-size:21px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,16,46,.16);border:1px solid rgba(200,16,46,.45);color:#ffb9c4}
+.badge.ok{background:rgba(233,200,74,.13);border-color:rgba(233,200,74,.4);color:var(--gold)}
+.sub{color:var(--quiet);font-size:12.5px;margin:8px 0 20px}
+h2{font-size:16px;font-weight:750;margin:26px 0 12px;display:flex;align-items:center;gap:9px}
+h2:before{content:"";width:3px;height:16px;background:var(--red);border-radius:2px}
+h2.dim2:before{background:var(--gold)}
+h3{font-size:14.5px;font-weight:700}
+.card{background:linear-gradient(180deg,var(--surface),#120c0e);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.tier-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.tier-range{font-size:12px;color:var(--gold);background:rgba(233,200,74,.1);border:1px solid rgba(233,200,74,.28);padding:2px 9px;border-radius:999px}
+.tier-count{font-size:12px;color:var(--quiet);margin-left:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--quiet);font-weight:600;padding:7px 9px;border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:.03em}
+td{padding:7px 9px;border-bottom:1px solid rgba(255,255,255,.045)}
+tr:last-child td{border-bottom:0}
+.c-rank{color:var(--gold);font-weight:700;width:36px}
+.c-name a{color:#7fc7ff;text-decoration:none}
+.c-name a:hover{text-decoration:underline}
+.c-ver{color:#d9c9cf;width:52px}
+.c-pos{color:var(--muted)}
+.c-type,.c-note{color:var(--quiet);font-size:12px}
+.c-price{color:var(--gold);font-weight:600}
+.c-pop{color:#ff9db0;font-weight:700}
+.empty{color:var(--quiet);font-size:12.5px;padding:12px 14px;border:1px dashed var(--line);border-radius:9px;background:rgba(255,255,255,.015)}
+.note{background:rgba(200,16,46,.07);border:1px solid rgba(200,16,46,.25);border-radius:10px;padding:13px 15px;font-size:12.5px;color:#e8c9cf;margin:16px 0}
+.note b{color:#ffd0d8}
+ul{padding-left:18px}li{margin:5px 0;font-size:12.5px;color:var(--muted)}
+code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px;font-size:11.5px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>FC27 市场扫描 <span class="badge ">PARTIAL</span></h1>
+<div class="sub">数据日期 2026-09-15 · 平台默认 cross · 双维度：价格分层 × 热门球员 · 来源 FUTBIN</div>
 
-<div class="note"><b>本轮说明：</b>市场模块此前暂停，今日补跑并按需补全价格分层与热门进化卡两个模块。预算内完成：FUTBIN FC27 球员榜单实时采集（30 行金卡，已去重）、单卡详情页价格核验（Haaland，PRICE UPDATED: NEVER，价格区间 0–0，Console/PC 双平台均 0）、Evolutions 页核验（FC27 当前无任何进行中/已过期进化，页面显示 No evolutions found）。结论：FC27 市场价格数据与进化任务当前均未开放，两个模块如实空状态并记录原因，未用 FC26 或推测数据填充。</div>
+<div class="note"><b>本轮说明：</b>本轮按用户要求重构为双维度结构：维度一=价格分层，维度二=热门球员（热门进化卡 / 价值卡）。<br>FC27 平台价格尚未开放：单卡详情页（Haaland）显示 PRICE UPDATED: NEVER、PRICE RANGE 0-0，玩家列表页价格列全场为 0，Console 与 PC 双平台核验一致。因此维度一四个价格档本期均为如实空状态，不用 FC26 或推测价格填充。<br>维度二取自 FUTBIN 热门榜 /27/popular（28 名，附页面热度计数）。热门进化卡子类来源 /27/popular/evolutions，本期该页无可列出的进化卡。</div>
 
-<h2>一、本周活动卡与周黑</h2>
-<div class="card"><div class="empty">未采集到可验证的本周促销（Promo）与周黑（TOTW）名单 — 预算优先用于榜单与已请求模块核验，缺失如实记录。</div></div>
+<h2>维度一 · 价格维度</h2>
+<div class="card"><div class="tier-head"><h3>大卡</h3><span class="tier-range">100 万以上</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>中卡</h3><span class="tier-range">30 万 ~ 100 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>热门卡</h3><span class="tier-range">10 万 ~ 30 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>适用卡</h3><span class="tier-range">1 万 ~ 10 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div>
 
-<h2>二、价格分层</h2>
+<h2 class="dim2">维度二 · 热门球员维度</h2>
 <div class="card">
-<div class="empty"><b>FC27 市场价格数据未开放，各分层无有效数据（如实空状态，非遗漏）。</b><br>
-核验证据：单卡详情页（Erling Haaland，<code>https://www.futbin.com/27/player/1/erling-haaland</code>）显示 <code>PRICE UPDATED: NEVER / PRICE RANGE: 0 - 0</code>；玩家列表页价格列全场为 0；切换 Console 与 PC 平台后价格仍为 0。据此 ≥100万 / 30-100万 / 10-30万 / 1-10万 / 万元以下 各档均无真实价格可归集，日/周变化不可计算。不伪造采样填充。</div>
+  <div class="tier-head"><h3>① 热门进化卡</h3><span class="tier-range">/27/popular/evolutions</span><span class="tier-count">0 张</span></div>
+  <div class="empty">本子类本期无已核验数据。</div>
+</div>
+<div class="card">
+  <div class="tier-head"><h3>② 价值卡（热门非进化卡）</h3><span class="tier-range">/27/popular</span><span class="tier-count">28 张</span></div>
+  <table class="tbl"><thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>热度</th><th>备注</th></tr></thead><tbody><tr>
+<td class="c-rank">1</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/1396/mika-godts" target="_blank" rel="noopener">Mika Godts 米卡·霍茨</a></td>
+<td class="c-ver">78</td>
+<td class="c-pos">LW LM</td>
+<td class="c-pop">471</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">2</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/5976/alex-pfeiffer" target="_blank" rel="noopener">Alex Pfeiffer 阿莱克斯·普法伊费尔</a></td>
+<td class="c-ver">70</td>
+<td class="c-pos">RW RM</td>
+<td class="c-pop">389</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">3</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/726/heung-min-son" target="_blank" rel="noopener">孙兴慜 Son Heung Min</a></td>
+<td class="c-ver">81</td>
+<td class="c-pos">ST LW CAM LM</td>
+<td class="c-pop">327</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">4</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/6847/niamh-peacock" target="_blank" rel="noopener">Niamh Peacock 尼亚芙·皮科克</a></td>
+<td class="c-ver">60</td>
+<td class="c-pos">CB</td>
+<td class="c-pop">298</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">5</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/568/julian-quinones" target="_blank" rel="noopener">Julián Quiñones 胡利安·基尼奥内斯</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">ST LW CAM LM</td>
+<td class="c-pop">266</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">6</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/20939/raphael-varane" target="_blank" rel="noopener">Raphaël Varane 拉斐尔·瓦拉内</a></td>
+<td class="c-ver">90</td>
+<td class="c-pos">CB</td>
+<td class="c-pop">266</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">7</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/20950/loic-remy" target="_blank" rel="noopener">Loïc Rémy 洛伊克·雷米</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">ST</td>
+<td class="c-pop">247</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">8</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/475/christian-pulisic" target="_blank" rel="noopener">Christian Pulisic 克里斯蒂安·普利西奇</a></td>
+<td class="c-ver">83</td>
+<td class="c-pos">CAM RW RM ST</td>
+<td class="c-pop">233</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">9</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/20949/marouane-fellaini" target="_blank" rel="noopener">Marouane Fellaini 马鲁万·费莱尼</a></td>
+<td class="c-ver">85</td>
+<td class="c-pos">CM</td>
+<td class="c-pop">221</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">10</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/1085/armand-lauriente" target="_blank" rel="noopener">Armand Laurienté 阿尔芒·洛朗特</a></td>
+<td class="c-ver">80</td>
+<td class="c-pos">LW LM</td>
+<td class="c-pop">212</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">11</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/846/karim-adeyemi" target="_blank" rel="noopener">Karim Adeyemi 卡里姆·阿德耶米</a></td>
+<td class="c-ver">82</td>
+<td class="c-pos">RM LW CAM RW</td>
+<td class="c-pop">195</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">12</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/422/maxence-lacroix" target="_blank" rel="noopener">Maxence Lacroix 马克桑斯·拉克鲁瓦</a></td>
+<td class="c-ver">82</td>
+<td class="c-pos">CB</td>
+<td class="c-pop">193</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">13</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/478/donyell-malen" target="_blank" rel="noopener">Donyell Malen 东耶尔·马伦</a></td>
+<td class="c-ver">83</td>
+<td class="c-pos">ST</td>
+<td class="c-pop">166</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">14</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/22/lionel-messi" target="_blank" rel="noopener">Lionel Messi 利昂内尔·梅西</a></td>
+<td class="c-ver">89</td>
+<td class="c-pos">CAM ST RW RM</td>
+<td class="c-pop">102</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">15</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/654/ferran-torres-garcia" target="_blank" rel="noopener">Ferran Torres 费兰·托雷斯</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">ST LW LM</td>
+<td class="c-pop">94</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">16</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/819/christos-tzolis" target="_blank" rel="noopener">Christos Tzolis 赫里斯托斯·佐利斯</a></td>
+<td class="c-ver">82</td>
+<td class="c-pos">LW LM</td>
+<td class="c-pop">87</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">17</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/944/khephren-thuram" target="_blank" rel="noopener">Khéphren Thuram 凯夫朗·图拉姆</a></td>
+<td class="c-ver">81</td>
+<td class="c-pos">CM CDM</td>
+<td class="c-pop">78</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">18</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/446/ridle-baku" target="_blank" rel="noopener">Ridle Baku 里德勒·巴库</a></td>
+<td class="c-ver">79</td>
+<td class="c-pos">RB RM RW CM</td>
+<td class="c-pop">75</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">19</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/572/roger-ibanez-da-silva" target="_blank" rel="noopener">Roger Ibañez 罗杰·伊巴涅斯</a></td>
+<td class="c-ver">83</td>
+<td class="c-pos">CB RB</td>
+<td class="c-pop">70</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">20</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/557/nicholas-williams-arthuer" target="_blank" rel="noopener">Nico Williams 尼科·威廉姆斯</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">LW LM</td>
+<td class="c-pop">69</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">21</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/407/elliot-anderson" target="_blank" rel="noopener">Elliot Anderson 埃利奥特·安德森</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">CDM CM</td>
+<td class="c-pop">68</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">22</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/19/claudia-pina-medina" target="_blank" rel="noopener">Claudia Pina 克劳迪娅·皮纳</a></td>
+<td class="c-ver">89</td>
+<td class="c-pos">LW ST LM</td>
+<td class="c-pop">65</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">23</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/774/warren-zaire-emery" target="_blank" rel="noopener">Warren Zaïre-Emery 沃伦·扎伊尔-埃梅里</a></td>
+<td class="c-ver">83</td>
+<td class="c-pos">CM RB CDM RM</td>
+<td class="c-pop">63</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">24</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/1046/djed-spence" target="_blank" rel="noopener">Djed Spence 杰德·斯彭斯</a></td>
+<td class="c-ver">80</td>
+<td class="c-pos">LB RB</td>
+<td class="c-pop">62</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">25</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/930/kaishu-sano" target="_blank" rel="noopener">Kaishu Sano 佐野海舟</a></td>
+<td class="c-ver">81</td>
+<td class="c-pos">CDM CM</td>
+<td class="c-pop">58</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">26</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/822/iliman-ndiaye" target="_blank" rel="noopener">Iliman Ndiaye 伊利曼·恩迪亚耶</a></td>
+<td class="c-ver">82</td>
+<td class="c-pos">LM RM LW RW</td>
+<td class="c-pop">56</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">27</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/937/nathaniel-brown" target="_blank" rel="noopener">Nathaniel Brown 纳撒尼尔·布朗</a></td>
+<td class="c-ver">81</td>
+<td class="c-pos">LB LM</td>
+<td class="c-pop">56</td>
+<td class="c-note"></td>
+</tr><tr>
+<td class="c-rank">28</td>
+<td class="c-name"><a href="https://www.futbin.com/27/player/754/nicole-anyomi" target="_blank" rel="noopener">Nicole Anyomi 妮可·安约米</a></td>
+<td class="c-ver">84</td>
+<td class="c-pos">ST LW CAM LM</td>
+<td class="c-pop">56</td>
+<td class="c-note"></td>
+</tr></tbody></table>
 </div>
 
-<h2>三、热门金卡榜（已采集，30 名）</h2>
-<div class="card">
-<table>
-<thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>卡版本</th></tr></thead>
-<tbody>
-<tr><td>1</td><td class='c-name'><a href='https://www.futbin.com/27/player/1/erling-haaland' target='_blank'>91 Erling Haaland</a></td><td>91</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>2</td><td class='c-name'><a href='https://www.futbin.com/27/player/5/alexia-putellas-segura' target='_blank'>91 Alexia Putellas Segura</a></td><td>91</td><td class='c-pos'>CM CAM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>3</td><td class='c-name'><a href='https://www.futbin.com/27/player/8/kylian-mbappe' target='_blank'>91 Kylian Mbappé</a></td><td>91</td><td class='c-pos'>ST LW</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>4</td><td class='c-name'><a href='https://www.futbin.com/27/player/20930/christine-sinclair' target='_blank'>91 Christine Sinclair</a></td><td>91</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>5</td><td class='c-name'><a href='https://www.futbin.com/27/player/6/aitana-bonmati-conca' target='_blank'>90 Aitana Bonmatí Conca</a></td><td>90</td><td class='c-pos'>CM CAM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>6</td><td class='c-name'><a href='https://www.futbin.com/27/player/7/khadija-shaw' target='_blank'>90 Khadija Shaw</a></td><td>90</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>7</td><td class='c-name'><a href='https://www.futbin.com/27/player/13/rodrigo-hernandez-cascante' target='_blank'>90 Rodrigo Hernández Cascante</a></td><td>90</td><td class='c-pos'>CDM CM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>8</td><td class='c-name'><a href='https://www.futbin.com/27/player/31/ousmane-dembele' target='_blank'>90 Ousmane Dembélé</a></td><td>90</td><td class='c-pos'>ST RW CAM RM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>9</td><td class='c-name'><a href='https://www.futbin.com/27/player/44/vitor-machado-ferreira' target='_blank'>90 Vítor Machado Ferreira</a></td><td>90</td><td class='c-pos'>CM CDM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>10</td><td class='c-name'><a href='https://www.futbin.com/27/player/55/harry-kane' target='_blank'>90 Harry Kane</a></td><td>90</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>11</td><td class='c-name'><a href='https://www.futbin.com/27/player/62/michael-olise' target='_blank'>90 Michael Olise</a></td><td>90</td><td class='c-pos'>RM RW CAM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>12</td><td class='c-name'><a href='https://www.futbin.com/27/player/69/pedro-gonzalez-lopez' target='_blank'>90 Pedro González López</a></td><td>90</td><td class='c-pos'>CM CDM CAM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>13</td><td class='c-name'><a href='https://www.futbin.com/27/player/81/lamine-yamal-nasraoui-ebana' target='_blank'>90 Lamine Yamal Nasraoui Ebana</a></td><td>90</td><td class='c-pos'>RW RM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>14</td><td class='c-name'><a href='https://www.futbin.com/27/player/90/jude-bellingham' target='_blank'>90 Jude Bellingham</a></td><td>90</td><td class='c-pos'>CAM CM LM ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>15</td><td class='c-name'><a href='https://www.futbin.com/27/player/98/thibaut-courtois' target='_blank'>90 Thibaut Courtois</a></td><td>90</td><td class='c-pos'>GK</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>16</td><td class='c-name'><a href='https://www.futbin.com/27/player/20929/sergio-aguero' target='_blank'>90 Sergio Agüero</a></td><td>90</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>17</td><td class='c-name'><a href='https://www.futbin.com/27/player/20935/miraildes-maciel-mota' target='_blank'>90 Miraildes Maciel Mota</a></td><td>90</td><td class='c-pos'>CDM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>18</td><td class='c-name'><a href='https://www.futbin.com/27/player/20936/hege-riise' target='_blank'>90 Hege Riise</a></td><td>90</td><td class='c-pos'>CM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>19</td><td class='c-name'><a href='https://www.futbin.com/27/player/20937/karl-heinz-rummenigge' target='_blank'>90 Karl-Heinz Rummenigge</a></td><td>90</td><td class='c-pos'>ST</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>20</td><td class='c-name'><a href='https://www.futbin.com/27/player/20939/raphael-varane' target='_blank'>90 Raphael Varane</a></td><td>90</td><td class='c-pos'>CB</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>21</td><td class='c-name'><a href='https://www.futbin.com/27/player/20940/tobin-heath' target='_blank'>90 Tobin Heath</a></td><td>90</td><td class='c-pos'>RW</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>22</td><td class='c-name'><a href='https://www.futbin.com/27/player/12/caroline-graham-hansen' target='_blank'>89 Caroline Graham Hansen</a></td><td>89</td><td class='c-pos'>RW RM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>23</td><td class='c-name'><a href='https://www.futbin.com/27/player/17/maria-francesca-caldentey-oliver' target='_blank'>89 María Francesca Caldentey Oliver</a></td><td>89</td><td class='c-pos'>CM CDM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>24</td><td class='c-name'><a href='https://www.futbin.com/27/player/18/ewa-pajor' target='_blank'>89 Ewa Pajor</a></td><td>89</td><td class='c-pos'>ST LW CAM LM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>25</td><td class='c-name'><a href='https://www.futbin.com/27/player/19/claudia-pina-medina' target='_blank'>89 Claudia Pina Medina</a></td><td>89</td><td class='c-pos'>LW ST LM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>26</td><td class='c-name'><a href='https://www.futbin.com/27/player/20/temwa-chawinga' target='_blank'>89 Temwa Chawinga</a></td><td>89</td><td class='c-pos'>LM LW</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>27</td><td class='c-name'><a href='https://www.futbin.com/27/player/22/lionel-messi' target='_blank'>89 Lionel Messi</a></td><td>89</td><td class='c-pos'>CAM ST RW RM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>28</td><td class='c-name'><a href='https://www.futbin.com/27/player/25/willian-pacho' target='_blank'>89 Willian Pacho</a></td><td>89</td><td class='c-pos'>CB</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>29</td><td class='c-name'><a href='https://www.futbin.com/27/player/39/nuno-alexandre-tavares-mendes' target='_blank'>89 Nuno Alexandre Tavares Mendes</a></td><td>89</td><td class='c-pos'>LB LM</td><td class='c-ver'>金卡/Normal</td></tr>
-<tr><td>30</td><td class='c-name'><a href='https://www.futbin.com/27/player/49/khvicha-kvaratskhelia' target='_blank'>89 Khvicha Kvaratskhelia</a></td><td>89</td><td class='c-pos'>LW RW LM RM</td><td class='c-ver'>金卡/Normal</td></tr>
-</tbody>
-</table>
-<div class="sub" style="margin-top:8px;">榜单为 FUTBIN FC27 Players 页 2026-09-15 16:08 实时默认排序所见（30 行，卡 ID 已去重）；价格列全场为 0（平台价格未开放），故本表不含价格列。</div>
-</div>
-
-<h2>四、热门进化卡</h2>
-<div class="card"><div class="empty"><b>FC27 当前无可用进化（如实空状态）。</b><br>
-核验证据：Evolutions 页 <code>https://www.futbin.com/27/evolutions</code> 显示 <code>No evolutions found</code>（All / Active / Expired 均无），无进化卡列表可核验限制、到期时间、费用、位置、评分与卡版本。无推荐输出。</div></div>
-
-<h2>五、传奇卡与英雄卡</h2>
-<div class="card"><div class="empty">榜单可见传奇/英雄档（Sinclair、Agüero、Rummenigge、Varane、Heath、Riise、Maciel Mota 等 90 档，卡 ID 段 209xx）。因市场价未开放且预算内未单独核验卡类型标识，不展开独立维度结论。</div></div>
+<h2>数据来源与核验</h2>
+<div class="card"><ul><li><code>https://www.futbin.com/27/popular</code> · 打开 2026-09-15T18:30:00+08:00 · 热门球员维度主来源，含热度计数</li><li><code>https://www.futbin.com/27/popular/evolutions</code> · 打开 2026-09-15T18:32:00+08:00 · 热门进化卡来源，页面仅标题无可列出卡牌</li><li><code>https://www.futbin.com/27/player/1/erling-haaland</code> · 打开 2026-09-15T16:08:00+08:00 · 价格核验：PRICE UPDATED NEVER / 0-0</li></ul></div>
 
 <h2>缺失项记录</h2>
-<div class="card"><ul>
-<li>本周活动卡与周黑（Promo/TOTW）：未采集，缺名单与发布时间核验</li>
-<li>价格分层：FC27 市场价未开放（详情页 PRICE UPDATED: NEVER / 0-0，双平台核验），各档无真实数据，如实空状态；日/周变化不可计算</li>
-<li>热门进化卡：FC27 Evolutions 页无任何进化（No evolutions found），如实空状态</li>
-<li>传奇与英雄卡：仅有榜单样本，未独立核验卡类型与价格</li>
-<li>PC 平台数据：已核验 PC 价格同为 0，与 Cross 一致，未单独成表</li>
-<li>趋势/历史对比基线：无今日真实价格基线，不做历史对比</li>
-</ul></div>
+<div class="card"><ul><li>价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0，Console/PC 一致），四个价格档均无真实数据，日/周变化不可计算。</li><li>热门进化卡子类：/27/popular/evolutions 本期未返回可列出的进化卡。</li><li>本周活动卡与周黑（Promo/TOTW）：本轮未采集名单与发布时间。</li><li>传奇卡与英雄卡：仅有热门榜样本，未独立核验卡类型与价格。</li></ul></div>
 
-<div class="footer">FC27 市场扫描日报 · 2026-09-15 · generated by FC automation（market, partial）· 数据仅作游戏市场研究，不构成投资或交易建议</div>
-</body>
-</html>
+<div class="footer">FC27 市场扫描 · 2026-09-15 · 双维度版式由 render-market-report.mjs 渲染 · 数据仅作游戏市场研究，不构成投资或交易建议</div>
+</body></html>

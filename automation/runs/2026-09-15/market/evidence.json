@@ -1,33 +1,33 @@
 {
   "date": "2026-09-15",
-  "platform": "cross",
-  "generatedAt": "2026-09-15 16:10",
   "sources": [
     {
-      "url": "https://www.futbin.com/27/players",
-      "openedAt": "2026-09-15T08:08:30Z",
-      "dataAsOf": "2026-09-15 (实时榜单)",
-      "note": "实时榜单：浏览器自动化打开，读取 FC27 Players 表 30 行金卡榜单（url|名称|OVR|位置），卡ID去重；价格列全场0，未加载"
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": "2026-09-15T18:35:12+08:00",
+      "dataCutoff": "2026-09-15",
+      "note": "热门球员维度主来源，采集 28 名含热度计数"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-15T18:35:12+08:00",
+      "dataCutoff": "2026-09-15",
+      "note": "热门进化卡子类来源，页面仅标题无可列出卡牌"
     },
     {
       "url": "https://www.futbin.com/27/player/1/erling-haaland",
-      "openedAt": "2026-09-15T08:05:10Z",
-      "dataAsOf": "2026-09-15 (实时)",
-      "note": "单卡详情页核验价格：单卡详情页核验价格：PRICE UPDATED: NEVER，PRICE RANGE 0-0；Console 与 PC 平台切换后仍 0-0，FC27 市场价未开放"
-    },
-    {
-      "url": "https://www.futbin.com/27/evolutions",
-      "openedAt": "2026-09-15T08:08:50Z",
-      "dataAsOf": "2026-09-15 (实时)",
-      "note": "Evolutions页核验：Evolutions 页核验：No evolutions found（All/Active/Expired 均无），FC27 当前无任何进化"
+      "openedAt": "2026-09-15T18:35:12+08:00",
+      "dataCutoff": "2026-09-15",
+      "note": "价格维度核验：PRICE UPDATED NEVER / 0-0，双平台 price=0"
     }
   ],
+  "dataCutoff": "2026-09-15 18:44 +08:00",
   "missingItems": [
-    "本周活动卡与周黑(Promo/TOTW)未采集",
-    "价格分层：FC27 市场价未开放（详情页 PRICE UPDATED: NEVER / 0-0，Console+PC 双平台核验），各档如实空状态，日/周变化不可计算",
-    "热门进化卡：Evolutions 页 No evolutions found，无进化可核验，如实空状态",
-    "传奇与英雄卡未独立核验",
-    "PC 平台数据：价格已验证与 Cross 一致为 0，未单独成表",
-    "无今日价格基线，不做趋势对比"
+    "价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0），四个价格档均无真实数据。",
+    "热门进化卡：/27/popular/evolutions 本期未返回可列出的进化卡。",
+    "本周活动卡与周黑、传奇卡与英雄卡：本轮未独立核验。"
+  ],
+  "notes": [
+    "本轮按用户要求重构为双维度：维度一价格分层，维度二热门球员（热门进化卡 / 价值卡）。",
+    "已用 render-market-report.mjs 统一渲染，数据源 automation/runs/2026-09-15/market/market.json。"
   ]
 }

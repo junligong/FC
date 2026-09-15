@@ -50,7 +50,7 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--quiet);font-weight:600}
 
 /* ============ 侧边栏 ============ */
-.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);display:flex;flex-direction:column;
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);display:flex;flex-direction:column;overflow-y:auto;
  background:linear-gradient(180deg,#120c0e,#0c0809);border-right:1px solid var(--line);z-index:20}
 .brand{padding:26px 22px 20px;display:block}
 .brand strong{display:block;font-size:23px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
@@ -64,14 +64,15 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offse
 .nav button.active{background:linear-gradient(90deg,var(--red-soft),rgba(200,16,46,.03));color:#fff;font-weight:650;
  box-shadow:inset 2.5px 0 0 var(--red)}
 .nav button.active svg{color:var(--red);opacity:1}
-.sidebar-foot{margin-top:auto;padding:14px 16px 18px;border-top:1px solid var(--line)}
-.manifesto{font-size:9.5px;letter-spacing:.34em;color:var(--quiet);line-height:2;font-weight:600}
-.poster-mini{display:flex;align-items:center;gap:11px;width:100%;margin-top:12px;padding:7px;border:1px solid var(--line);
- border-radius:var(--radius-sm);background:rgba(0,0,0,.28);text-align:left;transition:border-color .16s,background .16s}
-.poster-mini:hover{border-color:var(--gold-line);background:rgba(233,200,74,.05)}
-.poster-mini img{width:42px;height:42px;object-fit:cover;object-position:top center;border-radius:7px;flex:none;display:block}
-.poster-mini b{display:block;font-size:12.5px;font-weight:700;color:var(--text);line-height:1.3}
-.poster-mini small{display:block;font-size:10.5px;color:var(--quiet);margin-top:2px}
+.sidebar-foot{margin-top:auto;padding:16px 16px 18px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center}
+.manifesto{font-size:9.5px;letter-spacing:.34em;color:var(--quiet);line-height:2;font-weight:600;text-align:center;margin-bottom:14px}
+.poster-mini{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;padding:11px 11px 12px;border:1px solid var(--line);
+ border-radius:12px;background:rgba(0,0,0,.32);text-align:center;transition:border-color .16s,background .16s,transform .16s}
+.poster-mini:hover{border-color:var(--gold-line);background:rgba(233,200,74,.06);transform:translateY(-1px)}
+.poster-mini img{display:block;width:100%;max-width:176px;height:auto;border-radius:9px}
+.poster-mini .pm-txt{display:block;width:100%}
+.poster-mini b{display:block;font-size:13px;font-weight:700;color:var(--text);line-height:1.3}
+.poster-mini small{display:block;font-size:11px;color:var(--quiet);margin-top:3px}
 
 /* ============ 主区域 ============ */
 .app{margin-left:var(--sidebar);padding:18px 30px 14px;max-width:1680px}
@@ -242,7 +243,7 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
 <nav class="nav" id="nav" aria-label="主导航">${nav}</nav>
 <div class="sidebar-foot">
 <div class="manifesto">MORE THAN A GAME.</div>
-<button type="button" class="poster-mini" id="poster-open" aria-label="查看彦祖工作室套餐海报"><img src="${poster}" alt="彦祖工作室" loading="lazy"><span><b>彦祖工作室</b><small>FC27 DR 周赛套餐 · 查看大图</small></span></button>
+<button type="button" class="poster-mini" id="poster-open" aria-label="查看彦祖工作室套餐海报"><img src="${poster}" alt="彦祖工作室" loading="lazy"><span class="pm-txt"><b>彦祖工作室</b><small>FC27 DR 周赛套餐 · 点击看大图</small></span></button>
 </div>
 </aside>
 <main class="app">
