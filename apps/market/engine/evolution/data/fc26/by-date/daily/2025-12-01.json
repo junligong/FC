@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-01",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "4",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Elevate your squad's GK featuring all-around stat boosts, the Deflector PlayStyle, and Footwork+.",
+      "id": 163,
+      "name": "Between the Sticks",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=163",
+      "previewPlayers": [
+        {
+          "displayName": "Pickford",
+          "kind": "before",
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "rating": 84,
+          "stats": {
+            "def": 53,
+            "dri": 87,
+            "pac": 84,
+            "pas": 88,
+            "phy": 81,
+            "sho": 78
+          }
+        },
+        {
+          "displayName": "Pickford",
+          "kind": "after",
+          "name": "Jordan Pickford",
+          "position": "GK",
+          "rating": 85,
+          "stats": {
+            "def": 53,
+            "dri": 87,
+            "pac": 86,
+            "pas": 88,
+            "phy": 84,
+            "sho": 80
+          }
+        }
+      ],
+      "rank": 851,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "between-the-sticks",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Diving",
+          "raw": [
+            "Diving",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Handling",
+          "raw": [
+            "Handling",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Kicking",
+          "raw": [
+            "Kicking",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Reflexes",
+          "raw": [
+            "Reflexes",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Deflector",
+            "6"
+          ],
+          "value": "Deflector"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Far Reach",
+            "1"
+          ],
+          "value": "Far Reach"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/163/between-the-sticks",
+      "releaseDate": "2025-12-01",
+      "releaseDateTimeUtc": "2025-12-01T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1236,
+        "providerUrl": "https://futmind.com/evolutions/1236/between-the-sticks",
+        "originalCreatedAt": "2025-12-01T18:00:00.000000Z"
+      },
+      "chronologicalRank": 158
+    }
+  ]
+}

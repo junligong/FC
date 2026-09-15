@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "season-6-level-10",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 10"
+      ],
+      "description": "Lock down your goal and turn defence into an art. Empower players who anticipate every move, win aerial duels, shut down attacks, and protect the back line with perfect timing and fierce tackles.",
+      "id": 669,
+      "name": "Guardian of the Line",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=669",
+      "previewPlayers": [],
+      "rank": 407,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 8"
+          ],
+          "value": "Max 8"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "guardian-of-the-line",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "9"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "9"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Block",
+            "9"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "9"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "9"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "9"
+          ],
+          "value": "Slide Tackle"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/669/guardian-of-the-line",
+      "releaseDate": "2026-03-19",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 668,
+          "releaseDate": "2026-03-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 671,
+          "releaseDate": "2026-03-20"
+        }
+      },
+      "chronologicalRank": 609
+    }
+  ]
+}

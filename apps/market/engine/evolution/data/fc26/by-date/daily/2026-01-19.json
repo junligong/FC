@@ -1,0 +1,639 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-19",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "As fatigue sets in, find another gear and power through to seal the win or spark a big comeback!",
+      "id": 307,
+      "name": "Second Wind",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=307",
+      "previewPlayers": [],
+      "rank": 735,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "second-wind",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "92"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "7"
+          ],
+          "value": "Relentless"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/307/second-wind",
+      "releaseDate": "2026-01-19",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 304,
+          "releaseDate": "2026-01-18"
+        },
+        "nextAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        }
+      },
+      "chronologicalRank": 275
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Polish your defensive instincts with a boost to Defense and Anticipate.",
+      "id": 308,
+      "name": "Defensive Instincts",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=308",
+      "previewPlayers": [],
+      "rank": 734,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "defensive-instincts",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Defending/Speed",
+          "raw": [
+            "Defending/Speed",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "7"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/308/defensive-instincts",
+      "releaseDate": "2026-01-19",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 304,
+          "releaseDate": "2026-01-18"
+        },
+        "nextAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        }
+      },
+      "chronologicalRank": 276
+    },
+    {
+      "availability": {
+        "150": "20,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Rule the flank with improved defensive attributes, deadly delivery, and ice-cold composure. Built for dominance, this winger turns wide spaces into a royal stage.",
+      "id": 309,
+      "name": "Royal Winger",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=309",
+      "previewPlayers": [
+        {
+          "displayName": "Puado",
+          "kind": "before",
+          "name": "Javier Puado Díaz",
+          "position": "ST",
+          "rating": 78,
+          "stats": {
+            "def": 49,
+            "dri": 78,
+            "pac": 80,
+            "pas": 72,
+            "phy": 74,
+            "sho": 77
+          }
+        },
+        {
+          "displayName": "Puado",
+          "kind": "after",
+          "name": "Javier Puado Díaz",
+          "position": "ST",
+          "rating": 88,
+          "stats": {
+            "def": 61,
+            "dri": 81,
+            "pac": 88,
+            "pas": 84,
+            "phy": 85,
+            "sho": 85
+          }
+        }
+      ],
+      "rank": 733,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "Max 77"
+          ],
+          "value": "Max 77"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM or RM"
+          ],
+          "value": "LM or RM"
+        }
+      ],
+      "slug": "royal-winger",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Whipped Pass",
+            "7"
+          ],
+          "value": "Whipped Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "7"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "7"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "1"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/309/royal-winger",
+      "releaseDate": "2026-01-19",
+      "releaseDateTimeUtc": "2026-01-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1426,
+        "providerUrl": "https://futmind.com/evolutions/1426/royal-winger",
+        "originalCreatedAt": "2026-01-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 277
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Far Reach to any qualified player",
+      "id": 310,
+      "name": "Far Reach",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=310",
+      "previewPlayers": [],
+      "rank": 732,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "far-reach",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Far Reach",
+            "7"
+          ],
+          "value": "Far Reach"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/310/far-reach",
+      "releaseDate": "2026-01-19",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 312,
+          "releaseDate": "2026-01-20"
+        }
+      },
+      "chronologicalRank": 278
+    }
+  ]
+}

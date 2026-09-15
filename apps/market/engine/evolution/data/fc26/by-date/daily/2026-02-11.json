@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-11",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Dominates duels with raw power and unyielding determination, using strength to shrug off challenges and drive your team forward.",
+      "id": 459,
+      "name": "Shove Off",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=459",
+      "previewPlayers": [
+        {
+          "displayName": "Beerensteyn",
+          "kind": "before",
+          "name": "Lineth Beerensteyn",
+          "position": "ST",
+          "rating": 86,
+          "stats": {
+            "def": 55,
+            "dri": 88,
+            "pac": 92,
+            "pas": 75,
+            "phy": 78,
+            "sho": 82
+          }
+        },
+        {
+          "displayName": "Beerensteyn",
+          "kind": "after",
+          "name": "Lineth Beerensteyn",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 55,
+            "dri": 88,
+            "pac": 92,
+            "pas": 75,
+            "phy": 82,
+            "sho": 82
+          }
+        }
+      ],
+      "rank": 609,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "shove-off",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "89",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+4",
+            "89"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "7"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "7"
+          ],
+          "value": "Press Proven"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/459/shove-off",
+      "releaseDate": "2026-02-11",
+      "releaseDateTimeUtc": "2026-02-11T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1568,
+        "providerUrl": "https://futmind.com/evolutions/1568/shove-off",
+        "originalCreatedAt": "2026-02-11T18:00:00.000000Z"
+      },
+      "chronologicalRank": 401
+    }
+  ]
+}

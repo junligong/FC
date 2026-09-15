@@ -1,0 +1,1032 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-28",
+  "count": 7,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Explode into space with Quick Step and a Pace boost.",
+      "id": 334,
+      "name": "Explode Into Space",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=334",
+      "previewPlayers": [],
+      "rank": 711,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "explode-into-space",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/334/explode-into-space",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 333,
+          "releaseDate": "2026-01-27"
+        },
+        "nextAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        }
+      },
+      "chronologicalRank": 299
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Become your team’s link between defense and attack by playing dangerous balls and breaking lines from deep.",
+      "id": 335,
+      "name": "Line Breaker",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=335",
+      "previewPlayers": [
+        {
+          "displayName": "Schoofs",
+          "kind": "before",
+          "name": "Rob Schoofs",
+          "position": "CM",
+          "rating": 76,
+          "stats": {
+            "def": 67,
+            "dri": 74,
+            "pac": 53,
+            "pas": 76,
+            "phy": 68,
+            "sho": 72
+          }
+        },
+        {
+          "displayName": "Schoofs",
+          "kind": "after",
+          "name": "Rob Schoofs",
+          "position": "CM",
+          "rating": 88,
+          "stats": {
+            "def": 84,
+            "dri": 75,
+            "pac": 68,
+            "pas": 88,
+            "phy": 79,
+            "sho": 72
+          }
+        }
+      ],
+      "rank": 710,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "line-breaker",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+18",
+            "88"
+          ],
+          "value": "+18"
+        },
+        {
+          "cap": "85",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "85"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+25",
+            "85"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "86",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+25",
+            "86"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Block",
+            "7"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "1"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CDM"
+          ],
+          "value": "CDM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/335/line-breaker",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": "2026-01-28T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1480,
+        "providerUrl": "https://futmind.com/evolutions/1480/line-breaker",
+        "originalCreatedAt": "2026-01-28T18:00:00.000000Z"
+      },
+      "chronologicalRank": 300
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Unleash lethal finishing-improve goal-scoring with powerful shooting upgrades.",
+      "id": 336,
+      "name": "Sharpshooter - Season 5 Lvl 8",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=336",
+      "previewPlayers": [],
+      "rank": 709,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "sharpshooter-season-5-lvl-8",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+4",
+            "89"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/336/sharpshooter-season-5-lvl-8",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        },
+        "nextAnchor": {
+          "evolutionId": 351,
+          "releaseDate": "2026-01-29"
+        }
+      },
+      "chronologicalRank": 301
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost your dribbling stat for tighter control, quicker turns, and greater creativity on the ball",
+      "id": 339,
+      "name": "Dribble Mastery - Season 5 Lvl 8",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=339",
+      "previewPlayers": [],
+      "rank": 708,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "dribble-mastery-season-5-lvl-8",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "89"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/339/dribble-mastery-season-5-lvl-8",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        },
+        "nextAnchor": {
+          "evolutionId": 351,
+          "releaseDate": "2026-01-29"
+        }
+      },
+      "chronologicalRank": 302
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Pick up the pace with timely burst and add a bit more energy to your play.",
+      "id": 340,
+      "name": "Burst Boost - Season 5 (p) Lvl 10",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=340",
+      "previewPlayers": [],
+      "rank": 707,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "burst-boost-season-5-p-lvl-10",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "90",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/340/burst-boost-season-5-p-lvl-10",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        },
+        "nextAnchor": {
+          "evolutionId": 351,
+          "releaseDate": "2026-01-29"
+        }
+      },
+      "chronologicalRank": 303
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Reinforce your backline and make those crucial interceptions for a steadier defense.",
+      "id": 341,
+      "name": "Wall in the Back - Season 5 (p) Lvl 13",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=341",
+      "previewPlayers": [],
+      "rank": 706,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "wall-in-the-back-season-5-p-lvl-13",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "90",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/341/wall-in-the-back-season-5-p-lvl-13",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        },
+        "nextAnchor": {
+          "evolutionId": 351,
+          "releaseDate": "2026-01-29"
+        }
+      },
+      "chronologicalRank": 304
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Take charge in midfield, carve through defenses, and boost your playmaking with a creative edge.",
+      "id": 342,
+      "name": "CAM Command - Season 5 (p) Lvl 18",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=342",
+      "previewPlayers": [],
+      "rank": 705,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-command-season-5-p-lvl-18",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/342/cam-command-season-5-p-lvl-18",
+      "releaseDate": "2026-01-28",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 335,
+          "releaseDate": "2026-01-28"
+        },
+        "nextAnchor": {
+          "evolutionId": 351,
+          "releaseDate": "2026-01-29"
+        }
+      },
+      "chronologicalRank": 305
+    }
+  ]
+}

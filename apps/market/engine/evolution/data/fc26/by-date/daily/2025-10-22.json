@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-22",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Keep running when others fade, outlast and outwork the competition with relentless energy.",
+      "id": 54,
+      "name": "Iron Lungs",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=54",
+      "previewPlayers": [
+        {
+          "displayName": "Kögel",
+          "kind": "before",
+          "name": "Kristin Kögel",
+          "position": "LM",
+          "rating": 82,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 86,
+            "pas": 77,
+            "phy": 69,
+            "sho": 79
+          }
+        },
+        {
+          "displayName": "Kögel",
+          "kind": "after",
+          "name": "Kristin Kögel",
+          "position": "LM",
+          "rating": 82,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 86,
+            "pas": 77,
+            "phy": 70,
+            "sho": 79
+          }
+        }
+      ],
+      "rank": 958,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "iron-lungs",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+4",
+            "85"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/54/iron-lungs",
+      "releaseDate": "2025-10-22",
+      "releaseDateTimeUtc": "2025-10-22T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1074,
+        "providerUrl": "https://futmind.com/evolutions/1074/iron-lungs",
+        "originalCreatedAt": "2025-10-22T18:00:00.000000Z"
+      },
+      "chronologicalRank": 50
+    }
+  ]
+}

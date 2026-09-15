@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-24",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Boost Shooting for ice-cold finishing and precision.",
+      "id": 215,
+      "name": "Icy Precision",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=215",
+      "previewPlayers": [
+        {
+          "displayName": "Spitse",
+          "kind": "before",
+          "name": "Sherida Spitse",
+          "position": "CB",
+          "rating": 85,
+          "stats": {
+            "def": 86,
+            "dri": 79,
+            "pac": 80,
+            "pas": 86,
+            "phy": 84,
+            "sho": 78
+          }
+        },
+        {
+          "displayName": "Spitse",
+          "kind": "after",
+          "name": "Sherida Spitse",
+          "position": "CB",
+          "rating": 86,
+          "stats": {
+            "def": 86,
+            "dri": 79,
+            "pac": 80,
+            "pas": 86,
+            "phy": 84,
+            "sho": 84
+          }
+        }
+      ],
+      "rank": 799,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "icy-precision",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+12",
+            "90"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "90",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "7"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/215/icy-precision",
+      "releaseDate": "2025-12-24",
+      "releaseDateTimeUtc": "2025-12-24T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1356,
+        "providerUrl": "https://futmind.com/evolutions/1356/icy-precision",
+        "originalCreatedAt": "2025-12-24T18:00:00.000000Z"
+      },
+      "chronologicalRank": 210
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost the Passing and Physicality of your qualified player and add the Long Ball Pass PlayStyle",
+      "id": 221,
+      "name": "Architect",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=221",
+      "previewPlayers": [],
+      "rank": 798,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "architect",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "85",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/221/architect",
+      "releaseDate": "2025-12-24",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 215,
+          "releaseDate": "2025-12-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 245,
+          "releaseDate": "2025-12-25"
+        }
+      },
+      "chronologicalRank": 211
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost the Reactions and Composure of your qualified player and add the Tiki Taka PlayStyle",
+      "id": 228,
+      "name": "Read and React - Season 4 (p) Lvl 10",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=228",
+      "previewPlayers": [],
+      "rank": 797,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "read-and-react-season-4-p-lvl-10",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "86",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/228/read-and-react-season-4-p-lvl-10",
+      "releaseDate": "2025-12-24",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 215,
+          "releaseDate": "2025-12-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 245,
+          "releaseDate": "2025-12-25"
+        }
+      },
+      "chronologicalRank": 212
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost the Defense of your qualified player and add the Bruiser PlayStyle",
+      "id": 229,
+      "name": "Brute Defense - Season 4 Lvl 20",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=229",
+      "previewPlayers": [],
+      "rank": 796,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "brute-defense-season-4-lvl-20",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "7"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/229/brute-defense-season-4-lvl-20",
+      "releaseDate": "2025-12-24",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 215,
+          "releaseDate": "2025-12-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 245,
+          "releaseDate": "2025-12-25"
+        }
+      },
+      "chronologicalRank": 213
+    }
+  ]
+}

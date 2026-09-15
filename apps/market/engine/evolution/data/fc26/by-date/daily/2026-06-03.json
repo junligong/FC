@@ -1,0 +1,1414 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-03",
+  "count": 20,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical+ to any qualified player.",
+      "id": 886,
+      "name": "Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=886",
+      "previewPlayers": [],
+      "rank": 201,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "technical",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/886/technical",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 885,
+          "releaseDate": "2026-06-02"
+        },
+        "nextAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        }
+      },
+      "chronologicalRank": 825
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Sharp, assured, and always one step ahead. Evolve your player and unlock the attributes that make the difference.",
+      "id": 887,
+      "name": "Perfect Poise",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=887",
+      "previewPlayers": [
+        {
+          "displayName": "Bergkamp",
+          "kind": "before",
+          "name": "Dennis Bergkamp",
+          "position": "ST",
+          "rating": 90,
+          "stats": {
+            "def": 35,
+            "dri": 88,
+            "pac": 83,
+            "pas": 84,
+            "phy": 76,
+            "sho": 89
+          }
+        },
+        {
+          "displayName": "Bergkamp",
+          "kind": "after",
+          "name": "Dennis Bergkamp",
+          "position": "ST",
+          "rating": 91,
+          "stats": {
+            "def": 35,
+            "dri": 89,
+            "pac": 83,
+            "pas": 86,
+            "phy": 76,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 200,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "perfect-poise",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+20"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "96",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "96"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "3"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Press Proven",
+            "3"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Enforcer",
+            "3"
+          ],
+          "value": "Enforcer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/887/perfect-poise",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": "2026-06-03T19:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2099,
+        "providerUrl": "https://futmind.com/evolutions/2099/perfect-poise",
+        "originalCreatedAt": "2026-06-03T19:00:00.000000Z"
+      },
+      "chronologicalRank": 826
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Far Reach+ to any qualified goalkeeper.",
+      "id": 888,
+      "name": "Far Reach+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=888",
+      "previewPlayers": [],
+      "rank": 194,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "far-reach",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Far Reach",
+            "5"
+          ],
+          "value": "Far Reach"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/888/far-reach",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 827
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Technical+ to any qualified player.",
+      "id": 889,
+      "name": "Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=889",
+      "previewPlayers": [],
+      "rank": 190,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "technical",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "5"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/889/technical",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 828
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Intercept+ to any qualified player.",
+      "id": 890,
+      "name": "Intercept+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=890",
+      "previewPlayers": [],
+      "rank": 191,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "intercept",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "5"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/890/intercept",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 829
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Tiki Taka+ to any qualified player.",
+      "id": 891,
+      "name": "Tiki Taka+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=891",
+      "previewPlayers": [],
+      "rank": 192,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "tiki-taka",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "5"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/891/tiki-taka",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 830
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Low Driven Shot+ to any qualified player.",
+      "id": 892,
+      "name": "Low Driven Shot+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=892",
+      "previewPlayers": [],
+      "rank": 193,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "low-driven-shot",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "5"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/892/low-driven-shot",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 831
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Footwork+ to any qualified goalkeeper.",
+      "id": 893,
+      "name": "Footwork+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=893",
+      "previewPlayers": [],
+      "rank": 186,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "footwork",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Footwork",
+            "5"
+          ],
+          "value": "Footwork"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/893/footwork",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 832
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Jockey+ to any qualified player.",
+      "id": 894,
+      "name": "Jockey+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=894",
+      "previewPlayers": [],
+      "rank": 187,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "jockey",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "5"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/894/jockey",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 833
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Anticipate+ to any qualified player.",
+      "id": 895,
+      "name": "Anticipate+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=895",
+      "previewPlayers": [],
+      "rank": 188,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "anticipate",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "5"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/895/anticipate",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 834
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Finesse Shot+ to any qualified player.",
+      "id": 896,
+      "name": "Finesse Shot+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=896",
+      "previewPlayers": [],
+      "rank": 189,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "finesse-shot",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "5"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/896/finesse-shot",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 835
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Incisive Pass+ to any qualified player.",
+      "id": 897,
+      "name": "Incisive Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=897",
+      "previewPlayers": [],
+      "rank": 182,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "incisive-pass",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "5"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/897/incisive-pass",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 836
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Quick Step+ to any qualified player.",
+      "id": 898,
+      "name": "Quick Step+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=898",
+      "previewPlayers": [],
+      "rank": 183,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "quick-step",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "5"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/898/quick-step",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 837
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Rapid+ to any qualified player.",
+      "id": 899,
+      "name": "Rapid+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=899",
+      "previewPlayers": [
+        {
+          "displayName": "Claudia Pina",
+          "kind": "before",
+          "name": "Claudia Pina Medina",
+          "nameZh": "克劳蒂亚·皮纳",
+          "position": "LW",
+          "rating": 97,
+          "stats": {
+            "def": 60,
+            "dri": 95,
+            "pac": 92,
+            "pas": 95,
+            "phy": 88,
+            "sho": 97
+          }
+        },
+        {
+          "displayName": "Claudia Pina",
+          "kind": "after",
+          "name": "Claudia Pina Medina",
+          "nameZh": "克劳蒂亚·皮纳",
+          "position": "LW",
+          "rating": 97,
+          "stats": {
+            "def": 60,
+            "dri": 95,
+            "pac": 92,
+            "pas": 95,
+            "phy": 88,
+            "sho": 97
+          }
+        }
+      ],
+      "rank": 184,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "rapid",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "5"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/899/rapid",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 838
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Pinged Pass+ to any qualified player.",
+      "id": 900,
+      "name": "Pinged Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=900",
+      "previewPlayers": [
+        {
+          "displayName": "Sawa",
+          "kind": "before",
+          "name": "Homare Sawa",
+          "position": "CM",
+          "rating": 98,
+          "stats": {
+            "def": 92,
+            "dri": 98,
+            "pac": 94,
+            "pas": 99,
+            "phy": 88,
+            "sho": 94
+          }
+        },
+        {
+          "displayName": "Sawa",
+          "kind": "after",
+          "name": "Homare Sawa",
+          "position": "CM",
+          "rating": 98,
+          "stats": {
+            "def": 92,
+            "dri": 98,
+            "pac": 94,
+            "pas": 99,
+            "phy": 88,
+            "sho": 94
+          }
+        }
+      ],
+      "rank": 185,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "pinged-pass",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "5"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/900/pinged-pass",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 839
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Bruiser+ to any qualified player.",
+      "id": 901,
+      "name": "Bruiser+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=901",
+      "previewPlayers": [],
+      "rank": 178,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "bruiser",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "5"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/901/bruiser",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 840
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Relentless+ to any qualified player.",
+      "id": 902,
+      "name": "Relentless+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=902",
+      "previewPlayers": [],
+      "rank": 177,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "relentless",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Relentless",
+            "5"
+          ],
+          "value": "Relentless"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/902/relentless",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 841
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Long Ball Pass+ to any qualified Player.",
+      "id": 903,
+      "name": "Long Ball Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=903",
+      "previewPlayers": [],
+      "rank": 179,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "long-ball-pass",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Long Ball Pass",
+            "5"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/903/long-ball-pass",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 842
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Inventive+ to any qualified player.",
+      "id": 904,
+      "name": "Inventive+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=904",
+      "previewPlayers": [],
+      "rank": 180,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "inventive",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Inventive",
+            "5"
+          ],
+          "value": "Inventive"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/904/inventive",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 843
+    },
+    {
+      "availability": {
+        "expires": "9 MONTHS",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "9 MONTHS"
+      },
+      "categories": [
+        "PLAYSTYLES+ LAB"
+      ],
+      "description": "Add Cross Claimer+ to any qualified goalkeeper.",
+      "id": 905,
+      "name": "Cross Claimer+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=905",
+      "previewPlayers": [],
+      "rank": 181,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "cross-claimer",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Cross Claimer",
+            "5"
+          ],
+          "value": "Cross Claimer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/905/cross-claimer",
+      "releaseDate": "2026-06-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 887,
+          "releaseDate": "2026-06-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 924,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 844
+    }
+  ]
+}

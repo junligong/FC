@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-09",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Help your squad close out games with upgrades to your Fullback.",
+      "id": 273,
+      "name": "Helping Hand",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=273",
+      "previewPlayers": [
+        {
+          "displayName": "Vignola",
+          "kind": "before",
+          "name": "Mary Alice Vignola",
+          "position": "LB",
+          "rating": 85,
+          "stats": {
+            "def": 84,
+            "dri": 78,
+            "pac": 85,
+            "pas": 72,
+            "phy": 87,
+            "sho": 65
+          }
+        },
+        {
+          "displayName": "Vignola",
+          "kind": "after",
+          "name": "Mary Alice Vignola",
+          "position": "LB",
+          "rating": 85,
+          "stats": {
+            "def": 84,
+            "dri": 78,
+            "pac": 85,
+            "pas": 72,
+            "phy": 87,
+            "sho": 65
+          }
+        }
+      ],
+      "rank": 761,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB or RB"
+          ],
+          "value": "LB or RB"
+        }
+      ],
+      "slug": "helping-hand",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+2",
+            "84"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "LB"
+          ],
+          "value": "LB"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback+"
+          ],
+          "value": "Inverted Wingback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback+"
+          ],
+          "value": "Wingback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/273/helping-hand",
+      "releaseDate": "2026-01-09",
+      "releaseDateTimeUtc": "2026-01-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1378,
+        "providerUrl": "https://futmind.com/evolutions/1378/helping-hand",
+        "originalCreatedAt": "2026-01-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 248
+    }
+  ]
+}

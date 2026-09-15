@@ -1,0 +1,194 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-17",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add the base Quick Step PlayStyle and Wingback+ to any qualified RB Player.",
+      "id": 109,
+      "name": "Sideline Flyer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=109",
+      "previewPlayers": [],
+      "rank": 904,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "sideline-flyer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "6"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback+"
+          ],
+          "value": "Wingback+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/109/sideline-flyer",
+      "releaseDate": "2025-11-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 108,
+          "releaseDate": "2025-11-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 111,
+          "releaseDate": "2025-11-18"
+        }
+      },
+      "chronologicalRank": 105
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add the base Bruiser PlayStyle and Fullback+ to any qualified LB Player.",
+      "id": 110,
+      "name": "Iron Guard",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=110",
+      "previewPlayers": [],
+      "rank": 903,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "iron-guard",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "6"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback+"
+          ],
+          "value": "Fullback+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/110/iron-guard",
+      "releaseDate": "2025-11-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 108,
+          "releaseDate": "2025-11-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 111,
+          "releaseDate": "2025-11-18"
+        }
+      },
+      "chronologicalRank": 106
+    }
+  ]
+}

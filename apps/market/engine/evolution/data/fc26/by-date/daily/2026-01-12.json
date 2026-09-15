@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-12",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Leave your opponents in the dust as your passes speed through!",
+      "id": 276,
+      "name": "Just Passing By",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=276",
+      "previewPlayers": [
+        {
+          "displayName": "Goretzka",
+          "kind": "before",
+          "name": "Leon Goretzka",
+          "position": "CM",
+          "rating": 85,
+          "stats": {
+            "def": 77,
+            "dri": 83,
+            "pac": 81,
+            "pas": 85,
+            "phy": 79,
+            "sho": 77
+          }
+        },
+        {
+          "displayName": "Goretzka",
+          "kind": "after",
+          "name": "Leon Goretzka",
+          "position": "CM",
+          "rating": 86,
+          "stats": {
+            "def": 77,
+            "dri": 83,
+            "pac": 81,
+            "pas": 86,
+            "phy": 79,
+            "sho": 77
+          }
+        }
+      ],
+      "rank": 758,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "just-passing-by",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "86",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "88",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/276/just-passing-by",
+      "releaseDate": "2026-01-12",
+      "releaseDateTimeUtc": "2026-01-12T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1397,
+        "providerUrl": "https://futmind.com/evolutions/1397/just-passing-by",
+        "originalCreatedAt": "2026-01-12T18:00:00.000000Z"
+      },
+      "chronologicalRank": 251
+    }
+  ]
+}

@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-02",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost pace and add Quick Step+ to any player",
+      "id": 697,
+      "name": "Momentum Shift",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=697",
+      "previewPlayers": [],
+      "rank": 379,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "momentum-shift",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Pace/Diving",
+          "raw": [
+            "Pace/Diving",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/697/momentum-shift",
+      "releaseDate": "2026-04-02",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 696,
+          "releaseDate": "2026-04-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 698,
+          "releaseDate": "2026-04-02"
+        }
+      },
+      "chronologicalRank": 637
+    },
+    {
+      "availability": {
+        "300": "30,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Add attacking flair and shooting firepower to your defensive game and turn every clash into a scoring chance!",
+      "id": 698,
+      "name": "Battle Till The End",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=698",
+      "previewPlayers": [
+        {
+          "displayName": "Rubén Sobrino",
+          "kind": "before",
+          "name": "Rubén Sobrino Pozuelo",
+          "position": "RM",
+          "rating": 70,
+          "stats": {
+            "def": 37,
+            "dri": 70,
+            "pac": 79,
+            "pas": 67,
+            "phy": 67,
+            "sho": 71
+          }
+        },
+        {
+          "displayName": "Rubén Sobrino",
+          "kind": "after",
+          "name": "Rubén Sobrino Pozuelo",
+          "position": "RM",
+          "rating": 89,
+          "stats": {
+            "def": 55,
+            "dri": 82,
+            "pac": 90,
+            "pas": 89,
+            "phy": 85,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 378,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "battle-till-the-end",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "93",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "91",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "90",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "91"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "2"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/698/battle-till-the-end",
+      "releaseDate": "2026-04-02",
+      "releaseDateTimeUtc": "2026-04-02T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1861,
+        "providerUrl": "https://futmind.com/evolutions/1861/battle-till-the-end",
+        "originalCreatedAt": "2026-04-02T18:00:00.000000Z"
+      },
+      "chronologicalRank": 638
+    }
+  ]
+}

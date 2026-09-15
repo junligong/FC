@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-08-02",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Turn your favourite player into a FUTTIES player. This item rarity offers two league links to chemistry and full chemistry in position!",
+      "id": 1192,
+      "name": "FUTTIES",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1192",
+      "previewPlayers": [],
+      "rank": 27,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        }
+      ],
+      "slug": "futties",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/1192/futties",
+      "releaseDate": "2026-08-02",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1191,
+          "releaseDate": "2026-08-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 1194,
+          "releaseDate": "2026-08-03"
+        }
+      },
+      "chronologicalRank": 1129
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Apply the LW Position to any player",
+      "id": 1193,
+      "name": "LW Shift",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1193",
+      "previewPlayers": [],
+      "rank": 26,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        }
+      ],
+      "slug": "lw-shift",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "LW"
+          ],
+          "value": "LW"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1193/lw-shift",
+      "releaseDate": "2026-08-02",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1191,
+          "releaseDate": "2026-08-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 1194,
+          "releaseDate": "2026-08-03"
+        }
+      },
+      "chronologicalRank": 1130
+    }
+  ]
+}

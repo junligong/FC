@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-06",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "200": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Speed at the back. Power in every duel. A certain alpine player once ruled the center with unexpected power. Shift the role, break the line, and rediscover that unstoppable edge.",
+      "id": 830,
+      "name": "Fullback Takeover",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=830",
+      "previewPlayers": [
+        {
+          "displayName": "João Cancelo",
+          "kind": "before",
+          "name": "João Pedro Cavaco Cancelo",
+          "nameZh": "若昂·坎塞洛",
+          "position": "RB",
+          "rating": 87,
+          "stats": {
+            "def": 85,
+            "dri": 87,
+            "pac": 87,
+            "pas": 87,
+            "phy": 84,
+            "sho": 76
+          }
+        },
+        {
+          "displayName": "João Cancelo",
+          "kind": "after",
+          "name": "João Pedro Cavaco Cancelo",
+          "nameZh": "若昂·坎塞洛",
+          "position": "RB",
+          "rating": 90,
+          "stats": {
+            "def": 90,
+            "dri": 88,
+            "pac": 91,
+            "pas": 87,
+            "phy": 89,
+            "sho": 76
+          }
+        }
+      ],
+      "rank": 256,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "fullback-takeover",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "89",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "83",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "91"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "91"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "93",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "93"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "7"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "3"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "3"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "3"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/830/fullback-takeover",
+      "releaseDate": "2026-05-06",
+      "releaseDateTimeUtc": "2026-05-06T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2017,
+        "providerUrl": "https://futmind.com/evolutions/2017/fullback-takeover",
+        "originalCreatedAt": "2026-05-06T18:00:00.000000Z"
+      },
+      "chronologicalRank": 769
+    }
+  ]
+}

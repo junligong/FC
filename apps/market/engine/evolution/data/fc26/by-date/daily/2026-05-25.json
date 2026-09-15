@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-25",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Twist defenders inside out and score before they can recover.",
+      "id": 870,
+      "name": "Spinning Top",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=870",
+      "previewPlayers": [
+        {
+          "displayName": "Abedi Pelé",
+          "kind": "before",
+          "name": "Abedi Ayew",
+          "position": "CAM",
+          "rating": 89,
+          "stats": {
+            "def": 48,
+            "dri": 91,
+            "pac": 91,
+            "pas": 87,
+            "phy": 66,
+            "sho": 83
+          }
+        },
+        {
+          "displayName": "Abedi Pelé",
+          "kind": "after",
+          "name": "Abedi Ayew",
+          "position": "CAM",
+          "rating": 89,
+          "stats": {
+            "def": 48,
+            "dri": 92,
+            "pac": 91,
+            "pas": 87,
+            "phy": 66,
+            "sho": 85
+          }
+        }
+      ],
+      "rank": 216,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "spinning-top",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+2",
+            "93"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/870/spinning-top",
+      "releaseDate": "2026-05-25",
+      "releaseDateTimeUtc": "2026-05-25T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2081,
+        "providerUrl": "https://futmind.com/evolutions/2081/spinning-top",
+        "originalCreatedAt": "2026-05-25T18:00:00.000000Z"
+      },
+      "chronologicalRank": 809
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-24",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost Pace and Dribbling for your player",
+      "id": 322,
+      "name": "Swift Footwork",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=322",
+      "previewPlayers": [],
+      "rank": 720,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "swift-footwork",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+1"
+          ],
+          "value": "+1"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/322/swift-footwork",
+      "releaseDate": "2026-01-24",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 321,
+          "releaseDate": "2026-01-23"
+        },
+        "nextAnchor": {
+          "evolutionId": 323,
+          "releaseDate": "2026-01-24"
+        }
+      },
+      "chronologicalRank": 290
+    },
+    {
+      "availability": {
+        "400": "40,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Embody the spirit of a formidable French Icon in this EVO celebrating the creativity and skills that made Ribéry a true football legend.",
+      "id": 323,
+      "name": "Let me be Franck",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=323",
+      "previewPlayers": [
+        {
+          "displayName": "Szmodics",
+          "kind": "before",
+          "name": "Sammie Szmodics",
+          "position": "LM",
+          "rating": 74,
+          "stats": {
+            "def": 51,
+            "dri": 76,
+            "pac": 77,
+            "pas": 69,
+            "phy": 63,
+            "sho": 73
+          }
+        },
+        {
+          "displayName": "Szmodics",
+          "kind": "after",
+          "name": "Sammie Szmodics",
+          "position": "LM",
+          "rating": 88,
+          "stats": {
+            "def": 51,
+            "dri": 90,
+            "pac": 87,
+            "pas": 69,
+            "phy": 63,
+            "sho": 73
+          }
+        }
+      ],
+      "rank": 719,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "let-me-be-franck",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Dead Ball",
+            "7"
+          ],
+          "value": "Dead Ball"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "7"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "1"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward+"
+          ],
+          "value": "Inside Forward+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/323/let-me-be-franck",
+      "releaseDate": "2026-01-24",
+      "releaseDateTimeUtc": "2026-01-24T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1463,
+        "providerUrl": "https://futmind.com/evolutions/1463/let-me-be-franck",
+        "originalCreatedAt": "2026-01-24T18:00:00.000000Z"
+      },
+      "chronologicalRank": 291
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform the look of your favourite Icon with a TOTY Icon design!",
+      "id": 324,
+      "name": "TOTY Icon",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=324",
+      "previewPlayers": [],
+      "rank": 717,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "League",
+          "raw": [
+            "League",
+            "Icons"
+          ],
+          "value": "Icons"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "toty-icon",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/324/toty-icon",
+      "releaseDate": "2026-01-24",
+      "releaseDateTimeUtc": "2026-01-24T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1465,
+        "providerUrl": "https://futmind.com/evolutions/1465/toty-icon",
+        "originalCreatedAt": "2026-01-24T18:00:00.000000Z"
+      },
+      "chronologicalRank": 292
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform the look of your favourite player with a TOTY Honourable Mentions design!",
+      "id": 325,
+      "name": "TOTY Honourable Mentions",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=325",
+      "previewPlayers": [],
+      "rank": 718,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "toty-honourable-mentions",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/325/toty-honourable-mentions",
+      "releaseDate": "2026-01-24",
+      "releaseDateTimeUtc": "2026-01-24T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1466,
+        "providerUrl": "https://futmind.com/evolutions/1466/toty-honourable-mentions",
+        "originalCreatedAt": "2026-01-24T18:00:00.000000Z"
+      },
+      "chronologicalRank": 293
+    }
+  ]
+}

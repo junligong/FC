@@ -1,0 +1,301 @@
+{
+  "date": "2026-09-15",
+  "startedAt": "2026-09-15T08:53:02.418Z",
+  "modules": {
+    "football": {
+      "module": "football",
+      "date": "2026-09-15",
+      "runId": "0723076d-522a-4736-86c4-c4d1ff267fb2",
+      "status": "partial",
+      "startedAt": "2026-09-15T02:51:00.492Z",
+      "deadlineAt": "2026-09-15T03:06:00.492Z",
+      "reportPath": "reports/daily/2026-09-15/football.html",
+      "completedAt": "2026-09-15T02:55:08.141Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "runId": "0723076d-522a-4736-86c4-c4d1ff267fb2",
+        "sources": [
+          {
+            "url": "https://www.dongqiudi.com/articles/6347152.html",
+            "openedAt": "2026-09-15T11:00:00+08:00",
+            "publisher": "懂球帝",
+            "title": "英超积分榜：阿森纳、曼城领跑，利兹联、赫尔城位居前四"
+          },
+          {
+            "url": "https://www.asroma.com/en/men/standings",
+            "openedAt": "2026-09-15T11:00:00+08:00",
+            "publisher": "AS Roma官方",
+            "title": "Serie A 2026/27 Standings（意甲第4轮官方完整积分榜）",
+            "credibility": "官方权威"
+          },
+          {
+            "url": "https://news.zhibo8.com/zuqiu/2026-09-15/match2067681date2026vnative.htm",
+            "openedAt": "2026-09-15T10:53:00+08:00",
+            "publisher": "直播吧",
+            "title": "利兹联4-1纽卡斯尔联 英超第4轮收官"
+          },
+          {
+            "url": "https://m.qiumiwu.com/news/2004233957785",
+            "openedAt": "2026-09-15T10:54:00+08:00",
+            "publisher": "球迷屋",
+            "title": "国米5-3乌迪内斯 意甲第4轮补赛"
+          },
+          {
+            "url": "https://m.qiumiwu.com/news/2004234622202",
+            "openedAt": "2026-09-15T10:54:00+08:00",
+            "publisher": "球迷屋",
+            "title": "罗马2-0都灵 意甲第4轮补赛"
+          },
+          {
+            "url": "https://www.dongqiudi.com/match/54470890",
+            "openedAt": "2026-09-15T10:54:00+08:00",
+            "publisher": "懂球帝",
+            "title": "科莫2-1帕尔马 意甲第4轮补赛"
+          },
+          {
+            "url": "https://www.ppsports.com/article/news/2616159.html",
+            "openedAt": "2026-09-15T10:55:00+08:00",
+            "publisher": "PP体育",
+            "title": "意甲积分榜：罗马国米12分领跑 科莫拉齐奥10分"
+          },
+          {
+            "url": "https://voice.hupu.com/bbs/642193631",
+            "openedAt": "2026-09-15T10:55:00+08:00",
+            "publisher": "虎扑",
+            "title": "欧冠第2轮赛程：曼城vs巴黎10月15日"
+          },
+          {
+            "url": "https://www.dongqiudi.com/articles/6285680.html",
+            "openedAt": "2026-09-15T10:55:00+08:00",
+            "publisher": "懂球帝",
+            "title": "欧冠联赛阶段第2轮时间表"
+          },
+          {
+            "url": "http://m.163.com/dy/article/L6RJV4FK0556C2GQ.html",
+            "openedAt": "2026-09-15T11:02:00+08:00",
+            "publisher": "网易",
+            "title": "乱成一锅粥！英超Big6仅两队进前五 利兹联赫尔城杀进前三甲（利兹联7球/赫尔城5球）"
+          },
+          {
+            "url": "https://voice.hupu.com/bbs/642411315",
+            "openedAt": "2026-09-15T03:05:00+08:00",
+            "publisher": "虎扑",
+            "title": "英超积分榜：阿森纳、曼城同12分居首，曼联第13热刺第17"
+          },
+          {
+            "url": "http://www.xinhuanet.com/sports/20260914/d1457df5b9b1445ca97fc1f13568f4ab/c.html",
+            "openedAt": "2026-09-15T03:05:00+08:00",
+            "publisher": "新华网",
+            "title": "英超综合：阿森纳取得四连胜 利物浦、切尔西遭平局",
+            "credibility": "官方权威"
+          }
+        ],
+        "dataCutoff": "2026-09-15T11:05:00+08:00",
+        "reportPath": "reports/daily/2026-09-15/football.html",
+        "snapshot": "automation/runs/2026-09-15/football/report.html",
+        "snapshotSha256": "84b703914c50155685c6e2e4ce27c3a7b09bb69a6897ea69b072e95e133db804",
+        "template": "apps/football/templates/football-daily.html",
+        "status": "partial",
+        "missingItems": [
+          "英超: 第7-20名多数球队累计进球/失球/净胜球缺单一权威来源（懂球帝仅确认排名与积分），表中以'-'标注，未编造",
+          "英超: 除阿森纳(8:1)、曼城(8:2)、布莱顿(12:4)、赫尔城(5:2)、利兹联(进7)外，其余球队进失球待核",
+          "意甲: 积分榜采用AS Roma官网官方数据（完整20队），各场比分细节未逐场核对",
+          "西甲: 第6-20名部分球队进失球基于第5轮公开报道，净胜球可能有偏差",
+          "德甲: 全部球队精确进球数/净胜球未完全核实，前四名（弗赖堡/多特/拜仁）排名可靠",
+          "法甲: 全部球队精确进球数/净胜球未完全核实，前三名（里尔/摩纳哥/雷恩10分）可靠",
+          "沙特联: 第6轮后完整积分榜未完全核实，仅前3名排名（新月/吉达联合/胜利）可靠",
+          "美职联: 东/西区完整积分榜未完全核实，纳什维尔东部第1、迈阿密国际东部第2可靠",
+          "射手/助攻榜: 多数联赛射手榜未取满前10，仅姆巴佩6球（西甲）、C罗979球、梅西928球等关键数据可靠"
+        ]
+      },
+      "sha256": "84b703914c50155685c6e2e4ce27c3a7b09bb69a6897ea69b072e95e133db804",
+      "bytes": 68422,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/football/report.html"
+    },
+    "news": {
+      "module": "news",
+      "date": "2026-09-15",
+      "runId": "02e32aac-f1db-4548-9df0-51f06f70f64e",
+      "status": "partial",
+      "startedAt": "2026-09-15T07:51:27.526Z",
+      "deadlineAt": "2026-09-15T08:06:27.526Z",
+      "reportPath": "reports/daily/2026-09-15/news.html",
+      "completedAt": "2026-09-15T08:00:41.651Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "runId": "02e32aac-f1db-4548-9df0-51f06f70f64e",
+        "startedAt": "2026-09-15T07:51:27.526Z",
+        "finishedAt": "2026-09-15T08:00:00.000Z",
+        "sources": [
+          {
+            "account": "@EASFCDirect",
+            "url": "https://x.com/EASFCDirect",
+            "openedAt": "2026-09-15T07:51:39Z",
+            "pageTitle": "EA SPORTS FC Direct Communication (@EASFCDirect) / X"
+          },
+          {
+            "account": "@easportsfc",
+            "url": "https://x.com/easportsfc",
+            "openedAt": "2026-09-15T07:52:16Z",
+            "pageTitle": "EA SPORTS FC (@EASPORTSFC) / X"
+          },
+          {
+            "account": "@fifa_romania",
+            "url": "https://x.com/fifa_romania",
+            "openedAt": "2026-09-15T07:52:42Z",
+            "pageTitle": "FifaTradingRomania (@fifa_romania) / X"
+          },
+          {
+            "account": "@AsyFutTrader",
+            "url": "https://x.com/AsyFutTrader",
+            "openedAt": "2026-09-15T07:53:07Z",
+            "pageTitle": "ASY FUT (@AsyFutTrader) / X"
+          },
+          {
+            "account": "@FIFA22_INFO",
+            "url": "https://x.com/FIFA22_INFO",
+            "openedAt": "2026-09-15T07:53:54Z",
+            "pageTitle": "EAFC 27 News (@FIFA22_INFO) / X"
+          },
+          {
+            "account": "@FutSheriff",
+            "url": "https://x.com/FutSheriff",
+            "openedAt": "2026-09-15T07:54:27Z",
+            "pageTitle": "Fut Sheriff (@FutSheriff) / X"
+          },
+          {
+            "account": "@FutPoliceLeaks",
+            "url": "https://x.com/FutPoliceLeaks",
+            "openedAt": "2026-09-15T07:55:08Z",
+            "pageTitle": "FUT POLICE LEAKS (@FutPoliceLeaks) / X"
+          },
+          {
+            "account": "@FUTBIN",
+            "url": "https://x.com/FUTBIN",
+            "openedAt": "2026-09-15T07:55:36Z",
+            "pageTitle": "FUTBIN (@FUTBIN) / X"
+          },
+          {
+            "account": "@easysbc",
+            "url": "https://x.com/easysbc",
+            "openedAt": "2026-09-15T07:56:02Z",
+            "pageTitle": "EasySBC (@easysbc) / X"
+          },
+          {
+            "account": "@Razzerstrading",
+            "url": "https://x.com/Razzerstrading",
+            "openedAt": "2026-09-15T07:56:29Z",
+            "pageTitle": "Razzer FC27 (@Razzerstrading) / X"
+          },
+          {
+            "account": "@EAFCassist",
+            "url": "https://x.com/EAFCassist",
+            "openedAt": "2026-09-15T07:56:58Z",
+            "pageTitle": "FC 27 NEWS & TIPS (@EAFCassist) / X"
+          },
+          {
+            "account": "@Fut_scoreboard",
+            "url": "https://x.com/Fut_scoreboard",
+            "openedAt": "2026-09-15T07:57:23Z",
+            "pageTitle": "Fut Scoreboard (@Fut_scoreboard) / X"
+          },
+          {
+            "account": "@DetectiveFUT",
+            "url": "https://x.com/DetectiveFUT",
+            "openedAt": "2026-09-15T07:57:51Z",
+            "pageTitle": "DetectiveFUT (@DetectiveFUT) / X"
+          },
+          {
+            "account": "@FGZNews",
+            "url": "https://x.com/FGZNews",
+            "openedAt": "2026-09-15T07:58:42Z",
+            "pageTitle": "FGZ (@FGZNews) / X"
+          },
+          {
+            "account": "@futagentt",
+            "url": "https://x.com/futagentt",
+            "openedAt": "2026-09-15T07:59:07Z",
+            "pageTitle": "FUT Agent (@futagentt) / X"
+          },
+          {
+            "account": "@Futdonk",
+            "url": "https://x.com/Futdonk",
+            "openedAt": "2026-09-15T07:59:39Z",
+            "pageTitle": "Donk (@Futdonk) / X"
+          }
+        ],
+        "dataCutoff": "2026-09-15T08:00:00Z",
+        "stats": {
+          "totalRaw": 53,
+          "unique": 53,
+          "fc27Related": 52,
+          "nonPrediction": 50,
+          "newTweetsAfterDedup": 3,
+          "finalTweetsInReport": 115,
+          "seenTweetsTotal": 423,
+          "imagesCached": "150/150"
+        },
+        "missingItems": [
+          "翻译API返回502错误，3条新推文(@AsyFutTrader, @FutPoliceLeaks, @futagentt)的中文翻译失败，报告保留原文"
+        ],
+        "reportPath": "reports/daily/2026-09-15/news.html"
+      },
+      "sha256": "fbe7f523d5741734979f87e2dfb18fcb93396e84e56c662958d59be85846b514",
+      "bytes": 191623,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/news/report.html"
+    },
+    "market": {
+      "module": "market",
+      "date": "2026-09-15",
+      "runId": "9a6471d5-690a-43f4-9c06-a6a53d1f329c",
+      "status": "partial",
+      "startedAt": "2026-09-15T08:03:43.132Z",
+      "deadlineAt": "2026-09-15T08:18:43.132Z",
+      "reportPath": "reports/daily/2026-09-15/market.html",
+      "previousAttempt": "automation/runs/2026-09-15/market/attempts/0b35e6c1-1734-4250-b836-036729375b01",
+      "completedAt": "2026-09-15T08:11:21.092Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "platform": "cross",
+        "generatedAt": "2026-09-15 16:10",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-15T08:08:30Z",
+            "dataAsOf": "2026-09-15 (实时榜单)",
+            "note": "实时榜单：浏览器自动化打开，读取 FC27 Players 表 30 行金卡榜单（url|名称|OVR|位置），卡ID去重；价格列全场0，未加载"
+          },
+          {
+            "url": "https://www.futbin.com/27/player/1/erling-haaland",
+            "openedAt": "2026-09-15T08:05:10Z",
+            "dataAsOf": "2026-09-15 (实时)",
+            "note": "单卡详情页核验价格：单卡详情页核验价格：PRICE UPDATED: NEVER，PRICE RANGE 0-0；Console 与 PC 平台切换后仍 0-0，FC27 市场价未开放"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions",
+            "openedAt": "2026-09-15T08:08:50Z",
+            "dataAsOf": "2026-09-15 (实时)",
+            "note": "Evolutions页核验：Evolutions 页核验：No evolutions found（All/Active/Expired 均无），FC27 当前无任何进化"
+          }
+        ],
+        "missingItems": [
+          "本周活动卡与周黑(Promo/TOTW)未采集",
+          "价格分层：FC27 市场价未开放（详情页 PRICE UPDATED: NEVER / 0-0，Console+PC 双平台核验），各档如实空状态，日/周变化不可计算",
+          "热门进化卡：Evolutions 页 No evolutions found，无进化可核验，如实空状态",
+          "传奇与英雄卡未独立核验",
+          "PC 平台数据：价格已验证与 Cross 一致为 0，未单独成表",
+          "无今日价格基线，不做趋势对比"
+        ]
+      },
+      "sha256": "2b6b5059a3c9ee0a09e1a612c16ab121d416ba221c22841b7bc5c4db8b59e63b",
+      "bytes": 12278,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/market/report.html"
+    }
+  },
+  "publish": "failed",
+  "unattendedPublishingVerified": false,
+  "merge": "success",
+  "indexSha256": "d2aeeed3af0da34f1cd341e0d57d6dbc2de36f6e17b2a1d2a533671f9fa0011f",
+  "reason": "publisher_exit_2",
+  "completedAt": "2026-09-15T08:53:04.909Z"
+}

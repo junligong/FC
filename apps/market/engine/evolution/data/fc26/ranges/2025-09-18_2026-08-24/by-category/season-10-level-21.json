@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "season-10-level-21",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "SEASON 10 LEVEL: 21"
+      ],
+      "description": "Upgrade a player to 99 Shooting",
+      "id": 1238,
+      "name": "Max Shooting",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1238",
+      "previewPlayers": [
+        {
+          "displayName": "Gabriel",
+          "kind": "before",
+          "name": "Gabriel dos S. Magalhães",
+          "nameZh": "加布里埃尔·马加良斯",
+          "position": "CB",
+          "rating": 98,
+          "stats": {
+            "def": 99,
+            "dri": 91,
+            "pac": 93,
+            "pas": 90,
+            "phy": 96,
+            "sho": 57
+          }
+        },
+        {
+          "displayName": "Gabriel",
+          "kind": "after",
+          "name": "Gabriel dos S. Magalhães",
+          "nameZh": "加布里埃尔·马加良斯",
+          "position": "CB",
+          "rating": 99,
+          "stats": {
+            "def": 99,
+            "dri": 91,
+            "pac": 93,
+            "pas": 90,
+            "phy": 96,
+            "sho": 99
+          }
+        }
+      ],
+      "rank": 38,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "max-shooting",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": null,
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+98"
+          ],
+          "value": "+98"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1238/max-shooting",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1234,
+          "releaseDate": "2026-08-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 1249,
+          "releaseDate": "2026-08-13"
+        }
+      },
+      "chronologicalRank": 1175
+    }
+  ]
+}

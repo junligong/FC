@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-03",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "4",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Rejuvenate your legs and burst onto the pitch with newfound Pace.",
+      "id": 261,
+      "name": "Fresh Legs",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=261",
+      "previewPlayers": [
+        {
+          "displayName": "Gattuso",
+          "kind": "before",
+          "name": "Gennaro Gattuso",
+          "position": "CDM",
+          "rating": 86,
+          "stats": {
+            "def": 88,
+            "dri": 70,
+            "pac": 73,
+            "pas": 69,
+            "phy": 87,
+            "sho": 62
+          }
+        },
+        {
+          "displayName": "Gattuso",
+          "kind": "after",
+          "name": "Gennaro Gattuso",
+          "position": "CDM",
+          "rating": 87,
+          "stats": {
+            "def": 88,
+            "dri": 70,
+            "pac": 80,
+            "pas": 69,
+            "phy": 87,
+            "sho": 62
+          }
+        }
+      ],
+      "rank": 770,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "fresh-legs",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+7",
+            "88"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "88",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+7",
+            "88"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "7"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/261/fresh-legs",
+      "releaseDate": "2026-01-03",
+      "releaseDateTimeUtc": "2026-01-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1358,
+        "providerUrl": "https://futmind.com/evolutions/1358/fresh-legs",
+        "originalCreatedAt": "2026-01-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 239
+    },
+    {
+      "availability": {
+        "200": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a Time Warp player.",
+      "id": 262,
+      "name": "Time Warp",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=262",
+      "previewPlayers": [],
+      "rank": 769,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "time-warp",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/262/time-warp",
+      "releaseDate": "2026-01-03",
+      "releaseDateTimeUtc": "2026-01-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1372,
+        "providerUrl": "https://futmind.com/evolutions/1372/time-warp",
+        "originalCreatedAt": "2026-01-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 240
+    }
+  ]
+}

@@ -5,7 +5,7 @@
 1. 第一条命令运行 `node automation/run-state.mjs begin news D`（D 在开始时固定 Asia/Shanghai 日期）。accepted=false 立即最终回复“本日已有运行”，不得继续。保存返回的 runId 与 deadlineAt。
 2. 总预算 15 分钟，前 10 分钟采集，随后只完成当前已有证据的数据、一次校验和提交。每个阶段查看当前时间；剩余不足 3 分钟立即收尾，缺失如实标注，不再追查来源或改版。不得等到平台 30 分钟取消。
 3. HTML 只作为内部数据产物。保留既有模板结构，展示由合并器统一处理；日报任务不得重构 CSS、补齐设计要求或恢复旧页面。有效数据不足时提交 partial，不能以旧日期改写冒充新报告。
-4. 将本轮证据写入 `automation/runs/D/news/evidence.json`，至少有 date、sources（原文 URL、打开时间、数据截止时间）、缺失项。运行 `node automation/run-state.mjs finish news D RUN_ID success或partial 证据路径`。脚本检查所有者、文件修改时间、日期与完整性，保存不可覆盖快照及 SHA-256。证据字段只是记录，不能代替实际打开来源。
+4. 将本轮证据写入 `automation/runs/D/news/evidence.json`，至少有 date、sources（原文 URL、打开时间、数据截止时间）、缺失项。每个 `openedAt` 必须晚于本轮 `startedAt`；不得通过 `touch` 报告或复制旧 run 的来源记录伪造新运行。运行 `node automation/run-state.mjs finish news D RUN_ID success或partial 证据路径`。脚本检查所有者、文件修改时间、日期与完整性，保存不可覆盖快照及 SHA-256。证据字段只是记录，不能代替实际打开来源。
 5. 失败则把原因写入证据文件并运行同一 finish 命令，状态 failed；只有用户已明确暂停且 `shared/config/project.json` 中该任务为 `enabled: false` 时才可提交 skipped。启用中的任务不能用 skipped 掩盖浏览器、采集或生成失败。提交完成后立即最终回复状态和路径，不再调用任何工具。单项不读 publish.md，不查认证，不尝试发布。
 
 ## 采集与数据要求
@@ -20,7 +20,9 @@
 
 每张卡片包含博主、时间、完整中文翻译、可折叠原文、原配图或无图说明，以及原推链接。保留多列网格与移动端单列布局。图片及无图占位应链接到原推。翻译服务失败时由执行任务的 AI 完成翻译，使用当日 data/tweets-D.json 保存完整数据，并在最终报告中核实；“术语替换”和英文混排不算翻译完成，未完成项必须明确标记。
 
-data/seen_tweets.json 是历史资产，禁止重置。损坏时从 .bak 核实恢复，无法恢复就停止该子任务。报告成功生成后才提交去重记录；同日重跑合并当日已有内容，不因全部推文已看过就覆盖为空。保留原始采集文件和备份用于追溯。
+X 图片必须把 `pbs.twimg.com/media` 地址规范为 `name=orig`，保存到 `reports/daily/D/assets/news/` 后再写入报告。合并器负责将这些本地资产内嵌到单文件汇总。不得只保留远程热链，也不得用 `onerror` 隐藏加载失败；原帖有图但原图保存失败时，本任务状态至少为 `partial` 并在证据中记录数量。
+
+data/seen_tweets.json 是历史资产，禁止重置。只有 `generate_report.mjs` 可在报告校验通过后原子更新它；执行 AI、临时 Python/Node 脚本和手动翻译步骤均不得直接写此文件。生成器更新前必须保留 `data/seen_tweets.json.bak`。损坏时先从该备份核实恢复；备份不可用时可从 Git 中已跟踪的基线与各日 `tweets-D.json` 快照合并恢复，仍无法恢复就停止该子任务，绝不能创建空 seed 继续。报告成功生成后才提交去重记录；同日重跑合并当日已有内容，不因全部推文已看过就覆盖为空。保留原始采集文件和备份用于追溯。
 
 输出 reports/daily/D/news.html。核验当日日期、卡片数量、中文完整性、图片/来源链接及账号覆盖情况。只有全部来源成功且无相关内容时才可写“本期无新资讯”；访问失败、解析失败和翻译失败分别记录。失败时保留上次有效报告。
 浏览器强制规则：每次先读取根 AGENTS.md 对应段落；只连接用户已登录的 Chrome 插件，固定 `extension` 模式。禁止IAB、未登录浏览器、临时浏览器或新profile；扩展连接失败即记录采集失败，不得改用IAB。

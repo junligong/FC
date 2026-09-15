@@ -1,0 +1,3046 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-11",
+  "count": 17,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Make game winning passes under pressure with upgrades to composure and passing.",
+      "id": 613,
+      "name": "Pressure? What Pressure",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=613",
+      "previewPlayers": [],
+      "rank": 458,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "pressure-what-pressure",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": null,
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+70"
+          ],
+          "value": "+70"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/613/pressure-what-pressure",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 612,
+          "releaseDate": "2026-03-10"
+        },
+        "nextAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        }
+      },
+      "chronologicalRank": 555
+    },
+    {
+      "availability": {
+        "150": "12,500",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Transform your player into a Left Winger and get set to play \"Bonito\" with incredible skills on March 13.",
+      "id": 614,
+      "name": "Winger Transformation",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=614",
+      "previewPlayers": [
+        {
+          "displayName": "Kerolin Nicoli",
+          "kind": "before",
+          "name": "Kerolin Nicoli Israel Ferraz",
+          "nameZh": "克罗琳",
+          "position": "RM",
+          "rating": 89,
+          "stats": {
+            "def": 52,
+            "dri": 90,
+            "pac": 91,
+            "pas": 85,
+            "phy": 86,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Kerolin Nicoli",
+          "kind": "after",
+          "name": "Kerolin Nicoli Israel Ferraz",
+          "nameZh": "克罗琳",
+          "position": "RM",
+          "rating": 89,
+          "stats": {
+            "def": 52,
+            "dri": 90,
+            "pac": 91,
+            "pas": 85,
+            "phy": 86,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 457,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "Max 60"
+          ],
+          "value": "Max 60"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "LW, GK"
+          ],
+          "value": "LW, GK"
+        }
+      ],
+      "slug": "winger-transformation",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "LW"
+          ],
+          "value": "LW"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/614/winger-transformation",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": "2026-03-11T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1765,
+        "providerUrl": "https://futmind.com/evolutions/1765/winger-transformation",
+        "originalCreatedAt": "2026-03-11T18:00:00.000000Z"
+      },
+      "chronologicalRank": 556
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 1"
+      ],
+      "description": "The lights are bright and anticipation fills the air. The stage is set for your player to take their place among the world's best. With everything to play for, its time to show they belong on football's greatest stage.",
+      "id": 615,
+      "name": "Make Your Idol - Starter",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=615",
+      "previewPlayers": [],
+      "rank": 456,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Nation",
+          "raw": [
+            "Nation",
+            "Japan or Korea Republic"
+          ],
+          "value": "Japan or Korea Republic"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "make-your-idol-starter",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "85",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+50",
+            "85"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "75",
+          "label": "Physical/Positioning",
+          "raw": [
+            "Physical/Positioning",
+            "+40",
+            "75"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "83",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+40",
+            "83"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "76",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "76"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "76",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "76"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "75",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+40",
+            "75"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "75",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+40",
+            "85"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "83",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "83"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "75",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "75",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "78",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "78"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+40",
+            "85"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "75",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+40",
+            "75"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "83",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "83"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+40",
+            "85"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "75",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "85",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/615/make-your-idol-starter",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 557
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Watch your player break new ground, building momentum and pushing limits in the attack. All players will recieve +2 OVR (MAX 87).",
+      "id": 616,
+      "name": "Make Your Idol - Attacker 1",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=616",
+      "previewPlayers": [],
+      "rank": 455,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 85"
+          ],
+          "value": "Exactly 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-attacker-1",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/616/make-your-idol-attacker-1",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 558
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Tiki Taka+ to any qualified player",
+      "id": 617,
+      "name": "Make Your Idol - Tiki Taka+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=617",
+      "previewPlayers": [],
+      "rank": 454,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-tiki-taka",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "1"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/617/make-your-idol-tiki-taka",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 559
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Incisive Pass+ to any qualified player",
+      "id": 618,
+      "name": "Make Your Idol - Incisive Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=618",
+      "previewPlayers": [],
+      "rank": 453,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-incisive-pass",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/618/make-your-idol-incisive-pass",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 560
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Watch your player control the game, linking defense and attack with every run. All players will receive +2 OVR (MAX 87).",
+      "id": 619,
+      "name": "Make Your Idol - Midfielder 1",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=619",
+      "previewPlayers": [],
+      "rank": 452,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 85"
+          ],
+          "value": "Exactly 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-midfielder-1",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "85",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "83",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+30",
+            "83"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "89",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "89"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "8"
+          ],
+          "value": "Press Proven"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/619/make-your-idol-midfielder-1",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 561
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Low Driven+ to any qualified player",
+      "id": 620,
+      "name": "Make Your Idol - Low Driven+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=620",
+      "previewPlayers": [],
+      "rank": 451,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-low-driven",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "1"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/620/make-your-idol-low-driven",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 562
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Technical+ to any qualified player",
+      "id": 621,
+      "name": "Make Your Idol - Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=621",
+      "previewPlayers": [],
+      "rank": 450,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-technical",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "1"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/621/make-your-idol-technical",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 563
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Jockey+ to any qualified player",
+      "id": 622,
+      "name": "Make Your Idol - Jockey+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=622",
+      "previewPlayers": [],
+      "rank": 449,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-jockey",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "1"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/622/make-your-idol-jockey",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 564
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Add Intercept+ to any qualified player",
+      "id": 623,
+      "name": "Make Your Idol - Intercept+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=623",
+      "previewPlayers": [],
+      "rank": 448,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-intercept",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "1"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/623/make-your-idol-intercept",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 565
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 3"
+      ],
+      "description": "Watch your player anchor the backline, reading the game and breaking up threats with confidence. All players will recieve +2 OVR (MAX 87).",
+      "id": 624,
+      "name": "Make Your Idol - Defender 1",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=624",
+      "previewPlayers": [],
+      "rank": 447,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 85"
+          ],
+          "value": "Exactly 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-defender-1",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "83",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "83"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "76",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "76"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "78",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "78"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "82",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/624/make-your-idol-defender-1",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 566
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 7"
+      ],
+      "description": "Unleash your potential as an attacking force. Strengthen your offensive skills and rise up the ranks as a key threat in every match. All players will receive +2 OVR (MAX 89).",
+      "id": 625,
+      "name": "Make Your Idol - Attacker 2",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=625",
+      "previewPlayers": [],
+      "rank": 446,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 87"
+          ],
+          "value": "Exactly 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-attacker-2",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Shooting/Handling",
+          "raw": [
+            "Shooting/Handling",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "78",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "78"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/625/make-your-idol-attacker-2",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 567
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 7"
+      ],
+      "description": "Take center stage in the midfield. Command the game, control the tempo, and become the driving force behind every attack. All players will receive +2 OVR (MAX 89).",
+      "id": 626,
+      "name": "Make Your Idol - Midfielder 2",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=626",
+      "previewPlayers": [],
+      "rank": 445,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 87"
+          ],
+          "value": "Exactly 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-midfielder-2",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Passing/Kicking",
+          "raw": [
+            "Passing/Kicking",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "85",
+          "label": "Dribbling/Reflexes",
+          "raw": [
+            "Dribbling/Reflexes",
+            "+2",
+            "85"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "85",
+          "label": "Defending/Speed",
+          "raw": [
+            "Defending/Speed",
+            "+2",
+            "85"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "83",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/626/make-your-idol-midfielder-2",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 568
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 7"
+      ],
+      "description": "Rise to prominence as the heart of the defense. Command the backline, stop attackers in their tracks, and prove your status as a key defensive leader. All players will receive +2 OVR (MAX 89).",
+      "id": 627,
+      "name": "Make Your Idol - Defender 2",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=627",
+      "previewPlayers": [],
+      "rank": 444,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 87"
+          ],
+          "value": "Exactly 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-defender-2",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Pace/Diving",
+          "raw": [
+            "Pace/Diving",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "87",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "80",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "8"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/627/make-your-idol-defender-2",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 569
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 21"
+      ],
+      "description": "Reach legendary status. Deliver game-winning moments, seize every chance, and etch your name into the history books as an unstoppable goal scorer. All players will receive +2 OVR (MAX 91).",
+      "id": 628,
+      "name": "Make Your Idol - Attacker 3",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=628",
+      "previewPlayers": [],
+      "rank": 443,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 89"
+          ],
+          "value": "Exactly 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-attacker-3",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "91",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "91"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "91",
+          "label": "Shooting/Handling",
+          "raw": [
+            "Shooting/Handling",
+            "+4",
+            "91"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling/Reflexes",
+          "raw": [
+            "Dribbling/Reflexes",
+            "+4",
+            "90"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "9"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "9"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "9"
+          ],
+          "value": "Trickster"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/628/make-your-idol-attacker-3",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 570
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 21"
+      ],
+      "description": "Dictate the game at its highest level. Orchestrate brilliant plays, control every movement, and shape the outcome on the grandest stage. All players will receive +2 OVR (MAX 91).",
+      "id": 629,
+      "name": "Make Your Idol - Midfielder 3",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=629",
+      "previewPlayers": [],
+      "rank": 442,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 89"
+          ],
+          "value": "Exactly 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Evolution"
+          ],
+          "value": "World Tour Evolution"
+        }
+      ],
+      "slug": "make-your-idol-midfielder-3",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "91",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "91"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "91",
+          "label": "Passing/Kicking",
+          "raw": [
+            "Passing/Kicking",
+            "+4",
+            "91"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "91",
+          "label": "Dribbling/Reflexes",
+          "raw": [
+            "Dribbling/Reflexes",
+            "+4",
+            "91"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "90",
+          "label": "Defending/Speed",
+          "raw": [
+            "Defending/Speed",
+            "+7",
+            "90"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "9"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "9"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "9",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "9"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/629/make-your-idol-midfielder-3",
+      "releaseDate": "2026-03-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 614,
+          "releaseDate": "2026-03-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        }
+      },
+      "chronologicalRank": 571
+    }
+  ]
+}

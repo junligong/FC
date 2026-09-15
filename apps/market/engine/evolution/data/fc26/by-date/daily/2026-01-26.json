@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-26",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Apply a Low Driven Shot and send your opponents keeper to the floor",
+      "id": 331,
+      "name": "Get Low",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=331",
+      "previewPlayers": [],
+      "rank": 714,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "get-low",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/331/get-low",
+      "releaseDate": "2026-01-26",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 330,
+          "releaseDate": "2026-01-25"
+        },
+        "nextAnchor": {
+          "evolutionId": 332,
+          "releaseDate": "2026-01-26"
+        }
+      },
+      "chronologicalRank": 296
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Prove you’re the jockey master who can lock down any opponent.",
+      "id": 332,
+      "name": "The Crab Walk",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=332",
+      "previewPlayers": [
+        {
+          "displayName": "Laurienté",
+          "kind": "before",
+          "name": "Armand Laurienté",
+          "position": "LW",
+          "rating": 86,
+          "stats": {
+            "def": 80,
+            "dri": 87,
+            "pac": 94,
+            "pas": 80,
+            "phy": 80,
+            "sho": 83
+          }
+        },
+        {
+          "displayName": "Laurienté",
+          "kind": "after",
+          "name": "Armand Laurienté",
+          "position": "LW",
+          "rating": 87,
+          "stats": {
+            "def": 80,
+            "dri": 87,
+            "pac": 94,
+            "pas": 80,
+            "phy": 82,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 713,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "the-crab-walk",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1",
+            "87"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+3",
+            "88"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "87",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+3",
+            "85"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "87",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "1"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/332/the-crab-walk",
+      "releaseDate": "2026-01-26",
+      "releaseDateTimeUtc": "2026-01-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1464,
+        "providerUrl": "https://futmind.com/evolutions/1464/the-crab-walk",
+        "originalCreatedAt": "2026-01-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 297
+    }
+  ]
+}

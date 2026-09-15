@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-17",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Turn an eligible CB into a CDM",
+      "id": 300,
+      "name": "CB to CDM",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=300",
+      "previewPlayers": [],
+      "rank": 742,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-to-cdm",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/300/cb-to-cdm",
+      "releaseDate": "2026-01-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 296,
+          "releaseDate": "2026-01-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 303,
+          "releaseDate": "2026-01-17"
+        }
+      },
+      "chronologicalRank": 268
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Turn an eligible LM or RM into a CM",
+      "id": 301,
+      "name": "LM/RM to CM",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=301",
+      "previewPlayers": [],
+      "rank": 741,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM or RM"
+          ],
+          "value": "LM or RM"
+        }
+      ],
+      "slug": "lmrm-to-cm",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/301/lmrm-to-cm",
+      "releaseDate": "2026-01-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 296,
+          "releaseDate": "2026-01-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 303,
+          "releaseDate": "2026-01-17"
+        }
+      },
+      "chronologicalRank": 269
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Turn an eligible ST into a CAM",
+      "id": 302,
+      "name": "ST to CAM",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=302",
+      "previewPlayers": [],
+      "rank": 740,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-to-cam",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/302/st-to-cam",
+      "releaseDate": "2026-01-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 296,
+          "releaseDate": "2026-01-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 303,
+          "releaseDate": "2026-01-17"
+        }
+      },
+      "chronologicalRank": 270
+    },
+    {
+      "availability": {
+        "400": "50,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Dominate the game with Mbappé’s unstoppable power. This EVO channels the explosive pace and clinical finishing of the French prodigy, born to shine on football’s biggest stage.",
+      "id": 303,
+      "name": "Strike like Kylian",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=303",
+      "previewPlayers": [
+        {
+          "displayName": "de Jong",
+          "kind": "before",
+          "name": "Luuk de Jong",
+          "position": "ST",
+          "rating": 78,
+          "stats": {
+            "def": 55,
+            "dri": 72,
+            "pac": 40,
+            "pas": 72,
+            "phy": 79,
+            "sho": 78
+          }
+        },
+        {
+          "displayName": "de Jong",
+          "kind": "after",
+          "name": "Luuk de Jong",
+          "position": "ST",
+          "rating": 88,
+          "stats": {
+            "def": 55,
+            "dri": 85,
+            "pac": 65,
+            "pas": 77,
+            "phy": 82,
+            "sho": 87
+          }
+        }
+      ],
+      "rank": 739,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 91"
+          ],
+          "value": "Max 91"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "strike-like-kylian",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "91",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "86",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "83",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "83"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "80",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "83",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+15",
+            "83"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "7"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "1"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/303/strike-like-kylian",
+      "releaseDate": "2026-01-17",
+      "releaseDateTimeUtc": "2026-01-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1422,
+        "providerUrl": "https://futmind.com/evolutions/1422/strike-like-kylian",
+        "originalCreatedAt": "2026-01-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 271
+    }
+  ]
+}

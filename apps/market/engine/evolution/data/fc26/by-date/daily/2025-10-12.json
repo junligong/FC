@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-12",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Prepare your Silver player with upgraded skills and technique. Receive +2 Skill Moves and the technical Base Playstyle",
+      "id": 42,
+      "name": "Silver Warm-Up",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=42",
+      "previewPlayers": [
+        {
+          "displayName": "Okereke",
+          "kind": "before",
+          "name": "David Okereke",
+          "position": "ST",
+          "rating": 74,
+          "stats": {
+            "def": 26,
+            "dri": 75,
+            "pac": 83,
+            "pas": 58,
+            "phy": 65,
+            "sho": 71
+          }
+        },
+        {
+          "displayName": "Okereke",
+          "kind": "after",
+          "name": "David Okereke",
+          "position": "ST",
+          "rating": 74,
+          "stats": {
+            "def": 26,
+            "dri": 75,
+            "pac": 83,
+            "pas": 58,
+            "phy": 65,
+            "sho": 71
+          }
+        }
+      ],
+      "rank": 969,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 74"
+          ],
+          "value": "Max 74"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "silver-warm-up",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "4",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "4"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/42/silver-warm-up",
+      "releaseDate": "2025-10-12",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 41,
+          "releaseDate": "2025-10-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 43,
+          "releaseDate": "2025-10-12"
+        }
+      },
+      "chronologicalRank": 38
+    },
+    {
+      "availability": {
+        "200": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Ignite your midfield with multiple upgrades, transforming ordinary players into game-changing creators who shine brightest in the center of the pitch.",
+      "id": 43,
+      "name": "Midfield Spark",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=43",
+      "previewPlayers": [
+        {
+          "displayName": "Hagel",
+          "kind": "before",
+          "name": "Chantal Hagel",
+          "position": "CM",
+          "rating": 79,
+          "stats": {
+            "def": 72,
+            "dri": 79,
+            "pac": 49,
+            "pas": 76,
+            "phy": 80,
+            "sho": 75
+          }
+        },
+        {
+          "displayName": "Hagel",
+          "kind": "after",
+          "name": "Chantal Hagel",
+          "position": "CM",
+          "rating": 84,
+          "stats": {
+            "def": 72,
+            "dri": 83,
+            "pac": 56,
+            "pas": 85,
+            "phy": 80,
+            "sho": 75
+          }
+        }
+      ],
+      "rank": 968,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 80"
+          ],
+          "value": "Max 80"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM or CDM or CM"
+          ],
+          "value": "CAM or CDM or CM"
+        }
+      ],
+      "slug": "midfield-spark",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+6",
+            "84"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "70",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+8",
+            "70"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "83",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+7",
+            "83"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "82",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+5",
+            "82"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "82",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+5",
+            "82"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "84",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+4",
+            "84"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "84",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "84",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+7",
+            "83"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "86",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "3",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "3"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "3",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+1",
+            "3"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "5"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "5"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/43/midfield-spark",
+      "releaseDate": "2025-10-12",
+      "releaseDateTimeUtc": "2025-10-12T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1061,
+        "providerUrl": "https://futmind.com/evolutions/1061/midfield-spark",
+        "originalCreatedAt": "2025-10-12T18:00:00.000000Z"
+      },
+      "chronologicalRank": 39
+    }
+  ]
+}

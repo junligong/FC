@@ -1,10 +1,33 @@
-# 综合任务执行入口（2026-09-11）
+# 综合任务执行入口（2026-09-15 · WorkBuddy 发布版）
 
-每天 Asia/Shanghai 03:00 启动。固定日期 D。此任务不采集新闻或足球，不启动独立任务，不写子报告，不修改布局，不直接写状态或 index.html，不探索发布接口。
+每天 Asia/Shanghai 03:00 启动。固定日期 D。此任务不采集新闻或足球，不启动独立任务，不写子报告，不修改子报告布局，不探索发布接口。
 
-只运行 `node /Users/wuyanzu/Desktop/FC/automation/coordinate.mjs D`。工具返回后台进程时以每次最多 60 秒的等待轮询该进程，不新建同一命令。协调脚本最多等待 20 分钟，仅读取本日各单项 run-state 的完成快照，拒绝用旧状态或运行中报告作成功产物，在隔离目录完成合并并原子更新首页。脚本对合并限制 60 秒，发布器限制 120 秒，验证限制 30 秒。
+## 一、本地合并
 
-脚本结束后立即最终回复协调状态，禁止追加采集、修改 HTML、探索认证或再次发布。publish=blocked/failed 不等于整个生成失败，明确说明本地已生成但线上未更新。当前没有已验证的 automation/publisher，脚本将立即记录发布阻塞并正常结束；不要临时实现或猜测发布通道。
+只运行 `node /Users/wuyanzu/Desktop/FC/automation/coordinate.mjs D`。工具返回后台进程时以每次最多 60 秒的等待轮询该进程，不新建同一命令。协调脚本最多等待 20 分钟，仅读取本日各单项 run-state 的完成快照，拒绝用旧状态或运行中报告作成功产物，在隔离目录完成合并并原子更新首页与历史日报归档，合并限制 60 秒。
 
-协调器等待足球日报、FC27资讯和FC27市场扫描三个单项快照；缺失板块按真实状态显示，不使用旧数据冒充。四个日常任务均为 03:00，禁止新增重复调度。历史去重数据不得修改。每日输出目录为 `reports/daily/D/`，固定入口仍为 https://www.dumate.cn/artifacts/7vbc68mkblkg 。
-浏览器强制规则：每次先读取根 AGENTS.md 对应段落。本任务只做本地合并，不得启动IAB、Chrome或其他浏览器；发布核验仅由既有验证脚本执行。
+合并成功后，本地应存在：
+- `daily-merged/index.html`（固定入口，只含当日内容 + 历史日报链接列表）
+- `daily-merged/archive/D.html`（当日历史日报独立文件，并保证全部历史日期版式统一）
+- `daily-merged/assets/yanzu-banner.jpg`（共享海报资源）
+
+首页与每日日报共用 `apps/portal/dashboard.mjs` 同一模板，版式一致。右栏固定保留「进化专栏」：若存在 `reports/daily/D/evolution.html` 则自动收录，否则显示如实空状态，不得用其他板块内容顶替。
+
+协调器等待足球日报、FC27资讯和FC27市场扫描三个单项快照；缺失板块按真实状态显示，不使用旧数据冒充。合并前确认足球三榜校验通过（`node automation/verify-football-boards.mjs D`），市场报告已由渲染器输出双维度版式。四个日常任务均为 03:00，禁止新增重复调度。历史去重数据不得修改。每日输出目录为 `reports/daily/D/`。
+
+## 二、发布到 WorkBuddy（自动发布）
+
+合并成功后，使用 WorkBuddy 站点发布能力发布本地目录：
+
+- 发布目录：`/Users/wuyanzu/Desktop/FC/daily-merged`
+- 入口页：`index.html`
+- 发布清单：`index.html` + `archive/*.html` + `assets/*`（多文件静态站点，相对路径必须可用）
+- 目标是**更新已发布的同一个应用**（应用名：FC27每日情报台），保持分享链接不变；不要创建新的重复入口。
+
+发布后用 `node /Users/wuyanzu/Desktop/FC/automation/verify-publication.mjs D` 复核线上与本地逐字节一致、当日历史日报链接存在、HTML 完整。线上缓存未刷新时做实际刷新验证，不能只凭发布工具返回成功判定完成。若发布能力不可用，如实记录“本地已生成、线上未更新”，保留原线上版本，不伪造成功、不下线旧页、不更换入口。
+
+收尾：将发布日期、线上链接、验证结果及失败原因保存到 `automation/publish-status-D.json`（不含认证信息），并向用户提供固定入口与本次发布状态。
+
+旧 DuMate 单文件 artifact 通道已废弃，不要再探索或调用。
+
+浏览器强制规则：每次先读取根 AGENTS.md 对应段落。本任务只做本地合并与站点发布，不得启动 IAB、Chrome 或其他浏览器；发布核验仅由既有验证脚本与站点发布能力执行。

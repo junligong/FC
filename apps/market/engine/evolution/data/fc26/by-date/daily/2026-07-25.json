@@ -1,0 +1,935 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-07-25",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Thread the needle with precision by equipping your player with a collection of passing PlayStyles.",
+      "id": 1157,
+      "name": "Thread the needle",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1157",
+      "previewPlayers": [],
+      "rank": 56,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        }
+      ],
+      "slug": "thread-the-needle",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "4"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "4"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "4"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Long Ball Pass",
+            "4"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1157/thread-the-needle",
+      "releaseDate": "2026-07-25",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1154,
+          "releaseDate": "2026-07-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 1160,
+          "releaseDate": "2026-07-25"
+        }
+      },
+      "chronologicalRank": 1094
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Turn every deadball into a goal threat and deliver unbelievable quality that will have your fans singing \"Set Piece again Ole, Ole!\".",
+      "id": 1158,
+      "name": "Set Piece FC",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1158",
+      "previewPlayers": [],
+      "rank": 55,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "set-piece-fc",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "95",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+3",
+            "95"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "97",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "97"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+80"
+          ],
+          "value": "+80"
+        },
+        {
+          "cap": null,
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+85"
+          ],
+          "value": "+85"
+        },
+        {
+          "cap": null,
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+80"
+          ],
+          "value": "+80"
+        },
+        {
+          "cap": null,
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+85"
+          ],
+          "value": "+85"
+        },
+        {
+          "cap": null,
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+80"
+          ],
+          "value": "+80"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "4"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "4"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1158/set-piece-fc",
+      "releaseDate": "2026-07-25",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1154,
+          "releaseDate": "2026-07-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 1160,
+          "releaseDate": "2026-07-25"
+        }
+      },
+      "chronologicalRank": 1095
+    },
+    {
+      "availability": {
+        "100_futties_tokens": true,
+        "expires": "1 WEEKS",
+        "repeatable": true,
+        "unlock": "1 WEEKS"
+      },
+      "categories": [
+        "100 FUTTIES TOKENS"
+      ],
+      "description": "Dominate the midfield with relentless ball-winning, sharp positioning, and the strength to break up every attack.",
+      "id": 1159,
+      "name": "Elite Midfielder",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1159",
+      "previewPlayers": [],
+      "rank": 70,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "elite-midfielder",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "98",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "98"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "98",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "98"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "98",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "98"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "7"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "7"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "4"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "4"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "4"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "4"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1159/elite-midfielder",
+      "releaseDate": "2026-07-25",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1154,
+          "releaseDate": "2026-07-24"
+        },
+        "nextAnchor": {
+          "evolutionId": 1160,
+          "releaseDate": "2026-07-25"
+        }
+      },
+      "chronologicalRank": 1096
+    },
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Not faster than the cars, just faster than everyone else. Evolve your player and develop the explosive pace that makes them impossible to catch.",
+      "id": 1160,
+      "name": "Speed Merchant",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1160",
+      "previewPlayers": [
+        {
+          "displayName": "Mainoo",
+          "kind": "before",
+          "name": "Kobbie Mainoo",
+          "position": "CM",
+          "rating": 90,
+          "stats": {
+            "def": 83,
+            "dri": 91,
+            "pac": 86,
+            "pas": 90,
+            "phy": 86,
+            "sho": 85
+          }
+        },
+        {
+          "displayName": "Mainoo",
+          "kind": "after",
+          "name": "Kobbie Mainoo",
+          "position": "CM",
+          "rating": 97,
+          "stats": {
+            "def": 83,
+            "dri": 91,
+            "pac": 97,
+            "pas": 90,
+            "phy": 86,
+            "sho": 94
+          }
+        }
+      ],
+      "rank": 54,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB, GK"
+          ],
+          "value": "CB, GK"
+        }
+      ],
+      "slug": "speed-merchant",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "97"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "97",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "7"
+          ],
+          "value": "Gamechanger"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "7"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "7"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "4"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "4"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "4"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1160/speed-merchant",
+      "releaseDate": "2026-07-25",
+      "releaseDateTimeUtc": "2026-07-25T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2510,
+        "providerUrl": "https://futmind.com/evolutions/2510/speed-merchant",
+        "originalCreatedAt": "2026-07-25T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1097
+    }
+  ]
+}

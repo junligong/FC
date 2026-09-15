@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-16",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Low Driven+ to any player",
+      "id": 848,
+      "name": "Low Driven+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=848",
+      "previewPlayers": [],
+      "rank": 238,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "low-driven",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "3"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/848/low-driven",
+      "releaseDate": "2026-05-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 846,
+          "releaseDate": "2026-05-15"
+        },
+        "nextAnchor": {
+          "evolutionId": 849,
+          "releaseDate": "2026-05-16"
+        }
+      },
+      "chronologicalRank": 787
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Give a player 5 Star Skill Moves and 5 Star Weak Foot to turn them into a Five Star Phenom!",
+      "id": 849,
+      "name": "Five Star Phenom",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=849",
+      "previewPlayers": [
+        {
+          "displayName": "Bahoya",
+          "kind": "before",
+          "name": "Jean-Mattéo Bahoya",
+          "position": "LM",
+          "rating": 89,
+          "stats": {
+            "def": 63,
+            "dri": 89,
+            "pac": 98,
+            "pas": 86,
+            "phy": 75,
+            "sho": 84
+          }
+        },
+        {
+          "displayName": "Bahoya",
+          "kind": "after",
+          "name": "Jean-Mattéo Bahoya",
+          "position": "LM",
+          "rating": 89,
+          "stats": {
+            "def": 63,
+            "dri": 89,
+            "pac": 98,
+            "pas": 86,
+            "phy": 75,
+            "sho": 84
+          }
+        }
+      ],
+      "rank": 237,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "five-star-phenom",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/849/five-star-phenom",
+      "releaseDate": "2026-05-16",
+      "releaseDateTimeUtc": "2026-05-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2048,
+        "providerUrl": "https://futmind.com/evolutions/2048/five-star-phenom",
+        "originalCreatedAt": "2026-05-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 788
+    }
+  ]
+}

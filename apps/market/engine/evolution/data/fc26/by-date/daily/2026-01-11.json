@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-11",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform the look of your favourite Icon with a Time Warp Icon design!",
+      "id": 275,
+      "name": "Time Warp Icon",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=275",
+      "previewPlayers": [],
+      "rank": 759,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "League",
+          "raw": [
+            "League",
+            "Icons"
+          ],
+          "value": "Icons"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "time-warp-icon",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/275/time-warp-icon",
+      "releaseDate": "2026-01-11",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 274,
+          "releaseDate": "2026-01-10"
+        },
+        "nextAnchor": {
+          "evolutionId": 276,
+          "releaseDate": "2026-01-12"
+        }
+      },
+      "chronologicalRank": 250
+    }
+  ]
+}

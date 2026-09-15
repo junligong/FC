@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "fc-27-pre-order",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "fc_27_pre_order": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "FC 27 PRE ORDER"
+      ],
+      "description": "Use this Evolution to give ANY PLAYER a 99 Dribbling Boost",
+      "id": 1162,
+      "name": "99 Dribbling",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1162",
+      "previewPlayers": [
+        {
+          "displayName": "Ronaldinho",
+          "kind": "before",
+          "name": "Ronaldo de Assis Moreira",
+          "position": "LW",
+          "rating": 94,
+          "stats": {
+            "def": 40,
+            "dri": 96,
+            "pac": 92,
+            "pas": 91,
+            "phy": 81,
+            "sho": 90
+          }
+        },
+        {
+          "displayName": "Ronaldinho",
+          "kind": "after",
+          "name": "Ronaldo de Assis Moreira",
+          "position": "LW",
+          "rating": 94,
+          "stats": {
+            "def": 40,
+            "dri": 99,
+            "pac": 92,
+            "pas": 91,
+            "phy": 81,
+            "sho": 90
+          }
+        }
+      ],
+      "rank": 69,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "99-dribbling",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+98"
+          ],
+          "value": "+98"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1162/99-dribbling",
+      "releaseDate": "2026-07-26",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1161,
+          "releaseDate": "2026-07-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1177,
+          "releaseDate": "2026-07-27"
+        }
+      },
+      "chronologicalRank": 1099
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "fc_27_pre_order": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "FC 27 PRE ORDER"
+      ],
+      "description": "Use this Evolution to give ANY PLAYER a 99 Physical boost",
+      "id": 1163,
+      "name": "99 Physical",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1163",
+      "previewPlayers": [],
+      "rank": 68,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "99-physical",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+98"
+          ],
+          "value": "+98"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1163/99-physical",
+      "releaseDate": "2026-07-26",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1161,
+          "releaseDate": "2026-07-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1177,
+          "releaseDate": "2026-07-27"
+        }
+      },
+      "chronologicalRank": 1100
+    }
+  ]
+}

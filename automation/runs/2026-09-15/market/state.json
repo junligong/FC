@@ -1,34 +1,47 @@
 {
   "module": "market",
   "date": "2026-09-15",
-  "runId": "0b35e6c1-1734-4250-b836-036729375b01",
+  "runId": "9a6471d5-690a-43f4-9c06-a6a53d1f329c",
   "status": "partial",
-  "startedAt": "2026-09-15T02:55:43.900Z",
-  "deadlineAt": "2026-09-15T03:10:43.900Z",
+  "startedAt": "2026-09-15T08:03:43.132Z",
+  "deadlineAt": "2026-09-15T08:18:43.132Z",
   "reportPath": "reports/daily/2026-09-15/market.html",
-  "completedAt": "2026-09-15T03:02:25.465Z",
+  "previousAttempt": "automation/runs/2026-09-15/market/attempts/0b35e6c1-1734-4250-b836-036729375b01",
+  "completedAt": "2026-09-15T08:11:21.092Z",
   "evidence": {
     "date": "2026-09-15",
     "platform": "cross",
-    "generatedAt": "2026-09-15 11:02:22",
+    "generatedAt": "2026-09-15 16:10",
     "sources": [
       {
         "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-15 11:00(Asia/Shanghai, CEST 页面)",
+        "openedAt": "2026-09-15T08:08:30Z",
         "dataAsOf": "2026-09-15 (实时榜单)",
-        "note": "页面通过浏览器自动化打开，读取 FC27 Players 表 30 行金卡榜单（url|名称|OVR|位置）；价格列未加载"
+        "note": "实时榜单：浏览器自动化打开，读取 FC27 Players 表 30 行金卡榜单（url|名称|OVR|位置），卡ID去重；价格列全场0，未加载"
+      },
+      {
+        "url": "https://www.futbin.com/27/player/1/erling-haaland",
+        "openedAt": "2026-09-15T08:05:10Z",
+        "dataAsOf": "2026-09-15 (实时)",
+        "note": "单卡详情页核验价格：单卡详情页核验价格：PRICE UPDATED: NEVER，PRICE RANGE 0-0；Console 与 PC 平台切换后仍 0-0，FC27 市场价未开放"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-15T08:08:50Z",
+        "dataAsOf": "2026-09-15 (实时)",
+        "note": "Evolutions页核验：Evolutions 页核验：No evolutions found（All/Active/Expired 均无），FC27 当前无任何进化"
       }
     ],
     "missingItems": [
       "本周活动卡与周黑(Promo/TOTW)未采集",
-      "价格分层全部层级无有效价格数据，日/周变化不可计算",
-      "热门进化卡未采集，限制/到期/费用未核验",
+      "价格分层：FC27 市场价未开放（详情页 PRICE UPDATED: NEVER / 0-0，Console+PC 双平台核验），各档如实空状态，日/周变化不可计算",
+      "热门进化卡：Evolutions 页 No evolutions found，无进化可核验，如实空状态",
       "传奇与英雄卡未独立核验",
-      "PC 平台数据未单独采集",
+      "PC 平台数据：价格已验证与 Cross 一致为 0，未单独成表",
       "无今日价格基线，不做趋势对比"
     ]
   },
-  "sha256": "383f5343c6991730e1dfc850d2d29532bbfa45a3ce94215dcca445682262fee1",
-  "bytes": 11862,
+  "sha256": "2b6b5059a3c9ee0a09e1a612c16ab121d416ba221c22841b7bc5c4db8b59e63b",
+  "bytes": 12278,
   "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/market/report.html"
 }

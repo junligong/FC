@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "2000-fof-tokens",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "2000_fof_tokens": true,
+        "expires": "1 MONTHS",
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "2000 FOF TOKENS"
+      ],
+      "description": "Find in the new Token Store - 2,000 Tokens",
+      "id": 974,
+      "name": "The Main Event",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=974",
+      "previewPlayers": [
+        {
+          "displayName": "Cristiano Ronaldo",
+          "kind": "before",
+          "name": "Cristiano Ronaldo dos Santos Aveiro",
+          "position": "ST",
+          "rating": 92,
+          "stats": {
+            "def": 42,
+            "dri": 90,
+            "pac": 91,
+            "pas": 84,
+            "phy": 85,
+            "sho": 94
+          }
+        },
+        {
+          "displayName": "Cristiano Ronaldo",
+          "kind": "after",
+          "name": "Cristiano Ronaldo dos Santos Aveiro",
+          "position": "ST",
+          "rating": 97,
+          "stats": {
+            "def": 42,
+            "dri": 93,
+            "pac": 96,
+            "pas": 92,
+            "phy": 89,
+            "sho": 97
+          }
+        }
+      ],
+      "rank": 122,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "the-main-event",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+50",
+            "97"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "96",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+50",
+            "96"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "96",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+50",
+            "96"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "93",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+50",
+            "93"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+50",
+            "95"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "93",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+50",
+            "93"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "97",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+45",
+            "97"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "92",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+50",
+            "92"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "96",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+45",
+            "96"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "97",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+45",
+            "97"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "97",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+45",
+            "97"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+50",
+            "95"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "94",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+50",
+            "94"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "96",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+45",
+            "96"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "96",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+50",
+            "96"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "93",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+50",
+            "93"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "93",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+50",
+            "93"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "94",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+50",
+            "94"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "97",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+45",
+            "97"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+50",
+            "93"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "8"
+          ],
+          "value": "Gamechanger"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "4"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "4"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/974/the-main-event",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 968,
+          "releaseDate": "2026-06-04"
+        },
+        "nextAnchor": {
+          "evolutionId": 991,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 913
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-09",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Pinged Pass to any qualified player.",
+      "id": 456,
+      "name": "Pinged Pass",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=456",
+      "previewPlayers": [],
+      "rank": 612,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "pinged-pass",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/456/pinged-pass",
+      "releaseDate": "2026-02-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 455,
+          "releaseDate": "2026-02-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 457,
+          "releaseDate": "2026-02-09"
+        }
+      },
+      "chronologicalRank": 398
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "10",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Make the link between areas on the pitch by improving Attacking Position and Curve attributes.",
+      "id": 457,
+      "name": "Make the Link",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=457",
+      "previewPlayers": [
+        {
+          "displayName": "Zambo Anguissa",
+          "kind": "before",
+          "name": "André-Franck Zambo Anguissa",
+          "position": "CM",
+          "rating": 86,
+          "stats": {
+            "def": 83,
+            "dri": 83,
+            "pac": 80,
+            "pas": 81,
+            "phy": 89,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Zambo Anguissa",
+          "kind": "after",
+          "name": "André-Franck Zambo Anguissa",
+          "position": "CM",
+          "rating": 86,
+          "stats": {
+            "def": 83,
+            "dri": 83,
+            "pac": 80,
+            "pas": 81,
+            "phy": 89,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 611,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "make-the-link",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "89",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/457/make-the-link",
+      "releaseDate": "2026-02-09",
+      "releaseDateTimeUtc": "2026-02-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1578,
+        "providerUrl": "https://futmind.com/evolutions/1578/make-the-link",
+        "originalCreatedAt": "2026-02-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 399
+    }
+  ]
+}

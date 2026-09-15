@@ -23,17 +23,24 @@ try{
  fs.mkdirSync(path.join(stage,'daily-merged'),{recursive:true});fs.mkdirSync(path.join(stage,'reports/daily'),{recursive:true});
  const historyRoot=path.join(root,'reports/daily');
  if(fs.existsSync(historyRoot))for(const entry of fs.readdirSync(historyRoot)){if(/^\d{4}-\d{2}-\d{2}$/.test(entry)&&entry!==date)fs.cpSync(path.join(historyRoot,entry),path.join(stage,'reports/daily',entry),{recursive:true});}
+ const todayAssets=path.join(historyRoot,date,'assets');if(fs.existsSync(todayAssets))fs.cpSync(todayAssets,path.join(stage,'reports/daily',date,'assets'),{recursive:true});
+ const portalAssets=path.join(root,'apps/portal/assets');if(fs.existsSync(portalAssets))fs.cpSync(portalAssets,path.join(stage,'apps/portal/assets'),{recursive:true});
  for(const module of modules){const state=states[module];if(state?.status==='success'&&(state.evidence?.missingItems?.length||state.evidence?.missing?.length))state.status='partial';if(!state||!['success','partial'].includes(state.status))continue;const buf=fs.readFileSync(state.snapshotPath);if(digest(buf)!==state.sha256)throw Error(module+' snapshot changed');const target=path.join(stage,outputs[module](date));fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,buf);valid++;const data=path.join(dir,module,'tweets.json');if(module==='news'&&fs.existsSync(data)){const targetData=path.join(stage,`apps/news/data/tweets-${date}.json`);fs.mkdirSync(path.dirname(targetData),{recursive:true});fs.copyFileSync(data,targetData);}}
  if(!valid){status.merge='no_current_snapshot';status.publish='skipped';}
  else{
  const merge=spawnSync(process.execPath,[path.join(codeRoot,'apps/portal/merge_daily_report.mjs'),date],{env:{...process.env,FC_PROJECT_ROOT:stage},encoding:'utf8',timeout:60000});if(merge.status!==0)throw Error('merge failed: '+merge.stderr);
  atomicWrite(path.join(root,`reports/daily/${date}/summary.html`),fs.readFileSync(path.join(stage,`reports/daily/${date}/summary.html`),'utf8'));
  atomicWrite(path.join(root,'daily-merged/index.html'),fs.readFileSync(path.join(stage,'daily-merged/index.html'),'utf8'));
+ // 同步历史日报独立归档目录（stage 里合并脚本已生成/补齐 archive/*.html）
+ const stageArchive=path.join(stage,'daily-merged','archive');if(fs.existsSync(stageArchive)){fs.mkdirSync(path.join(root,'daily-merged','archive'),{recursive:true});for(const f of fs.readdirSync(stageArchive)){if(f.endsWith('.html'))fs.copyFileSync(path.join(stageArchive,f),path.join(root,'daily-merged','archive',f));}}
+ // 同步共享静态资源（海报等），保证线上多文件站点相对路径可用
+ const stageAssets=path.join(stage,'daily-merged','assets');if(fs.existsSync(stageAssets)){fs.mkdirSync(path.join(root,'daily-merged','assets'),{recursive:true});for(const f of fs.readdirSync(stageAssets))fs.copyFileSync(path.join(stageAssets,f),path.join(root,'daily-merged','assets',f));}
  status.merge='success';status.indexSha256=digest(fs.readFileSync(path.join(root,'daily-merged/index.html')));
- // No guessed APIs, credentials, or unbounded agent exploration. A configured publisher must be an executable file.
- const publisher=path.join(root,'automation/publisher');
- if(!fs.existsSync(publisher)){status.publish='blocked';status.reason='未安装经过验证的无人值守发布器；保留原线上版本。';}
- else{const pub=spawnSync(publisher,[date,path.join(root,'daily-merged/index.html')],{timeout:120000,stdio:'ignore'});if(pub.status!==0){status.publish='failed';status.reason=pub.error?.code||'publisher_exit_'+pub.status;}else{const verify=spawnSync(process.execPath,[path.join(codeRoot,'automation/verify-publication.mjs'),date],{timeout:30000,encoding:'utf8'});status.publish=verify.status===0?'verified':'verification_failed';status.unattendedPublishingVerified=verify.status===0;}}
+ // 发布交由 WorkBuddy 站点发布能力完成：agent 在同一会话内对 daily-merged/ 调用 sites 发布。
+ // 不再使用 DuMate 单文件 artifact 通道，也不再于此处猜测发布接口。
+ status.publish='delegated';
+ status.publishTarget={kind:'workbuddy-sites',directory:path.join(root,'daily-merged'),entry:'index.html'};
+ status.reason='本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。';
  }
 }catch(e){status.error=e.message;status.merge=status.merge||'failed';}finally{status.completedAt=new Date().toISOString();atomicWrite(path.join(dir,'coordinator-state.json'),JSON.stringify(status,null,2));fs.rmSync(stage,{recursive:true,force:true});}
 console.log(JSON.stringify(status,null,2));

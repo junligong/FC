@@ -1,0 +1,1144 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-08-08",
+  "count": 7,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical+ to any qualified FUTTIES player.",
+      "id": 1210,
+      "name": "FUTTIES 5th Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1210",
+      "previewPlayers": [],
+      "rank": 59,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-technical",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "5"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1210/futties-5th-technical",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1147
+    },
+    {
+      "availability": {
+        "200_futties_tokens": true,
+        "expires": "3 WEEKS",
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "200 FUTTIES TOKENS"
+      ],
+      "description": "Y'alright Neymar, sunny innit?",
+      "id": 1211,
+      "name": "Sunny Innit",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1211",
+      "previewPlayers": [
+        {
+          "displayName": "Bale",
+          "kind": "before",
+          "name": "Gareth Bale",
+          "position": "RW",
+          "rating": 94,
+          "stats": {
+            "def": 80,
+            "dri": 95,
+            "pac": 97,
+            "pas": 90,
+            "phy": 85,
+            "sho": 95
+          }
+        },
+        {
+          "displayName": "Bale",
+          "kind": "after",
+          "name": "Gareth Bale",
+          "position": "RW",
+          "rating": 98,
+          "stats": {
+            "def": 80,
+            "dri": 98,
+            "pac": 97,
+            "pas": 95,
+            "phy": 85,
+            "sho": 97
+          }
+        }
+      ],
+      "rank": 58,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW or RW"
+          ],
+          "value": "LW or RW"
+        }
+      ],
+      "slug": "sunny-innit",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+25",
+            "98"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+25",
+            "97"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+25",
+            "97"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "98",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+25",
+            "98"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "98",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "98"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "98",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+25",
+            "98"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+25",
+            "97"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+25",
+            "94"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "98",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+25",
+            "98"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+25",
+            "94"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "97"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+25",
+            "94"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "99",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+25",
+            "99"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "5"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "5"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "5"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "4"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "4"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "4"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "4"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1211/sunny-innit",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1148
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Intercept+ to any qualified FUTTIES player.",
+      "id": 1212,
+      "name": "FUTTIES 5th Intercept+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1212",
+      "previewPlayers": [],
+      "rank": 57,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-intercept",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "5"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1212/futties-5th-intercept",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1149
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Finesse Shot+ to any qualified FUTTIES player.",
+      "id": 1213,
+      "name": "FUTTIES 5th Finesse Shot+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1213",
+      "previewPlayers": [],
+      "rank": 56,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-finesse-shot",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "5"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1213/futties-5th-finesse-shot",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1150
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Bruiser+ to any qualified FUTTIES player.",
+      "id": 1214,
+      "name": "FUTTIES 5th Bruiser+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1214",
+      "previewPlayers": [],
+      "rank": 55,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-bruiser",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "5"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1214/futties-5th-bruiser",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1151
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Low Driven Shot+ to any qualified FUTTIES player.",
+      "id": 1215,
+      "name": "FUTTIES 5th Low Driven Shot+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1215",
+      "previewPlayers": [],
+      "rank": 54,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-low-driven-shot",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "5"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1215/futties-5th-low-driven-shot",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1204,
+          "releaseDate": "2026-08-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 1216,
+          "releaseDate": "2026-08-08"
+        }
+      },
+      "chronologicalRank": 1152
+    },
+    {
+      "availability": {
+        "225": "175,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Secure the sidelines with lockdown defense and physical strength. Outlast opponents and shield your team to victory.",
+      "id": 1216,
+      "name": "Fullback Force",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1216",
+      "previewPlayers": [
+        {
+          "displayName": "João Cancelo",
+          "kind": "before",
+          "name": "João Pedro Cavaco Cancelo",
+          "nameZh": "若昂·坎塞洛",
+          "position": "RB",
+          "rating": 95,
+          "stats": {
+            "def": 94,
+            "dri": 96,
+            "pac": 95,
+            "pas": 95,
+            "phy": 92,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "João Cancelo",
+          "kind": "after",
+          "name": "João Pedro Cavaco Cancelo",
+          "nameZh": "若昂·坎塞洛",
+          "position": "RB",
+          "rating": 97,
+          "stats": {
+            "def": 95,
+            "dri": 96,
+            "pac": 96,
+            "pas": 96,
+            "phy": 96,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 14,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "fullback-force",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "90",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+50",
+            "95"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "94",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+50",
+            "96"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "96",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+35",
+            "96"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "96",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "98",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+35",
+            "98"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+35",
+            "92"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "97",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "90",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "7"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "7"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "4"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "4"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "4"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1216/fullback-force",
+      "releaseDate": "2026-08-08",
+      "releaseDateTimeUtc": "2026-08-08T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2556,
+        "providerUrl": "https://futmind.com/evolutions/2556/fullback-force",
+        "originalCreatedAt": "2026-08-08T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1153
+    }
+  ]
+}

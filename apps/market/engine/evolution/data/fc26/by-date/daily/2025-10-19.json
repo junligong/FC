@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-19",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "200": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Transform a Goalkeeper into a reliable last line of defense, allowing their confident presence to radiate throughout your squad.",
+      "id": 52,
+      "name": "Keeper of the Goal",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=52",
+      "previewPlayers": [
+        {
+          "displayName": "Johannes",
+          "kind": "before",
+          "name": "Stina Johannes",
+          "position": "GK",
+          "rating": 80,
+          "stats": {
+            "def": 52,
+            "dri": 78,
+            "pac": 78,
+            "pas": 77,
+            "phy": 79,
+            "sho": 80
+          }
+        },
+        {
+          "displayName": "Johannes",
+          "kind": "after",
+          "name": "Stina Johannes",
+          "position": "GK",
+          "rating": 84,
+          "stats": {
+            "def": 52,
+            "dri": 85,
+            "pac": 84,
+            "pas": 82,
+            "phy": 84,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 960,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 80"
+          ],
+          "value": "Max 80"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "keeper-of-the-goal",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+8",
+            "84"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "84",
+          "label": "Diving",
+          "raw": [
+            "Diving",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Handling",
+          "raw": [
+            "Handling",
+            "+12",
+            "83"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "82",
+          "label": "Kicking",
+          "raw": [
+            "Kicking",
+            "+8",
+            "82"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "85",
+          "label": "Reflexes",
+          "raw": [
+            "Reflexes",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "84",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+12",
+            "84"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Far Reach",
+            "5"
+          ],
+          "value": "Far Reach"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Footwork",
+            "5"
+          ],
+          "value": "Footwork"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper+"
+          ],
+          "value": "Sweeper Keeper+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/52/keeper-of-the-goal",
+      "releaseDate": "2025-10-19",
+      "releaseDateTimeUtc": "2025-10-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1070,
+        "providerUrl": "https://futmind.com/evolutions/1070/keeper-of-the-goal",
+        "originalCreatedAt": "2025-10-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 48
+    }
+  ]
+}

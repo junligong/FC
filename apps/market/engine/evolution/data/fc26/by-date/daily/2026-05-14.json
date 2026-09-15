@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-14",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Elevate your player’s ball control, composure, and strength — giving them the tools to hold their ground under pressure.",
+      "id": 845,
+      "name": "Keep the Ball",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=845",
+      "previewPlayers": [
+        {
+          "displayName": "Malard",
+          "kind": "before",
+          "name": "Melvine Malard",
+          "position": "LW",
+          "rating": 88,
+          "stats": {
+            "def": 48,
+            "dri": 89,
+            "pac": 94,
+            "pas": 87,
+            "phy": 84,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Malard",
+          "kind": "after",
+          "name": "Melvine Malard",
+          "position": "LW",
+          "rating": 88,
+          "stats": {
+            "def": 48,
+            "dri": 90,
+            "pac": 94,
+            "pas": 87,
+            "phy": 86,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 241,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "keep-the-ball",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/845/keep-the-ball",
+      "releaseDate": "2026-05-14",
+      "releaseDateTimeUtc": "2026-05-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2039,
+        "providerUrl": "https://futmind.com/evolutions/2039/keep-the-ball",
+        "originalCreatedAt": "2026-05-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 784
+    }
+  ]
+}

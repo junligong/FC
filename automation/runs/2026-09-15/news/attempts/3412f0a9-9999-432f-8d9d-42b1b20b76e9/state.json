@@ -1,0 +1,189 @@
+{
+  "module": "news",
+  "date": "2026-09-15",
+  "runId": "3412f0a9-9999-432f-8d9d-42b1b20b76e9",
+  "status": "partial",
+  "startedAt": "2026-09-15T07:28:27.439Z",
+  "deadlineAt": "2026-09-15T07:43:27.439Z",
+  "reportPath": "reports/daily/2026-09-15/news.html",
+  "completedAt": "2026-09-15T07:43:36.496Z",
+  "evidence": {
+    "date": "2026-09-15",
+    "runId": "3412f0a9-9999-432f-8d9d-42b1b20b76e9",
+    "startedAt": "2026-09-15T07:28:27.439Z",
+    "sources": [
+      {
+        "handle": "EASFCDirect",
+        "url": "https://x.com/EASFCDirect",
+        "openedAt": "2026-09-15T07:28:59Z",
+        "dataCutoff": "2026-09-15T07:28:59Z",
+        "result": "collected",
+        "tweetCount": 1
+      },
+      {
+        "handle": "easportsfc",
+        "url": "https://x.com/easportsfc",
+        "openedAt": "2026-09-15T07:29:35Z",
+        "dataCutoff": "2026-09-15T07:29:35Z",
+        "result": "collected"
+      },
+      {
+        "handle": "fifa_romania",
+        "url": "https://x.com/fifa_romania",
+        "openedAt": "2026-09-15T07:30:00Z",
+        "dataCutoff": "2026-09-15T07:30:00Z",
+        "result": "collected"
+      },
+      {
+        "handle": "AsyFutTrader",
+        "url": "https://x.com/AsyFutTrader",
+        "openedAt": "2026-09-15T07:30:24Z",
+        "dataCutoff": "2026-09-15T07:30:24Z",
+        "result": "collected"
+      },
+      {
+        "handle": "FIFA22_INFO",
+        "url": "https://x.com/FIFA22_INFO",
+        "openedAt": "2026-09-15T07:30:49Z",
+        "dataCutoff": "2026-09-15T07:30:49Z",
+        "result": "collected"
+      },
+      {
+        "handle": "FutSheriff",
+        "url": "https://x.com/FutSheriff",
+        "openedAt": "2026-09-15T07:31:13Z",
+        "dataCutoff": "2026-09-15T07:31:13Z",
+        "result": "collected"
+      },
+      {
+        "handle": "FutPoliceLeaks",
+        "url": "https://x.com/FutPoliceLeaks",
+        "openedAt": "2026-09-15T07:31:38Z",
+        "dataCutoff": "2026-09-15T07:31:38Z",
+        "result": "collected"
+      },
+      {
+        "handle": "FUTBIN",
+        "url": "https://x.com/FUTBIN",
+        "openedAt": "2026-09-15T07:32:08Z",
+        "dataCutoff": "2026-09-15T07:32:08Z",
+        "result": "collected"
+      },
+      {
+        "handle": "easysbc",
+        "url": "https://x.com/easysbc",
+        "openedAt": "2026-09-15T07:32:37Z",
+        "dataCutoff": "2026-09-15T07:32:37Z",
+        "result": "collected"
+      },
+      {
+        "handle": "Razzerstrading",
+        "url": "https://x.com/Razzerstrading",
+        "openedAt": "2026-09-15T07:33:03Z",
+        "dataCutoff": "2026-09-15T07:33:03Z",
+        "result": "collected"
+      },
+      {
+        "handle": "EAFCassist",
+        "url": "https://x.com/EAFCassist",
+        "openedAt": "2026-09-15T07:33:30Z",
+        "dataCutoff": "2026-09-15T07:33:30Z",
+        "result": "collected"
+      },
+      {
+        "handle": "Fut_scoreboard",
+        "url": "https://x.com/Fut_scoreboard",
+        "openedAt": "2026-09-15T07:34:00Z",
+        "dataCutoff": "2026-09-15T07:34:00Z",
+        "result": "collected"
+      },
+      {
+        "handle": "DetectiveFUT",
+        "url": "https://x.com/DetectiveFUT",
+        "openedAt": "2026-09-15T07:34:26Z",
+        "dataCutoff": "2026-09-15T07:34:26Z",
+        "result": "collected"
+      },
+      {
+        "handle": "FGZNews",
+        "url": "https://x.com/FGZNews",
+        "openedAt": "2026-09-15T07:34:53Z",
+        "dataCutoff": "2026-09-15T07:34:53Z",
+        "result": "collected"
+      },
+      {
+        "handle": "futagentt",
+        "url": "https://x.com/futagentt",
+        "openedAt": "2026-09-15T07:35:19Z",
+        "dataCutoff": "2026-09-15T07:35:19Z",
+        "result": "collected"
+      },
+      {
+        "handle": "Futdonk",
+        "url": "https://x.com/Futdonk",
+        "openedAt": "2026-09-15T07:35:51Z",
+        "dataCutoff": "2026-09-15T07:35:51Z",
+        "result": "collected"
+      }
+    ],
+    "collection": {
+      "rawTweets": 52,
+      "uniqueTweets": 52,
+      "fc27Related": 50,
+      "nonPrediction": 48,
+      "newAfterDedup": 5,
+      "totalInReport": 112,
+      "imagesCached": "144/144",
+      "accountsCovered": 16
+    },
+    "issues": [
+      {
+        "type": "cache_visible_images_failure",
+        "description": "dumate-browser-cli run-code 因 process.getBuiltinModule 在浏览器上下文中未定义而失败；generate_report.mjs 的 curl 方式成功缓存全部 144 张原图",
+        "impact": "none_for_report",
+        "mitigation": "generate_report.mjs 内置 curl 图片缓存兜底成功"
+      },
+      {
+        "type": "translation_api_failure",
+        "description": "千帆翻译 API 代理返回 502 错误，5条新推文翻译失败",
+        "impact": "resolved",
+        "mitigation": "由执行 AI 手动完成全部7条（含2条纯表情）推文的中文翻译"
+      },
+      {
+        "type": "keyword_filter_gap",
+        "description": "EASFCDirect 官方推文因文本中 FC\\u2122 27 的 ™ 符号打断 fc\\s*27 正则匹配被误过滤",
+        "impact": "resolved",
+        "mitigation": "手动补入报告并翻译"
+      },
+      {
+        "type": "seen_tweets_corruption",
+        "description": "seen_tweets.json 在手动翻译更新时因 Python 写入含 surrogate 字符的推文预览导致截断损坏，无 .bak 备份可恢复，419条历史去重记录丢失",
+        "impact": "future_dedup_degraded",
+        "mitigation": "已创建空 seed 文件恢复基本结构；需要从历史快照或 .bak 恢复去重数据"
+      },
+      {
+        "type": "syntax_error_auto_news_sh",
+        "description": "auto_news.sh 第216行在遍历完所有账号后出现语法错误，导致脚本未执行到报告生成步骤",
+        "impact": "resolved",
+        "mitigation": "手动运行 generate_report.mjs 完成报告生成"
+      }
+    ],
+    "report": {
+      "path": "reports/daily/2026-09-15/news.html",
+      "tweets": 112,
+      "todayTweets": 37,
+      "yesterdayTweets": 75,
+      "untranslated": 0,
+      "sourceLinks": 112,
+      "localImages": 144,
+      "accountsCovered": 16
+    },
+    "missing": {
+      "seen_tweets_history": "419条历史去重记录因文件损坏丢失，已重置为空",
+      "cache_visible_images_browser": "浏览器端原图缓存功能不可用（process未定义），不影响最终报告"
+    }
+  },
+  "sha256": "af10557fb8edeb5257610ac9b3cdbca684a3fd67b94415b10950ad28f5e786a1",
+  "bytes": 186164,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/news/report.html"
+}

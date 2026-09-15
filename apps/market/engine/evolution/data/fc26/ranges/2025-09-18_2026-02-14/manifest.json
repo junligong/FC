@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "game": "FC26",
+  "source": "FUTBIN",
+  "generatedAt": "2026-08-27T08:07:50.880Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-02-14",
+    "inclusive": true
+  },
+  "dateClassification": {
+    "method": "verified FUTBIN chronological ID boundary",
+    "exactReleaseDatesAvailableFromFutbin": false,
+    "note": "FUTBIN historical evolution pages do not expose a per-task absolute release date; tasks are therefore grouped into the verified inclusive range without inventing daily dates."
+  },
+  "completed": true,
+  "counts": {
+    "tasks": 424,
+    "popularPlayers": 1,
+    "categories": {
+      "evolutions": 136,
+      "training-camp": 4,
+      "rewards": 172,
+      "cosmetics": 17,
+      "flash": 6,
+      "roles": 22,
+      "build-your-toty-hm": 7,
+      "fs-academy": 49,
+      "fs-academy-roles": 11
+    },
+    "popularStatuses": {
+      "no-popular-players": 423,
+      "ok": 1
+    }
+  },
+  "selection": {
+    "method": "chronological FUTBIN evolution ID boundary with independently verified release-day boundary",
+    "firstEvolutionId": 5,
+    "lastEvolutionId": 482,
+    "firstEvolutionName": "Intro to Evolutions",
+    "lastEvolutionName": "Inside Edge",
+    "cutoffAnchor": {
+      "id": 474,
+      "name": "Get your Protein",
+      "releaseDate": "2026-02-14"
+    },
+    "includedSamePromoBatch": {
+      "ids": [
+        475,
+        476,
+        477,
+        478,
+        479,
+        480,
+        481,
+        482
+      ],
+      "releaseDate": "2026-02-13"
+    },
+    "nextExcluded": {
+      "id": 483,
+      "name": "The Invisible Wall",
+      "releaseDate": "2026-02-15"
+    },
+    "evidenceUrls": [
+      "https://www.gamers.de/2026/02/14/fc-26-get-your-protein-evolution-anforderungen-upgrades-und-beste-spieler/",
+      "https://www.ea.com/games/ea-sports-fc/fc-26/news/fc-26-knockout-royalty",
+      "https://www.reddit.com/r/EASportsFC/comments/1r5le0q/new_evo_available_the_invisible_wall/"
+    ]
+  },
+  "files": {
+    "tasksJson": "tasks.json",
+    "tasksCsv": "tasks.csv",
+    "popularPlayersJson": "popular-players.json",
+    "popularPlayersCsv": "popular-players.csv",
+    "combinedJson": "tasks-with-popular-players.json",
+    "categoriesDirectory": "by-category",
+    "checkpoint": ".popular-players-checkpoint.json",
+    "byDateIndex": "../../by-date/2025-09-18_2026-02-14.json"
+  }
+}

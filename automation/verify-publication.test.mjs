@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { comparePublication } from './verify-publication.mjs';
 
-const html = Buffer.from('<html><section id="archive-viewer"><a href="#report-2026-09-09">日报</a></section></html>');
+const html = Buffer.from('<html><a href="archive/2026-09-09.html">日报</a><h1>2026-09-09 每日日报</h1></html>');
 test('only matching complete current archive verifies', () => {
   assert.equal(comparePublication(html, html, '2026-09-09').verified, true);
   assert.equal(comparePublication(html, html, '2026-09-10').verified, false);

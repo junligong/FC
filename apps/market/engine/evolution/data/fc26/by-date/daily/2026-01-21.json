@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-21",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Shut down opposition attacks and celebrate your defending. Make key tackles, crucial interceptions, and turn every defensive play into a highlight.",
+      "id": 314,
+      "name": "Block Party",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=314",
+      "previewPlayers": [
+        {
+          "displayName": "Adeyemi",
+          "kind": "before",
+          "name": "Karim Adeyemi",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 41,
+            "dri": 86,
+            "pac": 97,
+            "pas": 77,
+            "phy": 74,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Adeyemi",
+          "kind": "after",
+          "name": "Karim Adeyemi",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 47,
+            "dri": 87,
+            "pac": 97,
+            "pas": 79,
+            "phy": 79,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 728,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "block-party",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "89",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+5",
+            "89"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "88",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Block",
+            "1"
+          ],
+          "value": "Block"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/314/block-party",
+      "releaseDate": "2026-01-21",
+      "releaseDateTimeUtc": "2026-01-21T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1440,
+        "providerUrl": "https://futmind.com/evolutions/1440/block-party",
+        "originalCreatedAt": "2026-01-21T18:00:00.000000Z"
+      },
+      "chronologicalRank": 282
+    }
+  ]
+}

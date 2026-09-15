@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-11",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Power through the pitch with unbreakable energy and fearless drive. When you play as the backbone of the squad, nothing gets past your force and fire.",
+      "id": 95,
+      "name": "Ironclad Instincts",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=95",
+      "previewPlayers": [
+        {
+          "displayName": "Fofana",
+          "kind": "before",
+          "name": "Wesley Fofana",
+          "position": "CB",
+          "rating": 79,
+          "stats": {
+            "def": 80,
+            "dri": 71,
+            "pac": 74,
+            "pas": 62,
+            "phy": 78,
+            "sho": 41
+          }
+        },
+        {
+          "displayName": "Fofana",
+          "kind": "after",
+          "name": "Wesley Fofana",
+          "position": "CB",
+          "rating": 79,
+          "stats": {
+            "def": 80,
+            "dri": 71,
+            "pac": 74,
+            "pas": 62,
+            "phy": 80,
+            "sho": 41
+          }
+        }
+      ],
+      "rank": 918,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 79"
+          ],
+          "value": "Max 79"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "ironclad-instincts",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+3",
+            "84"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "86",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+2",
+            "86"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "84",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+3",
+            "84"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "6"
+          ],
+          "value": "Enforcer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/95/ironclad-instincts",
+      "releaseDate": "2025-11-11",
+      "releaseDateTimeUtc": "2025-11-11T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1157,
+        "providerUrl": "https://futmind.com/evolutions/1157/ironclad-instincts",
+        "originalCreatedAt": "2025-11-11T18:00:00.000000Z"
+      },
+      "chronologicalRank": 91
+    }
+  ]
+}

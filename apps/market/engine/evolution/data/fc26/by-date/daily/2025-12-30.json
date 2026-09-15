@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-30",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "30",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Stay on your feet and maintain control with upgrades to Balance.",
+      "id": 257,
+      "name": "Balancing Act",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=257",
+      "previewPlayers": [
+        {
+          "displayName": "Carrasco",
+          "kind": "before",
+          "name": "Yannick Carrasco",
+          "position": "LM",
+          "rating": 85,
+          "stats": {
+            "def": 63,
+            "dri": 88,
+            "pac": 89,
+            "pas": 82,
+            "phy": 73,
+            "sho": 84
+          }
+        },
+        {
+          "displayName": "Carrasco",
+          "kind": "after",
+          "name": "Yannick Carrasco",
+          "position": "LM",
+          "rating": 85,
+          "stats": {
+            "def": 63,
+            "dri": 88,
+            "pac": 89,
+            "pas": 82,
+            "phy": 73,
+            "sho": 84
+          }
+        }
+      ],
+      "rank": 774,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "balancing-act",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+2"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/257/balancing-act",
+      "releaseDate": "2025-12-30",
+      "releaseDateTimeUtc": "2025-12-30T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1374,
+        "providerUrl": "https://futmind.com/evolutions/1374/balancing-act",
+        "originalCreatedAt": "2025-12-30T18:00:00.000000Z"
+      },
+      "chronologicalRank": 235
+    }
+  ]
+}

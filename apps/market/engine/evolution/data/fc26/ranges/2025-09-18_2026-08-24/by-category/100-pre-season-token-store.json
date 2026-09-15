@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "100-pre-season-token-store",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "100_pre_season_token_store": true,
+        "expires": "2 WEEKS",
+        "repeatable": true,
+        "unlock": "2 WEEKS"
+      },
+      "categories": [
+        "100 PRE SEASON TOKEN STORE"
+      ],
+      "description": "Found in the Pre Season Token Store",
+      "id": 1253,
+      "name": "Creative License",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1253",
+      "previewPlayers": [],
+      "rank": 27,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 97"
+          ],
+          "value": "Max 97"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "creative-license",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+4",
+            "98"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "98",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "98"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "98",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "98",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "98",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "98",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "98",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "98",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "98"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "98",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "7"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "7"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "4"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "4"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "4"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1253/creative-license",
+      "releaseDate": "2026-08-15",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1251,
+          "releaseDate": "2026-08-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 1255,
+          "releaseDate": "2026-08-15"
+        }
+      },
+      "chronologicalRank": 1189
+    }
+  ]
+}

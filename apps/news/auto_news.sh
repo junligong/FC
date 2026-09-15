@@ -21,13 +21,14 @@ trap 'rm -f "$LOCK_DIR/pid"; rmdir "$LOCK_DIR"' EXIT
 DATA_DIR="$PROJECT_DIR/data"
 PROJECT_ROOT="${FC_PROJECT_ROOT:-$(cd "$PROJECT_DIR/../.." && pwd)}"
 REPORTS_DIR="$PROJECT_ROOT/reports/daily/$FC_REPORT_DATE"
+IMAGE_DIR="$REPORTS_DIR/assets/news"
 WORK_ROOT="$PROJECT_ROOT/automation/runs/$FC_REPORT_DATE/news/work"
 SEEN_FILE="$DATA_DIR/seen_tweets.json"
 RAW_FILE="$DATA_DIR/raw_tweets_latest.json"
 FILTERED_FILE="$DATA_DIR/filtered_tweets.json"
 SOURCES_FILE="$PROJECT_DIR/sources.txt"
 
-mkdir -p "$DATA_DIR" "$REPORTS_DIR" "$WORK_ROOT"
+mkdir -p "$DATA_DIR" "$REPORTS_DIR" "$IMAGE_DIR" "$WORK_ROOT"
 
 # 初始化 seen_tweets.json（首次执行）
 if [ ! -f "$SEEN_FILE" ]; then

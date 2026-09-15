@@ -500,7 +500,7 @@ body {
 <div class="header">
   <h1>⚽ 足球日报</h1>
   <div class="subtitle">欧洲冠军联赛 · 七大联赛每日资讯聚合</div>
-  <div class="update-time">数据截止时间：2026年9月15日 11:05（北京时间）</div>
+  <div class="update-time">数据截止时间：2026年9月15日 18:45（北京时间）｜射手榜/助攻榜为球员级核验值，未核验联赛如实留空</div>
 </div>
 
 <!-- ===== STANDINGS ===== -->
@@ -1145,7 +1145,7 @@ body {
 <div class="footer">
   <p>足球日报 · 每日足球资讯聚合</p>
   <p>数据来源：BBC Sport、ESPN、Sky Sports、Goal、Transfermarkt、懂球帝、直播吧、新浪体育等</p>
-  <p>数据截止时间：2026年9月15日 11:05（北京时间） | 仅供参考，请以官方最新信息为准</p>
+  <p>数据截止时间：2026年9月15日 18:45（北京时间）｜射手榜/助攻榜为球员级核验值，未核验联赛如实留空 | 仅供参考，请以官方最新信息为准</p>
 </div>
 
 <script>
@@ -1313,177 +1313,54 @@ const standingsData = {
 };
 
 const scorersData = {
+  // 英超：FUTBIN/khelnow/中文赛事源交叉核验，2026-09-15 第4轮后
   epl: [
-    [1,'阿森纳 Arsenal',4,4,0,0,8,1,'+7',12],
-    [2,'曼城 Manchester City',4,4,0,0,8,2,'+6',12],
-    [3,'利兹联 Leeds United',4,2,2,0,7,'-','-',8],
-    [4,'赫尔城 Hull City',4,2,2,0,5,2,'+3',8],
-    [5,'布莱顿 Brighton',4,2,1,1,12,4,'+8',7],
-    [6,'切尔西 Chelsea',4,2,1,1,'-','-','-',7],
-    [7,'布伦特福德 Brentford',4,'-','-','-','-','-','-',6],
-    [8,'利物浦 Liverpool',4,'-','-','-','-','-','-',6],
-    [9,'埃弗顿 Everton',4,'-','-','-','-','-','-',6],
-    [10,'伊普斯维奇 Ipswich',4,'-','-','-','-','-','-',6],
-    [11,'诺丁汉森林 Nottm Forest',4,'-','-','-','-','-','-',5],
-    [12,'纽卡斯尔联 Newcastle',4,'-','-','-','-','-','-',5],
-    [13,'曼联 Manchester United',4,1,1,2,'-','-','-',4],
-    [14,'桑德兰 Sunderland',4,'-','-','-','-','-','-',4],
-    [15,'伯恩茅斯 Bournemouth',4,'-','-','-','-','-','-',3],
-    [16,'水晶宫 Crystal Palace',4,'-','-','-','-','-','-',3],
-    [17,'热刺 Tottenham',4,0,2,2,'-','-','-',2],
-    [18,'富勒姆 Fulham',4,'-','-','-','-','-','-',1],
-    [19,'阿斯顿维拉 Aston Villa',4,'-','-','-','-','-','-',1],
-    [20,'考文垂 Coventry',4,0,0,4,'-','-','-',0],
+    [1,'伊萨克 Alexander Isak','利物浦 Liverpool',3],
+    [2,'B费 Bruno Fernandes','曼联 Man United',3],
+    [3,'哈兰德 Erling Haaland','曼城 Man City',3],
+    [4,'若昂·佩德罗 João Pedro','切尔西 Chelsea',3],
+    [5,'沙德 Kevin Schade','布伦特福德 Brentford',3],
+    [6,'厄德高 Martin Odegaard','阿森纳 Arsenal',2],
+    [6,'雅内尔特 Vitaly Janelt','布伦特福德 Brentford',2],
+    [6,'塔韦尼耶 Marcus Tavernier','伯恩茅斯 Bournemouth',2],
+    [6,'哈弗茨 Kai Havertz','阿森纳 Arsenal',2],
+    [6,'帕尔默 Cole Palmer','切尔西 Chelsea',2],
   ],
+  // 西甲：laligatable 第5轮核验（助攻榜本轮未逐条核验）
   laliga: [
+    [1,'卡梅略 Sergio Camello','巴列卡诺 Rayo Vallecano',6],
     [1,'姆巴佩 Kylian Mbappe','皇家马德里 Real Madrid',6],
-    [2,'拉菲尼亚 Raphinha','巴塞罗那 Barcelona',5],
-    [3,'亚马尔 Lamine Yamal','巴塞罗那 Barcelona',4],
-    [4,'阿德耶米 Karim Adeyemi','巴塞罗那 Barcelona',3],
-    [5,'贝林厄姆 Jude Bellingham','皇家马德里 Real Madrid',3],
-    [6,'格列兹曼 Antoine Griezmann','马德里竞技 Atletico',3],
-    [6,'维尼修斯 Vinicius Jr','皇家马德里 Real Madrid',2],
-    [8,'阿尔瓦雷斯 Julian Alvarez','马德里竞技 Atletico',2],
+    [1,'拉菲尼亚 Raphinha','巴塞罗那 Barcelona',6],
+    [4,'罗伯托·费尔南德斯 Roberto Fernandez','西班牙人 Espanyol',5],
+    [5,'胡利安·阿尔瓦雷斯 Julian Alvarez','马德里竞技 Atletico Madrid',3],
   ],
+  // 意甲：tribuna/中文赛事源第4轮核验
   seriea: [
-    [1,'罗马 Roma',4,4,0,0,12,1,'+11',12],
-    [2,'国际米兰 Inter',4,4,0,0,13,6,'+7',12],
-    [3,'科莫 Como',4,3,1,0,9,4,'+5',10],
-    [4,'拉齐奥 Lazio',4,3,1,0,6,3,'+3',10],
-    [5,'卡利亚里 Cagliari',4,3,0,1,4,2,'+2',9],
-    [6,'AC米兰 Milan',4,2,2,0,7,4,'+3',8],
-    [7,'弗罗西诺内 Frosinone',4,2,1,1,7,4,'+3',7],
-    [8,'尤文图斯 Juventus',4,2,1,1,6,4,'+2',7],
-    [9,'萨索洛 Sassuolo',4,2,1,1,8,7,'+1',7],
-    [10,'那不勒斯 Napoli',4,2,0,2,6,5,'+1',6],
-    [11,'亚特兰大 Atalanta',4,2,0,2,5,5,'0',6],
-    [12,'莱切 Lecce',4,2,0,2,5,7,'-2',6],
-    [13,'乌迪内斯 Udinese',4,1,1,2,8,10,'-2',4],
-    [14,'都灵 Torino',4,1,0,3,4,7,'-3',3],
-    [15,'佛罗伦萨 Fiorentina',4,1,0,3,5,11,'-6',3],
-    [16,'博洛尼亚 Bologna',4,0,1,3,2,5,'-3',1],
-    [17,'帕尔马 Parma',4,0,1,3,2,6,'-4',1],
-    [18,'蒙扎 Monza',4,0,1,3,6,11,'-5',1],
-    [19,'热那亚 Genoa',4,0,1,3,2,8,'-6',1],
-    [20,'威尼斯 Venezia',4,0,0,4,4,11,'-7',0],
-  ],
-  bundesliga: [
-    [1,'铃木唯人 Yuito Suzuki','弗赖堡 Freiburg',5],
-    [2,'穆西亚拉 Jamal Musiala','拜仁拜仁 Munich',4],
-    [3,'凯恩 Harry Kane','拜仁 Munich',3],
-    [4,'吉拉西 Serhou Guirassy','多特蒙德 Dortmund',3],
-    [5,'阿德耶米 Karim Adeyemi','多特蒙德 Dortmund',2],
-    [6,'于帕梅卡诺 Upamecano','拜仁 Munich',2],
-  ],
-  ligue1: [
-    [1,'布伦纳 Mika Biereth','摩纳哥 Monaco',4],
-    [2,'费兰·托雷斯 Ferran Torres','巴黎 PSG',3],
-    [3,'格林伍德 Mason Greenwood','马赛 Marseille',3],
-    [4,'登贝莱 Ousmane Dembele','巴黎 PSG',2],
-    [5,'乔纳森·大卫 Jonathan David','里尔 Lille',2],
-  ],
-  mls: [
-    [1,'梅西 Lionel Messi','迈阿密国际 Inter Miami',19],
-    [2,'穆萨 Petar Musa','达拉斯FC FC Dallas',16],
-    [3,'布安加 Denis Bouanga','洛杉矶FC LAFC',12],
-    [4,'苏亚雷斯 Luis Suarez','迈阿密国际 Inter Miami',10],
-  ],
-  saudi: [
-    [1,'C罗 Cristiano Ronaldo','利雅得胜利 Al Nassr',6],
-    [2,'米特洛维奇 Mitrovic','利雅得新月 Al Hilal',5],
-    [3,'马内 Sadio Mane','利雅得胜利 Al Nassr',4],
-    [4,'萨维奥 Savio','利雅得新月 Al Hilal',3],
-    [5,'安吉洛 Angelo','利雅得胜利 Al Nassr',3],
-    [6,'沃特金斯 Watkins','利雅得新月 Al Hilal',2],
-  ],
-  ucl: [
-    [1,'拉菲尼亚 Raphinha','巴塞罗那 Barcelona',2],
-    [1,'亚马尔 Lamine Yamal','巴塞罗那 Barcelona',2],
-    [3,'麦卡利斯特 Mac Allister','利物浦 Liverpool',1],
-    [3,'索博斯洛伊 Szoboszlai','利物浦 Liverpool',1],
-    [3,'奥斯曼·登贝莱 Dembele','巴黎 PSG',1],
-    [3,'姆巴佩 Mbappe','皇家马德里 Real Madrid',1],
+    [1,'马伦 Donyell Malen','罗马 AS Roma',6],
+    [2,'雷蒙多 Antonio Raimondo','弗罗西诺内 Frosinone',4],
+    [3,'弗拉泰西 Davide Frattesi','拉齐奥 Lazio',3],
   ],
 };
 
 const assistsData = {
+  // 英超：khelnow/中文赛事源交叉核验，2026-09-15 第4轮后
   epl: [
-    [1,'阿森纳 Arsenal',4,4,0,0,8,1,'+7',12],
-    [2,'曼城 Manchester City',4,4,0,0,8,2,'+6',12],
-    [3,'利兹联 Leeds United',4,2,2,0,7,'-','-',8],
-    [4,'赫尔城 Hull City',4,2,2,0,5,2,'+3',8],
-    [5,'布莱顿 Brighton',4,2,1,1,12,4,'+8',7],
-    [6,'切尔西 Chelsea',4,2,1,1,'-','-','-',7],
-    [7,'布伦特福德 Brentford',4,'-','-','-','-','-','-',6],
-    [8,'利物浦 Liverpool',4,'-','-','-','-','-','-',6],
-    [9,'埃弗顿 Everton',4,'-','-','-','-','-','-',6],
-    [10,'伊普斯维奇 Ipswich',4,'-','-','-','-','-','-',6],
-    [11,'诺丁汉森林 Nottm Forest',4,'-','-','-','-','-','-',5],
-    [12,'纽卡斯尔联 Newcastle',4,'-','-','-','-','-','-',5],
-    [13,'曼联 Manchester United',4,1,1,2,'-','-','-',4],
-    [14,'桑德兰 Sunderland',4,'-','-','-','-','-','-',4],
-    [15,'伯恩茅斯 Bournemouth',4,'-','-','-','-','-','-',3],
-    [16,'水晶宫 Crystal Palace',4,'-','-','-','-','-','-',3],
-    [17,'热刺 Tottenham',4,0,2,2,'-','-','-',2],
-    [18,'富勒姆 Fulham',4,'-','-','-','-','-','-',1],
-    [19,'阿斯顿维拉 Aston Villa',4,'-','-','-','-','-','-',1],
-    [20,'考文垂 Coventry',4,0,0,4,'-','-','-',0],
+    [1,'加克波 Cody Gakpo','利物浦 Liverpool',3],
+    [1,'埃万尼尔松 Evanilson','伯恩茅斯 Bournemouth',3],
+    [3,'塞门约 Antoine Semenyo','伯恩茅斯 Bournemouth',2],
+    [3,'卡拉菲奥里 Riccardo Calafiori','阿森纳 Arsenal',2],
+    [3,'福登 Phil Foden','曼城 Man City',2],
+    [3,'谢尔基 Rayan Cherki','曼城 Man City',2],
+    [3,'恩西索 Julio Enciso','伊普斯维奇 Ipswich',2],
+    [3,'若昂·佩德罗 Joao Pedro','切尔西 Chelsea',2],
+    [3,'镰田大地 Daichi Kamada','水晶宫 Crystal Palace',2],
+    [10,'卢克·肖 Luke Shaw','曼联 Man United',1],
   ],
-  laliga: [
-    [1,'亚马尔 Lamine Yamal','巴塞罗那 Barcelona',4],
-    [2,'贝林厄姆 Jude Bellingham','皇家马德里 Real Madrid',3],
-    [3,'维尼修斯 Vinicius Jr','皇家马德里 Real Madrid',3],
-    [4,'佩德里 Pedri','巴塞罗那 Barcelona',2],
-    [5,'罗德里戈 Rodrygo','皇家马德里 Real Madrid',2],
-  ],
+  // 意甲：tribuna 第4轮核验
   seriea: [
-    [1,'罗马 Roma',4,4,0,0,12,1,'+11',12],
-    [2,'国际米兰 Inter',4,4,0,0,13,6,'+7',12],
-    [3,'科莫 Como',4,3,1,0,9,4,'+5',10],
-    [4,'拉齐奥 Lazio',4,3,1,0,6,3,'+3',10],
-    [5,'卡利亚里 Cagliari',4,3,0,1,4,2,'+2',9],
-    [6,'AC米兰 Milan',4,2,2,0,7,4,'+3',8],
-    [7,'弗罗西诺内 Frosinone',4,2,1,1,7,4,'+3',7],
-    [8,'尤文图斯 Juventus',4,2,1,1,6,4,'+2',7],
-    [9,'萨索洛 Sassuolo',4,2,1,1,8,7,'+1',7],
-    [10,'那不勒斯 Napoli',4,2,0,2,6,5,'+1',6],
-    [11,'亚特兰大 Atalanta',4,2,0,2,5,5,'0',6],
-    [12,'莱切 Lecce',4,2,0,2,5,7,'-2',6],
-    [13,'乌迪内斯 Udinese',4,1,1,2,8,10,'-2',4],
-    [14,'都灵 Torino',4,1,0,3,4,7,'-3',3],
-    [15,'佛罗伦萨 Fiorentina',4,1,0,3,5,11,'-6',3],
-    [16,'博洛尼亚 Bologna',4,0,1,3,2,5,'-3',1],
-    [17,'帕尔马 Parma',4,0,1,3,2,6,'-4',1],
-    [18,'蒙扎 Monza',4,0,1,3,6,11,'-5',1],
-    [19,'热那亚 Genoa',4,0,1,3,2,8,'-6',1],
-    [20,'威尼斯 Venezia',4,0,0,4,4,11,'-7',0],
-  ],
-  bundesliga: [
-    [1,'基米希 Joshua Kimmich','拜仁 Munich',3],
-    [2,'穆西亚拉 Jamal Musiala','拜仁 Munich',2],
-    [3,'奥利塞 Michael Olise','拜仁 Munich',2],
-    [4,'格纳布里 Gnabry','拜仁 Munich',1],
-  ],
-  ligue1: [
-    [1,'登贝莱 Ousmane Dembele','巴黎 PSG',3],
-    [2,'布伦纳 Mika Biereth','摩纳哥 Monaco',2],
-    [3,'阿克利乌ッシュ Akliouche','巴黎 PSG',2],
-  ],
-  mls: [
-    [1,'梅西 Lionel Messi','迈阿密国际 Inter Miami',11],
-    [2,'阿尔巴 Jordi Alba','迈阿密国际 Inter Miami',8],
-    [3,'苏亚雷斯 Luis Suarez','迈阿密国际 Inter Miami',5],
-  ],
-  saudi: [
-    [1,'马内 Sadio Mane','利雅得胜利 Al Nassr',4],
-    [2,'安吉洛 Angelo','利雅得胜利 Al Nassr',3],
-    [3,'萨维奥 Savio','利雅得新月 Al Hilal',3],
-    [4,'米林科维奇 Milinkovic-Savic','利雅得新月 Al Hilal',2],
-  ],
-  ucl: [
-    [1,'亚马尔 Lamine Yamal','巴塞罗那 Barcelona',2],
-    [2,'佩德里 Pedri','巴塞罗那 Barcelona',1],
-    [2,'阿劳霍 Araujo','利物浦 Liverpool',1],
+    [1,'迪巴拉 Paulo Dybala','罗马 AS Roma',4],
+    [2,'拉比奥 Adrien Rabiot','AC米兰 AC Milan',2],
+    [2,'迪乌夫 Andy Diouf','国际米兰 Inter',2],
   ],
 };
 
@@ -1541,9 +1418,11 @@ function renderTable() {
       html += buildStandingsTable(standingsData[currentLeague], ['排名','球队','场次','胜','平','负','进球','失球','净胜球','积分']);
     }
   } else if (currentType === 'scorers') {
-    html += buildSimpleTable(scorersData[currentLeague] || scorersData.epl, ['排名','球员','球队','进球']);
+    const sd = scorersData[currentLeague];
+    html += (sd && sd.length) ? buildSimpleTable(sd, ['排名','球员','球队','进球']) : '<div style="color:#888;font-size:13px;padding:14px;border:1px dashed #ddd;border-radius:8px">该联赛射手榜本轮未逐条核验，如实留空（不沿用旧值或其他联赛数据）。</div>';
   } else if (currentType === 'assists') {
-    html += buildSimpleTable(assistsData[currentLeague] || assistsData.epl, ['排名','球员','球队','助攻']);
+    const ad = assistsData[currentLeague];
+    html += (ad && ad.length) ? buildSimpleTable(ad, ['排名','球员','球队','助攻']) : '<div style="color:#888;font-size:13px;padding:14px;border:1px dashed #ddd;border-radius:8px">该联赛助攻榜本轮未逐条核验，如实留空（不沿用旧值或其他联赛数据）。</div>';
   }
   
   container.innerHTML = html;

@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-08-06",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "150": "30,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Compress the pitch. Boost your defender's defending to choke out the opponent's space, then use elite passing to build right out from the back.",
+      "id": 1200,
+      "name": "The High Line",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1200",
+      "previewPlayers": [
+        {
+          "displayName": "Schlotterbeck",
+          "kind": "before",
+          "name": "Nico Schlotterbeck",
+          "nameZh": "尼科·施洛特贝克",
+          "position": "CB",
+          "rating": 96,
+          "stats": {
+            "def": 96,
+            "dri": 85,
+            "pac": 88,
+            "pas": 90,
+            "phy": 94,
+            "sho": 70
+          }
+        },
+        {
+          "displayName": "Schlotterbeck",
+          "kind": "after",
+          "name": "Nico Schlotterbeck",
+          "nameZh": "尼科·施洛特贝克",
+          "position": "CB",
+          "rating": 96,
+          "stats": {
+            "def": 97,
+            "dri": 85,
+            "pac": 88,
+            "pas": 93,
+            "phy": 94,
+            "sho": 70
+          }
+        }
+      ],
+      "rank": 19,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "the-high-line",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+4",
+            "93"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "97",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+6",
+            "97"
+          ],
+          "value": "+6"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1200/the-high-line",
+      "releaseDate": "2026-08-06",
+      "releaseDateTimeUtc": "2026-08-06T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2539,
+        "providerUrl": "https://futmind.com/evolutions/2539/the-high-line",
+        "originalCreatedAt": "2026-08-06T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1137
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Found in the FUTTIES Daily Login Objective",
+      "id": 1201,
+      "name": "Max Sweat",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1201",
+      "previewPlayers": [],
+      "rank": 18,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "max-sweat",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+20",
+            "93"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "96",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "97",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "97"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "94"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+20",
+            "93"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "94",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "7"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "4"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "4"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "4"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "4"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1201/max-sweat",
+      "releaseDate": "2026-08-06",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1200,
+          "releaseDate": "2026-08-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 1203,
+          "releaseDate": "2026-08-07"
+        }
+      },
+      "chronologicalRank": 1138
+    }
+  ]
+}

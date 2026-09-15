@@ -2,9 +2,11 @@
 // FC27 资讯报告生成器
 // 功能：解析原始推文数据 → 过滤FC27相关 → 排除预测类 → 内容聚类去重 → 翻译为中文 → 生成图文HTML
 import { readFileSync, writeFileSync, readdirSync, existsSync, copyFileSync, mkdirSync, renameSync, statSync, rmSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
+import { promisify } from 'node:util';
 import path from 'node:path';
 import { root, reportDate, atomicWrite, readJSON } from '../../shared/lib/runtime.mjs';
+import { originalXImageUrl, reportImageAssetName } from '../../shared/lib/report-assets.mjs';
 
 const DATA_DIR = path.join(root, 'apps/news/data');
 const today = reportDate(process.env.FC_REPORT_DATE);
@@ -13,8 +15,11 @@ const WORK_DIR = path.join(root, 'automation/runs', today, 'news', 'work', `gene
 mkdirSync(DATA_DIR, { recursive: true });
 mkdirSync(WORK_DIR, { recursive: true });
 const SEEN_FILE = path.join(DATA_DIR, 'seen_tweets.json');
+const SEEN_BACKUP_FILE = path.join(DATA_DIR, 'seen_tweets.json.bak');
 const FILTERED_FILE = path.join(DATA_DIR, 'filtered_tweets.json');
 const REPORTS_DIR = path.join(root, 'reports/daily', today);
+const IMAGE_DIR = path.join(REPORTS_DIR, 'assets/news');
+const execFileAsync = promisify(execFile);
 mkdirSync(REPORTS_DIR, { recursive: true });
 
 // ========== 1. 解析原始推文数据 ==========
@@ -61,7 +66,7 @@ for (const t of allTweets) {
 
 // ========== 2. 过滤FC27相关 ==========
 const fc27Keywords = [
-  /fc\s*27/i, /ea\s*fc/i, /#fc27/i, /fut\b/i, /ultimate\s*team/i,
+  /fc(?:\s|™|®|©|&trade;)*27/i, /ea\s*fc/i, /#fc27/i, /fut\b/i, /ultimate\s*team/i,
   /icon\b/i, /hero\b/i, /sbc\b/i, /evolution/i, /futties/i,
   /pre[\s-]*season/i, /varane/i, /ferdinand/i, /fifa\b/i,
   /futbin/i, /futwiz/i, /fut\s*police/i, /fut\s*sheriff/i,
@@ -262,7 +267,55 @@ if (!previous && existsSync(path.join(REPORTS_DIR, 'news.html')) && existsSync(F
 const merged = new Map((previous?.tweets || []).map(t => [t.id, t]));
 for (const tweet of newTweets) merged.set(tweet.id, tweet);
 const reportTweets = [...merged.values()];
-const snapshot = JSON.stringify({date: today, count: reportTweets.length, tweets: reportTweets}, null, 2);
+
+async function cacheReportImages(tweets) {
+  mkdirSync(IMAGE_DIR, { recursive: true });
+  const downloads = new Map();
+  for (const tweet of tweets) {
+    for (const image of tweet.images || []) {
+      if (!/^https:\/\/pbs\.twimg\.com\/media\//.test(image)) continue;
+      const url = originalXImageUrl(image);
+      const name = reportImageAssetName(url);
+      const target = path.join(IMAGE_DIR, name);
+      if (!existsSync(target)) downloads.set(url, { url, name, target });
+    }
+  }
+  const queue = [...downloads.values()];
+  let cursor = 0;
+  async function worker() {
+    while (cursor < queue.length) {
+      const item = queue[cursor++];
+      const pending = path.join(WORK_DIR, `${item.name}.tmp`);
+      try {
+        await execFileAsync('curl', [
+          '--http1.1', '--location', '--fail', '--silent', '--show-error',
+          '--connect-timeout', '3', '--max-time', '12', '--retry', '1', '--retry-all-errors',
+          '-A', 'Mozilla/5.0', '-e', 'https://x.com/', '-o', pending, item.url,
+        ], { timeout: 30000, maxBuffer: 1024 * 1024 });
+        if (statSync(pending).size < 100) throw new Error('图片文件为空');
+        renameSync(pending, item.target);
+      } catch (error) {
+        rmSync(pending, { force: true });
+        console.error(`Image cache failed: ${item.url} (${error.message})`);
+      }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(6, queue.length) }, () => worker()));
+  return tweets.map(tweet => ({
+    ...tweet,
+    localImages: (tweet.images || []).map(image => {
+      if (/^data:image\//.test(image)) return image;
+      if (!/^https:\/\/pbs\.twimg\.com\/media\//.test(image)) return '';
+      const name = reportImageAssetName(image);
+      return existsSync(path.join(IMAGE_DIR, name)) ? `assets/news/${name}` : '';
+    }),
+  }));
+}
+
+const reportTweetsWithAssets = await cacheReportImages(reportTweets);
+const requestedImageCount = reportTweetsWithAssets.reduce((sum, tweet) => sum + (tweet.images?.length || 0), 0);
+const cachedImageCount = reportTweetsWithAssets.reduce((sum, tweet) => sum + (tweet.localImages?.filter(Boolean).length || 0), 0);
+const snapshot = JSON.stringify({date: today, count: reportTweetsWithAssets.length, tweets: reportTweetsWithAssets}, null, 2);
 const pendingData = path.join(WORK_DIR, 'pending-tweets.json');
 writeFileSync(pendingData, snapshot);
 const reportFile = path.join(REPORTS_DIR, 'news.html');
@@ -311,9 +364,12 @@ def render_tweet(t, idx):
     imgs_html = ''
     if t['images']:
         imgs_html = '<div class="tweet-images">'
-        for img in t['images']:
-            img_url = html.escape(img.replace('name=small', 'name=medium').replace('name=360x360', 'name=medium').replace('name=240x240', 'name=medium')).replace('&amp;', '&')
-            imgs_html += f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img_url}" loading="lazy" alt="FC27 tweet image" onerror="this.style.display=\\'none\\'" /></a>'
+        local_images = t.get('localImages') or []
+        for image_index, img in enumerate(t['images']):
+            local_img = local_images[image_index] if image_index < len(local_images) else ''
+            source = local_img or img.replace('name=small', 'name=orig').replace('name=medium', 'name=orig').replace('name=large', 'name=orig').replace('name=360x360', 'name=orig').replace('name=240x240', 'name=orig').replace('name=900x900', 'name=orig')
+            img_url = html.escape(source).replace('&amp;', '&')
+            imgs_html += f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img_url}" loading="lazy" referrerpolicy="no-referrer" alt="FC27 tweet image" /></a>'
         imgs_html += '</div>'
     else:
         imgs_html = f'<div class="tweet-no-image"><a href="{url}" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>'
@@ -423,7 +479,7 @@ writeFileSync(pyScript, htmlTemplate);
 execFileSync('python3', [pyScript], { encoding: 'utf8', timeout: 15000 });
 const rendered = readFileSync(pendingReport, 'utf8');
 if (!rendered.includes('</html>') || !rendered.includes(today)) throw new Error('报告校验失败');
-if (existsSync(SEEN_FILE)) copyFileSync(SEEN_FILE, path.join(WORK_DIR, 'seen_tweets.json.bak'));
+if (existsSync(SEEN_FILE)) copyFileSync(SEEN_FILE, SEEN_BACKUP_FILE);
 atomicWrite(DAILY_FILE, snapshot);
 renameSync(pendingReport, reportFile);
 atomicWrite(FILTERED_FILE, snapshot);
@@ -437,6 +493,8 @@ console.log(`FC27 related: ${fc27Tweets.length}`);
 console.log(`Non-prediction: ${nonPrediction.length}`);
 console.log(`New tweets (after cross-exec dedup): ${newTweetsRaw.length}`);
 console.log(`Content-deduped clusters: ${clusters.length}`);
-console.log(`Final tweets in report: ${newTweets.length}`);
+console.log(`Final tweets in report: ${reportTweetsWithAssets.length}`);
+console.log(`Original images cached: ${cachedImageCount}/${requestedImageCount}`);
+if (cachedImageCount < requestedImageCount) console.error('WARNING: 部分原图未保存，本轮应按 partial 提交并记录缺失数量。');
 console.log(`Seen tweets total: ${seenData.tweets.length}`);
 console.log(`Report: ${reportFile}`);

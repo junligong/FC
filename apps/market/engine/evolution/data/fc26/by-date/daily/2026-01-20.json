@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-20",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Pinged Pass+ to any qualified player",
+      "id": 311,
+      "name": "Pinged Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=311",
+      "previewPlayers": [],
+      "rank": 731,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "pinged-pass",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "1"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/311/pinged-pass",
+      "releaseDate": "2026-01-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 312,
+          "releaseDate": "2026-01-20"
+        }
+      },
+      "chronologicalRank": 279
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Equip your RB with vital PlayStyles and Roles to ensure they're an indispensable part of your team.",
+      "id": 312,
+      "name": "Ultimate Fullback",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=312",
+      "previewPlayers": [
+        {
+          "displayName": "James",
+          "kind": "before",
+          "name": "Reece James",
+          "nameZh": "里斯·詹姆斯",
+          "position": "RB",
+          "rating": 85,
+          "stats": {
+            "def": 84,
+            "dri": 81,
+            "pac": 81,
+            "pas": 86,
+            "phy": 84,
+            "sho": 76
+          }
+        },
+        {
+          "displayName": "James",
+          "kind": "after",
+          "name": "Reece James",
+          "nameZh": "里斯·詹姆斯",
+          "position": "RB",
+          "rating": 85,
+          "stats": {
+            "def": 84,
+            "dri": 81,
+            "pac": 81,
+            "pas": 86,
+            "phy": 84,
+            "sho": 76
+          }
+        }
+      ],
+      "rank": 730,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "ultimate-fullback",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "7"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback+"
+          ],
+          "value": "Fullback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback+"
+          ],
+          "value": "Falseback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback+"
+          ],
+          "value": "Inverted Wingback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/312/ultimate-fullback",
+      "releaseDate": "2026-01-20",
+      "releaseDateTimeUtc": "2026-01-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1430,
+        "providerUrl": "https://futmind.com/evolutions/1430/ultimate-fullback",
+        "originalCreatedAt": "2026-01-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 280
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Equip your LB with vital PlayStyles and Roles to ensure they're an indispensable part of your team.",
+      "id": 313,
+      "name": "Ultimate Fullback",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=313",
+      "previewPlayers": [
+        {
+          "displayName": "Bacha",
+          "kind": "before",
+          "name": "Selma Bacha",
+          "nameZh": "塞尔玛·巴查",
+          "position": "LB",
+          "rating": 85,
+          "stats": {
+            "def": 78,
+            "dri": 82,
+            "pac": 88,
+            "pas": 85,
+            "phy": 80,
+            "sho": 73
+          }
+        },
+        {
+          "displayName": "Bacha",
+          "kind": "after",
+          "name": "Selma Bacha",
+          "nameZh": "塞尔玛·巴查",
+          "position": "LB",
+          "rating": 85,
+          "stats": {
+            "def": 78,
+            "dri": 82,
+            "pac": 88,
+            "pas": 85,
+            "phy": 80,
+            "sho": 73
+          }
+        }
+      ],
+      "rank": 729,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "ultimate-fullback",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "7"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback+"
+          ],
+          "value": "Fullback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback+"
+          ],
+          "value": "Falseback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback+"
+          ],
+          "value": "Inverted Wingback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/313/ultimate-fullback",
+      "releaseDate": "2026-01-20",
+      "releaseDateTimeUtc": "2026-01-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1431,
+        "providerUrl": "https://futmind.com/evolutions/1431/ultimate-fullback",
+        "originalCreatedAt": "2026-01-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 281
+    }
+  ]
+}

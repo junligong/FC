@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-09-21",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Step into a new era with The Debut, the first-ever GK EVO. You asked for it, and it’s finally here. Begin your journey where legends are made.",
+      "id": 12,
+      "name": "The Debut",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=12",
+      "previewPlayers": [
+        {
+          "displayName": "Rulli",
+          "kind": "before",
+          "name": "Gerónimo Rulli",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 54,
+            "dri": 83,
+            "pac": 82,
+            "pas": 80,
+            "phy": 81,
+            "sho": 77
+          }
+        },
+        {
+          "displayName": "Rulli",
+          "kind": "after",
+          "name": "Gerónimo Rulli",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 54,
+            "dri": 83,
+            "pac": 82,
+            "pas": 80,
+            "phy": 83,
+            "sho": 77
+          }
+        }
+      ],
+      "rank": 999,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "the-debut",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+2",
+            "84"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/12/the-debut",
+      "releaseDate": "2025-09-21",
+      "releaseDateTimeUtc": "2025-09-21T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1014,
+        "providerUrl": "https://futmind.com/evolutions/1014/the-debut",
+        "originalCreatedAt": "2025-09-21T18:00:00.000000Z"
+      },
+      "chronologicalRank": 8
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-16",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Unlockabke via the Kinetic Boost SBC",
+      "id": 755,
+      "name": "Kinetic Boost",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=755",
+      "previewPlayers": [],
+      "rank": 329,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "kinetic-boost",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "88",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+3",
+            "88"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "88",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+3",
+            "88"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "8"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "8"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/755/kinetic-boost",
+      "releaseDate": "2026-04-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 754,
+          "releaseDate": "2026-04-15"
+        },
+        "nextAnchor": {
+          "evolutionId": 756,
+          "releaseDate": "2026-04-16"
+        }
+      },
+      "chronologicalRank": 694
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Step into Wembley immortality and upgrade your player into a final-day finisher built for history-making moments.",
+      "id": 756,
+      "name": "Three to Remember",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=756",
+      "previewPlayers": [
+        {
+          "displayName": "Philogene",
+          "kind": "before",
+          "name": "Jaden Philogene",
+          "position": "LM",
+          "rating": 87,
+          "stats": {
+            "def": 50,
+            "dri": 90,
+            "pac": 92,
+            "pas": 87,
+            "phy": 75,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "Philogene",
+          "kind": "after",
+          "name": "Jaden Philogene",
+          "position": "LM",
+          "rating": 88,
+          "stats": {
+            "def": 50,
+            "dri": 90,
+            "pac": 92,
+            "pas": 87,
+            "phy": 75,
+            "sho": 90
+          }
+        }
+      ],
+      "rank": 328,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "three-to-remember",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "89",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+6",
+            "92"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "90",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+6",
+            "92"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "91",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+6",
+            "91"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "90",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+2",
+            "91"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "8"
+          ],
+          "value": "Gamechanger"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/756/three-to-remember",
+      "releaseDate": "2026-04-16",
+      "releaseDateTimeUtc": "2026-04-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1924,
+        "providerUrl": "https://futmind.com/evolutions/1924/three-to-remember",
+        "originalCreatedAt": "2026-04-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 695
+    }
+  ]
+}

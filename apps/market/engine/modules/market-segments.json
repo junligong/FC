@@ -1,0 +1,44 @@
+{
+  "currency": "coins",
+  "platformDefault": "cross",
+  "dimensions": [
+    {
+      "id": "price",
+      "name": "价格维度",
+      "description": "按单卡跨平台最低价（coins）分层。价格单位：万 = 10,000 coins。",
+      "tiers": [
+        { "id": "premium", "name": "大卡", "range": "100 万以上", "min": 1000000, "maxExclusive": null },
+        { "id": "mid", "name": "中卡", "range": "30 万 ~ 100 万", "min": 300000, "maxExclusive": 1000000 },
+        { "id": "hot", "name": "热门卡", "range": "10 万 ~ 30 万", "min": 100000, "maxExclusive": 300000 },
+        { "id": "practical", "name": "适用卡", "range": "1 万 ~ 10 万", "min": 10000, "maxExclusive": 100000 },
+        { "id": "fodder", "name": "万元以下", "range": "低于 1 万", "min": 0, "maxExclusive": 10000 }
+      ]
+    },
+    {
+      "id": "popular",
+      "name": "热门球员维度",
+      "description": "按 FUTBIN 热门度排序（页面显示的引用/使用计数），与价格无关。热门球员再分两类。",
+      "source": "https://www.futbin.com/27/popular",
+      "subgroups": [
+        {
+          "id": "popular-evolutions",
+          "name": "热门进化卡",
+          "description": "出现在热门榜且属于进化（Evolution）体系的卡。",
+          "source": "https://www.futbin.com/27/popular/evolutions"
+        },
+        {
+          "id": "value",
+          "name": "价值卡",
+          "description": "热门榜中的非进化卡，即热门球员里未参与进化的常规/活动卡。",
+          "source": "https://www.futbin.com/27/popular"
+        }
+      ]
+    }
+  ],
+  "secondary": [
+    { "id": "weekly-cards", "name": "本周活动卡与周黑", "cardTypes": ["promo", "totw"] },
+    { "id": "icons-heroes", "name": "传奇卡与英雄卡", "cardTypes": ["icon", "hero"] }
+  ],
+  "renderer": "scripts/render-market-report.mjs",
+  "dataFile": "automation/runs/D/market/market.json"
+}

@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-12",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "50": "5,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Stay alert in defense and smoothly initiate attacks with upgrades in passing and defensive skills.",
+      "id": 179,
+      "name": "Wake Up",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=179",
+      "previewPlayers": [
+        {
+          "displayName": "Thompson",
+          "kind": "before",
+          "name": "Alyssa Thompson",
+          "nameZh": "艾莉莎·汤普森",
+          "position": "LM",
+          "rating": 85,
+          "stats": {
+            "def": 46,
+            "dri": 86,
+            "pac": 88,
+            "pas": 78,
+            "phy": 67,
+            "sho": 80
+          }
+        },
+        {
+          "displayName": "Thompson",
+          "kind": "after",
+          "name": "Alyssa Thompson",
+          "nameZh": "艾莉莎·汤普森",
+          "position": "LM",
+          "rating": 86,
+          "stats": {
+            "def": 52,
+            "dri": 86,
+            "pac": 88,
+            "pas": 83,
+            "phy": 69,
+            "sho": 80
+          }
+        }
+      ],
+      "rank": 835,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "wake-up",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+12",
+            "90"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+12",
+            "90"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "6"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "6"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/179/wake-up",
+      "releaseDate": "2025-12-12",
+      "releaseDateTimeUtc": "2025-12-12T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1287,
+        "providerUrl": "https://futmind.com/evolutions/1287/wake-up",
+        "originalCreatedAt": "2025-12-12T18:00:00.000000Z"
+      },
+      "chronologicalRank": 174
+    },
+    {
+      "availability": {
+        "400": "40,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Bring back the magic that defined a football legend by adopting some of their most memorable characteristics for your preferred player.",
+      "id": 180,
+      "name": "The Little Magician",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=180",
+      "previewPlayers": [
+        {
+          "displayName": "Sinayoko",
+          "kind": "before",
+          "name": "Lassine Sinayoko",
+          "position": "ST",
+          "rating": 74,
+          "stats": {
+            "def": 43,
+            "dri": 73,
+            "pac": 75,
+            "pas": 68,
+            "phy": 73,
+            "sho": 73
+          }
+        },
+        {
+          "displayName": "Sinayoko",
+          "kind": "after",
+          "name": "Lassine Sinayoko",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 78,
+            "dri": 87,
+            "pac": 82,
+            "pas": 87,
+            "phy": 77,
+            "sho": 84
+          }
+        }
+      ],
+      "rank": 834,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM or CM"
+          ],
+          "value": "CAM or CM"
+        }
+      ],
+      "slug": "the-little-magician",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "82",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "82"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+35",
+            "80"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "86",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "86",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "76",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "76"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "6"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "6"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "6"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "6"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "1"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CM"
+          ],
+          "value": "CM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/180/the-little-magician",
+      "releaseDate": "2025-12-12",
+      "releaseDateTimeUtc": "2025-12-12T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1288,
+        "providerUrl": "https://futmind.com/evolutions/1288/the-little-magician",
+        "originalCreatedAt": "2025-12-12T18:00:00.000000Z"
+      },
+      "chronologicalRank": 175
+    }
+  ]
+}

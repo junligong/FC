@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-13",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Get ready to celebrate Team of the Year with upgrades across the board for your player.",
+      "id": 277,
+      "name": "Warming Up",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=277",
+      "previewPlayers": [
+        {
+          "displayName": "Salma Paralluelo",
+          "kind": "before",
+          "name": "Salma Celeste Paralluelo Ayingono",
+          "nameZh": "萨尔马·帕拉尔卢埃洛",
+          "position": "LW",
+          "rating": 86,
+          "stats": {
+            "def": 48,
+            "dri": 85,
+            "pac": 94,
+            "pas": 81,
+            "phy": 80,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Salma Paralluelo",
+          "kind": "after",
+          "name": "Salma Celeste Paralluelo Ayingono",
+          "nameZh": "萨尔马·帕拉尔卢埃洛",
+          "position": "LW",
+          "rating": 87,
+          "stats": {
+            "def": 49,
+            "dri": 87,
+            "pac": 94,
+            "pas": 83,
+            "phy": 81,
+            "sho": 87
+          }
+        }
+      ],
+      "rank": 757,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "warming-up",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+1",
+            "87"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+1",
+            "87"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+1",
+            "87"
+          ],
+          "value": "+1"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/277/warming-up",
+      "releaseDate": "2026-01-13",
+      "releaseDateTimeUtc": "2026-01-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1400,
+        "providerUrl": "https://futmind.com/evolutions/1400/warming-up",
+        "originalCreatedAt": "2026-01-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 252
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Jockey to any qualified player",
+      "id": 278,
+      "name": "Jockey",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=278",
+      "previewPlayers": [],
+      "rank": 756,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        }
+      ],
+      "slug": "jockey",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/278/jockey",
+      "releaseDate": "2026-01-13",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 277,
+          "releaseDate": "2026-01-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 285,
+          "releaseDate": "2026-01-14"
+        }
+      },
+      "chronologicalRank": 253
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Intercept to any qualified player",
+      "id": 279,
+      "name": "Intercept",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=279",
+      "previewPlayers": [],
+      "rank": 755,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        }
+      ],
+      "slug": "intercept",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/279/intercept",
+      "releaseDate": "2026-01-13",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 277,
+          "releaseDate": "2026-01-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 285,
+          "releaseDate": "2026-01-14"
+        }
+      },
+      "chronologicalRank": 254
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Deflector+ to any qualified player",
+      "id": 280,
+      "name": "Deflector+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=280",
+      "previewPlayers": [],
+      "rank": 754,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "deflector",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Deflector",
+            "1"
+          ],
+          "value": "Deflector"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/280/deflector",
+      "releaseDate": "2026-01-13",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 277,
+          "releaseDate": "2026-01-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 285,
+          "releaseDate": "2026-01-14"
+        }
+      },
+      "chronologicalRank": 255
+    }
+  ]
+}

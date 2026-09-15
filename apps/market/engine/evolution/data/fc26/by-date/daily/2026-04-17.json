@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-17",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Rapid+ to any qualified player.",
+      "id": 757,
+      "name": "Rapid+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=757",
+      "previewPlayers": [],
+      "rank": 327,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "rapid",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "2"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/757/rapid",
+      "releaseDate": "2026-04-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 756,
+          "releaseDate": "2026-04-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 758,
+          "releaseDate": "2026-04-17"
+        }
+      },
+      "chronologicalRank": 696
+    },
+    {
+      "availability": {
+        "700": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Turn your midfielder into the heartbeat of the team. A player who is always available, always composed, and always one step ahead.",
+      "id": 758,
+      "name": "The Timeless Maestro",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=758",
+      "previewPlayers": [
+        {
+          "displayName": "Celina",
+          "kind": "before",
+          "name": "Bersant Celina",
+          "position": "LM",
+          "rating": 70,
+          "stats": {
+            "def": 25,
+            "dri": 69,
+            "pac": 78,
+            "pas": 67,
+            "phy": 63,
+            "sho": 64
+          }
+        },
+        {
+          "displayName": "Celina",
+          "kind": "after",
+          "name": "Bersant Celina",
+          "position": "LM",
+          "rating": 93,
+          "stats": {
+            "def": 42,
+            "dri": 92,
+            "pac": 89,
+            "pas": 93,
+            "phy": 67,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 326,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "the-timeless-maestro",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "92",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "92",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "88",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "2"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "2"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/758/the-timeless-maestro",
+      "releaseDate": "2026-04-17",
+      "releaseDateTimeUtc": "2026-04-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1930,
+        "providerUrl": "https://futmind.com/evolutions/1930/the-timeless-maestro",
+        "originalCreatedAt": "2026-04-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 697
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Incisive Pass, Pinged Pass and Tiki Taka to any qualified player.",
+      "id": 759,
+      "name": "Clinical Passer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=759",
+      "previewPlayers": [],
+      "rank": 325,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "clinical-passer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/759/clinical-passer",
+      "releaseDate": "2026-04-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 758,
+          "releaseDate": "2026-04-17"
+        },
+        "nextAnchor": {
+          "evolutionId": 763,
+          "releaseDate": "2026-04-18"
+        }
+      },
+      "chronologicalRank": 698
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Finesse Shot, Low Driven and Power Shot to any qualified player.",
+      "id": 760,
+      "name": "Clinical Finisher",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=760",
+      "previewPlayers": [],
+      "rank": 324,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "clinical-finisher",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/760/clinical-finisher",
+      "releaseDate": "2026-04-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 758,
+          "releaseDate": "2026-04-17"
+        },
+        "nextAnchor": {
+          "evolutionId": 763,
+          "releaseDate": "2026-04-18"
+        }
+      },
+      "chronologicalRank": 699
+    }
+  ]
+}

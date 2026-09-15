@@ -1,0 +1,1930 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-20",
+  "count": 9,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add 5 Star Skill Moves and Weak Foot to any qualified player.",
+      "id": 670,
+      "name": "5 Star Factory 2",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=670",
+      "previewPlayers": [],
+      "rank": 406,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "5-star-factory-2",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/670/5-star-factory-2",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 668,
+          "releaseDate": "2026-03-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 671,
+          "releaseDate": "2026-03-20"
+        }
+      },
+      "chronologicalRank": 610
+    },
+    {
+      "availability": {
+        "1,500": "500,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Lead your nation to glory. Unleash your leadership and showcase your skills as the heart of your national team.",
+      "id": 671,
+      "name": "National Captain",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=671",
+      "previewPlayers": [
+        {
+          "displayName": "Hondermarck",
+          "kind": "before",
+          "name": "Will Hondermarck",
+          "position": "CM",
+          "rating": 62,
+          "stats": {
+            "def": 59,
+            "dri": 65,
+            "pac": 78,
+            "pas": 58,
+            "phy": 66,
+            "sho": 53
+          }
+        },
+        {
+          "displayName": "Hondermarck",
+          "kind": "after",
+          "name": "Will Hondermarck",
+          "position": "CM",
+          "rating": 93,
+          "stats": {
+            "def": 83,
+            "dri": 91,
+            "pac": 91,
+            "pas": 92,
+            "phy": 72,
+            "sho": 90
+          }
+        }
+      ],
+      "rank": 405,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "national-captain",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+46",
+            "93"
+          ],
+          "value": "+46"
+        },
+        {
+          "cap": "91",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+45",
+            "91"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "89",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+45",
+            "89"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "90",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+45",
+            "90"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "93",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+40",
+            "93"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "92",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+45",
+            "92"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+45",
+            "92"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "91",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "90",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+45",
+            "90"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "90",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+40",
+            "90"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+45",
+            "90"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "92",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+70",
+            "92"
+          ],
+          "value": "+70"
+        },
+        {
+          "cap": "91",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "91",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+40",
+            "91"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+45",
+            "95"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "93",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+45",
+            "93"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "99",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+70",
+            "99"
+          ],
+          "value": "+70"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+45",
+            "91"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "90",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+40",
+            "90"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "93",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+45",
+            "93"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "93",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+45",
+            "93"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "88",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+45",
+            "88"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "92",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+40",
+            "92"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "3"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "3"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Power Shot",
+            "3"
+          ],
+          "value": "Power Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/671/national-captain",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": "2026-03-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1830,
+        "providerUrl": "https://futmind.com/evolutions/1830/national-captain",
+        "originalCreatedAt": "2026-03-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 611
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Provide a Final touch to your National Captain Evolution! Add Roles and base PlayStyles to Player Items who have already completed the “National Captain\" Evolution.",
+      "id": 672,
+      "name": "National Captain: Final Touch",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=672",
+      "previewPlayers": [
+        {
+          "displayName": "Medina",
+          "kind": "before",
+          "name": "Agustín Medina",
+          "position": "CDM",
+          "rating": 93,
+          "stats": {
+            "def": 81,
+            "dri": 91,
+            "pac": 91,
+            "pas": 91,
+            "phy": 68,
+            "sho": 89
+          }
+        },
+        {
+          "displayName": "Medina",
+          "kind": "after",
+          "name": "Agustín Medina",
+          "position": "CDM",
+          "rating": 93,
+          "stats": {
+            "def": 81,
+            "dri": 91,
+            "pac": 91,
+            "pas": 91,
+            "phy": 68,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 404,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 93"
+          ],
+          "value": "Exactly 93"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "Captains Icon"
+          ],
+          "value": "Captains Icon"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "national-captain-final-touch",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/672/national-captain-final-touch",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 671,
+          "releaseDate": "2026-03-20"
+        },
+        "nextAnchor": {
+          "evolutionId": 673,
+          "releaseDate": "2026-03-20"
+        }
+      },
+      "chronologicalRank": 612
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Highlight the finest talents from three of Europe's largest football nations.",
+      "id": 673,
+      "name": "Euro Trio",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=673",
+      "previewPlayers": [
+        {
+          "displayName": "Hollerbach",
+          "kind": "before",
+          "name": "Benedict Hollerbach",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 41,
+            "dri": 88,
+            "pac": 91,
+            "pas": 79,
+            "phy": 86,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Hollerbach",
+          "kind": "after",
+          "name": "Benedict Hollerbach",
+          "position": "ST",
+          "rating": 89,
+          "stats": {
+            "def": 46,
+            "dri": 88,
+            "pac": 91,
+            "pas": 79,
+            "phy": 91,
+            "sho": 90
+          }
+        }
+      ],
+      "rank": 401,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Nation",
+          "raw": [
+            "Nation",
+            "Italy or England or Germany"
+          ],
+          "value": "Italy or England or Germany"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "euro-trio",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+7",
+            "90"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "91",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "8"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Block",
+            "8"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "8"
+          ],
+          "value": "Slide Tackle"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "2"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/673/euro-trio",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": "2026-03-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1831,
+        "providerUrl": "https://futmind.com/evolutions/1831/euro-trio",
+        "originalCreatedAt": "2026-03-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 613
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Channel the magic of South American football flair and show off creativity, skill, and passion on the pitch.",
+      "id": 674,
+      "name": "South American Stars",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=674",
+      "previewPlayers": [
+        {
+          "displayName": "Igor Thiago",
+          "kind": "before",
+          "name": "Igor Thiago Rodrigues",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 48,
+            "dri": 85,
+            "pac": 86,
+            "pas": 75,
+            "phy": 90,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Igor Thiago",
+          "kind": "after",
+          "name": "Igor Thiago Rodrigues",
+          "position": "ST",
+          "rating": 89,
+          "stats": {
+            "def": 48,
+            "dri": 90,
+            "pac": 90,
+            "pas": 75,
+            "phy": 90,
+            "sho": 91
+          }
+        }
+      ],
+      "rank": 402,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Player Groups",
+          "raw": [
+            "Player Groups",
+            "South America"
+          ],
+          "value": "South America"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "south-american-stars",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+7",
+            "90"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "91",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "8"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "8"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "2"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/674/south-american-stars",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": "2026-03-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1832,
+        "providerUrl": "https://futmind.com/evolutions/1832/south-american-stars",
+        "originalCreatedAt": "2026-03-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 614
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Take a stroll through three of Europe's largest football nations to choose talent deserving signature boosts and PlayStyles.",
+      "id": 675,
+      "name": "Euro Minitrip",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=675",
+      "previewPlayers": [
+        {
+          "displayName": "Ayoze",
+          "kind": "before",
+          "name": "Ayoze Pérez Gutiérrez",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 63,
+            "dri": 87,
+            "pac": 90,
+            "pas": 84,
+            "phy": 73,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "Ayoze",
+          "kind": "after",
+          "name": "Ayoze Pérez Gutiérrez",
+          "position": "ST",
+          "rating": 89,
+          "stats": {
+            "def": 63,
+            "dri": 89,
+            "pac": 91,
+            "pas": 91,
+            "phy": 73,
+            "sho": 87
+          }
+        }
+      ],
+      "rank": 403,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Nation",
+          "raw": [
+            "Nation",
+            "Spain or France or Netherlands"
+          ],
+          "value": "Spain or France or Netherlands"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "euro-minitrip",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "91",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+6",
+            "91"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "92",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+7",
+            "92"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+5",
+            "89"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Whipped Pass",
+            "8"
+          ],
+          "value": "Whipped Pass"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "2"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/675/euro-minitrip",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": "2026-03-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1838,
+        "providerUrl": "https://futmind.com/evolutions/1838/euro-minitrip",
+        "originalCreatedAt": "2026-03-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 615
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "A force in front of goal, driven by pure instinct and fearless finishing. Watch your attack evolve with unstoppable power and legendary flair.",
+      "id": 676,
+      "name": "Batigol",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=676",
+      "previewPlayers": [],
+      "rank": 400,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "batigol",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+25",
+            "85"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "8"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Power Shot",
+            "2"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "2"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/676/batigol",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 675,
+          "releaseDate": "2026-03-20"
+        },
+        "nextAnchor": {
+          "evolutionId": 683,
+          "releaseDate": "2026-03-21"
+        }
+      },
+      "chronologicalRank": 616
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your favourite player into a FOF: Answer The Call player. This item rarity offers three nation links to chemistry!",
+      "id": 677,
+      "name": "FOF Answer The Call",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=677",
+      "previewPlayers": [],
+      "rank": 399,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "fof-answer-the-call",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/677/fof-answer-the-call",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 675,
+          "releaseDate": "2026-03-20"
+        },
+        "nextAnchor": {
+          "evolutionId": 683,
+          "releaseDate": "2026-03-21"
+        }
+      },
+      "chronologicalRank": 617
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Supply your CAM with extra PlayStyles and Shadow Striker++",
+      "id": 678,
+      "name": "CAM Provisions",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=678",
+      "previewPlayers": [],
+      "rank": 398,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-provisions",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/678/cam-provisions",
+      "releaseDate": "2026-03-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 675,
+          "releaseDate": "2026-03-20"
+        },
+        "nextAnchor": {
+          "evolutionId": 683,
+          "releaseDate": "2026-03-21"
+        }
+      },
+      "chronologicalRank": 618
+    }
+  ]
+}

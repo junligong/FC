@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-20",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "400": "50,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Step onto the path of greatness. Choose your Striker, overcome the challenges, and boost the shot power to the maximum level through this EVO inspired by Fantasy FC upgrades path!",
+      "id": 489,
+      "name": "Fantasy FC Path",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=489",
+      "previewPlayers": [
+        {
+          "displayName": "Gyökeres",
+          "kind": "before",
+          "name": "Viktor Gyökeres",
+          "nameZh": "维克托·哲凯赖什",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 36,
+            "dri": 81,
+            "pac": 90,
+            "pas": 73,
+            "phy": 91,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Gyökeres",
+          "kind": "after",
+          "name": "Viktor Gyökeres",
+          "nameZh": "维克托·哲凯赖什",
+          "position": "ST",
+          "rating": 88,
+          "stats": {
+            "def": 36,
+            "dri": 82,
+            "pac": 91,
+            "pas": 74,
+            "phy": 91,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 580,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "LM, RM"
+          ],
+          "value": "LM, RM"
+        }
+      ],
+      "slug": "fantasy-fc-path",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+1",
+            "87"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+1",
+            "88"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "85",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+1",
+            "85"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+1",
+            "92"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "99",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+70",
+            "99"
+          ],
+          "value": "+70"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+1",
+            "92"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/489/fantasy-fc-path",
+      "releaseDate": "2026-02-20",
+      "releaseDateTimeUtc": "2026-02-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1612,
+        "providerUrl": "https://futmind.com/evolutions/1612/fantasy-fc-path",
+        "originalCreatedAt": "2026-02-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 431
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "10",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Level up your pace with Running Workout. Boost your Sprint Speed, Acceleration and Stamina to compete at your best in every match.",
+      "id": 490,
+      "name": "Running Workout",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=490",
+      "previewPlayers": [
+        {
+          "displayName": "Hernández",
+          "kind": "before",
+          "name": "Luis Hernández",
+          "position": "ST",
+          "rating": 86,
+          "stats": {
+            "def": 45,
+            "dri": 86,
+            "pac": 89,
+            "pas": 71,
+            "phy": 67,
+            "sho": 85
+          }
+        },
+        {
+          "displayName": "Hernández",
+          "kind": "after",
+          "name": "Luis Hernández",
+          "position": "ST",
+          "rating": 86,
+          "stats": {
+            "def": 45,
+            "dri": 86,
+            "pac": 89,
+            "pas": 71,
+            "phy": 68,
+            "sho": 85
+          }
+        }
+      ],
+      "rank": 579,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "running-workout",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "86",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+4",
+            "86"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "86",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+4",
+            "86"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "88",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "8"
+          ],
+          "value": "Relentless"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/490/running-workout",
+      "releaseDate": "2026-02-20",
+      "releaseDateTimeUtc": "2026-02-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1613,
+        "providerUrl": "https://futmind.com/evolutions/1613/running-workout",
+        "originalCreatedAt": "2026-02-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 432
+    }
+  ]
+}

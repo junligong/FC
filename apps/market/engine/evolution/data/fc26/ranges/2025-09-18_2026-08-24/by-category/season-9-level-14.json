@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "season-9-level-14",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 9 LEVEL: 14"
+      ],
+      "description": "Inspired by the world's greatest international competitions, this Evolution brings elite prestige as you upgrade your player on their path to becoming a 5 PS+ superstar. Complete Part 2 to unlock additional attributes alongside maximum pace.",
+      "id": 1114,
+      "name": "Make Your National Pride Star - Part 2",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1114",
+      "previewPlayers": [],
+      "rank": 95,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 95"
+          ],
+          "value": "Exactly 95"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "National Pride"
+          ],
+          "value": "National Pride"
+        }
+      ],
+      "slug": "make-your-national-pride-star-part-2",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": null,
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "92",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "97",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+10",
+            "97"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "96",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+10",
+            "96"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+10",
+            "94"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "97",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+10",
+            "97"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": null,
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1114/make-your-national-pride-star-part-2",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1109,
+          "releaseDate": "2026-07-09"
+        },
+        "nextAnchor": {
+          "evolutionId": 1117,
+          "releaseDate": "2026-07-09"
+        }
+      },
+      "chronologicalRank": 1051
+    }
+  ]
+}

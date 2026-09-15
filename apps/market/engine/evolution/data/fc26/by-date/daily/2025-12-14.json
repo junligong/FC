@@ -1,0 +1,563 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-14",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Breeze past the opposition with fast feet and tidy dribbling.",
+      "id": 186,
+      "name": "Fast Feet",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=186",
+      "previewPlayers": [],
+      "rank": 828,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "fast-feet",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+7",
+            "88"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "6"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/186/fast-feet",
+      "releaseDate": "2025-12-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 183,
+          "releaseDate": "2025-12-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        }
+      },
+      "chronologicalRank": 181
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Relentless and Pinged Pass to any qualified player.",
+      "id": 187,
+      "name": "Work hard, Pass Hard",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=187",
+      "previewPlayers": [],
+      "rank": 829,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        }
+      ],
+      "slug": "work-hard-pass-hard",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "6"
+          ],
+          "value": "Relentless"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "6"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/187/work-hard-pass-hard",
+      "releaseDate": "2025-12-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 183,
+          "releaseDate": "2025-12-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        }
+      },
+      "chronologicalRank": 182
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Take lead from the back and control the game just like the legendary Belgian number 4 from Manchester City.",
+      "id": 188,
+      "name": "Keep Good Kompany",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=188",
+      "previewPlayers": [
+        {
+          "displayName": "Vanegas",
+          "kind": "before",
+          "name": "Manuela Vanegas",
+          "position": "CB",
+          "rating": 82,
+          "stats": {
+            "def": 82,
+            "dri": 72,
+            "pac": 80,
+            "pas": 73,
+            "phy": 83,
+            "sho": 61
+          }
+        },
+        {
+          "displayName": "Vanegas",
+          "kind": "after",
+          "name": "Manuela Vanegas",
+          "position": "CB",
+          "rating": 86,
+          "stats": {
+            "def": 87,
+            "dri": 76,
+            "pac": 82,
+            "pas": 74,
+            "phy": 87,
+            "sho": 64
+          }
+        }
+      ],
+      "rank": 826,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "keep-good-kompany",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "86",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "82",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "82"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "82",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+15",
+            "82"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+15",
+            "82"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "80",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "83"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "82",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "82"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "6"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "6"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "6"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "6"
+          ],
+          "value": "Slide Tackle"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Block",
+            "1"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender+"
+          ],
+          "value": "Ball-Playing Defender+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper+"
+          ],
+          "value": "Stopper+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/188/keep-good-kompany",
+      "releaseDate": "2025-12-14",
+      "releaseDateTimeUtc": "2025-12-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1297,
+        "providerUrl": "https://futmind.com/evolutions/1297/keep-good-kompany",
+        "originalCreatedAt": "2025-12-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 183
+    }
+  ]
+}

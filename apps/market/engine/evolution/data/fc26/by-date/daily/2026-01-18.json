@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-18",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Improve a player's ability to make quick and effective passes, enhancing their playmaking and teamwork on the pitch.",
+      "id": 304,
+      "name": "Give & Go",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=304",
+      "previewPlayers": [
+        {
+          "displayName": "Beier",
+          "kind": "before",
+          "name": "Maximilian Beier",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 50,
+            "dri": 84,
+            "pac": 90,
+            "pas": 74,
+            "phy": 70,
+            "sho": 85
+          }
+        },
+        {
+          "displayName": "Beier",
+          "kind": "after",
+          "name": "Maximilian Beier",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 50,
+            "dri": 84,
+            "pac": 90,
+            "pas": 77,
+            "phy": 70,
+            "sho": 85
+          }
+        }
+      ],
+      "rank": 738,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "give--go",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+3",
+            "87"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "7"
+          ],
+          "value": "Inventive"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/304/give--go",
+      "releaseDate": "2026-01-18",
+      "releaseDateTimeUtc": "2026-01-18T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1423,
+        "providerUrl": "https://futmind.com/evolutions/1423/give-go",
+        "originalCreatedAt": "2026-01-18T18:00:00.000000Z"
+      },
+      "chronologicalRank": 272
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add all CB Roles++ and Intercept PlayStyle to any qualified player.",
+      "id": 305,
+      "name": "CB Roles++ & Intercept",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=305",
+      "previewPlayers": [],
+      "rank": 737,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles--intercept",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/305/cb-roles--intercept",
+      "releaseDate": "2026-01-18",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 304,
+          "releaseDate": "2026-01-18"
+        },
+        "nextAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        }
+      },
+      "chronologicalRank": 273
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Tiki Taka+ to any qualified player.",
+      "id": 306,
+      "name": "Tiki Taka+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=306",
+      "previewPlayers": [],
+      "rank": 736,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        }
+      ],
+      "slug": "tiki-taka",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "1"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/306/tiki-taka",
+      "releaseDate": "2026-01-18",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 304,
+          "releaseDate": "2026-01-18"
+        },
+        "nextAnchor": {
+          "evolutionId": 309,
+          "releaseDate": "2026-01-19"
+        }
+      },
+      "chronologicalRank": 274
+    }
+  ]
+}

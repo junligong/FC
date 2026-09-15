@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-16",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Advenced Forward++ to any qualified ST.",
+      "id": 191,
+      "name": "Advanced Forward++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=191",
+      "previewPlayers": [],
+      "rank": 824,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "advanced-forward",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/191/advanced-forward",
+      "releaseDate": "2025-12-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 194,
+          "releaseDate": "2025-12-18"
+        }
+      },
+      "chronologicalRank": 186
+    }
+  ]
+}

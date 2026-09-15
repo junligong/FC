@@ -1,0 +1,240 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - generic:
+        - heading "To view keyboard shortcuts, press question mark View keyboard shortcuts" [level=2] [ref=e3]:
+          - generic [ref=e4]: To view keyboard shortcuts, press question mark
+          - link "View keyboard shortcuts" [ref=e5] [cursor=pointer]:
+            - /url: /i/keyboard_shortcuts
+        - generic:
+          - generic:
+            - button "Grok" [ref=e6] [cursor=pointer]:
+              - img [ref=e7]
+            - button "Chat" [ref=e10] [cursor=pointer]:
+              - img [ref=e11]
+        - generic [ref=e14]:
+          - button "Skip to home timeline" [ref=e15] [cursor=pointer]
+          - button "Skip to trending" [ref=e17] [cursor=pointer]
+          - banner [ref=e19]:
+            - generic [ref=e21]:
+              - generic [ref=e22]:
+                - heading "X" [level=1] [ref=e24] [cursor=pointer]:
+                  - link "X" [ref=e25]:
+                    - /url: /home
+                    - img [ref=e27]
+                - navigation "Primary" [ref=e31]:
+                  - link "Home" [ref=e32] [cursor=pointer]:
+                    - /url: /home
+                    - generic [ref=e33]:
+                      - img [ref=e35]
+                      - generic [ref=e38]: Home
+                  - link "Search and explore" [ref=e39] [cursor=pointer]:
+                    - /url: /explore
+                    - generic [ref=e40]:
+                      - img [ref=e42]
+                      - generic [ref=e45]: Explore
+                  - link "Notifications" [ref=e46] [cursor=pointer]:
+                    - /url: /notifications
+                    - generic [ref=e47]:
+                      - img [ref=e49]
+                      - generic [ref=e52]: Notifications
+                  - link "Follow" [ref=e53] [cursor=pointer]:
+                    - /url: /i/connect_people
+                    - generic [ref=e54]:
+                      - img [ref=e56]
+                      - generic [ref=e59]: Follow
+                  - link "Direct Messages" [ref=e60] [cursor=pointer]:
+                    - /url: /i/chat
+                    - generic [ref=e61]:
+                      - img [ref=e63]
+                      - generic [ref=e66]: Chat
+                  - link "Grok" [ref=e67] [cursor=pointer]:
+                    - /url: /i/grok
+                    - generic [ref=e68]:
+                      - generic [ref=e69]:
+                        - img [ref=e70]
+                        - generic "undefined unread items" [ref=e73]
+                      - generic [ref=e74]: Grok
+                  - link "History" [ref=e75] [cursor=pointer]:
+                    - /url: /i/history
+                    - generic [ref=e76]:
+                      - img [ref=e78]
+                      - generic [ref=e81]: History
+                  - link "Creator Studio" [ref=e82] [cursor=pointer]:
+                    - /url: /i/jf/creators/studio
+                    - generic [ref=e83]:
+                      - img [ref=e85]
+                      - generic [ref=e89]: Creator Studio
+                  - link "Premium" [ref=e90] [cursor=pointer]:
+                    - /url: /i/premium_sign_up
+                    - generic [ref=e91]:
+                      - img [ref=e93]
+                      - generic [ref=e96]: Premium
+                  - link "Profile" [ref=e97] [cursor=pointer]:
+                    - /url: /DreamworldJony
+                    - generic [ref=e98]:
+                      - img [ref=e100]
+                      - generic [ref=e103]: Profile
+                  - button "More menu items" [ref=e104] [cursor=pointer]:
+                    - generic [ref=e105]:
+                      - img [ref=e107]
+                      - generic [ref=e110]: More
+                - link "Post" [ref=e112] [cursor=pointer]:
+                  - /url: /compose/post
+                  - generic [ref=e118]: Post
+              - button "Account menu" [ref=e121] [cursor=pointer]:
+                - generic [ref=e129]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic "jony dreamworld":
+                          - img "jony dreamworld"
+                - generic [ref=e133]:
+                  - generic [ref=e137]: jony dreamworld
+                  - generic [ref=e141]: "@DreamworldJony"
+                - img [ref=e143]
+          - main [ref=e146]:
+            - generic [ref=e149]:
+              - generic "Home timeline" [ref=e151]:
+                - generic [ref=e152]:
+                  - generic [ref=e158] [cursor=pointer]:
+                    - button "Back" [ref=e160]:
+                      - img [ref=e162]
+                    - generic [ref=e166]:
+                      - heading "FUTBIN Verified account" [level=2] [ref=e167]:
+                        - generic [ref=e171]:
+                          - generic [ref=e173]: FUTBIN
+                          - img "Verified account" [ref=e176]
+                      - generic [ref=e179]: 14.7K posts
+                    - generic [ref=e181]:
+                      - button "Profile Summary" [ref=e182]:
+                        - img [ref=e184]
+                      - button "Search" [ref=e187]:
+                        - img [ref=e189]
+                  - generic:
+                    - generic:
+                      - status:
+                        - button:
+                          - generic:
+                            - img
+                            - generic: See new posts
+                - generic [ref=e194]:
+                  - generic [ref=e195]:
+                    - link [ref=e196] [cursor=pointer]:
+                      - /url: /FUTBIN/header_photo
+                    - generic [ref=e202]:
+                      - generic [ref=e203]:
+                        - link "Opens profile photo" [ref=e211] [cursor=pointer]:
+                          - /url: /FUTBIN/photo
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic "Opens profile photo":
+                                  - img "Opens profile photo"
+                        - generic [ref=e214]:
+                          - button "More" [ref=e215] [cursor=pointer]:
+                            - img [ref=e217]
+                          - button "Message" [ref=e220] [cursor=pointer]:
+                            - img [ref=e222]
+                          - button "Turn on post notifications" [ref=e226] [cursor=pointer]:
+                            - img [ref=e228]
+                          - button "Following @FUTBIN" [ref=e233] [cursor=pointer]:
+                            - generic [ref=e236]: Following
+                      - generic [ref=e240]:
+                        - generic [ref=e244]:
+                          - text: FUTBIN
+                          - button "Provides details about verified accounts." [ref=e249] [cursor=pointer]:
+                            - img "Verified account" [ref=e250]
+                        - generic [ref=e256]: "@FUTBIN"
+                      - generic [ref=e259]:
+                        - text: The World’s Largest FUT Community and Database featuring Squad Builder, Player Prices, AI SBC Solutions, Live Player Trackers and more!
+                        - link "linktr.ee/FUTBIN" [ref=e260] [cursor=pointer]:
+                          - /url: https://t.co/BCw50wlZfB
+                      - generic [ref=e262]:
+                        - img [ref=e263]
+                        - generic [ref=e266]: Worldwide
+                        - link "FUTBIN.com" [ref=e267] [cursor=pointer]:
+                          - /url: https://t.co/mjDoHIAV8z
+                          - img [ref=e268]
+                          - text: FUTBIN.com
+                        - link "Joined April 2014" [ref=e272] [cursor=pointer]:
+                          - /url: /FUTBIN/about
+                          - img [ref=e273]
+                          - text: Joined April 2014
+                          - img [ref=e276]
+                      - generic [ref=e279]:
+                        - link "523 Following" [ref=e281] [cursor=pointer]:
+                          - /url: /FUTBIN/following
+                          - generic [ref=e282]: "523"
+                          - generic [ref=e283]: Following
+                        - link "643K Followers" [ref=e285] [cursor=pointer]:
+                          - /url: /FUTBIN/verified_followers
+                          - generic [ref=e286]: 643K
+                          - generic [ref=e287]: Followers
+                    - progressbar [ref=e291]:
+                      - img [ref=e293]
+                  - navigation "Profile timelines" [ref=e297]:
+                    - generic [ref=e298]:
+                      - generic:
+                        - button "Previous" [disabled]:
+                          - generic:
+                            - img
+                      - tablist [ref=e300]:
+                        - tab "Posts" [selected] [ref=e301] [cursor=pointer]:
+                          - generic [ref=e305]:
+                            - text: Posts
+                            - img [ref=e306]
+                        - tab "Replies" [ref=e310] [cursor=pointer]:
+                          - generic [ref=e313]: Replies
+                        - tab "Reposts" [ref=e314] [cursor=pointer]:
+                          - generic [ref=e317]: Reposts
+                        - tab "Media" [ref=e318] [cursor=pointer]:
+                          - generic [ref=e321]: Media
+                      - generic:
+                        - button "Next" [disabled]:
+                          - generic:
+                            - img
+                  - progressbar "Loading" [ref=e322]:
+                    - img [ref=e324]
+              - generic "Trending" [ref=e331]:
+                - generic [ref=e332]:
+                  - search "Search" [ref=e337]:
+                    - generic [ref=e342]:
+                      - img [ref=e344]
+                      - combobox "Search query" [ref=e349]
+                  - progressbar "Loading recommendations for users to follow" [ref=e354]:
+                    - img [ref=e356]
+                  - progressbar "Loading timeline" [ref=e361]:
+                    - img [ref=e363]
+                  - navigation "Footer" [ref=e367]:
+                    - generic [ref=e368]:
+                      - link "Terms" [ref=e369] [cursor=pointer]:
+                        - /url: https://x.com/tos
+                      - generic [ref=e370]: ·
+                    - generic [ref=e371]:
+                      - link "Privacy" [ref=e372] [cursor=pointer]:
+                        - /url: https://x.com/privacy
+                      - generic [ref=e373]: ·
+                    - generic [ref=e374]:
+                      - link "Cookies" [ref=e375] [cursor=pointer]:
+                        - /url: https://support.x.com/articles/20170514
+                      - generic [ref=e376]: ·
+                    - generic [ref=e377]:
+                      - link "Accessibility" [ref=e378] [cursor=pointer]:
+                        - /url: https://help.x.com/resources/accessibility
+                      - generic [ref=e379]: ·
+                    - generic [ref=e380]:
+                      - link "US TIDA" [ref=e381] [cursor=pointer]:
+                        - /url: https://help.x.com/rules-and-policies/us-tida
+                      - generic [ref=e382]: ·
+                    - generic [ref=e383]:
+                      - link "Ads Info" [ref=e384] [cursor=pointer]:
+                        - /url: https://business.x.com/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&utm_source=twc&utm_medium=web&utm_campaign=ao&utm_content=adsinfo
+                      - generic [ref=e385]: ·
+                    - button "More" [ref=e386] [cursor=pointer]:
+                      - generic [ref=e387]:
+                        - text: More
+                        - img [ref=e388]
+                    - generic [ref=e391]: © 2026 X Corp.
+  - generic:
+    - generic: 搭子正在控制浏览器

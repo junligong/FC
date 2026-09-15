@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "store-pack",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "repeatable": true,
+        "store_pack": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "STORE PACK"
+      ],
+      "description": "Give 99 Shooting to any eligible player",
+      "id": 1256,
+      "name": "99 SHO",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1256",
+      "previewPlayers": [],
+      "rank": 25,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW or ST or RW"
+          ],
+          "value": "LW or ST or RW"
+        }
+      ],
+      "slug": "99-sho",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+4",
+            "98"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+99"
+          ],
+          "value": "+99"
+        },
+        {
+          "cap": null,
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+99"
+          ],
+          "value": "+99"
+        },
+        {
+          "cap": null,
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+99"
+          ],
+          "value": "+99"
+        },
+        {
+          "cap": null,
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+99"
+          ],
+          "value": "+99"
+        },
+        {
+          "cap": null,
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+99"
+          ],
+          "value": "+99"
+        },
+        {
+          "cap": null,
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+99"
+          ],
+          "value": "+99"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1256/99-sho",
+      "releaseDate": "2026-08-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1255,
+          "releaseDate": "2026-08-15"
+        },
+        "nextAnchor": {
+          "evolutionId": 1257,
+          "releaseDate": "2026-08-16"
+        }
+      },
+      "chronologicalRank": 1192
+    }
+  ]
+}

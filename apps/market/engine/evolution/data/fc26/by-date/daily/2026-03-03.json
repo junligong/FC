@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-03",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add the First Touch+ to a qualified player.",
+      "id": 509,
+      "name": "First Touch+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=509",
+      "previewPlayers": [],
+      "rank": 560,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "first-touch",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "First Touch",
+            "2"
+          ],
+          "value": "First Touch"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/509/first-touch",
+      "releaseDate": "2026-03-03",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 508,
+          "releaseDate": "2026-03-02"
+        },
+        "nextAnchor": {
+          "evolutionId": 510,
+          "releaseDate": "2026-03-03"
+        }
+      },
+      "chronologicalRank": 451
+    },
+    {
+      "availability": {
+        "500": "60,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "training": "3 DAYS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Get ready for the party and arrive in style with 5 Star Skill Moves and 5 Star Weak Foot.",
+      "id": 510,
+      "name": "Birthday Warmup",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=510",
+      "previewPlayers": [
+        {
+          "displayName": "Reijnders",
+          "kind": "before",
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 79,
+            "dri": 86,
+            "pac": 80,
+            "pas": 83,
+            "phy": 78,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Reijnders",
+          "kind": "after",
+          "name": "Tijjani Reijnders",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 79,
+            "dri": 86,
+            "pac": 80,
+            "pas": 83,
+            "phy": 78,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 559,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "birthday-warmup",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/510/birthday-warmup",
+      "releaseDate": "2026-03-03",
+      "releaseDateTimeUtc": "2026-03-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1650,
+        "providerUrl": "https://futmind.com/evolutions/1650/birthday-warmup",
+        "originalCreatedAt": "2026-03-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 452
+    }
+  ]
+}

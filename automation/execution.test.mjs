@@ -6,16 +6,21 @@ test('single owner, stale output rejection, immutable completion and coordinator
  try{
  const report=path.join(root,`reports/daily/${date}/football.html`);fs.mkdirSync(path.dirname(report),{recursive:true});fs.writeFileSync(report,`<html>${date}</html>`);fs.utimesSync(report,1,1);
  const state=JSON.parse(run('begin','football',date).stdout);assert.equal(state.accepted,true);assert.equal(JSON.parse(run('begin','football',date).stdout).accepted,false);
+ const activeRerun=JSON.parse(run('begin','football',date,'--rerun').stdout);assert.equal(activeRerun.accepted,false);assert.match(activeRerun.reason,/仍在进行/);assert.equal(activeRerun.owner.runId,state.runId);
+ const activePrepare=JSON.parse(run('prepare-rerun','football',date).stdout);assert.equal(activePrepare.prepared,false);assert.equal(activePrepare.owner.runId,state.runId);
  const evidence=path.join(root,'evidence.json');fs.writeFileSync(evidence,JSON.stringify({date,sources:[{url:'https://example.com/report',openedAt:new Date().toISOString()}]}));
  assert.notEqual(run('finish','football',date,state.runId,'success',evidence).status,0);
  fs.writeFileSync(report,`<html>${date} current</html>`);
+ fs.writeFileSync(evidence,JSON.stringify({date,sources:[{url:'https://example.com/report',openedAt:new Date(Date.parse(state.startedAt)-1000).toISOString()}]}));
+ const staleEvidence=run('finish','football',date,state.runId,'partial',evidence);assert.notEqual(staleEvidence.status,0);assert.match(staleEvidence.stderr,/不是本轮实际打开/);
+ fs.writeFileSync(evidence,JSON.stringify({date,sources:[{url:'https://example.com/report',openedAt:new Date().toISOString()}]}));
  const done=run('finish','football',date,state.runId,'partial',evidence);assert.equal(done.status,0,done.stderr);const snapshot=JSON.parse(done.stdout).snapshotPath;fs.writeFileSync(report,'changed later');assert.match(fs.readFileSync(snapshot,'utf8'),/current/);
  assert.notEqual(run('finish','football',date,state.runId,'success',evidence).status,0);
  const news=JSON.parse(run('begin','news',date).stdout);assert.equal(run('finish','news',date,news.runId,'failed').status,0);
  const market=JSON.parse(run('begin','market',date).stdout);const rejectedSkip=run('finish','market',date,market.runId,'skipped');assert.notEqual(rejectedSkip.status,0);assert.match(rejectedSkip.stderr,/仍处于启用状态/);assert.equal(run('finish','market',date,market.runId,'failed').status,0);
  fs.mkdirSync(path.join(root,'daily-merged'),{recursive:true});
  const coordinated=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date],{env,encoding:'utf8',timeout:5000});assert.equal(coordinated.status,0,coordinated.stderr);
- const result=JSON.parse(fs.readFileSync(path.join(root,'automation/runs',date,'coordinator-state.json')));assert.equal(result.merge,'success');assert.equal(result.publish,'blocked');assert.equal(result.modules.news.status,'failed');assert.equal(result.modules.market.status,'failed');assert.ok(fs.existsSync(path.join(root,'daily-merged/index.html')));
+ const result=JSON.parse(fs.readFileSync(path.join(root,'automation/runs',date,'coordinator-state.json')));assert.equal(result.merge,'success');assert.equal(result.publish,'delegated');assert.equal(result.modules.news.status,'failed');assert.equal(result.modules.market.status,'failed');assert.ok(fs.existsSync(path.join(root,'daily-merged/index.html')));
  const duplicate=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date],{env,encoding:'utf8',timeout:1000});assert.equal(duplicate.status,0);assert.match(duplicate.stdout,/不重复合并/);
  const rerun=JSON.parse(run('begin','football',date,'--rerun').stdout);assert.equal(rerun.accepted,true);assert.match(rerun.previousAttempt,/attempts/);assert.ok(fs.existsSync(path.join(root,rerun.previousAttempt,'report.html')));assert.equal(run('finish','football',date,rerun.runId,'failed').status,0);
  const coordinateRerun=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date,'--rerun'],{env,encoding:'utf8',timeout:5000});assert.equal(coordinateRerun.status,0,coordinateRerun.stderr);assert.ok(fs.existsSync(path.join(root,'automation/runs',date,'coordinator-attempts')));
@@ -44,4 +49,21 @@ test('late submissions cannot replace a report snapshot',()=>{
 test('news child process is actually stopped at its hard deadline',()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'fc-child-timeout-'));const script=path.join(root,'apps/news/auto_news.sh');fs.mkdirSync(path.dirname(script),{recursive:true});fs.writeFileSync(script,'#!/bin/bash\nsleep 30\n');
  try{const started=Date.now();const result=spawnSync(process.execPath,[path.join(here,'collect-news.mjs'),'2026-09-11'],{env:{...process.env,FC_PROJECT_ROOT:root,FC_NEWS_MAX_MS:'100'},encoding:'utf8',timeout:7000});assert.equal(result.status,124,result.stderr);assert.ok(Date.now()-started<6500);assert.match(result.stderr,/上限/);}finally{fs.rmSync(root,{recursive:true,force:true});}
+});
+
+test('coordinator copies today assets into the isolated stage so images inline',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'fc-coordinate-assets-'));const date='2026-09-11';const env={...process.env,FC_PROJECT_ROOT:root};const run=(...args)=>spawnSync(process.execPath,[path.join(here,'run-state.mjs'),...args],{env,encoding:'utf8'});
+ try{
+  const reportDir=path.join(root,`reports/daily/${date}`);const assetsDir=path.join(reportDir,'assets/news');fs.mkdirSync(assetsDir,{recursive:true});
+  fs.writeFileSync(path.join(assetsDir,'pic.jpg'),Buffer.from([0xff,0xd8,0xff,0xd9]));
+  const state=JSON.parse(run('begin','football',date).stdout);assert.equal(state.accepted,true);
+  const report=path.join(reportDir,'football.html');fs.writeFileSync(report,`<html>${date}<img src="assets/news/pic.jpg"></html>`);
+  const evidence=path.join(root,'evidence.json');fs.writeFileSync(evidence,JSON.stringify({date,sources:[{url:'https://example.com/report',openedAt:new Date().toISOString()}]}));
+  assert.equal(run('finish','football',date,state.runId,'partial',evidence).status,0);
+  const news=JSON.parse(run('begin','news',date).stdout);assert.equal(run('finish','news',date,news.runId,'failed').status,0);
+  const market=JSON.parse(run('begin','market',date).stdout);assert.equal(run('finish','market',date,market.runId,'failed').status,0);
+  const coordinated=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date],{env,encoding:'utf8',timeout:5000});assert.equal(coordinated.status,0,coordinated.stderr);
+  const summary=fs.readFileSync(path.join(reportDir,'summary.html'),'utf8');
+  assert.ok(summary.includes('data:image/jpeg;base64'),'summary 应内嵌今日 assets 图片');
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
 });

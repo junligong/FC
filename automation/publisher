@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+// 作用：已废弃的 DuMate 单文件发布器占位。
+// 背景：项目自 2026-09-15 起从 DuMate 迁移到 WorkBuddy，发布统一由 WorkBuddy 站点发布能力
+//       在同一会话内发布 daily-merged/（多文件静态站点），不再使用命令行发布器与 DuMate 控制台 API。
+// 契约：即使被旧脚本误调用也安全退出 0，不联网、不读取凭据、不打印任何敏感信息。
+// 迁移指引见 automation/prompts/publish.md。
+console.log(JSON.stringify({
+  status: 'deprecated',
+  reason: 'DuMate 单文件发布通道已废弃；请使用 WorkBuddy 站点发布能力发布 daily-merged/。',
+  publishDirectory: 'daily-merged',
+  entry: 'index.html',
+}, null, 0));
+process.exitCode = 0;

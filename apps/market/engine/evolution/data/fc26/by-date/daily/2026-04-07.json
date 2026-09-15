@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-07",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "training": "1 HOUR",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "When the clock hits desperation time, legends rise. Equalize on a last-chance opportunity and flip finals on their head, just like the 93rd minute goal in Lisbon in 2014.",
+      "id": 727,
+      "name": "Lisbon Lifeline",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=727",
+      "previewPlayers": [
+        {
+          "displayName": "Bethune",
+          "kind": "before",
+          "name": "Croix Bethune",
+          "position": "CAM",
+          "rating": 87,
+          "stats": {
+            "def": 73,
+            "dri": 88,
+            "pac": 85,
+            "pas": 87,
+            "phy": 75,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Bethune",
+          "kind": "after",
+          "name": "Croix Bethune",
+          "position": "CAM",
+          "rating": 88,
+          "stats": {
+            "def": 78,
+            "dri": 88,
+            "pac": 85,
+            "pas": 87,
+            "phy": 80,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 354,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "lisbon-lifeline",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "93",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+10",
+            "93"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "95",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "90",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "89",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+5",
+            "89"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Precision Header",
+            "8"
+          ],
+          "value": "Precision Header"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/727/lisbon-lifeline",
+      "releaseDate": "2026-04-07",
+      "releaseDateTimeUtc": "2026-04-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1897,
+        "providerUrl": "https://futmind.com/evolutions/1897/lisbon-lifeline",
+        "originalCreatedAt": "2026-04-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 667
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Unlock-able in the Red Bull Mystery Ball Objective",
+      "id": 728,
+      "name": "Red Bull - Physical",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=728",
+      "previewPlayers": [],
+      "rank": 353,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "red-bull-physical",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/728/red-bull-physical",
+      "releaseDate": "2026-04-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 727,
+          "releaseDate": "2026-04-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 731,
+          "releaseDate": "2026-04-08"
+        }
+      },
+      "chronologicalRank": 668
+    }
+  ]
+}

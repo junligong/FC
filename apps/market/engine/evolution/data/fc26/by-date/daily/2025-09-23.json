@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-09-23",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "200": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Passing Prodigy takes your distribution to the next level. Sharper passing, smoother build-up play, and a boost that makes every possession feel effortless.",
+      "id": 14,
+      "name": "Passing Prodigy",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=14",
+      "previewPlayers": [
+        {
+          "displayName": "Trossard",
+          "kind": "before",
+          "name": "Leandro Trossard",
+          "position": "LW",
+          "rating": 83,
+          "stats": {
+            "def": 30,
+            "dri": 85,
+            "pac": 80,
+            "pas": 80,
+            "phy": 60,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Trossard",
+          "kind": "after",
+          "name": "Leandro Trossard",
+          "position": "LW",
+          "rating": 83,
+          "stats": {
+            "def": 30,
+            "dri": 85,
+            "pac": 80,
+            "pas": 81,
+            "phy": 60,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 997,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 83"
+          ],
+          "value": "Max 83"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "passing-prodigy",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "83",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+1",
+            "83"
+          ],
+          "value": "+1"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/14/passing-prodigy",
+      "releaseDate": "2025-09-23",
+      "releaseDateTimeUtc": "2025-09-23T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1015,
+        "providerUrl": "https://futmind.com/evolutions/1015/passing-prodigy",
+        "originalCreatedAt": "2025-09-23T18:00:00.000000Z"
+      },
+      "chronologicalRank": 10
+    }
+  ]
+}

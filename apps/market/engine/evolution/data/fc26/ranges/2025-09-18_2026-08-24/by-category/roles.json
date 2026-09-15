@@ -1,0 +1,6508 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "roles",
+  "count": 70,
+  "tasks": [
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 199,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=199",
+      "previewPlayers": [
+        {
+          "displayName": "Vicario",
+          "kind": "before",
+          "name": "Guglielmo Vicario",
+          "position": "GK",
+          "rating": 87,
+          "stats": {
+            "def": 60,
+            "dri": 89,
+            "pac": 88,
+            "pas": 83,
+            "phy": 85,
+            "sho": 83
+          }
+        },
+        {
+          "displayName": "Vicario",
+          "kind": "after",
+          "name": "Guglielmo Vicario",
+          "position": "GK",
+          "rating": 87,
+          "stats": {
+            "def": 60,
+            "dri": 89,
+            "pac": 88,
+            "pas": 83,
+            "phy": 85,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 815,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/199/gk-roles",
+      "releaseDate": "2025-12-19",
+      "releaseDateTimeUtc": "2025-12-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1332,
+        "providerUrl": "https://futmind.com/evolutions/1332/gk-roles",
+        "originalCreatedAt": "2025-12-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 194
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 200,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=200",
+      "previewPlayers": [
+        {
+          "displayName": "Bacha",
+          "kind": "before",
+          "name": "Selma Bacha",
+          "nameZh": "塞尔玛·巴查",
+          "position": "LB",
+          "rating": 87,
+          "stats": {
+            "def": 82,
+            "dri": 84,
+            "pac": 90,
+            "pas": 87,
+            "phy": 83,
+            "sho": 80
+          }
+        },
+        {
+          "displayName": "Bacha",
+          "kind": "after",
+          "name": "Selma Bacha",
+          "nameZh": "塞尔玛·巴查",
+          "position": "LB",
+          "rating": 87,
+          "stats": {
+            "def": 82,
+            "dri": 84,
+            "pac": 90,
+            "pas": 87,
+            "phy": 83,
+            "sho": 80
+          }
+        }
+      ],
+      "rank": 811,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/200/lb-roles",
+      "releaseDate": "2025-12-19",
+      "releaseDateTimeUtc": "2025-12-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1333,
+        "providerUrl": "https://futmind.com/evolutions/1333/lb-roles",
+        "originalCreatedAt": "2025-12-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 195
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 201,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=201",
+      "previewPlayers": [
+        {
+          "displayName": "Rúben Neves",
+          "kind": "before",
+          "name": "Rúben Diogo da Silva Neves",
+          "nameZh": "鲁本·内维斯",
+          "position": "CDM",
+          "rating": 87,
+          "stats": {
+            "def": 85,
+            "dri": 85,
+            "pac": 83,
+            "pas": 90,
+            "phy": 82,
+            "sho": 78
+          }
+        },
+        {
+          "displayName": "Rúben Neves",
+          "kind": "after",
+          "name": "Rúben Diogo da Silva Neves",
+          "nameZh": "鲁本·内维斯",
+          "position": "CDM",
+          "rating": 87,
+          "stats": {
+            "def": 85,
+            "dri": 85,
+            "pac": 83,
+            "pas": 90,
+            "phy": 82,
+            "sho": 78
+          }
+        }
+      ],
+      "rank": 812,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/201/rb-roles",
+      "releaseDate": "2025-12-19",
+      "releaseDateTimeUtc": "2025-12-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1334,
+        "providerUrl": "https://futmind.com/evolutions/1334/rb-roles",
+        "originalCreatedAt": "2025-12-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 196
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB.",
+      "id": 202,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=202",
+      "previewPlayers": [
+        {
+          "displayName": "Córdoba",
+          "kind": "before",
+          "name": "Iván Córdoba",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 90,
+            "dri": 68,
+            "pac": 86,
+            "pas": 65,
+            "phy": 87,
+            "sho": 63
+          }
+        },
+        {
+          "displayName": "Córdoba",
+          "kind": "after",
+          "name": "Iván Córdoba",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 90,
+            "dri": 68,
+            "pac": 86,
+            "pas": 65,
+            "phy": 87,
+            "sho": 63
+          }
+        }
+      ],
+      "rank": 813,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/202/cb-roles",
+      "releaseDate": "2025-12-19",
+      "releaseDateTimeUtc": "2025-12-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1335,
+        "providerUrl": "https://futmind.com/evolutions/1335/cb-roles",
+        "originalCreatedAt": "2025-12-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 197
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 203,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=203",
+      "previewPlayers": [
+        {
+          "displayName": "Marchisio",
+          "kind": "before",
+          "name": "Claudio Marchisio",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 80,
+            "dri": 86,
+            "pac": 82,
+            "pas": 85,
+            "phy": 82,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Marchisio",
+          "kind": "after",
+          "name": "Claudio Marchisio",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 80,
+            "dri": 86,
+            "pac": 82,
+            "pas": 85,
+            "phy": 82,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 814,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/203/cdm-roles",
+      "releaseDate": "2025-12-19",
+      "releaseDateTimeUtc": "2025-12-19T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1336,
+        "providerUrl": "https://futmind.com/evolutions/1336/cdm-roles",
+        "originalCreatedAt": "2025-12-19T18:00:00.000000Z"
+      },
+      "chronologicalRank": 198
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 249,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=249",
+      "previewPlayers": [],
+      "rank": 779,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/249/cm-roles",
+      "releaseDate": "2025-12-26",
+      "releaseDateTimeUtc": "2025-12-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1360,
+        "providerUrl": "https://futmind.com/evolutions/1360/cm-roles",
+        "originalCreatedAt": "2025-12-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 227
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 250,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=250",
+      "previewPlayers": [],
+      "rank": 780,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/250/cam-roles",
+      "releaseDate": "2025-12-26",
+      "releaseDateTimeUtc": "2025-12-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1361,
+        "providerUrl": "https://futmind.com/evolutions/1361/cam-roles",
+        "originalCreatedAt": "2025-12-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 228
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 251,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=251",
+      "previewPlayers": [],
+      "rank": 781,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/251/lw-roles",
+      "releaseDate": "2025-12-26",
+      "releaseDateTimeUtc": "2025-12-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1362,
+        "providerUrl": "https://futmind.com/evolutions/1362/lw-roles",
+        "originalCreatedAt": "2025-12-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 229
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 252,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=252",
+      "previewPlayers": [],
+      "rank": 782,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/252/rw-roles",
+      "releaseDate": "2025-12-26",
+      "releaseDateTimeUtc": "2025-12-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1363,
+        "providerUrl": "https://futmind.com/evolutions/1363/rw-roles",
+        "originalCreatedAt": "2025-12-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 230
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 253,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=253",
+      "previewPlayers": [],
+      "rank": 778,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/253/st-roles",
+      "releaseDate": "2025-12-26",
+      "releaseDateTimeUtc": "2025-12-26T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1364,
+        "providerUrl": "https://futmind.com/evolutions/1364/st-roles",
+        "originalCreatedAt": "2025-12-26T18:00:00.000000Z"
+      },
+      "chronologicalRank": 231
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 462,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=462",
+      "previewPlayers": [],
+      "rank": 601,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/462/gk-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1583,
+        "providerUrl": "https://futmind.com/evolutions/1583/gk-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 404
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 463,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=463",
+      "previewPlayers": [],
+      "rank": 602,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/463/lb-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1584,
+        "providerUrl": "https://futmind.com/evolutions/1584/lb-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 405
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 464,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=464",
+      "previewPlayers": [],
+      "rank": 603,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/464/rb-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1585,
+        "providerUrl": "https://futmind.com/evolutions/1585/rb-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 406
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB.",
+      "id": 465,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=465",
+      "previewPlayers": [],
+      "rank": 604,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/465/cb-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1586,
+        "providerUrl": "https://futmind.com/evolutions/1586/cb-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 407
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 466,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=466",
+      "previewPlayers": [],
+      "rank": 605,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/466/cdm-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1587,
+        "providerUrl": "https://futmind.com/evolutions/1587/cdm-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 408
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 467,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=467",
+      "previewPlayers": [],
+      "rank": 606,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/467/cm-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1588,
+        "providerUrl": "https://futmind.com/evolutions/1588/cm-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 409
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 468,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=468",
+      "previewPlayers": [],
+      "rank": 596,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/468/lw-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1589,
+        "providerUrl": "https://futmind.com/evolutions/1589/lw-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 410
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 469,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=469",
+      "previewPlayers": [],
+      "rank": 597,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/469/rw-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1590,
+        "providerUrl": "https://futmind.com/evolutions/1590/rw-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 411
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 470,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=470",
+      "previewPlayers": [],
+      "rank": 598,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/470/st-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1591,
+        "providerUrl": "https://futmind.com/evolutions/1591/st-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 412
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LM player.",
+      "id": 471,
+      "name": "LM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=471",
+      "previewPlayers": [],
+      "rank": 599,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "lm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/471/lm-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1592,
+        "providerUrl": "https://futmind.com/evolutions/1592/lm-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 413
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RM.",
+      "id": 472,
+      "name": "RM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=472",
+      "previewPlayers": [],
+      "rank": 600,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM"
+          ],
+          "value": "RM"
+        }
+      ],
+      "slug": "rm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/472/rm-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1593,
+        "providerUrl": "https://futmind.com/evolutions/1593/rm-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 414
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 473,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=473",
+      "previewPlayers": [],
+      "rank": 595,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/473/cam-roles",
+      "releaseDate": "2026-02-13",
+      "releaseDateTimeUtc": "2026-02-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1594,
+        "providerUrl": "https://futmind.com/evolutions/1594/cam-roles",
+        "originalCreatedAt": "2026-02-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 415
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 701,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=701",
+      "previewPlayers": [],
+      "rank": 375,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/701/gk-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1882,
+        "providerUrl": "https://futmind.com/evolutions/1882/gk-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 641
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB player.",
+      "id": 702,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=702",
+      "previewPlayers": [],
+      "rank": 370,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/702/cb-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1883,
+        "providerUrl": "https://futmind.com/evolutions/1883/cb-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 642
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 703,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=703",
+      "previewPlayers": [],
+      "rank": 371,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/703/lb-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1884,
+        "providerUrl": "https://futmind.com/evolutions/1884/lb-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 643
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 704,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=704",
+      "previewPlayers": [],
+      "rank": 372,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/704/rb-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1885,
+        "providerUrl": "https://futmind.com/evolutions/1885/rb-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 644
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 705,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=705",
+      "previewPlayers": [],
+      "rank": 373,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/705/cdm-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1886,
+        "providerUrl": "https://futmind.com/evolutions/1886/cdm-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 645
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 706,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=706",
+      "previewPlayers": [],
+      "rank": 374,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/706/cm-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1887,
+        "providerUrl": "https://futmind.com/evolutions/1887/cm-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 646
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 707,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=707",
+      "previewPlayers": [],
+      "rank": 365,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/707/cam-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1888,
+        "providerUrl": "https://futmind.com/evolutions/1888/cam-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 647
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LM player.",
+      "id": 708,
+      "name": "LM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=708",
+      "previewPlayers": [],
+      "rank": 366,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "lm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/708/lm-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1889,
+        "providerUrl": "https://futmind.com/evolutions/1889/lm-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 648
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RM.",
+      "id": 709,
+      "name": "RM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=709",
+      "previewPlayers": [],
+      "rank": 367,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM"
+          ],
+          "value": "RM"
+        }
+      ],
+      "slug": "rm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/709/rm-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1890,
+        "providerUrl": "https://futmind.com/evolutions/1890/rm-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 649
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 710,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=710",
+      "previewPlayers": [],
+      "rank": 368,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/710/lw-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1891,
+        "providerUrl": "https://futmind.com/evolutions/1891/lw-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 650
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 711,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=711",
+      "previewPlayers": [],
+      "rank": 369,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/711/rw-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1892,
+        "providerUrl": "https://futmind.com/evolutions/1892/rw-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 651
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "16",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 712,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=712",
+      "previewPlayers": [],
+      "rank": 364,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/712/st-roles",
+      "releaseDate": "2026-04-03",
+      "releaseDateTimeUtc": "2026-04-03T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1893,
+        "providerUrl": "https://futmind.com/evolutions/1893/st-roles",
+        "originalCreatedAt": "2026-04-03T18:00:00.000000Z"
+      },
+      "chronologicalRank": 652
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 924,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=924",
+      "previewPlayers": [],
+      "rank": 198,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/924/gk-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2096,
+        "providerUrl": "https://futmind.com/evolutions/2096/gk-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 863
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB player.",
+      "id": 925,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=925",
+      "previewPlayers": [],
+      "rank": 199,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/925/cb-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2097,
+        "providerUrl": "https://futmind.com/evolutions/2097/cb-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 864
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 926,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=926",
+      "previewPlayers": [],
+      "rank": 193,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/926/lb-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2098,
+        "providerUrl": "https://futmind.com/evolutions/2098/lb-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 865
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 927,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=927",
+      "previewPlayers": [],
+      "rank": 194,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/927/rb-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2100,
+        "providerUrl": "https://futmind.com/evolutions/2100/rb-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 866
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 928,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=928",
+      "previewPlayers": [],
+      "rank": 195,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/928/cdm-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2101,
+        "providerUrl": "https://futmind.com/evolutions/2101/cdm-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 867
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 929,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=929",
+      "previewPlayers": [],
+      "rank": 196,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/929/cm-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2102,
+        "providerUrl": "https://futmind.com/evolutions/2102/cm-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 868
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 930,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=930",
+      "previewPlayers": [],
+      "rank": 197,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/930/cam-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2103,
+        "providerUrl": "https://futmind.com/evolutions/2103/cam-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 869
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LM player.",
+      "id": 931,
+      "name": "LM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=931",
+      "previewPlayers": [],
+      "rank": 190,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "lm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/931/lm-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2104,
+        "providerUrl": "https://futmind.com/evolutions/2104/lm-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 870
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RM.",
+      "id": 932,
+      "name": "RM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=932",
+      "previewPlayers": [],
+      "rank": 191,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM"
+          ],
+          "value": "RM"
+        }
+      ],
+      "slug": "rm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/932/rm-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2105,
+        "providerUrl": "https://futmind.com/evolutions/2105/rm-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 871
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 933,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=933",
+      "previewPlayers": [],
+      "rank": 192,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/933/st-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2107,
+        "providerUrl": "https://futmind.com/evolutions/2107/st-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 872
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 934,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=934",
+      "previewPlayers": [],
+      "rank": 189,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/934/rw-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": "2026-06-04T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2108,
+        "providerUrl": "https://futmind.com/evolutions/2108/rw-roles",
+        "originalCreatedAt": "2026-06-04T09:00:00.000000Z"
+      },
+      "chronologicalRank": 873
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 935,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=935",
+      "previewPlayers": [],
+      "rank": 188,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/935/lw-roles",
+      "releaseDate": "2026-06-04",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 934,
+          "releaseDate": "2026-06-04"
+        },
+        "nextAnchor": {
+          "evolutionId": 936,
+          "releaseDate": "2026-06-04"
+        }
+      },
+      "chronologicalRank": 874
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 1098,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1098",
+      "previewPlayers": [],
+      "rank": 110,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1098/lw-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2419,
+        "providerUrl": "https://futmind.com/evolutions/2419/lw-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1035
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 1099,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1099",
+      "previewPlayers": [],
+      "rank": 111,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1099/cm-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2420,
+        "providerUrl": "https://futmind.com/evolutions/2420/cm-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1036
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 1100,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1100",
+      "previewPlayers": [],
+      "rank": 105,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1100/rw-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2421,
+        "providerUrl": "https://futmind.com/evolutions/2421/rw-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1037
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 1101,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1101",
+      "previewPlayers": [],
+      "rank": 106,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1101/cam-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2422,
+        "providerUrl": "https://futmind.com/evolutions/2422/cam-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1038
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 1102,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1102",
+      "previewPlayers": [],
+      "rank": 107,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1102/gk-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2423,
+        "providerUrl": "https://futmind.com/evolutions/2423/gk-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1039
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 1103,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1103",
+      "previewPlayers": [],
+      "rank": 108,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1103/st-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2424,
+        "providerUrl": "https://futmind.com/evolutions/2424/st-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1040
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LM player.",
+      "id": 1104,
+      "name": "LM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1104",
+      "previewPlayers": [],
+      "rank": 109,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "lm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1104/lm-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2425,
+        "providerUrl": "https://futmind.com/evolutions/2425/lm-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1041
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 1105,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1105",
+      "previewPlayers": [
+        {
+          "displayName": "Pedro Porro",
+          "kind": "before",
+          "name": "Pedro Antonio Porro Sauceda",
+          "nameZh": "佩德罗·波罗",
+          "position": "RB",
+          "rating": 96,
+          "stats": {
+            "def": 95,
+            "dri": 94,
+            "pac": 94,
+            "pas": 96,
+            "phy": 95,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Pedro Porro",
+          "kind": "after",
+          "name": "Pedro Antonio Porro Sauceda",
+          "nameZh": "佩德罗·波罗",
+          "position": "RB",
+          "rating": 96,
+          "stats": {
+            "def": 95,
+            "dri": 94,
+            "pac": 94,
+            "pas": 96,
+            "phy": 95,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 102,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1105/rb-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2426,
+        "providerUrl": "https://futmind.com/evolutions/2426/rb-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1042
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB player.",
+      "id": 1106,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1106",
+      "previewPlayers": [],
+      "rank": 103,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1106/cb-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2427,
+        "providerUrl": "https://futmind.com/evolutions/2427/cb-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1043
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RM.",
+      "id": 1107,
+      "name": "RM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1107",
+      "previewPlayers": [],
+      "rank": 104,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM"
+          ],
+          "value": "RM"
+        }
+      ],
+      "slug": "rm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1107/rm-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2428,
+        "providerUrl": "https://futmind.com/evolutions/2428/rm-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1044
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 1108,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1108",
+      "previewPlayers": [],
+      "rank": 100,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1108/cdm-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2429,
+        "providerUrl": "https://futmind.com/evolutions/2429/cdm-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1045
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "11",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 1109,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1109",
+      "previewPlayers": [],
+      "rank": 101,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1109/lb-roles",
+      "releaseDate": "2026-07-09",
+      "releaseDateTimeUtc": "2026-07-09T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2430,
+        "providerUrl": "https://futmind.com/evolutions/2430/lb-roles",
+        "originalCreatedAt": "2026-07-09T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1046
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RM.",
+      "id": 1224,
+      "name": "RM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1224",
+      "previewPlayers": [],
+      "rank": 51,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM"
+          ],
+          "value": "RM"
+        }
+      ],
+      "slug": "rm-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1224/rm-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2564,
+        "providerUrl": "https://futmind.com/evolutions/2564/rm-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1161
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CM.",
+      "id": 1225,
+      "name": "CM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1225",
+      "previewPlayers": [],
+      "rank": 52,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1225/cm-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2565,
+        "providerUrl": "https://futmind.com/evolutions/2565/cm-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1162
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RW.",
+      "id": 1226,
+      "name": "RW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1226",
+      "previewPlayers": [],
+      "rank": 47,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "rw-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1226/rw-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2566,
+        "providerUrl": "https://futmind.com/evolutions/2566/rw-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1163
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LW.",
+      "id": 1227,
+      "name": "LW Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1227",
+      "previewPlayers": [],
+      "rank": 48,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "lw-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1227/lw-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2567,
+        "providerUrl": "https://futmind.com/evolutions/2567/lw-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1164
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CAM.",
+      "id": 1228,
+      "name": "CAM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1228",
+      "previewPlayers": [],
+      "rank": 49,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "cam-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1228/cam-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2568,
+        "providerUrl": "https://futmind.com/evolutions/2568/cam-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1165
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified RB.",
+      "id": 1229,
+      "name": "RB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1229",
+      "previewPlayers": [],
+      "rank": 50,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "rb-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1229/rb-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2570,
+        "providerUrl": "https://futmind.com/evolutions/2570/rb-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1166
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CB player.",
+      "id": 1230,
+      "name": "CB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1230",
+      "previewPlayers": [],
+      "rank": 42,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Back++"
+          ],
+          "value": "Wide Back++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper++"
+          ],
+          "value": "Stopper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Defender++"
+          ],
+          "value": "Defender++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1230/cb-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2571,
+        "providerUrl": "https://futmind.com/evolutions/2571/cb-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1167
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified ST.",
+      "id": 1231,
+      "name": "ST Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1231",
+      "previewPlayers": [],
+      "rank": 43,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "st-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Target Forward++"
+          ],
+          "value": "Target Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward++"
+          ],
+          "value": "Advanced Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "False 9++"
+          ],
+          "value": "False 9++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Poacher++"
+          ],
+          "value": "Poacher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1231/st-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2572,
+        "providerUrl": "https://futmind.com/evolutions/2572/st-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1168
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LM player.",
+      "id": 1232,
+      "name": "LM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1232",
+      "previewPlayers": [],
+      "rank": 44,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "lm-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1232/lm-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2573,
+        "providerUrl": "https://futmind.com/evolutions/2573/lm-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1169
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified CDM.",
+      "id": 1233,
+      "name": "CDM Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1233",
+      "previewPlayers": [],
+      "rank": 45,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1233/cdm-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2574,
+        "providerUrl": "https://futmind.com/evolutions/2574/cdm-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1170
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified GK.",
+      "id": 1234,
+      "name": "GK Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1234",
+      "previewPlayers": [],
+      "rank": 46,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "gk-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper++"
+          ],
+          "value": "Sweeper Keeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Goalkeeper++"
+          ],
+          "value": "Goalkeeper++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Keeper++"
+          ],
+          "value": "Ball-Playing Keeper++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1234/gk-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": "2026-08-13T09:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2575,
+        "providerUrl": "https://futmind.com/evolutions/2575/gk-roles",
+        "originalCreatedAt": "2026-08-13T09:00:00.000000Z"
+      },
+      "chronologicalRank": 1171
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "11 MONTHS",
+        "repeatable": "Unlimited",
+        "unlock": "11 MONTHS"
+      },
+      "categories": [
+        "ROLES"
+      ],
+      "description": "Add all Roles++ to any qualified LB.",
+      "id": 1235,
+      "name": "LB Roles++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1235",
+      "previewPlayers": [],
+      "rank": 41,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 99"
+          ],
+          "value": "Max 99"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "lb-roles",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Falseback++"
+          ],
+          "value": "Falseback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inverted Wingback++"
+          ],
+          "value": "Inverted Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback++"
+          ],
+          "value": "Attacking Wingback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1235/lb-roles",
+      "releaseDate": "2026-08-13",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1234,
+          "releaseDate": "2026-08-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 1249,
+          "releaseDate": "2026-08-13"
+        }
+      },
+      "chronologicalRank": 1172
+    }
+  ]
+}

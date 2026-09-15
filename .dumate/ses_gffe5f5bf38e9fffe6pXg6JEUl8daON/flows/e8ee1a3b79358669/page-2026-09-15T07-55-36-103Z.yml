@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - generic:
+        - heading "To view keyboard shortcuts, press question mark View keyboard shortcuts" [level=2] [ref=e3]:
+          - generic [ref=e4]: To view keyboard shortcuts, press question mark
+          - link "View keyboard shortcuts" [ref=e5] [cursor=pointer]:
+            - /url: /i/keyboard_shortcuts
+        - generic:
+          - generic:
+            - button "Grok" [ref=e6] [cursor=pointer]:
+              - img [ref=e7]
+            - button "Chat" [ref=e10] [cursor=pointer]:
+              - img [ref=e11]
+        - generic [ref=e14]:
+          - button "Skip to home timeline" [ref=e15] [cursor=pointer]
+          - button "Skip to trending" [ref=e17] [cursor=pointer]
+          - banner [ref=e19]:
+            - generic [ref=e21]:
+              - generic [ref=e22]:
+                - heading "X" [level=1] [ref=e24] [cursor=pointer]:
+                  - link "X" [ref=e25]:
+                    - /url: /home
+                    - img [ref=e27]
+                - navigation "Primary" [ref=e31]:
+                  - link "Home" [ref=e32] [cursor=pointer]:
+                    - /url: /home
+                    - img [ref=e35]
+                  - link "Search and explore" [ref=e38] [cursor=pointer]:
+                    - /url: /explore
+                    - img [ref=e41]
+                  - link "Notifications" [ref=e44] [cursor=pointer]:
+                    - /url: /notifications
+                    - img [ref=e47]
+                  - link "Follow" [ref=e50] [cursor=pointer]:
+                    - /url: /i/connect_people
+                    - img [ref=e53]
+                  - link "Direct Messages" [ref=e56] [cursor=pointer]:
+                    - /url: /i/chat
+                    - img [ref=e59]
+                  - link "Grok" [ref=e62] [cursor=pointer]:
+                    - /url: /i/grok
+                    - generic [ref=e64]:
+                      - img [ref=e65]
+                      - generic "undefined unread items" [ref=e68]
+                  - link "History" [ref=e69] [cursor=pointer]:
+                    - /url: /i/history
+                    - img [ref=e72]
+                  - link "Creator Studio" [ref=e75] [cursor=pointer]:
+                    - /url: /i/jf/creators/studio
+                    - img [ref=e78]
+                  - link "Premium" [ref=e82] [cursor=pointer]:
+                    - /url: /i/premium_sign_up
+                    - img [ref=e85]
+                  - link "Profile" [ref=e88] [cursor=pointer]:
+                    - /url: /DreamworldJony
+                    - img [ref=e91]
+                  - button "More menu items" [ref=e94] [cursor=pointer]:
+                    - img [ref=e97]
+                - link "Post" [ref=e101] [cursor=pointer]:
+                  - /url: /compose/post
+                  - img [ref=e103]
+              - button "Account menu" [ref=e109] [cursor=pointer]:
+                - generic [ref=e117]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic "jony dreamworld":
+                          - img "jony dreamworld"
+          - main [ref=e120]:
+            - generic "Home timeline" [ref=e125]:
+              - generic [ref=e126]:
+                - generic [ref=e132] [cursor=pointer]:
+                  - button "Back" [ref=e134]:
+                    - img [ref=e136]
+                  - heading "Profile" [level=2] [ref=e141]
+                - generic:
+                  - generic:
+                    - status:
+                      - button:
+                        - generic:
+                          - img
+                          - generic: See new posts
+              - progressbar "Loading posts by @FUTBIN" [ref=e144]:
+                - img [ref=e146]
+  - generic:
+    - generic: 搭子正在控制浏览器

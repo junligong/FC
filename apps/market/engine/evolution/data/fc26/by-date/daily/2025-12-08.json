@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-08",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add the Shadow Striker++ Role to a qualified CAM.",
+      "id": 173,
+      "name": "Shadow Striker++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=173",
+      "previewPlayers": [],
+      "rank": 839,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "shadow-striker",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/173/shadow-striker",
+      "releaseDate": "2025-12-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 171,
+          "releaseDate": "2025-12-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 176,
+          "releaseDate": "2025-12-09"
+        }
+      },
+      "chronologicalRank": 168
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your favourite Player into a Positional Excellence player. This item rarity offers full chemistry in position!",
+      "id": 174,
+      "name": "Positional Excellence",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=174",
+      "previewPlayers": [],
+      "rank": 840,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "positional-excellence",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/174/positional-excellence",
+      "releaseDate": "2025-12-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 171,
+          "releaseDate": "2025-12-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 176,
+          "releaseDate": "2025-12-09"
+        }
+      },
+      "chronologicalRank": 169
+    }
+  ]
+}

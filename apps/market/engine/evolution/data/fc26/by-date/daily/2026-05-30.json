@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-30",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Enforcer+ to any qualified player.",
+      "id": 880,
+      "name": "Enforcer+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=880",
+      "previewPlayers": [],
+      "rank": 207,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "enforcer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Enforcer",
+            "3"
+          ],
+          "value": "Enforcer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/880/enforcer",
+      "releaseDate": "2026-05-30",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 879,
+          "releaseDate": "2026-05-29"
+        },
+        "nextAnchor": {
+          "evolutionId": 881,
+          "releaseDate": "2026-05-30"
+        }
+      },
+      "chronologicalRank": 819
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "The best finishers never doubt themselves. Evolve your player and give them the shooting quality to match their ambition.",
+      "id": 881,
+      "name": "Goal Bound",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=881",
+      "previewPlayers": [
+        {
+          "displayName": "Wilson",
+          "kind": "before",
+          "name": "Sophia Wilson",
+          "nameZh": "索菲亚·史密斯",
+          "position": "ST",
+          "rating": 96,
+          "stats": {
+            "def": 55,
+            "dri": 95,
+            "pac": 96,
+            "pas": 90,
+            "phy": 88,
+            "sho": 94
+          }
+        },
+        {
+          "displayName": "Wilson",
+          "kind": "after",
+          "name": "Sophia Wilson",
+          "nameZh": "索菲亚·史密斯",
+          "position": "ST",
+          "rating": 96,
+          "stats": {
+            "def": 55,
+            "dri": 95,
+            "pac": 96,
+            "pas": 90,
+            "phy": 88,
+            "sho": 94
+          }
+        }
+      ],
+      "rank": 206,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "goal-bound",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "8"
+          ],
+          "value": "Gamechanger"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Chip Shot",
+            "8"
+          ],
+          "value": "Chip Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Acrobatic",
+            "8"
+          ],
+          "value": "Acrobatic"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Precision Header",
+            "8"
+          ],
+          "value": "Precision Header"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/881/goal-bound",
+      "releaseDate": "2026-05-30",
+      "releaseDateTimeUtc": "2026-05-30T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2089,
+        "providerUrl": "https://futmind.com/evolutions/2089/goal-bound",
+        "originalCreatedAt": "2026-05-30T18:00:00.000000Z"
+      },
+      "chronologicalRank": 820
+    },
+    {
+      "availability": {
+        "200": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a Prime Heroes player. This item rarity offers Hero chemistry links to any Regular player item!",
+      "id": 882,
+      "name": "Prime Heroes",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=882",
+      "previewPlayers": [],
+      "rank": 205,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "prime-heroes",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/882/prime-heroes",
+      "releaseDate": "2026-05-30",
+      "releaseDateTimeUtc": "2026-05-30T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2090,
+        "providerUrl": "https://futmind.com/evolutions/2090/prime-heroes",
+        "originalCreatedAt": "2026-05-30T18:00:00.000000Z"
+      },
+      "chronologicalRank": 821
+    }
+  ]
+}

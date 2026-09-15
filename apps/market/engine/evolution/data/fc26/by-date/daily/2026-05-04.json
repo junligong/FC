@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-04",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Tiki Taka+ to any qualified player.",
+      "id": 824,
+      "name": "Tiki Taka+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=824",
+      "previewPlayers": [],
+      "rank": 262,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "tiki-taka",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "3"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/824/tiki-taka",
+      "releaseDate": "2026-05-04",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 823,
+          "releaseDate": "2026-05-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 825,
+          "releaseDate": "2026-05-04"
+        }
+      },
+      "chronologicalRank": 763
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Cold as steel and impossible to break, dominates every duel, reads the game perfectly, and shuts down attacks before they even become a threat.",
+      "id": 825,
+      "name": "Steel Guard",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=825",
+      "previewPlayers": [
+        {
+          "displayName": "Vázquez",
+          "kind": "before",
+          "name": "Franco Vázquez",
+          "position": "ST",
+          "rating": 74,
+          "stats": {
+            "def": 56,
+            "dri": 77,
+            "pac": 47,
+            "pas": 77,
+            "phy": 76,
+            "sho": 77
+          }
+        },
+        {
+          "displayName": "Vázquez",
+          "kind": "after",
+          "name": "Franco Vázquez",
+          "position": "ST",
+          "rating": 74,
+          "stats": {
+            "def": 58,
+            "dri": 77,
+            "pac": 48,
+            "pas": 77,
+            "phy": 77,
+            "sho": 77
+          }
+        }
+      ],
+      "rank": 261,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 74"
+          ],
+          "value": "Max 74"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "steel-guard",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "80",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+1",
+            "80"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "75",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+1",
+            "75"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "76",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+2",
+            "76"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "80",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+2",
+            "80"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "75",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+1",
+            "75"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "80",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+2",
+            "80"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "78",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+2",
+            "78"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "78",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+2",
+            "78"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "80",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+1",
+            "80"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "80",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+2",
+            "80"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "78",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+1",
+            "78"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "78",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+1",
+            "78"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "72",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+2",
+            "72"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "2"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/825/steel-guard",
+      "releaseDate": "2026-05-04",
+      "releaseDateTimeUtc": "2026-05-04T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2014,
+        "providerUrl": "https://futmind.com/evolutions/2014/steel-guard",
+        "originalCreatedAt": "2026-05-04T18:00:00.000000Z"
+      },
+      "chronologicalRank": 764
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Intercept and Anticipate+ to any player",
+      "id": 826,
+      "name": "Anticipate+ and Intercept",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=826",
+      "previewPlayers": [],
+      "rank": 260,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "anticipate-and-intercept",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "2"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/826/anticipate-and-intercept",
+      "releaseDate": "2026-05-04",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 825,
+          "releaseDate": "2026-05-04"
+        },
+        "nextAnchor": {
+          "evolutionId": 829,
+          "releaseDate": "2026-05-05"
+        }
+      },
+      "chronologicalRank": 765
+    }
+  ]
+}

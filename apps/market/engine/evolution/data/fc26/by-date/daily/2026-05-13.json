@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-13",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "300": "50,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Capture the essence of an explosive, attack-minded fullback and redefine it in the center of the park. Shift inside and set the rhythm of the match.",
+      "id": 844,
+      "name": "Midfield Migration",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=844",
+      "previewPlayers": [
+        {
+          "displayName": "Mejía",
+          "kind": "before",
+          "name": "Eddy Mejía",
+          "position": "LB",
+          "rating": 68,
+          "stats": {
+            "def": 61,
+            "dri": 66,
+            "pac": 77,
+            "pas": 66,
+            "phy": 64,
+            "sho": 52
+          }
+        },
+        {
+          "displayName": "Mejía",
+          "kind": "after",
+          "name": "Eddy Mejía",
+          "position": "LB",
+          "rating": 91,
+          "stats": {
+            "def": 81,
+            "dri": 91,
+            "pac": 92,
+            "pas": 90,
+            "phy": 69,
+            "sho": 78
+          }
+        }
+      ],
+      "rank": 242,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "midfield-migration",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "91",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "93"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "93",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "91"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "93",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "3"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "3"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/844/midfield-migration",
+      "releaseDate": "2026-05-13",
+      "releaseDateTimeUtc": "2026-05-13T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2038,
+        "providerUrl": "https://futmind.com/evolutions/2038/midfield-migration",
+        "originalCreatedAt": "2026-05-13T18:00:00.000000Z"
+      },
+      "chronologicalRank": 783
+    }
+  ]
+}

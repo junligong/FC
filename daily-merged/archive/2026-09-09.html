@@ -1,0 +1,1884 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FC27情报台 · 2026-09-09</title><style>:root{
+color-scheme:dark;
+--bg:#0b0708;--bg-soft:#120d0f;--surface:#161113;--surface-2:#1d1619;--surface-3:#231a1e;
+--line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.14);
+--text:#f4eff1;--muted:#a89aa0;--quiet:#786b73;
+--red:#c8102e;--red-soft:rgba(200,16,46,.16);--red-line:rgba(200,16,46,.42);
+--gold:#e9c84a;--gold-soft:rgba(233,200,74,.13);--gold-line:rgba(233,200,74,.38);
+--radius:14px;--radius-sm:10px;
+--sidebar:236px;
+--font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:
+ radial-gradient(1100px 620px at 88% -10%,rgba(200,16,46,.10),transparent 62%),
+ radial-gradient(900px 520px at 4% 0%,rgba(233,200,74,.05),transparent 58%),
+ var(--bg);
+ color:var(--text);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:none;border:0}a{color:inherit;text-decoration:none}img{max-width:100%}
+h1,h2,h3,p{margin:0}svg{width:22px;height:22px;flex:none}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.muted{color:var(--muted)}
+.eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--quiet);font-weight:600}
+
+/* ============ 侧边栏 ============ */
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);display:flex;flex-direction:column;
+ background:linear-gradient(180deg,#120c0e,#0c0809);border-right:1px solid var(--line);z-index:20}
+.brand{padding:26px 22px 20px;display:block}
+.brand strong{display:block;font-size:23px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
+.brand strong b{color:var(--red);font-weight:900}
+.brand span{display:block;color:var(--quiet);margin-top:6px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+.nav{display:grid;gap:3px;padding:4px 12px}
+.nav button{display:flex;align-items:center;gap:14px;text-align:left;padding:12px 14px;border-radius:var(--radius-sm);
+ font-size:15px;color:#c6b7bd;white-space:nowrap;width:100%;transition:background .16s,color .16s}
+.nav button svg{width:20px;height:20px;opacity:.85}
+.nav button:hover{background:rgba(255,255,255,.045);color:var(--text)}
+.nav button.active{background:linear-gradient(90deg,var(--red-soft),rgba(200,16,46,.03));color:#fff;font-weight:650;
+ box-shadow:inset 2.5px 0 0 var(--red)}
+.nav button.active svg{color:var(--red);opacity:1}
+.sidebar-foot{margin-top:auto;padding:14px 16px 18px;border-top:1px solid var(--line)}
+.manifesto{font-size:9.5px;letter-spacing:.34em;color:var(--quiet);line-height:2;font-weight:600}
+.poster-mini{display:flex;align-items:center;gap:11px;width:100%;margin-top:12px;padding:7px;border:1px solid var(--line);
+ border-radius:var(--radius-sm);background:rgba(0,0,0,.28);text-align:left;transition:border-color .16s,background .16s}
+.poster-mini:hover{border-color:var(--gold-line);background:rgba(233,200,74,.05)}
+.poster-mini img{width:42px;height:42px;object-fit:cover;object-position:top center;border-radius:7px;flex:none;display:block}
+.poster-mini b{display:block;font-size:12.5px;font-weight:700;color:var(--text);line-height:1.3}
+.poster-mini small{display:block;font-size:10.5px;color:var(--quiet);margin-top:2px}
+
+/* ============ 主区域 ============ */
+.app{margin-left:var(--sidebar);padding:18px 30px 14px;max-width:1680px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.topbar .tb-left{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+.live{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--red-soft);
+ border:1px solid var(--red-line);color:#ffd7de;font-size:11.5px;letter-spacing:.04em}
+.live i{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(200,16,46,.22)}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--line-2);border-radius:999px;
+ padding:8px 16px;color:var(--text);font-size:13.5px;background:rgba(255,255,255,.03);transition:background .16s,border-color .16s}
+.btn:hover{background:rgba(255,255,255,.08);border-color:var(--line-2)}
+.btn svg{width:17px;height:17px}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#cba92c);border-color:transparent;color:#241a03;font-weight:750}
+.btn.gold:hover{background:linear-gradient(135deg,#f3d766,#d8b83a)}
+.btn.ghost{border-color:var(--line);background:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--text);border-color:var(--line-2)}
+.btn.sm{padding:6px 12px;font-size:12.5px}
+
+/* ============ Hero ============ */
+.hero{display:grid;grid-template-columns:1.55fr .95fr;gap:40px;align-items:end;padding:30px 2px 26px}
+.hero h1{font-size:clamp(30px,3.4vw,50px);line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:14px 0 12px}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold),#c8102e 68%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .subtitle{font-size:16.5px;color:var(--muted);max-width:52ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);padding:6px 12px;border-radius:999px;
+ background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.chip b{color:var(--gold);font-weight:750}
+.hero-note{position:relative;padding:20px 4px 4px 26px;border-left:1px solid var(--line-2);color:var(--muted);font-size:14.5px;line-height:1.9}
+.hero-note:before{content:"";position:absolute;left:-1px;top:0;width:2px;height:46px;background:linear-gradient(var(--red),transparent)}
+
+/* ============ 网格 ============ */
+.home-grid{display:grid;grid-template-columns:minmax(0,1fr) 336px;gap:18px;align-items:start}
+.col-stack{display:grid;gap:18px;align-content:start}
+.panel{background:linear-gradient(180deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line)}
+.panel-head h2{font-size:17px;font-weight:750;letter-spacing:.01em}
+h2{font-size:20px;font-weight:750;margin:0}
+h3{font-size:15.5px;font-weight:700;margin:0}
+
+/* 报告卡 */
+.report-card{padding:19px 21px;display:flex;flex-direction:column;gap:15px;transition:border-color .18s,transform .18s,background .18s}
+.report-card:hover{border-color:var(--line-2);background:linear-gradient(180deg,var(--surface-2),var(--bg-soft))}
+.rc-top{display:flex;align-items:center;gap:14px}
+.rc-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--red-soft);
+ color:#ff8898;border:1px solid var(--red-line);flex:none}
+.rc-title{font-size:18px;font-weight:760;letter-spacing:-.2px}
+.rc-en{font-size:10.5px;letter-spacing:.22em;color:var(--quiet);text-transform:uppercase;margin-top:4px;font-weight:600}
+.rc-desc{color:var(--muted);font-size:13.8px;line-height:1.72}
+.rc-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:1px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:4px 11px;border-radius:999px;white-space:nowrap;font-weight:600}
+.badge.ok{background:rgba(233,200,74,.13);color:var(--gold);border:1px solid var(--gold-line)}
+.badge.no{background:rgba(255,255,255,.04);color:var(--quiet);border:1px solid var(--line)}
+
+/* 历史日报条 */
+.history-strip{padding:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.history-title{font-weight:750;font-size:17px}
+.history-value{font-size:32px;line-height:1;font-weight:800;color:var(--gold);padding:0 18px;border-left:1px solid var(--line-2);border-right:1px solid var(--line-2)}
+.history-copy{flex:1;min-width:180px;font-size:13px;color:#cdbfc4}
+.history-copy small{display:block;margin-top:3px;color:var(--quiet);font-size:11.5px}
+
+/* 右侧栏目 */
+.rail-panel{position:relative}
+.rail-panel:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),transparent 78%)}
+.rail-panel .panel-head{padding-left:22px}
+.rail-panel .panel-head h2{display:flex;align-items:center;gap:9px}
+.rail-panel .panel-head h2 svg{width:18px;height:18px;color:var(--gold)}
+.rail-empty{padding:26px 22px;text-align:center;color:var(--muted)}
+.rail-empty .re-ic{width:52px;height:52px;margin:0 auto 14px;display:grid;place-items:center;border-radius:14px;
+ background:var(--gold-soft);border:1px dashed var(--gold-line);color:var(--gold)}
+.rail-empty .re-ic svg{width:26px;height:26px}
+.rail-empty b{display:block;color:var(--text);font-size:15px;font-weight:700;margin-bottom:7px}
+.rail-empty p{font-size:13px;line-height:1.75}
+.rail-list{list-style:none;margin:0;padding:6px 20px 18px}
+.rail-list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);padding:9px 0;border-bottom:1px dashed var(--line)}
+.rail-list li:last-child{border-bottom:0}
+.rail-list li span.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex:none}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.stat-grid div{background:var(--bg-soft);padding:14px 16px}
+.stat-grid b{display:block;font-size:22px;font-weight:800;color:var(--text);line-height:1.2}
+.stat-grid small{display:block;color:var(--quiet);font-size:11.5px;margin-top:3px}
+
+/* 视图 */
+.view-header{margin:26px 2px 18px}
+.view-header h1{font-size:30px;line-height:1.3;margin:10px 0 7px;font-weight:800;letter-spacing:-.4px}
+.view-header p{color:var(--muted);font-size:14.5px;max-width:80ch}
+.panel-iframe{width:100%;height:calc(100vh - 210px);min-height:640px;border:0;display:block;background:#0b0708;border-radius:var(--radius)}
+.empty-panel{padding:38px 26px}
+
+/* 历史日报列表 */
+.report-list{display:grid;gap:10px;padding:16px 18px}
+.report-item{display:flex;align-items:center;gap:18px;border:1px solid var(--line);background:rgba(255,255,255,.018);
+ padding:15px 18px;border-radius:var(--radius-sm);transition:border-color .16s,background .16s,transform .16s}
+.report-item:hover{border-color:var(--gold-line);background:rgba(233,200,74,.05);transform:translateX(3px)}
+.report-item[aria-current=date]{border-color:var(--red-line);background:var(--red-soft)}
+.date-badge{font-size:15px;font-weight:800;color:var(--gold);min-width:96px;font-variant-numeric:tabular-nums}
+.report-info{flex:1;min-width:0}
+.report-title{font-size:16px;font-weight:700}
+.report-desc{font-size:12px;color:var(--quiet);margin-top:4px}
+.report-item .arrow{color:var(--muted);display:grid;place-items:center}
+.report-item:hover .arrow{color:var(--gold)}
+.tag{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:6px;background:var(--red-soft);color:#ffc4cd;border:1px solid var(--red-line);font-weight:600}
+
+.footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 2px 6px;margin-top:8px;
+ font-size:11.5px;color:var(--quiet);border-top:1px solid var(--line)}
+.footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+
+/* 海报弹窗 */
+dialog#poster-modal{border:0;padding:0;background:transparent;max-width:min(560px,92vw)}
+dialog#poster-modal::backdrop{background:rgba(6,3,4,.88);backdrop-filter:blur(3px)}
+dialog#poster-modal img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line-2)}
+dialog#poster-modal .pm-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:var(--muted);font-size:13px}
+dialog#poster-modal .pm-bar button{color:var(--gold);font-size:13px;font-weight:600}
+
+@media(max-width:1180px){.home-grid{grid-template-columns:1fr}.rail-panel:before{display:none}.hero{grid-template-columns:1fr;gap:22px}.hero-note{display:none}}
+@media(max-width:900px){:root{--sidebar:200px}.app{padding:16px 20px}}
+@media(max-width:760px){
+ .sidebar{position:relative;width:auto;border-right:0;border-bottom:1px solid var(--line)}
+ .brand{padding:18px 18px 10px}.nav{display:flex;overflow:auto;padding:0 12px}
+ .nav button{white-space:nowrap;width:auto}
+ .sidebar-foot{display:none}
+ .app{margin:0;padding:14px 16px}
+ .hero h1{font-size:28px}.topbar{flex-wrap:wrap;gap:10px}
+ .panel-iframe{height:calc(100vh - 260px)}
+ .stat-grid{grid-template-columns:1fr}
+}</style></head><body>
+<aside class="sidebar">
+<a class="brand" href="#home" data-view="home"><strong>FC27<b>情报台</b></strong><span>Football × FC27</span></a>
+<nav class="nav" id="nav" aria-label="主导航"><button type="button" data-view="home" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.8 20v-5.4h4.4V20"/></svg><span>今日总览</span></button><button type="button" data-view="football" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6l3 2.2-1.15 3.5h-3.7L9 9.8z"/><path d="M12 3.4v4.2M4.3 9.8h4.7M19.7 9.8h-4.7M7.2 19.6l2.5-6.3M16.8 19.6l-2.5-6.3"/></svg><span>足球动态</span></button><button type="button" data-view="news" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="4.6" width="17.6" height="14.8" rx="2.2"/><path d="M7 9.2h6.4M7 12.8h10M7 16.4h7"/></svg><span>FC27 资讯</span></button><button type="button" data-view="market" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.4l4.8-4.9 3.9 3 8-8.8"/><path d="M15 6.2h5.2v5.2"/></svg><span>FC27 市场</span></button><button type="button" data-view="evolution" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg><span>进化专栏</span></button><button type="button" data-view="archive" class=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2v5.2l3.4 2"/></svg><span>历史日报</span></button></nav>
+<div class="sidebar-foot">
+<div class="manifesto">MORE THAN A GAME.</div>
+<button type="button" class="poster-mini" id="poster-open" aria-label="查看彦祖工作室套餐海报"><img src="../assets/yanzu-banner.jpg" alt="彦祖工作室" loading="lazy"><span><b>彦祖工作室</b><small>FC27 DR 周赛套餐 · 查看大图</small></span></button>
+</div>
+</aside>
+<main class="app">
+<div class="topbar">
+ <div class="tb-left"><span class="live"><i></i>2026-09-09 · 北京时间</span><span>足球 × FC27 每日情报</span></div>
+ <button type="button" class="btn ghost" id="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7.2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V12"/><path d="M12 3.2v12.4M7.6 7.6 12 3.2l4.4 4.4"/></svg>分享链接</button>
+</div>
+
+<section class="view" id="view-home">
+<header class="hero">
+ <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">整合足球赛事动态、FC27 资讯与市场行情，三榜齐备、双维度市场、进化专栏一站直达。</p><div class="hero-meta"><span class="chip">本期板块 <b>3</b></span><span class="chip">历史日报 <b>11</b></span><span class="chip">数据日期 <b>09-09</b></span></div></div>
+ <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
+</header>
+<div class="home-grid">
+ <div class="col-stack"><article class="panel report-card"><div class="rc-top"><span class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6l3 2.2-1.15 3.5h-3.7L9 9.8z"/><path d="M12 3.4v4.2M4.3 9.8h4.7M19.7 9.8h-4.7M7.2 19.6l2.5-6.3M16.8 19.6l-2.5-6.3"/></svg></span><div><div class="rc-title">足球动态</div><div class="rc-en">FOOTBALL</div></div></div><p class="rc-desc">七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备</p><div class="rc-foot"><span class="badge ok">● 当日已收录</span><button type="button" class="btn gold" data-view="football">阅读全文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg></button></div></article><article class="panel report-card"><div class="rc-top"><span class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="4.6" width="17.6" height="14.8" rx="2.2"/><path d="M7 9.2h6.4M7 12.8h10M7 16.4h7"/></svg></span><div><div class="rc-title">FC27 资讯</div><div class="rc-en">FC27 NEWS</div></div></div><p class="rc-desc">X.com 信息源自动采集 · 智能过滤与中文翻译</p><div class="rc-foot"><span class="badge ok">● 当日已收录</span><button type="button" class="btn gold" data-view="news">阅读全文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg></button></div></article><article class="panel report-card"><div class="rc-top"><span class="rc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.4l4.8-4.9 3.9 3 8-8.8"/><path d="M15 6.2h5.2v5.2"/></svg></span><div><div class="rc-title">FC27 市场</div><div class="rc-en">THE MARKET</div></div></div><p class="rc-desc">双维度：价格分层（大卡/中卡/热门卡/适用卡）× 热门球员（进化卡/价值卡）</p><div class="rc-foot"><span class="badge no">○ 当日暂无</span><button type="button" class="btn gold" data-view="market">阅读全文 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg></button></div></article><article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">11</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg></button></article></div>
+ <aside class="col-stack">
+  <article class="panel rail-panel"><div class="panel-head"><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg>进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>待补充</b><small>本期状态</small></div><div><b>2</b><small>维度：热门 / 价值</small></div></div><div class="rail-empty"><div class="re-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg></div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div><ul class="rail-list"><li><span class="dot"></span><span>热门进化卡清单（FUTBIN Popular Evolutions）</span></li><li><span class="dot"></span><span>进化路线与前置条件核验</span></li><li><span class="dot"></span><span>费用 / 到期时间 / 位置评分要求</span></li></ul></article>
+  <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>3</b><small>当日板块</small></div><div><b>11</b><small>历史日报</small></div><div><b>3</b><small>足球三榜</small></div><div><b>2</b><small>市场维度</small></div></div></article>
+ </aside>
+</div>
+</section>
+
+<section class="view" id="view-football" hidden><header class="view-header"><div class="eyebrow">FOOTBALL</div><h1>足球动态</h1><p>七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备</p></header><iframe class="panel-iframe" srcdoc="<!DOCTYPE html>
+<html lang=&quot;zh-CN&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<title>足球日报 - 2026年9月9日</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:#f5f5f5;
+  color:#333;
+  line-height:1.6;
+  font-size:14px;
+}
+.header {
+  background:linear-gradient(135deg,#c41e3a 0%,#8b1a2b 100%);
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.header h1 { font-size:28px; color:#fff; font-weight:900; margin-bottom:8px; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+.header .subtitle { font-size:14px; color:#fff; opacity:0.95; text-shadow:0 1px 3px rgba(0,0,0,0.5); }
+.header .update-time { font-size:12px; color:#fff; opacity:0.9; margin-top:6px; text-shadow:0 1px 3px rgba(0,0,0,0.4); }
+.standings-section {
+  background:#fff;
+  margin:12px;
+  border-radius:12px;
+  border:1px solid #e8e8e8;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+}
+.standings-header {
+  padding:12px 16px 0;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.standings-header .section-label {
+  font-size:15px;
+  font-weight:700;
+  color:#222;
+}
+.type-tabs {
+  display:flex;
+  gap:4px;
+  background:#f8f8f8;
+  border-radius:8px;
+  padding:3px;
+}
+.type-tab {
+  padding:5px 14px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:500;
+  cursor:pointer;
+  color:#666;
+  transition:all .2s;
+  border:none;
+  background:transparent;
+}
+.type-tab.active {
+  background:#c41e3a;
+  color:#fff;
+}
+.league-tabs {
+  display:flex;
+  gap:4px;
+  padding:8px 16px;
+  overflow-x:auto;
+  flex-wrap:wrap;
+}
+.league-tab {
+  padding:4px 12px;
+  border-radius:6px;
+  font-size:12px;
+  cursor:pointer;
+  color:#666;
+  border:1px solid #e8e8e8;
+  background:#fafafa;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.league-tab.active {
+  background:#c41e3a;
+  color:#fff;
+  border-color:#c41e3a;
+}
+.league-tab:hover {
+  border-color:#c41e3a;
+  color:#c41e3a;
+}
+.table-wrapper { padding:0 16px 16px; }
+.standings-table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:12px;
+  color:#555;
+}
+.standings-table th {
+  background:#f8f8f8;
+  padding:10px 8px;
+  text-align:center;
+  font-weight:600;
+  color:#666;
+  border-bottom:2px solid #e8e8e8;
+}
+.standings-table td {
+  padding:8px;
+  text-align:center;
+  border-bottom:1px solid #f5f5f5;
+}
+.standings-table td:first-child { font-weight:700; color:#c41e3a; }
+.standings-table td:nth-child(2) { text-align:left; font-weight:500; }
+.standings-table tr:hover { background:#fff8e1; }
+.section-header {
+  background:linear-gradient(135deg,#f8f8f8 0%,#fff 100%);
+  padding:12px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e8e8e8;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.section-header .title {
+  font-size:16px;
+  font-weight:700;
+  color:#222;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.section-header .title .dot {
+  width:6px;
+  height:6px;
+  background:#c41e3a;
+  border-radius:50%;
+  display:inline-block;
+}
+.section-header .info { font-size:12px; color:#999; }
+.section-divider {
+  height:8px;
+  background:#f5f5f5;
+}
+.news-section {
+  background:#fff;
+  margin:12px;
+  border-radius:12px;
+  border:1px solid #e8e8e8;
+  overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);
+}
+.news-header {
+  padding:12px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #e8e8e8;
+}
+.news-header-left {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.news-header-left .dot {
+  width:6px;
+  height:6px;
+  background:#c41e3a;
+  border-radius:50%;
+}
+.news-header-left .title {
+  font-size:16px;
+  font-weight:700;
+  color:#222;
+}
+.news-header-right {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.news-count {
+  font-size:12px;
+  padding:2px 8px;
+  background:#f8f8f8;
+  border-radius:4px;
+  color:#666;
+}
+.news-update-time {
+  font-size:12px;
+  color:#999;
+}
+.news-filter-tabs {
+  display:flex;
+  gap:4px;
+  padding:8px 16px;
+  overflow-x:auto;
+  flex-wrap:wrap;
+  border-bottom:1px solid #e8e8e8;
+}
+.filter-tab {
+  padding:4px 12px;
+  border-radius:6px;
+  font-size:12px;
+  cursor:pointer;
+  color:#666;
+  border:1px solid #e8e8e8;
+  background:#fafafa;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.filter-tab.active {
+  background:#c41e3a;
+  color:#fff;
+  border-color:#c41e3a;
+}
+.filter-tab:hover {
+  border-color:#c41e3a;
+  color:#c41e3a;
+}
+.news-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+  gap:16px;
+  padding:16px;
+}
+.news-card {
+  background:#fafafa;
+  border-radius:10px;
+  border:1px solid #e8e8e8;
+  overflow:hidden;
+  transition:transform .2s,border-color .2s;
+}
+.news-card:hover {
+  transform:translateY(-2px);
+  border-color:#ccc;
+}
+.card-top {
+  padding:10px 12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border-bottom:1px solid #e8e8e8;
+}
+.card-team {
+  font-size:13px;
+  font-weight:700;
+  color:#c41e3a;
+}
+.card-league {
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:4px;
+  font-weight:500;
+}
+.tag-epl { background:#37003c; color:#00ff85; }
+.tag-laliga { background:#1a2b4a; color:#ffd700; }
+.tag-seriea { background:#0066aa; color:#fff; }
+.tag-bundesliga { background:#d3010c; color:#fff; }
+.tag-ligue1 { background:#091c3e; color:#dae025; }
+.tag-mls { background:#e31837; color:#fff; }
+.tag-saudi { background:#165d31; color:#fff; }
+.tag-ucl { background:#0f367c; color:#fff; }
+.tag-toutiao { background:#ff6b35; color:#fff; font-weight:700; }
+.news-card[data-league=&quot;toutiao&quot;] {
+  border:2px solid #ff6b35;
+  background:linear-gradient(135deg,#fff 0%,#fff8f0 100%);
+}
+.news-card[data-league=&quot;toutiao&quot;] .card-team {
+  color:#c41e3a;
+}
+.card-body {
+  padding:10px 12px;
+}
+.news-card[data-league=&quot;toutiao&quot;] .card-title { color:#c41e3a; }
+.card-title {
+  font-size:15px;
+  font-weight:700;
+  color:#000;
+  margin-bottom:8px;
+  line-height:1.4;
+}
+.card-summary {
+  font-size:12px;
+  color:#666;
+  line-height:1.6;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.card-footer {
+  padding:8px 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid #e8e8e8;
+  font-size:11px;
+}
+.card-source a {
+  color:#c41e3a;
+  text-decoration:none;
+}
+.card-source a:hover { text-decoration:underline; }
+.card-time { color:#999; font-style:italic; }
+.hidden { display:none !important; }
+.footer {
+  text-align:center;
+  padding:24px;
+  color:#999;
+  font-size:11px;
+  line-height:1.8;
+}
+@media (max-width:768px) {
+  .news-grid { grid-template-columns:1fr; }
+  .standings-header { flex-direction:column; align-items:flex-start; }
+}
+</style>
+<style id=&quot;fc-unified-theme&quot;>
+:root{color-scheme:dark;--bg:#0f0707;--surface:#1b0f0f;--text:#f5ecec;--text2:#b39a9a;--text3:#8a6e6e;--border:#3b2222;--blue:#e9c84a;--green:#e9c84a}
+body{background:#0f0707!important;color:#f5ecec!important;font:16px/1.7 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif!important;margin:0!important}
+.container{max-width:none!important;padding:8px 0 30px!important}.header{background:none!important;border:0!important;box-shadow:none!important;text-align:left!important;padding:10px 0 24px!important;margin:0!important;position:static!important}.header h1{font-size:28px!important;text-shadow:none!important;color:#f5ecec!important}.header .meta{justify-content:flex-start!important}.header .subtitle,.header .update-time{color:#b39a9a!important;text-shadow:none!important}.footer{color:#8a6e6e!important;background:none!important}
+.standings-section,.news-section,.tweet-card,.news-card,.empty-notice{background:#1b0f0f!important;border:1px solid #3b2222!important;border-radius:8px!important;box-shadow:none!important}.standings-section{margin-bottom:24px!important}.standings-header,.news-header,.card-top,.card-footer,.tweet-footer,.news-filter-tabs{border-color:#3b2222!important}.standings-header,.news-header{padding:18px!important;background:none!important}.section-label,.title,.card-title,.author-name{color:#f5ecec!important}.section-divider{height:20px!important;background:none!important}
+.type-tabs,.league-tab,.filter-tab,.news-count,.league-active-indicator{background:#2a1414!important;border-color:#4a2626!important;color:#b39a9a!important}.type-tab,.league-tab,.filter-tab{font-size:14px!important;padding:8px 14px!important}.type-tab.active,.league-tab.active,.filter-tab.active{background:#e9c84a!important;color:#1c1206!important;border-color:#e9c84a!important}.type-tab{color:#b39a9a!important}.league-tabs,.news-filter-tabs{gap:8px!important;padding:16px!important}
+.table-wrapper{overflow:auto!important}.standings-table{font-size:14px!important;color:#e0cccc!important;min-width:530px}.standings-table th{background:#2a1414!important;color:#cbb0b0!important;border-color:#3b2222!important;padding:12px 8px!important}.standings-table td{border-color:#3a2020!important;padding:12px 8px!important}.standings-table td:nth-child(2){color:#f5ecec!important}.standings-table .highlight td,.standings-table tr:hover td{background:#331414!important}
+.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px!important;gap:16px!important}.card-body{padding:18px!important}.card-title{font-size:18px!important;line-height:1.55!important}.card-summary{font-size:15px!important;color:#b39a9a!important;-webkit-line-clamp:6!important}.card-team,.card-source a,.source-link{color:#e9c84a!important}.card-footer{flex-wrap:wrap!important;gap:8px!important;font-size:12px!important}.card-time,.author-handle,.tweet-time{color:#8a6e6e!important}.card-league{font-size:12px!important}.news-card[data-league=&quot;toutiao&quot;]{border-top:3px solid #e9c84a!important}
+.tweets-grid{display:block!important}.tweet-card{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(180px,30%);gap:12px 24px!important;padding:24px!important;margin-bottom:16px!important}.tweet-header,.tweet-body-zh,.tweet-original,.tweet-footer,.tweet-no-image{grid-column:1}.tweet-images{grid-column:2;grid-row:1 / span 4;align-self:start;max-height:380px;overflow:auto}.tweet-images img{max-height:330px!important;object-fit:contain!important}.tweet-body-zh{color:#f5ecec!important;font-size:16px!important}.tweet-original .orig-text,.tweet-no-image{background:#0f0707!important;color:#b39a9a!important}.section-title{border-color:#e9c84a!important}.avatar{background:#e9c84a!important;color:#1c1206!important}a:focus-visible,button:focus-visible{outline:2px solid #e9c84a;outline-offset:3px}
+@media(max-width:700px){.news-grid{grid-template-columns:1fr!important;padding:8px!important}.tweet-card{display:block!important;padding:16px!important}.tweet-images{margin-top:16px;max-height:none}.standings-header{flex-wrap:wrap;gap:12px}.header h1{font-size:24px!important}}
+</style><style id=&quot;fc-league-layout&quot;>
+#fc-football-controls{margin:12px 0 24px}.fc-leagues{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:20px 0}.fc-leagues button{background:#1b0f0f;color:#f5ecec;border:1px solid #3b2222;border-radius:7px;padding:18px;text-align:left;font:700 20px/1.5 inherit;cursor:pointer}.fc-leagues strong{font-size:20px;display:block}.fc-leagues small{display:block;font-size:11px;color:#b39a9a;margin-top:12px}.fc-leagues button.active{background:#331414;border-color:#e9c84a;color:#e9c84a}.fc-types{display:flex;gap:24px;border-bottom:1px solid #3b2222}.fc-types button{font:16px inherit;background:none;color:#b39a9a;border:0;border-bottom:3px solid transparent;padding:10px 0;cursor:pointer}.fc-types button.active{color:#e9c84a;border-color:#e9c84a}.fc-search{width:100%;padding:15px 18px;margin:20px 0 8px;background:#1b0f0f;color:#f5ecec;border:1px solid #4a2626;border-radius:6px;font:16px inherit}.fc-context{font-size:14px;color:#b39a9a;margin:12px 0}.fc-empty{padding:35px 20px;color:#b39a9a;border:1px solid #3b2222;border-radius:8px}.fc-layout .standings-header,.fc-layout .league-tabs,.fc-layout .news-filter-tabs,.fc-layout .news-header,.fc-layout .section-divider{display:none!important}.fc-layout .news-section{border:0!important;background:none!important}.fc-layout .news-grid{padding:0!important}.fc-layout .news-card{padding:8px!important}.fc-layout .card-title{font-size:21px!important}.fc-layout .card-summary{display:block!important;overflow:visible!important;font-size:16px!important}.fc-layout .card-top,.fc-layout .card-footer{border:0!important}.fc-layout .card-footer{padding:12px 18px!important}.fc-layout .news-card[data-league=&quot;toutiao&quot;]{border-top:1px solid #3b2222!important}.fc-layout .standings-section{margin-top:20px}.fc-layout .table-wrapper{padding:16px!important}.fc-layout [hidden]{display:none!important}@media(min-width:1200px){.fc-leagues{grid-template-columns:repeat(8,minmax(0,1fr))}.fc-leagues button{padding:16px 12px}.fc-leagues small{font-size:10px}}@media(max-width:600px){.fc-leagues{grid-template-columns:repeat(2,minmax(0,1fr))}.fc-types{gap:20px}.fc-layout .card-title{font-size:19px!important}}
+</style></head>
+<body>
+
+<div class=&quot;header&quot;>
+  <h1>⚽ 足球日报</h1>
+  <div class=&quot;subtitle&quot;>欧洲冠军联赛 · 七大联赛每日资讯聚合</div>
+  <div class=&quot;update-time&quot;>数据截止时间：2026年9月9日 04:00（北京时间）</div>
+</div>
+
+<!-- ===== STANDINGS ===== -->
+<div class=&quot;standings-section&quot;>
+  <div class=&quot;standings-header&quot;>
+    <div class=&quot;section-label&quot;>📊 数据排行</div>
+    <div class=&quot;type-tabs&quot;>
+      <div class=&quot;type-tab active&quot; data-type=&quot;standings&quot; onclick=&quot;switchType('standings')&quot;>积分榜</div>
+      <div class=&quot;type-tab&quot; data-type=&quot;scorers&quot; onclick=&quot;switchType('scorers')&quot;>射手榜</div>
+      <div class=&quot;type-tab&quot; data-type=&quot;assists&quot; onclick=&quot;switchType('assists')&quot;>助攻榜</div>
+    </div>
+  </div>
+  <div class=&quot;league-tabs&quot;>
+    <div class=&quot;league-tab active&quot; data-league=&quot;epl&quot; onclick=&quot;switchLeague('epl')&quot;>英超</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;laliga&quot; onclick=&quot;switchLeague('laliga')&quot;>西甲</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;seriea&quot; onclick=&quot;switchLeague('seriea')&quot;>意甲</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;bundesliga&quot; onclick=&quot;switchLeague('bundesliga')&quot;>德甲</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;ligue1&quot; onclick=&quot;switchLeague('ligue1')&quot;>法甲</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;mls&quot; onclick=&quot;switchLeague('mls')&quot;>美职联</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;saudi&quot; onclick=&quot;switchLeague('saudi')&quot;>沙特联</div>
+    <div class=&quot;league-tab&quot; data-league=&quot;ucl&quot; onclick=&quot;switchLeague('ucl')&quot;>欧冠</div>
+  </div>
+  <div class=&quot;table-wrapper&quot;>
+    <div id=&quot;table-content&quot;></div>
+  </div>
+</div>
+
+<!-- ===== NEWS ===== -->
+<div class=&quot;news-section&quot;>
+  <div class=&quot;news-header&quot;>
+    <div class=&quot;news-header-left&quot;>
+      <div class=&quot;dot&quot;></div>
+      <div class=&quot;title&quot;>最新资讯</div>
+    </div>
+    <div class=&quot;news-header-right&quot;>
+      <span class=&quot;news-count&quot; id=&quot;news-count&quot;>全部 22 条</span>
+      <span class=&quot;news-update-time&quot;>更新 2026-09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-filter-tabs&quot;>
+    <div class=&quot;filter-tab active&quot; data-filter=&quot;all&quot; onclick=&quot;filterNews('all')&quot;>全部 22</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;toutiao&quot; onclick=&quot;filterNews('toutiao')&quot;>🔥 今日头条 8</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;epl&quot; onclick=&quot;filterNews('epl')&quot;>英超 4</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;laliga&quot; onclick=&quot;filterNews('laliga')&quot;>西甲 2</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;seriea&quot; onclick=&quot;filterNews('seriea')&quot;>意甲 2</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;bundesliga&quot; onclick=&quot;filterNews('bundesliga')&quot;>德甲 1</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;ligue1&quot; onclick=&quot;filterNews('ligue1')&quot;>法甲 1</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;mls&quot; onclick=&quot;filterNews('mls')&quot;>美职联 1</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;saudi&quot; onclick=&quot;filterNews('saudi')&quot;>沙特联 1</div>
+    <div class=&quot;filter-tab&quot; data-filter=&quot;ucl&quot; onclick=&quot;filterNews('ucl')&quot;>欧冠 2</div>
+  </div>
+  <div class=&quot;news-grid&quot; id=&quot;news-grid&quot;>
+
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>皇家马德里</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-ucl&quot;>欧冠</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>欧冠首轮焦点战！皇马2-0国米（半场） 姆巴佩巴尔韦德破门，国米后防两度送礼</div>
+      <div class=&quot;card-summary&quot;>北京时间9月9日3:00，2026/27赛季欧冠联赛阶段第1轮，皇马坐镇伯纳乌迎战国际米兰。第14分钟，比塞克后场失误被断，卜拉欣-迪亚斯助攻姆巴佩铲射破门；第23分钟，何塞普-马丁内斯出球被巴尔韦德直接挡进球门，皇马2-0。穆里尼奥二进宫后首场欧冠正式赛事，库尔图瓦迎欧冠百场里程碑。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7683255355329085971/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>懂球帝</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>阿森纳</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>阿森纳2-1逆转切尔西！哈弗茨弑旧主厄德高反超，罗杰斯77秒闪击难救阿隆索首败</div>
+      <div class=&quot;card-summary&quot;>英超第3轮伦敦德比，阿森纳主场2-1逆转切尔西。第2分钟罗杰斯77秒闪击破门，第25分钟哈弗茨内切低射扳平（对旧主不手软），第50分钟措利斯传中、哈弗茨漏球、厄德高爆射反超。阿森纳三连胜与曼城同积9分，切尔西跨赛季连续19场英超无法零封。帕尔默与赖斯冲突成另一焦点。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://www.sohu.com/a/1072967467_122846864&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>曼联</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>曼联2-2遭埃弗顿读秒绝平！奈尔斯2808天后英超再进球，xG仅0.03世界波</div>
+      <div class=&quot;card-summary&quot;>英超第3轮，曼联客场2-2被埃弗顿逼平。姆伯莫第47分钟打破僵局，埃弗顿第83分钟由泰里克-乔治爆射扳平，谢什科第88分钟头球再超。第96分钟，前阿森纳青训奈尔斯禁区外不停球直接抡射，xG值仅0.03的读秒世界波绝平。曼联前三轮每场都丢2球，过去50年来第二次开局前三场每场至少丢两球。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://www.sohu.com/a/1072967467_122846864&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>利雅得新月</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-saudi&quot;>沙特联</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>爆冷！利雅得新月0-2负升班马，47场不败纪录终结，C罗争冠获利好</div>
+      <div class=&quot;card-summary&quot;>沙特联第6轮，联赛霸主利雅得新月主场0-2爆冷负于升班马新未来城体育，47场不败纪录正式终结。此前5轮全胜领跑的新月遭遇赛季首败，积分优势缩窄。利雅得胜利虽在第5轮客场1-2不敌吉达联合吞赛季首败，但新月本轮失分让争冠悬念重燃。C罗此前6次对阵吉达联合打入6球。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7683218961919459882/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>今日头条</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>巴塞罗那</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-laliga&quot;>西甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>巴萨4连胜领跑西甲！拉菲尼亚6球射手榜第一，17球轰碎各路防线</div>
+      <div class=&quot;card-summary&quot;>西甲第4轮战罢，巴塞罗那4战全胜积12分独占榜首，打进17球仅失2球，净胜球+15遥遥领先。拉菲尼亚以6球领跑射手榜，连续4场破门。阿拉维斯3胜1平积10分排名第二，皇马3胜1负积9分排名第三。皇马本轮欧冠迎战国米，联赛暂居第三位。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://sports.163.com/caipiao/league/football/120/standings&quot; target=&quot;_blank&quot;>网易体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>罗马</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-seriea&quot;>意甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>罗马国米拉齐奥三队同积9分领跑意甲！马伦5球金靴节奏，劳塔罗补时绝杀</div>
+      <div class=&quot;card-summary&quot;>意甲第3轮战罢，罗马、国际米兰和拉齐奥同积9分领跑。罗马3战全胜进10球仅失1球，马伦5球领跑射手榜。国米3-2逆转那不勒斯，劳塔罗梅开二度并补时绝杀。尤文1-1战平AC米兰，加蒂补时头球绝平。科莫2胜1平积7分排名第四。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://www.xinhuanet.com/sports/20260907/96f2fcceaa214151835d9fab4cc9093f/c.html&quot; target=&quot;_blank&quot;>新华社</a></span>
+      <span class=&quot;card-time&quot;>09-07</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>曼城</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>英超夏窗总结：40.77亿欧创纪录！恩佐1.45亿欧成标王，曼城5.26亿欧投入第一</div>
+      <div class=&quot;card-summary&quot;>2026夏窗关闭，英超总支出40.77亿欧创历史纪录。曼城以5.26亿欧投入高居全欧第一，其中恩佐-费尔南德斯1.45亿欧从切尔西压哨转会成今夏标王。阿森纳精准引援2.271亿欧排第七。切尔西4.067亿欧10进10出。热刺3.66亿欧10名新援3轮0进球跌入降级区。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://m.sohu.com/a/1073097346_122344199&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;toutiao&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>皇家马德里</span>
+      <span class=&quot;card-league tag-toutiao&quot;>今日头条</span>
+    <span class=&quot;card-league tag-ucl&quot;>欧冠</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>穆帅再战旧主！库尔图瓦欧冠百场里程碑 皇马首发姆巴佩维尼修斯贝林厄姆</div>
+      <div class=&quot;card-summary&quot;>穆里尼奥二进宫执教皇马后的首场欧冠正式赛事，对手正是其旧主国际米兰。库尔图瓦迎来欧冠百场里程碑，前99场34次零封。皇马首发：库尔图瓦、邓弗里斯、科纳特、赫伊森、库库雷利亚、亚历山大-阿诺德、巴尔韦德、贝林厄姆、卜拉欣-迪亚斯、姆巴佩、维尼修斯。穆帅解释迪亚斯首发：更擅长组织进攻。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7683239339546919466/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>直播吧</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;epl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>曼城</span>
+      <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>哈兰德头球制胜！曼城1-0考文垂取得开局三连胜，哈兰德英超生涯第300球</div>
+      <div class=&quot;card-summary&quot;>英超第3轮，曼城主场1-0小胜升班马考文垂。第26分钟哈兰德接队友传中头球破门，打入全场唯一进球，这是哈兰德曼城生涯第300球。曼城3战全胜进7球失2球，凭进球数优势力压阿森纳暂居榜首。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://bbs.hupu.com/642308561.html&quot; target=&quot;_blank&quot;>虎扑</a></span>
+      <span class=&quot;card-time&quot;>09-07</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;epl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>切尔西</span>
+      <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>切尔西1.38亿签罗杰斯创纪录！77秒闪击破阿森纳金身，阿隆索拼开局战术极致</div>
+      <div class=&quot;card-summary&quot;>今夏切尔西以1.17亿英镑（约1.38亿欧元）从维拉签下摩根-罗杰斯，打破赖斯保持的英格兰球员转会费纪录。罗杰斯在对阵阿森纳的伦敦德比中开场77秒闪击破门，切尔西成为英超历史上第一支前三轮都在前5分钟进球的球队。但最终1-2被逆转，阿隆索首败。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://www.sohu.com/a/1073104600_121199493&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;epl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>热刺</span>
+      <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>热刺3.66亿欧10名新援3轮0进球！52年来首次开局前三场一球不进</div>
+      <div class=&quot;card-summary&quot;>热刺今夏投入3.66亿欧元签下10名新援，但英超3轮过后1平2负、0进球、丢5球，积分榜第18位深陷降级区。上一次热刺联赛开局前三场一球不进还是1974-75赛季，52年前的事。阿斯顿维拉同样3轮0进球丢5球，维拉夏窗卖人收入3.6亿欧全球第一，却花了3亿买11人后3轮0进球。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://m.sohu.com/a/1073097346_122344199&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;epl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>赫尔城</span>
+      <span class=&quot;card-league tag-epl&quot;>英超</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>升班马赫尔城创奇迹！3轮2胜1平0失球，夏窗1.76亿欧换15人首轮2-0赢曼联</div>
+      <div class=&quot;card-summary&quot;>升班马赫尔城成为英超开局最大黑马，3轮2胜1平积7分排名第三，至今0失球。首轮2-0击败曼联，队史首次在英超赢曼联。夏窗花了1.7565亿欧元一口气换了15人，全英超身价最低的队却打出最强防守。花钱排名第11的黑马在争冠区，花了最多的热刺在降级区。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://m.sohu.com/a/1073097346_122344199&quot; target=&quot;_blank&quot;>搜狐体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;laliga&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>皇家马德里</span>
+      <span class=&quot;card-league tag-laliga&quot;>西甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>皇马4-0马拉加三连胜紧追巴萨，贝林厄姆姆巴佩领衔，穆帅欧冠首战战国米</div>
+      <div class=&quot;card-summary&quot;>西甲第4轮前，皇马3胜1负积9分排名第三。联赛4-0马拉加等比赛中展现强大攻击力。穆里尼奥二进宫后皇马攻守平衡，卜拉欣-迪亚斯获得更多首发机会。欧冠首轮主场迎战国米，穆帅再战旧主成为焦点。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7683230864557212175/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>懂球帝</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;laliga&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>巴塞罗那</span>
+      <span class=&quot;card-league tag-laliga&quot;>西甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>拉菲尼亚连续4场破门6球领跑射手榜！巴萨4战17球攻击力冠绝欧洲</div>
+      <div class=&quot;card-summary&quot;>西甲第4轮，拉菲尼亚延续出色状态，以6球领跑射手榜。巴萨4场轰17球仅失2球，净胜球+15遥遥领先。安东尼-戈登以4次助攻领跑助攻榜。巴萨5-0大胜瓦伦西亚等比赛中展现统治力，主场20连胜纪录延续。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://www.vipc.cn/article/6a9dff5dc7cfb0bcabae45d8&quot; target=&quot;_blank&quot;>唯彩</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;seriea&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>国际米兰</span>
+      <span class=&quot;card-league tag-seriea&quot;>意甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>劳塔罗双响+补时绝杀！国米3-2逆转那不勒斯，3轮全胜进8球领跑意甲</div>
+      <div class=&quot;card-summary&quot;>意甲第3轮，国际米兰3-2逆转击败那不勒斯。劳塔罗-马丁内斯梅开二度并在补时阶段完成绝杀。国米3战全胜进8球失3球积9分，与罗马、拉齐奥并列榜首。恰尔汗奥卢2球，迪乌夫2助攻。国米本轮欧冠客场挑战皇马。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://sports.cctv.com/2026/09/06/PHOADUp8SrSmlntOP5e0K7l2260906.shtml&quot; target=&quot;_blank&quot;>央视网</a></span>
+      <span class=&quot;card-time&quot;>09-06</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;seriea&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>尤文图斯</span>
+      <span class=&quot;card-league tag-seriea&quot;>意甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>加蒂补时绝平！尤文1-1战平米兰，西塞19岁319天创米兰客场进球纪录</div>
+      <div class=&quot;card-summary&quot;>意甲第3轮，尤文图斯主场1-1战平AC米兰。下半场第69分钟西塞内切打远角得手，AC米兰打破僵局。补时第2分钟，加蒂头球绝平。19岁319天的西塞成为意甲三分制时代米兰生涯前两场意甲客场均进球最年轻球员。两队同积7分排名第四和第五。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://sports.cctv.com/2026/09/07/ARTI080uGsWM1PBtzjSeGawn260907.shtml&quot; target=&quot;_blank&quot;>央视网</a></span>
+      <span class=&quot;card-time&quot;>09-07</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;bundesliga&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>奥格斯堡</span>
+      <span class=&quot;card-league tag-bundesliga&quot;>德甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>奥格斯堡4-1逆转法兰克福升至德甲榜首！半场落后连入四球</div>
+      <div class=&quot;card-summary&quot;>德甲第2轮，奥格斯堡客场在半场落后的情况下连入四球，4-1逆转法兰克福。凭借净胜球优势升至积分榜首位。同轮美因茨客场5-0大胜汉堡。弗赖堡、多特蒙德、埃尔沃斯贝格同样2战全胜积6分。拜仁1胜1平积4分排名第六。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://www.xinhuanet.com/sports/20260907/243f24e88bda4348ac49964662f08dfb/c.html&quot; target=&quot;_blank&quot;>新华社</a></span>
+      <span class=&quot;card-time&quot;>09-07</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;ligue1&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>摩纳哥</span>
+      <span class=&quot;card-league tag-ligue1&quot;>法甲</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>摩纳哥3连胜领跑法甲！布伦纳3球射手榜第一，巴黎圣日耳曼开局0胜2平1负</div>
+      <div class=&quot;card-summary&quot;>法甲第3轮战罢，摩纳哥3战全胜进5球仅失1球积9分领跑。布伦纳3球领跑射手榜。巴黎FC、里昂、里尔、雷恩同积7分紧随其后。巴黎圣日耳曼开局0胜2平1负积2分排名第十三，仅进1球失5球，创近年最差开局。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://sports.163.com/caipiao/league/football/142/standings&quot; target=&quot;_blank&quot;>网易体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;mls&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>纳什维尔SC</span>
+      <span class=&quot;card-league tag-mls&quot;>美职联</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>纳什维尔SC 53分领跑MLS东区！迈阿密国际43分第二，梅西18球仍居射手榜首</div>
+      <div class=&quot;card-summary&quot;>MLS 2026赛季进行中，纳什维尔SC以53分领跑东区（23场16胜5平2负），进47球失17球净胜30。迈阿密国际43分排名第二，梅西以18球继续领跑射手榜。西区温哥华白浪43分领跑，休斯敦迪纳摩40分第二。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://sports.163.com/caipiao/league/football/457/standings?seasonId=10076&quot; target=&quot;_blank&quot;>网易体育</a></span>
+      <span class=&quot;card-time&quot;>09-08</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;saudi&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>利雅得胜利</span>
+      <span class=&quot;card-league tag-saudi&quot;>沙特联</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>利雅得胜利1-2吉达联合吞赛季首败！C罗错失单刀，4连胜终结拱手让出榜首</div>
+      <div class=&quot;card-summary&quot;>沙特联第5轮，利雅得胜利客场1-2不敌吉达联合，赛季首败。伊莱尼赫纳22分钟内梅开二度，安热洛-博尔热斯扳回一城。C罗和马内分别错失单刀机会。利雅得胜利4连胜戛然而止，新月5连胜正式登顶。吉达联合2胜2平积8分。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7682388001468695042/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>今日头条</a></span>
+      <span class=&quot;card-time&quot;>09-06</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;ucl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>多特蒙德</span>
+      <span class=&quot;card-league tag-ucl&quot;>欧冠</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>欧冠首轮6场同时开打！多特vs比利亚雷亚尔、波尔图vs曼城、里尔vs贝蒂斯</div>
+      <div class=&quot;card-summary&quot;>2026/27赛季欧冠联赛阶段第1轮9月9日凌晨开打。首个比赛日6场比赛：雅典AEK vs LASK林茨、布鲁日vs阿斯顿维拉、多特蒙德vs比利亚雷亚尔、波尔图vs曼城、里尔vs皇家贝蒂斯、皇家马德里vs国际米兰。9月10日还有巴萨vs费耶诺德等焦点战。索默在布鲁日vs维拉比赛中出现手抛球失误送礼。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;https://m.dongqiudi.com/match/31&quot; target=&quot;_blank&quot;>懂球帝</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+  <div class=&quot;news-card&quot; data-league=&quot;ucl&quot;>
+    <div class=&quot;card-top&quot;>
+      <span class=&quot;card-team&quot;>皇家马德里</span>
+      <span class=&quot;card-league tag-ucl&quot;>欧冠</span>
+    </div>
+    <div class=&quot;card-body&quot;>
+      <div class=&quot;card-title&quot;>卜拉欣-迪亚斯首发助攻姆巴佩！穆帅解释：他更擅长组织，可像居莱尔适当回撤</div>
+      <div class=&quot;card-summary&quot;>欧冠皇马vs国米，卜拉欣-迪亚斯获得首发并助攻姆巴佩首开记录。穆里尼奥解释首发安排：迪亚斯更擅长组织进攻，可以像居莱尔那样适当后撤参与进攻。新援迪奥曼德坐在替补席上，穆帅表示会在比赛后期考虑让他上场，逐步安排出场时机。</div>
+    </div>
+    <div class=&quot;card-footer&quot;>
+      <span class=&quot;card-source&quot;><a href=&quot;http://m.toutiao.com/group/7683239339546919466/?upstream_biz=VolcEngine&quot; target=&quot;_blank&quot;>直播吧</a></span>
+      <span class=&quot;card-time&quot;>09-09</span>
+    </div>
+  </div>
+
+  </div>
+</div>
+
+<div class=&quot;footer&quot;>
+  足球日报 · 2026年9月9日<br>
+  数据来源：Goal.com / 网易体育 / 懂球帝 / 新华社 / 央视网 / 搜狐体育 / 直播吧<br>
+  采集时间：2026-09-09 04:00 CST · 涵盖七大联赛+欧冠
+</div>
+
+<script>
+const standingsData = {&quot;epl&quot;: [[1, &quot;曼城 Man City&quot;, 3, 3, 0, 0, 7, 2, &quot;+5&quot;, 9], [2, &quot;阿森纳 Arsenal&quot;, 3, 3, 0, 0, 6, 1, &quot;+5&quot;, 9], [3, &quot;赫尔城 Hull City&quot;, 3, 2, 1, 0, 3, 0, &quot;+3&quot;, 7], [4, &quot;切尔西 Chelsea&quot;, 3, 2, 0, 1, 8, 7, &quot;+1&quot;, 6], [5, &quot;布伦特福德 Brentford&quot;, 3, 1, 2, 0, 5, 2, &quot;+3&quot;, 5], [6, &quot;利物浦 Liverpool&quot;, 3, 1, 2, 0, 6, 4, &quot;+2&quot;, 5], [7, &quot;纽卡斯尔联 Newcastle&quot;, 3, 1, 2, 0, 6, 4, &quot;+2&quot;, 5], [8, &quot;埃弗顿 Everton&quot;, 3, 1, 2, 0, 5, 3, &quot;+2&quot;, 5], [9, &quot;利兹联 Leeds United&quot;, 3, 1, 2, 0, 3, 2, &quot;+1&quot;, 4], [10, &quot;布莱顿 Brighton&quot;, 3, 1, 1, 1, 8, 5, &quot;+3&quot;, 4], [11, &quot;曼联 Man United&quot;, 3, 1, 1, 1, 7, 6, &quot;+1&quot;, 4], [12, &quot;桑德兰 Sunderland&quot;, 3, 1, 1, 1, 3, 3, &quot;0&quot;, 4], [13, &quot;水晶宫 Crystal Palace&quot;, 3, 1, 0, 2, 4, 8, &quot;-4&quot;, 3], [14, &quot;伊普斯维奇 Ipswich&quot;, 3, 1, 0, 2, 4, 8, &quot;-4&quot;, 3], [15, &quot;伯恩茅斯 Bournemouth&quot;, 3, 0, 2, 1, 4, 5, &quot;-1&quot;, 2], [16, &quot;诺丁汉森林 Nott. Forest&quot;, 3, 0, 2, 1, 2, 3, &quot;-1&quot;, 2], [17, &quot;阿斯顿维拉 Aston Villa&quot;, 3, 0, 1, 2, 2, 5, &quot;-3&quot;, 1], [18, &quot;热刺 Tottenham&quot;, 3, 0, 1, 2, 2, 5, &quot;-3&quot;, 1], [19, &quot;富勒姆 Fulham&quot;, 3, 0, 0, 3, 4, 7, &quot;-3&quot;, 0], [20, &quot;考文垂 Coventry&quot;, 3, 0, 0, 3, 3, 5, &quot;-2&quot;, 0]], &quot;laliga&quot;: [[1, &quot;巴塞罗那 Barcelona&quot;, 4, 4, 0, 0, 17, 2, &quot;+15&quot;, 12], [2, &quot;阿拉维斯 Alaves&quot;, 4, 3, 1, 0, 10, 3, &quot;+7&quot;, 10], [3, &quot;皇家马德里 Real Madrid&quot;, 4, 3, 0, 1, 10, 3, &quot;+7&quot;, 9], [4, &quot;皇家贝蒂斯 Real Betis&quot;, 4, 3, 0, 1, 5, 5, &quot;0&quot;, 9], [5, &quot;拉科鲁尼亚 Depor. A Coruna&quot;, 4, 2, 2, 0, 8, 5, &quot;+3&quot;, 8], [6, &quot;马德里竞技 Atletico Madrid&quot;, 4, 2, 1, 1, 7, 6, &quot;+1&quot;, 7], [7, &quot;塞维利亚 Sevilla&quot;, 4, 2, 1, 1, 7, 6, &quot;+1&quot;, 7], [8, &quot;奥萨苏纳 Osasuna&quot;, 4, 2, 1, 1, 5, 6, &quot;-1&quot;, 7], [9, &quot;皇家社会 Real Sociedad&quot;, 5, 2, 1, 2, 6, 8, &quot;-2&quot;, 7], [10, &quot;毕尔巴鄂竞技 Athletic Bilbao&quot;, 4, 2, 0, 2, 6, 5, &quot;+1&quot;, 6], [11, &quot;莱万特 Levante&quot;, 4, 1, 2, 1, 5, 5, &quot;0&quot;, 5], [12, &quot;西班牙人 Espanyol&quot;, 4, 1, 1, 2, 6, 5, &quot;+1&quot;, 4], [13, &quot;桑坦德竞技 Racing Santander&quot;, 4, 1, 1, 2, 7, 8, &quot;-1&quot;, 4], [14, &quot;巴列卡诺 Rayo Vallecano&quot;, 4, 1, 1, 2, 7, 10, &quot;-3&quot;, 4], [15, &quot;赫塔费 Getafe&quot;, 4, 1, 1, 2, 2, 5, &quot;-3&quot;, 4], [16, &quot;塞尔塔 Celta Vigo&quot;, 5, 0, 3, 2, 2, 5, &quot;-3&quot;, 3], [17, &quot;比利亚雷亚尔 Villarreal&quot;, 4, 0, 2, 2, 6, 8, &quot;-2&quot;, 2], [18, &quot;马拉加 Malaga&quot;, 4, 0, 2, 2, 1, 7, &quot;-6&quot;, 2], [19, &quot;埃尔切 Elche&quot;, 4, 0, 1, 3, 5, 12, &quot;-7&quot;, 1], [20, &quot;瓦伦西亚 Valencia&quot;, 4, 0, 1, 3, 1, 9, &quot;-8&quot;, 1]], &quot;seriea&quot;: [[1, &quot;罗马 AS Roma&quot;, 3, 3, 0, 0, 10, 1, &quot;+9&quot;, 9], [2, &quot;国际米兰 Inter Milan&quot;, 3, 3, 0, 0, 8, 3, &quot;+5&quot;, 9], [3, &quot;拉齐奥 Lazio&quot;, 3, 3, 0, 0, 4, 1, &quot;+3&quot;, 9], [4, &quot;科莫 Como&quot;, 3, 2, 1, 0, 7, 3, &quot;+4&quot;, 7], [5, &quot;AC米兰 AC Milan&quot;, 3, 2, 1, 0, 5, 2, &quot;+3&quot;, 7], [6, &quot;尤文图斯 Juventus&quot;, 3, 2, 1, 0, 4, 1, &quot;+3&quot;, 7], [7, &quot;弗罗西诺内 Frosinone&quot;, 3, 2, 0, 1, 6, 3, &quot;+3&quot;, 6], [8, &quot;亚特兰大 Atalanta&quot;, 3, 2, 0, 1, 4, 3, &quot;+1&quot;, 6], [9, &quot;卡利亚里 Cagliari&quot;, 3, 2, 0, 1, 2, 1, &quot;+1&quot;, 6], [10, &quot;萨索洛 Sassuolo&quot;, 3, 1, 1, 1, 5, 5, &quot;0&quot;, 4], [11, &quot;乌迪内斯 Udinese&quot;, 3, 1, 1, 1, 5, 5, &quot;0&quot;, 4], [12, &quot;那不勒斯 Napoli&quot;, 3, 1, 0, 2, 2, 5, &quot;-3&quot;, 3], [13, &quot;都灵 Torino&quot;, 3, 1, 0, 2, 4, 5, &quot;-1&quot;, 3], [14, &quot;莱切 Lecce&quot;, 3, 1, 0, 2, 2, 5, &quot;-3&quot;, 3], [15, &quot;博洛尼亚 Bologna&quot;, 3, 0, 1, 2, 2, 4, &quot;-2&quot;, 1], [16, &quot;帕尔马 Parma&quot;, 3, 0, 1, 2, 1, 4, &quot;-3&quot;, 1], [17, &quot;蒙扎 Monza&quot;, 3, 0, 1, 2, 4, 8, &quot;-4&quot;, 1], [18, &quot;威尼斯 Venezia&quot;, 3, 0, 0, 3, 2, 7, &quot;-5&quot;, 0], [19, &quot;热那亚 Genoa&quot;, 3, 0, 0, 3, 1, 7, &quot;-6&quot;, 0], [20, &quot;佛罗伦萨 Fiorentina&quot;, 3, 0, 0, 3, 1, 9, &quot;-8&quot;, 0]], &quot;bundesliga&quot;: [[1, &quot;奥格斯堡 Augsburg&quot;, 2, 2, 0, 0, 7, 1, &quot;+6&quot;, 6], [2, &quot;弗赖堡 Freiburg&quot;, 2, 2, 0, 0, 5, 1, &quot;+4&quot;, 6], [3, &quot;多特蒙德 Dortmund&quot;, 2, 2, 0, 0, 5, 2, &quot;+3&quot;, 6], [4, &quot;埃尔沃斯贝格 Elversberg&quot;, 2, 2, 0, 0, 7, 5, &quot;+2&quot;, 6], [5, &quot;美因茨 Mainz&quot;, 2, 1, 1, 0, 5, 0, &quot;+5&quot;, 4], [6, &quot;拜仁慕尼黑 Bayern Munich&quot;, 2, 1, 1, 0, 5, 1, &quot;+4&quot;, 4], [7, &quot;勒沃库森 Leverkusen&quot;, 2, 1, 0, 1, 6, 3, &quot;+3&quot;, 3], [8, &quot;RB莱比锡 RB Leipzig&quot;, 2, 1, 0, 1, 4, 3, &quot;+1&quot;, 3], [9, &quot;斯图加特 Stuttgart&quot;, 2, 1, 0, 1, 5, 6, &quot;-1&quot;, 3], [10, &quot;云达不莱梅 Werder Bremen&quot;, 2, 1, 0, 1, 4, 5, &quot;-1&quot;, 3], [11, &quot;科隆 Koln&quot;, 2, 1, 0, 1, 4, 6, &quot;-2&quot;, 3], [12, &quot;帕德博恩 Paderborn&quot;, 2, 0, 1, 1, 1, 1, &quot;0&quot;, 1], [13, &quot;法兰克福 Frankfurt&quot;, 2, 0, 1, 1, 4, 7, &quot;-3&quot;, 1], [14, &quot;沙尔克04 Schalke 04&quot;, 2, 0, 1, 1, 3, 3, &quot;0&quot;, 1], [15, &quot;柏林联合 Union Berlin&quot;, 2, 0, 1, 1, 3, 7, &quot;-4&quot;, 1], [16, &quot;霍芬海姆 Hoffenheim&quot;, 2, 0, 0, 2, 4, 6, &quot;-2&quot;, 0], [17, &quot;门兴格拉德bach Gladbach&quot;, 2, 0, 0, 2, 3, 7, &quot;-4&quot;, 0], [18, &quot;汉堡 Hamburg&quot;, 2, 0, 0, 2, 0, 7, &quot;-7&quot;, 0]], &quot;ligue1&quot;: [[1, &quot;摩纳哥 Monaco&quot;, 3, 3, 0, 0, 5, 1, &quot;+4&quot;, 9], [2, &quot;巴黎FC Paris FC&quot;, 3, 2, 1, 0, 6, 2, &quot;+4&quot;, 7], [3, &quot;里昂 Lyon&quot;, 3, 2, 1, 0, 6, 2, &quot;+4&quot;, 7], [4, &quot;里尔 Lille&quot;, 3, 2, 1, 0, 5, 2, &quot;+3&quot;, 7], [5, &quot;雷恩 Rennes&quot;, 3, 2, 1, 0, 7, 2, &quot;+5&quot;, 7], [6, &quot;斯特拉斯堡 Strasbourg&quot;, 3, 2, 0, 1, 8, 7, &quot;+1&quot;, 6], [7, &quot;布雷斯特 Brest&quot;, 3, 1, 2, 0, 6, 5, &quot;+1&quot;, 5], [8, &quot;洛里昂 Lorient&quot;, 3, 1, 1, 1, 2, 2, &quot;0&quot;, 4], [9, &quot;特鲁瓦 Troyes&quot;, 3, 1, 1, 1, 4, 7, &quot;-3&quot;, 4], [10, &quot;马赛 Marseille&quot;, 3, 1, 0, 2, 6, 5, &quot;+1&quot;, 3], [11, &quot;朗斯 Lens&quot;, 3, 1, 0, 2, 6, 5, &quot;+1&quot;, 3], [12, &quot;昂热 Angers&quot;, 3, 1, 0, 2, 4, 5, &quot;-1&quot;, 3], [13, &quot;巴黎圣日耳曼 PSG&quot;, 3, 0, 2, 1, 1, 5, &quot;-4&quot;, 2], [14, &quot;勒芒 Le Mans&quot;, 3, 0, 2, 1, 1, 5, &quot;-4&quot;, 2], [15, &quot;尼斯 Nice&quot;, 3, 0, 2, 1, 1, 4, &quot;-3&quot;, 2], [16, &quot;勒阿弗尔 Le Havre&quot;, 3, 0, 1, 2, 2, 4, &quot;-2&quot;, 1], [17, &quot;图卢兹 Toulouse&quot;, 3, 0, 1, 2, 2, 5, &quot;-3&quot;, 1], [18, &quot;欧塞尔 Auxerre&quot;, 3, 0, 0, 3, 1, 11, &quot;-10&quot;, 0]], &quot;mls_east&quot;: [[1, &quot;纳什维尔SC Nashville SC&quot;, 23, 16, 5, 2, 47, 17, &quot;+30&quot;, 53], [2, &quot;迈阿密国际 Inter Miami&quot;, 23, 12, 7, 4, 58, 43, &quot;+15&quot;, 43], [3, &quot;芝加哥火焰 Chicago Fire&quot;, 22, 11, 5, 6, 43, 32, &quot;+11&quot;, 38], [4, &quot;新英格兰革命 NE Revolution&quot;, 23, 11, 4, 8, 37, 29, &quot;+8&quot;, 37], [5, &quot;夏洛特FC Charlotte FC&quot;, 23, 10, 6, 7, 40, 32, &quot;+8&quot;, 36], [6, &quot;辛辛那提 FC Cincinnati&quot;, 22, 8, 7, 7, 49, 51, &quot;-2&quot;, 31], [7, &quot;纽约城 New York City FC&quot;, 23, 7, 8, 8, 36, 31, &quot;+5&quot;, 29], [8, &quot;奥兰多城 Orlando City&quot;, 23, 8, 4, 11, 38, 54, &quot;-16&quot;, 28], [9, &quot;费城联合 Philadelphia Union&quot;, 23, 7, 6, 10, 36, 39, &quot;-3&quot;, 27], [10, &quot;纽约红牛 New York RB&quot;, 23, 7, 6, 10, 32, 46, &quot;-14&quot;, 27], [11, &quot;多伦多FC Toronto FC&quot;, 23, 5, 11, 7, 36, 42, &quot;-6&quot;, 26], [12, &quot;华盛顿联 DC United&quot;, 22, 5, 10, 7, 28, 36, &quot;-8&quot;, 25], [13, &quot;哥伦布机员 Columbus Crew&quot;, 23, 6, 5, 12, 34, 39, &quot;-5&quot;, 23], [14, &quot;亚特兰大联 Atlanta United&quot;, 23, 6, 4, 13, 27, 40, &quot;-13&quot;, 22], [15, &quot;蒙特利尔CF CF Montreal&quot;, 23, 5, 6, 12, 30, 48, &quot;-18&quot;, 21]], &quot;mls_west&quot;: [[1, &quot;温哥华白浪 Vancouver Whitecaps&quot;, 22, 13, 4, 5, 49, 21, &quot;+28&quot;, 43], [2, &quot;休斯敦迪纳摩 Houston Dynamo&quot;, 23, 12, 4, 7, 30, 26, &quot;+4&quot;, 40], [3, &quot;洛杉矶FC Los Angeles FC&quot;, 24, 10, 7, 7, 38, 24, &quot;+14&quot;, 37], [4, &quot;达拉斯FC FC Dallas&quot;, 23, 10, 7, 6, 45, 40, &quot;+5&quot;, 37], [5, &quot;圣路易斯城 St. Louis City&quot;, 23, 10, 7, 6, 36, 31, &quot;+5&quot;, 37], [6, &quot;圣何塞地震 San Jose Quakes&quot;, 23, 10, 5, 8, 40, 34, &quot;+6&quot;, 35], [7, &quot;科罗拉多急流 Colorado Rapids&quot;, 23, 10, 1, 2, 31, 31, &quot;0&quot;, 31], [8, &quot;波特兰伐木工 Portland Timbers&quot;, 23, 9, 4, 10, 44, 43, &quot;+1&quot;, 31], [9, &quot;圣地亚哥FC San Diego FC&quot;, 23, 8, 6, 9, 40, 34, &quot;+6&quot;, 30], [10, &quot;皇家盐湖城 Real Salt Lake&quot;, 22, 8, 5, 9, 36, 35, &quot;+1&quot;, 29], [11, &quot;明尼苏达联 Minnesota United&quot;, 23, 7, 8, 8, 34, 37, &quot;-3&quot;, 29], [12, &quot;洛杉矶银河 LA Galaxy&quot;, 24, 7, 8, 9, 30, 36, &quot;-6&quot;, 29], [13, &quot;西雅图海湾人 Seattle Sounders&quot;, 22, 7, 6, 9, 24, 29, &quot;-5&quot;, 27], [14, &quot;奥斯汀FC Austin FC&quot;, 23, 6, 7, 10, 29, 42, &quot;-13&quot;, 25], [15, &quot;堪萨斯城竞技 Sporting KC&quot;, 23, 4, 3, 16, 23, 58, &quot;-35&quot;, 15]], &quot;saudi&quot;: [[1, &quot;利雅得新月 Al Hilal&quot;, 6, 5, 0, 1, 17, 5, &quot;+12&quot;, 15], [2, &quot;吉达联合 Al Ittihad&quot;, 6, 4, 2, 0, 9, 5, &quot;+4&quot;, 14], [3, &quot;利雅得胜利 Al Nassr&quot;, 5, 4, 0, 1, 13, 5, &quot;+8&quot;, 12], [4, &quot;卡迪西亚 Al Qadisiyah&quot;, 5, 4, 0, 1, 10, 3, &quot;+7&quot;, 12], [5, &quot;新未来城体育 NEOM SC&quot;, 6, 4, 0, 2, 9, 4, &quot;+5&quot;, 12], [6, &quot;达曼协作 Damac&quot;, 6, 3, 1, 2, 8, 8, &quot;0&quot;, 10], [7, &quot;吉达国民 Al Ahli&quot;, 5, 3, 0, 2, 11, 6, &quot;+5&quot;, 9], [8, &quot;科鲁德 Al Khulood&quot;, 5, 3, 0, 2, 10, 7, &quot;+3&quot;, 9], [9, &quot;哈森姆 Al Hassain&quot;, 5, 2, 1, 2, 5, 4, &quot;+1&quot;, 7], [10, &quot;德拉伊耶 Al Dira'i&quot;, 6, 1, 2, 3, 6, 16, &quot;-10&quot;, 5], [11, &quot;费哈 Al Fateh&quot;, 6, 1, 2, 3, 7, 11, &quot;-4&quot;, 5], [12, &quot;利雅得体育 Al Riyadh&quot;, 6, 0, 4, 2, 2, 9, &quot;-7&quot;, 4], [13, &quot;塞哈特海湾 Al Batin&quot;, 5, 0, 3, 2, 3, 6, &quot;-3&quot;, 3], [14, &quot;布赖代合作 Al Taawoun&quot;, 6, 0, 3, 3, 3, 6, &quot;-3&quot;, 3], [15, &quot;利雅得青年 Al Shabab&quot;, 5, 0, 3, 2, 5, 9, &quot;-4&quot;, 3], [16, &quot;哈萨征服 Al Hazm&quot;, 6, 0, 3, 3, 4, 10, &quot;-6&quot;, 3], [17, &quot;费萨里哈曼 Al Faisaly&quot;, 5, 0, 1, 4, 4, 11, &quot;-7&quot;, 1], [18, &quot;艾卜哈 Abha&quot;, 6, 0, 3, 3, 4, 10, &quot;-6&quot;, 1]]};
+
+const scorersData = {&quot;epl&quot;: [[1, &quot;哈兰德 Erling Haaland&quot;, &quot;曼城 Man City&quot;, 3], [2, &quot;萨卡 Bukayo Saka&quot;, &quot;阿森纳 Arsenal&quot;, 3], [3, &quot;哈弗茨 Kai Havertz&quot;, &quot;阿森纳 Arsenal&quot;, 2], [3, &quot;姆伯莫 Bryan Mbeumo&quot;, &quot;曼联 Man United&quot;, 2], [3, &quot;帕尔默 Cole Palmer&quot;, &quot;切尔西 Chelsea&quot;, 2], [3, &quot;罗杰斯 Morgan Rogers&quot;, &quot;切尔西 Chelsea&quot;, 2], [3, &quot;若昂-佩德罗 Joao Pedro&quot;, &quot;切尔西 Chelsea&quot;, 2], [8, &quot;B费 Bruno Fernandes&quot;, &quot;曼联 Man United&quot;, 1], [8, &quot;福登 Phil Foden&quot;, &quot;曼城 Man City&quot;, 1], [8, &quot;加克波 Cody Gakpo&quot;, &quot;利物浦 Liverpool&quot;, 1]], &quot;laliga&quot;: [[1, &quot;拉菲尼亚 Raphinha&quot;, &quot;巴塞罗那 Barcelona&quot;, 6], [2, &quot;塞尔希奥-卡梅略 Sergio Camello&quot;, &quot;巴列卡诺 Rayo Vallecano&quot;, 5], [3, &quot;布季米尔 Ante Budimir&quot;, &quot;奥萨苏纳 Osasuna&quot;, 4], [3, &quot;奥巴梅扬 Aubameyang&quot;, &quot;拉科鲁尼亚 Depor&quot;, 4], [3, &quot;卢卡斯-博耶 Lucas Boye&quot;, &quot;阿拉维斯 Alaves&quot;, 4], [3, &quot;姆巴佩 Kylian Mbappe&quot;, &quot;皇家马德里 Real Madrid&quot;, 4], [3, &quot;费尔明-洛佩斯 Fermin Lopez&quot;, &quot;巴塞罗那 Barcelona&quot;, 4], [3, &quot;亚马尔 Lamine Yamal&quot;, &quot;巴塞罗那 Barcelona&quot;, 4], [9, &quot;马里亚诺-迪亚斯 Mariano Diaz&quot;, &quot;阿拉维斯 Alaves&quot;, 3], [9, &quot;巴埃纳斯 Baena&quot;, &quot;马德里竞技 Atletico Madrid&quot;, 3]], &quot;seriea&quot;: [[1, &quot;马伦 Donyell Malen&quot;, &quot;罗马 AS Roma&quot;, 5], [2, &quot;雷蒙多 Raimondo&quot;, &quot;弗罗西诺内 Frosinone&quot;, 4], [3, &quot;弗拉泰西 Frattesi&quot;, &quot;拉齐奥 Lazio&quot;, 3], [4, &quot;恰尔汗奥卢 Calhanoglu&quot;, &quot;国际米兰 Inter&quot;, 2], [4, &quot;哈桑-卡马拉 Kamara&quot;, &quot;乌迪内斯 Udinese&quot;, 2], [4, &quot;切-亚当斯 Adams&quot;, &quot;都灵 Torino&quot;, 2], [4, &quot;劳塔罗 Lautaro Martinez&quot;, &quot;国际米兰 Inter&quot;, 2], [4, &quot;杜维卡斯 Duvijkes&quot;, &quot;科莫 Como&quot;, 2], [4, &quot;霍伊伦 Hojlund&quot;, &quot;那不勒斯 Napoli&quot;, 2], [4, &quot;巴图里纳 Baturina&quot;, &quot;科莫 Como&quot;, 2]], &quot;bundesliga&quot;: [[1, &quot;铃木唯人 Yuito Suzuki&quot;, &quot;弗赖堡 Freiburg&quot;, 3], [2, &quot;穆西亚拉 Jamal Musiala&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 2], [2, &quot;凯恩 Harry Kane&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 2], [4, &quot;格雷戈里奇 Gregoritsch&quot;, &quot;奥格斯堡 Augsburg&quot;, 1], [4, &quot;奥利塞 Michael Olise&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 1], [4, &quot;吉拉西 Serhou Guirassy&quot;, &quot;多特蒙德 Dortmund&quot;, 1], [4, &quot;拜尔 Adeyemi&quot;, &quot;多特蒙德 Dortmund&quot;, 1], [4, &quot;希克 Schick&quot;, &quot;勒沃库森 Leverkusen&quot;, 1], [4, &quot;巴库 Baku&quot;, &quot;RB莱比锡 RB Leipzig&quot;, 1], [4, &quot;赖茨 Reitz&quot;, &quot;RB莱比锡 RB Leipzig&quot;, 1]], &quot;ligue1&quot;: [[1, &quot;布伦纳 Mika Biereth&quot;, &quot;摩纳哥 Monaco&quot;, 3], [2, &quot;费兰-托雷斯 Ferran Torres&quot;, &quot;巴黎圣日耳曼 PSG&quot;, 2], [2, &quot;格林伍德 Mason Greenwood&quot;, &quot;马赛 Marseille&quot;, 2], [4, &quot;登贝莱 Ousmane Dembele&quot;, &quot;巴黎圣日耳曼 PSG&quot;, 1], [4, &quot;巴尔科拉 Barcola&quot;, &quot;巴黎圣日耳曼 PSG&quot;, 1], [4, &quot;拉卡泽特 Lacazette&quot;, &quot;里昂 Lyon&quot;, 1], [4, &quot;本耶德尔 Ben Yedder&quot;, &quot;雷恩 Rennes&quot;, 1]], &quot;mls&quot;: [[1, &quot;梅西 Lionel Messi&quot;, &quot;迈阿密国际 Inter Miami&quot;, 18], [2, &quot;穆萨 Petar Musa&quot;, &quot;达拉斯FC FC Dallas&quot;, 16], [3, &quot;布安加 Denis Bouanga&quot;, &quot;洛杉矶FC LAFC&quot;, 12], [4, &quot;苏亚雷斯 Luis Suarez&quot;, &quot;迈阿密国际 Inter Miami&quot;, 10], [5, &quot;约韦尔季ic Joveljic&quot;, &quot;洛杉矶银河 LA Galaxy&quot;, 8]], &quot;saudi&quot;: [[1, &quot;C罗 Cristiano Ronaldo&quot;, &quot;利雅得胜利 Al Nassr&quot;, 5], [2, &quot;米特洛维奇 Mitrovic&quot;, &quot;利雅得新月 Al Hilal&quot;, 4], [2, &quot;马内 Sadio Mane&quot;, &quot;利雅得胜利 Al Nassr&quot;, 4], [4, &quot;伊莱尼赫na Ilenikhena&quot;, &quot;吉达联合 Al Ittihad&quot;, 3], [4, &quot;米林科维奇 Savic&quot;, &quot;利雅得新月 Al Hilal&quot;, 3], [6, &quot;R.内维斯 R. Neves&quot;, &quot;利雅得新月 Al Hilal&quot;, 2], [6, &quot;安热洛 Angelo&quot;, &quot;利雅得胜利 Al Nassr&quot;, 2], [6, &quot;菲利克斯 Joao Felix&quot;, &quot;利雅得胜利 Al Nassr&quot;, 2]], &quot;ucl&quot;: [[1, &quot;—&quot;, &quot;联赛阶段第1轮进行中&quot;, &quot;—&quot;]]};
+
+const assistsData = {&quot;epl&quot;: [[1, &quot;加克波 Cody Gakpo&quot;, &quot;利物浦 Liverpool&quot;, 3], [2, &quot;福登 Phil Foden&quot;, &quot;曼城 Man City&quot;, 2], [2, &quot;塞门约 Semenyo&quot;, &quot;曼城 Man City&quot;, 2], [2, &quot;卡拉菲奥里 Calafiori&quot;, &quot;阿森纳 Arsenal&quot;, 2], [2, &quot;谢尔基 Cherki&quot;, &quot;曼城 Man City&quot;, 2], [2, &quot;恩西索 Enciso&quot;, &quot;伊普斯维奇 Ipswich&quot;, 2], [2, &quot;若昂-佩德罗 Joao Pedro&quot;, &quot;切尔西 Chelsea&quot;, 2], [2, &quot;哈托 Hato&quot;, &quot;切尔西 Chelsea&quot;, 2]], &quot;laliga&quot;: [[1, &quot;戈登 Anthony Gordon&quot;, &quot;巴塞罗那 Barcelona&quot;, 4], [2, &quot;马里亚诺-迪亚斯 Mariano&quot;, &quot;阿拉维斯 Alaves&quot;, 3], [2, &quot;乌奈-洛佩斯 Unai Lopez&quot;, &quot;巴列卡诺 Rayo&quot;, 3], [2, &quot;哈维尔-埃尔南德斯 Javi&quot;, &quot;西班牙人 Espanyol&quot;, 3], [2, &quot;安赫尔-佩雷斯 Angel&quot;, &quot;阿拉维斯 Alaves&quot;, 3], [6, &quot;奥巴梅扬 Aubameyang&quot;, &quot;拉科鲁尼亚 Depor&quot;, 2], [6, &quot;伊尼亚基-威廉斯 Williams&quot;, &quot;毕尔巴鄂 Bilbao&quot;, 2], [6, &quot;奥尔莫 Olmo&quot;, &quot;巴塞罗那 Barcelona&quot;, 2], [6, &quot;维尼修斯 Vinicius&quot;, &quot;皇家马德里 Real Madrid&quot;, 2], [6, &quot;贝林厄姆 Bellingham&quot;, &quot;皇家马德里 Real Madrid&quot;, 2]], &quot;seriea&quot;: [[1, &quot;迪巴拉 Dybala&quot;, &quot;罗马 AS Roma&quot;, 4], [2, &quot;丘库埃泽 Chukwueze&quot;, &quot;AC米兰 AC Milan&quot;, 2], [2, &quot;曼加斯 Mangas&quot;, &quot;蒙扎 Monza&quot;, 2], [2, &quot;迪乌夫 Diouf&quot;, &quot;国际米兰 Inter&quot;, 2], [5, &quot;德布劳内 De Bruyne&quot;, &quot;那不勒斯 Napoli&quot;, 1], [5, &quot;迪洛伦佐 Di Lorenzo&quot;, &quot;那不勒斯 Napoli&quot;, 1], [5, &quot;拉比奥 Rabiot&quot;, &quot;AC米兰 AC Milan&quot;, 1], [5, &quot;迪马尔科 Dimarco&quot;, &quot;国际米兰 Inter&quot;, 1], [5, &quot;巴雷拉 Barella&quot;, &quot;国际米兰 Inter&quot;, 1], [5, &quot;洛卡特利 Locatelli&quot;, &quot;尤文图斯 Juventus&quot;, 1]], &quot;bundesliga&quot;: [[1, &quot;基米希 Kimmich&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 2], [2, &quot;穆西亚拉 Musiala&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 1], [2, &quot;奥利塞 Olise&quot;, &quot;拜仁慕尼黑 Bayern&quot;, 1]], &quot;ligue1&quot;: [[1, &quot;布伦纳 Biereth&quot;, &quot;摩纳哥 Monaco&quot;, 1], [1, &quot;费兰-托雷斯 Torres&quot;, &quot;巴黎圣日耳曼 PSG&quot;, 1], [1, &quot;登贝莱 Dembele&quot;, &quot;巴黎圣日耳曼 PSG&quot;, 1]], &quot;mls&quot;: [[1, &quot;梅西 Lionel Messi&quot;, &quot;迈阿密国际 Inter Miami&quot;, 10], [2, &quot;阿尔巴 Jordi Alba&quot;, &quot;迈阿密国际 Inter Miami&quot;, 8], [3, &quot;苏亚雷斯 Luis Suarez&quot;, &quot;迈阿密国际 Inter Miami&quot;, 5]], &quot;saudi&quot;: [[1, &quot;马内 Sadio Mane&quot;, &quot;利雅得胜利 Al Nassr&quot;, 3], [2, &quot;安热洛 Angelo&quot;, &quot;利雅得胜利 Al Nassr&quot;, 2], [3, &quot;萨维奥 Savio&quot;, &quot;利雅得新月 Al Hilal&quot;, 2]], &quot;ucl&quot;: [[1, &quot;—&quot;, &quot;联赛阶段第1轮进行中&quot;, &quot;—&quot;]]};
+
+let currentType = 'standings';
+let currentLeague = 'epl';
+
+function switchType(type) {
+  currentType = type;
+  document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.type-tab[data-type=&quot;' + type + '&quot;]').classList.add('active');
+  renderTable();
+}
+
+function switchLeague(league) {
+  currentLeague = league;
+  document.querySelectorAll('.league-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.league-tab[data-league=&quot;' + league + '&quot;]').classList.add('active');
+  renderTable();
+}
+
+function renderTable() {
+  const container = document.getElementById('table-content');
+  let html = '';
+  
+  if (currentType === 'standings') {
+    if (currentLeague === 'mls') {
+      html += '<h4 style=&quot;color:#666;font-size:13px;margin:8px 0 4px&quot;>东区</h4>';
+      html += buildStandingsTable(standingsData.mls_east, ['排名','球队','赛','胜','平','负','进','失','净','积分']);
+      html += '<h4 style=&quot;color:#666;font-size:13px;margin:12px 0 4px&quot;>西区</h4>';
+      html += buildStandingsTable(standingsData.mls_west, ['排名','球队','赛','胜','平','负','进','失','净','积分']);
+    } else if (currentLeague === 'ucl') {
+      html += '<div style=&quot;padding:16px;text-align:center;color:#666;font-size:13px&quot;>';
+      html += '<p style=&quot;margin-bottom:8px&quot;>2026/27赛季欧冠联赛阶段第1轮进行中</p>';
+      html += '<p style=&quot;margin-bottom:4px&quot;>9月9日赛程（北京时间）：</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>00:45 雅典AEK vs LASK林茨</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>00:45 布鲁日 vs 阿斯顿维拉</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>03:00 多特蒙德 vs 比利亚雷亚尔</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>03:00 波尔图 vs 曼城</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>03:00 里尔 vs 皇家贝蒂斯</p>';
+      html += '<p style=&quot;font-size:12px;line-height:2&quot;>03:00 皇家马德里 vs 国际米兰</p>';
+      html += '<p style=&quot;margin-top:12px;font-size:12px;color:#999&quot;>9月10日：巴萨vs费耶诺德、利物浦vs马竞等</p>';
+      html += '<p style=&quot;margin-top:8px;font-size:12px;color:#999&quot;>联赛阶段积分榜将在首轮全部结束后生成</p>';
+      html += '</div>';
+    } else {
+      html += buildStandingsTable(standingsData[currentLeague], ['排名','球队','场次','胜','平','负','进球','失球','净胜球','积分']);
+    }
+  } else if (currentType === 'scorers') {
+    html += buildSimpleTable(scorersData[currentLeague] || [], ['排名','球员','球队','进球']);
+  } else if (currentType === 'assists') {
+    html += buildSimpleTable(assistsData[currentLeague] || [], ['排名','球员','球队','助攻']);
+  }
+  
+  container.innerHTML = html;
+}
+
+function buildStandingsTable(data, headers) {
+  let html = '<table class=&quot;standings-table&quot;><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach((row, idx) => {
+    let cls = '';
+    if (idx < 3) cls = 'top3';
+    else if (idx < 4) cls = 'top4';
+    else if (idx >= data.length - 3 &amp;&amp; data.length >= 18) cls = 'relegation';
+    if (row[0] <= 4) cls += ' highlight';
+    html += '<tr class=&quot;' + cls + '&quot;>';
+    row.forEach((cell, cidx) => {
+      html += '<td>' + cell + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function buildSimpleTable(data, headers) {
+  let html = '<table class=&quot;standings-table&quot;><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach(row => {
+    html += '<tr>';
+    row.forEach((cell, cidx) => {
+      if (cidx === 0) html += '<td style=&quot;font-weight:700;color:#c41e3a&quot;>' + cell + '</td>';
+      else html += '<td>' + cell + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function filterNews(filter) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.filter-tab[data-filter=&quot;' + filter + '&quot;]').classList.add('active');
+  
+  const cards = document.querySelectorAll('.news-card');
+  let visibleCount = 0;
+  cards.forEach(card => {
+    if (filter === 'all' || card.dataset.league === filter) {
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  
+  const labelMap = {
+    'all': '全部 ',
+    'toutiao': '今日头条 ',
+    'epl': '英超 ',
+    'laliga': '西甲 ',
+    'seriea': '意甲 ',
+    'bundesliga': '德甲 ',
+    'ligue1': '法甲 ',
+    'mls': '美职联 ',
+    'saudi': '沙特联 ',
+    'ucl': '欧冠 '
+  };
+  document.getElementById('news-count').textContent = (labelMap[filter] || '') + visibleCount + ' 条';
+}
+
+// Init
+renderTable();
+</script>
+<script id=&quot;fc-league-controller&quot;>
+(()=>{
+const standings=document.querySelector('.standings-section'),news=document.querySelector('.news-section');if(!standings||!news)return;
+document.body.classList.add('fc-layout');
+const leagues=[['epl','英超','PREMIER LEAGUE'],['laliga','西甲','LALIGA'],['bundesliga','德甲','BUNDESLIGA'],['seriea','意甲','SERIE A'],['ligue1','法甲','LIGUE 1'],['ucl','欧冠','CHAMPIONS LEAGUE'],['mls','美职联','MLS'],['saudi','沙特联','SAUDI PRO LEAGUE']];
+const types=[['news','新闻'],['standings','积分榜'],['scorers','射手榜'],['assists','助攻榜']];
+const controls=document.createElement('section');controls.id='fc-football-controls';
+controls.innerHTML='<div class=&quot;fc-context&quot;>按联赛跟进新闻与数据排行</div><div class=&quot;fc-leagues&quot; role=&quot;group&quot; aria-label=&quot;选择联赛&quot;>'+leagues.map(([id,label,en])=>'<button type=&quot;button&quot; data-fc-league=&quot;'+id+'&quot;><strong>'+label+'</strong><small>'+en+'</small></button>').join('')+'</div><div class=&quot;fc-types&quot; role=&quot;group&quot; aria-label=&quot;内容分类&quot;>'+types.map(([id,label])=>'<button type=&quot;button&quot; data-fc-type=&quot;'+id+'&quot;>'+label+'</button>').join('')+'</div><input class=&quot;fc-search&quot; type=&quot;search&quot; aria-label=&quot;搜索球队、球员或关键词&quot; placeholder=&quot;搜索球队、球员或关键词…&quot;><div class=&quot;fc-context&quot; id=&quot;fc-result-count&quot; role=&quot;status&quot;></div>';
+standings.before(controls);const empty=document.createElement('p');empty.className='fc-empty';empty.hidden=true;news.after(empty);
+let league='epl',type='news';const cards=Array.from(news.querySelectorAll('.news-card'));
+function matches(card){return card.dataset.league===league||!!card.querySelector('.tag-'+league);}
+function render(){
+const query=controls.querySelector('input').value.trim().toLowerCase();controls.querySelectorAll('[data-fc-league]').forEach(b=>{b.classList.toggle('active',b.dataset.fcLeague===league);b.setAttribute('aria-pressed',String(b.dataset.fcLeague===league));});controls.querySelectorAll('[data-fc-type]').forEach(b=>{b.classList.toggle('active',b.dataset.fcType===type);b.setAttribute('aria-pressed',String(b.dataset.fcType===type));});
+news.hidden=type!=='news';standings.hidden=type==='news';empty.hidden=true;
+let count=0;
+if(type==='news'){cards.forEach(card=>{const visible=matches(card)&amp;&amp;card.textContent.toLowerCase().includes(query);card.classList.toggle('hidden',!visible);if(visible)count++;});}
+else{
+try{switchLeague(league);switchType(type);}catch{document.getElementById('table-content').textContent='该联赛暂无可用榜单数据。';}
+const tables=standings.querySelectorAll('table');tables.forEach(table=>{Array.from(table.rows).forEach(row=>{if(row.querySelector('th'))return;const visible=row.textContent.toLowerCase().includes(query);row.hidden=!visible;if(visible)count++;});});
+}
+const label=leagues.find(l=>l[0]===league)[1];document.getElementById('fc-result-count').textContent=label+' · '+types.find(t=>t[0]===type)[1]+' · '+count+(type==='news'?' 条':' 项');
+if(!count){empty.textContent=query?'没有匹配的内容，请调整关键词。':'该联赛暂无'+(type==='news'?'可归类的新闻':'已收录的榜单数据')+'。';empty.hidden=false;}
+}
+controls.querySelectorAll('[data-fc-league]').forEach(b=>b.onclick=()=>{league=b.dataset.fcLeague;render();});controls.querySelectorAll('[data-fc-type]').forEach(b=>b.onclick=()=>{type=b.dataset.fcType;render();});controls.querySelector('input').addEventListener('input',render);render();
+})();
+</script></body>
+</html>" title="足球动态" loading="lazy"></iframe></section><section class="view" id="view-news" hidden><header class="view-header"><div class="eyebrow">FC27 NEWS</div><h1>FC27 资讯</h1><p>X.com 信息源自动采集 · 智能过滤与中文翻译</p></header><iframe class="panel-iframe" srcdoc="<!DOCTYPE html>
+<html lang=&quot;zh-CN&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
+<title>FC27 资讯日报 - 2026-09-09</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; background: #0a0a0a; color: #e7e9ea; line-height: 1.6; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 20px 16px 60px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #2f3336; margin-bottom: 28px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #1d9bf0, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .header .subtitle { color: #71767b; font-size: 14px; }
+  .header .meta { margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .header .meta span { background: #16181c; border: 1px solid #2f3336; border-radius: 20px; padding: 4px 14px; font-size: 12px; color: #71767b; }
+  .section-title { font-size: 18px; font-weight: 600; margin: 28px 0 16px; padding-left: 12px; border-left: 3px solid #1d9bf0; color: #e7e9ea; grid-column: 1 / -1; }
+  .tweets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .tweet-card { background: #16181c; border: 1px solid #2f3336; border-radius: 16px; padding: 16px; margin-bottom: 16px; transition: border-color 0.2s; }
+  .tweet-card:hover { border-color: #3d4144; }
+  .tweet-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1d9bf0, #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: white; flex-shrink: 0; }
+  .author-info { flex: 1; display: flex; flex-direction: column; }
+  .author-name { font-weight: 600; font-size: 15px; }
+  .author-handle { color: #71767b; font-size: 13px; }
+  .tweet-time { color: #71767b; font-size: 13px; white-space: nowrap; }
+  .tweet-body-zh { font-size: 15px; line-height: 1.75; margin-bottom: 8px; white-space: pre-wrap; word-wrap: break-word; color: #e7e9ea; }
+  .tweet-body-zh .no-text { color: #71767b; font-style: italic; }
+  .tweet-original { margin-bottom: 12px; }
+  .tweet-original summary { color: #71767b; font-size: 13px; cursor: pointer; user-select: none; padding: 4px 0; }
+  .tweet-original summary:hover { color: #1d9bf0; }
+  .tweet-original .orig-text { color: #71767b; font-size: 14px; margin-top: 8px; padding: 10px 12px; background: #0a0a0a; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }
+  .tweet-images { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px; }
+  .tweet-images img { width: 100%; border-radius: 12px; border: 1px solid #2f3336; display: block; }
+  .tweet-no-image { margin-bottom: 12px; padding: 10px 14px; background: #0a0a0a; border: 1px dashed #2f3336; border-radius: 8px; text-align: center; }
+  .tweet-no-image span { color: #71767b; font-size: 13px; }
+  .tweet-footer { display: flex; justify-content: flex-start; padding-top: 8px; border-top: 1px solid #2f3336; }
+  .source-link { display: inline-flex; align-items: center; gap: 6px; color: #1d9bf0; text-decoration: none; font-size: 13px; transition: opacity 0.2s; }
+  .source-link:hover { opacity: 0.8; text-decoration: underline; }
+  .empty-notice { text-align: center; padding: 48px 20px; color: #71767b; font-size: 15px; background: #16181c; border: 1px solid #2f3336; border-radius: 16px; }
+  .footer { text-align: center; padding: 32px 0; color: #71767b; font-size: 13px; border-top: 1px solid #2f3336; margin-top: 32px; }
+  .footer a { color: #1d9bf0; text-decoration: none; }
+  @media (max-width: 480px) { .header h1 { font-size: 22px; } .tweet-body-zh { font-size: 14px; } .tweet-images img { border-radius: 8px; } }
+</style>
+<style id=&quot;fc-unified-theme&quot;>
+:root{color-scheme:dark;--bg:#0f0707;--surface:#1b0f0f;--text:#f5ecec;--text2:#b39a9a;--text3:#8a6e6e;--border:#3b2222;--blue:#e9c84a;--green:#e9c84a}
+body{background:#0f0707!important;color:#f5ecec!important;font:16px/1.7 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif!important;margin:0!important}
+.container{max-width:none!important;padding:8px 0 30px!important}.header{background:none!important;border:0!important;box-shadow:none!important;text-align:left!important;padding:10px 0 24px!important;margin:0!important;position:static!important}.header h1{font-size:28px!important;text-shadow:none!important;color:#f5ecec!important}.header .meta{justify-content:flex-start!important}.header .subtitle,.header .update-time{color:#b39a9a!important;text-shadow:none!important}.footer{color:#8a6e6e!important;background:none!important}
+.standings-section,.news-section,.tweet-card,.news-card,.empty-notice{background:#1b0f0f!important;border:1px solid #3b2222!important;border-radius:8px!important;box-shadow:none!important}.standings-section{margin-bottom:24px!important}.standings-header,.news-header,.card-top,.card-footer,.tweet-footer,.news-filter-tabs{border-color:#3b2222!important}.standings-header,.news-header{padding:18px!important;background:none!important}.section-label,.title,.card-title,.author-name{color:#f5ecec!important}.section-divider{height:20px!important;background:none!important}
+.type-tabs,.league-tab,.filter-tab,.news-count,.league-active-indicator{background:#2a1414!important;border-color:#4a2626!important;color:#b39a9a!important}.type-tab,.league-tab,.filter-tab{font-size:14px!important;padding:8px 14px!important}.type-tab.active,.league-tab.active,.filter-tab.active{background:#e9c84a!important;color:#1c1206!important;border-color:#e9c84a!important}.type-tab{color:#b39a9a!important}.league-tabs,.news-filter-tabs{gap:8px!important;padding:16px!important}
+.table-wrapper{overflow:auto!important}.standings-table{font-size:14px!important;color:#e0cccc!important;min-width:530px}.standings-table th{background:#2a1414!important;color:#cbb0b0!important;border-color:#3b2222!important;padding:12px 8px!important}.standings-table td{border-color:#3a2020!important;padding:12px 8px!important}.standings-table td:nth-child(2){color:#f5ecec!important}.standings-table .highlight td,.standings-table tr:hover td{background:#331414!important}
+.news-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;padding:16px!important;gap:16px!important}.card-body{padding:18px!important}.card-title{font-size:18px!important;line-height:1.55!important}.card-summary{font-size:15px!important;color:#b39a9a!important;-webkit-line-clamp:6!important}.card-team,.card-source a,.source-link{color:#e9c84a!important}.card-footer{flex-wrap:wrap!important;gap:8px!important;font-size:12px!important}.card-time,.author-handle,.tweet-time{color:#8a6e6e!important}.card-league{font-size:12px!important}.news-card[data-league=&quot;toutiao&quot;]{border-top:3px solid #e9c84a!important}
+.tweets-grid{display:block!important}.tweet-card{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(180px,30%);gap:12px 24px!important;padding:24px!important;margin-bottom:16px!important}.tweet-header,.tweet-body-zh,.tweet-original,.tweet-footer,.tweet-no-image{grid-column:1}.tweet-images{grid-column:2;grid-row:1 / span 4;align-self:start;max-height:380px;overflow:auto}.tweet-images img{max-height:330px!important;object-fit:contain!important}.tweet-body-zh{color:#f5ecec!important;font-size:16px!important}.tweet-original .orig-text,.tweet-no-image{background:#0f0707!important;color:#b39a9a!important}.section-title{border-color:#e9c84a!important}.avatar{background:#e9c84a!important;color:#1c1206!important}a:focus-visible,button:focus-visible{outline:2px solid #e9c84a;outline-offset:3px}
+@media(max-width:700px){.news-grid{grid-template-columns:1fr!important;padding:8px!important}.tweet-card{display:block!important;padding:16px!important}.tweet-images{margin-top:16px;max-height:none}.standings-header{flex-wrap:wrap;gap:12px}.header h1{font-size:24px!important}}
+</style></head>
+<body>
+<div class=&quot;container&quot;>
+  <div class=&quot;header&quot;>
+    <h1>FC27 资讯日报</h1>
+    <p class=&quot;subtitle&quot;>数据来源：X (Twitter) 多博主采集 | 自动采集 · 内容去重 · 中文翻译</p>
+    <div class=&quot;meta&quot;>
+      <span>生成时间：2026-09-09 16:31 CST</span>
+      <span>本期资讯：37 条</span>
+      <span>来源：X.com</span>
+    </div>
+  </div>
+  <div class=&quot;tweets-grid&quot;><div class=&quot;section-title&quot;>今日资讯</div>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-0&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>DetectiveFUT</span>
+          <span class=&quot;author-handle&quot;>@DetectiveFUT</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-09 05:20 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🇲🇦 塔拉布特要退役了 🥺<br><br>是时候让他的传奇延续到 FC27 中了 EA 🙏🙏</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🇲🇦 Taarabt is retiring 🥺<br><br>It’s time to bring his legacy to FC27 EA 🙏🙏</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/DetectiveFUT/status/2097555830677688621&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HLGi_xCWIAEhqek?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/DetectiveFUT/status/2097555830677688621&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-1&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>EasySBC</span>
+          <span class=&quot;author-handle&quot;>@easysbc</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 21:37 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 FC27 新卡确认：国际米兰门将将在今晚比赛后获得 💀</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 New FC27 Card confirmed for Inter Milan&amp;#x27;s Goalkeeper, after tonight&amp;#x27;s game 💀</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/easysbc/status/2097439109094519212&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRuZwMJWwAAFNHx?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/easysbc/status/2097439109094519212&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-2&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>DetectiveFUT</span>
+          <span class=&quot;author-handle&quot;>@DetectiveFUT</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 21:15 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>这张卡是什么鬼 🤯🤯<br><br>我太需要这张大卫·路易斯卡了</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>WTF IS THIS CARD 🤯🤯<br><br>I NEED THIS DAVID LUIZ CARD</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/DetectiveFUT/status/2097433632465928360&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRuUcOxWMAA6eJs?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/DetectiveFUT/status/2097433632465928360&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-3&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUT POLICE LEAKS</span>
+          <span class=&quot;author-handle&quot;>@FutPoliceLeaks</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 21:14 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨💣 重大消息：大卫·路易斯 名人堂卡 🔥🔥<br><br>感觉如何？？？？ 👀<br><br>下一个球员？ 👀👇</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨💣 BREAKING: DAVID LUIZ HALL OF FUT 🔥🔥<br><br>Thoughts???? 👀<br><br>Next player? 👀👇</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutPoliceLeaks/status/2097433453960581145&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRuUcOxWMAA6eJs?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutPoliceLeaks/status/2097433453960581145&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-4&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 21:09 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 大卫·路易斯 🇧🇷 拥有拦截+硬汉+封堵+空中堡垒！🔥✅<br><br>这组合太变态了😳🔥</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 David Luiz 🇧🇷 has Intercept + Bruiser + Block + Aerial Fortress! 🔥✅<br><br>What a combo😳🔥</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutSheriff/status/2097432066040238300&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRuTWFQXwAADfGa?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097432066040238300&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-5&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>ASY FUT</span>
+          <span class=&quot;author-handle&quot;>@AsyFutTrader</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 21:06 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 独家：大卫·路易斯 🇧🇷 名人堂卡详情 ✅️<br><br>太猛了 🤯<br><br>下一个？ 👀<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 EXCL: DAVID LUIZ 🇧🇷 HALL OF FUT CARD DETAILS ✅️<br><br>WHAT A BEAST 🤯<br><br>NEXT? 👀<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/AsyFutTrader/status/2097431298587427168&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRuSpenakAAPqWD?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/AsyFutTrader/status/2097431298587427168&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-6&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 20:19 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>布拉希姆 什么鬼？？？？？</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>Brahim WHAT?????</div></details>
+      <div class=&quot;tweet-no-image&quot;><a href=&quot;https://x.com/FutSheriff/status/2097419611700428896&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>原推为纯文本，无配图；查看原推</a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097419611700428896&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-7&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+          <span class=&quot;author-handle&quot;>@Razzerstrading</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 20:03 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>金球奖已完全失去公信力 ❌<br><br>跟EA的离谱评分一个水平😭</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>The Ballon d&amp;#x27;Or Has Lost All Credibility ❌ <br><br>Up there with EA ahh ratings😭</div></details>
+      <div class=&quot;tweet-no-image&quot;><a href=&quot;https://x.com/Razzerstrading/status/2097415530281869443&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>原推为纯文本，无配图；查看原推</a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Razzerstrading/status/2097415530281869443&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-8&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 19:27 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>密码是1234</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>Password 1234</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutSheriff/status/2097406556996321417&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRt8JSGXwAEcMwR?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097406556996321417&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-9&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 18:34 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨以防你错过：将被降级为英雄卡的传奇球员 🦸 ✅</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨ICYM : Icons that will get downgraded to Heroes 🦸 ✅</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutSheriff/status/2097393122632200453&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtv7IvasAACWLI?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097393122632200453&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-10&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUT POLICE LEAKS</span>
+          <span class=&quot;author-handle&quot;>@FutPoliceLeaks</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 18:09 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨💣 重大消息：埃梅尼克 FC27 名人堂卡 🔥🔥<br><br>感觉如何？？？？？？？？ 👀<br><br>下一个球员？ 👀👇</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨💣 BREAKING: EMENIKE FC 27 HALL OF FUT 🔥🔥<br><br>Thoughts?????????? 👀<br><br>Next player? 👀👇</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutPoliceLeaks/status/2097386932217008469&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtqQRpaAAAZvtC?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/FutPoliceLeaks/status/2097386932217008469&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtCNZuWAAAq-lQ?format=jpg&amp;name=120x120&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutPoliceLeaks/status/2097386932217008469&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-11&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Scoreboard</span>
+          <span class=&quot;author-handle&quot;>@Fut_scoreboard</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 18:06 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 独家：埃梅尼克 名人堂官方卡牌！✅️<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 EXCL: EMENIKE HALL OF FUT OFFICIAL CARD! ✅️<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/Fut_scoreboard/status/2097386114692624465&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtpb_Ga4AA5fbQ?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Fut_scoreboard/status/2097386114692624465&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Fut_scoreboard
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-12&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUTBIN</span>
+          <span class=&quot;author-handle&quot;>@FUTBIN</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 17:01 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 今晚6点内容更新：<br><br>- 🇧🇪 FUTTIES阿扎尔（5个阵容）</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 6pm Content:<br><br>- 🇧🇪 FUTTIES Hazard (5 Squads)</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FUTBIN/status/2097369788947263793&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtasQgX0AARJuo?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FUTBIN/status/2097369788947263793&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-13&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>EAFC 27 News</span>
+          <span class=&quot;author-handle&quot;>@FIFA22_INFO</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 17:01 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>今晚6点内容更新<br><br>• 98评分阿扎尔 SBC<br><br>需要5个阵容 ✅</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>6pm Content <br><br>• 98 Hazard SBC <br><br>5 squads needed ✅</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FIFA22_INFO/status/2097369685624868870&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtanJ8bAAEWzgx?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FIFA22_INFO/status/2097369685624868870&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-14&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Scoreboard</span>
+          <span class=&quot;author-handle&quot;>@Fut_scoreboard</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 17:00 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🧩 新增1个SBC 🧩</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🧩 1 NEW SBC ADDED 🧩</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/Fut_scoreboard/status/2097369415293501578&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtaXk0WIAAwQ0t?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Fut_scoreboard/status/2097369415293501578&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Fut_scoreboard
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-15&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>EasySBC</span>
+          <span class=&quot;author-handle&quot;>@easysbc</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 16:44 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>在 EasySBC 查看完整进化链：<br>https://easysbc.io/evolutions/builder/zlatan-ibrahimovic/fut-birthday-icon/151036180?evolution-path=2211%2C2210%2C2604%2C2688%2C2147&amp;amp;via=X…</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>See the full chain on EasySBC: <br>https://<br>easysbc.io/evolutions/bui<br>lder/zlatan-ibrahimovic/fut-birthday-icon/151036180?evolution-path=2211%2C2210%2C2604%2C2688%2C2147&amp;amp;via=X<br>…</div></details>
+      <div class=&quot;tweet-no-image&quot;><a href=&quot;https://x.com/easysbc/status/2097365348882211059&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>原推为纯文本，无配图；查看原推</a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/easysbc/status/2097365348882211059&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-16&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>EasySBC</span>
+          <span class=&quot;author-handle&quot;>@easysbc</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 16:43 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>8月进化更新 🤓<br><br>如果你买不起 FUTTIES 伊布作为终极阵容——这个进化更便宜、更好用，而且非常容易完成 🔥</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>Evo&amp;#x27;s in August 🤓 <br><br>If you can&amp;#x27;t afford FUTTIES Ibra for your endgame team - this evolution is cheaper, way better, and super easy to complete 🔥</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/easysbc/status/2097365213519454640&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtWi2fXwAAHEFn?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/easysbc/status/2097365213519454640&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article></div>
+  <div class=&quot;tweets-grid&quot;><div class=&quot;section-title&quot;>近期资讯</div>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-17&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FC 27 NEWS &amp;amp; TIPS</span>
+          <span class=&quot;author-handle&quot;>@EAFCassist</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:48 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 如何提前游玩 FC27<br><br>• ✅ 订阅 EA Play<br>• ✅ 预计下周四下午2点开始<br><br>与 FC26 相同 ✅</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 How to play FC 27 early <br><br>• ✅ Get EA Play <br>• ✅ Next Thursday 2pm expected <br><br>This is the same as FC 26 ✅</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/EAFCassist/status/2097351386778226926&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtJ9hyXkAAAgEC?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/EAFCassist/status/2097351386778226926&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @EAFCassist
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-18&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:46 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>史上最伟大的篮球运动员现在加入了 @Polymarket 👑 🔥</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>The Greatest Basketball Player of All Time is now with <br>@Polymarket<br>  👑 🔥</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutSheriff/status/2097350993578959002&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtJm28bAAE_CxG?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097350993578959002&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-19&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUT POLICE LEAKS</span>
+          <span class=&quot;author-handle&quot;>@FutPoliceLeaks</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:15 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨💣 重大消息：弗洛伦齐 FC27 名人堂卡 🔥🔥<br><br>✅ 中场位置 🔥🔥<br><br>感觉如何？？？？？？？？ 👀<br><br>下一个球员？ 👀👇</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨💣 BREAKING: FLORENZI FC 27 HALL OF FUT 🔥🔥<br><br>✅ CM 🔥🔥<br><br>Thoughts?????????? 👀<br><br>NEXT PLAYER? 👀👇</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutPoliceLeaks/status/2097343002133839922&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtCNZuWAAAq-lQ?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/FutPoliceLeaks/status/2097343002133839922&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsASfEWMAEXXCy?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutPoliceLeaks/status/2097343002133839922&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-20&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Sheriff</span>
+          <span class=&quot;author-handle&quot;>@FutSheriff</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:12 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🇮🇹 弗洛伦齐 名人堂比赛风格 🔥<br><br>觉得怎么样？<br>@Fut_scoreboard</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🇮🇹 Florenzi HALL OF FUT PLAYSTYLES 🔥<br><br>THOUGHTS? <br>@Fut_scoreboard</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutSheriff/status/2097342440629813435&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtB1DGWEAEJVsG?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutSheriff/status/2097342440629813435&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-21&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Scoreboard</span>
+          <span class=&quot;author-handle&quot;>@Fut_scoreboard</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:11 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 独家：弗洛伦齐 名人堂官方卡牌！✅️ 💣<br><br>别小看他的中场位置 👀<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 EXCL: FLORENZI HALL OF FUT OFFICIAL CARD! ✅️ 💣<br><br>Don’t sleep on his CM position 👀<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/Fut_scoreboard/status/2097341987414229105&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRtBO8zaoAEyfBM?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Fut_scoreboard/status/2097341987414229105&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Fut_scoreboard
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-22&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUTBIN</span>
+          <span class=&quot;author-handle&quot;>@FUTBIN</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 15:00 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>👶 🔙 曼联有史以来首次终极球队卡牌！</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>👶 🔙 Manchester United&amp;#x27;s first ever Ultimate Team Items!</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FUTBIN/status/2097339183547511016&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRs87i8WwAAfVta?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FUTBIN/status/2097339183547511016&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-23&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUT POLICE LEAKS</span>
+          <span class=&quot;author-handle&quot;>@FutPoliceLeaks</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 14:58 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨💣 重大消息：金球奖提名名单 🔥🔥<br><br>说实话，谁被亏待了？ 👀</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨💣 BREAKING: BALLON D&amp;#x27;OR NOMINEES 🔥🔥<br><br>Be honest, who got robbed? 👀</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutPoliceLeaks/status/2097338757733134780&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRs-QXabIAAWEm5?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutPoliceLeaks/status/2097338757733134780&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-24&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FC 27 NEWS &amp;amp; TIPS</span>
+          <span class=&quot;author-handle&quot;>@EAFCassist</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 14:52 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 我们交易群成员首周利润太疯狂了 🤯<br><br>• ✅ 许多人首周赚了100万<br>• ✅ 首月潜在收益100-500万<br>• ❌ 名额有限<br><br>与T100交易者一起备战，让你准备好了</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 Our Trading Group members first week profits are INSANE 🤯<br><br>• ✅ Many made 1M in the FIRST week <br>• ✅ 1-5M potential in the FIRST month <br>• ❌ LIMITED SPOTS LEFT <br><br>Prepare with T100 traders so you’re ready for a RAPID start! <br>https://<br>patreon.com/roryxrobos🔗</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/EAFCassist/status/2097337313504178507&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRs9KK7bMAAv6t2?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/EAFCassist/status/2097337313504178507&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @EAFCassist
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-25&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+          <span class=&quot;author-handle&quot;>@Razzerstrading</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 14:28 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>黑幕😭</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>Rigged😭</div></details>
+      <div class=&quot;tweet-no-image&quot;><a href=&quot;https://x.com/Razzerstrading/status/2097331239669706802&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>原推为纯文本，无配图；查看原推</a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Razzerstrading/status/2097331239669706802&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-26&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUTBIN</span>
+          <span class=&quot;author-handle&quot;>@FUTBIN</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 13:38 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>P9 金球奖... 👀 ⏳</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>P9 Ballon d&amp;#x27;Or... 👀 ⏳</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FUTBIN/status/2097318568119452001&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsoHfRXQAAXpBA?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FUTBIN/status/2097318568119452001&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-27&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>ASY FUT</span>
+          <span class=&quot;author-handle&quot;>@AsyFutTrader</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 12:25 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 下周生活预告<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 POV: Life next week<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/AsyFutTrader/status/2097300315041042714&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsbgzJbQAAYtmf?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/AsyFutTrader/status/2097300315041042714&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-28&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUTBIN</span>
+          <span class=&quot;author-handle&quot;>@FUTBIN</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:56 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>*补充说明，我指的是仅金卡 😅</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>*Should&amp;#x27;ve clarified I meant Gold only 😅</div></details>
+      <div class=&quot;tweet-no-image&quot;><a href=&quot;https://x.com/FUTBIN/status/2097277941637918749&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>原推为纯文本，无配图；查看原推</a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FUTBIN/status/2097277941637918749&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-29&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>DetectiveFUT</span>
+          <span class=&quot;author-handle&quot;>@DetectiveFUT</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:45 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>这卡太强了 🤯<br><br>希望在 Gallery 模式里不难获得 👀</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>What a card 🤯<br><br>Hopefully he&amp;#x27;s not very hard to get on Gallery 👀</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/DetectiveFUT/status/2097275152249606501&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsASfEWMAEXXCy?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/DetectiveFUT/status/2097275152249606501&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-30&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Fut Scoreboard</span>
+          <span class=&quot;author-handle&quot;>@Fut_scoreboard</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:35 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>回忆杀…只是回忆了一下…</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>Flashback… just flashbacked…</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/Fut_scoreboard/status/2097272645829980327&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsCMtia8AAEnba?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/Fut_scoreboard/status/2097272645829980327&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsAB7SWgAAUSMV?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Fut_scoreboard/status/2097272645829980327&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Fut_scoreboard
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-31&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>EAFC 27 News</span>
+          <span class=&quot;author-handle&quot;>@FIFA22_INFO</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:32 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 提前游玩 FC27 已确认<br><br>• ✅ 英国时间下午1点<br>• ✅ 9月17日<br>• ✅ 需要EA Play订阅<br><br>Xbox、PS和PC平台均包含在内 ✅</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 Play FC 27 Earlier CONFIRMED <br><br>• ✅ 1pm UK Time <br>• ✅ 17th of September <br>• ✅ Must have EA Play<br><br>Xbox, PS &amp;amp; PC are all included ✅</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FIFA22_INFO/status/2097271910266478932&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsBr84XgAAz5kw?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/FIFA22_INFO/status/2097271910266478932&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsBr88WwAAx7NX?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FIFA22_INFO/status/2097271910266478932&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-32&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUT POLICE LEAKS</span>
+          <span class=&quot;author-handle&quot;>@FutPoliceLeaks</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:27 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨💣 重大消息：沃尔科特 🏴󠁧󠁢󠁥󠁮󠁧󠁿 名人堂卡详情 ✅️<br><br>✅ 极速+ 🤯🤯<br><br>下一个？ 👀👇</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨💣 BREAKING: WALCOTT 🏴󠁧󠁢󠁥󠁮󠁧󠁿 HALL OF FUT CARD DETAILS ✅️<br><br>✅ RAPID+ 🤯🤯 <br><br>NEXT? 👀👇</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FutPoliceLeaks/status/2097270525185732914&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsASfEWMAEXXCy?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/FutPoliceLeaks/status/2097270525185732914&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRrncpVXgAALQ0u?format=jpg&amp;name=120x120&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FutPoliceLeaks/status/2097270525185732914&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-33&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>ASY FUT</span>
+          <span class=&quot;author-handle&quot;>@AsyFutTrader</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:25 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 独家：沃尔科特 🏴󠁧󠁢󠁥󠁮󠁧󠁿 名人堂卡详情 ✅️<br><br>太强了 🤯<br><br>下一个？ 👀👀<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 EXCL: WALCOTT 🏴󠁧󠁢󠁥󠁮󠁧󠁿 HALL OF FUT CARD DETAILS ✅️<br><br>HUGE 🤯<br><br>NEXT? 👀👀<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/AsyFutTrader/status/2097270092526387651&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRsAB7SWgAAUSMV?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/AsyFutTrader/status/2097270092526387651&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-34&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>FUTBIN</span>
+          <span class=&quot;author-handle&quot;>@FUTBIN</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 10:00 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚀 FC27 中最快的中后卫！<br><br>你看好谁加入你的球队？ 👀</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚀 The Fastest Centre Backs in FC 27!<br><br>Who are you eyeing up for your team? 👀</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/FUTBIN/status/2097263913511346480&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRr6TrJXEAA4GnU?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/FUTBIN/status/2097263913511346480&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-35&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+          <span class=&quot;author-handle&quot;>@Razzerstrading</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 09:06 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 高级会员2天后开放 🔥🔥<br><br>在 #FC27 中唯一让我期待的就是交易，今年我们将比以往任何一年都更疯狂！<br><br>• 每日技巧<br>• 40+攻略<br>• 24/7支持<br><br>一定会</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 Premium Opens in 2 Days 🔥🔥<br><br>Probably the only thing im excited for in #FC27 is trading, this year were gonna go crazier then any year before!<br><br>• Daily Tips<br>• 40+ Guides<br>• 24/7 support<br><br>Its gonna be insane 🤩<br><br>Premium will be 50% off from the 10th, join</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/Razzerstrading/status/2097250283390648808&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRruBB9WsAAG6Tz?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/Razzerstrading/status/2097250283390648808&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class=&quot;tweet-card&quot; id=&quot;tweet-36&quot;>
+      <div class=&quot;tweet-header&quot;>
+        <div class=&quot;avatar&quot;>@</div>
+        <div class=&quot;author-info&quot;>
+          <span class=&quot;author-name&quot;>ASY FUT</span>
+          <span class=&quot;author-handle&quot;>@AsyFutTrader</span>
+        </div>
+        <span class=&quot;tweet-time&quot;>2026-09-08 08:34 UTC</span>
+      </div>
+      <div class=&quot;tweet-body-zh&quot;>🚨 麦克格雷迪 🇮🇪 名人堂卡详情 ✅️<br><br>5星花式技巧<br><br>下一个？ 👀👇<br>#FC27</div>
+      <details class=&quot;tweet-original&quot;><summary>查看原文</summary><div class=&quot;orig-text&quot;>🚨 MCGEADY 🇮🇪 HALL OF FUT CARD DETAILS ✅️<br><br>5 🌟 SM<br><br>NEXT? 👀👇<br>#FC27</div></details>
+      <div class=&quot;tweet-images&quot;><a href=&quot;https://x.com/AsyFutTrader/status/2097242216187990106&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRrmqlaW4AAQzf1?format=jpg&amp;name=medium&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/AsyFutTrader/status/2097242216187990106&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRpQJSZa4AA_2BF?format=jpg&amp;name=120x120&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a><a href=&quot;https://x.com/AsyFutTrader/status/2097242216187990106&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;><img src=&quot;https://pbs.twimg.com/media/HRpQJu2XYAEX8w3?format=jpg&amp;name=120x120&quot; loading=&quot;lazy&quot; alt=&quot;FC27 tweet image&quot; onerror=&quot;this.style.display='none'&quot; /></a></div>
+      <div class=&quot;tweet-footer&quot;>
+        <a href=&quot;https://x.com/AsyFutTrader/status/2097242216187990106&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;source-link&quot;>
+          <svg width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;currentColor&quot;><path d=&quot;M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z&quot;/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article></div>
+  <div class=&quot;footer&quot;>
+    <p>本报告由自动化系统采集生成，所有内容均标注来源。</p>
+    <p>数据源：16个FC27资讯博主 · X.com</p>
+    <p style=&quot;margin-top:8px;&quot;>已过滤预测类内容 · 已按内容去重 · 跨次执行积累数据 · 中文翻译保留原文对照</p>
+  </div>
+</div>
+</body>
+</html>" title="FC27 资讯" loading="lazy"></iframe></section><section class="view" id="view-market" hidden><header class="view-header"><div class="eyebrow">THE MARKET</div><h1>FC27 市场</h1><p>双维度：价格分层（大卡/中卡/热门卡/适用卡）× 热门球员（进化卡/价值卡）</p></header><div class="panel empty-panel"><h2>FC27 市场</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div></section>
+<section class="view" id="view-evolution" hidden><header class="view-header"><div class="eyebrow">EVOLUTION</div><h1>进化专栏</h1><p>热门进化卡与进化路线。内容由后续进化任务补充，未就绪时如实显示空状态。</p></header><div class="panel empty-panel"><div class="rail-empty"><div class="re-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg></div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div></div></section>
+
+<section class="view" id="view-archive" hidden>
+<header class="view-header"><div class="eyebrow">Archive</div><h1>历史日报</h1><p>按日期回看足球、FC27 资讯与市场报告。每份日报均为独立归档文件。</p></header>
+<div class="panel"><div class="report-list" id="archive-list"><a class="report-item" href="2026-09-15.html" ><span class="date-badge">09-15 周二</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-15</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-14.html" ><span class="date-badge">09-14 周一</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-14</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-13.html" ><span class="date-badge">09-13 周日</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-13</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-12.html" ><span class="date-badge">09-12 周六</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-12</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-11.html" ><span class="date-badge">09-11 周五</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-11</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-10.html" ><span class="date-badge">09-10 周四</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-10</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-09.html" aria-current="date"><span class="date-badge">09-09 周三</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-09</span><span class="report-desc"><span class="tag">当前</span></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-07.html" ><span class="date-badge">09-07 周一</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-07</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-06.html" ><span class="date-badge">09-06 周日</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-06</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-04.html" ><span class="date-badge">09-04 周五</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-04</span><span class="report-desc"></span></span><span class="arrow">↗</span></a><a class="report-item" href="2026-09-03.html" ><span class="date-badge">09-03 周四</span><span class="report-info"><span class="report-title">每日综合报告 — 2026-09-03</span><span class="report-desc"></span></span><span class="arrow">↗</span></a></div></div>
+</section>
+
+<footer class="footer"><span>2026-09-09 数据快照 · 足球与 FC27 独立情报页 · 内容仅供研究参考</span><a href="#archive" data-view="archive">历史日报</a></footer>
+</main>
+<dialog id="poster-modal"><div class="pm-bar"><span>彦祖工作室 · FC27 DR 周赛套餐</span><button type="button" id="poster-close" aria-label="关闭">关闭 ✕</button></div><img src="../assets/yanzu-banner.jpg" alt="彦祖工作室 · FC27 DR 周赛套餐"></dialog>
+<script>
+(function(){
+  var navBtns=document.querySelectorAll('[data-view]');
+  function setView(v){
+    var target=document.getElementById('view-'+v);
+    if(!target)return;
+    document.querySelectorAll('.view').forEach(function(s){s.hidden=s.id!=='view-'+v;});
+    document.querySelectorAll('nav .nav button').forEach(function(b){var on=b.dataset.view===v;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'page':'false');});
+    window.scrollTo({top:0,behavior:'instant'});
+    if(history.replaceState)history.replaceState(null,'','#'+v);
+  }
+  navBtns.forEach(function(b){b.addEventListener('click',function(e){if(b.tagName==='A')e.preventDefault();setView(b.dataset.view);});});
+  var modal=document.getElementById('poster-modal');
+  function openPoster(){if(modal&&modal.showModal&&!modal.open)modal.showModal();}
+  var po=document.getElementById('poster-open');if(po)po.addEventListener('click',openPoster);
+  var close=document.getElementById('poster-close');if(close)close.addEventListener('click',function(){modal.close();});
+  if(modal)modal.addEventListener('click',function(e){if(e.target===modal)modal.close();});
+  var share=document.getElementById('share');
+  if(share)share.addEventListener('click',function(){if(!navigator.clipboard)return;var label=share.innerHTML;navigator.clipboard.writeText(location.href).then(function(){share.textContent='链接已复制';setTimeout(function(){share.innerHTML=label;},1600);}).catch(function(){});});
+  var initial=(location.hash||'#home').slice(1);
+  setView(document.getElementById('view-'+initial)?initial:'home');
+  window.addEventListener('hashchange',function(){var v=(location.hash||'#home').slice(1);if(document.getElementById('view-'+v))setView(v);});
+})();
+</script></body></html>

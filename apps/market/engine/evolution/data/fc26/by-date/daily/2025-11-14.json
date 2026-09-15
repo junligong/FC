@@ -1,0 +1,851 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-14",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your favourite Player into a Cornerstone.",
+      "id": 101,
+      "name": "Cornerstones",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=101",
+      "previewPlayers": [],
+      "rank": 914,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "cornerstones",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/101/cornerstones",
+      "releaseDate": "2025-11-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 96,
+          "releaseDate": "2025-11-12"
+        },
+        "nextAnchor": {
+          "evolutionId": 102,
+          "releaseDate": "2025-11-14"
+        }
+      },
+      "chronologicalRank": 97
+    },
+    {
+      "availability": {
+        "100": "15,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Shield your back line from opposing threats with a new and improved CDM to captain your Silver Squad to Glory!",
+      "id": 102,
+      "name": "Silver Armour",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=102",
+      "previewPlayers": [
+        {
+          "displayName": "Engwanda",
+          "kind": "before",
+          "name": "Alonzo Engwanda",
+          "position": "CDM",
+          "rating": 69,
+          "stats": {
+            "def": 65,
+            "dri": 69,
+            "pac": 78,
+            "pas": 60,
+            "phy": 74,
+            "sho": 51
+          }
+        },
+        {
+          "displayName": "Engwanda",
+          "kind": "after",
+          "name": "Alonzo Engwanda",
+          "position": "CDM",
+          "rating": 74,
+          "stats": {
+            "def": 72,
+            "dri": 70,
+            "pac": 78,
+            "pas": 64,
+            "phy": 74,
+            "sho": 63
+          }
+        }
+      ],
+      "rank": 911,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 74"
+          ],
+          "value": "Max 74"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 80"
+          ],
+          "value": "Max 80"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "silver-armour",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "74",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+20",
+            "74"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "73",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "73"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "63",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+12",
+            "63"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "70",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+10",
+            "70"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "70",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+10",
+            "70"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "70",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "70"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "74",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+10",
+            "74"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "74",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+10",
+            "74"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "77",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+10",
+            "77"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "70",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "70"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "74",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+15",
+            "74"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "73",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "73"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "74",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "74"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "72",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+10",
+            "72"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "72",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+15",
+            "72"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "73",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "73"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "70",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "70"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "73",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "73"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "70",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "70"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "6"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "6"
+          ],
+          "value": "Slide Tackle"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker+"
+          ],
+          "value": "Deep-Lying Playmaker+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/102/silver-armour",
+      "releaseDate": "2025-11-14",
+      "releaseDateTimeUtc": "2025-11-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1161,
+        "providerUrl": "https://futmind.com/evolutions/1161/silver-armour",
+        "originalCreatedAt": "2025-11-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 98
+    },
+    {
+      "availability": {
+        "1,000": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Become the emperor of the pitch. Lead your team to victory with a commanding defensive presence that no attack can break through.",
+      "id": 103,
+      "name": "I'll Protect You",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=103",
+      "previewPlayers": [
+        {
+          "displayName": "Aderllan Santos",
+          "kind": "before",
+          "name": "Aderllan de Jesus Santos",
+          "position": "CB",
+          "rating": 72,
+          "stats": {
+            "def": 73,
+            "dri": 56,
+            "pac": 53,
+            "pas": 52,
+            "phy": 76,
+            "sho": 51
+          }
+        },
+        {
+          "displayName": "Aderllan Santos",
+          "kind": "after",
+          "name": "Aderllan de Jesus Santos",
+          "position": "CB",
+          "rating": 86,
+          "stats": {
+            "def": 86,
+            "dri": 66,
+            "pac": 68,
+            "pas": 66,
+            "phy": 84,
+            "sho": 66
+          }
+        }
+      ],
+      "rank": 910,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "ill-protect-you",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "86",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "80",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "70",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+15",
+            "70"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "75",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "75"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "84",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "84",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "6"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "6"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "6"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "1"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CDM"
+          ],
+          "value": "CDM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Stopper+"
+          ],
+          "value": "Stopper+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Ball-Playing Defender++"
+          ],
+          "value": "Ball-Playing Defender++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding+"
+          ],
+          "value": "Holding+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/103/ill-protect-you",
+      "releaseDate": "2025-11-14",
+      "releaseDateTimeUtc": "2025-11-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1162,
+        "providerUrl": "https://futmind.com/evolutions/1162/i-ll-protect-you",
+        "originalCreatedAt": "2025-11-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 99
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your favourite Player into a Festival of Football: Captains.",
+      "id": 104,
+      "name": "Festival of Football: Captains",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=104",
+      "previewPlayers": [],
+      "rank": 909,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "festival-of-football-captains",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/104/festival-of-football-captains",
+      "releaseDate": "2025-11-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 103,
+          "releaseDate": "2025-11-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 106,
+          "releaseDate": "2025-11-15"
+        }
+      },
+      "chronologicalRank": 100
+    }
+  ]
+}

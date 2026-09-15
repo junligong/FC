@@ -1,0 +1,834 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-01",
+  "count": 6,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Inventive to any qualified player.",
+      "id": 812,
+      "name": "Inventive",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=812",
+      "previewPlayers": [],
+      "rank": 274,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "inventive",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/812/inventive",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 810,
+          "releaseDate": "2026-04-30"
+        },
+        "nextAnchor": {
+          "evolutionId": 813,
+          "releaseDate": "2026-05-01"
+        }
+      },
+      "chronologicalRank": 751
+    },
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Elevate your favourite qualified player with enhanced pace, dribbling, shooting, and passing, allowing them to cut inside, get past defenders, and deliver in decisive moments!",
+      "id": 813,
+      "name": "Cut In, Say Less",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=813",
+      "previewPlayers": [
+        {
+          "displayName": "Mbeumo",
+          "kind": "before",
+          "name": "Bryan Mbeumo",
+          "position": "RW",
+          "rating": 86,
+          "stats": {
+            "def": 50,
+            "dri": 85,
+            "pac": 89,
+            "pas": 80,
+            "phy": 77,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Mbeumo",
+          "kind": "after",
+          "name": "Bryan Mbeumo",
+          "position": "RW",
+          "rating": 92,
+          "stats": {
+            "def": 50,
+            "dri": 92,
+            "pac": 92,
+            "pas": 91,
+            "phy": 77,
+            "sho": 91
+          }
+        }
+      ],
+      "rank": 273,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM or RW"
+          ],
+          "value": "RM or RW"
+        }
+      ],
+      "slug": "cut-in-say-less",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+17",
+            "92"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+17",
+            "93"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "94",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+17",
+            "94"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "92",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+17",
+            "92"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "90",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+17",
+            "90"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "94",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+17",
+            "94"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "92",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+17",
+            "92"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "92",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+17",
+            "92"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+17",
+            "90"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "92",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+17",
+            "92"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "89",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+17",
+            "89"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "93",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+17",
+            "93"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "86",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+17",
+            "86"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+17",
+            "91"
+          ],
+          "value": "+17"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "7"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "3"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Gamechanger",
+            "3"
+          ],
+          "value": "Gamechanger"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/813/cut-in-say-less",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": "2026-05-01T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2005,
+        "providerUrl": "https://futmind.com/evolutions/2005/cut-in-say-less",
+        "originalCreatedAt": "2026-05-01T18:00:00.000000Z"
+      },
+      "chronologicalRank": 752
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Unleash rockets from range and turn space into danger.",
+      "id": 814,
+      "name": "From Distance",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=814",
+      "previewPlayers": [],
+      "rank": 272,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "from-distance",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+8",
+            "93"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "93",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+8",
+            "93"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/814/from-distance",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 813,
+          "releaseDate": "2026-05-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 822,
+          "releaseDate": "2026-05-02"
+        }
+      },
+      "chronologicalRank": 753
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Sharpen a player's short passing and vision. Control the tempo with smart, precise play.",
+      "id": 815,
+      "name": "Pass IQ",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=815",
+      "previewPlayers": [],
+      "rank": 271,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "pass-iq",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+3",
+            "93"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "93",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+3",
+            "93"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/815/pass-iq",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 813,
+          "releaseDate": "2026-05-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 822,
+          "releaseDate": "2026-05-02"
+        }
+      },
+      "chronologicalRank": 754
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Boost Pace and Physical stats, giving your player explosive speed and the power to outmuscle opponents.",
+      "id": 816,
+      "name": "Turbo Strength",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=816",
+      "previewPlayers": [],
+      "rank": 270,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "turbo-strength",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1",
+            "90"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "91",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+4",
+            "91"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "92",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/816/turbo-strength",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 813,
+          "releaseDate": "2026-05-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 822,
+          "releaseDate": "2026-05-02"
+        }
+      },
+      "chronologicalRank": 755
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Intercept and Aerial Fortress to any qualified player.",
+      "id": 817,
+      "name": "Intercept & Aerial Fortress",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=817",
+      "previewPlayers": [],
+      "rank": 269,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "intercept--aerial-fortress",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/817/intercept--aerial-fortress",
+      "releaseDate": "2026-05-01",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 813,
+          "releaseDate": "2026-05-01"
+        },
+        "nextAnchor": {
+          "evolutionId": 822,
+          "releaseDate": "2026-05-02"
+        }
+      },
+      "chronologicalRank": 756
+    }
+  ]
+}

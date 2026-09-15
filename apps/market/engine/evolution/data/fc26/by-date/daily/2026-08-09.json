@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-08-09",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "100": "50,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "training": "1 DAYS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Add Pinged Pass+ to any qualified FUTTIES player.",
+      "id": 1217,
+      "name": "FUTTIES 5th Pinged Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1217",
+      "previewPlayers": [
+        {
+          "displayName": "Vidic",
+          "kind": "before",
+          "name": "Nemanja Vidic",
+          "position": "CB",
+          "rating": 98,
+          "stats": {
+            "def": 97,
+            "dri": 86,
+            "pac": 90,
+            "pas": 99,
+            "phy": 97,
+            "sho": 60
+          }
+        },
+        {
+          "displayName": "Vidic",
+          "kind": "after",
+          "name": "Nemanja Vidic",
+          "position": "CB",
+          "rating": 98,
+          "stats": {
+            "def": 97,
+            "dri": 86,
+            "pac": 90,
+            "pas": 99,
+            "phy": 97,
+            "sho": 60
+          }
+        }
+      ],
+      "rank": 13,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Exactly 4"
+          ],
+          "value": "Exactly 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUTTIES or Futties Hero or Futties Icon"
+          ],
+          "value": "FUTTIES or Futties Hero or Futties Icon"
+        }
+      ],
+      "slug": "futties-5th-pinged-pass",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "5"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1217/futties-5th-pinged-pass",
+      "releaseDate": "2026-08-09",
+      "releaseDateTimeUtc": "2026-08-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2557,
+        "providerUrl": "https://futmind.com/evolutions/2557/futties-5th-pinged-pass",
+        "originalCreatedAt": "2026-08-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1154
+    },
+    {
+      "availability": {
+        "expires": "9 HOURS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "9 HOURS"
+      },
+      "categories": [
+        "REWARDS",
+        "EXPIRING SOON"
+      ],
+      "description": "Elegant on the ball, relentless of it.",
+      "id": 1218,
+      "name": "Passing the Test",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1218",
+      "previewPlayers": [
+        {
+          "displayName": "Mbappé",
+          "kind": "before",
+          "name": "Kylian Mbappé",
+          "nameZh": "基利安·姆巴佩",
+          "position": "ST",
+          "rating": 98,
+          "stats": {
+            "def": 60,
+            "dri": 99,
+            "pac": 99,
+            "pas": 91,
+            "phy": 84,
+            "sho": 98
+          }
+        },
+        {
+          "displayName": "Mbappé",
+          "kind": "after",
+          "name": "Kylian Mbappé",
+          "nameZh": "基利安·姆巴佩",
+          "position": "ST",
+          "rating": 98,
+          "stats": {
+            "def": 65,
+            "dri": 99,
+            "pac": 99,
+            "pas": 98,
+            "phy": 94,
+            "sho": 98
+          }
+        }
+      ],
+      "rank": 53,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "passing-the-test",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+7",
+            "98"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "98",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "94",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+10",
+            "95"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1218/passing-the-test",
+      "releaseDate": "2026-08-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1217,
+          "releaseDate": "2026-08-09"
+        },
+        "nextAnchor": {
+          "evolutionId": 1220,
+          "releaseDate": "2026-08-10"
+        }
+      },
+      "chronologicalRank": 1155
+    }
+  ]
+}

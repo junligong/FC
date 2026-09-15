@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-17",
+  "count": 6,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Upgrade a qualifying player's Weak Foot to 5 Stars. No OVR increase",
+      "id": 661,
+      "name": "5 Star Weak Foot Upgrades",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=661",
+      "previewPlayers": [],
+      "rank": 412,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "5-star-weak-foot-upgrades",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/661/5-star-weak-foot-upgrades",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 656,
+          "releaseDate": "2026-03-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 666,
+          "releaseDate": "2026-03-17"
+        }
+      },
+      "chronologicalRank": 601
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Turbocharge a player, giving them an extra pace boost.",
+      "id": 662,
+      "name": "Turbocharged",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=662",
+      "previewPlayers": [],
+      "rank": 411,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "turbocharged",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "8"
+          ],
+          "value": "Relentless"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/662/turbocharged",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 656,
+          "releaseDate": "2026-03-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 666,
+          "releaseDate": "2026-03-17"
+        }
+      },
+      "chronologicalRank": 602
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Quick Step+ to any qualified player",
+      "id": 663,
+      "name": "Quick Step +",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=663",
+      "previewPlayers": [],
+      "rank": 207,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "quick-step",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/663/quick-step",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 656,
+          "releaseDate": "2026-03-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 666,
+          "releaseDate": "2026-03-17"
+        }
+      },
+      "chronologicalRank": 603
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Intercept+ to any qualified player",
+      "id": 664,
+      "name": "Intercept+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=664",
+      "previewPlayers": [],
+      "rank": 206,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "intercept",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "2"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/664/intercept",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 656,
+          "releaseDate": "2026-03-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 666,
+          "releaseDate": "2026-03-17"
+        }
+      },
+      "chronologicalRank": 604
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Low Driven+ to any qualified player",
+      "id": 665,
+      "name": "Low Driven+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=665",
+      "previewPlayers": [],
+      "rank": 205,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "low-driven",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/665/low-driven",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 656,
+          "releaseDate": "2026-03-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 666,
+          "releaseDate": "2026-03-17"
+        }
+      },
+      "chronologicalRank": 605
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Deliver unforgettable moments during UCL Nights, from Lisbon to Madrid, from Manchester to Paris, get ready to score spectacular goals when it matters most.",
+      "id": 666,
+      "name": "UCL Specialist",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=666",
+      "previewPlayers": [
+        {
+          "displayName": "James",
+          "kind": "before",
+          "name": "Daniel James",
+          "position": "RM",
+          "rating": 87,
+          "stats": {
+            "def": 59,
+            "dri": 83,
+            "pac": 96,
+            "pas": 81,
+            "phy": 76,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "James",
+          "kind": "after",
+          "name": "Daniel James",
+          "position": "RM",
+          "rating": 88,
+          "stats": {
+            "def": 59,
+            "dri": 86,
+            "pac": 96,
+            "pas": 83,
+            "phy": 76,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 410,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "ucl-specialist",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "85",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+2",
+            "85"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "91",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "91"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "90",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+3",
+            "85"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "8"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "2"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/666/ucl-specialist",
+      "releaseDate": "2026-03-17",
+      "releaseDateTimeUtc": "2026-03-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1824,
+        "providerUrl": "https://futmind.com/evolutions/1824/ucl-specialist",
+        "originalCreatedAt": "2026-03-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 606
+    }
+  ]
+}

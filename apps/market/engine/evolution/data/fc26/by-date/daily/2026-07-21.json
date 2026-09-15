@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-07-21",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "training": "3 DAYS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Get ready for FUTTIES with an all-round boost to a qualifying player.",
+      "id": 1151,
+      "name": "FUTTIES Countdown",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1151",
+      "previewPlayers": [
+        {
+          "displayName": "Vargas",
+          "kind": "before",
+          "name": "Obed Vargas",
+          "position": "CM",
+          "rating": 93,
+          "stats": {
+            "def": 90,
+            "dri": 93,
+            "pac": 94,
+            "pas": 91,
+            "phy": 85,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Vargas",
+          "kind": "after",
+          "name": "Obed Vargas",
+          "position": "CM",
+          "rating": 96,
+          "stats": {
+            "def": 94,
+            "dri": 96,
+            "pac": 95,
+            "pas": 95,
+            "phy": 89,
+            "sho": 92
+          }
+        }
+      ],
+      "rank": 60,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 94"
+          ],
+          "value": "Max 94"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "futties-countdown",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "96",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+3",
+            "96"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "95",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "96",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+4",
+            "96"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "96",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+4",
+            "96"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "96",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+4",
+            "96"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "96",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+4",
+            "96"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "96",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+4",
+            "96"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1151/futties-countdown",
+      "releaseDate": "2026-07-21",
+      "releaseDateTimeUtc": "2026-07-21T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2488,
+        "providerUrl": "https://futmind.com/evolutions/2488/futties-countdown",
+        "originalCreatedAt": "2026-07-21T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1088
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-06",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "200": "20,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "training": "24 MINS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Fast forward through time and add years of defensive experience and physical prowess to your player.",
+      "id": 267,
+      "name": "Time Traveler",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=267",
+      "previewPlayers": [
+        {
+          "displayName": "Dier",
+          "kind": "before",
+          "name": "Eric Dier",
+          "position": "CB",
+          "rating": 86,
+          "stats": {
+            "def": 86,
+            "dri": 80,
+            "pac": 82,
+            "pas": 81,
+            "phy": 87,
+            "sho": 70
+          }
+        },
+        {
+          "displayName": "Dier",
+          "kind": "after",
+          "name": "Eric Dier",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 87,
+            "dri": 80,
+            "pac": 82,
+            "pas": 81,
+            "phy": 88,
+            "sho": 70
+          }
+        }
+      ],
+      "rank": 764,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "time-traveler",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "84",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "7"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "7"
+          ],
+          "value": "Aerial Fortress"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/267/time-traveler",
+      "releaseDate": "2026-01-06",
+      "releaseDateTimeUtc": "2026-01-06T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1368,
+        "providerUrl": "https://futmind.com/evolutions/1368/time-traveler",
+        "originalCreatedAt": "2026-01-06T18:00:00.000000Z"
+      },
+      "chronologicalRank": 245
+    }
+  ]
+}

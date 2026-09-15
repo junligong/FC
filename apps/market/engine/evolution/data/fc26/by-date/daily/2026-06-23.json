@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-23",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Upgrade key dribbling stats",
+      "id": 1041,
+      "name": "Slalom Dribbling",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1041",
+      "previewPlayers": [],
+      "rank": 143,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 91"
+          ],
+          "value": "Max 91"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "slalom-dribbling",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "95",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+3",
+            "95"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "95",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "95"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+3",
+            "95"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1041/slalom-dribbling",
+      "releaseDate": "2026-06-23",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1040,
+          "releaseDate": "2026-06-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 1042,
+          "releaseDate": "2026-06-23"
+        }
+      },
+      "chronologicalRank": 980
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "training": "1 DAYS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "The penalty box belongs to those who own it. Evolve your player and bring the offensive quality that makes every chance count.",
+      "id": 1042,
+      "name": "Own the Box",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1042",
+      "previewPlayers": [
+        {
+          "displayName": "Maicon",
+          "kind": "before",
+          "name": "Maicon Douglas Sisenando",
+          "position": "RB",
+          "rating": 88,
+          "stats": {
+            "def": 83,
+            "dri": 84,
+            "pac": 86,
+            "pas": 81,
+            "phy": 85,
+            "sho": 82
+          }
+        },
+        {
+          "displayName": "Maicon",
+          "kind": "after",
+          "name": "Maicon Douglas Sisenando",
+          "position": "RB",
+          "rating": 92,
+          "stats": {
+            "def": 83,
+            "dri": 84,
+            "pac": 86,
+            "pas": 81,
+            "phy": 95,
+            "sho": 93
+          }
+        }
+      ],
+      "rank": 142,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "own-the-box",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "94",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "94",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "8"
+          ],
+          "value": "Relentless"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "3"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Gamechanger",
+            "3"
+          ],
+          "value": "Gamechanger"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1042/own-the-box",
+      "releaseDate": "2026-06-23",
+      "releaseDateTimeUtc": "2026-06-23T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2275,
+        "providerUrl": "https://futmind.com/evolutions/2275/own-the-box",
+        "originalCreatedAt": "2026-06-23T18:00:00.000000Z"
+      },
+      "chronologicalRank": 981
+    }
+  ]
+}

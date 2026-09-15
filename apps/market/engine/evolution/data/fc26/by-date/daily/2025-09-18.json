@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-09-18",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Welcome to FC 26! Kick things off by exploring Evolutions, where you can upgrade Players over time until they reach their stated maximum.",
+      "id": 5,
+      "name": "Intro to Evolutions",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=5",
+      "previewPlayers": [
+        {
+          "displayName": "Flint",
+          "kind": "before",
+          "name": "Taylor Flint",
+          "position": "CDM",
+          "rating": 81,
+          "stats": {
+            "def": 79,
+            "dri": 77,
+            "pac": 69,
+            "pas": 74,
+            "phy": 86,
+            "sho": 74
+          }
+        },
+        {
+          "displayName": "Flint",
+          "kind": "after",
+          "name": "Taylor Flint",
+          "position": "CDM",
+          "rating": 82,
+          "stats": {
+            "def": 79,
+            "dri": 77,
+            "pac": 70,
+            "pas": 74,
+            "phy": 86,
+            "sho": 75
+          }
+        }
+      ],
+      "rank": 218,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 81"
+          ],
+          "value": "Max 81"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "intro-to-evolutions",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "82",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1",
+            "82"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "83",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+1",
+            "83"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "83",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+1",
+            "83"
+          ],
+          "value": "+1"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/5/intro-to-evolutions",
+      "releaseDate": "2025-09-18",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": null,
+        "nextAnchor": {
+          "evolutionId": 6,
+          "releaseDate": "2025-09-18"
+        }
+      },
+      "chronologicalRank": 1
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "training": "1 DAYS",
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Assign a GK to Training Camp Evolutions through the Companion App. When the training session concludes, collect their earned upgrades.",
+      "id": 6,
+      "name": "Intro to Training Camp EVOs I",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=6",
+      "previewPlayers": [
+        {
+          "displayName": "Naeher",
+          "kind": "before",
+          "name": "Alyssa Naeher",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 83,
+            "pas": 83,
+            "phy": 87,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Naeher",
+          "kind": "after",
+          "name": "Alyssa Naeher",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 83,
+            "pas": 83,
+            "phy": 87,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 217,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "intro-to-training-camp-evos-i",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Sweeper Keeper+"
+          ],
+          "value": "Sweeper Keeper+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/6/intro-to-training-camp-evos-i",
+      "releaseDate": "2025-09-18",
+      "releaseDateTimeUtc": "2025-09-16T17:31:07.770000Z",
+      "dateSource": "fc26-launch-boundary",
+      "dateConfidence": "normalized",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1005,
+        "providerUrl": "https://futmind.com/evolutions/1005/intro-to-training-camp-evos-i",
+        "originalCreatedAt": "2025-09-16T17:31:07.770000Z"
+      },
+      "chronologicalRank": 2
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "training": "1 DAYS",
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Assign a Player to Training Camp Evolutions through the Companion App. When the training session concludes, collect their earned upgrades.",
+      "id": 7,
+      "name": "Intro to Training Camp EVOs II",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=7",
+      "previewPlayers": [
+        {
+          "displayName": "Wood",
+          "kind": "before",
+          "name": "Chris Wood",
+          "position": "ST",
+          "rating": 82,
+          "stats": {
+            "def": 40,
+            "dri": 72,
+            "pac": 53,
+            "pas": 68,
+            "phy": 81,
+            "sho": 83
+          }
+        },
+        {
+          "displayName": "Wood",
+          "kind": "after",
+          "name": "Chris Wood",
+          "position": "ST",
+          "rating": 82,
+          "stats": {
+            "def": 40,
+            "dri": 72,
+            "pac": 53,
+            "pas": 68,
+            "phy": 81,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 216,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "intro-to-training-camp-evos-ii",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "4",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "4"
+          ],
+          "value": "Gamechanger"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/7/intro-to-training-camp-evos-ii",
+      "releaseDate": "2025-09-18",
+      "releaseDateTimeUtc": "2025-09-16T17:31:07.770000Z",
+      "dateSource": "fc26-launch-boundary",
+      "dateConfidence": "normalized",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1006,
+        "providerUrl": "https://futmind.com/evolutions/1006/intro-to-training-camp-evos-ii",
+        "originalCreatedAt": "2025-09-16T17:31:07.770000Z"
+      },
+      "chronologicalRank": 3
+    }
+  ]
+}

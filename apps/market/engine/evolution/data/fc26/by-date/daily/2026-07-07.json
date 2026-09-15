@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-07-07",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Sharpen your player’s identity with upgraded PlayStyles, added flair, and extra versatility to stand out in every match.",
+      "id": 1096,
+      "name": "PlayStyle Enhancer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1096",
+      "previewPlayers": [
+        {
+          "displayName": "Undav",
+          "kind": "before",
+          "name": "Deniz Undav",
+          "nameZh": "德尼兹·翁达夫",
+          "position": "ST",
+          "rating": 92,
+          "stats": {
+            "def": 46,
+            "dri": 93,
+            "pac": 90,
+            "pas": 88,
+            "phy": 92,
+            "sho": 95
+          }
+        },
+        {
+          "displayName": "Undav",
+          "kind": "after",
+          "name": "Deniz Undav",
+          "nameZh": "德尼兹·翁达夫",
+          "position": "ST",
+          "rating": 92,
+          "stats": {
+            "def": 46,
+            "dri": 93,
+            "pac": 90,
+            "pas": 88,
+            "phy": 92,
+            "sho": 95
+          }
+        }
+      ],
+      "rank": 113,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "playstyle-enhancer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "8"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "3"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "3"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "3"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1096/playstyle-enhancer",
+      "releaseDate": "2026-07-07",
+      "releaseDateTimeUtc": "2026-07-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2417,
+        "providerUrl": "https://futmind.com/evolutions/2417/playstyle-enhancer",
+        "originalCreatedAt": "2026-07-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1033
+    }
+  ]
+}

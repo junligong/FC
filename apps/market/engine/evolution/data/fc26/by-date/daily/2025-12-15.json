@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-15",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Enforcer to any qualified player.",
+      "id": 189,
+      "name": "Enforcer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=189",
+      "previewPlayers": [],
+      "rank": 825,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        }
+      ],
+      "slug": "enforcer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "6"
+          ],
+          "value": "Enforcer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/189/enforcer",
+      "releaseDate": "2025-12-15",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 194,
+          "releaseDate": "2025-12-18"
+        }
+      },
+      "chronologicalRank": 184
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical+ to any qualified player.",
+      "id": 190,
+      "name": "Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=190",
+      "previewPlayers": [],
+      "rank": 823,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        }
+      ],
+      "slug": "technical",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "1"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/190/technical",
+      "releaseDate": "2025-12-15",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 194,
+          "releaseDate": "2025-12-18"
+        }
+      },
+      "chronologicalRank": 185
+    }
+  ]
+}

@@ -1,0 +1,2371 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-27",
+  "count": 10,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Pinged Pass+ to any player",
+      "id": 1056,
+      "name": "Pinged Pass+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1056",
+      "previewPlayers": [],
+      "rank": 88,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "pinged-pass",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "3"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1056/pinged-pass",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 995
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Found in the Brazil Objective",
+      "id": 1059,
+      "name": "O Capitão",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1059",
+      "previewPlayers": [],
+      "rank": 87,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "o-capitao",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+50",
+            "94"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "94",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+35",
+            "92"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+35",
+            "90"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "92",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+35",
+            "92"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "93",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+45",
+            "96"
+          ],
+          "value": "+45"
+        },
+        {
+          "cap": "94",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+35",
+            "90"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "3"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "3"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1059/o-capitao",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 996
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Harness the powers of a generational talent with unmatched driblling, inch-perfecct through balls, and a magical left foot",
+      "id": 1060,
+      "name": "The Little Boy from Rosario",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1060",
+      "previewPlayers": [
+        {
+          "displayName": "Graham Hansen",
+          "kind": "before",
+          "name": "Caroline Graham Hansen",
+          "nameZh": "卡罗琳·格拉汉姆·汉森",
+          "position": "RW",
+          "rating": 90,
+          "stats": {
+            "def": 47,
+            "dri": 90,
+            "pac": 89,
+            "pas": 88,
+            "phy": 76,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "Graham Hansen",
+          "kind": "after",
+          "name": "Caroline Graham Hansen",
+          "nameZh": "卡罗琳·格拉汉姆·汉森",
+          "position": "RW",
+          "rating": 94,
+          "stats": {
+            "def": 47,
+            "dri": 96,
+            "pac": 89,
+            "pas": 96,
+            "phy": 78,
+            "sho": 94
+          }
+        }
+      ],
+      "rank": 86,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW or RM or ST"
+          ],
+          "value": "RW or RM or ST"
+        }
+      ],
+      "slug": "the-little-boy-from-rosario",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+25",
+            "94"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "96",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+35",
+            "96"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "96",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+35",
+            "96"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "97",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "93",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+35",
+            "93"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "97",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "95",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+35",
+            "95"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "93",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+35",
+            "93"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "97",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+35",
+            "97"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "93",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+35",
+            "93"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "94",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+35",
+            "94"
+          ],
+          "value": "+35"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "3"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "3"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "3"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1060/the-little-boy-from-rosario",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 997
+    },
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Only applicable to Diego Forlan",
+      "id": 1061,
+      "name": "Deadball Mastery",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1061",
+      "previewPlayers": [],
+      "rank": 85,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Player Groups",
+          "raw": [
+            "Player Groups",
+            "Diego Forlan"
+          ],
+          "value": "Diego Forlan"
+        }
+      ],
+      "slug": "deadball-mastery",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": null,
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+50"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Dead Ball",
+            "3"
+          ],
+          "value": "Dead Ball"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1061/deadball-mastery",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 998
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "A creative maestro with a golden left foot, elite vision, deadly long shots, and the flair to unlock any defence with moments of pure magic.",
+      "id": 1062,
+      "name": "El Bandido",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1062",
+      "previewPlayers": [],
+      "rank": 84,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "el-bandido",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+20",
+            "94"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+25",
+            "93"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "8"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "3"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "3"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1062/el-bandido",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 999
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Give your qualified player the CAM position and trust them with the tempo, the space and the final decision.",
+      "id": 1063,
+      "name": "Given the Keys",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1063",
+      "previewPlayers": [],
+      "rank": 137,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 95"
+          ],
+          "value": "Max 95"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB, GK"
+          ],
+          "value": "CB, GK"
+        }
+      ],
+      "slug": "given-the-keys",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+30",
+            "92"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "93"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "3"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "3"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CAM"
+          ],
+          "value": "CAM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1063/given-the-keys",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 1000
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Anticipate+ to any qualified player.",
+      "id": 1064,
+      "name": "Anticipate+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1064",
+      "previewPlayers": [],
+      "rank": 136,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "anticipate",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "3"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1064/anticipate",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1046,
+          "releaseDate": "2026-06-26"
+        },
+        "nextAnchor": {
+          "evolutionId": 1065,
+          "releaseDate": "2026-06-27"
+        }
+      },
+      "chronologicalRank": 1001
+    },
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Boosts defending, dribbling, and passing to create a composed midfield shield who wins the ball, escapes pressure, and keeps attacks moving.",
+      "id": 1065,
+      "name": "Pitch Protector",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1065",
+      "previewPlayers": [
+        {
+          "displayName": "Santi García",
+          "kind": "before",
+          "name": "Santiago García González",
+          "position": "CM",
+          "rating": 69,
+          "stats": {
+            "def": 55,
+            "dri": 69,
+            "pac": 66,
+            "pas": 67,
+            "phy": 69,
+            "sho": 63
+          }
+        },
+        {
+          "displayName": "Santi García",
+          "kind": "after",
+          "name": "Santiago García González",
+          "position": "CM",
+          "rating": 95,
+          "stats": {
+            "def": 82,
+            "dri": 94,
+            "pac": 66,
+            "pas": 87,
+            "phy": 94,
+            "sho": 63
+          }
+        }
+      ],
+      "rank": 135,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "pitch-protector",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "95",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "96",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "96"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "95"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "94",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "3"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "3"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Long Ball Pass",
+            "3"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1065/pitch-protector",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": "2026-06-27T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2368,
+        "providerUrl": "https://futmind.com/evolutions/2368/pitch-protector",
+        "originalCreatedAt": "2026-06-27T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1002
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "FOF: PELÉ"
+      ],
+      "description": "Continue your path to greatness with a all-round upgrade for FoF Pelé.",
+      "id": 1066,
+      "name": "FoF Pelé II",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1066",
+      "previewPlayers": [],
+      "rank": 134,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "Festival of Football Icon"
+          ],
+          "value": "Festival of Football Icon"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        },
+        {
+          "cap": null,
+          "label": "Player",
+          "raw": [
+            "Player",
+            "Arantes Nascimento"
+          ],
+          "value": "Arantes Nascimento"
+        }
+      ],
+      "slug": "fof-pele-ii",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+1"
+          ],
+          "value": "+1"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1066/fof-pele-ii",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": "2026-06-27T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2371,
+        "providerUrl": "https://futmind.com/evolutions/2371/fof-pele-ii",
+        "originalCreatedAt": "2026-06-27T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1003
+    },
+    {
+      "availability": {
+        "500": "100,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a Glory Hunters player. This item rarity offers five nation links to chemistry!",
+      "id": 1067,
+      "name": "Glory Hunters",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1067",
+      "previewPlayers": [],
+      "rank": 133,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "glory-hunters",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/1067/glory-hunters",
+      "releaseDate": "2026-06-27",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1066,
+          "releaseDate": "2026-06-27"
+        },
+        "nextAnchor": {
+          "evolutionId": 1069,
+          "releaseDate": "2026-06-28"
+        }
+      },
+      "chronologicalRank": 1004
+    }
+  ]
+}

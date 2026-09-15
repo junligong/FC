@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-09",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Holding++ to any qualified CDM player.",
+      "id": 92,
+      "name": "CDM Holding++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=92",
+      "previewPlayers": [],
+      "rank": 920,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "cdm-holding",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/92/cdm-holding",
+      "releaseDate": "2025-11-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 90,
+          "releaseDate": "2025-11-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 94,
+          "releaseDate": "2025-11-09"
+        }
+      },
+      "chronologicalRank": 88
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your CDM into an extraordinary Box Crasher with this EVO, just like the iconic, big-haired Belgian powerhouse!",
+      "id": 93,
+      "name": "The Big Fella",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=93",
+      "previewPlayers": [
+        {
+          "displayName": "O'Sullivan",
+          "kind": "before",
+          "name": "Denise O'Sullivan",
+          "position": "CDM",
+          "rating": 82,
+          "stats": {
+            "def": 79,
+            "dri": 78,
+            "pac": 82,
+            "pas": 71,
+            "phy": 81,
+            "sho": 72
+          }
+        },
+        {
+          "displayName": "O'Sullivan",
+          "kind": "after",
+          "name": "Denise O'Sullivan",
+          "position": "CDM",
+          "rating": 85,
+          "stats": {
+            "def": 84,
+            "dri": 78,
+            "pac": 82,
+            "pas": 76,
+            "phy": 87,
+            "sho": 74
+          }
+        }
+      ],
+      "rank": 921,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "the-big-fella",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "85",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+5",
+            "85"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "80",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+5",
+            "80"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "83",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+5",
+            "83"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "85",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+8",
+            "85"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "83",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+5",
+            "83"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "88",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "85",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+8",
+            "85"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "88",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+5",
+            "86"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "85",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+8",
+            "85"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "83",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5",
+            "83"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "86",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+5",
+            "86"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "84",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+6",
+            "84"
+          ],
+          "value": "+6"
+        },
+        {
+          "cap": "85",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+8",
+            "85"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "87",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+12",
+            "87"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "5"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "5"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker+"
+          ],
+          "value": "Deep-Lying Playmaker+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding+"
+          ],
+          "value": "Holding+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/93/the-big-fella",
+      "releaseDate": "2025-11-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 90,
+          "releaseDate": "2025-11-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 94,
+          "releaseDate": "2025-11-09"
+        }
+      },
+      "chronologicalRank": 89
+    },
+    {
+      "availability": {
+        "300": "20,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Outrun the ordinary, outsmart the defense. Turn the sidelines into your stage and make every touch a showstopper.",
+      "id": 94,
+      "name": "Wing Wizards",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=94",
+      "previewPlayers": [
+        {
+          "displayName": "Ainhoa Marín",
+          "kind": "before",
+          "name": "Ainhoa Marín Martín",
+          "position": "RW",
+          "rating": 76,
+          "stats": {
+            "def": 41,
+            "dri": 80,
+            "pac": 87,
+            "pas": 70,
+            "phy": 67,
+            "sho": 72
+          }
+        },
+        {
+          "displayName": "Ainhoa Marín",
+          "kind": "after",
+          "name": "Ainhoa Marín Martín",
+          "position": "RW",
+          "rating": 86,
+          "stats": {
+            "def": 41,
+            "dri": 86,
+            "pac": 90,
+            "pas": 80,
+            "phy": 69,
+            "sho": 79
+          }
+        }
+      ],
+      "rank": 919,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 79"
+          ],
+          "value": "Max 79"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "wing-wizards",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "86",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+7",
+            "85"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "86",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "86",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+12",
+            "89"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "6"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "6"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "6"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger+"
+          ],
+          "value": "Winger+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker+"
+          ],
+          "value": "Wide Playmaker+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/94/wing-wizards",
+      "releaseDate": "2025-11-09",
+      "releaseDateTimeUtc": "2025-11-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1152,
+        "providerUrl": "https://futmind.com/evolutions/1152/wing-wizards",
+        "originalCreatedAt": "2025-11-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 90
+    }
+  ]
+}

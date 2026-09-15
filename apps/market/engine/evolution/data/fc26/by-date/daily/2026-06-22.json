@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-22",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "6",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Consistency separates good players from great ones. Evolve your player and develop the composure, passing and stamina that makes them your most reliable option.",
+      "id": 1040,
+      "name": "Steady Eddie",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1040",
+      "previewPlayers": [
+        {
+          "displayName": "Nygren",
+          "kind": "before",
+          "name": "Benjamin Nygren",
+          "position": "CM",
+          "rating": 90,
+          "stats": {
+            "def": 80,
+            "dri": 90,
+            "pac": 88,
+            "pas": 89,
+            "phy": 88,
+            "sho": 90
+          }
+        },
+        {
+          "displayName": "Nygren",
+          "kind": "after",
+          "name": "Benjamin Nygren",
+          "position": "CM",
+          "rating": 90,
+          "stats": {
+            "def": 80,
+            "dri": 91,
+            "pac": 88,
+            "pas": 90,
+            "phy": 89,
+            "sho": 90
+          }
+        }
+      ],
+      "rank": 144,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "steady-eddie",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1040/steady-eddie",
+      "releaseDate": "2026-06-22",
+      "releaseDateTimeUtc": "2026-06-22T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2273,
+        "providerUrl": "https://futmind.com/evolutions/2273/steady-eddie",
+        "originalCreatedAt": "2026-06-22T18:00:00.000000Z"
+      },
+      "chronologicalRank": 979
+    }
+  ]
+}

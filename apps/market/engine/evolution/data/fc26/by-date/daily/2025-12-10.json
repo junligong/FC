@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-10",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "50": "5,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Boost vital Dribbling skills designed to develop a composed presence fit for your lineup.",
+      "id": 177,
+      "name": "Keep Composed",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=177",
+      "previewPlayers": [
+        {
+          "displayName": "Højbjerg",
+          "kind": "before",
+          "name": "Pierre-Emile Højbjerg",
+          "position": "CDM",
+          "rating": 85,
+          "stats": {
+            "def": 86,
+            "dri": 80,
+            "pac": 81,
+            "pas": 85,
+            "phy": 84,
+            "sho": 77
+          }
+        },
+        {
+          "displayName": "Højbjerg",
+          "kind": "after",
+          "name": "Pierre-Emile Højbjerg",
+          "position": "CDM",
+          "rating": 86,
+          "stats": {
+            "def": 86,
+            "dri": 86,
+            "pac": 81,
+            "pas": 85,
+            "phy": 84,
+            "sho": 77
+          }
+        }
+      ],
+      "rank": 837,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "keep-composed",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "86",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "89",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "6"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Press Proven",
+            "1"
+          ],
+          "value": "Press Proven"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/177/keep-composed",
+      "releaseDate": "2025-12-10",
+      "releaseDateTimeUtc": "2025-12-10T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1274,
+        "providerUrl": "https://futmind.com/evolutions/1274/keep-composed",
+        "originalCreatedAt": "2025-12-10T18:00:00.000000Z"
+      },
+      "chronologicalRank": 172
+    }
+  ]
+}

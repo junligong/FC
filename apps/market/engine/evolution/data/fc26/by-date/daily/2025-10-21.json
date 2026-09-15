@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-21",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "100": "5,000",
+        "expires": "EXPIRED",
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Stay cool under pressure, react fast and keep your nerve when it matters most.",
+      "id": 53,
+      "name": "Ice Veins",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=53",
+      "previewPlayers": [
+        {
+          "displayName": "Rrahmani",
+          "kind": "before",
+          "name": "Amir Rrahmani",
+          "nameZh": "阿米尔·拉赫马尼",
+          "position": "CB",
+          "rating": 83,
+          "stats": {
+            "def": 84,
+            "dri": 63,
+            "pac": 69,
+            "pas": 60,
+            "phy": 78,
+            "sho": 51
+          }
+        },
+        {
+          "displayName": "Rrahmani",
+          "kind": "after",
+          "name": "Amir Rrahmani",
+          "nameZh": "阿米尔·拉赫马尼",
+          "position": "CB",
+          "rating": 83,
+          "stats": {
+            "def": 84,
+            "dri": 63,
+            "pac": 69,
+            "pas": 60,
+            "phy": 78,
+            "sho": 51
+          }
+        }
+      ],
+      "rank": 959,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 83"
+          ],
+          "value": "Max 83"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "ice-veins",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "83",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+4",
+            "83"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "83",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/53/ice-veins",
+      "releaseDate": "2025-10-21",
+      "releaseDateTimeUtc": "2025-10-21T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1073,
+        "providerUrl": "https://futmind.com/evolutions/1073/ice-veins",
+        "originalCreatedAt": "2025-10-21T18:00:00.000000Z"
+      },
+      "chronologicalRank": 49
+    }
+  ]
+}

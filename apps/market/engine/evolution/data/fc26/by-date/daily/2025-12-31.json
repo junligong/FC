@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-31",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "30",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "See your teammates on the pitch with upgrades to Vision.",
+      "id": 258,
+      "name": "I Can See You",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=258",
+      "previewPlayers": [
+        {
+          "displayName": "Foden",
+          "kind": "before",
+          "name": "Phil Foden",
+          "nameZh": "菲尔·福登",
+          "position": "RW",
+          "rating": 85,
+          "stats": {
+            "def": 57,
+            "dri": 89,
+            "pac": 81,
+            "pas": 82,
+            "phy": 57,
+            "sho": 81
+          }
+        },
+        {
+          "displayName": "Foden",
+          "kind": "after",
+          "name": "Phil Foden",
+          "nameZh": "菲尔·福登",
+          "position": "RW",
+          "rating": 85,
+          "stats": {
+            "def": 57,
+            "dri": 89,
+            "pac": 81,
+            "pas": 82,
+            "phy": 57,
+            "sho": 81
+          }
+        }
+      ],
+      "rank": 773,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "i-can-see-you",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+2"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/258/i-can-see-you",
+      "releaseDate": "2025-12-31",
+      "releaseDateTimeUtc": "2025-12-31T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1373,
+        "providerUrl": "https://futmind.com/evolutions/1373/i-can-see-you",
+        "originalCreatedAt": "2025-12-31T18:00:00.000000Z"
+      },
+      "chronologicalRank": 236
+    }
+  ]
+}

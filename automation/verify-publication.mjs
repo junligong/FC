@@ -13,8 +13,8 @@ export function comparePublication(local, remote, date) {
   const html = remote.toString('utf8');
   const checks = {
     matchesLocal: local.equals(remote),
-    hasArchiveViewer: html.includes('id="archive-viewer"'),
-    hasDateAnchor: html.includes(`#report-${date}`),
+    hasArchiveLink: html.includes(`archive/${date}.html`),
+    hasDateAnchor: html.includes(`${date} 每日日报`) || html.includes(`archive/${date}.html`),
     completeHtml: /<\/html>\s*$/i.test(html),
   };
   return {

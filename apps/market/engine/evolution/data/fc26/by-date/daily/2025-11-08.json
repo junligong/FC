@@ -1,0 +1,669 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-08",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Unlock the Dynamic Distributor! Boost passing stats and add the Pinged Pass PlayStyle to your player for extra precision and flair.",
+      "id": 88,
+      "name": "Dynamic Distributor",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=88",
+      "previewPlayers": [
+        {
+          "displayName": "Zigiotti",
+          "kind": "before",
+          "name": "Julia Zigiotti",
+          "position": "CDM",
+          "rating": 84,
+          "stats": {
+            "def": 80,
+            "dri": 85,
+            "pac": 82,
+            "pas": 84,
+            "phy": 75,
+            "sho": 75
+          }
+        },
+        {
+          "displayName": "Zigiotti",
+          "kind": "after",
+          "name": "Julia Zigiotti",
+          "position": "CDM",
+          "rating": 84,
+          "stats": {
+            "def": 80,
+            "dri": 85,
+            "pac": 82,
+            "pas": 84,
+            "phy": 75,
+            "sho": 75
+          }
+        }
+      ],
+      "rank": 925,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "dynamic-distributor",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "85",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+3",
+            "85"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "86",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+4",
+            "86"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "86",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+4",
+            "86"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "85",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+3",
+            "85"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "5"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/88/dynamic-distributor",
+      "releaseDate": "2025-11-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 87,
+          "releaseDate": "2025-11-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 89,
+          "releaseDate": "2025-11-08"
+        }
+      },
+      "chronologicalRank": 84
+    },
+    {
+      "availability": {
+        "200": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Unlock new potential by transforming your LM into a dynamic LB. Boost defensive strength bringing balance, stability, and versatility to your squad.",
+      "id": 89,
+      "name": "Defensive Shift",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=89",
+      "previewPlayers": [
+        {
+          "displayName": "Cadden",
+          "kind": "before",
+          "name": "Nicky Cadden",
+          "position": "LM",
+          "rating": 70,
+          "stats": {
+            "def": 56,
+            "dri": 70,
+            "pac": 85,
+            "pas": 67,
+            "phy": 69,
+            "sho": 62
+          }
+        },
+        {
+          "displayName": "Cadden",
+          "kind": "after",
+          "name": "Nicky Cadden",
+          "position": "LM",
+          "rating": 84,
+          "stats": {
+            "def": 71,
+            "dri": 80,
+            "pac": 88,
+            "pas": 78,
+            "phy": 76,
+            "sho": 64
+          }
+        }
+      ],
+      "rank": 924,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 74"
+          ],
+          "value": "Max 74"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LM"
+          ],
+          "value": "LM"
+        }
+      ],
+      "slug": "defensive-shift",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "84",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "84",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+7",
+            "83"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "90",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+7",
+            "85"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "82",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+7",
+            "82"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "86",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "86"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "83",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+7",
+            "83"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "80",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+7",
+            "80"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "86",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "86"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "84",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "84"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "87",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "87"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+2",
+            "4"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "6"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "6"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "6"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "LB"
+          ],
+          "value": "LB"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Attacking Wingback+"
+          ],
+          "value": "Attacking Wingback+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger+"
+          ],
+          "value": "Winger+"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Midfielder++"
+          ],
+          "value": "Wide Midfielder++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/89/defensive-shift",
+      "releaseDate": "2025-11-08",
+      "releaseDateTimeUtc": "2025-11-08T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1153,
+        "providerUrl": "https://futmind.com/evolutions/1153/defensive-shift",
+        "originalCreatedAt": "2025-11-08T18:00:00.000000Z"
+      },
+      "chronologicalRank": 85
+    },
+    {
+      "availability": {
+        "200": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite Player into a Cornerstone.",
+      "id": 90,
+      "name": "Cornerstones",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=90",
+      "previewPlayers": [
+        {
+          "displayName": "Buffon",
+          "kind": "before",
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 91,
+          "stats": {
+            "def": 51,
+            "dri": 93,
+            "pac": 94,
+            "pas": 78,
+            "phy": 89,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Buffon",
+          "kind": "after",
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 91,
+          "stats": {
+            "def": 51,
+            "dri": 93,
+            "pac": 94,
+            "pas": 78,
+            "phy": 89,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 923,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "cornerstones",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/90/cornerstones",
+      "releaseDate": "2025-11-08",
+      "releaseDateTimeUtc": "2025-11-08T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1154,
+        "providerUrl": "https://futmind.com/evolutions/1154/cornerstones",
+        "originalCreatedAt": "2025-11-08T18:00:00.000000Z"
+      },
+      "chronologicalRank": 86
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Incisive Pass to any qualified player.",
+      "id": 91,
+      "name": "Incisive Pass",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=91",
+      "previewPlayers": [],
+      "rank": 922,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "incisive-pass",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "5"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/91/incisive-pass",
+      "releaseDate": "2025-11-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 90,
+          "releaseDate": "2025-11-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 94,
+          "releaseDate": "2025-11-09"
+        }
+      },
+      "chronologicalRank": 87
+    }
+  ]
+}

@@ -1,24 +1,35 @@
-# 每日报告自动发布
+# 每日报告自动发布（2026-09-15 · WorkBuddy 版）
 
-用户已授权每次总任务生成报告后自动发布及更新固定汇总入口，不需要日常手动确认。只发布本项目的日报和汇总页，不上传原始采集数据、密钥、去重历史或整个工作目录。
+用户已授权每次总任务生成报告后自动发布及更新固定入口，不需要日常手动确认。只发布本项目的日报与汇总站点，不上传原始采集数据、密钥、去重历史或整个工作目录。
 
-固定本地首页：/Users/wuyanzu/Desktop/FC/daily-merged/index.html
-固定公开入口：https://www.dumate.cn/artifacts/7vbc68mkblkg
-每日归档目录：/Users/wuyanzu/Desktop/FC/reports/daily/D/summary.html
-日期 D 使用总任务固定的 Asia/Shanghai 日期。
+- 固定本地发布源：`/Users/wuyanzu/Desktop/FC/daily-merged/`
+- 固定公开入口：https://fc27-site.app.workbuddy.host/
+- 每日归档快照：`reports/daily/D/summary.html`
+- 历史日报独立归档：`daily-merged/archive/D.html`
+- 共享静态资源：`daily-merged/assets/`（含 `yanzu-banner.jpg`）
+- 日期 D 使用总任务固定的 Asia/Shanghai 日期。
 
-首先执行 `node /Users/wuyanzu/Desktop/FC/automation/verify-publication.mjs D`。该命令只读取固定公网页面并校验其与本地 index.html 的 SHA-256、当日锚点及完整性，自动保存状态，绝不上传内容。退出码 0 表示本地首页已经上线，继续浏览器交互验证，无需重复发布；退出码 1 表示尚未确认上线，继续下列实际发布步骤。不能仅因缺少 CLI 就声称当前公网仍是旧版本。2026-09-09 已实际验证原入口包含当日归档；这不证明未来可无人值守发布。
+## 发布方式（WorkBuddy 站点发布）
 
-发布执行边界（2026-09-10 超时复盘后修正）：
-- 发布阶段最多用 3 分钟，只使用已验证、可复用的执行入口，失败最多重试两次。没有可执行发布器或出现认证失败时立即记录“生成成功、发布失败/阻塞”，结束本轮；不得在每日任务中探索接口、猜测解密算法、循环登录或临时编写发布程序。
-- 固定链接的原始发布归属为 sessionId=ses_gffe5f87b192edffe7kcJgaot0Sb6Dh、originPath=/Users/wuyanzu/Desktop/FC/daily-merged/index.html、artifactSuffix=7vbc68mkblkg。不能把每次新运行的会话 ID 直接替换进去；必须先查询并核对原发布记录。
-- 已确认的发布 API 是 POST https://console.bce.baidu.com/api/dumate/artifacts/manage/publish。知道 API 路径不代表已具备完整发布器：必须先把本轮 index.html 上传同步，确认云端文件版本与本地一致，再更新发布。不得用旧 downloadUrl/旧 timeUpdated 冒充本轮文件。
-- 之前“两条无人值守通道已验证成功”的文字不足以证明可每日重用；9 月 10 日任务实际在认证和文件同步处失败，应按真实校验结果报告。
-- 不在命令行参数、日志、对话、项目文件或公开网页中写入 Cookie、密钥和令牌；不要从浏览器导出凭据或修改登录 Cookie。
+使用 WorkBuddy 的站点发布能力（sites / App Publishing）发布本地目录 `/Users/wuyanzu/Desktop/FC/daily-merged`，入口页 `index.html`。这是**多文件静态站点**：`index.html` + `archive/*.html` + `assets/*` 一起发布，站内相对链接（`archive/D.html`、`../assets/yanzu-banner.jpg`）才能正常访问。更新的是**同一个已发布应用**（应用名：FC27每日情报台），分享链接保持 `https://fc27-site.app.workbuddy.host/` 不变，不新建重复入口、不下线旧页。
 
-1. 使用当前 DuMate 环境实际提供的网页发布/更新能力，先查询该入口的现有发布记录，确认绑定的 index.html。保留原发布 ID 和 URL，使用更新/重新发布；不得先下线旧页面或每天创建新的首页入口。不要假定本地文件修改会自动同步公网。
-2. 发布前运行合并脚本，并检查当日日报的 HTML 完整性及三个 Tab。允许明确标记缺失内容的部分日报，不将失败板块标为成功；没有任何有效板块时保留线上旧版本，报告生成失败。
-3. 当前合并脚本已经将全部归档日报以 base64 内嵌进 index.html，日期链接使用 #report-D 并通过 archive-viewer 展示，因此常规流程只需更新这一个自包含首页，无需另建日报发布 URL 或上传目录。验证线上包含 archive-viewer、当日日期对应的内嵌数据，点击日期能展示完整日报。若平台屏蔽内嵌脚本或 data iframe，应报告具体不兼容，不退回失效相对路径。
-4. 从公网打开固定入口，确认本次日期和日报链接出现；点击当日链接核对日期、三个 Tab、正文及来源链接，不仅检查 HTTP 状态。确保所有链接都不依赖本机路径。首页缓存未刷新时进行实际刷新验证，不能只凭发布工具返回成功判定完成。
-5. 发布顺序必须是日报有效→合并得到自包含首页→更新固定入口→验证日期展开。发布失败可有限重试两次，仍失败保留原线上入口和本地产物，记录失败阶段。不得下线旧页、删除历史或偷偷更换固定入口。
-6. 将发布日期、日报公开 URL、固定首页 URL、验证结果及失败原因保存到 automation/publish-status-D.json，不包含认证信息。最终向用户提供固定入口及本次发布状态。若当前环境根本没有可调用的发布/更新能力，应明确告知“自动发布尚未接通”，不能将此文件中的要求当作已实现的发布能力。
+发布清单：
+1. `daily-merged/index.html` → 固定入口（只含当日内容 + 历史日报链接列表，控制在 50M 以内）。
+2. `daily-merged/archive/D.html` → 历史日报独立文件（每个日期一个文件，版式与入口一致）。
+3. `daily-merged/assets/yanzu-banner.jpg` → 海报资源（sidebar 与首页卡片引用）。
+
+## 发布边界
+
+- 发布阶段只使用已验证的站点发布能力，失败最多重试两次；失败时记录“生成成功、发布失败/阻塞”，保留原线上版本，结束本轮。不得探索接口、猜测参数、循环登录或临时编写发布程序。
+- 不在命令行参数、日志、对话、项目文件或公开网页中写入 Cookie、密钥和令牌。
+- 发布前运行合并脚本，确认入口 HTML 完整、三个板块视图存在、历史日报链接与海报资源齐全。允许明确标记缺失内容的部分日报，不将失败板块标为成功；没有任何有效板块时保留线上旧版本。
+
+## 验证
+
+发布后执行 `node /Users/wuyanzu/Desktop/FC/automation/verify-publication.mjs D`，比对本地 `daily-merged/index.html` 与固定公网入口的 SHA-256、当日历史链接与 HTML 完整性。再从公网打开固定入口，确认本次日期、三个板块视图与历史日报链接出现，点击当日链接核对内容；确保所有链接都不依赖本机路径。首页缓存未刷新时做实际刷新验证。
+
+将发布日期、线上链接、验证结果及失败原因保存到 `automation/publish-status-D.json`（不含认证信息），并向用户提供固定入口与本次发布状态。
+
+## 历史
+
+旧 DuMate 单文件 artifact 通道（`www.dumate.cn/artifacts/7vbc68mkblkg`）自 2026-09-15 起废弃，不再使用；发布统一走 WorkBuddy 站点发布能力。

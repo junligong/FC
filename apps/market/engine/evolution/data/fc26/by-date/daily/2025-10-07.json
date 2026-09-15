@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-07",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Unlock the Deflector PlayStyle to supercharge your goalkeeper's quick-reflexes, turning them into a reliable stopper for your squad.",
+      "id": 30,
+      "name": "Reflex Deflector",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=30",
+      "previewPlayers": [
+        {
+          "displayName": "Murphy",
+          "kind": "before",
+          "name": "Casey Murphy",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 40,
+            "dri": 82,
+            "pac": 84,
+            "pas": 78,
+            "phy": 86,
+            "sho": 78
+          }
+        },
+        {
+          "displayName": "Murphy",
+          "kind": "after",
+          "name": "Casey Murphy",
+          "position": "GK",
+          "rating": 82,
+          "stats": {
+            "def": 40,
+            "dri": 82,
+            "pac": 84,
+            "pas": 78,
+            "phy": 86,
+            "sho": 78
+          }
+        }
+      ],
+      "rank": 981,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "reflex-deflector",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "4",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Deflector",
+            "4"
+          ],
+          "value": "Deflector"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/30/reflex-deflector",
+      "releaseDate": "2025-10-07",
+      "releaseDateTimeUtc": "2025-10-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1050,
+        "providerUrl": "https://futmind.com/evolutions/1050/reflex-deflector",
+        "originalCreatedAt": "2025-10-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 26
+    }
+  ]
+}

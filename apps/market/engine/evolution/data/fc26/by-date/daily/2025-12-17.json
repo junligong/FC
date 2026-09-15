@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-17",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical and Trickster to any qualified player.",
+      "id": 192,
+      "name": "Sticky Shoes",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=192",
+      "previewPlayers": [],
+      "rank": 822,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        }
+      ],
+      "slug": "sticky-shoes",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "6"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "6"
+          ],
+          "value": "Trickster"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/192/sticky-shoes",
+      "releaseDate": "2025-12-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 194,
+          "releaseDate": "2025-12-18"
+        }
+      },
+      "chronologicalRank": 187
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Master the art of delivery and ship dangerous parcels into your opponent's box.",
+      "id": 193,
+      "name": "Package Delivery",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=193",
+      "previewPlayers": [
+        {
+          "displayName": "Olga Carmona",
+          "kind": "before",
+          "name": "Olga Carmona García",
+          "nameZh": "奥尔加·卡莫纳",
+          "position": "LB",
+          "rating": 84,
+          "stats": {
+            "def": 79,
+            "dri": 80,
+            "pac": 88,
+            "pas": 78,
+            "phy": 74,
+            "sho": 74
+          }
+        },
+        {
+          "displayName": "Olga Carmona",
+          "kind": "after",
+          "name": "Olga Carmona García",
+          "nameZh": "奥尔加·卡莫纳",
+          "position": "LB",
+          "rating": 85,
+          "stats": {
+            "def": 83,
+            "dri": 84,
+            "pac": 88,
+            "pas": 83,
+            "phy": 74,
+            "sho": 74
+          }
+        }
+      ],
+      "rank": 821,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "package-delivery",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+4",
+            "88"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "86",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+4",
+            "86"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "90",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Whipped Pass",
+            "6"
+          ],
+          "value": "Whipped Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/193/package-delivery",
+      "releaseDate": "2025-12-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 188,
+          "releaseDate": "2025-12-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 194,
+          "releaseDate": "2025-12-18"
+        }
+      },
+      "chronologicalRank": 188
+    }
+  ]
+}

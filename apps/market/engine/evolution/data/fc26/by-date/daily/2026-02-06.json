@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-06",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "350": "45,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Meeks Mode activated! A dominant RB combining pace, strength and defensive awareness. Reliable in duels, consistent on the overlap, and built for top-level competition",
+      "id": 443,
+      "name": "Meeks Mode",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=443",
+      "previewPlayers": [
+        {
+          "displayName": "White",
+          "kind": "before",
+          "name": "Benjamin White",
+          "position": "RB",
+          "rating": 83,
+          "stats": {
+            "def": 83,
+            "dri": 75,
+            "pac": 70,
+            "pas": 75,
+            "phy": 78,
+            "sho": 35
+          }
+        },
+        {
+          "displayName": "White",
+          "kind": "after",
+          "name": "Benjamin White",
+          "position": "RB",
+          "rating": 88,
+          "stats": {
+            "def": 87,
+            "dri": 77,
+            "pac": 85,
+            "pas": 80,
+            "phy": 87,
+            "sho": 35
+          }
+        }
+      ],
+      "rank": 622,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "meeks-mode",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "80",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "80",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "84",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "8"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "8"
+          ],
+          "value": "Slide Tackle"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "1"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wingback++"
+          ],
+          "value": "Wingback++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/443/meeks-mode",
+      "releaseDate": "2026-02-06",
+      "releaseDateTimeUtc": "2026-02-06T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1566,
+        "providerUrl": "https://futmind.com/evolutions/1566/meeks-mode",
+        "originalCreatedAt": "2026-02-06T18:00:00.000000Z"
+      },
+      "chronologicalRank": 388
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Anticipate to any qualified player.",
+      "id": 447,
+      "name": "Anticipate",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=447",
+      "previewPlayers": [],
+      "rank": 621,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "anticipate",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/447/anticipate",
+      "releaseDate": "2026-02-06",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 389
+    }
+  ]
+}

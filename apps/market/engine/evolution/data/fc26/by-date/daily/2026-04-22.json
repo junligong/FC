@@ -1,0 +1,2620 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-22",
+  "count": 9,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Become a true master of midfield balance. The Columbus Conductor commands the tempo, controls the chaos, and orchestrates the match.",
+      "id": 768,
+      "name": "Columbus Conductor",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=768",
+      "previewPlayers": [
+        {
+          "displayName": "Finndell",
+          "kind": "before",
+          "name": "Hampus Finndell",
+          "position": "CM",
+          "rating": 65,
+          "stats": {
+            "def": 65,
+            "dri": 63,
+            "pac": 60,
+            "pas": 62,
+            "phy": 73,
+            "sho": 63
+          }
+        },
+        {
+          "displayName": "Finndell",
+          "kind": "after",
+          "name": "Hampus Finndell",
+          "position": "CM",
+          "rating": 90,
+          "stats": {
+            "def": 87,
+            "dri": 87,
+            "pac": 75,
+            "pas": 87,
+            "phy": 86,
+            "sho": 70
+          }
+        }
+      ],
+      "rank": 316,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "columbus-conductor",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "84",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "84"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "89",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+25",
+            "90"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "92"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+25",
+            "91"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "8"
+          ],
+          "value": "Press Proven"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "2"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "2"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/768/columbus-conductor",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": "2026-04-22T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1945,
+        "providerUrl": "https://futmind.com/evolutions/1945/columbus-conductor",
+        "originalCreatedAt": "2026-04-22T18:00:00.000000Z"
+      },
+      "chronologicalRank": 707
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 3"
+      ],
+      "description": "Start your WTSS journey with upgrades to key attacking stats.",
+      "id": 769,
+      "name": "WTSS Journey 1 - Attacker",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=769",
+      "previewPlayers": [],
+      "rank": 315,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST or RW or LW"
+          ],
+          "value": "ST or RW or LW"
+        }
+      ],
+      "slug": "wtss-journey-1-attacker",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "88",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "70",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "70"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "88",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "87",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "84",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+30",
+            "84"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+25",
+            "86"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "83",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+30",
+            "83"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "75",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+20",
+            "75"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+25",
+            "88"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "8"
+          ],
+          "value": "Gamechanger"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/769/wtss-journey-1-attacker",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 708
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 28"
+      ],
+      "description": "Add Bruiser+ to any qualified player.",
+      "id": 770,
+      "name": "Bruiser+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=770",
+      "previewPlayers": [],
+      "rank": 314,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 91"
+          ],
+          "value": "Max 91"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "bruiser",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "3"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/770/bruiser",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 709
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 8"
+      ],
+      "description": "Continue your WTSS journey with additional upgrades. All items receive +2 OVR.",
+      "id": 771,
+      "name": "WTSS Journey 2 - Attacker",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=771",
+      "previewPlayers": [],
+      "rank": 313,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 88"
+          ],
+          "value": "Exactly 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST or LW or RW"
+          ],
+          "value": "ST or LW or RW"
+        }
+      ],
+      "slug": "wtss-journey-2-attacker",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "92"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "89",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "88",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+10",
+            "91"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+10",
+            "89"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/771/wtss-journey-2-attacker",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 710
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "20",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 1"
+      ],
+      "description": "Round out your qualifying players attacking sub stats!",
+      "id": 772,
+      "name": "Attacker Roundout",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=772",
+      "previewPlayers": [],
+      "rank": 312,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "attacker-roundout",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+3",
+            "93"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+2",
+            "94"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "93",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "93",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+3",
+            "93"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "93",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "95",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/772/attacker-roundout",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 711
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 3"
+      ],
+      "description": "Start your WTSS journey with upgrades to key defending stats",
+      "id": 773,
+      "name": "WTSS Journey 1 - Defender",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=773",
+      "previewPlayers": [],
+      "rank": 311,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB or LB or RB"
+          ],
+          "value": "CB or LB or RB"
+        }
+      ],
+      "slug": "wtss-journey-1-defender",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "88",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "70",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+20",
+            "70"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "80",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "80"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "75",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "80",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "80"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "65",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "65"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "86",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+30",
+            "86"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "85"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "75",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "75"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/773/wtss-journey-1-defender",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 712
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 21"
+      ],
+      "description": "Finish your WTSS journey with additional upgrades. All items receive +2 OVR.",
+      "id": 774,
+      "name": "WTSS Journey 3 - Attacker",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=774",
+      "previewPlayers": [],
+      "rank": 310,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 90"
+          ],
+          "value": "Exactly 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST or LW or RW"
+          ],
+          "value": "ST or LW or RW"
+        }
+      ],
+      "slug": "wtss-journey-3-attacker",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "8"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "3"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "3"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/774/wtss-journey-3-attacker",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 713
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "10",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 1"
+      ],
+      "description": "Round out your qualifying players defending sub stats!",
+      "id": 775,
+      "name": "Defender Roundout",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=775",
+      "previewPlayers": [],
+      "rank": 309,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "defender-roundout",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "91",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+1",
+            "94"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "93",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+1",
+            "93"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "93",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+2",
+            "93"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "93",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+1",
+            "93"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "93",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+2",
+            "92"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "93",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+2",
+            "93"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "93",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "93"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "8"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/775/defender-roundout",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 714
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 7 LEVEL: 8"
+      ],
+      "description": "Continue your WTSS journey with additional upgrades. All items receive +2 OVR.",
+      "id": 776,
+      "name": "WTSS Journey 2 - Defender",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=776",
+      "previewPlayers": [],
+      "rank": 308,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Exactly 88"
+          ],
+          "value": "Exactly 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB or LB or RB"
+          ],
+          "value": "CB or LB or RB"
+        }
+      ],
+      "slug": "wtss-journey-2-defender",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "94",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+10",
+            "94"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "93",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+10",
+            "93"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "90",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Block",
+            "8"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "2"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/776/wtss-journey-2-defender",
+      "releaseDate": "2026-04-22",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 768,
+          "releaseDate": "2026-04-22"
+        },
+        "nextAnchor": {
+          "evolutionId": 786,
+          "releaseDate": "2026-04-23"
+        }
+      },
+      "chronologicalRank": 715
+    }
+  ]
+}

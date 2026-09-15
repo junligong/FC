@@ -1,0 +1,426 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-16",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 MONTHS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "1 MONTHS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your card into a FUT Birthday - Found in Store",
+      "id": 1023,
+      "name": "Build Your Own FUT Birthday",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1023",
+      "previewPlayers": [],
+      "rank": 104,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 92"
+          ],
+          "value": "Max 92"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "build-your-own-fut-birthday",
+      "status": "active",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/1023/build-your-own-fut-birthday",
+      "releaseDate": "2026-06-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1022,
+          "releaseDate": "2026-06-15"
+        },
+        "nextAnchor": {
+          "evolutionId": 1024,
+          "releaseDate": "2026-06-16"
+        }
+      },
+      "chronologicalRank": 962
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "The best right backs are unsung until they’re not. Evolve your player and bring the commitment that turned the world’s attention to Tim Payne.",
+      "id": 1024,
+      "name": "No Payne No Gain",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1024",
+      "previewPlayers": [
+        {
+          "displayName": "Lahm",
+          "kind": "before",
+          "name": "Philipp Lahm",
+          "position": "RB",
+          "rating": 90,
+          "stats": {
+            "def": 90,
+            "dri": 86,
+            "pac": 86,
+            "pas": 86,
+            "phy": 76,
+            "sho": 70
+          }
+        },
+        {
+          "displayName": "Lahm",
+          "kind": "after",
+          "name": "Philipp Lahm",
+          "position": "RB",
+          "rating": 94,
+          "stats": {
+            "def": 95,
+            "dri": 86,
+            "pac": 93,
+            "pas": 94,
+            "phy": 76,
+            "sho": 70
+          }
+        }
+      ],
+      "rank": 154,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 3"
+          ],
+          "value": "Max 3"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "CB, ST"
+          ],
+          "value": "CB, ST"
+        }
+      ],
+      "slug": "no-payne-no-gain",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "94",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "94"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+15",
+            "93"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "96",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+15",
+            "96"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "96",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+15",
+            "96"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "96",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+15",
+            "96"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "93",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+15",
+            "93"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+15",
+            "95"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "8"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "3"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "3"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "RM"
+          ],
+          "value": "RM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback++"
+          ],
+          "value": "Fullback++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1024/no-payne-no-gain",
+      "releaseDate": "2026-06-16",
+      "releaseDateTimeUtc": "2026-06-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2251,
+        "providerUrl": "https://futmind.com/evolutions/2251/no-payne-no-gain",
+        "originalCreatedAt": "2026-06-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 963
+    }
+  ]
+}

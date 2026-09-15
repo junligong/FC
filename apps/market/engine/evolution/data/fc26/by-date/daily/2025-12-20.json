@@ -1,0 +1,485 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-20",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Enforcer to any qualified player.",
+      "id": 207,
+      "name": "Enforcer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=207",
+      "previewPlayers": [],
+      "rank": 807,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 5"
+          ],
+          "value": "Max 5"
+        }
+      ],
+      "slug": "enforcer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "6"
+          ],
+          "value": "Enforcer"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/207/enforcer",
+      "releaseDate": "2025-12-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 204,
+          "releaseDate": "2025-12-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 209,
+          "releaseDate": "2025-12-20"
+        }
+      },
+      "chronologicalRank": 202
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical+ to any qualified player.",
+      "id": 208,
+      "name": "Technical+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=208",
+      "previewPlayers": [],
+      "rank": 806,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        }
+      ],
+      "slug": "technical",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "1"
+          ],
+          "value": "Technical"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/208/technical",
+      "releaseDate": "2025-12-20",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 204,
+          "releaseDate": "2025-12-19"
+        },
+        "nextAnchor": {
+          "evolutionId": 209,
+          "releaseDate": "2025-12-20"
+        }
+      },
+      "chronologicalRank": 203
+    },
+    {
+      "availability": {
+        "350": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Play the perfect pass with all passing PlayStyles and Incisive Pass+.",
+      "id": 209,
+      "name": "Passing Perfectionist",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=209",
+      "previewPlayers": [
+        {
+          "displayName": "Tchouaméni",
+          "kind": "before",
+          "name": "Aurélien Tchouaméni",
+          "nameZh": "奥雷利安·楚阿梅尼",
+          "position": "CDM",
+          "rating": 86,
+          "stats": {
+            "def": 84,
+            "dri": 82,
+            "pac": 80,
+            "pas": 82,
+            "phy": 87,
+            "sho": 74
+          }
+        },
+        {
+          "displayName": "Tchouaméni",
+          "kind": "after",
+          "name": "Aurélien Tchouaméni",
+          "nameZh": "奥雷利安·楚阿梅尼",
+          "position": "CDM",
+          "rating": 86,
+          "stats": {
+            "def": 84,
+            "dri": 82,
+            "pac": 80,
+            "pas": 82,
+            "phy": 87,
+            "sho": 74
+          }
+        }
+      ],
+      "rank": 805,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        }
+      ],
+      "slug": "passing-perfectionist",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Inventive",
+            "7"
+          ],
+          "value": "Inventive"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Whipped Pass",
+            "7"
+          ],
+          "value": "Whipped Pass"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "1"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/209/passing-perfectionist",
+      "releaseDate": "2025-12-20",
+      "releaseDateTimeUtc": "2025-12-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1349,
+        "providerUrl": "https://futmind.com/evolutions/1349/passing-perfectionist",
+        "originalCreatedAt": "2025-12-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 204
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Stay agile and alert with upgrades to dribbling stats for a qualified player!",
+      "id": 210,
+      "name": "Stay Frosty",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=210",
+      "previewPlayers": [
+        {
+          "displayName": "Mateo",
+          "kind": "before",
+          "name": "Clara Mateo",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 56,
+            "dri": 84,
+            "pac": 87,
+            "pas": 80,
+            "phy": 75,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Mateo",
+          "kind": "after",
+          "name": "Clara Mateo",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 56,
+            "dri": 88,
+            "pac": 87,
+            "pas": 80,
+            "phy": 75,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 804,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "stay-frosty",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+12",
+            "90"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "90",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+12",
+            "90"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "88",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+12",
+            "88"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "7"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "1"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/210/stay-frosty",
+      "releaseDate": "2025-12-20",
+      "releaseDateTimeUtc": "2025-12-20T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1350,
+        "providerUrl": "https://futmind.com/evolutions/1350/stay-frosty",
+        "originalCreatedAt": "2025-12-20T18:00:00.000000Z"
+      },
+      "chronologicalRank": 205
+    }
+  ]
+}

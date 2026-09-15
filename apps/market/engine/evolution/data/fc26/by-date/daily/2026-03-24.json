@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-24",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "26",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Practice makes perfect. Take to the training ground and hone your skills again, and again, and again, until you play that perfect long ball to your team mates.",
+      "id": 687,
+      "name": "Over the Top",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=687",
+      "previewPlayers": [
+        {
+          "displayName": "Giménez",
+          "kind": "before",
+          "name": "José María Giménez",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 88,
+            "dri": 65,
+            "pac": 82,
+            "pas": 65,
+            "phy": 87,
+            "sho": 50
+          }
+        },
+        {
+          "displayName": "Giménez",
+          "kind": "after",
+          "name": "José María Giménez",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 89,
+            "dri": 66,
+            "pac": 82,
+            "pas": 66,
+            "phy": 87,
+            "sho": 50
+          }
+        }
+      ],
+      "rank": 389,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "over-the-top",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "91",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+3",
+            "91"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "92",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/687/over-the-top",
+      "releaseDate": "2026-03-24",
+      "releaseDateTimeUtc": "2026-03-24T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1844,
+        "providerUrl": "https://futmind.com/evolutions/1844/over-the-top",
+        "originalCreatedAt": "2026-03-24T18:00:00.000000Z"
+      },
+      "chronologicalRank": 627
+    }
+  ]
+}

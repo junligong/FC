@@ -6,8 +6,15 @@
   "runStatePattern": "automation/runs/{DATE}",
   "dailyOutputPattern": "reports/daily/{DATE}",
   "fixedLocalIndex": "daily-merged/index.html",
-  "fixedPublicUrl": "https://www.dumate.cn/artifacts/7vbc68mkblkg",
-  "consumers": ["DuMate", "WorkBuddy"],
+  "fixedPublicUrl": "https://fc27-site.app.workbuddy.host/",
+  "consumers": ["WorkBuddy"],
+  "publish": {
+    "kind": "workbuddy-sites",
+    "appName": "FC27每日情报台",
+    "directory": "daily-merged",
+    "entry": "index.html",
+    "note": "每日任务在 coordinate.mjs 合并成功后，用 WorkBuddy 站点发布能力发布 daily-merged/；多文件站点，index.html + archive/ + assets/ 相对路径可用。"
+  },
   "browser": {
     "required": "chrome-extension",
     "cliMode": "extension",

@@ -1,0 +1,852 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-06",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Prove you belong at the top. Take on the challenge, elevate every part of your game, and show why you’re among the elite.",
+      "id": 725,
+      "name": "The Very Best",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=725",
+      "previewPlayers": [
+        {
+          "displayName": "Krezyman",
+          "kind": "before",
+          "name": "Nadia Krezyman",
+          "position": "LM",
+          "rating": 84,
+          "stats": {
+            "def": 52,
+            "dri": 81,
+            "pac": 92,
+            "pas": 84,
+            "phy": 73,
+            "sho": 75
+          }
+        },
+        {
+          "displayName": "Krezyman",
+          "kind": "after",
+          "name": "Nadia Krezyman",
+          "position": "LM",
+          "rating": 90,
+          "stats": {
+            "def": 52,
+            "dri": 93,
+            "pac": 93,
+            "pas": 88,
+            "phy": 73,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 356,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 93"
+          ],
+          "value": "Max 93"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RW"
+          ],
+          "value": "RW"
+        }
+      ],
+      "slug": "the-very-best",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "93"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "92"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "92",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+15",
+            "92"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "93",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+15",
+            "93"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "93",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+15",
+            "93"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "93",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+15",
+            "93"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+15",
+            "90"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "87",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+15",
+            "87"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "89",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+10",
+            "90"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "91",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+15",
+            "91"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "92",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+10",
+            "88"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "88",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "91",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "91"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "8"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Low Driven Shot",
+            "2"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Playmaker++"
+          ],
+          "value": "Wide Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/725/the-very-best",
+      "releaseDate": "2026-04-06",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 724,
+          "releaseDate": "2026-04-05"
+        },
+        "nextAnchor": {
+          "evolutionId": 726,
+          "releaseDate": "2026-04-06"
+        }
+      },
+      "chronologicalRank": 665
+    },
+    {
+      "availability": {
+        "400": "60,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Explosive pace and dribbling for winger runs. Turn attackers into outside burners or inside finishers with Rapid, Quick Step, Trickster, and Low Driven Shot.",
+      "id": 726,
+      "name": "Blazing Winger",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=726",
+      "previewPlayers": [
+        {
+          "displayName": "Gonçalo Borges",
+          "kind": "before",
+          "name": "Gonçalo Oscar Albuquerque Borges",
+          "position": "RW",
+          "rating": 72,
+          "stats": {
+            "def": 29,
+            "dri": 76,
+            "pac": 85,
+            "pas": 63,
+            "phy": 56,
+            "sho": 58
+          }
+        },
+        {
+          "displayName": "Gonçalo Borges",
+          "kind": "after",
+          "name": "Gonçalo Oscar Albuquerque Borges",
+          "position": "RW",
+          "rating": 89,
+          "stats": {
+            "def": 29,
+            "dri": 89,
+            "pac": 94,
+            "pas": 71,
+            "phy": 63,
+            "sho": 78
+          }
+        }
+      ],
+      "rank": 355,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LW"
+          ],
+          "value": "LW"
+        }
+      ],
+      "slug": "blazing-winger",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "94",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "92",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+20",
+            "90"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "92",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+20",
+            "92"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "91",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+20",
+            "91"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "94",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+30",
+            "94"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "8"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "8"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "2"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Winger++"
+          ],
+          "value": "Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Inside Forward++"
+          ],
+          "value": "Inside Forward++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/726/blazing-winger",
+      "releaseDate": "2026-04-06",
+      "releaseDateTimeUtc": "2026-04-06T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1895,
+        "providerUrl": "https://futmind.com/evolutions/1895/blazing-winger",
+        "originalCreatedAt": "2026-04-06T18:00:00.000000Z"
+      },
+      "chronologicalRank": 666
+    }
+  ]
+}

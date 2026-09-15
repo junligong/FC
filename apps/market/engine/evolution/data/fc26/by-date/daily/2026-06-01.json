@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-01",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Shut down attacks and dominate duels with defensive playstyles built for the biggest moments.",
+      "id": 884,
+      "name": "Rock & Resolve",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=884",
+      "previewPlayers": [
+        {
+          "displayName": "Maradona",
+          "kind": "before",
+          "name": "Diego Maradona",
+          "position": "CAM",
+          "rating": 96,
+          "stats": {
+            "def": 42,
+            "dri": 97,
+            "pac": 91,
+            "pas": 92,
+            "phy": 80,
+            "sho": 92
+          }
+        },
+        {
+          "displayName": "Maradona",
+          "kind": "after",
+          "name": "Diego Maradona",
+          "position": "CAM",
+          "rating": 96,
+          "stats": {
+            "def": 42,
+            "dri": 97,
+            "pac": 91,
+            "pas": 92,
+            "phy": 80,
+            "sho": 92
+          }
+        }
+      ],
+      "rank": 203,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "rock--resolve",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "8"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Aerial Fortress",
+            "8"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Block",
+            "8"
+          ],
+          "value": "Block"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Slide Tackle",
+            "8"
+          ],
+          "value": "Slide Tackle"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "2"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/884/rock--resolve",
+      "releaseDate": "2026-06-01",
+      "releaseDateTimeUtc": "2026-06-01T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2093,
+        "providerUrl": "https://futmind.com/evolutions/2093/rock-resolve",
+        "originalCreatedAt": "2026-06-01T18:00:00.000000Z"
+      },
+      "chronologicalRank": 823
+    }
+  ]
+}

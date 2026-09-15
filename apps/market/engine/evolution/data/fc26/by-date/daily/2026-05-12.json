@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-12",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Technical, Gamechanger and First Touch to any player",
+      "id": 842,
+      "name": "Tri-Control",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=842",
+      "previewPlayers": [],
+      "rank": 244,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "tri-control",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "7"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Gamechanger",
+            "7"
+          ],
+          "value": "Gamechanger"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "7"
+          ],
+          "value": "First Touch"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/842/tri-control",
+      "releaseDate": "2026-05-12",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 840,
+          "releaseDate": "2026-05-11"
+        },
+        "nextAnchor": {
+          "evolutionId": 843,
+          "releaseDate": "2026-05-12"
+        }
+      },
+      "chronologicalRank": 781
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "8",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Sharpen every step and give your player the edge in tight spaces and split-second moments.",
+      "id": 843,
+      "name": "Quick Twitch",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=843",
+      "previewPlayers": [
+        {
+          "displayName": "Bühl",
+          "kind": "before",
+          "name": "Klara Bühl",
+          "nameZh": "克拉拉·比尔",
+          "position": "LM",
+          "rating": 88,
+          "stats": {
+            "def": 38,
+            "dri": 88,
+            "pac": 87,
+            "pas": 85,
+            "phy": 77,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Bühl",
+          "kind": "after",
+          "name": "Klara Bühl",
+          "nameZh": "克拉拉·比尔",
+          "position": "LM",
+          "rating": 88,
+          "stats": {
+            "def": 38,
+            "dri": 88,
+            "pac": 88,
+            "pas": 85,
+            "phy": 77,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 243,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "quick-twitch",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+3",
+            "92"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/843/quick-twitch",
+      "releaseDate": "2026-05-12",
+      "releaseDateTimeUtc": "2026-05-12T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2037,
+        "providerUrl": "https://futmind.com/evolutions/2037/quick-twitch",
+        "originalCreatedAt": "2026-05-12T18:00:00.000000Z"
+      },
+      "chronologicalRank": 782
+    }
+  ]
+}

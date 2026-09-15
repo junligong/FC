@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "season-6-level-8",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "SEASON 6 LEVEL: 8"
+      ],
+      "description": "Turn into a goal machine with boosts to shooting stats",
+      "id": 647,
+      "name": "Goal Machine",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=647",
+      "previewPlayers": [],
+      "rank": 425,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "goal-machine",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "90",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+2",
+            "90"
+          ],
+          "value": "+2"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/647/goal-machine",
+      "releaseDate": "2026-03-12",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 646,
+          "releaseDate": "2026-03-12"
+        },
+        "nextAnchor": {
+          "evolutionId": 649,
+          "releaseDate": "2026-03-13"
+        }
+      },
+      "chronologicalRank": 588
+    }
+  ]
+}

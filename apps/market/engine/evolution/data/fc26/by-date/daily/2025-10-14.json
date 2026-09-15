@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-14",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Transform your LB into a Fullback Force, have them learn the art of defense and playmaking with improved Interceptions, Defensive Awareness, and more accurate passes on the wing.",
+      "id": 44,
+      "name": "Fullback Force",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=44",
+      "previewPlayers": [
+        {
+          "displayName": "Svava",
+          "kind": "before",
+          "name": "Sofie Svava",
+          "position": "LB",
+          "rating": 82,
+          "stats": {
+            "def": 79,
+            "dri": 77,
+            "pac": 86,
+            "pas": 73,
+            "phy": 80,
+            "sho": 53
+          }
+        },
+        {
+          "displayName": "Svava",
+          "kind": "after",
+          "name": "Sofie Svava",
+          "position": "LB",
+          "rating": 82,
+          "stats": {
+            "def": 80,
+            "dri": 77,
+            "pac": 86,
+            "pas": 74,
+            "phy": 80,
+            "sho": 53
+          }
+        }
+      ],
+      "rank": 967,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "fullback-force",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "83",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+4",
+            "83"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "83",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "83",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "83",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback+"
+          ],
+          "value": "Fullback+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/44/fullback-force",
+      "releaseDate": "2025-10-14",
+      "releaseDateTimeUtc": "2025-10-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1065,
+        "providerUrl": "https://futmind.com/evolutions/1065/fullback-force",
+        "originalCreatedAt": "2025-10-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 40
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Thank you for completing the The Club is Yours II Objective in FC 25. Now you can add CM Box-to-Box to any qualified CM player.",
+      "id": 45,
+      "name": "CM Box-to-Box++",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=45",
+      "previewPlayers": [],
+      "rank": 213,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 83"
+          ],
+          "value": "Max 83"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "cm-box-to-box",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/45/cm-box-to-box",
+      "releaseDate": "2025-10-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 44,
+          "releaseDate": "2025-10-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 47,
+          "releaseDate": "2025-10-15"
+        }
+      },
+      "chronologicalRank": 41
+    }
+  ]
+}

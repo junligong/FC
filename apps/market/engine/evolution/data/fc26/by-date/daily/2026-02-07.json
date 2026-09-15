@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-07",
+  "count": 7,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Jockey+ to any qualified player.",
+      "id": 448,
+      "name": "Jockey+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=448",
+      "previewPlayers": [],
+      "rank": 620,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "jockey",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "1"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/448/jockey",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 390
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "FS ACADEMY"
+      ],
+      "description": "Upgrade a qualifying player's Skill Moves to 5 stars. No OVR increase.",
+      "id": 449,
+      "name": "5 Stars Skill Moves Upgrade",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=449",
+      "previewPlayers": [],
+      "rank": 619,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Min 88"
+          ],
+          "value": "Min 88"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "Future Stars Academy Evo"
+          ],
+          "value": "Future Stars Academy Evo"
+        }
+      ],
+      "slug": "5-stars-skill-moves-upgrade",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/449/5-stars-skill-moves-upgrade",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 391
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "FS ACADEMY"
+      ],
+      "description": "Upgrade a qualifying player's Weak Foot to 5 stars. No OVR increase.",
+      "id": 450,
+      "name": "5 Stars Weak Foot Upgrade",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=450",
+      "previewPlayers": [],
+      "rank": 618,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Min 88"
+          ],
+          "value": "Min 88"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "Future Stars Academy Evo"
+          ],
+          "value": "Future Stars Academy Evo"
+        }
+      ],
+      "slug": "5-stars-weak-foot-upgrade",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/450/5-stars-weak-foot-upgrade",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 392
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "FS ACADEMY"
+      ],
+      "description": "Sign a player to the academy and give them the FS Academy EVO rarity, marking the start of their football journey.",
+      "id": 451,
+      "name": "Future Stars Academy II",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=451",
+      "previewPlayers": [],
+      "rank": 617,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Born before",
+          "raw": [
+            "Born before",
+            "2026-01-30"
+          ],
+          "value": "2026-01-30"
+        },
+        {
+          "cap": null,
+          "label": "Born after",
+          "raw": [
+            "Born after",
+            "2004-01-30"
+          ],
+          "value": "2004-01-30"
+        }
+      ],
+      "slug": "future-stars-academy-ii",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/451/future-stars-academy-ii",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 393
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Finesse Shot to any qualified player.",
+      "id": 452,
+      "name": "Finesse Shot",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=452",
+      "previewPlayers": [],
+      "rank": 616,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "finesse-shot",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/452/finesse-shot",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 443,
+          "releaseDate": "2026-02-06"
+        },
+        "nextAnchor": {
+          "evolutionId": 453,
+          "releaseDate": "2026-02-07"
+        }
+      },
+      "chronologicalRank": 394
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Strengthen your defensive presence while improving safe, reliable passing. Built to win duels, hold shape, and keep play moving under pressure.",
+      "id": 453,
+      "name": "Hold & Play",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=453",
+      "previewPlayers": [
+        {
+          "displayName": "Ibañez",
+          "kind": "before",
+          "name": "Roger Ibañez da Silva",
+          "nameZh": "罗热·伊巴涅斯",
+          "position": "CB",
+          "rating": 86,
+          "stats": {
+            "def": 86,
+            "dri": 65,
+            "pac": 90,
+            "pas": 60,
+            "phy": 87,
+            "sho": 36
+          }
+        },
+        {
+          "displayName": "Ibañez",
+          "kind": "after",
+          "name": "Roger Ibañez da Silva",
+          "nameZh": "罗热·伊巴涅斯",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 89,
+            "dri": 65,
+            "pac": 90,
+            "pas": 62,
+            "phy": 87,
+            "sho": 36
+          }
+        }
+      ],
+      "rank": 615,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "hold--play",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "88",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+2",
+            "88"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "89",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+4",
+            "89"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "87",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+7",
+            "87"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "90",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "90",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+7",
+            "90"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "7"
+          ],
+          "value": "Long Ball Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/453/hold--play",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": "2026-02-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1567,
+        "providerUrl": "https://futmind.com/evolutions/1567/hold-play",
+        "originalCreatedAt": "2026-02-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 395
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a Future Stars player.",
+      "id": 454,
+      "name": "Future Stars",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=454",
+      "previewPlayers": [],
+      "rank": 614,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "future-stars",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/454/future-stars",
+      "releaseDate": "2026-02-07",
+      "releaseDateTimeUtc": "2026-02-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1570,
+        "providerUrl": "https://futmind.com/evolutions/1570/future-stars",
+        "originalCreatedAt": "2026-02-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 396
+    }
+  ]
+}

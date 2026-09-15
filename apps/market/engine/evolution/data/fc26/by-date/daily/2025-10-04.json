@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-04",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "150": "7,500",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Make your favourite player sprint on the pitch through this EVO, gaining the Rapid PlayStyle.",
+      "id": 27,
+      "name": "Sprint Boost",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=27",
+      "previewPlayers": [
+        {
+          "displayName": "Palhinha",
+          "kind": "before",
+          "name": "João Maria Palhinha Gonçalves",
+          "position": "CDM",
+          "rating": 83,
+          "stats": {
+            "def": 84,
+            "dri": 72,
+            "pac": 56,
+            "pas": 70,
+            "phy": 85,
+            "sho": 68
+          }
+        },
+        {
+          "displayName": "Palhinha",
+          "kind": "after",
+          "name": "João Maria Palhinha Gonçalves",
+          "position": "CDM",
+          "rating": 83,
+          "stats": {
+            "def": 84,
+            "dri": 72,
+            "pac": 56,
+            "pas": 70,
+            "phy": 85,
+            "sho": 68
+          }
+        }
+      ],
+      "rank": 984,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 83"
+          ],
+          "value": "Max 83"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "sprint-boost",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "5"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/27/sprint-boost",
+      "releaseDate": "2025-10-04",
+      "releaseDateTimeUtc": "2025-10-04T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1036,
+        "providerUrl": "https://futmind.com/evolutions/1036/sprint-boost",
+        "originalCreatedAt": "2025-10-04T18:00:00.000000Z"
+      },
+      "chronologicalRank": 23
+    },
+    {
+      "availability": {
+        "250": "50,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Become a Cornerstone — transform your favorite Player into a Cornerstone.",
+      "id": 28,
+      "name": "Cornerstones",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=28",
+      "previewPlayers": [
+        {
+          "displayName": "Buffon",
+          "kind": "before",
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 91,
+          "stats": {
+            "def": 51,
+            "dri": 93,
+            "pac": 94,
+            "pas": 78,
+            "phy": 89,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Buffon",
+          "kind": "after",
+          "name": "Gianluigi Buffon",
+          "position": "GK",
+          "rating": 91,
+          "stats": {
+            "def": 51,
+            "dri": 93,
+            "pac": 94,
+            "pas": 78,
+            "phy": 89,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 983,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "cornerstones",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/28/cornerstones",
+      "releaseDate": "2025-10-04",
+      "releaseDateTimeUtc": "2025-10-04T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1044,
+        "providerUrl": "https://futmind.com/evolutions/1044/cornerstones",
+        "originalCreatedAt": "2025-10-04T18:00:00.000000Z"
+      },
+      "chronologicalRank": 24
+    }
+  ]
+}

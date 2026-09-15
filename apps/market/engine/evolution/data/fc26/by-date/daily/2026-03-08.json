@@ -1,0 +1,839 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-03-08",
+  "count": 7,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add 4 Star Weak Foot to any qualified player.",
+      "id": 597,
+      "name": "4 Star Weak Foot",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=597",
+      "previewPlayers": [],
+      "rank": 473,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "4-star-weak-foot",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/597/4-star-weak-foot",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 595,
+          "releaseDate": "2026-03-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        }
+      },
+      "chronologicalRank": 539
+    },
+    {
+      "availability": {
+        "600": "90,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Step into the spotlight and light up the midfield. With dazzling skills, sharp vision, and crisp passes, you keep the action alive. When you’re in charge, everyone wants in on the fun.",
+      "id": 598,
+      "name": "The Party is Inside",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=598",
+      "previewPlayers": [
+        {
+          "displayName": "Román",
+          "kind": "before",
+          "name": "Lucas Román",
+          "position": "RM",
+          "rating": 65,
+          "stats": {
+            "def": 34,
+            "dri": 67,
+            "pac": 64,
+            "pas": 63,
+            "phy": 47,
+            "sho": 60
+          }
+        },
+        {
+          "displayName": "Román",
+          "kind": "after",
+          "name": "Lucas Román",
+          "position": "RM",
+          "rating": 90,
+          "stats": {
+            "def": 34,
+            "dri": 89,
+            "pac": 88,
+            "pas": 90,
+            "phy": 59,
+            "sho": 76
+          }
+        }
+      ],
+      "rank": 472,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 91"
+          ],
+          "value": "Max 91"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RM or RW"
+          ],
+          "value": "RM or RW"
+        }
+      ],
+      "slug": "the-party-is-inside",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+15",
+            "88"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "89",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+25",
+            "89"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "75",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+25",
+            "75"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+30",
+            "87"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "91",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "88",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+30",
+            "88"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "87",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+25",
+            "87"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+25",
+            "85"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "91",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+30",
+            "91"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "90",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+30",
+            "90"
+          ],
+          "value": "+30"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+3",
+            "4"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "8"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Trickster",
+            "8"
+          ],
+          "value": "Trickster"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Technical",
+            "2"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Incisive Pass",
+            "2"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": null,
+          "label": "Positions",
+          "raw": [
+            "Positions",
+            "CAM"
+          ],
+          "value": "CAM"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/598/the-party-is-inside",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": "2026-03-08T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1758,
+        "providerUrl": "https://futmind.com/evolutions/1758/the-party-is-inside",
+        "originalCreatedAt": "2026-03-08T18:00:00.000000Z"
+      },
+      "chronologicalRank": 540
+    },
+    {
+      "availability": {
+        "expires": "3 WEEKS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "3 WEEKS"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Quick Step+ to any qualified player.",
+      "id": 599,
+      "name": "Quick Step+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=599",
+      "previewPlayers": [],
+      "rank": 208,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "quick-step",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "2"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/599/quick-step",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 610,
+          "releaseDate": "2026-03-09"
+        }
+      },
+      "chronologicalRank": 541
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "PS+ BAKERY"
+      ],
+      "description": "Add Anticipate+ to any qualified player.",
+      "id": 600,
+      "name": "Anticipate+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=600",
+      "previewPlayers": [],
+      "rank": 471,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUT Birthday"
+          ],
+          "value": "FUT Birthday"
+        }
+      ],
+      "slug": "anticipate",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "2"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/600/anticipate",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 610,
+          "releaseDate": "2026-03-09"
+        }
+      },
+      "chronologicalRank": 542
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "PS+ BAKERY"
+      ],
+      "description": "Add Block+ to any qualified player.",
+      "id": 601,
+      "name": "Block+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=601",
+      "previewPlayers": [],
+      "rank": 466,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUT Birthday"
+          ],
+          "value": "FUT Birthday"
+        }
+      ],
+      "slug": "block",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Block",
+            "2"
+          ],
+          "value": "Block"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/601/block",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 610,
+          "releaseDate": "2026-03-09"
+        }
+      },
+      "chronologicalRank": 543
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "PS+ BAKERY"
+      ],
+      "description": "Add Intercept+ to any qualified player.",
+      "id": 602,
+      "name": "Intercept+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=602",
+      "previewPlayers": [],
+      "rank": 467,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUT Birthday"
+          ],
+          "value": "FUT Birthday"
+        }
+      ],
+      "slug": "intercept",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "2"
+          ],
+          "value": "Intercept"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/602/intercept",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 610,
+          "releaseDate": "2026-03-09"
+        }
+      },
+      "chronologicalRank": 544
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "Unlimited",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "PS+ BAKERY"
+      ],
+      "description": "Add Jockey+ to any qualified player.",
+      "id": 603,
+      "name": "Jockey+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=603",
+      "previewPlayers": [],
+      "rank": 468,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "FUT Birthday"
+          ],
+          "value": "FUT Birthday"
+        }
+      ],
+      "slug": "jockey",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "2"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/603/jockey",
+      "releaseDate": "2026-03-08",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 598,
+          "releaseDate": "2026-03-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 610,
+          "releaseDate": "2026-03-09"
+        }
+      },
+      "chronologicalRank": 545
+    }
+  ]
+}

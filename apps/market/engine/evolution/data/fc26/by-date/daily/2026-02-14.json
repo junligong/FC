@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-02-14",
+  "count": 6,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Hit your protein goals and get a physical boost for any qualified player.",
+      "id": 474,
+      "name": "Get your Protein",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=474",
+      "previewPlayers": [
+        {
+          "displayName": "Kanu",
+          "kind": "before",
+          "name": "Nwankwo Kanu",
+          "position": "ST",
+          "rating": 87,
+          "stats": {
+            "def": 41,
+            "dri": 90,
+            "pac": 82,
+            "pas": 83,
+            "phy": 80,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Kanu",
+          "kind": "after",
+          "name": "Nwankwo Kanu",
+          "position": "ST",
+          "rating": 88,
+          "stats": {
+            "def": 41,
+            "dri": 90,
+            "pac": 82,
+            "pas": 83,
+            "phy": 84,
+            "sho": 88
+          }
+        }
+      ],
+      "rank": 594,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "get-your-protein",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+4",
+            "89"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "8"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "8"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "8"
+          ],
+          "value": "Relentless"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Throw",
+            "8"
+          ],
+          "value": "Long Throw"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Quick Step",
+            "1"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/474/get-your-protein",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 473,
+          "releaseDate": "2026-02-13"
+        },
+        "nextAnchor": {
+          "evolutionId": 475,
+          "releaseDate": "2026-02-14"
+        }
+      },
+      "chronologicalRank": 416
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a Knockout Royalty player.",
+      "id": 475,
+      "name": "Knockout Royalty",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=475",
+      "previewPlayers": [],
+      "rank": 592,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "knockout-royalty",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/475/knockout-royalty",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": "2026-02-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1599,
+        "providerUrl": "https://futmind.com/evolutions/1599/knockout-royalty",
+        "originalCreatedAt": "2026-02-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 417
+    },
+    {
+      "availability": {
+        "150": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform the look of your favourite Icon with a Knockout Royalty Icon design!",
+      "id": 476,
+      "name": "Knockout Royalty Icon",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=476",
+      "previewPlayers": [],
+      "rank": 593,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "League",
+          "raw": [
+            "League",
+            "Icons"
+          ],
+          "value": "Icons"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "knockout-royalty-icon",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/476/knockout-royalty-icon",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": "2026-02-14T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1600,
+        "providerUrl": "https://futmind.com/evolutions/1600/knockout-royalty-icon",
+        "originalCreatedAt": "2026-02-14T18:00:00.000000Z"
+      },
+      "chronologicalRank": 418
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Tiki Taka+ to any qualified player.",
+      "id": 477,
+      "name": "Tiki Taka+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=477",
+      "previewPlayers": [],
+      "rank": 591,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "tiki-taka",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "2"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/477/tiki-taka",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 476,
+          "releaseDate": "2026-02-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 483,
+          "releaseDate": "2026-02-15"
+        }
+      },
+      "chronologicalRank": 419
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Block+ to any qualified player.",
+      "id": 478,
+      "name": "Block+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=478",
+      "previewPlayers": [],
+      "rank": 590,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "block",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Block",
+            "2"
+          ],
+          "value": "Block"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/478/block",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 476,
+          "releaseDate": "2026-02-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 483,
+          "releaseDate": "2026-02-15"
+        }
+      },
+      "chronologicalRank": 420
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Bruiser+ to any qualified player.",
+      "id": 479,
+      "name": "Bruiser+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=479",
+      "previewPlayers": [],
+      "rank": 589,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "bruiser",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "2"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/479/bruiser",
+      "releaseDate": "2026-02-14",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 476,
+          "releaseDate": "2026-02-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 483,
+          "releaseDate": "2026-02-15"
+        }
+      },
+      "chronologicalRank": 421
+    }
+  ]
+}

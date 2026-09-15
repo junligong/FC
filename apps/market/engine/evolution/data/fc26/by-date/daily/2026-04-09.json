@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-09",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Shatters the limits of lesser champions, granting a surge of offensive power. Crownbreaker Boost enhances attack potential, letting its wielder dominate the field and claim victory.",
+      "id": 732,
+      "name": "Crownbreaker Boost",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=732",
+      "previewPlayers": [
+        {
+          "displayName": "Messi",
+          "kind": "before",
+          "name": "Lionel Messi",
+          "nameZh": "利昂内尔·梅西",
+          "position": "RW",
+          "rating": 88,
+          "stats": {
+            "def": 35,
+            "dri": 91,
+            "pac": 82,
+            "pas": 87,
+            "phy": 66,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "Messi",
+          "kind": "after",
+          "name": "Lionel Messi",
+          "nameZh": "利昂内尔·梅西",
+          "position": "RW",
+          "rating": 89,
+          "stats": {
+            "def": 35,
+            "dri": 91,
+            "pac": 86,
+            "pas": 91,
+            "phy": 66,
+            "sho": 87
+          }
+        }
+      ],
+      "rank": 349,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "crownbreaker-boost",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "90",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+4",
+            "90"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "92",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+4",
+            "92"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "91",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+4",
+            "91"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "8"
+          ],
+          "value": "Quick Step"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "8"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Power Shot",
+            "8"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/732/crownbreaker-boost",
+      "releaseDate": "2026-04-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 731,
+          "releaseDate": "2026-04-08"
+        },
+        "nextAnchor": {
+          "evolutionId": 733,
+          "releaseDate": "2026-04-09"
+        }
+      },
+      "chronologicalRank": 672
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "9",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Stay ice-cold when everything’s on the line. Block out the pressure, step up with confidence, and finish from the spot when it matters most.",
+      "id": 733,
+      "name": "Calm Under Pressure",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=733",
+      "previewPlayers": [
+        {
+          "displayName": "Giménez",
+          "kind": "before",
+          "name": "José María Giménez",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 88,
+            "dri": 65,
+            "pac": 82,
+            "pas": 65,
+            "phy": 87,
+            "sho": 50
+          }
+        },
+        {
+          "displayName": "Giménez",
+          "kind": "after",
+          "name": "José María Giménez",
+          "position": "CB",
+          "rating": 87,
+          "stats": {
+            "def": 88,
+            "dri": 66,
+            "pac": 82,
+            "pas": 66,
+            "phy": 87,
+            "sho": 55
+          }
+        }
+      ],
+      "rank": 348,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "calm-under-pressure",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "88",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "90",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+5",
+            "92"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "88",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+5",
+            "88"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5",
+            "95"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Dead Ball",
+            "8"
+          ],
+          "value": "Dead Ball"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Relentless",
+            "8"
+          ],
+          "value": "Relentless"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/733/calm-under-pressure",
+      "releaseDate": "2026-04-09",
+      "releaseDateTimeUtc": "2026-04-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1899,
+        "providerUrl": "https://futmind.com/evolutions/1899/calm-under-pressure",
+        "originalCreatedAt": "2026-04-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 673
+    }
+  ]
+}

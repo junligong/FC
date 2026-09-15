@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-11-18",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Boost your squad leader's resilience and determination by enhancing key Physical stats.",
+      "id": 111,
+      "name": "Captain's Grit",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=111",
+      "previewPlayers": [
+        {
+          "displayName": "Zubimendi",
+          "kind": "before",
+          "name": "Martín Zubimendi Ibáñez",
+          "position": "CDM",
+          "rating": 83,
+          "stats": {
+            "def": 80,
+            "dri": 79,
+            "pac": 66,
+            "pas": 79,
+            "phy": 73,
+            "sho": 67
+          }
+        },
+        {
+          "displayName": "Zubimendi",
+          "kind": "after",
+          "name": "Martín Zubimendi Ibáñez",
+          "position": "CDM",
+          "rating": 83,
+          "stats": {
+            "def": 80,
+            "dri": 79,
+            "pac": 66,
+            "pas": 79,
+            "phy": 76,
+            "sho": 67
+          }
+        }
+      ],
+      "rank": 902,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 83"
+          ],
+          "value": "Max 83"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "captains-grit",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+4",
+            "84"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "87",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+5",
+            "87"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "86",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+5",
+            "86"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "85",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+4",
+            "85"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "84",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+4",
+            "84"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Enforcer",
+            "5"
+          ],
+          "value": "Enforcer"
+        },
+        {
+          "cap": "5",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Press Proven",
+            "5"
+          ],
+          "value": "Press Proven"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/111/captains-grit",
+      "releaseDate": "2025-11-18",
+      "releaseDateTimeUtc": "2025-11-18T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1173,
+        "providerUrl": "https://futmind.com/evolutions/1173/captain-s-grit",
+        "originalCreatedAt": "2025-11-18T18:00:00.000000Z"
+      },
+      "chronologicalRank": 107
+    }
+  ]
+}

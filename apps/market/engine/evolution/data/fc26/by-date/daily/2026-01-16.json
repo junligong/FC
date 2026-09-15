@@ -1,0 +1,1922 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-16",
+  "count": 8,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Low Driven Shot to any qualified player.",
+      "id": 291,
+      "name": "Low Driven Shot",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=291",
+      "previewPlayers": [],
+      "rank": 750,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        }
+      ],
+      "slug": "low-driven-shot",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/291/low-driven-shot",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 285,
+          "releaseDate": "2026-01-14"
+        },
+        "nextAnchor": {
+          "evolutionId": 292,
+          "releaseDate": "2026-01-16"
+        }
+      },
+      "chronologicalRank": 260
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Break in your new boots and prepare for the big match with attacking focused boosts.",
+      "id": 292,
+      "name": "New Boots",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=292",
+      "previewPlayers": [
+        {
+          "displayName": "Bahoya",
+          "kind": "before",
+          "name": "Jean-Mattéo Bahoya",
+          "position": "CAM",
+          "rating": 85,
+          "stats": {
+            "def": 60,
+            "dri": 83,
+            "pac": 96,
+            "pas": 81,
+            "phy": 70,
+            "sho": 80
+          }
+        },
+        {
+          "displayName": "Bahoya",
+          "kind": "after",
+          "name": "Jean-Mattéo Bahoya",
+          "position": "CAM",
+          "rating": 86,
+          "stats": {
+            "def": 60,
+            "dri": 83,
+            "pac": 96,
+            "pas": 81,
+            "phy": 70,
+            "sho": 82
+          }
+        }
+      ],
+      "rank": 749,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "new-boots",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "87",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+2",
+            "87"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "7"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/292/new-boots",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": "2026-01-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1405,
+        "providerUrl": "https://futmind.com/evolutions/1405/new-boots",
+        "originalCreatedAt": "2026-01-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 261
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "BUILD YOUR TOTY HM"
+      ],
+      "description": "Start your journey by choosing a player to receive the TOTY HM Evolution rarity.",
+      "id": 293,
+      "name": "Build your TOTY HM EVO",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=293",
+      "previewPlayers": [
+        {
+          "displayName": "Adeline",
+          "kind": "before",
+          "name": "Martin Adeline",
+          "position": "CM",
+          "rating": 65,
+          "stats": {
+            "def": 58,
+            "dri": 67,
+            "pac": 64,
+            "pas": 64,
+            "phy": 64,
+            "sho": 58
+          }
+        },
+        {
+          "displayName": "Adeline",
+          "kind": "after",
+          "name": "Martin Adeline",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 58,
+            "dri": 80,
+            "pac": 80,
+            "pas": 80,
+            "phy": 70,
+            "sho": 58
+          }
+        }
+      ],
+      "rank": 748,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Total Positions",
+          "raw": [
+            "Total Positions",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM or CM or CDM"
+          ],
+          "value": "CAM or CM or CDM"
+        }
+      ],
+      "slug": "build-your-toty-hm-evo",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "87",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+40",
+            "87"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "82",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+40",
+            "82"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "78",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+40",
+            "78"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "78",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+40",
+            "78"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "81",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+40",
+            "81"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "78",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+40",
+            "78"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "81",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+40",
+            "81"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "78",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+40",
+            "78"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "81",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+40",
+            "81"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "80",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+40",
+            "80"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "78",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+40",
+            "78"
+          ],
+          "value": "+40"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/293/build-your-toty-hm-evo",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": "2026-01-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1406,
+        "providerUrl": "https://futmind.com/evolutions/1406/build-your-toty-hm-evo",
+        "originalCreatedAt": "2026-01-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 262
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "BUILD YOUR TOTY HM"
+      ],
+      "description": "Continue building your TOTY HM player by turning them into an elite Box-to-Box CM. All players will receive +2 OVR (89 OVR).",
+      "id": 294,
+      "name": "TOTY HM CM Builder",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=294",
+      "previewPlayers": [
+        {
+          "displayName": "Kim Dong Min",
+          "kind": "before",
+          "name": "Dong Min Kim",
+          "position": "CDM",
+          "rating": 87,
+          "stats": {
+            "def": 45,
+            "dri": 80,
+            "pac": 80,
+            "pas": 80,
+            "phy": 60,
+            "sho": 34
+          }
+        },
+        {
+          "displayName": "Kim Dong Min",
+          "kind": "after",
+          "name": "Dong Min Kim",
+          "position": "CDM",
+          "rating": 89,
+          "stats": {
+            "def": 65,
+            "dri": 88,
+            "pac": 85,
+            "pas": 89,
+            "phy": 62,
+            "sho": 54
+          }
+        }
+      ],
+      "rank": 746,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "TOTY Evolution"
+          ],
+          "value": "TOTY Evolution"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CM"
+          ],
+          "value": "CM"
+        }
+      ],
+      "slug": "toty-hm-cm-builder",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "83",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+40",
+            "88"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "88",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+40",
+            "88"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "88",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+40",
+            "88"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "86",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+40",
+            "86"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "87",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+40",
+            "87"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+40",
+            "89"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "88",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+40",
+            "88"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "85",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+40",
+            "85"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "90",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+40",
+            "90"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "87",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+40",
+            "87"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "84",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "90",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+40",
+            "90"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": "86",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+40",
+            "86"
+          ],
+          "value": "+40"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "7"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "1"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box-to-Box++"
+          ],
+          "value": "Box-to-Box++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/294/toty-hm-cm-builder",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": "2026-01-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1407,
+        "providerUrl": "https://futmind.com/evolutions/1407/toty-hm-cm-builder",
+        "originalCreatedAt": "2026-01-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 263
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "BUILD YOUR TOTY HM"
+      ],
+      "description": "Continue building your TOTY HM player by turning them into a colossal CDM. All players will receive +2 OVR (89 OVR).",
+      "id": 295,
+      "name": "TOTY HM CDM Builder",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=295",
+      "previewPlayers": [
+        {
+          "displayName": "Al Bishi",
+          "kind": "before",
+          "name": "Mansour Al Bishi",
+          "position": "CM",
+          "rating": 87,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 80,
+            "pas": 80,
+            "phy": 71,
+            "sho": 48
+          }
+        },
+        {
+          "displayName": "Al Bishi",
+          "kind": "after",
+          "name": "Mansour Al Bishi",
+          "position": "CM",
+          "rating": 89,
+          "stats": {
+            "def": 88,
+            "dri": 82,
+            "pac": 83,
+            "pas": 82,
+            "phy": 87,
+            "sho": 68
+          }
+        }
+      ],
+      "rank": 747,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "TOTY Evolution"
+          ],
+          "value": "TOTY Evolution"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CDM"
+          ],
+          "value": "CDM"
+        }
+      ],
+      "slug": "toty-hm-cdm-builder",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "80",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+20",
+            "80"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "83",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+50",
+            "86"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "88",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "88",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "83",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "82",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "83",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+50",
+            "87"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "84",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+50",
+            "89"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "89",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+50",
+            "89"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "83",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "83"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "84",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Jockey",
+            "7"
+          ],
+          "value": "Jockey"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "7"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "1"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Holding++"
+          ],
+          "value": "Holding++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Deep-Lying Playmaker++"
+          ],
+          "value": "Deep-Lying Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Centre Half++"
+          ],
+          "value": "Centre Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Wide Half++"
+          ],
+          "value": "Wide Half++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Box Crasher++"
+          ],
+          "value": "Box Crasher++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/295/toty-hm-cdm-builder",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": "2026-01-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1408,
+        "providerUrl": "https://futmind.com/evolutions/1408/toty-hm-cdm-builder",
+        "originalCreatedAt": "2026-01-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 264
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "BUILD YOUR TOTY HM"
+      ],
+      "description": "Continue building your TOTY HM player by turning them into a magical CAM. All players will receive +2 OVR (89 OVR).",
+      "id": 296,
+      "name": "TOTY HM CAM Builder",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=296",
+      "previewPlayers": [
+        {
+          "displayName": "Albarracín",
+          "kind": "before",
+          "name": "Agustín Albarracín",
+          "position": "LW",
+          "rating": 87,
+          "stats": {
+            "def": 40,
+            "dri": 80,
+            "pac": 80,
+            "pas": 80,
+            "phy": 58,
+            "sho": 66
+          }
+        },
+        {
+          "displayName": "Albarracín",
+          "kind": "after",
+          "name": "Agustín Albarracín",
+          "position": "LW",
+          "rating": 89,
+          "stats": {
+            "def": 40,
+            "dri": 89,
+            "pac": 86,
+            "pas": 86,
+            "phy": 58,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 745,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 87"
+          ],
+          "value": "Max 87"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Rarity",
+          "raw": [
+            "Rarity",
+            "TOTY Evolution"
+          ],
+          "value": "TOTY Evolution"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CAM"
+          ],
+          "value": "CAM"
+        }
+      ],
+      "slug": "toty-hm-cam-builder",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "89",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "87",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+20",
+            "89"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+50",
+            "89"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "86",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "89",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+50",
+            "89"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "88",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "89",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+50",
+            "89"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "87",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+20",
+            "86"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "88",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+50",
+            "88"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "85",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "87",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "87"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "86",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+50",
+            "86"
+          ],
+          "value": "+50"
+        },
+        {
+          "cap": "88",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+20",
+            "88"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "4",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "7"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "7"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "1"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Playmaker++"
+          ],
+          "value": "Playmaker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Classic 10++"
+          ],
+          "value": "Classic 10++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Shadow Striker++"
+          ],
+          "value": "Shadow Striker++"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Half Winger++"
+          ],
+          "value": "Half Winger++"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/296/toty-hm-cam-builder",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": "2026-01-16T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1409,
+        "providerUrl": "https://futmind.com/evolutions/1409/toty-hm-cam-builder",
+        "originalCreatedAt": "2026-01-16T18:00:00.000000Z"
+      },
+      "chronologicalRank": 265
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Quick Step to any qualified player.",
+      "id": 298,
+      "name": "Quick Step",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=298",
+      "previewPlayers": [],
+      "rank": 744,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 86"
+          ],
+          "value": "Max 86"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 6"
+          ],
+          "value": "Max 6"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "quick-step",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Quick Step",
+            "7"
+          ],
+          "value": "Quick Step"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/298/quick-step",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 296,
+          "releaseDate": "2026-01-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 303,
+          "releaseDate": "2026-01-17"
+        }
+      },
+      "chronologicalRank": 266
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Transform your favourite player into a Positional Excellence player. This item rarity offers full chemistry in position!",
+      "id": 299,
+      "name": "Positional Excellence",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=299",
+      "previewPlayers": [],
+      "rank": 743,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "positional-excellence",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/299/positional-excellence",
+      "releaseDate": "2026-01-16",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 296,
+          "releaseDate": "2026-01-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 303,
+          "releaseDate": "2026-01-17"
+        }
+      },
+      "chronologicalRank": 267
+    }
+  ]
+}

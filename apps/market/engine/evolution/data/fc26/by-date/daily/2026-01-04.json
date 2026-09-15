@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-01-04",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Become the ultimate silver playmaker with upgrades to Passing",
+      "id": 263,
+      "name": "Silver Passer",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=263",
+      "previewPlayers": [],
+      "rank": 768,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 74"
+          ],
+          "value": "Max 74"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "silver-passer",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "74",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1",
+            "74"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "75",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "75"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "80",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "80",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+20",
+            "80"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+20",
+            "80"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Incisive Pass",
+            "7"
+          ],
+          "value": "Incisive Pass"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/263/silver-passer",
+      "releaseDate": "2026-01-04",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 262,
+          "releaseDate": "2026-01-03"
+        },
+        "nextAnchor": {
+          "evolutionId": 264,
+          "releaseDate": "2026-01-04"
+        }
+      },
+      "chronologicalRank": 241
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "41",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Achieve Peak Endurance reserved for elite players.",
+      "id": 264,
+      "name": "Peak Endurance",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=264",
+      "previewPlayers": [
+        {
+          "displayName": "Mancini",
+          "kind": "before",
+          "name": "Gianluca Mancini",
+          "nameZh": "詹卢卡·曼奇尼",
+          "position": "CB",
+          "rating": 85,
+          "stats": {
+            "def": 87,
+            "dri": 71,
+            "pac": 73,
+            "pas": 60,
+            "phy": 84,
+            "sho": 52
+          }
+        },
+        {
+          "displayName": "Mancini",
+          "kind": "after",
+          "name": "Gianluca Mancini",
+          "nameZh": "詹卢卡·曼奇尼",
+          "position": "CB",
+          "rating": 85,
+          "stats": {
+            "def": 87,
+            "dri": 71,
+            "pac": 73,
+            "pas": 60,
+            "phy": 85,
+            "sho": 52
+          }
+        }
+      ],
+      "rank": 767,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "peak-endurance",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "90",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+3",
+            "90"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/264/peak-endurance",
+      "releaseDate": "2026-01-04",
+      "releaseDateTimeUtc": "2026-01-04T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1376,
+        "providerUrl": "https://futmind.com/evolutions/1376/peak-endurance",
+        "originalCreatedAt": "2026-01-04T18:00:00.000000Z"
+      },
+      "chronologicalRank": 242
+    }
+  ]
+}

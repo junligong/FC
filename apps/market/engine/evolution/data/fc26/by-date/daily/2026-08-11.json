@@ -1,0 +1,386 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-08-11",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "1 DAYS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Some full backs change the game at both ends. Evolve your player and develop the attacking and defensive qualities that make them a constant threat.",
+      "id": 1221,
+      "name": "Back Shortly",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1221",
+      "previewPlayers": [
+        {
+          "displayName": "Hincapié",
+          "kind": "before",
+          "name": "Piero Hincapié",
+          "nameZh": "皮耶罗·欣卡皮耶",
+          "position": "CB",
+          "rating": 83,
+          "stats": {
+            "def": 84,
+            "dri": 72,
+            "pac": 84,
+            "pas": 65,
+            "phy": 82,
+            "sho": 41
+          }
+        },
+        {
+          "displayName": "Hincapié",
+          "kind": "after",
+          "name": "Piero Hincapié",
+          "nameZh": "皮耶罗·欣卡皮耶",
+          "position": "CB",
+          "rating": 96,
+          "stats": {
+            "def": 96,
+            "dri": 72,
+            "pac": 95,
+            "pas": 86,
+            "phy": 82,
+            "sho": 65
+          }
+        }
+      ],
+      "rank": 10,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 95"
+          ],
+          "value": "Max 95"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "LB"
+          ],
+          "value": "LB"
+        }
+      ],
+      "slug": "back-shortly",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "96",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+15",
+            "96"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "95",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "96",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "96",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+20",
+            "96"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "96",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+25",
+            "96"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "94",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+25",
+            "94"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "97",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+20",
+            "97"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "97",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+20",
+            "97"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": "95",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+25",
+            "95"
+          ],
+          "value": "+25"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "7"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "7"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Anticipate",
+            "4"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Pinged Pass",
+            "4"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Rapid",
+            "4"
+          ],
+          "value": "Rapid"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1221/back-shortly",
+      "releaseDate": "2026-08-11",
+      "releaseDateTimeUtc": "2026-08-11T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2562,
+        "providerUrl": "https://futmind.com/evolutions/2562/back-shortly",
+        "originalCreatedAt": "2026-08-11T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1158
+    }
+  ]
+}

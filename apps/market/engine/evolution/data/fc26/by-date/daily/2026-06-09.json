@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-09",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "The best free kick takers make it look inevitable. Evolve your player and master the art of the dead ball.",
+      "id": 1005,
+      "name": "Free Kick Mastery",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1005",
+      "previewPlayers": [
+        {
+          "displayName": "Alexander-Arnold",
+          "kind": "before",
+          "name": "Trent Alexander-Arnold",
+          "nameZh": "特伦特·亚历山大-阿诺德",
+          "position": "RB",
+          "rating": 90,
+          "stats": {
+            "def": 90,
+            "dri": 90,
+            "pac": 88,
+            "pas": 93,
+            "phy": 87,
+            "sho": 76
+          }
+        },
+        {
+          "displayName": "Alexander-Arnold",
+          "kind": "after",
+          "name": "Trent Alexander-Arnold",
+          "nameZh": "特伦特·亚历山大-阿诺德",
+          "position": "RB",
+          "rating": 91,
+          "stats": {
+            "def": 90,
+            "dri": 90,
+            "pac": 88,
+            "pas": 94,
+            "phy": 87,
+            "sho": 77
+          }
+        }
+      ],
+      "rank": 164,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 2"
+          ],
+          "value": "Max 2"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "free-kick-mastery",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "95",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": null,
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+20"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "95",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+20",
+            "95"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "3",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Dead Ball",
+            "3"
+          ],
+          "value": "Dead Ball"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1005/free-kick-mastery",
+      "releaseDate": "2026-06-09",
+      "releaseDateTimeUtc": "2026-06-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2228,
+        "providerUrl": "https://futmind.com/evolutions/2228/free-kick-mastery",
+        "originalCreatedAt": "2026-06-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 944
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "training": "2 DAYS",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "TRAINING CAMP"
+      ],
+      "description": "Fine-tune every detail before the biggest stage, and prepare for the path that lies ahead.",
+      "id": 1006,
+      "name": "Final Preparations",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1006",
+      "previewPlayers": [
+        {
+          "displayName": "Matthäus",
+          "kind": "before",
+          "name": "Lothar Matthäus",
+          "position": "CM",
+          "rating": 90,
+          "stats": {
+            "def": 89,
+            "dri": 81,
+            "pac": 88,
+            "pas": 88,
+            "phy": 82,
+            "sho": 87
+          }
+        },
+        {
+          "displayName": "Matthäus",
+          "kind": "after",
+          "name": "Lothar Matthäus",
+          "position": "CM",
+          "rating": 92,
+          "stats": {
+            "def": 91,
+            "dri": 83,
+            "pac": 90,
+            "pas": 90,
+            "phy": 84,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 163,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 90"
+          ],
+          "value": "Max 90"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "final-preparations",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Shooting",
+          "raw": [
+            "Shooting",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "95",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+2",
+            "95"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "5",
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "5",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4",
+            "5"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1006/final-preparations",
+      "releaseDate": "2026-06-09",
+      "releaseDateTimeUtc": "2026-06-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2229,
+        "providerUrl": "https://futmind.com/evolutions/2229/final-preparations",
+        "originalCreatedAt": "2026-06-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 945
+    }
+  ]
+}

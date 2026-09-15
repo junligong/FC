@@ -1,0 +1,783 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "category": "expiring-soon",
+  "count": 3,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "9 HOURS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "9 HOURS"
+      },
+      "categories": [
+        "REWARDS",
+        "EXPIRING SOON"
+      ],
+      "description": "Elegant on the ball, relentless of it.",
+      "id": 1218,
+      "name": "Passing the Test",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1218",
+      "previewPlayers": [
+        {
+          "displayName": "Mbappé",
+          "kind": "before",
+          "name": "Kylian Mbappé",
+          "nameZh": "基利安·姆巴佩",
+          "position": "ST",
+          "rating": 98,
+          "stats": {
+            "def": 60,
+            "dri": 99,
+            "pac": 99,
+            "pas": 91,
+            "phy": 84,
+            "sho": 98
+          }
+        },
+        {
+          "displayName": "Mbappé",
+          "kind": "after",
+          "name": "Kylian Mbappé",
+          "nameZh": "基利安·姆巴佩",
+          "position": "ST",
+          "rating": 98,
+          "stats": {
+            "def": 65,
+            "dri": 99,
+            "pac": 99,
+            "pas": 98,
+            "phy": 94,
+            "sho": 98
+          }
+        }
+      ],
+      "rank": 53,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 98"
+          ],
+          "value": "Max 98"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "passing-the-test",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+7",
+            "98"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "98",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+20",
+            "98"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "94",
+          "label": "Defending",
+          "raw": [
+            "Defending",
+            "+5",
+            "94"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "95",
+          "label": "Physical",
+          "raw": [
+            "Physical",
+            "+10",
+            "95"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+4"
+          ],
+          "value": "+4"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1218/passing-the-test",
+      "releaseDate": "2026-08-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1217,
+          "releaseDate": "2026-08-09"
+        },
+        "nextAnchor": {
+          "evolutionId": 1220,
+          "releaseDate": "2026-08-10"
+        }
+      },
+      "chronologicalRank": 1155
+    },
+    {
+      "availability": {
+        "expires": "9 HOURS",
+        "free": true,
+        "repeatable": true,
+        "unlock": "9 HOURS"
+      },
+      "categories": [
+        "REWARDS",
+        "EXPIRING SOON"
+      ],
+      "description": "Found in the Upgrades section of SBCs",
+      "id": 1258,
+      "name": "Guard Duty",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1258",
+      "previewPlayers": [
+        {
+          "displayName": "Gerrard",
+          "kind": "before",
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 97,
+          "stats": {
+            "def": 90,
+            "dri": 95,
+            "pac": 94,
+            "pas": 99,
+            "phy": 93,
+            "sho": 98
+          }
+        },
+        {
+          "displayName": "Gerrard",
+          "kind": "after",
+          "name": "Steven Gerrard",
+          "position": "CM",
+          "rating": 98,
+          "stats": {
+            "def": 98,
+            "dri": 95,
+            "pac": 96,
+            "pas": 99,
+            "phy": 97,
+            "sho": 98
+          }
+        }
+      ],
+      "rank": 24,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 97"
+          ],
+          "value": "Max 97"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        }
+      ],
+      "slug": "guard-duty",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "98",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+7",
+            "98"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "96",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+10",
+            "96"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "98",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+8",
+            "98"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "97",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+8",
+            "97"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "94",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+8",
+            "94"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "98",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+12",
+            "98"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "98",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+12",
+            "98"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "96",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+8",
+            "96"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "95",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+10",
+            "95"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "98",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+12",
+            "98"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "95",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+8",
+            "95"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "94",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+10",
+            "94"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "97",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+12",
+            "97"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "96",
+          "label": "Sprint Speed",
+          "raw": [
+            "Sprint Speed",
+            "+10",
+            "96"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": null,
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+12"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "97",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+8",
+            "97"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "97",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+8",
+            "97"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "96",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "96"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+4"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Bruiser",
+            "7"
+          ],
+          "value": "Bruiser"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "7"
+          ],
+          "value": "Anticipate"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "7"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Intercept",
+            "5"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Aerial Fortress",
+            "5"
+          ],
+          "value": "Aerial Fortress"
+        },
+        {
+          "cap": "5",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Jockey",
+            "5"
+          ],
+          "value": "Jockey"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1258/guard-duty",
+      "releaseDate": "2026-08-17",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 1257,
+          "releaseDate": "2026-08-16"
+        },
+        "nextAnchor": {
+          "evolutionId": 1259,
+          "releaseDate": "2026-08-17"
+        }
+      },
+      "chronologicalRank": 1194
+    },
+    {
+      "availability": {
+        "expires": "1 WEEKS",
+        "free": true,
+        "repeatable": "4",
+        "unlock": "9 HOURS"
+      },
+      "categories": [
+        "EVOLUTIONS",
+        "EXPIRING SOON"
+      ],
+      "description": "No fuss, no flashy tricks. Just the clinical upgrades and final touches needed to turn a great player into an elite finisher.",
+      "id": 1259,
+      "name": "Final Touches",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=1259",
+      "previewPlayers": [
+        {
+          "displayName": "Ronaldinho",
+          "kind": "before",
+          "name": "Ronaldo de Assis Moreira",
+          "position": "LW",
+          "rating": 94,
+          "stats": {
+            "def": 40,
+            "dri": 96,
+            "pac": 92,
+            "pas": 91,
+            "phy": 81,
+            "sho": 90
+          }
+        },
+        {
+          "displayName": "Ronaldinho",
+          "kind": "after",
+          "name": "Ronaldo de Assis Moreira",
+          "position": "LW",
+          "rating": 96,
+          "stats": {
+            "def": 40,
+            "dri": 96,
+            "pac": 92,
+            "pas": 91,
+            "phy": 81,
+            "sho": 95
+          }
+        }
+      ],
+      "rank": 23,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 96"
+          ],
+          "value": "Max 96"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "final-touches",
+      "status": "active",
+      "upgrades": [
+        {
+          "cap": "97",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+2",
+            "97"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": null,
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "97",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+5",
+            "97"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "97",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+5",
+            "97"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Free Kick",
+          "raw": [
+            "Free Kick",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+5"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": null,
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+2"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "7"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "7",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Dead Ball",
+            "7"
+          ],
+          "value": "Dead Ball"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Finesse Shot",
+            "4"
+          ],
+          "value": "Finesse Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Power Shot",
+            "4"
+          ],
+          "value": "Power Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Gamechanger",
+            "4"
+          ],
+          "value": "Gamechanger"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/1259/final-touches",
+      "releaseDate": "2026-08-17",
+      "releaseDateTimeUtc": "2026-08-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2615,
+        "providerUrl": "https://futmind.com/evolutions/2615/final-touches",
+        "originalCreatedAt": "2026-08-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 1195
+    }
+  ]
+}

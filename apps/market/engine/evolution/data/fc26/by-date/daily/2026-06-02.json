@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-06-02",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "5",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Quicker, sharper, stronger. Evolve your player and take their game to the next level.",
+      "id": 885,
+      "name": "Street Slick",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=885",
+      "previewPlayers": [
+        {
+          "displayName": "Wirtz",
+          "kind": "before",
+          "name": "Florian Wirtz",
+          "nameZh": "弗洛里安·维尔茨",
+          "position": "CAM",
+          "rating": 89,
+          "stats": {
+            "def": 54,
+            "dri": 90,
+            "pac": 81,
+            "pas": 89,
+            "phy": 67,
+            "sho": 83
+          }
+        },
+        {
+          "displayName": "Wirtz",
+          "kind": "after",
+          "name": "Florian Wirtz",
+          "nameZh": "弗洛里安·维尔茨",
+          "position": "CAM",
+          "rating": 89,
+          "stats": {
+            "def": 54,
+            "dri": 91,
+            "pac": 83,
+            "pas": 89,
+            "phy": 69,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 202,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "street-slick",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "93",
+          "label": "Acceleration",
+          "raw": [
+            "Acceleration",
+            "+3",
+            "93"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "95",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+3",
+            "95"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "94",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+3",
+            "94"
+          ],
+          "value": "+3"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/885/street-slick",
+      "releaseDate": "2026-06-02",
+      "releaseDateTimeUtc": "2026-06-02T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2095,
+        "providerUrl": "https://futmind.com/evolutions/2095/street-slick",
+        "originalCreatedAt": "2026-06-02T18:00:00.000000Z"
+      },
+      "chronologicalRank": 824
+    }
+  ]
+}

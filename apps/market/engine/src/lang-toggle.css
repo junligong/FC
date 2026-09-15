@@ -1,0 +1,47 @@
+/* FCMaster Language Toggle CSS */
+
+/* Language toggle button bar */
+#lang-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  display: flex;
+  gap: 4px;
+  background: rgba(20, 24, 49, 0.95);
+  border-radius: 8px;
+  padding: 4px;
+  border: 1px solid #2a3055;
+}
+
+#lang-toggle button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#lang-toggle button:hover {
+  color: #e0e0e0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+#lang-toggle button.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Dual-language text visibility */
+body.lang-zh .en { display: none; }
+body.lang-en .zh { display: none; }
+/* bilingual: show both */
+
+/* Player name spans: default to data attribute rendering via JS */
+.player-name { }
+
+/* Chart labels need special handling — updated via JS callbacks */

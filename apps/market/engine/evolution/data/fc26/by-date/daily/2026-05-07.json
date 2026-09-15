@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-05-07",
+  "count": 1,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "3",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Hit your stride with Lucky Number Seven and give your eligible player boosts across key stats.",
+      "id": 831,
+      "name": "Lucky Number Seven",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=831",
+      "previewPlayers": [
+        {
+          "displayName": "Danjuma",
+          "kind": "before",
+          "name": "Arnaut Danjuma",
+          "position": "ST",
+          "rating": 88,
+          "stats": {
+            "def": 60,
+            "dri": 89,
+            "pac": 92,
+            "pas": 85,
+            "phy": 81,
+            "sho": 88
+          }
+        },
+        {
+          "displayName": "Danjuma",
+          "kind": "after",
+          "name": "Arnaut Danjuma",
+          "position": "ST",
+          "rating": 89,
+          "stats": {
+            "def": 60,
+            "dri": 91,
+            "pac": 92,
+            "pas": 88,
+            "phy": 84,
+            "sho": 89
+          }
+        }
+      ],
+      "rank": 255,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "lucky-number-seven",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "90",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+7",
+            "90"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "93",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+7",
+            "93"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "93",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+7",
+            "93"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "92",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+7",
+            "92"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "95",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+7",
+            "95"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "92",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+7",
+            "92"
+          ],
+          "value": "+7"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+7",
+            "92"
+          ],
+          "value": "+7"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/831/lucky-number-seven",
+      "releaseDate": "2026-05-07",
+      "releaseDateTimeUtc": "2026-05-07T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 2018,
+        "providerUrl": "https://futmind.com/evolutions/2018/lucky-number-seven",
+        "originalCreatedAt": "2026-05-07T18:00:00.000000Z"
+      },
+      "chronologicalRank": 770
+    }
+  ]
+}

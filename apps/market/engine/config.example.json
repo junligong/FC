@@ -1,0 +1,28 @@
+{
+  "language": "zh",
+  "fc27ListUrl": "https://www.futbin.com/27/players?pos_type=all&position=ST%2CRW%2CLW&version=gold_rare",
+  "fc26ForwardListUrl": "https://www.futbin.com/26/players?pos_type=all&position=ST%2CRW%2CLW&version=gold",
+  "fc27MidfieldListUrl": "https://www.futbin.com/27/players?pos_type=all&position=CAM%2CCM%2CCDM%2CLM%2CRM&version=gold_rare",
+  "fc26MidfieldListUrl": "https://www.futbin.com/26/players?pos_type=all&position=CAM%2CCM%2CCDM%2CLM%2CRM&version=gold",
+  "fc27DefenderListUrl": "https://www.futbin.com/27/players?pos_type=all&position=CB%2CLB%2CRB&version=gold_rare",
+  "fc26DefenderListUrl": "https://www.futbin.com/26/players?pos_type=all&position=CB%2CLB%2CRB&version=gold",
+  "listLimit": 100,
+  "dataDir": "data/players",
+  "outputDir": "output",
+  "browserProfileDir": ".futbin-browser-profile",
+  "headless": false,
+  "viewport": {
+    "width": 1229,
+    "height": 900
+  },
+  "challengeTimeoutMs": 300000,
+  "navigationTimeoutMs": 60000,
+  "requestDelayMs": 1500,
+  "maxPages": 100,
+  "pairPanelWidth": 1200,
+  "captureSelector": "",
+  "captureClip": null,
+  "overrides": {
+    "alexia-putellas-segura": "https://www.futbin.com/26/player/105/alexia-putellas-segura"
+  }
+}

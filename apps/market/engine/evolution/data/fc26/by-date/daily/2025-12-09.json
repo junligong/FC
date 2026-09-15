@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-12-09",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add First Touch+ to any qualified Player.",
+      "id": 175,
+      "name": "First Touch+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=175",
+      "previewPlayers": [],
+      "rank": 841,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 84"
+          ],
+          "value": "Max 84"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 0"
+          ],
+          "value": "Max 0"
+        }
+      ],
+      "slug": "first-touch",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "First Touch",
+            "1"
+          ],
+          "value": "First Touch"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/175/first-touch",
+      "releaseDate": "2025-12-09",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 171,
+          "releaseDate": "2025-12-07"
+        },
+        "nextAnchor": {
+          "evolutionId": 176,
+          "releaseDate": "2025-12-09"
+        }
+      },
+      "chronologicalRank": 170
+    },
+    {
+      "availability": {
+        "100": "10,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Control the middle of the field with upgrades to key Stats, PlayStyles, and a PlayStyle+.",
+      "id": 176,
+      "name": "The Controller",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=176",
+      "previewPlayers": [
+        {
+          "displayName": "Agyemang",
+          "kind": "before",
+          "name": "Michelle Agyemang",
+          "position": "ST",
+          "rating": 85,
+          "stats": {
+            "def": 70,
+            "dri": 85,
+            "pac": 85,
+            "pas": 74,
+            "phy": 86,
+            "sho": 86
+          }
+        },
+        {
+          "displayName": "Agyemang",
+          "kind": "after",
+          "name": "Michelle Agyemang",
+          "position": "ST",
+          "rating": 86,
+          "stats": {
+            "def": 76,
+            "dri": 85,
+            "pac": 85,
+            "pas": 74,
+            "phy": 90,
+            "sho": 86
+          }
+        }
+      ],
+      "rank": 838,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 85"
+          ],
+          "value": "Max 85"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Position",
+          "raw": [
+            "Not Position",
+            "GK"
+          ],
+          "value": "GK"
+        }
+      ],
+      "slug": "the-controller",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "86",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "89",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+15",
+            "89"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "86",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "86",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+12",
+            "86"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Tiki Taka",
+            "6"
+          ],
+          "value": "Tiki Taka"
+        },
+        {
+          "cap": "6",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Intercept",
+            "6"
+          ],
+          "value": "Intercept"
+        },
+        {
+          "cap": "1",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Tiki Taka",
+            "1"
+          ],
+          "value": "Tiki Taka"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/176/the-controller",
+      "releaseDate": "2025-12-09",
+      "releaseDateTimeUtc": "2025-12-09T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1265,
+        "providerUrl": "https://futmind.com/evolutions/1265/the-controller",
+        "originalCreatedAt": "2025-12-09T18:00:00.000000Z"
+      },
+      "chronologicalRank": 171
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "futbin-fc27-fc26-player-compare",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Capture FC27 and FC26 FUTBIN player detail panels and build one-versus-one comparison images.",
+  "scripts": {
+    "capture": "node src/futbin-1v1.mjs",
+    "capture:forward": "node src/futbin-1v1.mjs --group forward",
+    "capture:midfield": "node src/futbin-1v1.mjs --group midfield",
+    "capture:defender": "node src/futbin-1v1.mjs --group defender",
+    "index:midfield": "node src/futbin-1v1.mjs --group midfield --dry-run",
+    "index:defender": "node src/futbin-1v1.mjs --group defender --dry-run",
+    "prices:fc26-launch": "node gold/src/fc26-launch-week-prices.mjs --background",
+    "prices:fc26-3weeks:analyze": "node gold/src/fc26-first-three-weeks-analysis.mjs",
+    "prices:fc26-month:analyze": "node gold/src/fc26-first-month-analysis.mjs",
+    "evolution:fetch": "node evolution/src/fetch-evolutions.mjs --background",
+    "evolution:sort": "node evolution/src/sort-evolutions-by-date.mjs",
+    "evolution:analyze": "node evolution/src/analyze-evolution-cycles.mjs",
+    "names:zh:research": "node src/research-player-chinese-names.mjs",
+    "names:zh:apply": "node src/apply-player-chinese-names.mjs",
+    "data:migrate": "node src/migrate-player-data.mjs",
+    "data:build": "node src/build-player-database.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  },
+  "devDependencies": {
+    "ws": "^8.21.3"
+  }
+}

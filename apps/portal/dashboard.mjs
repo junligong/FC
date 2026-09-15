@@ -1,62 +1,303 @@
-import { readFileSync, existsSync } from 'node:fs';
-import path from 'node:path';
-// 作用：读取四项日报摘要并生成固定汇总首页、历史归档入口和板块导航。
-import { themeReport } from '../../shared/presentation/report-theme.mjs';
-const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const plain = value => String(value ?? '').replace(/<[^>]*>/g, '').trim();
-const safeURL = value => /^https:\/\//.test(value || '') ? esc(value) : '#';
-export function dashboard({root, latestDate, files, embeddedReports, items}) {
-  // Restyle embedded historical content without rewriting archived source files.
-  embeddedReports = Object.fromEntries(Object.entries(embeddedReports).map(([date, encoded]) => {
-    let html = Buffer.from(encoded, 'base64').toString('utf8');
-    html = html.replace(/(<iframe\b[^>]*\bsrc=")data:text\/html;charset=utf-8;base64,([^"#]+)([^"]*)(")/g,
-      (_, prefix, data, hash, suffix) => prefix + 'data:text/html;charset=utf-8;base64,' + Buffer.from(themeReport(Buffer.from(data, 'base64').toString('utf8'))).toString('base64') + hash + suffix);
-    return [date, Buffer.from(html).toString('base64')];
-  }));
-  let tweets = [];
-  try { const data = JSON.parse(readFileSync(path.join(root, `apps/news/data/tweets-${latestDate}.json`), 'utf8')); if (data.date === latestDate) tweets = data.tweets || []; } catch {}
-  const footballPath = path.join(root, `reports/daily/${latestDate}/football.html`);
-  const football = existsSync(footballPath) ? readFileSync(footballPath, 'utf8') : '';
-  const validFootball = football.includes('</html>') && football.includes(latestDate);
-  const cards = validFootball ? football.split(/<div class="news-card"/).slice(1).map(block => {
-    const field = name => plain(block.match(new RegExp('class="'+name+'"[^>]*>([\\s\\S]*?)</div>'))?.[1]);
-    return {title:field('card-title'), summary:field('card-summary')};
-  }).filter(c => c.title) : [];
-  const newsCards = tweets.slice(0, 3).map(t => `<a class="intel" href="${safeURL(t.url)}" target="_blank" rel="noopener noreferrer"><span class="avatar">${esc((t.author || 'X').slice(0,1))}</span><div><h3>${esc(t.translation || t.text)}</h3><p>@${esc(t.handle)} · X 情报</p></div>${t.images?.[0] ? `<img loading="lazy" alt="${esc(t.author)} 原帖配图" src="${safeURL(t.images[0])}">` : ''}</a>`).join('');
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FC27情报台 · 足球 × FC27</title><style>
-*{box-sizing:border-box}body{margin:0;background:#101611;color:#edf0e9;font:16px/1.65 -apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid #c0fa39;outline-offset:4px}[hidden]{display:none!important}.sidebar{position:fixed;inset:0 auto 0 0;width:208px;border-right:1px solid #2c342c;display:flex;flex-direction:column;background:#101611}.brand{padding:27px 24px;font-size:23px;font-weight:850;line-height:1.4}.brand small{display:block;font-size:14px;color:#aab3a7;font-weight:400;margin-top:6px}nav{display:grid;gap:5px}nav a{padding:18px 24px;border-left:4px solid transparent;color:#b8c0b4}nav a.active{color:#c0fa39;background:#232c18;border-color:#c0fa39;font-weight:700}.motto{margin:auto 28px 38px;letter-spacing:6px;font-size:12px;line-height:2.6}.motto small{display:block;letter-spacing:3px;color:#aab3a7;margin-top:25px}main{margin-left:208px;padding:0 30px;max-width:1580px}.top{height:76px;display:flex;justify-content:flex-end;align-items:center;gap:26px;font-size:14px;color:#aeb6aa}.outline{border:1px solid #67735f;background:transparent;border-radius:20px;padding:8px 18px}.hero{display:flex;justify-content:space-between;align-items:center;margin:10px 0 36px}.eyebrow{font-size:12px;letter-spacing:3px;color:#bcc4b7}h1{font-size:clamp(30px,3.5vw,54px);line-height:1.25;margin:14px 0 8px;letter-spacing:-1px}.hero p{color:#b2bcad;margin:0}.aside-quote{border-left:1px solid #4c5847;padding:18px 26px;min-width:185px;font-size:14px}.grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,1fr);gap:18px}.left{display:grid;gap:18px;align-content:start}.panel{border:1px solid #2e382e;border-radius:7px;background:#151d16;overflow:hidden}.panel-head{padding:17px 20px;border-bottom:1px solid #2d362c;display:flex;justify-content:space-between;align-items:center;gap:12px}h2{font-size:23px;margin:0}h3{font-size:16px;line-height:1.6;margin:0}.muted{color:#a4afa0;font-size:14px}.accent{color:#c0fa39}.market{padding:20px}.market-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:17px 0;border-bottom:1px solid #30382e;gap:10px}.empty{padding:27px 0;color:#a9b4a3}.callout{padding:22px;display:flex;justify-content:space-between;align-items:center;gap:16px}.lime{background:#c0fa39;color:#15200b;border:0;border-radius:7px;padding:12px 18px;white-space:nowrap;font-weight:700}.intel{display:flex;gap:15px;align-items:center;padding:23px 20px;border-bottom:1px solid #2d362c}.intel:last-child{border:0}.intel:hover,.story:hover{background:#1c281b}.intel>div{flex:1;min-width:0}.intel h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.intel p{margin:8px 0 0;font-size:13px;color:#a6b29f}.intel img{width:90px;height:90px;object-fit:cover;border-radius:6px}.avatar{background:#edf0e9;color:#182218;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;font-weight:800;flex-shrink:0}.football{padding:20px}.pitch{height:160px;margin:18px 0;background:radial-gradient(ellipse at 50% 100%,#48672b,transparent 70%),linear-gradient(145deg,#1c331e,#0b170f);border:1px solid #3a4b31;border-radius:5px;display:flex;align-items:flex-end;padding:20px;font-size:25px;font-weight:800}.story{display:block;padding:18px 0;border-bottom:1px solid #30382e}.story p{color:#aeb9a7;font-size:14px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin:8px 0}.more{display:block;padding-top:18px;font-size:14px;color:#bcc6b5}.footer{padding:20px 0 32px;display:flex;justify-content:flex-end;gap:22px;font-size:12px;color:#99a58f}.report-list{display:grid;gap:12px;margin:24px 0}.report-item{display:flex;gap:20px;align-items:center;border:1px solid #34402e;padding:20px;border-radius:7px}.report-info{flex:1}.report-desc,.tags{font-size:13px;color:#a7b29f}.date-badge{color:#c0fa39}.tag{margin-right:10px}#archive-frame{width:100%;height:82vh;border:0;margin:16px 0;background:white}#report-date{margin-top:16px}#archive-viewer{padding-top:15px}#close-report{margin-bottom:12px}.sources{padding:25px;border:1px solid #34402e;border-radius:7px}.sources p{color:#b6bfaf}@media(min-width:1500px){main{margin-right:auto}}@media(max-width:1050px){.sidebar{width:175px}.brand{font-size:20px}main{margin-left:175px;padding:0 20px}.aside-quote{display:none}.grid{grid-template-columns:minmax(0,1.4fr) minmax(260px,1fr)}.intel img{width:65px;height:65px}.avatar{display:none}}@media(max-width:760px){.sidebar{position:relative;width:auto;border-right:0;border-bottom:1px solid #34402e}.brand{padding:18px 20px}.brand small{display:inline;margin-left:15px}nav{display:flex;overflow:auto}nav a{white-space:nowrap;padding:12px 17px;border-left:0;border-bottom:3px solid transparent}.motto{display:none}main{margin:0;padding:0 17px}.top{height:65px;gap:12px;font-size:12px}.hero{margin:8px 0 25px}.eyebrow{font-size:10px;letter-spacing:2px}.grid{grid-template-columns:1fr}.intel img{width:75px;height:75px}.report-item{flex-wrap:wrap}.tags{width:100%}.callout{flex-wrap:wrap}.footer{justify-content:flex-start;flex-wrap:wrap}}
-.archive-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.archive-tabs button{background:#192319;border:1px solid #34402e;border-radius:6px;padding:10px 20px}.archive-tabs button.active{background:#c0fa39;color:#17220b;border-color:#c0fa39}.report-item{background:#151d16;padding:22px 24px;border-radius:8px}.report-item:hover{border-color:#c0fa39}.report-title{font-size:18px;font-weight:650}.date-badge{font-size:16px;font-weight:700;min-width:90px}.report-desc{margin-top:5px}.tag{display:inline-block;padding:4px 8px;background:#23311e;border-radius:4px}.tag-paused{background:#272d26}.report-item .arrow{color:#c0fa39}#archive-frame{background:#101611} </style></head><body><aside class="sidebar"><a class="brand" href="#overview">FC27情报台<small>足球 × FC27</small></a><nav aria-label="主导航"><a href="#overview">▥　今日总览</a><a href="#football">◉　足球动态</a><a href="#market">▤　FC27市场</a><a href="#news">＠　X 情报</a><a href="#sbc">▱　SBC 推荐</a><a href="#archives">◷　历史日报</a></nav><div class="motto">MORE<br>THAN<br>A GAME.<small>FOOTBALL<br>CONNECTS US</small></div></aside><main><div class="top"><span>${latestDate} · 北京时间</span><button class="outline" id="share">↗ 分享链接</button></div><section id="overview"><header class="hero"><div><div class="eyebrow">FOOTBALL INTELLIGENCE. BETTER DECISIONS.</div><h1>先看情报，再做决定。</h1><p>整合足球动态与 FC27 数据，做更聪明的球迷。</p></div><p class="aside-quote">比赛从不停止，<br>好决定总有依据。</p></header><div class="grid"><div class="left"><section class="panel"><div class="panel-head"><h2>FC27 市场监控</h2><span class="accent muted">以当日报告为准</span></div><div class="market"><div class="market-row muted"><span>内容</span><span>报告日期</span><span>查看</span></div><div class="market-row"><span>球员价格与市场分析</span><span>${latestDate}</span><a class="accent" href="#market">查看状态 ↗</a></div><p class="empty">未生成的行情不会填充推测价格。<br>市场任务按已启用的设置运行。</p></div></section><section class="panel callout"><div><h3>每天的情报，都有迹可循。</h3><span class="muted">${files.length} 份历史日报 · 按日期回看</span></div><a class="lime" href="#archives">浏览归档 →</a></section><section class="panel"><div class="panel-head"><h2>X 最新情报</h2><a class="muted" href="#news">查看全部 ${tweets.length || ''} →</a></div>${newsCards || '<p class="market muted">暂无当日资讯快照，请查看报告状态。</p>'}</section></div><section class="panel football"><h2>今日足球</h2><div class="pitch">足球让平凡的日子发光。</div><span class="muted">${latestDate} · 日报摘录</span>${cards.slice(0,3).map(c=>`<a class="story" href="#football"><h3>${esc(c.title)}</h3><p>${esc(c.summary)}</p></a>`).join('') || '<p class="muted">暂无完整当日报告。</p>'}<a class="more" href="#football">更多足球动态 →</a></section></div></section><section id="archives" hidden><h1>历史日报</h1><p class="muted">按日期回看足球、X 情报与市场报告。</p><div class="report-list">${items.join('\n')}</div></section><section id="sbc" hidden><h1>SBC 推荐</h1><p class="muted">阵容挑战 · 成本与奖励 · 完成建议</p><div class="panel market"><h2>暂无已核验的 SBC 推荐</h2><p class="muted">当前尚未接入挑战要求、到期时间和实时成本。推荐内容准备好后将在这里展示。</p><a class="more" href="#news">查看 X 情报中的最新消息 →</a></div></section><section id="archive-viewer" hidden><button class="outline" id="close-report">返回今日总览</button><h2 id="report-date"></h2><div id="archive-tabs" class="archive-tabs" role="group" aria-label="历史日报栏目" hidden><button data-archive-source="fc27-news">X 情报</button><button data-archive-source="football-daily">足球动态</button><button data-archive-source="market-analysis">FC27 市场</button></div><iframe id="archive-frame" title="选中的每日综合报告"></iframe></section><section id="sources" class="sources" hidden><h2>数据与来源</h2><p>首页展示 ${latestDate} 已有日报与资讯快照。X 情报可打开原帖，足球来源链接位于完整日报内。</p><p>缺失报告单独显示，不以历史数据替代当日数据。页面更新不代表重新核验全部来源。</p></section><footer class="footer"><span>报告 ${latestDate} · 同一地址持续更新</span><a href="#sources">数据与来源</a></footer><p id="share-status" role="status"></p></main><script>
-const reports = ${JSON.stringify(embeddedReports)};
-const latest = ${JSON.stringify(latestDate)};
-const viewer=document.getElementById('archive-viewer');
-const decode = encoded => new TextDecoder().decode(Uint8Array.from(atob(encoded),c=>c.charCodeAt(0)));
-let archiveDoc=null;
-function showPanel(source){
-  const panel=archiveDoc?.getElementById('panel-'+source);
-  const inner=panel?.querySelector('iframe');
-  const frame=document.getElementById('archive-frame');
-  if(inner){const src=inner.getAttribute('src')||'';frame.srcdoc=src.startsWith('data:text/html;charset=utf-8;base64,')?decode(src.split(',')[1].split('#')[0]):inner.getAttribute('srcdoc')||'';}
-  else{frame.srcdoc='<html lang="zh-CN"><body style="background:#101611;color:#b5c0af;font:16px/1.8 sans-serif;padding:30px"><h2>暂无该栏目报告</h2><p>这个日期没有可用内容，未用其他日期的数据补充。</p></body></html>';}
-  document.querySelectorAll('[data-archive-source]').forEach(b=>{b.classList.toggle('active',b.dataset.archiveSource===source);b.setAttribute('aria-pressed',String(b.dataset.archiveSource===source));});
+// 作用：生成 dashboard 风格的「单日日报」页面，index.html 与 archive/D.html 共用同一模板，保证格式完全一致。
+// 布局：左侧固定导航栏（含紧凑海报） + 顶栏 + hero + 主内容区（报告卡/历史日报） + 右侧栏目（进化专栏 + 本期速览）。
+// 配色：取自「彦祖工作室」海报并做提纯（近黑 #0b0708 / 深红 #c8102e / 金 #e9c84a / 冷灰文字 #a89aa0）。
+// 输入：date 日期；panels 已 srcdoc 转义的板块 HTML（含可选 evolution-column）；archiveLinks 历史日报链接；assetBase 资源前缀（index 为 ''，archive 页为 '../'）。
+// 输出：完整 HTML 字符串。
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+const ICONS = {
+  home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.8 20v-5.4h4.4V20"/></svg>',
+  football: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6l3 2.2-1.15 3.5h-3.7L9 9.8z"/><path d="M12 3.4v4.2M4.3 9.8h4.7M19.7 9.8h-4.7M7.2 19.6l2.5-6.3M16.8 19.6l-2.5-6.3"/></svg>',
+  news: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="4.6" width="17.6" height="14.8" rx="2.2"/><path d="M7 9.2h6.4M7 12.8h10M7 16.4h7"/></svg>',
+  market: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.4l4.8-4.9 3.9 3 8-8.8"/><path d="M15 6.2h5.2v5.2"/></svg>',
+  evolution: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg>',
+  archive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2v5.2l3.4 2"/></svg>',
+  share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7.2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V12"/><path d="M12 3.2v12.4M7.6 7.6 12 3.2l4.4 4.4"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg>',
+  spark: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.6l1.9 5.7 5.7 1.9-5.7 1.9L12 17.8l-1.9-5.7L4.4 10.2l5.7-1.9z"/><path d="M18.8 15.4l.85 2.5 2.5.85-2.5.85-.85 2.5-.85-2.5-2.5-.85 2.5-.85z" opacity=".65"/></svg>',
+};
+
+// 板块定义：nav / 卡片 / 视图 共用。evolution 为右侧独立栏目的内容视图。
+const TABS = [
+  { id: 'football-daily', view: 'football', label: '足球动态', en: 'FOOTBALL', icon: 'football', desc: '七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备' },
+  { id: 'fc27-news', view: 'news', label: 'FC27 资讯', en: 'FC27 NEWS', icon: 'news', desc: 'X.com 信息源自动采集 · 智能过滤与中文翻译' },
+  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '双维度：价格分层（大卡/中卡/热门卡/适用卡）× 热门球员（进化卡/价值卡）' },
+];
+
+const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进化专栏', en: 'EVOLUTION', icon: 'evolution' };
+
+const CSS = `:root{
+color-scheme:dark;
+--bg:#0b0708;--bg-soft:#120d0f;--surface:#161113;--surface-2:#1d1619;--surface-3:#231a1e;
+--line:rgba(255,255,255,.07);--line-2:rgba(255,255,255,.14);
+--text:#f4eff1;--muted:#a89aa0;--quiet:#786b73;
+--red:#c8102e;--red-soft:rgba(200,16,46,.16);--red-line:rgba(200,16,46,.42);
+--gold:#e9c84a;--gold-soft:rgba(233,200,74,.13);--gold-line:rgba(233,200,74,.38);
+--radius:14px;--radius-sm:10px;
+--sidebar:236px;
+--font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
 }
-function route(){
-  const key=location.hash.slice(1)||'overview';
-  document.querySelectorAll('main>section').forEach(s=>s.hidden=true);
-  document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+(key.startsWith('report-')?'archives':key)));
-  const sections={news:'fc27-news',football:'football-daily',market:'market-analysis'};
-  const historical=key.startsWith('report-');
-  document.getElementById('archive-tabs').hidden=!historical;
-  if(sections[key]||historical){
-    const date=historical?key.slice(7):latest;
-    if(reports[date]){viewer.hidden=false;document.getElementById('report-date').textContent=date+' · '+({news:'X 情报',football:'足球动态',market:'FC27 市场'}[key]||'历史日报');
-      document.getElementById('close-report').textContent=historical?'返回历史日报':'返回今日总览';
-      archiveDoc=new DOMParser().parseFromString(decode(reports[date]),'text/html');
-      showPanel(sections[key]||'fc27-news');
-    }else{document.getElementById('archives').hidden=false;}
-  }else{(document.getElementById(key)||document.getElementById('overview')).hidden=false;}
-  window.scrollTo(0,0);
-}
-document.querySelectorAll('[data-archive-source]').forEach(b=>b.onclick=()=>showPanel(b.dataset.archiveSource));
-document.getElementById('close-report').onclick=()=>location.hash=location.hash.startsWith('#report-')?'archives':'overview';document.getElementById('share').onclick=async()=>{const status=document.getElementById('share-status');try{await navigator.clipboard.writeText(location.href);status.textContent='链接已复制';}catch{status.textContent='分享地址：'+location.href;}};document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(a){e.preventDefault();const next=a.getAttribute('href');if(location.hash===next)route();else location.hash=next;}});window.addEventListener('hashchange',route);route();
+*{box-sizing:border-box}
+body{margin:0;background:
+ radial-gradient(1100px 620px at 88% -10%,rgba(200,16,46,.10),transparent 62%),
+ radial-gradient(900px 520px at 4% 0%,rgba(233,200,74,.05),transparent 58%),
+ var(--bg);
+ color:var(--text);font-family:var(--font);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:none;border:0}a{color:inherit;text-decoration:none}img{max-width:100%}
+h1,h2,h3,p{margin:0}svg{width:22px;height:22px;flex:none}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.muted{color:var(--muted)}
+.eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--quiet);font-weight:600}
+
+/* ============ 侧边栏 ============ */
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar);display:flex;flex-direction:column;
+ background:linear-gradient(180deg,#120c0e,#0c0809);border-right:1px solid var(--line);z-index:20}
+.brand{padding:26px 22px 20px;display:block}
+.brand strong{display:block;font-size:23px;font-weight:800;letter-spacing:-.3px;line-height:1.25}
+.brand strong b{color:var(--red);font-weight:900}
+.brand span{display:block;color:var(--quiet);margin-top:6px;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase}
+.nav{display:grid;gap:3px;padding:4px 12px}
+.nav button{display:flex;align-items:center;gap:14px;text-align:left;padding:12px 14px;border-radius:var(--radius-sm);
+ font-size:15px;color:#c6b7bd;white-space:nowrap;width:100%;transition:background .16s,color .16s}
+.nav button svg{width:20px;height:20px;opacity:.85}
+.nav button:hover{background:rgba(255,255,255,.045);color:var(--text)}
+.nav button.active{background:linear-gradient(90deg,var(--red-soft),rgba(200,16,46,.03));color:#fff;font-weight:650;
+ box-shadow:inset 2.5px 0 0 var(--red)}
+.nav button.active svg{color:var(--red);opacity:1}
+.sidebar-foot{margin-top:auto;padding:14px 16px 18px;border-top:1px solid var(--line)}
+.manifesto{font-size:9.5px;letter-spacing:.34em;color:var(--quiet);line-height:2;font-weight:600}
+.poster-mini{display:flex;align-items:center;gap:11px;width:100%;margin-top:12px;padding:7px;border:1px solid var(--line);
+ border-radius:var(--radius-sm);background:rgba(0,0,0,.28);text-align:left;transition:border-color .16s,background .16s}
+.poster-mini:hover{border-color:var(--gold-line);background:rgba(233,200,74,.05)}
+.poster-mini img{width:42px;height:42px;object-fit:cover;object-position:top center;border-radius:7px;flex:none;display:block}
+.poster-mini b{display:block;font-size:12.5px;font-weight:700;color:var(--text);line-height:1.3}
+.poster-mini small{display:block;font-size:10.5px;color:var(--quiet);margin-top:2px}
+
+/* ============ 主区域 ============ */
+.app{margin-left:var(--sidebar);padding:18px 30px 14px;max-width:1680px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.topbar .tb-left{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}
+.live{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;border-radius:999px;background:var(--red-soft);
+ border:1px solid var(--red-line);color:#ffd7de;font-size:11.5px;letter-spacing:.04em}
+.live i{width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 0 3px rgba(200,16,46,.22)}
+.btn{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--line-2);border-radius:999px;
+ padding:8px 16px;color:var(--text);font-size:13.5px;background:rgba(255,255,255,.03);transition:background .16s,border-color .16s}
+.btn:hover{background:rgba(255,255,255,.08);border-color:var(--line-2)}
+.btn svg{width:17px;height:17px}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#cba92c);border-color:transparent;color:#241a03;font-weight:750}
+.btn.gold:hover{background:linear-gradient(135deg,#f3d766,#d8b83a)}
+.btn.ghost{border-color:var(--line);background:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--text);border-color:var(--line-2)}
+.btn.sm{padding:6px 12px;font-size:12.5px}
+
+/* ============ Hero ============ */
+.hero{display:grid;grid-template-columns:1.55fr .95fr;gap:40px;align-items:end;padding:30px 2px 26px}
+.hero h1{font-size:clamp(30px,3.4vw,50px);line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:14px 0 12px}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold),#c8102e 68%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .subtitle{font-size:16.5px;color:var(--muted);max-width:52ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);padding:6px 12px;border-radius:999px;
+ background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.chip b{color:var(--gold);font-weight:750}
+.hero-note{position:relative;padding:20px 4px 4px 26px;border-left:1px solid var(--line-2);color:var(--muted);font-size:14.5px;line-height:1.9}
+.hero-note:before{content:"";position:absolute;left:-1px;top:0;width:2px;height:46px;background:linear-gradient(var(--red),transparent)}
+
+/* ============ 网格 ============ */
+.home-grid{display:grid;grid-template-columns:minmax(0,1fr) 336px;gap:18px;align-items:start}
+.col-stack{display:grid;gap:18px;align-content:start}
+.panel{background:linear-gradient(180deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line)}
+.panel-head h2{font-size:17px;font-weight:750;letter-spacing:.01em}
+h2{font-size:20px;font-weight:750;margin:0}
+h3{font-size:15.5px;font-weight:700;margin:0}
+
+/* 报告卡 */
+.report-card{padding:19px 21px;display:flex;flex-direction:column;gap:15px;transition:border-color .18s,transform .18s,background .18s}
+.report-card:hover{border-color:var(--line-2);background:linear-gradient(180deg,var(--surface-2),var(--bg-soft))}
+.rc-top{display:flex;align-items:center;gap:14px}
+.rc-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--red-soft);
+ color:#ff8898;border:1px solid var(--red-line);flex:none}
+.rc-title{font-size:18px;font-weight:760;letter-spacing:-.2px}
+.rc-en{font-size:10.5px;letter-spacing:.22em;color:var(--quiet);text-transform:uppercase;margin-top:4px;font-weight:600}
+.rc-desc{color:var(--muted);font-size:13.8px;line-height:1.72}
+.rc-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:1px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:4px 11px;border-radius:999px;white-space:nowrap;font-weight:600}
+.badge.ok{background:rgba(233,200,74,.13);color:var(--gold);border:1px solid var(--gold-line)}
+.badge.no{background:rgba(255,255,255,.04);color:var(--quiet);border:1px solid var(--line)}
+
+/* 历史日报条 */
+.history-strip{padding:20px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.history-title{font-weight:750;font-size:17px}
+.history-value{font-size:32px;line-height:1;font-weight:800;color:var(--gold);padding:0 18px;border-left:1px solid var(--line-2);border-right:1px solid var(--line-2)}
+.history-copy{flex:1;min-width:180px;font-size:13px;color:#cdbfc4}
+.history-copy small{display:block;margin-top:3px;color:var(--quiet);font-size:11.5px}
+
+/* 右侧栏目 */
+.rail-panel{position:relative}
+.rail-panel:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--gold),transparent 78%)}
+.rail-panel .panel-head{padding-left:22px}
+.rail-panel .panel-head h2{display:flex;align-items:center;gap:9px}
+.rail-panel .panel-head h2 svg{width:18px;height:18px;color:var(--gold)}
+.rail-empty{padding:26px 22px;text-align:center;color:var(--muted)}
+.rail-empty .re-ic{width:52px;height:52px;margin:0 auto 14px;display:grid;place-items:center;border-radius:14px;
+ background:var(--gold-soft);border:1px dashed var(--gold-line);color:var(--gold)}
+.rail-empty .re-ic svg{width:26px;height:26px}
+.rail-empty b{display:block;color:var(--text);font-size:15px;font-weight:700;margin-bottom:7px}
+.rail-empty p{font-size:13px;line-height:1.75}
+.rail-list{list-style:none;margin:0;padding:6px 20px 18px}
+.rail-list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);padding:9px 0;border-bottom:1px dashed var(--line)}
+.rail-list li:last-child{border-bottom:0}
+.rail-list li span.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex:none}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+.stat-grid div{background:var(--bg-soft);padding:14px 16px}
+.stat-grid b{display:block;font-size:22px;font-weight:800;color:var(--text);line-height:1.2}
+.stat-grid small{display:block;color:var(--quiet);font-size:11.5px;margin-top:3px}
+
+/* 视图 */
+.view-header{margin:26px 2px 18px}
+.view-header h1{font-size:30px;line-height:1.3;margin:10px 0 7px;font-weight:800;letter-spacing:-.4px}
+.view-header p{color:var(--muted);font-size:14.5px;max-width:80ch}
+.panel-iframe{width:100%;height:calc(100vh - 210px);min-height:640px;border:0;display:block;background:#0b0708;border-radius:var(--radius)}
+.empty-panel{padding:38px 26px}
+
+/* 历史日报列表 */
+.report-list{display:grid;gap:10px;padding:16px 18px}
+.report-item{display:flex;align-items:center;gap:18px;border:1px solid var(--line);background:rgba(255,255,255,.018);
+ padding:15px 18px;border-radius:var(--radius-sm);transition:border-color .16s,background .16s,transform .16s}
+.report-item:hover{border-color:var(--gold-line);background:rgba(233,200,74,.05);transform:translateX(3px)}
+.report-item[aria-current=date]{border-color:var(--red-line);background:var(--red-soft)}
+.date-badge{font-size:15px;font-weight:800;color:var(--gold);min-width:96px;font-variant-numeric:tabular-nums}
+.report-info{flex:1;min-width:0}
+.report-title{font-size:16px;font-weight:700}
+.report-desc{font-size:12px;color:var(--quiet);margin-top:4px}
+.report-item .arrow{color:var(--muted);display:grid;place-items:center}
+.report-item:hover .arrow{color:var(--gold)}
+.tag{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:6px;background:var(--red-soft);color:#ffc4cd;border:1px solid var(--red-line);font-weight:600}
+
+.footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 2px 6px;margin-top:8px;
+ font-size:11.5px;color:var(--quiet);border-top:1px solid var(--line)}
+.footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+
+/* 海报弹窗 */
+dialog#poster-modal{border:0;padding:0;background:transparent;max-width:min(560px,92vw)}
+dialog#poster-modal::backdrop{background:rgba(6,3,4,.88);backdrop-filter:blur(3px)}
+dialog#poster-modal img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line-2)}
+dialog#poster-modal .pm-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;color:var(--muted);font-size:13px}
+dialog#poster-modal .pm-bar button{color:var(--gold);font-size:13px;font-weight:600}
+
+@media(max-width:1180px){.home-grid{grid-template-columns:1fr}.rail-panel:before{display:none}.hero{grid-template-columns:1fr;gap:22px}.hero-note{display:none}}
+@media(max-width:900px){:root{--sidebar:200px}.app{padding:16px 20px}}
+@media(max-width:760px){
+ .sidebar{position:relative;width:auto;border-right:0;border-bottom:1px solid var(--line)}
+ .brand{padding:18px 18px 10px}.nav{display:flex;overflow:auto;padding:0 12px}
+ .nav button{white-space:nowrap;width:auto}
+ .sidebar-foot{display:none}
+ .app{margin:0;padding:14px 16px}
+ .hero h1{font-size:28px}.topbar{flex-wrap:wrap;gap:10px}
+ .panel-iframe{height:calc(100vh - 260px)}
+ .stat-grid{grid-template-columns:1fr}
+}`;
+
+export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = '', evolutionLinks = '' }) {
+  const navItems = [
+    { view: 'home', icon: 'home', label: '今日总览' },
+    ...TABS.map(t => ({ view: t.view, icon: t.icon, label: t.label })),
+    { view: EVOLUTION_TAB.view, icon: EVOLUTION_TAB.icon, label: EVOLUTION_TAB.label },
+    { view: 'archive', icon: 'archive', label: '历史日报' },
+  ];
+  const nav = navItems.map(n =>
+    `<button type="button" data-view="${n.view}" class="${n.view === 'home' ? 'active' : ''}">${ICONS[n.icon]}<span>${esc(n.label)}</span></button>`).join('');
+
+  const cards = TABS.map(t => {
+    const has = Boolean(panels[t.id]);
+    return `<article class="panel report-card"><div class="rc-top"><span class="rc-icon">${ICONS[t.icon]}</span><div><div class="rc-title">${esc(t.label)}</div><div class="rc-en">${esc(t.en)}</div></div></div><p class="rc-desc">${esc(t.desc)}</p><div class="rc-foot"><span class="badge ${has ? 'ok' : 'no'}">${has ? '● 当日已收录' : '○ 当日暂无'}</span><button type="button" class="btn gold" data-view="${t.view}">阅读全文 ${ICONS.arrow}</button></div></article>`;
+  }).join('');
+
+  const views = TABS.map(t => {
+    const content = panels[t.id];
+    const inner = content
+      ? `<iframe class="panel-iframe" srcdoc="${content}" title="${esc(t.label)}" loading="lazy"></iframe>`
+      : `<div class="panel empty-panel"><h2>${esc(t.label)}</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div>`;
+    return `<section class="view" id="view-${t.view}" hidden><header class="view-header"><div class="eyebrow">${esc(t.en)}</div><h1>${esc(t.label)}</h1><p>${esc(t.desc)}</p></header>${inner}</section>`;
+  }).join('');
+
+  // 进化专栏：有内容则内嵌，否则给出占位空状态（后续进化任务补充）
+  const evolutionContent = panels[EVOLUTION_TAB.id];
+  const evolutionBody = evolutionContent
+    ? `<iframe class="panel-iframe" srcdoc="${evolutionContent}" title="进化专栏" loading="lazy"></iframe>`
+    : `<div class="rail-empty"><div class="re-ic">${ICONS.evolution}</div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div>`;
+
+  const evolutionView = `<section class="view" id="view-${EVOLUTION_TAB.view}" hidden><header class="view-header"><div class="eyebrow">${esc(EVOLUTION_TAB.en)}</div><h1>${esc(EVOLUTION_TAB.label)}</h1><p>热门进化卡与进化路线。内容由后续进化任务补充，未就绪时如实显示空状态。</p></header>${evolutionContent ? `<iframe class="panel-iframe" srcdoc="${evolutionContent}" title="进化专栏" loading="lazy"></iframe>` : `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.evolution}</div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div></div>`}</section>`;
+
+  const poster = `${assetBase}assets/yanzu-banner.jpg`;
+  const archiveCount = (archiveLinks.match(/class="report-item"/g) || []).length;
+  const boardCount = cards ? TABS.length : 0;
+  const evoLinksBlock = evolutionLinks
+    ? `<ul class="rail-list">${evolutionLinks}</ul>`
+    : `<ul class="rail-list"><li><span class="dot"></span><span>热门进化卡清单（FUTBIN Popular Evolutions）</span></li><li><span class="dot"></span><span>进化路线与前置条件核验</span></li><li><span class="dot"></span><span>费用 / 到期时间 / 位置评分要求</span></li></ul>`;
+
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FC27情报台 · ${esc(date)}</title><style>${CSS}</style></head><body>
+<aside class="sidebar">
+<a class="brand" href="#home" data-view="home"><strong>FC27<b>情报台</b></strong><span>Football × FC27</span></a>
+<nav class="nav" id="nav" aria-label="主导航">${nav}</nav>
+<div class="sidebar-foot">
+<div class="manifesto">MORE THAN A GAME.</div>
+<button type="button" class="poster-mini" id="poster-open" aria-label="查看彦祖工作室套餐海报"><img src="${poster}" alt="彦祖工作室" loading="lazy"><span><b>彦祖工作室</b><small>FC27 DR 周赛套餐 · 查看大图</small></span></button>
+</div>
+</aside>
+<main class="app">
+<div class="topbar">
+ <div class="tb-left"><span class="live"><i></i>${esc(date)} · 北京时间</span><span>足球 × FC27 每日情报</span></div>
+ <button type="button" class="btn ghost" id="share">${ICONS.share}分享链接</button>
+</div>
+
+<section class="view" id="view-home">
+<header class="hero">
+ <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">整合足球赛事动态、FC27 资讯与市场行情，三榜齐备、双维度市场、进化专栏一站直达。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
+ <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
+</header>
+<div class="home-grid">
+ <div class="col-stack">${cards}<article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
+ <aside class="col-stack">
+  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>2</b><small>维度：热门 / 价值</small></div></div>${evolutionBody}${evoLinksBlock}</article>
+  <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>当日板块</small></div><div><b>${archiveCount}</b><small>历史日报</small></div><div><b>3</b><small>足球三榜</small></div><div><b>2</b><small>市场维度</small></div></div></article>
+ </aside>
+</div>
+</section>
+
+${views}
+${evolutionView}
+
+<section class="view" id="view-archive" hidden>
+<header class="view-header"><div class="eyebrow">Archive</div><h1>历史日报</h1><p>按日期回看足球、FC27 资讯与市场报告。每份日报均为独立归档文件。</p></header>
+<div class="panel"><div class="report-list" id="archive-list">${archiveLinks}</div></div>
+</section>
+
+<footer class="footer"><span>${esc(date)} 数据快照 · 足球与 FC27 独立情报页 · 内容仅供研究参考</span><a href="#archive" data-view="archive">历史日报</a></footer>
+</main>
+<dialog id="poster-modal"><div class="pm-bar"><span>彦祖工作室 · FC27 DR 周赛套餐</span><button type="button" id="poster-close" aria-label="关闭">关闭 ✕</button></div><img src="${poster}" alt="彦祖工作室 · FC27 DR 周赛套餐"></dialog>
+<script>
+(function(){
+  var navBtns=document.querySelectorAll('[data-view]');
+  function setView(v){
+    var target=document.getElementById('view-'+v);
+    if(!target)return;
+    document.querySelectorAll('.view').forEach(function(s){s.hidden=s.id!=='view-'+v;});
+    document.querySelectorAll('nav .nav button').forEach(function(b){var on=b.dataset.view===v;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'page':'false');});
+    window.scrollTo({top:0,behavior:'instant'});
+    if(history.replaceState)history.replaceState(null,'','#'+v);
+  }
+  navBtns.forEach(function(b){b.addEventListener('click',function(e){if(b.tagName==='A')e.preventDefault();setView(b.dataset.view);});});
+  var modal=document.getElementById('poster-modal');
+  function openPoster(){if(modal&&modal.showModal&&!modal.open)modal.showModal();}
+  var po=document.getElementById('poster-open');if(po)po.addEventListener('click',openPoster);
+  var close=document.getElementById('poster-close');if(close)close.addEventListener('click',function(){modal.close();});
+  if(modal)modal.addEventListener('click',function(e){if(e.target===modal)modal.close();});
+  var share=document.getElementById('share');
+  if(share)share.addEventListener('click',function(){if(!navigator.clipboard)return;var label=share.innerHTML;navigator.clipboard.writeText(location.href).then(function(){share.textContent='链接已复制';setTimeout(function(){share.innerHTML=label;},1600);}).catch(function(){});});
+  var initial=(location.hash||'#home').slice(1);
+  setView(document.getElementById('view-'+initial)?initial:'home');
+  window.addEventListener('hashchange',function(){var v=(location.hash||'#home').slice(1);if(document.getElementById('view-'+v))setView(v);});
+})();
 </script></body></html>`;
 }

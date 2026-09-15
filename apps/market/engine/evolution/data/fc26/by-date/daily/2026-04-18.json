@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2026-04-18",
+  "count": 4,
+  "tasks": [
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Add Bruiser+ to any qualified player.",
+      "id": 761,
+      "name": "Bruiser+",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=761",
+      "previewPlayers": [],
+      "rank": 323,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle+",
+          "raw": [
+            "PlayStyle+",
+            "Max 1"
+          ],
+          "value": "Max 1"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "bruiser",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "2",
+          "label": "PS+",
+          "raw": [
+            "PS+",
+            "Bruiser",
+            "2"
+          ],
+          "value": "Bruiser"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/761/bruiser",
+      "releaseDate": "2026-04-18",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 758,
+          "releaseDate": "2026-04-17"
+        },
+        "nextAnchor": {
+          "evolutionId": 763,
+          "releaseDate": "2026-04-18"
+        }
+      },
+      "chronologicalRank": 700
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "REWARDS"
+      ],
+      "description": "Hug the touchline and cut in to score with Rapid, Technical and Finesse Shot.",
+      "id": 762,
+      "name": "Touchline Merchant",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=762",
+      "previewPlayers": [],
+      "rank": 322,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 89"
+          ],
+          "value": "Max 89"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 7"
+          ],
+          "value": "Max 7"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "touchline-merchant",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Rapid",
+            "8"
+          ],
+          "value": "Rapid"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Technical",
+            "8"
+          ],
+          "value": "Technical"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Finesse Shot",
+            "8"
+          ],
+          "value": "Finesse Shot"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/762/touchline-merchant",
+      "releaseDate": "2026-04-18",
+      "releaseDateTimeUtc": null,
+      "dateSource": "inferred-between-futbin-chronology-anchors",
+      "dateConfidence": "inferred",
+      "dateEvidence": {
+        "previousAnchor": {
+          "evolutionId": 758,
+          "releaseDate": "2026-04-17"
+        },
+        "nextAnchor": {
+          "evolutionId": 763,
+          "releaseDate": "2026-04-18"
+        }
+      },
+      "chronologicalRank": 701
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Transform your CB into a build-up specialist who can start an attack, is quick to spot the outlet, and is precise with short passes.",
+      "id": 763,
+      "name": "CB Distributor",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=763",
+      "previewPlayers": [
+        {
+          "displayName": "Kaplan",
+          "kind": "before",
+          "name": "Ahmetcan Kaplan",
+          "position": "CB",
+          "rating": 88,
+          "stats": {
+            "def": 88,
+            "dri": 76,
+            "pac": 85,
+            "pas": 77,
+            "phy": 90,
+            "sho": 46
+          }
+        },
+        {
+          "displayName": "Kaplan",
+          "kind": "after",
+          "name": "Ahmetcan Kaplan",
+          "position": "CB",
+          "rating": 89,
+          "stats": {
+            "def": 91,
+            "dri": 76,
+            "pac": 87,
+            "pas": 79,
+            "phy": 90,
+            "sho": 46
+          }
+        }
+      ],
+      "rank": 321,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 10"
+          ],
+          "value": "Max 10"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "CB"
+          ],
+          "value": "CB"
+        }
+      ],
+      "slug": "cb-distributor",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "89",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+2",
+            "89"
+          ],
+          "value": "+2"
+        },
+        {
+          "cap": "92",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "89",
+          "label": "Heading Acc.",
+          "raw": [
+            "Heading Acc.",
+            "+4",
+            "89"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "90",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Long Passing",
+          "raw": [
+            "Long Passing",
+            "+12",
+            "93"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "91",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "93",
+          "label": "Short Passing",
+          "raw": [
+            "Short Passing",
+            "+12",
+            "93"
+          ],
+          "value": "+12"
+        },
+        {
+          "cap": "90",
+          "label": "Slide Tackle",
+          "raw": [
+            "Slide Tackle",
+            "+5",
+            "90"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "91",
+          "label": "Stand Tackle",
+          "raw": [
+            "Stand Tackle",
+            "+5",
+            "91"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "92",
+          "label": "Vision",
+          "raw": [
+            "Vision",
+            "+10",
+            "92"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": null,
+          "label": "Weak Foot",
+          "raw": [
+            "Weak Foot",
+            "+1"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Pinged Pass",
+            "8"
+          ],
+          "value": "Pinged Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Long Ball Pass",
+            "8"
+          ],
+          "value": "Long Ball Pass"
+        },
+        {
+          "cap": "8",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Anticipate",
+            "8"
+          ],
+          "value": "Anticipate"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/763/cb-distributor",
+      "releaseDate": "2026-04-18",
+      "releaseDateTimeUtc": "2026-04-18T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1939,
+        "providerUrl": "https://futmind.com/evolutions/1939/cb-distributor",
+        "originalCreatedAt": "2026-04-18T18:00:00.000000Z"
+      },
+      "chronologicalRank": 702
+    },
+    {
+      "availability": {
+        "200": "35,000",
+        "expires": "EXPIRED",
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "COSMETICS"
+      ],
+      "description": "Transform your favourite player into a TOTS HM player. This item rarity offers 1 Club, 5 League and 1 Nation chemistry links!",
+      "id": 764,
+      "name": "TOTS Honourable Mentions",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=764",
+      "previewPlayers": [],
+      "rank": 320,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        }
+      ],
+      "slug": "tots-honourable-mentions",
+      "status": "expired",
+      "upgrades": [],
+      "url": "https://www.futbin.com/26/evolutions/764/tots-honourable-mentions",
+      "releaseDate": "2026-04-18",
+      "releaseDateTimeUtc": "2026-04-18T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1941,
+        "providerUrl": "https://futmind.com/evolutions/1941/tots-honourable-mentions",
+        "originalCreatedAt": "2026-04-18T18:00:00.000000Z"
+      },
+      "chronologicalRank": 703
+    }
+  ]
+}

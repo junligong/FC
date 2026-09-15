@@ -14,10 +14,16 @@ function archivePreviousRun(dir,now){
  for(const entry of archivedEntries){const source=path.join(dir,entry);if(fs.existsSync(source))fs.renameSync(source,path.join(archiveDir,entry));}
  return path.relative(root,archiveDir);
 }
+function activeRun(dir){
+ const owner=readJSON(path.join(dir,'owner.json'),null);
+ const state=readJSON(path.join(dir,'state.json'),owner);
+ return state?.status==='running'?owner:null;
+}
 export function prepareRerun(module,date,now=Date.now()){
  if(!outputs[module])throw Error('unknown module');date=reportDate(date);
  const dir=path.join(root,'automation/runs',date,module);fs.mkdirSync(dir,{recursive:true});
  if(!fs.existsSync(path.join(dir,'owner.json')))return {prepared:true,module,date,previousAttempt:null};
+ const owner=activeRun(dir);if(owner)return {prepared:false,module,date,reason:'当前运行仍在进行，拒绝归档或启动重跑。',owner};
  return {prepared:true,module,date,previousAttempt:archivePreviousRun(dir,now)};
 }
 function taskEnabled(module){
@@ -31,7 +37,7 @@ export function begin(module,date,{rerun=false,now=Date.now()}={}){
  if(!outputs[module])throw Error('unknown module');date=reportDate(date);
  const dir=path.join(root,'automation/runs',date,module);fs.mkdirSync(dir,{recursive:true});
  let previousAttempt=null;
- if(rerun&&fs.existsSync(path.join(dir,'owner.json')))previousAttempt=archivePreviousRun(dir,now);
+ if(rerun&&fs.existsSync(path.join(dir,'owner.json'))){const owner=activeRun(dir);if(owner)return {accepted:false,reason:'当前运行仍在进行，拒绝启动重跑。',owner};previousAttempt=archivePreviousRun(dir,now);}
  const lock=path.join(dir,'owner.json');let fd;
  try{fd=fs.openSync(lock,'wx');}catch(e){if(e.code==='EEXIST')return {accepted:false,reason:'本日任务已启动或已完成；不重复运行。需要重跑时使用明确的重跑日期目录流程。',owner:readJSON(lock,null)};throw e;}
  const record={module,date,runId:crypto.randomUUID(),status:'running',startedAt:new Date(now).toISOString(),deadlineAt:new Date(now+15*60000).toISOString(),reportPath:outputs[module](date),...(previousAttempt?{previousAttempt}: {})};
@@ -49,6 +55,8 @@ export function finish(module,date,runId,status,evidencePath,now=Date.now()){
   const file=path.join(root,state.reportPath),html=fs.readFileSync(file);const stat=fs.statSync(file);
   if(stat.mtimeMs<Date.parse(state.startedAt)||!html.includes(Buffer.from(date))||!/<\/html>/i.test(html.toString()))throw Error('不是本轮新生成的完整报告');
   if(!evidence||evidence.date!==date||!Array.isArray(evidence.sources)||!evidence.sources.length)throw Error('缺少本轮来源记录');
+  const startedAt=Date.parse(state.startedAt);
+  if(evidence.sources.some(source=>!Number.isFinite(Date.parse(source.openedAt))||Date.parse(source.openedAt)<startedAt))throw Error('来源记录不是本轮实际打开，拒绝复用旧证据');
   if(status==='success' && (evidence.missingItems?.length || evidence.missing?.length)) result.status='partial';
   result.sha256=digest(html);result.bytes=html.length;result.snapshotPath=path.join(dir,'report.html');atomicWrite(result.snapshotPath,html.toString());
   const newsData=path.join(root,`apps/news/data/tweets-${date}.json`);if(module==='news'&&fs.existsSync(newsData)){const data=readJSON(newsData,null);if(data?.date===date)atomicWrite(path.join(dir,'tweets.json'),JSON.stringify(data));}

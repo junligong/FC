@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 2,
+  "game": "FC26",
+  "source": "FUTBIN + FUT Mind release schedule",
+  "generatedAt": "2026-08-27T08:41:56.443Z",
+  "window": {
+    "from": "2025-09-18",
+    "to": "2026-08-24",
+    "inclusive": true
+  },
+  "sort": [
+    "releaseDate:asc",
+    "futbinEvolutionId:asc"
+  ],
+  "dateMethod": {
+    "exact": "FUT Mind created_at aligned to FUTBIN by chronological longest common subsequence of task names",
+    "normalized": "pre-launch provider timestamps normalized to the requested FC26 opening boundary 2025-09-18",
+    "inferred": "interpolated between surrounding exact chronological FUTBIN/FUT Mind anchors"
+  },
+  "date": "2025-10-17",
+  "count": 2,
+  "tasks": [
+    {
+      "availability": {
+        "400": "25,000",
+        "expires": "EXPIRED",
+        "repeatable": true,
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Give your striker the boost they’ve been waiting for. Improved pace, sharper finishing, and added confidence, a well-earned glow-up for players ready to make their mark.",
+      "id": 48,
+      "name": "Born to Shine",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=48",
+      "previewPlayers": [
+        {
+          "displayName": "Tella",
+          "kind": "before",
+          "name": "Nathan Tella",
+          "position": "RM",
+          "rating": 78,
+          "stats": {
+            "def": 46,
+            "dri": 80,
+            "pac": 83,
+            "pas": 71,
+            "phy": 60,
+            "sho": 75
+          }
+        },
+        {
+          "displayName": "Tella",
+          "kind": "after",
+          "name": "Nathan Tella",
+          "position": "RM",
+          "rating": 84,
+          "stats": {
+            "def": 46,
+            "dri": 84,
+            "pac": 85,
+            "pas": 76,
+            "phy": 68,
+            "sho": 83
+          }
+        }
+      ],
+      "rank": 964,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 80"
+          ],
+          "value": "Max 80"
+        },
+        {
+          "cap": null,
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "Max 88"
+          ],
+          "value": "Max 88"
+        },
+        {
+          "cap": null,
+          "label": "PlayStyle",
+          "raw": [
+            "PlayStyle",
+            "Max 4"
+          ],
+          "value": "Max 4"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "ST"
+          ],
+          "value": "ST"
+        }
+      ],
+      "slug": "born-to-shine",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "84",
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "+8",
+            "84"
+          ],
+          "value": "+8"
+        },
+        {
+          "cap": "85",
+          "label": "Pace",
+          "raw": [
+            "Pace",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "77",
+          "label": "Passing",
+          "raw": [
+            "Passing",
+            "+5",
+            "77"
+          ],
+          "value": "+5"
+        },
+        {
+          "cap": "78",
+          "label": "Aggression",
+          "raw": [
+            "Aggression",
+            "+10",
+            "78"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "82",
+          "label": "Agility",
+          "raw": [
+            "Agility",
+            "+15",
+            "82"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "81",
+          "label": "Balance",
+          "raw": [
+            "Balance",
+            "+10",
+            "81"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "84",
+          "label": "Ball control",
+          "raw": [
+            "Ball control",
+            "+15",
+            "84"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "85",
+          "label": "Dribbling",
+          "raw": [
+            "Dribbling",
+            "+10",
+            "85"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Finishing",
+          "raw": [
+            "Finishing",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "78",
+          "label": "Jumping",
+          "raw": [
+            "Jumping",
+            "+10",
+            "78"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "82",
+          "label": "Long Shots",
+          "raw": [
+            "Long Shots",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Penalties",
+          "raw": [
+            "Penalties",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "84",
+          "label": "Positioning",
+          "raw": [
+            "Positioning",
+            "+20",
+            "84"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Reactions",
+          "raw": [
+            "Reactions",
+            "+10",
+            "82"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "85",
+          "label": "Shot Power",
+          "raw": [
+            "Shot Power",
+            "+20",
+            "85"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "82",
+          "label": "Stamina",
+          "raw": [
+            "Stamina",
+            "+20",
+            "82"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "80",
+          "label": "Strength",
+          "raw": [
+            "Strength",
+            "+10",
+            "80"
+          ],
+          "value": "+10"
+        },
+        {
+          "cap": "80",
+          "label": "Volleys",
+          "raw": [
+            "Volleys",
+            "+20",
+            "80"
+          ],
+          "value": "+20"
+        },
+        {
+          "cap": "85",
+          "label": "Composure",
+          "raw": [
+            "Composure",
+            "+15",
+            "85"
+          ],
+          "value": "+15"
+        },
+        {
+          "cap": "4",
+          "label": "Skills",
+          "raw": [
+            "Skills",
+            "+1",
+            "4"
+          ],
+          "value": "+1"
+        },
+        {
+          "cap": "4",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "Low Driven Shot",
+            "4"
+          ],
+          "value": "Low Driven Shot"
+        },
+        {
+          "cap": "4",
+          "label": "PS",
+          "raw": [
+            "PS",
+            "First Touch",
+            "4"
+          ],
+          "value": "First Touch"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Advanced Forward+"
+          ],
+          "value": "Advanced Forward+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/48/born-to-shine",
+      "releaseDate": "2025-10-17",
+      "releaseDateTimeUtc": "2025-10-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1068,
+        "providerUrl": "https://futmind.com/evolutions/1068/born-to-shine",
+        "originalCreatedAt": "2025-10-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 44
+    },
+    {
+      "availability": {
+        "expires": "EXPIRED",
+        "free": true,
+        "repeatable": "2",
+        "unlock": "EXPIRED"
+      },
+      "categories": [
+        "EVOLUTIONS"
+      ],
+      "description": "Transform your RB into a Fullback Force by boosting their Interceptions, Defensive Awareness, and passing accuracy on the wing for better defense and playmaking.",
+      "id": 49,
+      "name": "Fullback Force II",
+      "popularUrl": "https://www.futbin.com/26/popular/evolutions?evo_id=49",
+      "previewPlayers": [
+        {
+          "displayName": "Posch",
+          "kind": "before",
+          "name": "Stefan Posch",
+          "position": "RB",
+          "rating": 82,
+          "stats": {
+            "def": 83,
+            "dri": 73,
+            "pac": 82,
+            "pas": 74,
+            "phy": 80,
+            "sho": 60
+          }
+        },
+        {
+          "displayName": "Posch",
+          "kind": "after",
+          "name": "Stefan Posch",
+          "position": "RB",
+          "rating": 82,
+          "stats": {
+            "def": 84,
+            "dri": 73,
+            "pac": 82,
+            "pas": 75,
+            "phy": 80,
+            "sho": 60
+          }
+        }
+      ],
+      "rank": 963,
+      "requirements": [
+        {
+          "cap": null,
+          "label": "Overall",
+          "raw": [
+            "Overall",
+            "Max 82"
+          ],
+          "value": "Max 82"
+        },
+        {
+          "cap": null,
+          "label": "Not Rarity",
+          "raw": [
+            "Not Rarity",
+            "World Tour Silver Stars"
+          ],
+          "value": "World Tour Silver Stars"
+        },
+        {
+          "cap": null,
+          "label": "Position",
+          "raw": [
+            "Position",
+            "RB"
+          ],
+          "value": "RB"
+        }
+      ],
+      "slug": "fullback-force-ii",
+      "status": "expired",
+      "upgrades": [
+        {
+          "cap": "83",
+          "label": "Crossing",
+          "raw": [
+            "Crossing",
+            "+4",
+            "83"
+          ],
+          "value": "+4"
+        },
+        {
+          "cap": "83",
+          "label": "Curve",
+          "raw": [
+            "Curve",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "83",
+          "label": "Interceptions",
+          "raw": [
+            "Interceptions",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": "83",
+          "label": "Def. Aware",
+          "raw": [
+            "Def. Aware",
+            "+3",
+            "83"
+          ],
+          "value": "+3"
+        },
+        {
+          "cap": null,
+          "label": "Roles",
+          "raw": [
+            "Roles",
+            "Fullback+"
+          ],
+          "value": "Fullback+"
+        }
+      ],
+      "url": "https://www.futbin.com/26/evolutions/49/fullback-force-ii",
+      "releaseDate": "2025-10-17",
+      "releaseDateTimeUtc": "2025-10-17T18:00:00.000000Z",
+      "dateSource": "futmind-created-at",
+      "dateConfidence": "exact",
+      "dateEvidence": {
+        "provider": "FUT Mind",
+        "providerEvolutionId": 1069,
+        "providerUrl": "https://futmind.com/evolutions/1069/fullback-force-ii",
+        "originalCreatedAt": "2025-10-17T18:00:00.000000Z"
+      },
+      "chronologicalRank": 45
+    }
+  ]
+}
