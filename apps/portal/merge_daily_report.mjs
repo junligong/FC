@@ -70,6 +70,11 @@ function buildPanel(source, dateStr) {
   }
 }
 
+// 按文件名直接构建面板（用于栏目内子标签内容，如 market-scan.html）
+function buildPanelByFile(fileName, dateStr) {
+  return buildPanel({ id: fileName, fileName }, dateStr);
+}
+
 // 扫描所有存在日报的日期（倒序）。以 summary.html 为准；当前正在生成的日期尚未落盘，单独补入。
 function listReportDates(currentDate) {
   const dates = new Set();
@@ -116,8 +121,21 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
   // 进化专栏为可选板块：存在 evolution.html 时内嵌，否则由模板给出占位空状态。
   const evolutionPanel = buildPanel(EVOLUTION_SOURCE, dateStr);
   if (evolutionPanel) panels[EVOLUTION_SOURCE.id] = evolutionPanel;
+
+  // FC27 市场：保留原版布局 market.html 作为主视图，另加「市场扫描」子标签（market-scan.html）。
+  // 两者并存时用子标签切换；只有一份时直接作为该栏目内容，不显示多余的标签条。
+  const marketSubs = [];
+  const overviewPanel = buildPanelByFile('market.html', dateStr);
+  if (overviewPanel) marketSubs.push({ id: 'overview', label: '市场概览', html: overviewPanel });
+  const scanPanel = buildPanelByFile('market-scan.html', dateStr);
+  if (scanPanel) marketSubs.push({ id: 'scan', label: '市场扫描', html: scanPanel });
+  const subPanels = {};
+  if (marketSubs.length >= 2) subPanels.market = marketSubs;
+  else if (marketSubs.length === 1) panels['market-analysis'] = marketSubs[0].html;
+  else delete panels['market-analysis'];
+
   const archiveLinks = buildArchiveLinks(dateStr, linkBase);
-  return dailyReport({ date: dateStr, panels, archiveLinks, assetBase });
+  return dailyReport({ date: dateStr, panels, archiveLinks, assetBase, subPanels });
 }
 
 // ========== 主流程 ==========

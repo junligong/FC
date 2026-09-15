@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {root,reportDate,atomicWrite,readJSON} from '../shared/lib/runtime.mjs';
-export const outputs={news:d=>`reports/daily/${d}/news.html`,football:d=>`reports/daily/${d}/football.html`,market:d=>`reports/daily/${d}/market.html`};
+export const outputs={news:d=>`reports/daily/${d}/news.html`,football:d=>`reports/daily/${d}/football.html`,market:d=>`reports/daily/${d}/market.html`,evolution:d=>`reports/daily/${d}/evolution.html`};
 export const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
 const archivedEntries=['owner.json','state.json','report.html','tweets.json','evidence.json','work','legacy-work'];
 function archivePreviousRun(dir,now){

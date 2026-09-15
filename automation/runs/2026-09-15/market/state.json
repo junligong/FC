@@ -1,46 +1,53 @@
 {
   "module": "market",
   "date": "2026-09-15",
-  "runId": "a94c1d2d-f28d-4d4d-822d-5abc76a08a13",
+  "runId": "ee042976-cf1e-4137-9f03-240fa62fb10d",
   "status": "partial",
-  "startedAt": "2026-09-15T10:34:57.033Z",
-  "deadlineAt": "2026-09-15T10:49:57.033Z",
+  "startedAt": "2026-09-15T10:58:11.672Z",
+  "deadlineAt": "2026-09-15T11:13:11.672Z",
   "reportPath": "reports/daily/2026-09-15/market.html",
-  "completedAt": "2026-09-15T10:35:13.106Z",
+  "completedAt": "2026-09-15T10:58:12.270Z",
   "evidence": {
     "date": "2026-09-15",
     "sources": [
       {
-        "url": "https://www.futbin.com/27/popular",
-        "openedAt": "2026-09-15T18:35:12+08:00",
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-15T18:58:17+08:00",
         "dataCutoff": "2026-09-15",
-        "note": "热门球员维度主来源，采集 28 名含热度计数"
+        "note": "价格分层取数页；已确认提供 pc_price/ps_price 分档筛选与 Rating 列"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?pc_price=1000000%2B",
+        "openedAt": "2026-09-15T18:58:17+08:00",
+        "dataCutoff": "2026-09-15",
+        "note": "≥100万档筛选，价格未开放故无行返回"
       },
       {
         "url": "https://www.futbin.com/27/popular/evolutions",
-        "openedAt": "2026-09-15T18:35:12+08:00",
+        "openedAt": "2026-09-15T18:58:17+08:00",
         "dataCutoff": "2026-09-15",
-        "note": "热门进化卡子类来源，页面仅标题无可列出卡牌"
+        "note": "热门进化卡来源，本期无可列出卡牌"
       },
       {
-        "url": "https://www.futbin.com/27/player/1/erling-haaland",
-        "openedAt": "2026-09-15T18:35:12+08:00",
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-15T18:58:17+08:00",
         "dataCutoff": "2026-09-15",
-        "note": "价格维度核验：PRICE UPDATED NEVER / 0-0，双平台 price=0"
+        "note": "热门球员维度主来源（28 名含热度）"
       }
     ],
-    "dataCutoff": "2026-09-15 18:44 +08:00",
+    "dataCutoff": "2026-09-15 19:05 +08:00",
     "missingItems": [
-      "价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0），四个价格档均无真实数据。",
-      "热门进化卡：/27/popular/evolutions 本期未返回可列出的进化卡。",
-      "本周活动卡与周黑、传奇卡与英雄卡：本轮未独立核验。"
+      "概览·本周活动卡与本周周黑：本轮未采集名单与发布时间。",
+      "概览·价格分层：FC27 平台价格未开放，四档（≥100万 / 30-100万 / 10-30万 / 1-10万）均无可归集样本。",
+      "概览·热门进化卡：/27/popular/evolutions 本期无可列出进化卡。",
+      "概览·传奇卡与英雄卡：仅有榜单样本，卡类型未独立核验。"
     ],
     "notes": [
-      "本轮按用户要求重构为双维度：维度一价格分层，维度二热门球员（热门进化卡 / 价值卡）。",
-      "已用 render-market-report.mjs 统一渲染，数据源 automation/runs/2026-09-15/market/market.json。"
+      "按用户要求把「市场概览」改为四段式：活动卡+周黑 / 价格分层(每档Top50按Rating) / 传奇英雄 / 热门进化卡。",
+      "两份产物由 render-market.mjs 统一渲染：market.html（概览）+ market-scan.html（扫描）。"
     ]
   },
-  "sha256": "e6feac29b4f8ebfb52a7f3118026c5f4c3e3e0a68250aec9a3d5f98fd50263b5",
-  "bytes": 15032,
+  "sha256": "04f99c22769a5703ec47e1408f425e3fc0451333599bb2917ede59b9a8ca89d2",
+  "bytes": 9849,
   "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/market/report.html"
 }

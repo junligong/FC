@@ -10,10 +10,30 @@
     "维度二取自 FUTBIN 热门榜 /27/popular（28 名，附页面热度计数）。热门进化卡子类来源 /27/popular/evolutions，本期该页无可列出的进化卡。"
   ],
   "priceDimensions": [
-    { "id": "premium", "name": "大卡", "range": "100 万以上", "items": [] },
-    { "id": "mid", "name": "中卡", "range": "30 万 ~ 100 万", "items": [] },
-    { "id": "hot", "name": "热门卡", "range": "10 万 ~ 30 万", "items": [] },
-    { "id": "practical", "name": "适用卡", "range": "1 万 ~ 10 万", "items": [] }
+    {
+      "id": "premium",
+      "name": "大卡",
+      "range": "100 万以上",
+      "items": []
+    },
+    {
+      "id": "mid",
+      "name": "中卡",
+      "range": "30 万 ~ 100 万",
+      "items": []
+    },
+    {
+      "id": "hot",
+      "name": "热门卡",
+      "range": "10 万 ~ 30 万",
+      "items": []
+    },
+    {
+      "id": "practical",
+      "name": "适用卡",
+      "range": "1 万 ~ 10 万",
+      "items": []
+    }
   ],
   "popular": {
     "source": "https://www.futbin.com/27/popular",
@@ -25,46 +45,348 @@
     "value": {
       "source": "https://www.futbin.com/27/popular",
       "items": [
-        { "rank": 1, "name": "Mika Godts 米卡·霍茨", "rating": 78, "pos": "LW LM", "popularity": 471, "url": "https://www.futbin.com/27/player/1396/mika-godts" },
-        { "rank": 2, "name": "Alex Pfeiffer 阿莱克斯·普法伊费尔", "rating": 70, "pos": "RW RM", "popularity": 389, "url": "https://www.futbin.com/27/player/5976/alex-pfeiffer" },
-        { "rank": 3, "name": "孙兴慜 Son Heung Min", "rating": 81, "pos": "ST LW CAM LM", "popularity": 327, "url": "https://www.futbin.com/27/player/726/heung-min-son" },
-        { "rank": 4, "name": "Niamh Peacock 尼亚芙·皮科克", "rating": 60, "pos": "CB", "popularity": 298, "url": "https://www.futbin.com/27/player/6847/niamh-peacock" },
-        { "rank": 5, "name": "Julián Quiñones 胡利安·基尼奥内斯", "rating": 84, "pos": "ST LW CAM LM", "popularity": 266, "url": "https://www.futbin.com/27/player/568/julian-quinones" },
-        { "rank": 6, "name": "Raphaël Varane 拉斐尔·瓦拉内", "rating": 90, "pos": "CB", "popularity": 266, "url": "https://www.futbin.com/27/player/20939/raphael-varane" },
-        { "rank": 7, "name": "Loïc Rémy 洛伊克·雷米", "rating": 84, "pos": "ST", "popularity": 247, "url": "https://www.futbin.com/27/player/20950/loic-remy" },
-        { "rank": 8, "name": "Christian Pulisic 克里斯蒂安·普利西奇", "rating": 83, "pos": "CAM RW RM ST", "popularity": 233, "url": "https://www.futbin.com/27/player/475/christian-pulisic" },
-        { "rank": 9, "name": "Marouane Fellaini 马鲁万·费莱尼", "rating": 85, "pos": "CM", "popularity": 221, "url": "https://www.futbin.com/27/player/20949/marouane-fellaini" },
-        { "rank": 10, "name": "Armand Laurienté 阿尔芒·洛朗特", "rating": 80, "pos": "LW LM", "popularity": 212, "url": "https://www.futbin.com/27/player/1085/armand-lauriente" },
-        { "rank": 11, "name": "Karim Adeyemi 卡里姆·阿德耶米", "rating": 82, "pos": "RM LW CAM RW", "popularity": 195, "url": "https://www.futbin.com/27/player/846/karim-adeyemi" },
-        { "rank": 12, "name": "Maxence Lacroix 马克桑斯·拉克鲁瓦", "rating": 82, "pos": "CB", "popularity": 193, "url": "https://www.futbin.com/27/player/422/maxence-lacroix" },
-        { "rank": 13, "name": "Donyell Malen 东耶尔·马伦", "rating": 83, "pos": "ST", "popularity": 166, "url": "https://www.futbin.com/27/player/478/donyell-malen" },
-        { "rank": 14, "name": "Lionel Messi 利昂内尔·梅西", "rating": 89, "pos": "CAM ST RW RM", "popularity": 102, "url": "https://www.futbin.com/27/player/22/lionel-messi" },
-        { "rank": 15, "name": "Ferran Torres 费兰·托雷斯", "rating": 84, "pos": "ST LW LM", "popularity": 94, "url": "https://www.futbin.com/27/player/654/ferran-torres-garcia" },
-        { "rank": 16, "name": "Christos Tzolis 赫里斯托斯·佐利斯", "rating": 82, "pos": "LW LM", "popularity": 87, "url": "https://www.futbin.com/27/player/819/christos-tzolis" },
-        { "rank": 17, "name": "Khéphren Thuram 凯夫朗·图拉姆", "rating": 81, "pos": "CM CDM", "popularity": 78, "url": "https://www.futbin.com/27/player/944/khephren-thuram" },
-        { "rank": 18, "name": "Ridle Baku 里德勒·巴库", "rating": 79, "pos": "RB RM RW CM", "popularity": 75, "url": "https://www.futbin.com/27/player/446/ridle-baku" },
-        { "rank": 19, "name": "Roger Ibañez 罗杰·伊巴涅斯", "rating": 83, "pos": "CB RB", "popularity": 70, "url": "https://www.futbin.com/27/player/572/roger-ibanez-da-silva" },
-        { "rank": 20, "name": "Nico Williams 尼科·威廉姆斯", "rating": 84, "pos": "LW LM", "popularity": 69, "url": "https://www.futbin.com/27/player/557/nicholas-williams-arthuer" },
-        { "rank": 21, "name": "Elliot Anderson 埃利奥特·安德森", "rating": 84, "pos": "CDM CM", "popularity": 68, "url": "https://www.futbin.com/27/player/407/elliot-anderson" },
-        { "rank": 22, "name": "Claudia Pina 克劳迪娅·皮纳", "rating": 89, "pos": "LW ST LM", "popularity": 65, "url": "https://www.futbin.com/27/player/19/claudia-pina-medina" },
-        { "rank": 23, "name": "Warren Zaïre-Emery 沃伦·扎伊尔-埃梅里", "rating": 83, "pos": "CM RB CDM RM", "popularity": 63, "url": "https://www.futbin.com/27/player/774/warren-zaire-emery" },
-        { "rank": 24, "name": "Djed Spence 杰德·斯彭斯", "rating": 80, "pos": "LB RB", "popularity": 62, "url": "https://www.futbin.com/27/player/1046/djed-spence" },
-        { "rank": 25, "name": "Kaishu Sano 佐野海舟", "rating": 81, "pos": "CDM CM", "popularity": 58, "url": "https://www.futbin.com/27/player/930/kaishu-sano" },
-        { "rank": 26, "name": "Iliman Ndiaye 伊利曼·恩迪亚耶", "rating": 82, "pos": "LM RM LW RW", "popularity": 56, "url": "https://www.futbin.com/27/player/822/iliman-ndiaye" },
-        { "rank": 27, "name": "Nathaniel Brown 纳撒尼尔·布朗", "rating": 81, "pos": "LB LM", "popularity": 56, "url": "https://www.futbin.com/27/player/937/nathaniel-brown" },
-        { "rank": 28, "name": "Nicole Anyomi 妮可·安约米", "rating": 84, "pos": "ST LW CAM LM", "popularity": 56, "url": "https://www.futbin.com/27/player/754/nicole-anyomi" }
+        {
+          "rank": 1,
+          "name": "Mika Godts 米卡·霍茨",
+          "rating": 78,
+          "pos": "LW LM",
+          "popularity": 471,
+          "url": "https://www.futbin.com/27/player/1396/mika-godts"
+        },
+        {
+          "rank": 2,
+          "name": "Alex Pfeiffer 阿莱克斯·普法伊费尔",
+          "rating": 70,
+          "pos": "RW RM",
+          "popularity": 389,
+          "url": "https://www.futbin.com/27/player/5976/alex-pfeiffer"
+        },
+        {
+          "rank": 3,
+          "name": "孙兴慜 Son Heung Min",
+          "rating": 81,
+          "pos": "ST LW CAM LM",
+          "popularity": 327,
+          "url": "https://www.futbin.com/27/player/726/heung-min-son"
+        },
+        {
+          "rank": 4,
+          "name": "Niamh Peacock 尼亚芙·皮科克",
+          "rating": 60,
+          "pos": "CB",
+          "popularity": 298,
+          "url": "https://www.futbin.com/27/player/6847/niamh-peacock"
+        },
+        {
+          "rank": 5,
+          "name": "Julián Quiñones 胡利安·基尼奥内斯",
+          "rating": 84,
+          "pos": "ST LW CAM LM",
+          "popularity": 266,
+          "url": "https://www.futbin.com/27/player/568/julian-quinones"
+        },
+        {
+          "rank": 6,
+          "name": "Raphaël Varane 拉斐尔·瓦拉内",
+          "rating": 90,
+          "pos": "CB",
+          "popularity": 266,
+          "url": "https://www.futbin.com/27/player/20939/raphael-varane"
+        },
+        {
+          "rank": 7,
+          "name": "Loïc Rémy 洛伊克·雷米",
+          "rating": 84,
+          "pos": "ST",
+          "popularity": 247,
+          "url": "https://www.futbin.com/27/player/20950/loic-remy"
+        },
+        {
+          "rank": 8,
+          "name": "Christian Pulisic 克里斯蒂安·普利西奇",
+          "rating": 83,
+          "pos": "CAM RW RM ST",
+          "popularity": 233,
+          "url": "https://www.futbin.com/27/player/475/christian-pulisic"
+        },
+        {
+          "rank": 9,
+          "name": "Marouane Fellaini 马鲁万·费莱尼",
+          "rating": 85,
+          "pos": "CM",
+          "popularity": 221,
+          "url": "https://www.futbin.com/27/player/20949/marouane-fellaini"
+        },
+        {
+          "rank": 10,
+          "name": "Armand Laurienté 阿尔芒·洛朗特",
+          "rating": 80,
+          "pos": "LW LM",
+          "popularity": 212,
+          "url": "https://www.futbin.com/27/player/1085/armand-lauriente"
+        },
+        {
+          "rank": 11,
+          "name": "Karim Adeyemi 卡里姆·阿德耶米",
+          "rating": 82,
+          "pos": "RM LW CAM RW",
+          "popularity": 195,
+          "url": "https://www.futbin.com/27/player/846/karim-adeyemi"
+        },
+        {
+          "rank": 12,
+          "name": "Maxence Lacroix 马克桑斯·拉克鲁瓦",
+          "rating": 82,
+          "pos": "CB",
+          "popularity": 193,
+          "url": "https://www.futbin.com/27/player/422/maxence-lacroix"
+        },
+        {
+          "rank": 13,
+          "name": "Donyell Malen 东耶尔·马伦",
+          "rating": 83,
+          "pos": "ST",
+          "popularity": 166,
+          "url": "https://www.futbin.com/27/player/478/donyell-malen"
+        },
+        {
+          "rank": 14,
+          "name": "Lionel Messi 利昂内尔·梅西",
+          "rating": 89,
+          "pos": "CAM ST RW RM",
+          "popularity": 102,
+          "url": "https://www.futbin.com/27/player/22/lionel-messi"
+        },
+        {
+          "rank": 15,
+          "name": "Ferran Torres 费兰·托雷斯",
+          "rating": 84,
+          "pos": "ST LW LM",
+          "popularity": 94,
+          "url": "https://www.futbin.com/27/player/654/ferran-torres-garcia"
+        },
+        {
+          "rank": 16,
+          "name": "Christos Tzolis 赫里斯托斯·佐利斯",
+          "rating": 82,
+          "pos": "LW LM",
+          "popularity": 87,
+          "url": "https://www.futbin.com/27/player/819/christos-tzolis"
+        },
+        {
+          "rank": 17,
+          "name": "Khéphren Thuram 凯夫朗·图拉姆",
+          "rating": 81,
+          "pos": "CM CDM",
+          "popularity": 78,
+          "url": "https://www.futbin.com/27/player/944/khephren-thuram"
+        },
+        {
+          "rank": 18,
+          "name": "Ridle Baku 里德勒·巴库",
+          "rating": 79,
+          "pos": "RB RM RW CM",
+          "popularity": 75,
+          "url": "https://www.futbin.com/27/player/446/ridle-baku"
+        },
+        {
+          "rank": 19,
+          "name": "Roger Ibañez 罗杰·伊巴涅斯",
+          "rating": 83,
+          "pos": "CB RB",
+          "popularity": 70,
+          "url": "https://www.futbin.com/27/player/572/roger-ibanez-da-silva"
+        },
+        {
+          "rank": 20,
+          "name": "Nico Williams 尼科·威廉姆斯",
+          "rating": 84,
+          "pos": "LW LM",
+          "popularity": 69,
+          "url": "https://www.futbin.com/27/player/557/nicholas-williams-arthuer"
+        },
+        {
+          "rank": 21,
+          "name": "Elliot Anderson 埃利奥特·安德森",
+          "rating": 84,
+          "pos": "CDM CM",
+          "popularity": 68,
+          "url": "https://www.futbin.com/27/player/407/elliot-anderson"
+        },
+        {
+          "rank": 22,
+          "name": "Claudia Pina 克劳迪娅·皮纳",
+          "rating": 89,
+          "pos": "LW ST LM",
+          "popularity": 65,
+          "url": "https://www.futbin.com/27/player/19/claudia-pina-medina"
+        },
+        {
+          "rank": 23,
+          "name": "Warren Zaïre-Emery 沃伦·扎伊尔-埃梅里",
+          "rating": 83,
+          "pos": "CM RB CDM RM",
+          "popularity": 63,
+          "url": "https://www.futbin.com/27/player/774/warren-zaire-emery"
+        },
+        {
+          "rank": 24,
+          "name": "Djed Spence 杰德·斯彭斯",
+          "rating": 80,
+          "pos": "LB RB",
+          "popularity": 62,
+          "url": "https://www.futbin.com/27/player/1046/djed-spence"
+        },
+        {
+          "rank": 25,
+          "name": "Kaishu Sano 佐野海舟",
+          "rating": 81,
+          "pos": "CDM CM",
+          "popularity": 58,
+          "url": "https://www.futbin.com/27/player/930/kaishu-sano"
+        },
+        {
+          "rank": 26,
+          "name": "Iliman Ndiaye 伊利曼·恩迪亚耶",
+          "rating": 82,
+          "pos": "LM RM LW RW",
+          "popularity": 56,
+          "url": "https://www.futbin.com/27/player/822/iliman-ndiaye"
+        },
+        {
+          "rank": 27,
+          "name": "Nathaniel Brown 纳撒尼尔·布朗",
+          "rating": 81,
+          "pos": "LB LM",
+          "popularity": 56,
+          "url": "https://www.futbin.com/27/player/937/nathaniel-brown"
+        },
+        {
+          "rank": 28,
+          "name": "Nicole Anyomi 妮可·安约米",
+          "rating": 84,
+          "pos": "ST LW CAM LM",
+          "popularity": 56,
+          "url": "https://www.futbin.com/27/player/754/nicole-anyomi"
+        }
       ]
     }
   },
   "sources": [
-    { "url": "https://www.futbin.com/27/popular", "openedAt": "2026-09-15T18:30:00+08:00", "note": "热门球员维度主来源，含热度计数" },
-    { "url": "https://www.futbin.com/27/popular/evolutions", "openedAt": "2026-09-15T18:32:00+08:00", "note": "热门进化卡来源，页面仅标题无可列出卡牌" },
-    { "url": "https://www.futbin.com/27/player/1/erling-haaland", "openedAt": "2026-09-15T16:08:00+08:00", "note": "价格核验：PRICE UPDATED NEVER / 0-0" }
+    {
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": "2026-09-15T18:30:00+08:00",
+      "note": "热门球员维度主来源，含热度计数"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-15T18:32:00+08:00",
+      "note": "热门进化卡来源，页面仅标题无可列出卡牌"
+    },
+    {
+      "url": "https://www.futbin.com/27/player/1/erling-haaland",
+      "openedAt": "2026-09-15T16:08:00+08:00",
+      "note": "价格核验：PRICE UPDATED NEVER / 0-0"
+    }
   ],
   "missing": [
     "价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0，Console/PC 一致），四个价格档均无真实数据，日/周变化不可计算。",
     "热门进化卡子类：/27/popular/evolutions 本期未返回可列出的进化卡。",
     "本周活动卡与周黑（Promo/TOTW）：本轮未采集名单与发布时间。",
-    "传奇卡与英雄卡：仅有热门榜样本，未独立核验卡类型与价格。"
-  ]
+    "传奇卡与英雄卡：仅有热门榜样本，未独立核验卡类型与价格。",
+    "概览·本周活动卡与本周周黑：本轮未采集名单与发布时间。",
+    "概览·价格分层：FC27 平台价格未开放，四档（≥100万 / 30-100万 / 10-30万 / 1-10万）均无可归集样本。",
+    "概览·热门进化卡：/27/popular/evolutions 本期无可列出进化卡。"
+  ],
+  "overview": {
+    "weekly": {
+      "promo": [],
+      "totw": []
+    },
+    "priceTiers": [
+      {
+        "id": "tier-1m",
+        "name": "≥ 100 万",
+        "items": [],
+        "note": "FC27 平台价格未开放，本档无可归集样本"
+      },
+      {
+        "id": "tier-300k",
+        "name": "30 - 100 万",
+        "items": [],
+        "note": "FC27 平台价格未开放，本档无可归集样本"
+      },
+      {
+        "id": "tier-100k",
+        "name": "10 - 30 万",
+        "items": [],
+        "note": "FC27 平台价格未开放，本档无可归集样本"
+      },
+      {
+        "id": "tier-10k",
+        "name": "1 - 10 万",
+        "items": [],
+        "note": "FC27 平台价格未开放，本档无可归集样本"
+      }
+    ],
+    "iconsHeroes": [
+      {
+        "rank": 1,
+        "name": "Christine Sinclair 克里斯汀·辛克莱尔",
+        "rating": 91,
+        "pos": "ST",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20930/christine-sinclair"
+      },
+      {
+        "rank": 2,
+        "name": "Sergio Agüero 塞尔吉奥·阿圭罗",
+        "rating": 90,
+        "pos": "ST",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20929/sergio-aguero"
+      },
+      {
+        "rank": 3,
+        "name": "Miraildes Maciel Mota 福米加",
+        "rating": 90,
+        "pos": "CDM",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20935/miraildes-maciel-mota"
+      },
+      {
+        "rank": 4,
+        "name": "Hege Riise 赫格·里瑟",
+        "rating": 90,
+        "pos": "CM",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20936/hege-riise"
+      },
+      {
+        "rank": 5,
+        "name": "Karl-Heinz Rummenigge 鲁梅尼格",
+        "rating": 90,
+        "pos": "ST",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20937/karl-heinz-rummenigge"
+      },
+      {
+        "rank": 6,
+        "name": "Raphaël Varane 拉斐尔·瓦拉内",
+        "rating": 90,
+        "pos": "CB",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20939/raphael-varane"
+      },
+      {
+        "rank": 7,
+        "name": "Tobin Heath 托宾·希思",
+        "rating": 90,
+        "pos": "RW",
+        "cardType": "传奇/英雄（待核验）",
+        "url": "https://www.futbin.com/27/player/20940/tobin-heath"
+      }
+    ],
+    "evolutions": []
+  }
 }

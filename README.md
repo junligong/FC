@@ -34,7 +34,10 @@ daily-merged/archive/   历史日报独立归档（每日一个 dashboard 风格
 如实空状态（由后续进化任务补充）。
 
 - 足球三榜校验闸门：`node automation/verify-football-boards.mjs D`（拦截射手榜/助攻榜被误填为积分榜）。
-- 市场报告由 `apps/market/engine/scripts/render-market-report.mjs D` 统一渲染，数据源为 `automation/runs/D/market/market.json`。
+- FC27 市场每天产出两个**并列、互不覆盖**的文件，由 `apps/market/engine/scripts/render-market.mjs D` 从 `automation/runs/D/market/market.json` 一次渲染：
+  - `reports/daily/D/market.html` — **市场概览**（四段式）：① 本周活动卡与本周周黑 ② 价格分层 ≥100万 / 30-100万 / 10-30万 / 1-10万，每档 Top 50 按 `/27/players` 的 Rating 排序 ③ 传奇卡与英雄卡 ④ 热门进化卡
+  - `reports/daily/D/market-scan.html` — **市场扫描**：价格维度 × 热门球员维度
+  站点上以「市场概览 / 市场扫描」子标签切换。
 
 任务配置以 `shared/config/project.json` 为准；单项运行证据与不可覆盖快照统一
 保存到 `automation/runs/D/<module>/`，不再散落到项目根目录。

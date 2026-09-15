@@ -21,10 +21,16 @@ const ICONS = {
 const TABS = [
   { id: 'football-daily', view: 'football', label: '足球动态', en: 'FOOTBALL', icon: 'football', desc: '七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备' },
   { id: 'fc27-news', view: 'news', label: 'FC27 资讯', en: 'FC27 NEWS', icon: 'news', desc: 'X.com 信息源自动采集 · 智能过滤与中文翻译' },
-  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '双维度：价格分层（大卡/中卡/热门卡/适用卡）× 热门球员（进化卡/价值卡）' },
+  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '两个视图可切换：市场概览（活动卡/周黑/热门金卡/进化/传奇英雄）+ 市场扫描（价格分层 × 热门球员双维度）' },
 ];
 
 const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进化专栏', en: 'EVOLUTION', icon: 'evolution' };
+
+// 首页卡片顺序：三个数据板块 + 进化专栏，与左侧导航一一对应
+const CARD_ITEMS = [
+  ...TABS,
+  { ...EVOLUTION_TAB, desc: '热门进化卡与进化路线建议 · 来源 FUTBIN Popular Evolutions，由进化任务每日补充' },
+];
 
 const CSS = `:root{
 color-scheme:dark;
@@ -158,7 +164,15 @@ h3{font-size:15.5px;font-weight:700;margin:0}
 .view-header{margin:26px 2px 18px}
 .view-header h1{font-size:30px;line-height:1.3;margin:10px 0 7px;font-weight:800;letter-spacing:-.4px}
 .view-header p{color:var(--muted);font-size:14.5px;max-width:80ch}
-.panel-iframe{width:100%;height:calc(100vh - 210px);min-height:640px;border:0;display:block;background:#0b0708;border-radius:var(--radius)}
+/* 视图内的子标签（同一栏目下的多份内容切换，如 市场概览 / 市场扫描） */
+.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 2px 14px}
+.subtab{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);
+ color:var(--muted);font-size:13.5px;transition:color .16s,border-color .16s,background .16s}
+.subtab:hover{color:var(--text);border-color:var(--line-2)}
+.subtab.active{background:linear-gradient(135deg,var(--red),#9c0d24);border-color:transparent;color:#fff;font-weight:700}
+.subpanel{display:none}
+.subpanel.active{display:block}
+.panel-iframe{width:100%;height:calc(100vh - 250px);min-height:640px;border:0;display:block;background:#0b0708;border-radius:var(--radius)}
 .empty-panel{padding:38px 26px}
 
 /* 历史日报列表 */
@@ -199,7 +213,7 @@ dialog#poster-modal .pm-bar button{color:var(--gold);font-size:13px;font-weight:
  .stat-grid{grid-template-columns:1fr}
 }`;
 
-export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = '', evolutionLinks = '' }) {
+export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = '', evolutionLinks = '', subPanels = {} }) {
   const navItems = [
     { view: 'home', icon: 'home', label: '今日总览' },
     ...TABS.map(t => ({ view: t.view, icon: t.icon, label: t.label })),
@@ -209,16 +223,30 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
   const nav = navItems.map(n =>
     `<button type="button" data-view="${n.view}" class="${n.view === 'home' ? 'active' : ''}">${ICONS[n.icon]}<span>${esc(n.label)}</span></button>`).join('');
 
-  const cards = TABS.map(t => {
+  // 首页卡片覆盖全部内容栏目（含进化专栏），与左侧导航一一对应
+  const cards = CARD_ITEMS.map(t => {
     const has = Boolean(panels[t.id]);
     return `<article class="panel report-card"><div class="rc-top"><span class="rc-icon">${ICONS[t.icon]}</span><div><div class="rc-title">${esc(t.label)}</div><div class="rc-en">${esc(t.en)}</div></div></div><p class="rc-desc">${esc(t.desc)}</p><div class="rc-foot"><span class="badge ${has ? 'ok' : 'no'}">${has ? '● 当日已收录' : '○ 当日暂无'}</span><button type="button" class="btn gold" data-view="${t.view}">阅读全文 ${ICONS.arrow}</button></div></article>`;
   }).join('');
 
   const views = TABS.map(t => {
-    const content = panels[t.id];
-    const inner = content
-      ? `<iframe class="panel-iframe" srcdoc="${content}" title="${esc(t.label)}" loading="lazy"></iframe>`
-      : `<div class="panel empty-panel"><h2>${esc(t.label)}</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div>`;
+    const subs = subPanels[t.view];
+    let inner;
+    if (Array.isArray(subs) && subs.length) {
+      // 子标签：同一栏目下的多份内容切换（例：市场概览 / 市场扫描），默认展示第一项。
+      const bar = `<div class="subtabs" role="tablist" aria-label="${esc(t.label)}子栏目">${subs
+        .map((s, i) => `<button type="button" role="tab" class="subtab${i === 0 ? ' active' : ''}" data-subview="${t.view}" data-subid="${esc(s.id)}" aria-selected="${i === 0}">${esc(s.label)}</button>`)
+        .join('')}</div>`;
+      const bodies = subs
+        .map((s, i) => `<div class="subpanel${i === 0 ? ' active' : ''}" id="sub-${t.view}-${esc(s.id)}"><iframe class="panel-iframe" srcdoc="${s.html}" title="${esc(t.label)} · ${esc(s.label)}" loading="lazy"></iframe></div>`)
+        .join('');
+      inner = bar + bodies;
+    } else {
+      const content = panels[t.id];
+      inner = content
+        ? `<iframe class="panel-iframe" srcdoc="${content}" title="${esc(t.label)}" loading="lazy"></iframe>`
+        : `<div class="panel empty-panel"><h2>${esc(t.label)}</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div>`;
+    }
     return `<section class="view" id="view-${t.view}" hidden><header class="view-header"><div class="eyebrow">${esc(t.en)}</div><h1>${esc(t.label)}</h1><p>${esc(t.desc)}</p></header>${inner}</section>`;
   }).join('');
 
@@ -232,7 +260,9 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
 
   const poster = `${assetBase}assets/yanzu-banner.jpg`;
   const archiveCount = (archiveLinks.match(/class="report-item"/g) || []).length;
-  const boardCount = cards ? TABS.length : 0;
+  // 分类计数：内容板块（足球/资讯/市场/进化）= 4；市场栏目内含 2 个视图
+  const boardCount = CARD_ITEMS.length;
+  const marketViews = (subPanels.market || []).length || 1;
   const evoLinksBlock = evolutionLinks
     ? `<ul class="rail-list">${evolutionLinks}</ul>`
     : `<ul class="rail-list"><li><span class="dot"></span><span>热门进化卡清单（FUTBIN Popular Evolutions）</span></li><li><span class="dot"></span><span>进化路线与前置条件核验</span></li><li><span class="dot"></span><span>费用 / 到期时间 / 位置评分要求</span></li></ul>`;
@@ -254,14 +284,14 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
 
 <section class="view" id="view-home">
 <header class="hero">
- <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">整合足球赛事动态、FC27 资讯与市场行情，三榜齐备、双维度市场、进化专栏一站直达。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
+ <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">四个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描）、进化专栏。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
  <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
 </header>
 <div class="home-grid">
  <div class="col-stack">${cards}<article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
  <aside class="col-stack">
-  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>2</b><small>维度：热门 / 价值</small></div></div>${evolutionBody}${evoLinksBlock}</article>
-  <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>当日板块</small></div><div><b>${archiveCount}</b><small>历史日报</small></div><div><b>3</b><small>足球三榜</small></div><div><b>2</b><small>市场维度</small></div></div></article>
+  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:00</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
+  <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>内容板块</small></div><div><b>${marketViews}</b><small>市场视图</small></div><div><b>3</b><small>足球三榜</small></div><div><b>${archiveCount}</b><small>历史日报</small></div></div></article>
  </aside>
 </div>
 </section>
@@ -289,6 +319,18 @@ ${evolutionView}
     if(history.replaceState)history.replaceState(null,'','#'+v);
   }
   navBtns.forEach(function(b){b.addEventListener('click',function(e){if(b.tagName==='A')e.preventDefault();setView(b.dataset.view);});});
+  // 栏目内子标签切换（如 市场概览 / 市场扫描）
+  document.querySelectorAll('.subtab').forEach(function(b){b.addEventListener('click',function(){
+    var v=b.dataset.subview,id=b.dataset.subid;
+    document.querySelectorAll('.subtab').forEach(function(x){
+      if(x.dataset.subview!==v)return;
+      var on=(x===b);x.classList.toggle('active',on);x.setAttribute('aria-selected',on?'true':'false');
+    });
+    document.querySelectorAll('.subpanel').forEach(function(p){
+      if(p.id.indexOf('sub-'+v+'-')!==0)return;
+      p.classList.toggle('active',p.id==='sub-'+v+'-'+id);
+    });
+  });});
   var modal=document.getElementById('poster-modal');
   function openPoster(){if(modal&&modal.showModal&&!modal.open)modal.showModal();}
   var po=document.getElementById('poster-open');if(po)po.addEventListener('click',openPoster);

@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 /**
- * FC27 市场报告渲染器
- * 用途：把结构化的市场数据（market.json）渲染为统一版式的 reports/daily/D/market.html。
- * 输入：reports/daily/D/market.json（由 market 任务采集后写入；也可用 FC_MARKET_JSON 指定路径）。
- * 输出：reports/daily/D/market.html（双维度版式：价格维度 + 热门球员维度）。
+ * FC27 市场「扫描」子页渲染器
+ * 用途：把结构化的市场数据（market.json）渲染为 reports/daily/D/market-scan.html。
+ *       该文件是 FC27 市场页里的「市场扫描」标签页内容，与保留原版布局的 market.html 并列展示，
+ *       不替换 market.html（原版布局由市场任务按自身模板直接产出）。
+ * 输入：automation/runs/D/market/market.json（由 market 任务采集后写入；也可用 FC_MARKET_JSON 指定路径）。
+ * 输出：reports/daily/D/market-scan.html（双维度版式：价格维度 + 热门球员维度）。
  *
  * 版式固定，保证：
  *   维度一 价格维度 —— 大卡(≥100万) / 中卡(30-100万) / 热门卡(10-30万) / 适用卡(1-10万) / 万元以下；
@@ -27,7 +29,7 @@ function todayShanghai() {
   return now.toISOString().slice(0, 10);
 }
 
-function loadData(dateStr) {
+export function loadMarketData(dateStr) {
   // 数据写在模块运行目录（automation/runs/D/market/），reports/ 只保存最终 HTML。
   const jsonPath = process.env.FC_MARKET_JSON
     || path.join(ROOT, 'automation', 'runs', dateStr, 'market', 'market.json');
@@ -72,7 +74,7 @@ function popularTable(items) {
   return `<table class="tbl"><thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>热度</th><th>备注</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
-function render(dateStr, data) {
+export function renderScan(dateStr, data) {
   const d = data || {};
   const status = (d.status || 'partial').toUpperCase();
   const platform = d.platform || 'cross';
@@ -157,14 +159,16 @@ ${priceCards}
 `;
 }
 
-// ========== 主流程 ==========
-const dateStr = process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : todayShanghai();
-const { data, jsonPath, error } = loadData(dateStr);
-if (error) console.error(`market.json 解析失败：${error}`);
-if (!data) console.error(`未找到或无法读取 ${jsonPath}，将渲染为如实空状态。`);
+// ========== 主流程（单独调用时只渲染 market-scan.html）==========
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const dateStr = process.argv[2] && /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2]) ? process.argv[2] : todayShanghai();
+  const { data, jsonPath, error } = loadMarketData(dateStr);
+  if (error) console.error(`market.json 解析失败：${error}`);
+  if (!data) console.error(`未找到或无法读取 ${jsonPath}，将渲染为如实空状态。`);
 
-const outDir = path.join(ROOT, 'reports', 'daily', dateStr);
-mkdirSync(outDir, { recursive: true });
-const outPath = path.join(outDir, 'market.html');
-writeFileSync(outPath, render(dateStr, data), 'utf8');
-console.log(`市场报告已渲染: ${outPath}`);
+  const outDir = path.join(ROOT, 'reports', 'daily', dateStr);
+  mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, 'market-scan.html');
+  writeFileSync(outPath, renderScan(dateStr, data), 'utf8');
+  console.log(`市场扫描子页已渲染: ${outPath}`);
+}

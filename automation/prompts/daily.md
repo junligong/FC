@@ -11,9 +11,7 @@
 - `daily-merged/archive/D.html`（当日历史日报独立文件，并保证全部历史日期版式统一）
 - `daily-merged/assets/yanzu-banner.jpg`（共享海报资源）
 
-首页与每日日报共用 `apps/portal/dashboard.mjs` 同一模板，版式一致。右栏固定保留「进化专栏」：若存在 `reports/daily/D/evolution.html` 则自动收录，否则显示如实空状态，不得用其他板块内容顶替。
-
-协调器等待足球日报、FC27资讯和FC27市场扫描三个单项快照；缺失板块按真实状态显示，不使用旧数据冒充。合并前确认足球三榜校验通过（`node automation/verify-football-boards.mjs D`），市场报告已由渲染器输出双维度版式。四个日常任务均为 03:00，禁止新增重复调度。历史去重数据不得修改。每日输出目录为 `reports/daily/D/`。
+协调器等待足球日报、FC27资讯和FC27市场监控三个单项快照；`evolution`（进化专栏）为**可选模块**：有已完成快照则从快照收录，没有也不影响合并。缺失板块按真实状态显示，不使用旧数据冒充。合并前确认足球三榜校验通过（`node automation/verify-football-boards.mjs D`），市场报告已由 `render-market.mjs` 输出概览 + 扫描两份产物。五个日常任务均为 03:00，禁止新增重复调度。历史去重数据不得修改。每日输出目录为 `reports/daily/D/`。
 
 ## 二、发布到 WorkBuddy（自动发布）
 

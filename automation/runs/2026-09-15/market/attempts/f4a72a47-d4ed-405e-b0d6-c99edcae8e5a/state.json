@@ -1,0 +1,46 @@
+{
+  "module": "market",
+  "date": "2026-09-15",
+  "runId": "f4a72a47-d4ed-405e-b0d6-c99edcae8e5a",
+  "status": "partial",
+  "startedAt": "2026-09-15T10:46:42.448Z",
+  "deadlineAt": "2026-09-15T11:01:42.448Z",
+  "reportPath": "reports/daily/2026-09-15/market.html",
+  "completedAt": "2026-09-15T10:46:47.549Z",
+  "evidence": {
+    "date": "2026-09-15",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-15T18:46:52+08:00",
+        "dataCutoff": "2026-09-15",
+        "note": "热门球员维度主来源（28 名含热度）"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-15T18:46:52+08:00",
+        "dataCutoff": "2026-09-15",
+        "note": "热门进化卡子类来源，页面无可列出卡牌"
+      },
+      {
+        "url": "https://www.futbin.com/27/player/1/erling-haaland",
+        "openedAt": "2026-09-15T18:46:52+08:00",
+        "dataCutoff": "2026-09-15",
+        "note": "价格维度核验：PRICE UPDATED NEVER / 0-0"
+      }
+    ],
+    "dataCutoff": "2026-09-15 18:46 +08:00",
+    "missingItems": [
+      "价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0），四个价格档均无真实数据。",
+      "热门进化卡：/27/popular/evolutions 本期未返回可列出的进化卡。",
+      "本周活动卡与周黑、传奇卡与英雄卡：本轮未独立核验。"
+    ],
+    "notes": [
+      "按用户要求恢复原版市场布局：market.html 保留原五个部分版式，不再被扫描版式替换。",
+      "新增并列产物 market-scan.html（双维度扫描），站点以「市场概览 / 市场扫描」子标签切换。"
+    ]
+  },
+  "sha256": "a3baa6a99cf7740644ca998cd9875d9e9fdab3bfa84a7ebf6350e129b23b073a",
+  "bytes": 12336,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/market/report.html"
+}

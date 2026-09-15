@@ -17,6 +17,8 @@ const started=Date.now();const deadline=started+20*60000;const modules=['footbal
 function readStage(module){try{return readJSON(path.join(dir,module,'state.json'),null);}catch{return {status:'failed',reason:'invalid_state_json'};}}
 let states={};
 while(true){states=Object.fromEntries(modules.map(m=>[m,readStage(m)]));if(modules.every(m=>states[m]&&states[m].status!=='running')||Date.now()>=deadline)break;console.log(JSON.stringify({phase:'waiting',date,states:Object.fromEntries(modules.map(m=>[m,states[m]?.status||'not_started']))}));await new Promise(r=>setTimeout(r,30000));}
+// 进化专栏为可选模块：只记录状态，不阻塞合并等待
+states.evolution=readStage('evolution');
 const status={date,startedAt:new Date(started).toISOString(),modules:states,publish:'not_attempted',unattendedPublishingVerified:false};
 const stage=fs.mkdtempSync(path.join(os.tmpdir(),'fc-merge-'));let valid=0;
 try{
@@ -24,6 +26,16 @@ try{
  const historyRoot=path.join(root,'reports/daily');
  if(fs.existsSync(historyRoot))for(const entry of fs.readdirSync(historyRoot)){if(/^\d{4}-\d{2}-\d{2}$/.test(entry)&&entry!==date)fs.cpSync(path.join(historyRoot,entry),path.join(stage,'reports/daily',entry),{recursive:true});}
  const todayAssets=path.join(historyRoot,date,'assets');if(fs.existsSync(todayAssets))fs.cpSync(todayAssets,path.join(stage,'reports/daily',date,'assets'),{recursive:true});
+ // 当日附属产物（非模块快照）：市场扫描子页、进化专栏等，需一并进隔离目录才能被合并脚本读到
+ // 进化专栏是可选模块：有已完成快照就用快照，否则直接复制当日文件（缺失则不算失败）
+ const evoState=readStage('evolution');
+ let evoWritten=false;
+ if(evoState&&['success','partial'].includes(evoState.status)&&evoState.snapshotPath&&fs.existsSync(evoState.snapshotPath)){
+  const buf=fs.readFileSync(evoState.snapshotPath);
+  if(digest(buf)===evoState.sha256){const dst=path.join(stage,'reports/daily',date,'evolution.html');fs.mkdirSync(path.dirname(dst),{recursive:true});fs.writeFileSync(dst,buf);evoWritten=true;}
+ }
+ if(!evoWritten){const src=path.join(historyRoot,date,'evolution.html');if(fs.existsSync(src)){const dst=path.join(stage,'reports/daily',date,'evolution.html');fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);}}
+ for(const extra of ['market-scan.html']){const src=path.join(historyRoot,date,extra);if(fs.existsSync(src)){const dst=path.join(stage,'reports/daily',date,extra);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);}}
  const portalAssets=path.join(root,'apps/portal/assets');if(fs.existsSync(portalAssets))fs.cpSync(portalAssets,path.join(stage,'apps/portal/assets'),{recursive:true});
  for(const module of modules){const state=states[module];if(state?.status==='success'&&(state.evidence?.missingItems?.length||state.evidence?.missing?.length))state.status='partial';if(!state||!['success','partial'].includes(state.status))continue;const buf=fs.readFileSync(state.snapshotPath);if(digest(buf)!==state.sha256)throw Error(module+' snapshot changed');const target=path.join(stage,outputs[module](date));fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,buf);valid++;const data=path.join(dir,module,'tweets.json');if(module==='news'&&fs.existsSync(data)){const targetData=path.join(stage,`apps/news/data/tweets-${date}.json`);fs.mkdirSync(path.dirname(targetData),{recursive:true});fs.copyFileSync(data,targetData);}}
  if(!valid){status.merge='no_current_snapshot';status.publish='skipped';}

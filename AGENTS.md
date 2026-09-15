@@ -20,7 +20,9 @@ WorkBuddy 读取 `automation/task-definitions.json`：调度器只保存短启�
 - 旧 `fix_*.py` 等一次性补丁不是日常执行入口。
 - 子任务统一输出到 `reports/daily/D/`，完成后刷新综合页与固定归档入口，再发布到 WorkBuddy。路径以 `shared/config/project.json` 为唯一配置源。结构检查通过不代表数据已核实或已发布。
 - 足球日报的积分榜/射手榜/助攻榜是固定必做栏目，逐联赛分别核验、内容互不相同；提交前必须运行 `node automation/verify-football-boards.mjs D`，非 0 退出不得提交 success。
-- FC27 市场按固定两维度出报告：价格维度（大卡/中卡/热门卡/适用卡，低于1万另列）与热门球员维度（热门进化卡 / 价值卡）。数据写入 `automation/runs/D/market/market.json`，统一由 `apps/market/engine/scripts/render-market-report.mjs` 渲染，不手改版式。
+- FC27 市场每天产出两个并列文件，互不覆盖，均由 `apps/market/engine/scripts/render-market.mjs` 从 `automation/runs/D/market/market.json` 渲染：
+  `reports/daily/D/market.html`（**市场概览**，四段式：本周活动卡与周黑 / 价格分层每档 Top50 按 Rating / 传奇卡与英雄卡 / 热门进化卡）+ `reports/daily/D/market-scan.html`（**市场扫描**，价格维度 × 热门球员维度）。
+  站点上以「市场概览 / 市场扫描」子标签切换展示，不得相互覆盖。
 - 首页与每日日报共用 `apps/portal/dashboard.mjs` 同一模板；右侧固定保留「进化专栏」，由后续进化任务写入 `reports/daily/D/evolution.html` 后自动收录，未就绪时显示如实空状态。
 - 新增或修改脚本时，文件开头必须有中文注释，说明脚本用途、输入和主要输出；Shebang可以位于第一行。
 - 临时文件进入 `automation/runs/D/<module>/work/` 或系统临时目录，不得混入源代码、数据库或最终报告目录。

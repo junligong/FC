@@ -10,11 +10,44 @@
 
 ## 采集与数据要求
 
-在 /Users/wuyanzu/Desktop/FC/apps/market/engine 执行 FC27 市场研究。市场任务已明确启用，日期 D 由总任务统一提供。先读取 `modules/market-segments.json`，分别完成各模块，再汇总成一份市场报告。
+在 /Users/wuyanzu/Desktop/FC/apps/market/engine 执行 FC27 市场研究。市场任务已明确启用，日期 D 由总任务统一提供。先读取 `modules/market-segments.json`，分别完成各模块。
 
 以 FUTBIN 实际可用的 FC27 数据为准；数据库、开服价格或进化任务尚不可用时记录原因，不用 FC26 数据冒充 FC27。默认 Cross 平台，PC 数据单独保存。每条记录保留稳定卡牌 ID、版本、球员名称/中文译名、评分、位置、卡类型、可交易性、价格单位、源 URL 和采集时间。排除不可交易 SBC、任务、租借和交换卡，不覆盖 FC26 历史数据。
 
-按两个维度组织结果，结构固定、不得混编：
+## 两份产物，互不覆盖（重要）
+
+市场模块每天产出**两个并列文件**，站点上以「市场概览 / 市场扫描」两个子标签切换展示，本任务**不得用其中一个覆盖另一个**。两份都由渲染器统一生成，不要手改它们的 HTML 版式。
+
+### 1. `reports/daily/D/market.html` —— 市场概览（四段式，顺序与命名固定）
+
+**一、本周活动卡与本周周黑**
+分「本周活动卡（Promo）」与「本周周黑（TOTW）」两张表，采集本周实际发布的名单与发布时间；未公布或未采集则如实空状态。
+
+**二、价格分层（每档监控 Top 50，按 Rating 排序）**
+四个档位固定为：
+- ≥ 100 万
+- 30 - 100 万
+- 10 - 30 万
+- 1 - 10 万
+
+每档最多列 50 张，**以 `https://www.futbin.com/27/players` 的 Rating 列降序**作为排序与识别依据。取数用该页的价格筛选参数直接分档拉取（PC 用 `pc_price`，PlayStation 用 `ps_price`，两者可叠加）：
+
+| 档位 | FUTBIN 筛选参数 |
+|---|---|
+| ≥ 100 万 | `pc_price=1000000%2B` |
+| 30 - 100 万 | `pc_price=300000-1000000` |
+| 10 - 30 万 | `pc_price=100000-300000` |
+| 1 - 10 万 | `pc_price=10000-100000` |
+
+价格未开放时各档如实空状态并附核验证据，不伪造采样、不用 FC26 价格填充。
+
+**三、传奇卡与英雄卡**
+传奇（Icon）与英雄（Hero）卡名单；未独立核验卡类型时如实标注「待核验」。
+
+**四、热门进化卡**
+来源 `https://www.futbin.com/27/popular/evolutions`；无可用进化则如实空状态。
+
+### 2. `reports/daily/D/market-scan.html` —— 市场扫描（双维度）
 
 **维度一 · 价格维度**（按 Cross 平台最低价，单位 coins；1 万 = 10,000）
 - 大卡：≥ 100 万
@@ -29,7 +62,9 @@
 - 子类② 价值卡：热门榜中的**非进化卡**（即热门球员里未参与进化的卡）
 - 必须注明排序指标就是 FUTBIN 热门页所示的引用/使用热度；没有热度来源就不用「搜索热度」排序。
 
-两个维度分别独立成章，并在报告中明确标注各自的来源 URL、打开时间与数据截止时间。此外按需增量维护第二观察维度：本周活动卡与周黑、传奇卡与英雄卡。
+## 产出流程
 
-数据写入 `automation/runs/D/market/market.json`（结构见 `modules/market-segments.json` 与 `apps/market/AGENTS.md`），随后运行 `node apps/market/engine/scripts/render-market-report.mjs D` 渲染出 `reports/daily/D/market.html`。版式由渲染器统一，不要手改 HTML 版式；渲染器对缺失数据一律输出如实空状态。校验卡牌 ID 去重、平台隔离、时间戳、价格有效性、数据与图表数量一致后再提交。失败保留原始数据和上次有效报告。
+1. 把两份产物所需的结构化结果写入 `automation/runs/D/market/market.json`：概览数据放 `overview`（`weekly.promo` / `weekly.totw` / `priceTiers[].items` / `iconsHeroes` / `evolutions`），扫描数据放顶层（`priceDimensions`、`popular.evolutions`、`popular.value`），另附 `sources` / `missing` / `notes`。结构见 `modules/market-segments.json` 与 `apps/market/AGENTS.md`。
+2. 运行 `node apps/market/engine/scripts/render-market.mjs D`，一次生成 `market.html` 与 `market-scan.html`。渲染器对缺失数据一律输出如实空状态。
+3. 校验卡牌 ID 去重、平台隔离、时间戳、价格有效性、数量一致后再提交。失败保留原始数据和上次有效报告。
 浏览器强制规则：每次先读取根 AGENTS.md 对应段落；FUTBIN及其他网页只使用用户已登录的 Chrome 浏览器插件，并固定 `extension` 模式。禁止IAB、未登录浏览器、临时浏览器或新profile；扩展连接失败则提交failed/partial，不得先试或回退IAB。

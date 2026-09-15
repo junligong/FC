@@ -15,9 +15,15 @@
       "promptFile": "automation/prompts/news.md"
     },
     {
-      "name": "FC·市场扫描",
+      "name": "FC·市场监控",
       "role": "market",
       "promptFile": "automation/prompts/market.md",
+      "contentExecution": "enabled"
+    },
+    {
+      "name": "FC·进化专栏",
+      "role": "evolution",
+      "promptFile": "automation/prompts/evolution.md",
       "contentExecution": "enabled"
     },
     {

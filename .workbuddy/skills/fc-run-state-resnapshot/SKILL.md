@@ -69,12 +69,29 @@ node automation/run-state.mjs begin M D
 | 报错 | 原因 | 对策 |
 |---|---|---|
 | `不是本轮新生成的完整报告` | 报告 `mtimeMs < startedAt` | 在 `begin` 之后再写一次报告文件 |
-| `来源记录不是本轮实际打开，拒绝复用旧证据` | 有 `sources[].openedAt < startedAt` | 用**当前时间**（可等于 now）赋 openedAt；`now - 5s` 都可能早于 startedAt，**不要用偏移量** |
+| `来源记录不是本轮实际打开，拒绝复用旧证据` | 有 `sources[].openedAt < startedAt` | **必须取未来时间**：`now = 当前时间 + 5 秒`。用 `now - 0` 或 `now - Ns` 都会失败——写入的是**秒精度**，而 `startedAt` 带毫秒（如 `18:46:42.448`），秒截断后的 `18:46:42` 仍然小于它 |
 
 校验逻辑见 `automation/run-state.mjs` 的 `finish()`：
 - `stat.mtimeMs < Date.parse(startedAt)` → 拒
-- `evidence.sources.some(s => Date.parse(s.openedAt) < startedAt)` → 拒
+- `evidence.sources.some(s => Date.parse(s.openedAt) < startedAt)` → 拒（毫秒级比较）
 - `now > startedAt + 20min` → 拒（超期）
+
+## 改了「非快照类」的当日产物？协调器还要额外复制
+
+`coordinate.mjs` 的隔离 stage **只从模块快照**写出 `football/news/market.html`，其余报文一律不复制。
+所以 `market-scan.html`、`evolution.html` 这类**由其他代理产出、不属于 run-state 快照**的文件，
+必须在 `coordinate.mjs` 里显式复制进 stage，否则自动合并时它们永远缺失：
+
+```js
+for (const extra of ['market-scan.html', 'evolution.html']) {
+  const src = path.join(historyRoot, date, extra);
+  if (fs.existsSync(src)) {
+    const dst = path.join(stage, 'reports/daily', date, extra);
+    fs.mkdirSync(path.dirname(dst), { recursive: true });
+    fs.copyFileSync(src, dst);
+  }
+}
+```
 
 ## 注意
 
@@ -82,3 +99,6 @@ node automation/run-state.mjs begin M D
 - 全部完成后 `coordinator-state.json` 的 `modules[M].sha256` 应等于 `automation/runs/D/M/report.html` 的 sha256。
 - `publish=delegated` 是正常值：发布由 WorkBuddy 站点发布能力完成，不走 publisher。
 - 顺带：`reports/` 只放最终 HTML；采集数据（如 `market.json`）要放 `automation/runs/D/<module>/`。
+- **一个栏目可以有多份并列产物**：`apps/portal/dashboard.mjs` 的 `subPanels` 参数支持栏目内子标签
+  （例：`subPanels.market = [{id:'overview',...},{id:'scan',...}]` → 「市场概览 / 市场扫描」切换）。
+  新增并列产物时，改产物路径**不要覆盖原文件**，再在 `merge_daily_report.mjs` 里用 `buildPanelByFile()` 读入。

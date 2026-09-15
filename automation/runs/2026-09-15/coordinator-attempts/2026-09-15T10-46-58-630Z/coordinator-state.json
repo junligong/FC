@@ -1,0 +1,266 @@
+{
+  "date": "2026-09-15",
+  "startedAt": "2026-09-15T10:46:57.670Z",
+  "modules": {
+    "football": {
+      "module": "football",
+      "date": "2026-09-15",
+      "runId": "c260f72f-7658-4bef-a1bc-0f5c52be24fc",
+      "status": "partial",
+      "startedAt": "2026-09-15T10:33:10.601Z",
+      "deadlineAt": "2026-09-15T10:48:10.601Z",
+      "reportPath": "reports/daily/2026-09-15/football.html",
+      "completedAt": "2026-09-15T10:34:46.812Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "url": "https://khelnow.com/football/premier-league-points-table-after-manchester-united-vs-manchester-city-202609",
+            "openedAt": "2026-09-15T18:34:39+08:00",
+            "dataCutoff": "2026-09-13（英超第4轮）",
+            "note": "英超积分榜 W/D/L/GD/积分 + 射手榜 + 助攻榜"
+          },
+          {
+            "url": "https://www.soccernews.com/league-table",
+            "openedAt": "2026-09-15T18:34:39+08:00",
+            "dataCutoff": "2026-09-13",
+            "note": "英超积分榜交叉核对（含进失球）"
+          },
+          {
+            "url": "https://chile.as.com/resultados/futbol/inglaterra/clasificacion/",
+            "openedAt": "2026-09-15T18:34:40+08:00",
+            "dataCutoff": "2026-09-13 17:17 CLST",
+            "note": "英超进/失球交叉核对，GD 逐队与 khelnow 一致"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-15T18:34:41+08:00",
+            "dataCutoff": "2026-09-15",
+            "note": "市场热门球员维度（28 名含热度）"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-15T18:34:42+08:00",
+            "dataCutoff": "2026-09-15",
+            "note": "热门进化卡来源，页面无可列出卡牌"
+          },
+          {
+            "url": "https://laligatable.co/",
+            "openedAt": "2026-09-15T18:34:43+08:00",
+            "dataCutoff": "2026-09-15 11:35",
+            "note": "西甲积分榜与射手榜核验"
+          },
+          {
+            "url": "https://tribuna.com/en/league/serie-a/table/2026-2027",
+            "openedAt": "2026-09-15T18:34:44+08:00",
+            "dataCutoff": "2026-09-15 08:59",
+            "note": "意甲积分榜/射手榜/助攻榜核验，确认迪乌夫 3 助攻"
+          }
+        ],
+        "dataCutoff": "2026-09-15 18:45 +08:00",
+        "missingItems": [
+          "德甲/法甲/MLS/沙特联赛射手榜与助攻榜本轮未逐条核验，报告内如实留空。",
+          "西甲助攻榜本轮未逐条核验，报告内如实留空。",
+          "英超积分榜来源截止 2026-09-13；利兹联、纽卡斯尔联第4轮结果按赛后推算（利兹 4-0 纽卡）。"
+        ],
+        "notes": [
+          "本轮修复三榜结构性错误：原 football.html 的射手榜/助攻榜被整段误填为积分榜数据。",
+          "改用球员级核验值并通过 node automation/verify-football-boards.mjs 校验。",
+          "英超积分榜缺口按双源（khelnow + AS.com，GD 逐队一致）补齐。"
+        ]
+      },
+      "sha256": "a06d65dbb27ec49104fcf13f23d674d547f7f42817b04c30da70d140264806d7",
+      "bytes": 63381,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/football/report.html"
+    },
+    "news": {
+      "module": "news",
+      "date": "2026-09-15",
+      "runId": "02e32aac-f1db-4548-9df0-51f06f70f64e",
+      "status": "partial",
+      "startedAt": "2026-09-15T07:51:27.526Z",
+      "deadlineAt": "2026-09-15T08:06:27.526Z",
+      "reportPath": "reports/daily/2026-09-15/news.html",
+      "completedAt": "2026-09-15T08:00:41.651Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "runId": "02e32aac-f1db-4548-9df0-51f06f70f64e",
+        "startedAt": "2026-09-15T07:51:27.526Z",
+        "finishedAt": "2026-09-15T08:00:00.000Z",
+        "sources": [
+          {
+            "account": "@EASFCDirect",
+            "url": "https://x.com/EASFCDirect",
+            "openedAt": "2026-09-15T07:51:39Z",
+            "pageTitle": "EA SPORTS FC Direct Communication (@EASFCDirect) / X"
+          },
+          {
+            "account": "@easportsfc",
+            "url": "https://x.com/easportsfc",
+            "openedAt": "2026-09-15T07:52:16Z",
+            "pageTitle": "EA SPORTS FC (@EASPORTSFC) / X"
+          },
+          {
+            "account": "@fifa_romania",
+            "url": "https://x.com/fifa_romania",
+            "openedAt": "2026-09-15T07:52:42Z",
+            "pageTitle": "FifaTradingRomania (@fifa_romania) / X"
+          },
+          {
+            "account": "@AsyFutTrader",
+            "url": "https://x.com/AsyFutTrader",
+            "openedAt": "2026-09-15T07:53:07Z",
+            "pageTitle": "ASY FUT (@AsyFutTrader) / X"
+          },
+          {
+            "account": "@FIFA22_INFO",
+            "url": "https://x.com/FIFA22_INFO",
+            "openedAt": "2026-09-15T07:53:54Z",
+            "pageTitle": "EAFC 27 News (@FIFA22_INFO) / X"
+          },
+          {
+            "account": "@FutSheriff",
+            "url": "https://x.com/FutSheriff",
+            "openedAt": "2026-09-15T07:54:27Z",
+            "pageTitle": "Fut Sheriff (@FutSheriff) / X"
+          },
+          {
+            "account": "@FutPoliceLeaks",
+            "url": "https://x.com/FutPoliceLeaks",
+            "openedAt": "2026-09-15T07:55:08Z",
+            "pageTitle": "FUT POLICE LEAKS (@FutPoliceLeaks) / X"
+          },
+          {
+            "account": "@FUTBIN",
+            "url": "https://x.com/FUTBIN",
+            "openedAt": "2026-09-15T07:55:36Z",
+            "pageTitle": "FUTBIN (@FUTBIN) / X"
+          },
+          {
+            "account": "@easysbc",
+            "url": "https://x.com/easysbc",
+            "openedAt": "2026-09-15T07:56:02Z",
+            "pageTitle": "EasySBC (@easysbc) / X"
+          },
+          {
+            "account": "@Razzerstrading",
+            "url": "https://x.com/Razzerstrading",
+            "openedAt": "2026-09-15T07:56:29Z",
+            "pageTitle": "Razzer FC27 (@Razzerstrading) / X"
+          },
+          {
+            "account": "@EAFCassist",
+            "url": "https://x.com/EAFCassist",
+            "openedAt": "2026-09-15T07:56:58Z",
+            "pageTitle": "FC 27 NEWS & TIPS (@EAFCassist) / X"
+          },
+          {
+            "account": "@Fut_scoreboard",
+            "url": "https://x.com/Fut_scoreboard",
+            "openedAt": "2026-09-15T07:57:23Z",
+            "pageTitle": "Fut Scoreboard (@Fut_scoreboard) / X"
+          },
+          {
+            "account": "@DetectiveFUT",
+            "url": "https://x.com/DetectiveFUT",
+            "openedAt": "2026-09-15T07:57:51Z",
+            "pageTitle": "DetectiveFUT (@DetectiveFUT) / X"
+          },
+          {
+            "account": "@FGZNews",
+            "url": "https://x.com/FGZNews",
+            "openedAt": "2026-09-15T07:58:42Z",
+            "pageTitle": "FGZ (@FGZNews) / X"
+          },
+          {
+            "account": "@futagentt",
+            "url": "https://x.com/futagentt",
+            "openedAt": "2026-09-15T07:59:07Z",
+            "pageTitle": "FUT Agent (@futagentt) / X"
+          },
+          {
+            "account": "@Futdonk",
+            "url": "https://x.com/Futdonk",
+            "openedAt": "2026-09-15T07:59:39Z",
+            "pageTitle": "Donk (@Futdonk) / X"
+          }
+        ],
+        "dataCutoff": "2026-09-15T08:00:00Z",
+        "stats": {
+          "totalRaw": 53,
+          "unique": 53,
+          "fc27Related": 52,
+          "nonPrediction": 50,
+          "newTweetsAfterDedup": 3,
+          "finalTweetsInReport": 115,
+          "seenTweetsTotal": 423,
+          "imagesCached": "150/150"
+        },
+        "missingItems": [
+          "翻译API返回502错误，3条新推文(@AsyFutTrader, @FutPoliceLeaks, @futagentt)的中文翻译失败，报告保留原文"
+        ],
+        "reportPath": "reports/daily/2026-09-15/news.html"
+      },
+      "sha256": "fbe7f523d5741734979f87e2dfb18fcb93396e84e56c662958d59be85846b514",
+      "bytes": 191623,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/news/report.html"
+    },
+    "market": {
+      "module": "market",
+      "date": "2026-09-15",
+      "runId": "f4a72a47-d4ed-405e-b0d6-c99edcae8e5a",
+      "status": "partial",
+      "startedAt": "2026-09-15T10:46:42.448Z",
+      "deadlineAt": "2026-09-15T11:01:42.448Z",
+      "reportPath": "reports/daily/2026-09-15/market.html",
+      "completedAt": "2026-09-15T10:46:47.549Z",
+      "evidence": {
+        "date": "2026-09-15",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-15T18:46:52+08:00",
+            "dataCutoff": "2026-09-15",
+            "note": "热门球员维度主来源（28 名含热度）"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-15T18:46:52+08:00",
+            "dataCutoff": "2026-09-15",
+            "note": "热门进化卡子类来源，页面无可列出卡牌"
+          },
+          {
+            "url": "https://www.futbin.com/27/player/1/erling-haaland",
+            "openedAt": "2026-09-15T18:46:52+08:00",
+            "dataCutoff": "2026-09-15",
+            "note": "价格维度核验：PRICE UPDATED NEVER / 0-0"
+          }
+        ],
+        "dataCutoff": "2026-09-15 18:46 +08:00",
+        "missingItems": [
+          "价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0），四个价格档均无真实数据。",
+          "热门进化卡：/27/popular/evolutions 本期未返回可列出的进化卡。",
+          "本周活动卡与周黑、传奇卡与英雄卡：本轮未独立核验。"
+        ],
+        "notes": [
+          "按用户要求恢复原版市场布局：market.html 保留原五个部分版式，不再被扫描版式替换。",
+          "新增并列产物 market-scan.html（双维度扫描），站点以「市场概览 / 市场扫描」子标签切换。"
+        ]
+      },
+      "sha256": "a3baa6a99cf7740644ca998cd9875d9e9fdab3bfa84a7ebf6350e129b23b073a",
+      "bytes": 12336,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-15/market/report.html"
+    }
+  },
+  "publish": "delegated",
+  "unattendedPublishingVerified": false,
+  "merge": "success",
+  "indexSha256": "9353b5abee97b3f1427f02ff99a047326e947fb4f997d9d164f1e4d8d67354ba",
+  "publishTarget": {
+    "kind": "workbuddy-sites",
+    "directory": "/Users/wuyanzu/Desktop/FC/daily-merged",
+    "entry": "index.html"
+  },
+  "reason": "本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。",
+  "completedAt": "2026-09-15T10:46:58.630Z"
+}

@@ -100,3 +100,63 @@ const assistsData = {${rows}};`;
     assert.equal(passed.status, 0, passed.stdout + passed.stderr);
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
+
+test('FC27 市场保留原版布局，并以子标签并入市场扫描', () => {
+  const here = path.dirname(new URL(import.meta.url).pathname);
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-market-tabs-'));
+  const date = '2026-09-12';
+  const day = path.join(dir, 'reports', 'daily', date);
+  mkdirSync(day, { recursive: true });
+  const page = (title, marker) => `<html><head><title>${title}</title></head><body><h2>${marker}</h2>${date}</body></html>`;
+  writeFileSync(path.join(day, 'market.html'), page('原版市场概览', '热门金卡榜'));
+  writeFileSync(path.join(day, 'market-scan.html'), page('市场扫描', '维度二 · 热门球员维度'));
+  try {
+    const r = spawnSync(process.execPath, [path.join(here, '..', 'apps/portal/merge_daily_report.mjs'), date], {
+      env: { ...process.env, FC_PROJECT_ROOT: dir }, encoding: 'utf8', timeout: 30000,
+    });
+    assert.equal(r.status, 0, r.stderr);
+    const index = readFileSync(path.join(dir, 'daily-merged/index.html'), 'utf8');
+    assert.ok(index.includes('data-subid="overview"'), '应生成「市场概览」子标签');
+    assert.ok(index.includes('data-subid="scan"'), '应生成「市场扫描」子标签');
+    assert.ok(index.includes('热门金卡榜'), '原版布局内容必须保留');
+    assert.ok(index.includes('维度二 · 热门球员维度'), '扫描内容必须并入');
+    assert.ok(index.includes('class="subpanel active"'), '默认应有激活的子面板');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('市场概览固定四段式且价格分层为四档 Top50', async () => {
+  const here = path.dirname(new URL(import.meta.url).pathname);
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-market-overview-'));
+  const date = '2026-09-12';
+  const runDir = path.join(dir, 'automation', 'runs', date, 'market');
+  mkdirSync(runDir, { recursive: true });
+  const data = {
+    date, status: 'partial', platform: 'cross',
+    overview: {
+      weekly: { promo: [{ name: '测试活动卡', rating: 90, pos: 'ST', cardType: 'Promo', price: 1200000, url: 'https://example.com/a' }], totw: [] },
+      priceTiers: [
+        { id: 'tier-1m', name: '≥ 100 万', items: Array.from({ length: 60 }, (_, i) => ({ name: `P${i}`, rating: 99 - i, pos: 'ST', price: 2000000 })) },
+        { id: 'tier-300k', name: '30 - 100 万', items: [] },
+        { id: 'tier-100k', name: '10 - 30 万', items: [] },
+        { id: 'tier-10k', name: '1 - 10 万', items: [] },
+      ],
+      iconsHeroes: [], evolutions: [],
+    },
+    sources: [{ url: 'https://www.futbin.com/27/players', openedAt: '2026-09-12T10:00:00+08:00' }],
+    missing: [],
+  };
+  writeFileSync(path.join(runDir, 'market.json'), JSON.stringify(data, null, 2));
+  try {
+    const r = spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/render-market-overview.mjs'), date], {
+      env: { ...process.env, FC_PROJECT_ROOT: dir }, encoding: 'utf8', timeout: 30000,
+    });
+    assert.equal(r.status, 0, r.stderr);
+    const html = readFileSync(path.join(dir, 'reports', 'daily', date, 'market.html'), 'utf8');
+    const h2 = [...html.matchAll(/<h2[^>]*>(.*?)<\/h2>/g)].map(m => m[1].replace(/<[^>]+>/g, '').trim());
+    assert.deepEqual(h2.slice(0, 4), ['一、本周活动卡与本周周黑', '二、价格分层（每档 Top 50，按 Rating）', '三、传奇卡与英雄卡', '四、热门进化卡']);
+    for (const t of ['≥ 100 万', '30 - 100 万', '10 - 30 万', '1 - 10 万']) assert.ok(html.includes(t), `缺少价格档 ${t}`);
+    // 每档最多 50 行（数据里给了 60 条，应被截断到 50）
+    assert.ok(html.includes('50 张'), '应截断到 Top 50');
+    assert.equal((html.match(/<tbody>/g) || []).length >= 1, true);
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
