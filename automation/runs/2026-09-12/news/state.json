@@ -1,0 +1,163 @@
+{
+  "module": "news",
+  "date": "2026-09-12",
+  "runId": "9153b095-a7db-449b-82b1-382b03ac852c",
+  "status": "partial",
+  "startedAt": "2026-09-11T19:01:01.933Z",
+  "deadlineAt": "2026-09-11T19:16:01.933Z",
+  "reportPath": "FC27/fc27-news/reports/fc27-news-2026-09-12.html",
+  "completedAt": "2026-09-11T19:12:39.156Z",
+  "evidence": {
+    "date": "2026-09-12",
+    "module": "news",
+    "runId": "9153b095-a7db-449b-82b1-382b03ac852c",
+    "startedAt": "2026-09-11T19:01:01.933Z",
+    "completedAt": "2026-09-12T03:12:00.000Z",
+    "status": "partial",
+    "reportPath": "FC27/fc27-news/reports/fc27-news-2026-09-12.html",
+    "dataPath": "FC27/fc27-news/data/tweets-2026-09-12.json",
+    "sources": [
+      {
+        "handle": "fifa_romania",
+        "url": "https://x.com/fifa_romania",
+        "openTime": "2026-09-11T19:02:14Z",
+        "tweetsCollected": 4
+      },
+      {
+        "handle": "AsyFutTrader",
+        "url": "https://x.com/AsyFutTrader",
+        "openTime": "2026-09-11T19:02:38Z",
+        "tweetsCollected": 3
+      },
+      {
+        "handle": "FIFA22_INFO",
+        "url": "https://x.com/FIFA22_INFO",
+        "openTime": "2026-09-11T19:03:02Z",
+        "tweetsCollected": 5
+      },
+      {
+        "handle": "FutSheriff",
+        "url": "https://x.com/FutSheriff",
+        "openTime": "2026-09-11T19:03:26Z",
+        "tweetsCollected": 3
+      },
+      {
+        "handle": "FutPoliceLeaks",
+        "url": "https://x.com/FutPoliceLeaks",
+        "openTime": "2026-09-11T19:03:53Z",
+        "tweetsCollected": 2
+      },
+      {
+        "handle": "FUTBIN",
+        "url": "https://x.com/FUTBIN",
+        "openTime": "2026-09-11T19:04:17Z",
+        "tweetsCollected": 2
+      },
+      {
+        "handle": "easysbc",
+        "url": "https://x.com/easysbc",
+        "openTime": "2026-09-11T19:04:41Z",
+        "tweetsCollected": 3
+      },
+      {
+        "handle": "Razzerstrading",
+        "url": "https://x.com/Razzerstrading",
+        "openTime": "2026-09-11T19:05:05Z",
+        "tweetsCollected": 2
+      },
+      {
+        "handle": "EAFCassist",
+        "url": "https://x.com/EAFCassist",
+        "openTime": "2026-09-11T19:05:28Z",
+        "tweetsCollected": 1
+      },
+      {
+        "handle": "Fut_scoreboard",
+        "url": "https://x.com/Fut_scoreboard",
+        "openTime": "2026-09-11T19:05:53Z",
+        "tweetsCollected": 4
+      },
+      {
+        "handle": "DetectiveFUT",
+        "url": "https://x.com/DetectiveFUT",
+        "openTime": "2026-09-11T19:06:16Z",
+        "tweetsCollected": 2
+      },
+      {
+        "handle": "FGZNews",
+        "url": "https://x.com/FGZNews",
+        "openTime": "2026-09-11T19:06:41Z",
+        "tweetsCollected": 4
+      },
+      {
+        "handle": "futagentt",
+        "url": "https://x.com/futagentt",
+        "openTime": "2026-09-11T19:07:08Z",
+        "tweetsCollected": 1
+      },
+      {
+        "handle": "Futdonk",
+        "url": "https://x.com/Futdonk",
+        "openTime": "2026-09-11T19:07:32Z",
+        "tweetsCollected": 1
+      },
+      {
+        "handle": "EASFCDirect",
+        "url": "https://x.com/EASFCDirect",
+        "openTime": "2026-09-11T19:01:13Z",
+        "tweetsCollected": 0,
+        "note": "24h内无符合条件推文"
+      },
+      {
+        "handle": "easportsfc",
+        "url": "https://x.com/easportsfc",
+        "openTime": "2026-09-11T19:01:49Z",
+        "tweetsCollected": 0,
+        "note": "24h内无符合条件推文"
+      }
+    ],
+    "dataCutoffTime": "2026-09-12T03:01:11Z",
+    "collectionSummary": {
+      "totalRaw": 43,
+      "unique": 43,
+      "fc27Related": 41,
+      "nonPrediction": 39,
+      "newTweetsAfterDedup": 37,
+      "contentDedupedClusters": 37,
+      "finalTweetsInReport": 37,
+      "seenTweetsTotal": 232
+    },
+    "translation": {
+      "method": "manual",
+      "apiStatus": "failed (502 on all requests to http://127.0.0.1:52053/api/qianfanproxy/v2/chat/completions)",
+      "translated": 37,
+      "total": 37,
+      "untranslated": 0,
+      "verified": true,
+      "note": "翻译API全部502失败，由执行AI手动完成全部37条翻译"
+    },
+    "verification": {
+      "dateCheck": "pass",
+      "cardCount": 37,
+      "translationCompleteness": "37/37 complete, 0 placeholders remaining",
+      "sourceLinks": 39,
+      "images": 48,
+      "noImagePlaceholders": 3,
+      "accountCoverage": "14/16 sources produced tweets",
+      "originalTextBlocks": 37,
+      "uniqueTweetUrls": 37,
+      "allPass": true
+    },
+    "missing": {
+      "sources": [
+        "EASFCDirect (24h内无FC27相关推文)",
+        "easportsfc (24h内无FC27相关推文)"
+      ],
+      "translationApi": "API 502全部失败，手动翻译替代"
+    },
+    "partialReason": "翻译API全部502失败，翻译由AI手动完成而非API；2/16信息源24h内无符合条件推文"
+  },
+  "sha256": "5da3b92611add54c99852540d5d1fe6f84ef28e904d75f89b10c04dee733e383",
+  "bytes": 64301,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-12/news/report.html"
+}

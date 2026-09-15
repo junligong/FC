@@ -1,0 +1,35 @@
+{
+  "timezone": "Asia/Shanghai",
+  "time": "03:00",
+  "verifiedAt": "2026-09-15T02:49:00.000Z",
+  "verification": "DuMate existing task list updated and read back after shared-layer migration",
+  "tasks": [
+    {
+      "name": "足球日报自动生成（v3-参考页最新布局+浅色主题+数据排行+今日头条-无葡超）",
+      "role": "football"
+    },
+    {
+      "name": "FC27每日资讯自动采集",
+      "role": "news"
+    },
+    {
+      "name": "FC27 每日市场扫描与交易策略",
+      "role": "market",
+      "contentExecution": "enabled"
+    },
+    {
+      "name": "每日综合报告（资讯+足球+市场分析→合并网页）",
+      "role": "coordinate-merge-publish"
+    }
+  ],
+  "publicUrl": "https://www.dumate.cn/artifacts/7vbc68mkblkg",
+  "unattendedPublishingVerified": false,
+  "executionContract": "2026-09-11",
+  "projectRoot": "/Users/wuyanzu/Desktop/FC",
+  "sharedConfig": "shared/config/project.json",
+  "stateDirectory": "automation/runs/D",
+  "dailyOutputDirectory": "reports/daily/D",
+  "fixedLocalIndex": "daily-merged/index.html",
+  "actualSchedulerPromptsUpdated": true,
+  "verificationFile": "automation/runs/2026-09-15/coordinator-state.json"
+}
