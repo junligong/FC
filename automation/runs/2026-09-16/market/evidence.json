@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-16",
+  "status": "failed",
+  "dataCutoff": "2026-09-16 03:07 +08:00",
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/players",
+      "openedAt": null,
+      "dataCutoff": null,
+      "note": "未能打开：Chrome 插件 extension 通道不可用（RelayUnreachable），未采集价格分层数据。"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": null,
+      "dataCutoff": null,
+      "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门球员维度。"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": null,
+      "dataCutoff": null,
+      "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门进化卡。"
+    }
+  ],
+  "missingItems": [
+    "本轮浏览器通道不可用，无法访问 FUTBIN，未采集任何 FC27 市场数据。",
+    "概览·本周活动卡与本周周黑（Promo/TOTW）：未采集名单与发布时间。",
+    "概览·价格分层（≥100万 / 30-100万 / 10-30万 / 1-10万，每档 Top50 按 Rating）：未采集，四档均为如实空状态。",
+    "概览·传奇卡与英雄卡：未采集。",
+    "概览·热门进化卡（/27/popular/evolutions）：未采集。",
+    "扫描·价格维度（大卡/中卡/热门卡/适用卡/万元以下）：未采集。",
+    "扫描·热门球员维度（热门进化卡 / 价值卡，/27/popular）：未采集。"
+  ],
+  "notes": [
+    "浏览器通道四项探针（2026-09-16 03:06 GMT+8）原始返回如下：",
+    "探针1 init --mode extension：{\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":111}",
+    "探针2 doctor：relay.connected=\"\"（false），session.extConnected=false，session.mode=cdp，cdp.endpoint=http://127.0.0.1:19222（该实例由 --user-data-dir 独立 profile 启动，属禁止的临时 profile）。",
+    "探针3 NativeMessagingHosts：仅存在 com.openai.codexextension.json，缺少 com.workbuddy.extension.json，Chrome 扩展 ajnnogdfpilbhkeggdjlcokgglijmdde 的 native messaging 桥接未注册。",
+    "探针4 remote-debugging-port 进程计数：0，用户日常 Chrome 未开启远程调试。",
+    "判定结论：Chrome 插件 extension 通道不可用，按契约提交 failed，不回退 IAB、不新建独立 profile、不用旧日期或 FC26 数据填充。"
+  ]
+}

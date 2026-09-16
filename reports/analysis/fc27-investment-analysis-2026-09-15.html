@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FC27 球员价格投资分析报告 · 2026-09-15</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0f172a; --card: #1e293b; --card2: #263449; --border: #334155;
+    --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8;
+    --red: #ef4444; --green: #22c55e; --amber: #f59e0b;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 60px; }
+  .hero { background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%); border-radius: 20px; padding: 36px 32px; margin-bottom: 28px; color: #fff; box-shadow: 0 8px 30px rgba(14,165,233,.25); }
+  .hero h1 { margin: 0 0 8px; font-size: 30px; }
+  .hero .sub { opacity: .92; font-size: 15px; }
+  .hero .tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag { background: rgba(255,255,255,.18); padding: 6px 14px; border-radius: 20px; font-size: 13px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 22px; }
+  .gcell { background: rgba(255,255,255,.14); border-radius: 12px; padding: 14px 16px; }
+  .gcell .k { font-size: 12px; opacity: .85; }
+  .gcell .v { font-size: 26px; font-weight: 700; margin-top: 2px; }
+  section { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 26px 28px; margin-bottom: 24px; }
+  h2 { margin: 0 0 6px; font-size: 22px; }
+  h2 .badge { font-size: 13px; vertical-align: middle; margin-left: 8px; padding: 2px 10px; border-radius: 6px; font-weight: 600; }
+  .sec-sub { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .charts2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .chart-box { background: var(--card2); border-radius: 12px; padding: 18px; }
+  .chart-box h3 { margin: 0 0 14px; font-size: 15px; color: var(--text); }
+  .chart-box canvas { max-height: 300px; }
+  .keypoint { background: #0c1425; border-left: 4px solid var(--accent); padding: 14px 18px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 14px; }
+  .keypoint strong { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 12px; }
+  .up { color: var(--green); font-weight: 600; }
+  .down { color: var(--red); font-weight: 600; }
+  .flat { color: var(--muted); }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .pcard { background: var(--card2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .pcard.buy { border-top: 3px solid var(--green); }
+  .pcard.avoid { border-top: 3px solid var(--red); }
+  .pcard .nm { font-weight: 700; font-size: 14px; }
+  .pcard .meta { color: var(--muted); font-size: 12px; margin: 4px 0 8px; }
+  .pcard .pr { font-size: 15px; }
+  .pcard .rs { color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 5px; font-size: 12px; font-weight: 600; }
+  .pill.buy { background: rgba(34,197,94,.15); color: var(--green); }
+  .pill.avoid { background: rgba(239,68,68,.15); color: var(--red); }
+  .pill.watch { background: rgba(245,158,11,.15); color: var(--amber); }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .concl { background: linear-gradient(135deg, rgba(34,197,94,.12), rgba(14,165,233,.12)); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; }
+  .concl h3 { margin: 0 0 12px; font-size: 17px; color: var(--green); }
+  .concl ol { margin: 0; padding-left: 20px; }
+  .concl li { margin: 8px 0; font-size: 14px; }
+  .disclaimer { color: var(--muted); font-size: 12.5px; padding: 18px; border: 1px dashed var(--border); border-radius: 12px; margin-top: 8px; }
+  .src { font-size: 12px; color: var(--muted); margin-top: 12px; }
+  @media (max-width: 900px) {
+    .grid4, .cards, .charts2, .two-col { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 620px) {
+    .grid4, .cards, .charts2, .two-col { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 顶部概览 -->
+  <div class="hero">
+    <h1>🎮 FC27 球员价格投资分析报告</h1>
+    <div class="sub">FC26 首月价格复盘 × 能力值变动建模 × easysbc.io 预测价格 · 生成于 2026-09-15</div>
+    <div class="tags">
+      <span class="tag">EA Sports FC 27</span>
+      <span class="tag">Ultimate Team 市场</span>
+      <span class="tag">数据源：FUTBIN + easysbc.io</span>
+    </div>
+    <div class="grid4">
+      <div class="gcell"><div class="k">FC26 首月金卡中位跌幅</div><div class="v">-25.7%</div></div>
+      <div class="gcell"><div class="k">首月跌幅超 50% 球员</div><div class="v">55 / 152</div></div>
+      <div class="gcell"><div class="k">能力值上调 → 预测价倍数</div><div class="v">最高 30×</div></div>
+      <div class="gcell"><div class="k">FC27 建议买入 / 回避</div><div class="v">16 / 3</div></div>
+    </div>
+  </div>
+
+  <!-- 核心结论 -->
+  <section>
+    <h2>一、核心结论（先看这里）</h2>
+    <div class="concl">
+      <ol>
+        <li><strong>FC26 开服首月是「金卡价值重估期」</strong>：152 个可追踪金卡中位下跌 -26%，55 张跌幅超 50%。<strong>越贵跌越狠</strong>——开盘 ≥100 万的大卡首月平均 -49%，而 <1 万的低价卡反而平均 <span class="up">+33%</span>（进化/SBC 需求驱动）。</li>
+        <li><strong>能力值（OVR）是定价锚点，变动会直接传导到价格</strong>：FC26→FC27 能力值每 +1，预测价约为 FC26 开服价的 <strong>1.5×</strong>；+2 达 <strong>2.8×</strong>；反之每 -1 缩水到 <strong>0.46×</strong>，-4 只剩 <strong>0.06×</strong>。金特技（PlayStyle+）增减同样显著（+1 → 4×，-1 → 0.5×）。</li>
+        <li><strong>FC27 投资主线 = 「抢能力值上调卡」+「回避降档卡」</strong>：模型筛出 16 张买入、3 张明确回避（莱万 -4、维尔茨 -3、贝丝·米德 -3）。低价潜力新卡（如新入卡 Cherki、Cubarsí）是开服期的高性价比布局点。</li>
+        <li><strong>策略上尊重「首月下行」大趋势</strong>：即便买入评级卡，也应以分仓、分批为主，不追开服首日溢价高点。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 二、FC26 首月价格复盘 -->
+  <section>
+    <h2>二、FC26 首月价格复盘<span class="badge" style="background:rgba(56,189,248,.15);color:var(--accent)">历史规律</span></h2>
+    <p class="sec-sub">数据窗口：FC26 开服日（2025-09-18）起 30 天，Cross 平台（PlayStation/Xbox），共 152 名金卡。</p>
+    <div class="keypoint">📉 开服首月整体 <strong>中位 -26%</strong>，上涨 56 人 / 下跌 96 人。核心规律：<strong>价格档位决定方向，高价卡挤泡沫、低价卡吃需求红利</strong>。</div>
+    <div class="charts2">
+      <div class="chart-box"><h3>首月涨跌幅 × 开盘价格档位</h3><canvas id="tierChart"></canvas></div>
+      <div class="chart-box"><h3>首月涨跌幅 × FC26 综合评分</h3><canvas id="ratingChart"></canvas></div>
+    </div>
+    <div class="keypoint">🔎 按信号分类：<strong>「持续下行」48 人平均 -37.5%</strong>、「高波动」11 人平均 -66.0%、「区间震荡」76 人平均 <span class="up">+17.2%</span>。低价 + 有进化/SBC 题材的卡逆势走强。</div>
+  </section>
+
+  <!-- 三、能力值变化与价格 -->
+  <section>
+    <h2>三、能力值变动如何传导到价格<span class="badge" style="background:rgba(139,92,246,.15);color:#a78bfa">核心机制</span></h2>
+    <p class="sec-sub">对比同一批 227 名球员在 FC26 与 FC27 的 OVR、金特技（PlayStyle+）变化，与 easysbc.io 预测价 / FC26 开服价之比的关系。</p>
+    <div class="charts2">
+      <div class="chart-box"><h3>OVR 变动 → 预测价 / FC26 开服价（中位倍数）</h3><canvas id="ovrChart"></canvas></div>
+      <div class="chart-box"><h3>金特技变动 → 预测价倍数</h3><canvas id="goldChart"></canvas></div>
+    </div>
+    <div class="keypoint">⚙️ 上涨端：能力值 +1 平均 <strong>1.51×</strong>、+2 <strong>2.80×</strong>、+3 中位 <strong>3.05×</strong>（个别如 Olise 86→90 因基数极低达 30×）。下跌端：-1 <strong>0.46×</strong>、-2 <strong>0.34×</strong>、-3/-4 仅 <strong>0.06-0.08×</strong>。金特技是放大器：+1 → 4.12×，-1 → 0.50×。</div>
+    <h3 style="margin-top:18px">能力值涨跌榜（Top 5）</h3>
+    <div class="two-col">
+      <table>
+        <tr><th>📈 上调榜</th><th>OVR 变化</th><th>FC26→FC27</th></tr>
+        <tr><td>Michael Olise</td><td class='up'>+4</td><td>86→90</td></tr><tr><td>Claudia Pina Medina</td><td class='up'>+3</td><td>86→89</td></tr><tr><td>Temwa Chawinga</td><td class='up'>+3</td><td>86→89</td></tr><tr><td>Lionel Messi</td><td class='up'>+3</td><td>86→89</td></tr><tr><td>Nuno Alexandre Tavares Mendes</td><td class='up'>+3</td><td>86→89</td></tr>
+      </table>
+      <table>
+        <tr><th>📉 下调榜</th><th>OVR 变化</th><th>FC26→FC27</th></tr>
+        <tr><td>Robert Lewandowski</td><td class='down'>-4</td><td>88→84</td></tr><tr><td>Mohamed Salah</td><td class='down'>-4</td><td>91→87</td></tr><tr><td>Beth Mead</td><td class='down'>-3</td><td>87→84</td></tr><tr><td>Florian Wirtz</td><td class='down'>-3</td><td>89→86</td></tr><tr><td>Trent Alexander-Arnold</td><td class='down'>-2</td><td>86→84</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 四、典型球员首月走势 -->
+  <section>
+    <h2>四、典型球员首月价格走势<span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">实证案例</span></h2>
+    <p class="sec-sub">同一窗口下的分岔：高价中锋挤泡沫 vs 低价进化题材逆势暴涨。</p>
+    <div class="chart-box"><canvas id="trendChart" style="max-height:340px"></canvas></div>
+    <div class="keypoint">📌 <strong>哈兰德</strong>（开服 79.6 万）30 天跌至 5.1 万（-93.6%）；<strong>姆巴佩</strong> 443.7 万 → 214.3 万（-51.7%）；而 <strong>卡蒂嘉·肖</strong> +84.3%、<strong>克劳蒂亚·皮纳</strong> +657.8%——后者因 SBC/进化需求供不应求。</div>
+  </section>
+
+  <!-- 五、FC27 投资建议 -->
+  <section>
+    <h2>五、FC27 投资建议<span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">买入 16</span> <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">回避 3</span></h2>
+    <p class="sec-sub">模型口径：动量分 mom = OVR 差 ×2 + 金特技差 ×3 + 六维总差 /6；mom ≥3 且现价 &lt; FC26 开服价 1.5× → 买入；OVR 大跌 + 金特技被削 → 回避。参考价来自 easysbc.io（基于 FC26 历史 + FC27 升级建模）。</p>
+
+    <h3>🟢 建议买入（16 张）</h3>
+    <div class="cards">
+      <div class='pcard buy'><div class='nm'>Luis Díaz</div><div class='meta'>LM · OVR 85→88（+3）</div><div class='pr'><span class='pill buy'>预测 20K</span> 开服参考 35K</div><div class='rs'>OVR +3</div></div><div class='pcard buy'><div class='nm'>Willian Pacho</div><div class='meta'>CB · OVR 86→89（+3）</div><div class='pr'><span class='pill buy'>预测 250K</span> 开服参考 150K</div><div class='rs'>OVR +3</div></div><div class='pcard buy'><div class='nm'>Gleison Bremer Silva Nascimento</div><div class='meta'>CB · OVR 85→86（+1）</div><div class='pr'><span class='pill buy'>预测 50K</span> 开服参考 40K</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Lamine Yamal Nasraoui Ebana</div><div class='meta'>RW · OVR 89→90（+1）</div><div class='pr'><span class='pill buy'>预测 300K</span> 开服参考 300K</div><div class='rs'>现价约为FC26开服价0.75倍</div></div><div class='pcard buy'><div class='nm'>Salma Celeste Paralluelo Ayingono</div><div class='meta'>LW · OVR 84→87（+3）</div><div class='pr'><span class='pill buy'>预测 70K</span> 开服参考 60K</div><div class='rs'>OVR +3</div></div><div class='pcard buy'><div class='nm'>Khvicha Kvaratskhelia</div><div class='meta'>LW · OVR 87→89（+2）</div><div class='pr'><span class='pill buy'>预测 100K</span> 开服参考 150K</div><div class='rs'>OVR +2</div></div><div class='pcard buy'><div class='nm'>Marcos Llorente Moreno</div><div class='meta'>RB · OVR 84→85（+1）</div><div class='pr'><span class='pill buy'>预测 250K</span> 开服参考 300K</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Declan Rice</div><div class='meta'>CDM · OVR 87→88（+1）</div><div class='pr'><span class='pill buy'>预测 25K</span> 开服参考 25K</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Gianluca Mancini</div><div class='meta'>CB · OVR 83→84（+1）</div><div class='pr'><span class='pill buy'>预测 1000</span> 开服参考 750</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Federico Dimarco</div><div class='meta'>LB · OVR 85→86（+1）</div><div class='pr'><span class='pill buy'>预测 7100</span> 开服参考 6500</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Ezri Konsa</div><div class='meta'>CB · OVR 82→84（+2）</div><div class='pr'><span class='pill buy'>预测 2900</span> 开服参考 1500</div><div class='rs'>OVR +2</div></div><div class='pcard buy'><div class='nm'>Trinity Rodman</div><div class='meta'>LM · OVR 85→87（+2）</div><div class='pr'><span class='pill buy'>预测 48K</span> 开服参考 35K</div><div class='rs'>OVR +2</div></div><div class='pcard buy'><div class='nm'>Piero Hincapié</div><div class='meta'>LB · OVR 83→84（+1）</div><div class='pr'><span class='pill buy'>预测 80K</span> 开服参考 100K</div><div class='rs'>现价约为FC26开服价0.85倍</div></div><div class='pcard buy'><div class='nm'>Désiré Doué</div><div class='meta'>RW · OVR 85→86（+1）</div><div class='pr'><span class='pill buy'>预测 84K</span> 开服参考 60K</div><div class='rs'>现价约为FC26开服价1.17倍</div></div><div class='pcard buy'><div class='nm'>Aurélien Tchouaméni</div><div class='meta'>CDM · OVR 84→84（持平）</div><div class='pr'><span class='pill buy'>预测 25K</span> 开服参考 20K</div><div class='rs'>新增金特技</div></div><div class='pcard buy'><div class='nm'>Erling Haaland</div><div class='meta'>ST · OVR 90→91（+1）</div><div class='pr'><span class='pill buy'>预测 800K</span> 开服参考 1.1M</div><div class='rs'>现价约为FC26开服价1.01倍</div></div>
+    </div>
+
+    <h3 style="margin-top:22px">🔴 明确回避（3 张）</h3>
+    <div class="cards">
+      <div class='pcard avoid'><div class='nm'>Robert Lewandowski</div><div class='meta'>ST · OVR 88→84（-4）</div><div class='pr'><span class='pill avoid'>预测 1000</span> 开服参考 9000</div><div class='rs'>OVR -4</div></div><div class='pcard avoid'><div class='nm'>Florian Wirtz</div><div class='meta'>CAM · OVR 89→86（-3）</div><div class='pr'><span class='pill avoid'>预测 10K</span> 开服参考 300K</div><div class='rs'>OVR -3</div></div><div class='pcard avoid'><div class='nm'>Beth Mead</div><div class='meta'>RM · OVR 87→84（-3）</div><div class='pr'><span class='pill avoid'>预测 1000</span> 开服参考 6500</div><div class='rs'>OVR -3</div></div>
+    </div>
+
+    <h3 style="margin-top:22px">🆕 新入卡机会（无 FC26 锚点的潜力卡）</h3>
+    <table>
+      <tr><th>球员</th><th>位置</th><th>OVR</th><th>金特技</th><th>预测价</th><th>开服参考</th><th>提示</th></tr>
+      <tr><td>João Pedro Gonçalves Neves</td><td>CM</td><td>88</td><td>✓</td><td>70K</td><td>35K</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Rayan Cherki</td><td>RW</td><td>86</td><td>✓</td><td>44K</td><td>4500</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Dominik Szoboszlai</td><td>CAM</td><td>86</td><td>✓</td><td>15K</td><td>1500</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Enzo Fernández</td><td>CM</td><td>86</td><td>—</td><td>4500</td><td>1500</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Fabián Ruiz Peña</td><td>CM</td><td>86</td><td>✓</td><td>4500</td><td>2500</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Pau Cubarsí Paredes</td><td>CB</td><td>86</td><td>✓</td><td>25K</td><td>1000</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Konrad Laimer</td><td>RB</td><td>85</td><td>✓</td><td>10K</td><td>750</td><td>低价潜力，开服早期可关注</td></tr><tr><td>Luka Modrić</td><td>CM</td><td>85</td><td>✓</td><td>2500</td><td>10K</td><td>低价潜力，开服早期可关注</td></tr>
+    </table>
+
+    <div class="keypoint">💡 观望池共 122 张，占大头——包括姆巴佩、普特利亚斯、邦马蒂等顶流「数据基本持平」卡。这些卡首月大概率随大盘走低，<strong>不建议开服高价囤货，可等 2-3 周价格企稳后再考虑</strong>。</div>
+  </section>
+
+  <!-- 六、投资策略建议 -->
+  <section>
+    <h2>六、投资策略建议（总结）</h2>
+    <div class="two-col">
+      <div class="concl" style="border-top:3px solid var(--green)">
+        <h3>✅ 值得做</h3>
+        <ol>
+          <li><strong>抢能力值上调卡</strong>：OVR +2 及以上、或新增金特技的中低价卡（如 Pacho、Luis Díaz、Kvaratskhelia），涨幅确定性最高。</li>
+          <li><strong>布局低价潜力新卡</strong>：Cherki、Cubarsí 等新入卡，开服价低、进化题材足，风险收益比好。</li>
+          <li><strong>低吸「区间震荡」型低价卡</strong>：FC26 中 <1 万档首月 +32.8%，进化/SBC 需求是稳定现金流。</li>
+        </ol>
+      </div>
+      <div class="concl" style="border-top:3px solid var(--red)">
+        <h3>⚠️ 要规避</h3>
+        <ol>
+          <li><strong>追高顶流大卡</strong>：姆巴佩、哈兰德等首月跌幅普遍 -50% 起，开服首日溢价是最大陷阱。</li>
+          <li><strong>接能力值下调卡</strong>：莱万(-4)、维尔茨(-3)、米德(-3) 类，预测价仅剩 FC26 开服价的 4-13%。</li>
+          <li><strong>单票重仓</strong>：首月整体下行，任何卡都可能阶段性深跌，务必分仓分批、留足抄底资金。</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    ⚠️ <strong>免责声明</strong>：本报告由 AI 基于公开数据（FUTBIN 历史价格、easysbc.io 预测价格、FC26/FC27 卡库）整理生成，仅供游戏内虚拟市场研究参考，<strong>不构成任何投资建议</strong>。easysbc.io 预测价是基于 FC26 历史 + FC27 升级的估算，真实市场价在 FC27 正式开服后由市场定价，可能与预测存在显著偏差（官方亦提示「以 Beta 为基准，正式版 PlayStyles 加入后评分将大幅变动」）。虚拟市场有风险，操作需谨慎。
+    <div class="src">数据来源：FUTBIN（FC26 首月价格、FC26/FC27 卡库）· easysbc.io（FC27 预测价格）· 数据截止 2026-09-15。</div>
+  </div>
+
+</div>
+
+<script>
+const COMMON = { color: '#94a3b8', grid: 'rgba(148,163,184,.15)', font: "-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" };
+Chart.defaults.color = COMMON.color;
+Chart.defaults.borderColor = COMMON.grid;
+Chart.defaults.font.family = COMMON.font;
+
+// 1. 价格档位跌幅
+new Chart(document.getElementById('tierChart'), {
+  type: 'bar',
+  data: { labels: ["≥100万", "30-100万", "10-30万", "1-10万", "<1万"], datasets: [{ label: '首月平均涨跌幅 %', data: [-48.7, -47.0, -56.1, -39.8, 32.8], backgroundColor: [["#ef4444", "#ef4444", "#ef4444", "#ef4444", "#22c55e"]], borderRadius: 6 }] },
+  options: { plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: v => v+'%' } } } }
+});
+
+// 2. rating 跌幅
+new Chart(document.getElementById('ratingChart'), {
+  type: 'bar',
+  data: { labels: ["91", "90", "89", "88", "87", "86", "85", "84", "83", "82"], datasets: [{ label: '首月平均涨跌幅 %', data: [-34.6, -56.3, -16.6, -12.7, -14.7, 31.9, -11.2, -19.4, 17.7, -32.2], backgroundColor: ["#ef4444", "#ef4444", "#ef4444", "#ef4444", "#ef4444", "#22c55e", "#ef4444", "#ef4444", "#22c55e", "#ef4444"], borderRadius: 6 }] },
+  options: { plugins: { legend: { display: false } }, scales: { y: { ticks: { callback: v => v+'%' } } } }
+});
+
+// 3. OVR 变化 → 比值
+new Chart(document.getElementById('ovrChart'), {
+  type: 'bar',
+  data: { labels: ["-4", "-3", "-2", "-1", "+0", "+1", "+2", "+3", "+4"], datasets: [{ label: '预测价/FC26开服价（中位）', data: [0.06, 0.08, 0.35, 0.4, 0.82, 1.33, 3.06, 3.05, 30.06], backgroundColor: ["#ef4444", "#ef4444", "#ef4444", "#ef4444", "#22c55e", "#22c55e", "#22c55e", "#22c55e", "#22c55e"], borderRadius: 6 }] },
+  options: { plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: '倍数 (1.0 = 持平)' } } } }
+});
+
+// 4. 金特技变化
+new Chart(document.getElementById('goldChart'), {
+  type: 'bar',
+  data: { labels: ['-1', '0', '+1'], datasets: [{ label: '预测价倍数', data: [0.50, 3.05, 4.12], backgroundColor: ['#ef4444','#94a3b8','#22c55e'], borderRadius: 6 }] },
+  options: { plugins: { legend: { display: false } }, scales: { y: { title: { display: true, text: '倍数' } } } }
+});
+
+// 5. 典型球员走势（归一化为指数 100）
+const trendData = {"erling-haaland": {"name": "Erling Haaland", "nameZh": "埃尔林·哈兰德", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [795831, 925188, 1112561, 1379051, 1523406, 1162537, 944531, 294069, 230292, 250785, 212910, 191833, 171340, 141979, 140389, 145403, 116986, 100795, 103778, 105573, 106299, 97813, 93948, 76507, 70625, 65917, 55165, 57125, 53220, 51276]}, "kylian-mbappe": {"name": "Kylian Mbappé", "nameZh": "基利安·姆巴佩", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [4437180, 4197771, 4188507, 4191861, 4189118, 4206896, 4186271, 3996826, 3782590, 3848729, 3772646, 3685458, 3457604, 3362149, 3194611, 3119215, 2858924, 2646806, 2610854, 2636132, 2674708, 2690188, 2662194, 2594771, 2410549, 2289569, 2145438, 2232292, 2186403, 2142986]}, "khadija-shaw": {"name": "Khadija Shaw", "nameZh": "卡蒂嘉·肖", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [11683, 13020, 12978, 13395, 14024, 14446, 14105, 14552, 14260, 14514, 15892, 16563, 17725, 17168, 19344, 20997, 19217, 18384, 18929, 19285, 20378, 21540, 21670, 21316, 20434, 20247, 20043, 21368, 21792, 21536]}, "claudia-pina-medina": {"name": "Claudia Pina Medina", "nameZh": "克劳蒂亚·皮纳", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [4881, 4363, 4160, 4661, 6558, 7290, 6880, 6993, 7432, 9796, 10000, 25129, 36705, 34700, 41202, 51255, 56007, 63333, 73052, 74045, 76660, 81594, 69170, 53991, 44057, 41622, 37630, 42026, 39807, 36988]}, "lionel-messi": {"name": "Lionel Messi", "nameZh": "利昂内尔·梅西", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [27303, 27042, 20863, 26214, 29151, 29191, 22635, 19313, 16785, 16582, 15010, 15179, 15871, 12878, 11491, 11953, 8953, 8072, 8917, 9500, 10907, 10521, 9779, 7628, 7925, 8205, 8396, 8410, 9407, 10649]}, "harry-kane": {"name": "Harry Kane", "nameZh": "哈里·凯恩", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [146104, 199919, 192697, 195469, 193424, 191374, 145132, 23019, 18842, 18212, 17997, 18118, 18776, 17930, 20095, 22278, 20219, 19155, 19568, 20064, 21288, 22017, 22344, 21481, 20873, 20627, 20332, 21484, 21932, 21391]}, "alexia-putellas-segura": {"name": "Alexia Putellas Segura", "nameZh": "阿莱克西娅·普特利亚斯", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [658472, 599243, 556868, 540479, 543993, 570208, 538903, 514590, 472951, 516479, 507306, 518563, 533111, 512413, 510403, 500271, 455285, 411556, 420189, 430882, 435424, 445569, 428472, 384556, 370021, 336236, 310868, 323979, 329236, 321701]}, "aitana-bonmati-conca": {"name": "Aitana Bonmatí Conca", "nameZh": "艾塔娜·邦马蒂", "dates": ["2025-09-18", "2025-09-19", "2025-09-20", "2025-09-21", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-27", "2025-09-28", "2025-09-29", "2025-09-30", "2025-10-01", "2025-10-02", "2025-10-03", "2025-10-04", "2025-10-05", "2025-10-06", "2025-10-07", "2025-10-08", "2025-10-09", "2025-10-10", "2025-10-11", "2025-10-12", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17"], "prices": [382580, 373701, 388931, 396986, 420271, 456340, 483139, 464875, 456354, 506014, 513958, 550569, 635090, 646454, 659847, 680660, 634340, 607583, 620104, 631278, 656674, 672403, 644931, 582715, 549979, 503722, 466938, 492292, 491694, 465757]}};
+const trendColors = {'erling-haaland':'#ef4444','kylian-mbappe':'#f59e0b','khadija-shaw':'#22c55e','claudia-pina-medina':'#38bdf8'};
+const trendLabels = [];
+function pad(a, b) { const out = []; const m = Math.max(a.length, b.length); for (let i=0;i<m;i++) out.push(i+1); return out; }
+const datasets = [];
+const picks = ['erling-haaland','kylian-mbappe','khadija-shaw','claudia-pina-medina'];
+let maxLen = 0;
+picks.forEach(slug => { const d = trendData[slug]; if (d) { maxLen = Math.max(maxLen, d.prices.length); } });
+for (let i=0;i<maxLen;i++) trendLabels.push('D'+(i+1));
+picks.forEach(slug => {
+  const d = trendData[slug];
+  if (!d) return;
+  const base = d.prices[0];
+  datasets.push({
+    label: d.nameZh, data: d.prices.map(p => Math.round(p/base*100)),
+    borderColor: trendColors[slug], backgroundColor: trendColors[slug]+'22',
+    borderWidth: 2, tension: .3, pointRadius: 0, fill: false
+  });
+});
+new Chart(document.getElementById('trendChart'), {
+  type: 'line',
+  data: { labels: trendLabels, datasets },
+  options: { plugins: { legend: { labels: { boxWidth: 12 } } }, scales: { y: { title: { display: true, text: '相对开服价指数（开服=100）' } } } }
+});
+</script>
+</body>
+</html>

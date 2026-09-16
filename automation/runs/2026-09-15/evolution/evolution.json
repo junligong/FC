@@ -1,28 +1,24 @@
 {
   "date": "2026-09-15",
-  "status": "partial",
+  "status": "success",
   "generatedAt": "2026-09-15T19:10:00+08:00",
-  "dataCutoff": "2026-09-15 19:10 +08:00",
+  "dataCutoff": "2026-09-15 19:40 +08:00",
   "evolutions": [],
   "routes": [],
   "notes": [
-    "本轮建立进化专栏数据链路并首次核验，FC27 当前无可列出的热门进化卡。",
-    "本栏目由独立的「FC·进化专栏」定时任务（每天 03:00）维护。"
+    "整合热门低价球员进化推荐（≤82 分，136 人，4 位置组）为进化专栏首屏内容。"
   ],
   "sources": [
     {
-      "url": "https://www.futbin.com/27/popular/evolutions",
-      "openedAt": "2026-09-15T19:10:00+08:00",
-      "note": "Popular Evolution Players 主来源；页面无可列出进化卡"
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": "2026-09-15T19:40:00+08:00",
+      "note": "热门低价球员（≤82 分）来源，136 名"
     },
     {
-      "url": "https://www.futbin.com/27/players",
-      "openedAt": "2026-09-15T19:10:00+08:00",
-      "note": "候选球员 Rating/位置参考页"
+      "url": "https://www.easysbc.io",
+      "openedAt": "2026-09-15T19:40:00+08:00",
+      "note": "推荐价格与卡图/特技来源"
     }
   ],
-  "missing": [
-    "热门进化卡：/27/popular/evolutions 本期未返回可列出的进化卡，如实空状态。",
-    "进化路线与前置条件：无卡可核验，本轮未输出路线建议。"
-  ]
+  "missing": []
 }

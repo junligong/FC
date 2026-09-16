@@ -1,0 +1,57 @@
+{
+  "date": "2026-09-16",
+  "status": "failed",
+  "platform": "cross",
+  "generatedAt": "2026-09-16T03:07:00+08:00",
+  "dataCutoff": "2026-09-16 03:07 +08:00",
+  "notes": [
+    "本轮浏览器通道不可用：Chrome 插件 extension 通道初始化返回 RelayUnreachable（缺 DUMATE_HOST_URL），doctor 显示 relay.connected=false / extConnected=false / mode=cdp，NativeMessagingHosts 缺 com.workbuddy.extension.json，用户 Chrome 未开启 remote-debugging-port。",
+    "无法访问 FUTBIN，未采集任何 FC27 市场数据，两份产物均为如实空状态（不伪造、不用 FC26 或旧日期数据填充）。"
+  ],
+  "priceDimensions": [
+    { "id": "premium", "name": "大卡", "range": "100 万以上", "items": [] },
+    { "id": "mid", "name": "中卡", "range": "30 万 ~ 100 万", "items": [] },
+    { "id": "hot", "name": "热门卡", "range": "10 万 ~ 30 万", "items": [] },
+    { "id": "practical", "name": "适用卡", "range": "1 万 ~ 10 万", "items": [] }
+  ],
+  "popular": {
+    "source": "https://www.futbin.com/27/popular",
+    "sortMetric": "FUTBIN 热门页显示的热度计数（非搜索热度）",
+    "evolutions": {
+      "source": "https://www.futbin.com/27/popular/evolutions",
+      "items": []
+    },
+    "value": {
+      "source": "https://www.futbin.com/27/popular",
+      "items": []
+    }
+  },
+  "sources": [
+    { "url": "https://www.futbin.com/27/players", "openedAt": null, "note": "未能打开：浏览器 extension 通道不可用" },
+    { "url": "https://www.futbin.com/27/popular", "openedAt": null, "note": "未能打开：浏览器 extension 通道不可用" },
+    { "url": "https://www.futbin.com/27/popular/evolutions", "openedAt": null, "note": "未能打开：浏览器 extension 通道不可用" }
+  ],
+  "missing": [
+    "浏览器通道不可用，本轮无法访问 FUTBIN，未采集任何 FC27 市场数据。",
+    "概览·本周活动卡与本周周黑：未采集名单与发布时间。",
+    "概览·价格分层（≥100万 / 30-100万 / 10-30万 / 1-10万）：未采集，四档均为如实空状态。",
+    "概览·传奇卡与英雄卡：未采集。",
+    "概览·热门进化卡：未采集。",
+    "扫描·价格维度：未采集。",
+    "扫描·热门球员维度：未采集。"
+  ],
+  "overview": {
+    "weekly": {
+      "promo": [],
+      "totw": []
+    },
+    "priceTiers": [
+      { "id": "tier-1m", "name": "≥ 100 万", "items": [], "note": "浏览器通道不可用，本档未采集，如实空状态" },
+      { "id": "tier-300k", "name": "30 - 100 万", "items": [], "note": "浏览器通道不可用，本档未采集，如实空状态" },
+      { "id": "tier-100k", "name": "10 - 30 万", "items": [], "note": "浏览器通道不可用，本档未采集，如实空状态" },
+      { "id": "tier-10k", "name": "1 - 10 万", "items": [], "note": "浏览器通道不可用，本档未采集，如实空状态" }
+    ],
+    "iconsHeroes": [],
+    "evolutions": []
+  }
+}

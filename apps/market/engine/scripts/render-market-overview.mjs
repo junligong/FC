@@ -106,39 +106,39 @@ export function renderOverview(dateStr, data) {
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FC27 市场概览 ${esc(dateStr)}</title>
 <style>
-:root{color-scheme:dark;--bg:#0b0708;--surface:#161113;--line:rgba(255,255,255,.08);
---text:#f4eff1;--muted:#a89aa0;--quiet:#786b73;--red:#c8102e;--gold:#e9c84a}
+:root{color-scheme:dark;--bg:#101713;--surface:#161e18;--line:#30392f;
+--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--red:#ff6259;--gold:#e3b341}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px 28px 40px;line-height:1.6}
 h1{font-size:21px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,16,46,.16);border:1px solid rgba(200,16,46,.45);color:#ffb9c4}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(229,72,77,.18);border:1px solid rgba(229,72,77,.4);color:#ff6259}
 .sub{color:var(--quiet);font-size:12.5px;margin:8px 0 22px}
 h2{font-size:17px;font-weight:750;margin:30px 0 14px;display:flex;align-items:center;gap:9px}
 h2:before{content:"";width:3px;height:17px;background:var(--red);border-radius:2px}
 h3{font-size:14.5px;font-weight:700}
-.card{background:linear-gradient(180deg,var(--surface),#120c0e);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.card{background:linear-gradient(180deg,var(--surface),#141c15);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
 .tier-head{display:flex;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap}
-.tier-range{font-size:12px;color:var(--gold);background:rgba(233,200,74,.1);border:1px solid rgba(233,200,74,.28);padding:2px 9px;border-radius:999px}
+.tier-range{font-size:12px;color:var(--gold);background:rgba(227,179,65,.14);border:1px solid rgba(227,179,65,.35);padding:2px 9px;border-radius:999px}
 .tier-count{font-size:12px;color:var(--quiet);margin-left:auto}
 .tier-src{font-size:11.5px;color:var(--quiet);margin-bottom:12px}
 .tbl-wrap{overflow-x:auto}
 .tbl{width:100%;border-collapse:collapse;font-size:12.5px}
 th{text-align:left;color:var(--quiet);font-weight:600;padding:8px 9px;border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:.03em;white-space:nowrap}
-td{padding:7px 9px;border-bottom:1px solid rgba(255,255,255,.045)}
+td{padding:7px 9px;border-bottom:1px solid #242d25}
 tr:last-child td{border-bottom:0}
-tbody tr:hover{background:rgba(255,255,255,.025)}
+tbody tr:hover{background:#1a211b}
 .c-rank{color:var(--gold);font-weight:700;width:38px}
-.c-name a{color:#7fc7ff;text-decoration:none}
+.c-name a{color:#8fd6bb;text-decoration:none}
 .c-name a:hover{text-decoration:underline}
 .c-rating{color:var(--text);font-weight:700;width:60px}
 .w-rating{width:60px}.w-price{width:110px}.w-pop{width:70px}
 .c-pos{color:var(--muted)}
 .c-type,.c-note{color:var(--quiet);font-size:12px}
 .c-price{color:var(--gold);font-weight:600}
-.c-pop{color:#ff9db0;font-weight:700}
-.empty{color:var(--quiet);font-size:12.5px;padding:14px;border:1px dashed var(--line);border-radius:9px;background:rgba(255,255,255,.015)}
+.c-pop{color:#ff6259;font-weight:700}
+.empty{color:var(--quiet);font-size:12.5px;padding:14px;border:1px dashed var(--line);border-radius:9px;background:#161d17}
 ul{padding-left:18px}li{margin:5px 0;font-size:12.5px;color:var(--muted)}
-code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px;font-size:11.5px}
+code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 .footer{color:var(--quiet);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body>
 <h1>FC27 市场概览 <span class="badge">${esc(status)}</span></h1>

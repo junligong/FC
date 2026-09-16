@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-16",
+  "status": "failed",
+  "generatedAt": "2026-09-16T03:02:40+08:00",
+  "dataCutoff": "2026-09-16 03:02 +08:00",
+  "evolutions": [],
+  "routes": [],
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-16T03:01:20+08:00",
+      "note": "热门进化卡主来源；本轮尝试打开失败，未取得页面内容（浏览器扩展通道未建立），故无卡片数据"
+    },
+    {
+      "url": "https://www.futbin.com/27/players",
+      "openedAt": "2026-09-16T03:01:20+08:00",
+      "note": "候选球员 Rating/位置参考页；同样未能打开"
+    }
+  ],
+  "notes": [
+    "本轮为采集失败空状态，不是「页面无进化卡」：浏览器扩展通道不可用，未能打开任何来源页，因此没有任何卡片数据。",
+    "已确证的失败原因（本轮实测）：(1) dumate-browser-cli init --mode extension 返回 RelayUnreachable，提示需要 DUMATE_HOST_URL 指向宿主机，WorkBuddy 运行时不注入该变量；(2) Chrome 中已安装 WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde v0.2.3），但其本机消息宿主 com.workbuddy.extension 未在 Chrome NativeMessagingHosts 注册，扩展无法建立桥接；(3) 唯一可达的浏览器为 CDP 127.0.0.1:19222，由 --remote-debugging-port=19222 --user-data-dir=... 启动的独立 profile 实例，属项目明确禁止的「新建独立 profile」，故未使用。",
+    "按 evolution.md 规定未回退到 IAB 或其他浏览器，未使用 FC26 或历史日期数据填充。"
+  ],
+  "missing": [
+    "热门进化卡：来源页 https://www.futbin.com/27/popular/evolutions 本轮未能打开，无任何卡片数据。",
+    "卡片字段（球员名称、Rating、位置、进化名称、费用、到期时间、前置条件）：无来源页面，全部缺失。",
+    "进化路线与前置条件核验：无卡可核验，本轮未输出路线建议。",
+    "候选球员口径：参考页 https://www.futbin.com/27/players 未打开，未确定候选范围。"
+  ]
+}

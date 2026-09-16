@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC27 市场扫描 2026-09-16</title>
+<style>:root{color-scheme:dark;--bg:#101713;--panel:#161e18;--line:#30392f;--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--lime:#c8f646;--coral:#ff6259;--amber:#e3b341;--green:#4fb583;--teal:#8fd6bb}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:22px 24px 40px;line-height:1.55}
+h1{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,246,70,.14);border:1px solid rgba(200,246,70,.4);color:var(--lime)}
+.sub{color:var(--quiet);font-size:12.5px;margin:8px 0 20px}
+h2{font-size:16px;font-weight:750;margin:26px 0 12px;display:flex;align-items:center;gap:9px}
+h2:before{content:"";width:3px;height:16px;background:var(--lime);border-radius:2px}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.idx-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.idx-card h3{font-size:13px;font-weight:700;color:var(--quiet);margin-bottom:10px}
+.idx-chip{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;padding:8px 12px;margin-bottom:6px;border-radius:8px;background:#141c15;border:1px solid var(--line);color:var(--text);font-size:13px;cursor:pointer;transition:border-color .15s,background .15s}
+.idx-chip:hover{border-color:var(--lime);background:#1d271b}
+.idx-chip b{color:var(--lime);font-weight:700}
+.db-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 14px}
+.db-toolbar input,.db-toolbar select{background:#141c15;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;min-height:38px}
+.db-toolbar input{flex:1;min-width:180px}
+.db-toolbar input:focus,.db-toolbar select:focus{outline:2px solid var(--lime);outline-offset:1px}
+.db-count{font-size:12px;color:var(--quiet);align-self:center}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:center;color:var(--quiet);font-weight:600;padding:9px 8px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.02em;white-space:nowrap;position:sticky;top:0;background:#1d271b}
+td{padding:7px 8px;border-bottom:1px solid #202b1a;text-align:center;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#1d271b}
+.c-rank{color:var(--quiet);width:34px;font-size:11px}
+.c-name{text-align:left;min-width:170px}
+.c-name .pimg{width:26px;height:26px;border-radius:5px;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a}
+.c-name a{color:var(--text);text-decoration:none;font-weight:600}
+.c-name a:hover{color:var(--lime)}
+.c-name .zh{color:var(--quiet);font-size:10.5px;margin-left:5px;font-weight:400}
+.c-rating{font-weight:800;color:var(--lime);font-size:14px}
+.c-pos{color:var(--muted)}
+.stat-v{font-weight:700}
+.stat-v.hi{color:var(--green)}.stat-v.mid{color:var(--teal)}.stat-v.lo{color:var(--amber)}.stat-v.bad{color:var(--quiet)}.stat-v.na{color:#4a5345}
+.c-price{color:var(--amber);font-weight:600}
+.c-pop{color:var(--teal);font-weight:600}
+.c-evo{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
+.c-evo.in{background:rgba(79,181,131,.16);color:var(--green)}
+.c-evo.out{background:rgba(227,179,65,.14);color:var(--amber)}
+.empty{color:var(--quiet);font-size:12.5px;padding:16px;border:1px dashed var(--line);border-radius:9px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}</style></head><body>
+<h1>FC27 市场扫描 <span class="badge">FAILED</span></h1>
+<div class="sub">数据日期 2026-09-16 · 数据截止 2026-09-16 03:07 +08:00 · 索引 + 数据库 · 来源 FUTBIN /27/popular + EasySBC</div>
+
+<h2>一、索引（分类概览）</h2>
+<div class="empty">球员数据库为空（来源 <code>/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/market/players.json</code>），如实空状态。</div>
+
+<h2>二、数据库（可搜索 · 筛选 · 排序）</h2>
+<div class="db-toolbar" id="db">
+  <input type="search" id="db-q" placeholder="搜索球员姓名（中/英）…">
+  <select id="db-pos"><option value="全部">全部位置</option><option value="门将">门将</option><option value="后卫">后卫</option><option value="中场">中场</option><option value="前锋">前锋</option></select>
+  <select id="db-rating"><option value="全部">全部总评</option><option value="80+">80+</option><option value="75-79">75-79</option><option value="70-74">70-74</option><option value="69以下">69 以下</option></select>
+  <select id="db-price"><option value="全部">全部价格</option><option value="1万以上">1 万以上</option><option value="5000-1万">5000 - 1万</option><option value="5000以下">5000 以下</option></select>
+  <select id="db-evo"><option value="全部">全部状态</option><option value="在进化池">在进化池</option><option value="非进化池">非进化池</option></select>
+  <select id="db-sort"><option value="rating-desc">按总评 ↓</option><option value="rating-asc">按总评 ↑</option><option value="price-desc">按价格 ↓</option><option value="price-asc">按价格 ↑</option><option value="pop-desc">按热度 ↓</option></select>
+  <span class="db-count" id="db-count"></span>
+</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>速度</th><th>射门</th><th>传球</th><th>盘带</th><th>防守</th><th>身体</th><th>价格</th><th>热度</th><th>状态</th></tr></thead><tbody id="db-body"></tbody></table></div>
+
+<script type="application/json" id="db-data">[]</script>
+<script>
+(function(){
+  var raw = document.getElementById('db-data').textContent;
+  var players = [];
+  try { players = JSON.parse(raw); } catch (e) {}
+  var state = { q: '', pos: '全部', rating: '全部', price: '全部', evo: '全部', sort: 'rating-desc' };
+  var tbody = document.getElementById('db-body');
+  var countEl = document.getElementById('db-count');
+  function fmtPrice(v){ if(v==null) return '—'; if(v>=10000) return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000) return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
+  function statCls(v){ if(v==null) return 'na'; if(v>=80) return 'hi'; if(v>=70) return 'mid'; if(v>=60) return 'lo'; return 'bad'; }
+  function posGroup(pos){ if(!pos) return '其他'; var p=pos.toUpperCase(); if(p==='GK') return '门将'; if(/CB|LB|RB|LWB|RWB/.test(p)) return '后卫'; if(/CM|CDM|CAM|LM|RM/.test(p)) return '中场'; if(/ST|CF|LW|RW/.test(p)) return '前锋'; return '其他'; }
+  function matches(p){
+    var g = posGroup(p.pos);
+    if (state.q && (p.name+' '+(p.nameZh||'')).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
+    if (state.pos !== '全部' && g !== state.pos) return false;
+    if (state.rating === '80+' && (p.rating||0) < 80) return false;
+    if (state.rating === '75-79' && ((p.rating||0) < 75 || (p.rating||0) > 79)) return false;
+    if (state.rating === '70-74' && ((p.rating||0) < 70 || (p.rating||0) > 74)) return false;
+    if (state.rating === '69以下' && (p.rating||0) >= 70) return false;
+    var pr = p.price || 0;
+    if (state.price === '1万以上' && pr < 10000) return false;
+    if (state.price === '5000-1万' && (pr < 5000 || pr >= 10000)) return false;
+    if (state.price === '5000以下' && pr >= 5000) return false;
+    if (state.evo !== '全部' && p.evo !== state.evo) return false;
+    return true;
+  }
+  function sortFn(a, b){
+    switch (state.sort) {
+      case 'rating-asc': return (a.rating||0) - (b.rating||0);
+      case 'price-asc': return (a.price||0) - (b.price||0);
+      case 'price-desc': return (b.price||0) - (a.price||0);
+      case 'pop-desc': return (b.popularity||0) - (a.popularity||0);
+      default: return (b.rating||0) - (a.rating||0);
+    }
+  }
+  function render(){
+    var list = players.filter(matches).sort(sortFn);
+    var six = ['速','射','传','盘','防','身'];
+    tbody.innerHTML = list.map(function(p, i){
+      var cells = '<td class="c-rank">' + (i+1) + '</td>';
+      cells += '<td class="c-name">' + (p.image ? '<img class="pimg" src="' + p.image + '" loading="lazy" alt="">' : '') + (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + (p.name||'') + '</a>' : (p.name||'')) + (p.nameZh ? '<span class="zh">' + p.nameZh + '</span>' : '') + '</td>';
+      cells += '<td class="c-rating">' + (p.rating||'—') + '</td>';
+      cells += '<td class="c-pos">' + (p.pos||'') + '</td>';
+      for (var j=0;j<6;j++){ var v = p.stats && p.stats[six[j]]; cells += '<td><span class="stat-v ' + statCls(v) + '">' + (v==null?'—':v) + '</span></td>'; }
+      cells += '<td class="c-price">' + fmtPrice(p.price) + '</td>';
+      cells += '<td class="c-pop">' + (p.popularity!=null ? p.popularity : '—') + '</td>';
+      var evoIn = p.evo === '在进化池';
+      cells += '<td><span class="c-evo ' + (evoIn ? 'in' : 'out') + '">' + (p.evo||'—') + '</span></td>';
+      return '<tr>' + cells + '</tr>';
+    }).join('');
+    countEl.textContent = '共 ' + list.length + ' 名球员';
+  }
+  function bind(el, fn){ if (el) el.addEventListener('input', fn); }
+  var q = document.getElementById('db-q'), pos = document.getElementById('db-pos'), rating = document.getElementById('db-rating'), price = document.getElementById('db-price'), evo = document.getElementById('db-evo'), sort = document.getElementById('db-sort');
+  bind(q, function(){ state.q = q.value; render(); });
+  [pos, rating, price, evo, sort].forEach(function(el){ if (el) el.addEventListener('change', function(){ state.pos = pos.value; state.rating = rating.value; state.price = price.value; state.evo = evo.value; state.sort = sort.value; render(); }); });
+  document.querySelectorAll('.idx-chip').forEach(function(chip){ chip.addEventListener('click', function(){
+    if (chip.dataset.setPos !== undefined) { pos.value = chip.dataset.setPos; state.pos = chip.dataset.setPos; }
+    if (chip.dataset.setRating !== undefined) { rating.value = chip.dataset.setRating; state.rating = chip.dataset.setRating; }
+    if (chip.dataset.setPrice !== undefined) { price.value = chip.dataset.setPrice; state.price = chip.dataset.setPrice; }
+    if (chip.dataset.setEvo !== undefined) { evo.value = chip.dataset.setEvo; state.evo = chip.dataset.setEvo; }
+    render();
+    var db = document.getElementById('db'); if (db && db.scrollIntoView) db.scrollIntoView({behavior:'smooth', block:'start'});
+  });});
+  render();
+})();</script>
+
+<div class="footer">FC27 市场扫描（索引 + 数据库）· 2026-09-16 · 由 render-market-report.mjs 渲染 · 六维与推荐价来自 EasySBC，热度为 FUTBIN 评分 · 仅供游戏内研究，不构成投资建议</div>
+</body></html>

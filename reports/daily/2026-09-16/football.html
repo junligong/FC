@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>足球日报 - 2026-09-16</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  background:#0a0a0a;
+  color:#e7e9ea;
+  line-height:1.6;
+  font-size:14px;
+}
+.container { max-width:1200px; margin:0 auto; padding:20px 16px 60px; }
+.header {
+  background:linear-gradient(135deg,#c41e3a 0%,#8b1a2b 100%);
+  color:#fff;
+  padding:28px 20px;
+  text-align:center;
+  border-radius:16px;
+  margin-bottom:20px;
+}
+.header h1 { font-size:28px; color:#fff; font-weight:900; margin-bottom:8px; }
+.header .subtitle { font-size:14px; color:#fff; opacity:0.95; }
+.header .update-time { font-size:12px; color:#fff; opacity:0.9; margin-top:6px; }
+.badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:1px; padding:4px 12px; border-radius:999px; background:rgba(255,98,89,.2); border:1px solid rgba(255,98,89,.5); color:#ff6259; vertical-align:middle; margin-left:8px; }
+.panel { background:#16181c; border:1px solid #2f3336; border-radius:16px; padding:24px; margin-bottom:20px; }
+.panel h2 { font-size:17px; font-weight:700; color:#e7e9ea; margin-bottom:14px; padding-left:12px; border-left:3px solid #c41e3a; }
+.panel p, .panel li { color:#b9bdc1; font-size:14px; }
+.panel ul { padding-left:20px; }
+.panel li { margin:6px 0; }
+.panel code { background:#2a2f35; padding:1px 5px; border-radius:4px; font-size:12.5px; color:#ff9aa0; }
+
+/* 榜单区 */
+.standings-section { background:#16181c; border:1px solid #2f3336; border-radius:16px; overflow:hidden; margin-bottom:20px; }
+.standings-header { padding:16px 20px 0; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.standings-header .section-label { font-size:15px; font-weight:700; color:#e7e9ea; }
+.type-tabs { display:flex; gap:4px; background:#0d0f10; border-radius:8px; padding:3px; }
+.type-tab { padding:5px 14px; border-radius:6px; font-size:13px; font-weight:500; cursor:pointer; color:#8b949e; transition:all .2s; border:none; background:transparent; }
+.type-tab.active { background:#c41e3a; color:#fff; }
+.league-tabs { display:flex; gap:4px; padding:10px 20px; overflow-x:auto; flex-wrap:wrap; }
+.league-tab { padding:4px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:#8b949e; border:1px solid #2f3336; background:#0d0f10; transition:all .2s; white-space:nowrap; }
+.league-tab.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+.table-wrapper { padding:0 20px 20px; }
+.standings-table { width:100%; border-collapse:collapse; font-size:12.5px; color:#b9bdc1; }
+.standings-table th { background:#0d0f10; padding:10px 8px; text-align:center; font-weight:600; color:#8b949e; border-bottom:2px solid #2f3336; }
+.standings-table td { padding:8px; text-align:center; border-bottom:1px solid #24272b; }
+.standings-table td:first-child { font-weight:700; color:#ff6b7a; }
+.standings-table td:nth-child(2) { text-align:left; font-weight:500; color:#e7e9ea; }
+.empty-table { padding:35px 20px; color:#8b949e; text-align:center; border:1px dashed #2f3336; border-radius:8px; font-size:13px; }
+
+/* 资讯区 */
+.news-section { background:#16181c; border:1px solid #2f3336; border-radius:16px; overflow:hidden; margin-bottom:20px; }
+.news-header { padding:14px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2f3336; }
+.news-header-left { display:flex; align-items:center; gap:8px; }
+.news-header-left .dot { width:6px; height:6px; background:#c41e3a; border-radius:50%; }
+.news-header-left .title { font-size:16px; font-weight:700; color:#e7e9ea; }
+.news-header-right { display:flex; align-items:center; gap:12px; }
+.news-count { font-size:12px; padding:2px 8px; background:#0d0f10; border-radius:4px; color:#8b949e; }
+.news-update-time { font-size:12px; color:#8b949e; }
+.news-filter-tabs { display:flex; gap:4px; padding:10px 20px; overflow-x:auto; flex-wrap:wrap; border-bottom:1px solid #2f3336; }
+.filter-tab { padding:4px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:#8b949e; border:1px solid #2f3336; background:#0d0f10; transition:all .2s; white-space:nowrap; }
+.filter-tab.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+.news-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px; padding:20px; }
+.news-empty { grid-column:1/-1; padding:48px 20px; color:#8b949e; text-align:center; border:1px dashed #2f3336; border-radius:12px; font-size:14px; }
+
+.footer { text-align:center; padding:24px; color:#8b949e; font-size:12px; line-height:1.8; border-top:1px solid #2f3336; margin-top:8px; }
+.hidden { display:none !important; }
+@media (max-width:768px) { .news-grid { grid-template-columns:1fr; } .standings-header { flex-direction:column; align-items:flex-start; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>⚽ 足球日报<span class="badge">FAILED</span></h1>
+  <div class="subtitle">欧洲冠军联赛 · 七大联赛每日资讯聚合</div>
+  <div class="update-time">数据截止时间：2026-09-16 03:09（北京时间）· 本轮状态：采集失败</div>
+</div>
+
+<div class="panel">
+  <h2>本轮说明</h2>
+  <p>本轮足球资讯与三大榜单（积分榜 / 射手榜 / 助攻榜）<b>全部采集失败</b>，未采集到任何可核验数据。失败发生在采集第一步：项目规定的 Chrome 插件 <code>extension</code> 通道在当前 WorkBuddy 运行时无法建立，<code>dumate-browser-cli init --mode extension</code> 返回 <code>RelayUnreachable</code>（缺少宿主变量 <code>DUMATE_HOST_URL</code>）；relay 未连通、Chrome 未注册 <code>com.workbuddy.extension</code> 的 native messaging 宿主、日常 Chrome 未开启远程调试端口。</p>
+  <p style="margin-top:10px;">按根 AGENTS.md「浏览器强制规则」与 football.md 契约执行：扩展连接失败即记录为「采集失败」，不得回退内置浏览器（IAB）、未登录浏览器、临时浏览器或新建独立 profile，也不得用旧日期、FC26 或其他联赛数据冒充本期报告。下面三个榜单均显示「本轮未逐条核验」的空状态，<b>0 条 ≠ 无数据，而是采集失败</b>。</p>
+</div>
+
+<div class="standings-section">
+  <div class="standings-header">
+    <div class="section-label">📊 数据排行</div>
+    <div class="type-tabs">
+      <div class="type-tab active" data-type="standings" onclick="switchType('standings')">积分榜</div>
+      <div class="type-tab" data-type="scorers" onclick="switchType('scorers')">射手榜</div>
+      <div class="type-tab" data-type="assists" onclick="switchType('assists')">助攻榜</div>
+    </div>
+  </div>
+  <div class="league-tabs">
+    <div class="league-tab active" data-league="epl" onclick="switchLeague('epl')">英超</div>
+    <div class="league-tab" data-league="laliga" onclick="switchLeague('laliga')">西甲</div>
+    <div class="league-tab" data-league="seriea" onclick="switchLeague('seriea')">意甲</div>
+    <div class="league-tab" data-league="bundesliga" onclick="switchLeague('bundesliga')">德甲</div>
+    <div class="league-tab" data-league="ligue1" onclick="switchLeague('ligue1')">法甲</div>
+    <div class="league-tab" data-league="mls" onclick="switchLeague('mls')">美职联</div>
+    <div class="league-tab" data-league="saudi" onclick="switchLeague('saudi')">沙特联</div>
+    <div class="league-tab" data-league="ucl" onclick="switchLeague('ucl')">欧冠</div>
+  </div>
+  <div class="table-wrapper">
+    <div id="table-content"></div>
+  </div>
+</div>
+
+<div class="news-section">
+  <div class="news-header">
+    <div class="news-header-left">
+      <div class="dot"></div>
+      <div class="title">最新资讯</div>
+    </div>
+    <div class="news-header-right">
+      <span class="news-count" id="news-count">全部 0 条</span>
+      <span class="news-update-time">更新 2026-09-16</span>
+    </div>
+  </div>
+  <div class="news-filter-tabs">
+    <div class="filter-tab active" data-filter="all" onclick="filterNews('all')">全部 0</div>
+    <div class="filter-tab" data-filter="toutiao" onclick="filterNews('toutiao')">🔥 今日头条 0</div>
+    <div class="filter-tab" data-filter="epl" onclick="filterNews('epl')">英超 0</div>
+    <div class="filter-tab" data-filter="laliga" onclick="filterNews('laliga')">西甲 0</div>
+    <div class="filter-tab" data-filter="seriea" onclick="filterNews('seriea')">意甲 0</div>
+    <div class="filter-tab" data-filter="bundesliga" onclick="filterNews('bundesliga')">德甲 0</div>
+    <div class="filter-tab" data-filter="ligue1" onclick="filterNews('ligue1')">法甲 0</div>
+    <div class="filter-tab" data-filter="mls" onclick="filterNews('mls')">美职联 0</div>
+    <div class="filter-tab" data-filter="saudi" onclick="filterNews('saudi')">沙特联 0</div>
+    <div class="filter-tab" data-filter="ucl" onclick="filterNews('ucl')">欧冠 0</div>
+  </div>
+  <div class="news-grid" id="news-grid">
+    <div class="news-empty">本轮未采集到任何足球资讯（浏览器扩展通道不可用），已按失败处理并保留证据；历史日期报告未被覆盖。</div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>缺失项记录</h2>
+  <ul>
+    <li>积分榜：英超 / 西甲 / 意甲 / 德甲 / 法甲 / 美职联（东、西区）/ 沙特联 / 欧冠 —— 本轮均未逐条核验，如实留空。</li>
+    <li>射手榜：各联赛均未逐条核验，无任何球员进球数据。</li>
+    <li>助攻榜：各联赛均未逐条核验，无任何球员助攻数据。</li>
+    <li>足球资讯（今日头条 6-8 条 + 转会/战报/伤停/杯赛/俱乐部动态）：无来源页面，0 条可核验资讯。</li>
+    <li>三榜数据块：结构保留，内容为空，未用任何旧日期或 FC26 数据填充，未做「缺数据回退英超」静默兜底。</li>
+  </ul>
+</div>
+
+<div class="panel">
+  <h2>数据来源与核验</h2>
+  <p>本轮未能打开任何来源页。计划核验来源（BBC Sport、ESPN、Sky Sports、懂球帝、新浪体育等）均因浏览器扩展通道未建立而无法访问，故 <code>sources</code> 列表为空。四项通道探针原始返回详见本轮证据文件 <code>automation/runs/2026-09-16/football/evidence.json</code>。</p>
+</div>
+
+<div class="footer">
+  <p>足球日报 · 每日足球资讯聚合</p>
+  <p>数据来源：BBC Sport、ESPN、Sky Sports、Goal、Transfermarkt、懂球帝、直播吧、新浪体育等</p>
+  <p>数据截止时间：2026-09-16 03:09（北京时间）| 本轮状态：采集失败（浏览器扩展通道未建立）· 未使用历史日期数据填充</p>
+</div>
+
+</div>
+
+<script>
+// ===== DATA（本轮采集失败，三榜均为空，未做任何静默兜底） =====
+const standingsData = {};
+const scorersData = {};
+const assistsData = {};
+
+let currentType = 'standings';
+let currentLeague = 'epl';
+
+function switchType(type) {
+  currentType = type;
+  document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.type-tab[data-type="' + type + '"]').classList.add('active');
+  renderTable();
+}
+
+function switchLeague(league) {
+  currentLeague = league;
+  document.querySelectorAll('.league-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.league-tab[data-league="' + league + '"]').classList.add('active');
+  renderTable();
+}
+
+function renderTable() {
+  const container = document.getElementById('table-content');
+  let html = '';
+  const leagueName = {
+    epl:'英超', laliga:'西甲', seriea:'意甲', bundesliga:'德甲', ligue1:'法甲',
+    mls:'美职联', saudi:'沙特联', ucl:'欧冠'
+  }[currentLeague] || currentLeague;
+  const typeName = { standings:'积分榜', scorers:'射手榜', assists:'助攻榜' }[currentType];
+
+  if (currentType === 'standings') {
+    const rows = standingsData[currentLeague] || [];
+    if (rows.length) {
+      html += buildStandingsTable(rows, ['排名','球队','场次','胜','平','负','进球','失球','净胜球','积分']);
+    } else {
+      html += '<div class="empty-table">' + leagueName + '积分榜：本轮未逐条核验，暂无数据。</div>';
+    }
+  } else if (currentType === 'scorers') {
+    const rows = scorersData[currentLeague] || [];
+    if (rows.length) {
+      html += buildSimpleTable(rows, ['排名','球员','球队','进球']);
+    } else {
+      html += '<div class="empty-table">' + leagueName + '射手榜：本轮未逐条核验，暂无数据。</div>';
+    }
+  } else if (currentType === 'assists') {
+    const rows = assistsData[currentLeague] || [];
+    if (rows.length) {
+      html += buildSimpleTable(rows, ['排名','球员','球队','助攻']);
+    } else {
+      html += '<div class="empty-table">' + leagueName + '助攻榜：本轮未逐条核验，暂无数据。</div>';
+    }
+  }
+  container.innerHTML = html;
+}
+
+function buildStandingsTable(data, headers) {
+  let html = '<table class="standings-table"><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach(row => {
+    html += '<tr>';
+    row.forEach((cell, cidx) => {
+      html += '<td>' + cell + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function buildSimpleTable(data, headers) {
+  let html = '<table class="standings-table"><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach(row => {
+    html += '<tr>';
+    row.forEach((cell, cidx) => {
+      if (cidx === 0) html += '<td style="font-weight:700;color:#ff6b7a">' + cell + '</td>';
+      else html += '<td>' + cell + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function filterNews(filter) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.filter-tab[data-filter="' + filter + '"]').classList.add('active');
+  const cards = document.querySelectorAll('.news-card');
+  let visibleCount = 0;
+  cards.forEach(card => {
+    if (filter === 'all' || card.dataset.league === filter) {
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  const labelMap = {
+    'all': '全部 ', 'toutiao': '今日头条 ', 'epl': '英超 ', 'laliga': '西甲 ', 'seriea': '意甲 ',
+    'bundesliga': '德甲 ', 'ligue1': '法甲 ', 'mls': '美职联 ', 'saudi': '沙特联 ', 'ucl': '欧冠 '
+  };
+  document.getElementById('news-count').textContent = (labelMap[filter] || '') + visibleCount + ' 条';
+}
+
+// Init
+renderTable();
+</script>
+
+</body>
+</html>

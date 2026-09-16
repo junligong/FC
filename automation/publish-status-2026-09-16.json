@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-16",
+  "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
+  "publicUrl": "https://fc27-site.app.workbuddy.host/",
+  "published": false,
+  "reason": "合并未发生（coordinate.mjs 返回 merge=no_current_snapshot）：本轮四个采集模块（football/news/market/evolution）均因 Chrome 插件 extension 通道无法建立而失败，无任何 success/partial 快照可合并，发布按契约跳过，保留线上旧版本（2026-09-15）。",
+  "mergeResult": "no_current_snapshot",
+  "publishResult": "skipped",
+  "modules": {
+    "football": "failed",
+    "news": "failed",
+    "market": "failed",
+    "evolution": "failed"
+  },
+  "failureCause": "Chrome 插件 extension 通道不可用（RelayUnreachable：缺 DUMATE_HOST_URL；relay.connected=false；native messaging 宿主 com.workbuddy.extension.json 未注册；用户日常 Chrome 未开启 --remote-debugging-port）。已按契约提交 failed，未回退 IAB、未新建 profile、未用旧日期数据填充。",
+  "publicVerification": {
+    "verified": false,
+    "note": "线上仍为 2026-09-15 内容（未更新），与本地 daily-merged/index.html 逐字节一致，旧版完好、未下线。",
+    "checks": {
+      "matchesLocal": true,
+      "hasArchiveLink": false,
+      "hasDateAnchor": false,
+      "completeHtml": true
+    },
+    "localSha256": "3f4a95d18205b598e3a497f2baefb72a50071a374adfc1cedb2160351307ee6b",
+    "remoteSha256": "3f4a95d18205b598e3a497f2baefb72a50071a374adfc1cedb2160351307ee6b",
+    "bytes": 47749249,
+    "checkedAt": "2026-09-15T19:11:34.413Z"
+  },
+  "unattendedPublishingVerified": false
+}

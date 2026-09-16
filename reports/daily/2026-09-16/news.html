@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FC27 资讯日报 - 2026-09-16</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; background: #0a0a0a; color: #e7e9ea; line-height: 1.6; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 20px 16px 60px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #2f3336; margin-bottom: 28px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #1d9bf0, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .header .subtitle { color: #71767b; font-size: 14px; }
+  .header .meta { margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .header .meta span { background: #16181c; border: 1px solid #2f3336; border-radius: 20px; padding: 4px 14px; font-size: 12px; color: #71767b; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 12px; border-radius: 999px; background: rgba(255,98,89,.14); border: 1px solid rgba(255,98,89,.45); color: #ff6259; vertical-align: middle; margin-left: 8px; }
+  .panel { background: #16181c; border: 1px solid #2f3336; border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+  .panel h2 { font-size: 17px; font-weight: 700; color: #e7e9ea; margin-bottom: 14px; padding-left: 12px; border-left: 3px solid #ff6259; }
+  .panel p, .panel li { color: #b9bdc1; font-size: 14px; }
+  .panel ul { padding-left: 20px; }
+  .panel li { margin: 6px 0; }
+  .empty-notice { text-align: center; padding: 48px 20px; color: #71767b; font-size: 15px; background: #16181c; border: 1px solid #2f3336; border-radius: 16px; }
+  .footer { text-align: center; padding: 32px 0; color: #71767b; font-size: 13px; border-top: 1px solid #2f3336; margin-top: 32px; }
+  .footer a { color: #1d9bf0; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>FC27 资讯日报<span class="badge">FAILED</span></h1>
+    <p class="subtitle">数据来源：X (Twitter) 多博主采集 | 自动采集 · 内容去重 · 中文翻译</p>
+    <div class="meta">
+      <span>数据日期：2026-09-16</span>
+      <span>本期资讯：0 条</span>
+      <span>状态：采集失败</span>
+      <span>来源：X.com</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>本轮说明</h2>
+    <p>本轮 FC27 资讯采集失败，未采集到任何推文。失败发生在采集第一步：项目规定的 Chrome 插件 <code>extension</code> 通道在当前 WorkBuddy 运行时无法建立，<code>dumate-browser-cli init --mode extension</code> 返回 <code>RelayUnreachable</code>（缺少宿主变量 <code>DUMATE_HOST_URL</code>）；relay 未连通、Chrome 未注册 <code>com.workbuddy.extension</code> 的 native messaging 宿主、日常 Chrome 未开启远程调试端口。</p>
+    <p style="margin-top:10px;">按项目约定，扩展连接失败即记录为「采集失败」，不得回退内置浏览器（IAB）、未登录浏览器、临时浏览器或新建独立 profile，也不得用 FC26 或历史日期数据冒充本期报告。本期「0 条」代表采集失败，而非「本期无新资讯」。</p>
+  </div>
+
+  <div class="panel">
+    <h2>缺失项记录</h2>
+    <ul>
+      <li>FC27 资讯采集：X 平台 16 个来源账号（sources.txt）在本轮均未能打开，浏览器扩展通道未建立，0 条推文可采集。</li>
+      <li>推文字段（正文、发布时间、原推链接、配图）：无来源页面，全部缺失。</li>
+      <li>中文翻译与去重：无原始推文，翻译与去重步骤未执行。</li>
+    </ul>
+  </div>
+
+  <div class="empty-notice">本轮未采集到新推文（浏览器扩展通道不可用），已按失败处理并保留证据；历史日期报告未被覆盖。</div>
+
+  <div class="footer">
+    <p>本报告由自动化系统采集生成，所有内容均标注来源。</p>
+    <p>数据源：16个FC27资讯博主 · X.com</p>
+    <p style="margin-top:8px;">本轮状态：采集失败（浏览器扩展通道未建立）· 未使用历史日期数据填充</p>
+  </div>
+</div>
+</body>
+</html>

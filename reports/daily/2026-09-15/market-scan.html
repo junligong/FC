@@ -1,261 +1,138 @@
 <!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FC27 市场扫描 2026-09-15</title>
-<style>
-:root{color-scheme:dark;--bg:#0b0708;--surface:#161113;--surface2:#1d1619;--line:rgba(255,255,255,.08);
---text:#f4eff1;--muted:#a89aa0;--quiet:#786b73;--red:#c8102e;--gold:#e9c84a}
+<style>:root{color-scheme:dark;--bg:#101713;--panel:#161e18;--line:#30392f;--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--lime:#c8f646;--coral:#ff6259;--amber:#e3b341;--green:#4fb583;--teal:#8fd6bb}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:22px 26px;line-height:1.6}
-h1{font-size:21px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,16,46,.16);border:1px solid rgba(200,16,46,.45);color:#ffb9c4}
-.badge.ok{background:rgba(233,200,74,.13);border-color:rgba(233,200,74,.4);color:var(--gold)}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:22px 24px 40px;line-height:1.55}
+h1{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,246,70,.14);border:1px solid rgba(200,246,70,.4);color:var(--lime)}
 .sub{color:var(--quiet);font-size:12.5px;margin:8px 0 20px}
 h2{font-size:16px;font-weight:750;margin:26px 0 12px;display:flex;align-items:center;gap:9px}
-h2:before{content:"";width:3px;height:16px;background:var(--red);border-radius:2px}
-h2.dim2:before{background:var(--gold)}
-h3{font-size:14.5px;font-weight:700}
-.card{background:linear-gradient(180deg,var(--surface),#120c0e);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
-.tier-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.tier-range{font-size:12px;color:var(--gold);background:rgba(233,200,74,.1);border:1px solid rgba(233,200,74,.28);padding:2px 9px;border-radius:999px}
-.tier-count{font-size:12px;color:var(--quiet);margin-left:auto}
+h2:before{content:"";width:3px;height:16px;background:var(--lime);border-radius:2px}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.idx-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.idx-card h3{font-size:13px;font-weight:700;color:var(--quiet);margin-bottom:10px}
+.idx-chip{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left;padding:8px 12px;margin-bottom:6px;border-radius:8px;background:#141c15;border:1px solid var(--line);color:var(--text);font-size:13px;cursor:pointer;transition:border-color .15s,background .15s}
+.idx-chip:hover{border-color:var(--lime);background:#1d271b}
+.idx-chip b{color:var(--lime);font-weight:700}
+.db-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 14px}
+.db-toolbar input,.db-toolbar select{background:#141c15;color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px 12px;font-size:13px;min-height:38px}
+.db-toolbar input{flex:1;min-width:180px}
+.db-toolbar input:focus,.db-toolbar select:focus{outline:2px solid var(--lime);outline-offset:1px}
+.db-count{font-size:12px;color:var(--quiet);align-self:center}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
 .tbl{width:100%;border-collapse:collapse;font-size:12.5px}
-th{text-align:left;color:var(--quiet);font-weight:600;padding:7px 9px;border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:.03em}
-td{padding:7px 9px;border-bottom:1px solid rgba(255,255,255,.045)}
+th{text-align:center;color:var(--quiet);font-weight:600;padding:9px 8px;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.02em;white-space:nowrap;position:sticky;top:0;background:#1d271b}
+td{padding:7px 8px;border-bottom:1px solid #202b1a;text-align:center;white-space:nowrap}
 tr:last-child td{border-bottom:0}
-.c-rank{color:var(--gold);font-weight:700;width:36px}
-.c-name a{color:#7fc7ff;text-decoration:none}
-.c-name a:hover{text-decoration:underline}
-.c-ver{color:#d9c9cf;width:52px}
+tbody tr:hover{background:#1d271b}
+.c-rank{color:var(--quiet);width:34px;font-size:11px}
+.c-name{text-align:left;min-width:170px}
+.c-name .pimg{width:26px;height:26px;border-radius:5px;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a}
+.c-name a{color:var(--text);text-decoration:none;font-weight:600}
+.c-name a:hover{color:var(--lime)}
+.c-name .zh{color:var(--quiet);font-size:10.5px;margin-left:5px;font-weight:400}
+.c-rating{font-weight:800;color:var(--lime);font-size:14px}
 .c-pos{color:var(--muted)}
-.c-type,.c-note{color:var(--quiet);font-size:12px}
-.c-price{color:var(--gold);font-weight:600}
-.c-pop{color:#ff9db0;font-weight:700}
-.empty{color:var(--quiet);font-size:12.5px;padding:12px 14px;border:1px dashed var(--line);border-radius:9px;background:rgba(255,255,255,.015)}
-.note{background:rgba(200,16,46,.07);border:1px solid rgba(200,16,46,.25);border-radius:10px;padding:13px 15px;font-size:12.5px;color:#e8c9cf;margin:16px 0}
-.note b{color:#ffd0d8}
-ul{padding-left:18px}li{margin:5px 0;font-size:12.5px;color:var(--muted)}
-code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px;font-size:11.5px}
-.footer{color:var(--quiet);font-size:11.5px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
-</style></head><body>
-<h1>FC27 市场扫描 <span class="badge ">PARTIAL</span></h1>
-<div class="sub">数据日期 2026-09-15 · 平台默认 cross · 双维度：价格分层 × 热门球员 · 来源 FUTBIN</div>
+.stat-v{font-weight:700}
+.stat-v.hi{color:var(--green)}.stat-v.mid{color:var(--teal)}.stat-v.lo{color:var(--amber)}.stat-v.bad{color:var(--quiet)}.stat-v.na{color:#4a5345}
+.c-price{color:var(--amber);font-weight:600}
+.c-pop{color:var(--teal);font-weight:600}
+.c-evo{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
+.c-evo.in{background:rgba(79,181,131,.16);color:var(--green)}
+.c-evo.out{background:rgba(227,179,65,.14);color:var(--amber)}
+.empty{color:var(--quiet);font-size:12.5px;padding:16px;border:1px dashed var(--line);border-radius:9px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}</style></head><body>
+<h1>FC27 市场扫描 <span class="badge">PARTIAL</span></h1>
+<div class="sub">数据日期 2026-09-15 · 数据截止 2026-09-15 18:35 +08:00 · 索引 + 数据库 · 来源 FUTBIN /27/popular + EasySBC</div>
 
-<div class="note"><b>本轮说明：</b>本轮按用户要求重构为双维度结构：维度一=价格分层，维度二=热门球员（热门进化卡 / 价值卡）。<br>FC27 平台价格尚未开放：单卡详情页（Haaland）显示 PRICE UPDATED: NEVER、PRICE RANGE 0-0，玩家列表页价格列全场为 0，Console 与 PC 双平台核验一致。因此维度一四个价格档本期均为如实空状态，不用 FC26 或推测价格填充。<br>维度二取自 FUTBIN 热门榜 /27/popular（28 名，附页面热度计数）。热门进化卡子类来源 /27/popular/evolutions，本期该页无可列出的进化卡。</div>
-
-<h2>维度一 · 价格维度</h2>
-<div class="card"><div class="tier-head"><h3>大卡</h3><span class="tier-range">100 万以上</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>中卡</h3><span class="tier-range">30 万 ~ 100 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>热门卡</h3><span class="tier-range">10 万 ~ 30 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div><div class="card"><div class="tier-head"><h3>适用卡</h3><span class="tier-range">1 万 ~ 10 万</span><span class="tier-count">0 张</span></div><div class="empty">本档本期无已核验价格数据。</div></div>
-
-<h2 class="dim2">维度二 · 热门球员维度</h2>
-<div class="card">
-  <div class="tier-head"><h3>① 热门进化卡</h3><span class="tier-range">/27/popular/evolutions</span><span class="tier-count">0 张</span></div>
-  <div class="empty">本子类本期无已核验数据。</div>
-</div>
-<div class="card">
-  <div class="tier-head"><h3>② 价值卡（热门非进化卡）</h3><span class="tier-range">/27/popular</span><span class="tier-count">28 张</span></div>
-  <table class="tbl"><thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>热度</th><th>备注</th></tr></thead><tbody><tr>
-<td class="c-rank">1</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/1396/mika-godts" target="_blank" rel="noopener">Mika Godts 米卡·霍茨</a></td>
-<td class="c-ver">78</td>
-<td class="c-pos">LW LM</td>
-<td class="c-pop">471</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">2</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/5976/alex-pfeiffer" target="_blank" rel="noopener">Alex Pfeiffer 阿莱克斯·普法伊费尔</a></td>
-<td class="c-ver">70</td>
-<td class="c-pos">RW RM</td>
-<td class="c-pop">389</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">3</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/726/heung-min-son" target="_blank" rel="noopener">孙兴慜 Son Heung Min</a></td>
-<td class="c-ver">81</td>
-<td class="c-pos">ST LW CAM LM</td>
-<td class="c-pop">327</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">4</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/6847/niamh-peacock" target="_blank" rel="noopener">Niamh Peacock 尼亚芙·皮科克</a></td>
-<td class="c-ver">60</td>
-<td class="c-pos">CB</td>
-<td class="c-pop">298</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">5</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/568/julian-quinones" target="_blank" rel="noopener">Julián Quiñones 胡利安·基尼奥内斯</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">ST LW CAM LM</td>
-<td class="c-pop">266</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">6</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/20939/raphael-varane" target="_blank" rel="noopener">Raphaël Varane 拉斐尔·瓦拉内</a></td>
-<td class="c-ver">90</td>
-<td class="c-pos">CB</td>
-<td class="c-pop">266</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">7</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/20950/loic-remy" target="_blank" rel="noopener">Loïc Rémy 洛伊克·雷米</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">ST</td>
-<td class="c-pop">247</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">8</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/475/christian-pulisic" target="_blank" rel="noopener">Christian Pulisic 克里斯蒂安·普利西奇</a></td>
-<td class="c-ver">83</td>
-<td class="c-pos">CAM RW RM ST</td>
-<td class="c-pop">233</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">9</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/20949/marouane-fellaini" target="_blank" rel="noopener">Marouane Fellaini 马鲁万·费莱尼</a></td>
-<td class="c-ver">85</td>
-<td class="c-pos">CM</td>
-<td class="c-pop">221</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">10</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/1085/armand-lauriente" target="_blank" rel="noopener">Armand Laurienté 阿尔芒·洛朗特</a></td>
-<td class="c-ver">80</td>
-<td class="c-pos">LW LM</td>
-<td class="c-pop">212</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">11</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/846/karim-adeyemi" target="_blank" rel="noopener">Karim Adeyemi 卡里姆·阿德耶米</a></td>
-<td class="c-ver">82</td>
-<td class="c-pos">RM LW CAM RW</td>
-<td class="c-pop">195</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">12</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/422/maxence-lacroix" target="_blank" rel="noopener">Maxence Lacroix 马克桑斯·拉克鲁瓦</a></td>
-<td class="c-ver">82</td>
-<td class="c-pos">CB</td>
-<td class="c-pop">193</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">13</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/478/donyell-malen" target="_blank" rel="noopener">Donyell Malen 东耶尔·马伦</a></td>
-<td class="c-ver">83</td>
-<td class="c-pos">ST</td>
-<td class="c-pop">166</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">14</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/22/lionel-messi" target="_blank" rel="noopener">Lionel Messi 利昂内尔·梅西</a></td>
-<td class="c-ver">89</td>
-<td class="c-pos">CAM ST RW RM</td>
-<td class="c-pop">102</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">15</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/654/ferran-torres-garcia" target="_blank" rel="noopener">Ferran Torres 费兰·托雷斯</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">ST LW LM</td>
-<td class="c-pop">94</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">16</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/819/christos-tzolis" target="_blank" rel="noopener">Christos Tzolis 赫里斯托斯·佐利斯</a></td>
-<td class="c-ver">82</td>
-<td class="c-pos">LW LM</td>
-<td class="c-pop">87</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">17</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/944/khephren-thuram" target="_blank" rel="noopener">Khéphren Thuram 凯夫朗·图拉姆</a></td>
-<td class="c-ver">81</td>
-<td class="c-pos">CM CDM</td>
-<td class="c-pop">78</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">18</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/446/ridle-baku" target="_blank" rel="noopener">Ridle Baku 里德勒·巴库</a></td>
-<td class="c-ver">79</td>
-<td class="c-pos">RB RM RW CM</td>
-<td class="c-pop">75</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">19</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/572/roger-ibanez-da-silva" target="_blank" rel="noopener">Roger Ibañez 罗杰·伊巴涅斯</a></td>
-<td class="c-ver">83</td>
-<td class="c-pos">CB RB</td>
-<td class="c-pop">70</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">20</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/557/nicholas-williams-arthuer" target="_blank" rel="noopener">Nico Williams 尼科·威廉姆斯</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">LW LM</td>
-<td class="c-pop">69</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">21</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/407/elliot-anderson" target="_blank" rel="noopener">Elliot Anderson 埃利奥特·安德森</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">CDM CM</td>
-<td class="c-pop">68</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">22</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/19/claudia-pina-medina" target="_blank" rel="noopener">Claudia Pina 克劳迪娅·皮纳</a></td>
-<td class="c-ver">89</td>
-<td class="c-pos">LW ST LM</td>
-<td class="c-pop">65</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">23</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/774/warren-zaire-emery" target="_blank" rel="noopener">Warren Zaïre-Emery 沃伦·扎伊尔-埃梅里</a></td>
-<td class="c-ver">83</td>
-<td class="c-pos">CM RB CDM RM</td>
-<td class="c-pop">63</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">24</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/1046/djed-spence" target="_blank" rel="noopener">Djed Spence 杰德·斯彭斯</a></td>
-<td class="c-ver">80</td>
-<td class="c-pos">LB RB</td>
-<td class="c-pop">62</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">25</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/930/kaishu-sano" target="_blank" rel="noopener">Kaishu Sano 佐野海舟</a></td>
-<td class="c-ver">81</td>
-<td class="c-pos">CDM CM</td>
-<td class="c-pop">58</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">26</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/822/iliman-ndiaye" target="_blank" rel="noopener">Iliman Ndiaye 伊利曼·恩迪亚耶</a></td>
-<td class="c-ver">82</td>
-<td class="c-pos">LM RM LW RW</td>
-<td class="c-pop">56</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">27</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/937/nathaniel-brown" target="_blank" rel="noopener">Nathaniel Brown 纳撒尼尔·布朗</a></td>
-<td class="c-ver">81</td>
-<td class="c-pos">LB LM</td>
-<td class="c-pop">56</td>
-<td class="c-note"></td>
-</tr><tr>
-<td class="c-rank">28</td>
-<td class="c-name"><a href="https://www.futbin.com/27/player/754/nicole-anyomi" target="_blank" rel="noopener">Nicole Anyomi 妮可·安约米</a></td>
-<td class="c-ver">84</td>
-<td class="c-pos">ST LW CAM LM</td>
-<td class="c-pop">56</td>
-<td class="c-note"></td>
-</tr></tbody></table>
+<h2>一、索引（分类概览）</h2>
+<div class="index-grid">
+<div class="idx-card"><h3>按位置</h3><button type="button" class="idx-chip" data-set-pos="门将">门将 GK<b>3</b></button><button type="button" class="idx-chip" data-set-pos="后卫">后卫 DF<b>50</b></button><button type="button" class="idx-chip" data-set-pos="中场">中场 MF<b>59</b></button><button type="button" class="idx-chip" data-set-pos="前锋">前锋 FW<b>24</b></button></div>
+<div class="idx-card"><h3>按总评</h3><button type="button" class="idx-chip"  data-set-rating="80+">80+<b>62</b></button><button type="button" class="idx-chip"  data-set-rating="75-79">75-79<b>32</b></button><button type="button" class="idx-chip"  data-set-rating="70-74">70-74<b>28</b></button><button type="button" class="idx-chip"  data-set-rating="69以下">69 以下<b>14</b></button></div>
+<div class="idx-card"><h3>按价格（EasySBC 推荐价）</h3><button type="button" class="idx-chip"  data-set-price="1万以上">1 万以上<b>8</b></button><button type="button" class="idx-chip"  data-set-price="5000-1万">5000 - 1万<b>10</b></button><button type="button" class="idx-chip"  data-set-price="5000以下">5000 以下<b>118</b></button></div>
+<div class="idx-card"><h3>进化状态</h3><button type="button" class="idx-chip"  data-set-evo="在进化池">在进化池<b>124</b></button><button type="button" class="idx-chip"  data-set-evo="非进化池">非进化池<b>12</b></button></div>
 </div>
 
-<h2>数据来源与核验</h2>
-<div class="card"><ul><li><code>https://www.futbin.com/27/popular</code> · 打开 2026-09-15T18:30:00+08:00 · 热门球员维度主来源，含热度计数</li><li><code>https://www.futbin.com/27/popular/evolutions</code> · 打开 2026-09-15T18:32:00+08:00 · 热门进化卡来源，页面仅标题无可列出卡牌</li><li><code>https://www.futbin.com/27/player/1/erling-haaland</code> · 打开 2026-09-15T16:08:00+08:00 · 价格核验：PRICE UPDATED NEVER / 0-0</li></ul></div>
+<h2>二、数据库（可搜索 · 筛选 · 排序）</h2>
+<div class="db-toolbar" id="db">
+  <input type="search" id="db-q" placeholder="搜索球员姓名（中/英）…">
+  <select id="db-pos"><option value="全部">全部位置</option><option value="门将">门将</option><option value="后卫">后卫</option><option value="中场">中场</option><option value="前锋">前锋</option></select>
+  <select id="db-rating"><option value="全部">全部总评</option><option value="80+">80+</option><option value="75-79">75-79</option><option value="70-74">70-74</option><option value="69以下">69 以下</option></select>
+  <select id="db-price"><option value="全部">全部价格</option><option value="1万以上">1 万以上</option><option value="5000-1万">5000 - 1万</option><option value="5000以下">5000 以下</option></select>
+  <select id="db-evo"><option value="全部">全部状态</option><option value="在进化池">在进化池</option><option value="非进化池">非进化池</option></select>
+  <select id="db-sort"><option value="rating-desc">按总评 ↓</option><option value="rating-asc">按总评 ↑</option><option value="price-desc">按价格 ↓</option><option value="price-asc">按价格 ↑</option><option value="pop-desc">按热度 ↓</option></select>
+  <span class="db-count" id="db-count"></span>
+</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>总评</th><th>位置</th><th>速度</th><th>射门</th><th>传球</th><th>盘带</th><th>防守</th><th>身体</th><th>价格</th><th>热度</th><th>状态</th></tr></thead><tbody id="db-body"></tbody></table></div>
 
-<h2>缺失项记录</h2>
-<div class="card"><ul><li>价格维度：FC27 平台价格未开放（详情页 0-0、列表页价格列全 0，Console/PC 一致），四个价格档均无真实数据，日/周变化不可计算。</li><li>热门进化卡子类：/27/popular/evolutions 本期未返回可列出的进化卡。</li><li>本周活动卡与周黑（Promo/TOTW）：本轮未采集名单与发布时间。</li><li>传奇卡与英雄卡：仅有热门榜样本，未独立核验卡类型与价格。</li><li>概览·本周活动卡与本周周黑：本轮未采集名单与发布时间。</li><li>概览·价格分层：FC27 平台价格未开放，四档（≥100万 / 30-100万 / 10-30万 / 1-10万）均无可归集样本。</li><li>概览·热门进化卡：/27/popular/evolutions 本期无可列出进化卡。</li></ul></div>
+<script type="application/json" id="db-data">[{"name":"Juan Musso","nameZh":"","rating":82,"pos":"GK","price":1800,"popularity":null,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/214979.png","url":"https://www.futbin.com/27/player/841/juan-musso","stats":{"扑":80,"手":82,"踢":73,"反":83,"速":46,"位":81}},{"name":"Peter Gulacsi","nameZh":"","rating":82,"pos":"GK","price":750,"popularity":null,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/185122.png","url":"https://www.futbin.com/27/player/564/peter-gulacsi","stats":{"扑":81,"手":81,"踢":71,"反":81,"速":43,"位":85}},{"name":"Alejandro Remiro Gargallo","nameZh":"","rating":81,"pos":"GK","price":750,"popularity":null,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/227127.png","url":"https://www.futbin.com/27/player/955/alejandro-remiro-gargallo","stats":{"扑":81,"手":78,"踢":80,"反":82,"速":45,"位":79}},{"name":"Micky Van De Ven","nameZh":"","rating":81,"pos":"CB","price":80000,"popularity":84,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/264453.png","url":"https://www.futbin.com/27/player/929/micky-van-de-ven","stats":{"速":90,"射":60,"传":65,"盘":72,"防":80,"身":81}},{"name":"Abdukodir Khusanov","nameZh":"","rating":82,"pos":"CB","price":60000,"popularity":85,"evo":"⚡ Phantom Fullback","image":"https://assets.easysbc.io/fc27/players/ea/277031.png","url":"https://www.futbin.com/27/player/594/abdukodir-khusanov","stats":{"速":88,"射":39,"传":64,"盘":68,"防":83,"身":80}},{"name":"Maxence Lacroix","nameZh":"","rating":82,"pos":"CB","price":25000,"popularity":83.5,"evo":"⚡ Phantom Fullback","image":"https://assets.easysbc.io/fc27/players/ea/244067.png","url":"https://www.futbin.com/27/player/422/maxence-lacroix","stats":{"速":86,"射":45,"传":61,"盘":67,"防":83,"身":82}},{"name":"Fikayo Tomori","nameZh":"","rating":80,"pos":"CB","price":20000,"popularity":82.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/232756.png","url":"https://www.futbin.com/27/player/1078/fikayo-tomori","stats":{"速":85,"射":40,"传":63,"盘":68,"防":80,"身":80}},{"name":"Theo Hernandez","nameZh":"","rating":82,"pos":"LB","price":19000,"popularity":84.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/232656.png","url":"https://www.futbin.com/27/player/579/theo-hernandez","stats":{"速":89,"射":78,"传":78,"盘":82,"防":76,"身":83}},{"name":"Jeremie Frimpong","nameZh":"","rating":81,"pos":"RB","price":8700,"popularity":84.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/253149.png","url":"https://www.futbin.com/27/player/266/jeremie-frimpong","stats":{"速":94,"射":62,"传":74,"盘":82,"防":72,"身":62}},{"name":"Alvaro Fernandez Carreras","nameZh":"","rating":81,"pos":"LB","price":8600,"popularity":84.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/268889.png","url":"https://www.futbin.com/27/player/684/alvaro-fernandez-carreras","stats":{"速":86,"射":66,"传":77,"盘":80,"防":75,"身":81}},{"name":"Wesley Vinicius Franca Lima","nameZh":"","rating":80,"pos":"LB","price":8000,"popularity":81.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/80170.png","url":"https://www.futbin.com/27/player/531/wesley-vinicius-franca-lima","stats":{"速":90,"射":63,"传":75,"盘":81,"防":75,"身":77}},{"name":"Ronald Araujo","nameZh":"","rating":80,"pos":"CB","price":6200,"popularity":81.8,"evo":"⚡ Backline Glow","image":"https://assets.easysbc.io/fc27/players/ea/253163.png","url":"https://www.futbin.com/27/player/413/ronald-araujo","stats":{"速":79,"射":54,"传":64,"盘":59,"防":78,"身":81}},{"name":"Ousmane Diomande","nameZh":"","rating":81,"pos":"CB","price":5000,"popularity":84.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/270531.png","url":"https://www.futbin.com/27/player/411/ousmane-diomande","stats":{"速":80,"射":26,"传":52,"盘":70,"防":80,"身":88}},{"name":"Davinson Sanchez","nameZh":"","rating":80,"pos":"CB","price":4400,"popularity":81.7,"evo":"⚡ Backline Glow","image":"https://assets.easysbc.io/fc27/players/ea/220793.png","url":"https://www.futbin.com/27/player/1110/davinson-sanchez","stats":{"速":81,"射":57,"传":62,"盘":72,"防":80,"身":86}},{"name":"Nnamdi Collins","nameZh":"","rating":74,"pos":"CB","price":3500,"popularity":77.5,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/256500.png","url":"https://www.futbin.com/27/player/9619/nnamdi-collins","stats":{"速":84,"射":30,"传":64,"盘":68,"防":74,"身":75}},{"name":"Marc Pubill Pages","nameZh":"","rating":81,"pos":"CB","price":3300,"popularity":84,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/266039.png","url":"https://www.futbin.com/27/player/960/marc-pubill-pages","stats":{"速":79,"射":56,"传":71,"盘":74,"防":81,"身":82}},{"name":"Nathaniel Brown","nameZh":"","rating":81,"pos":"LB","price":3200,"popularity":82.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/269701.png","url":"https://www.futbin.com/27/player/937/nathaniel-brown","stats":{"速":90,"射":60,"传":76,"盘":83,"防":73,"身":59}},{"name":"Ferland Mendy","nameZh":"","rating":80,"pos":"LB","price":3000,"popularity":80.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/228618.png","url":"https://www.futbin.com/27/player/686/ferland-mendy","stats":{"速":80,"射":62,"传":74,"盘":75,"防":78,"身":81}},{"name":"Malo Gusto","nameZh":"","rating":79,"pos":"RB","price":2200,"popularity":79.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/259307.png","url":"https://www.futbin.com/27/player/1217/malo-gusto","stats":{"速":82,"射":55,"传":75,"盘":79,"防":75,"身":73}},{"name":"Benjamin Pavard","nameZh":"","rating":80,"pos":"CB","price":1500,"popularity":78.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/226851.png","url":"https://www.futbin.com/27/player/1076/benjamin-pavard","stats":{"速":75,"射":66,"传":75,"盘":70,"防":81,"身":78}},{"name":"Marco Palestra","nameZh":"","rating":78,"pos":"RB","price":1400,"popularity":79.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/278339.png","url":"https://www.futbin.com/27/player/1442/marco-palestra","stats":{"速":90,"射":65,"传":69,"盘":80,"防":70,"身":81}},{"name":"Oumar Solet","nameZh":"","rating":78,"pos":"CB","price":1200,"popularity":81.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/242238.png","url":"https://www.futbin.com/27/player/737/oumar-solet","stats":{"速":84,"射":43,"传":62,"盘":68,"防":77,"身":81}},{"name":"Djed Spence","nameZh":"","rating":80,"pos":"LB","price":1100,"popularity":80.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/243702.png","url":"https://www.futbin.com/27/player/1046/djed-spence","stats":{"速":89,"射":54,"传":71,"盘":79,"防":76,"身":75}},{"name":"Yazan Al Arab","nameZh":"","rating":74,"pos":"CB","price":1000,"popularity":80,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/73466.png","url":"https://www.futbin.com/27/player/11538/yazan-al-arab","stats":{"速":76,"射":29,"传":46,"盘":52,"防":73,"身":83}},{"name":"Juma Bah","nameZh":"","rating":73,"pos":"CB","price":1000,"popularity":71.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/75148.png","url":"https://www.futbin.com/27/player/14142/juma-bah","stats":{"速":65,"射":25,"传":53,"盘":54,"防":73,"身":75}},{"name":"Jayden Oosterwolde","nameZh":"","rating":76,"pos":"CB","price":800,"popularity":80.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/258168.png","url":"https://www.futbin.com/27/player/2280/jayden-oosterwolde","stats":{"速":88,"射":42,"传":64,"盘":72,"防":75,"身":81}},{"name":"Mohamed Simakan","nameZh":"","rating":82,"pos":"CB","price":750,"popularity":82.7,"evo":"⚡ Phantom Fullback","image":"https://assets.easysbc.io/fc27/players/ea/243854.png","url":"https://www.futbin.com/27/player/581/mohamed-simakan","stats":{"速":78,"射":43,"传":66,"盘":70,"防":83,"身":83}},{"name":"Castello Lukeba","nameZh":"","rating":81,"pos":"CB","price":750,"popularity":80,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/262138.png","url":"https://www.futbin.com/27/player/448/castello-lukeba","stats":{"速":79,"射":43,"传":70,"盘":74,"防":82,"身":76}},{"name":"Pierre Kalulu","nameZh":"","rating":81,"pos":"CB","price":750,"popularity":79.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/255654.png","url":"https://www.futbin.com/27/player/946/pierre-kalulu","stats":{"速":79,"射":53,"传":68,"盘":72,"防":83,"身":79}},{"name":"Amir Murillo","nameZh":"","rating":74,"pos":"RB","price":750,"popularity":72.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/237841.png","url":"https://www.futbin.com/27/player/11532/amir-murillo","stats":{"速":80,"射":58,"传":70,"盘":72,"防":69,"身":76}},{"name":"Hector Junior Firpo Adames","nameZh":"","rating":74,"pos":"LB","price":750,"popularity":71.5,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/241184.png","url":"https://www.futbin.com/27/player/10940/hector-junior-firpo-adames","stats":{"速":76,"射":61,"传":70,"盘":70,"防":72,"身":73}},{"name":"Mauro Jaqueson J Ferreira Santos","nameZh":"","rating":81,"pos":"LB","price":500,"popularity":81.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/241509.png","url":"https://www.futbin.com/27/player/904/mauro-jaqueson-j-ferreira-santos","stats":{"速":83,"射":66,"传":76,"盘":82,"防":76,"身":60}},{"name":"Rayan Ait Nouri","nameZh":"","rating":81,"pos":"LB","price":500,"popularity":79.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/242641.png","url":"https://www.futbin.com/27/player/915/rayan-ait-nouri","stats":{"速":84,"射":52,"传":76,"盘":84,"防":77,"身":69}},{"name":"Jorrel Hato","nameZh":"","rating":78,"pos":"LB","price":500,"popularity":79.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/272978.png","url":"https://www.futbin.com/27/player/609/jorrel-hato","stats":{"速":85,"射":42,"传":70,"盘":74,"防":76,"身":74}},{"name":"Wilfried Singo","nameZh":"","rating":78,"pos":"CB","price":500,"popularity":80.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/252802.png","url":"https://www.futbin.com/27/player/1563/wilfried-singo","stats":{"速":82,"射":61,"传":68,"盘":74,"防":77,"身":84}},{"name":"Luis Henrique Tomaz De Lima","nameZh":"","rating":77,"pos":"RB","price":500,"popularity":78.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/256632.png","url":"https://www.futbin.com/27/player/1813/luis-henrique-tomaz-de-lima","stats":{"速":90,"射":74,"传":72,"盘":78,"防":70,"身":76}},{"name":"Johan Mojica","nameZh":"","rating":76,"pos":"LB","price":500,"popularity":77.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/214026.png","url":"https://www.futbin.com/27/player/2264/johan-mojica","stats":{"速":86,"射":65,"传":74,"盘":74,"防":70,"身":72}},{"name":"Jordan Lefort","nameZh":"","rating":76,"pos":"CB","price":500,"popularity":75.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/234515.png","url":"https://www.futbin.com/27/player/2106/jordan-lefort","stats":{"速":65,"射":26,"传":65,"盘":66,"防":77,"身":77}},{"name":"Nuno Albertino Varela Tavares","nameZh":"","rating":76,"pos":"LB","price":500,"popularity":79.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/251530.png","url":"https://www.futbin.com/27/player/2186/nuno-albertino-varela-tavares","stats":{"速":83,"射":67,"传":72,"盘":79,"防":68,"身":72}},{"name":"Saul Basilio Coco Bassey Oubina","nameZh":"","rating":76,"pos":"CB","price":500,"popularity":80.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/265650.png","url":"https://www.futbin.com/27/player/2194/saul-basilio-coco-bassey-oubina","stats":{"速":84,"射":56,"传":58,"盘":61,"防":77,"身":82}},{"name":"Mika Marmol Medina","nameZh":"","rating":75,"pos":"CB","price":500,"popularity":77.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/266160.png","url":"https://www.futbin.com/27/player/3953/mika-marmol-medina","stats":{"速":85,"射":55,"传":66,"盘":73,"防":74,"身":79}},{"name":"Ayumu Seko","nameZh":"","rating":74,"pos":"CB","price":500,"popularity":72.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/247264.png","url":"https://www.futbin.com/27/player/9505/ayumu-seko","stats":{"速":64,"射":42,"传":66,"盘":70,"防":74,"身":78}},{"name":"Shogo Taniguchi","nameZh":"","rating":74,"pos":"CB","price":500,"popularity":67.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/233225.png","url":"https://www.futbin.com/27/player/8767/shogo-taniguchi","stats":{"速":53,"射":45,"传":61,"盘":61,"防":75,"身":74}},{"name":"Abdullah Iqbal","nameZh":"","rating":73,"pos":"CB","price":500,"popularity":72.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/74324.png","url":"https://www.futbin.com/27/player/16976/abdullah-iqbal","stats":{"速":70,"射":34,"传":52,"盘":61,"防":71,"身":81}},{"name":"Edgaras Utkus","nameZh":"","rating":73,"pos":"CB","price":500,"popularity":68.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/263549.png","url":"https://www.futbin.com/27/player/17958/edgaras-utkus","stats":{"速":51,"射":37,"传":60,"盘":59,"防":73,"身":77}},{"name":"Rahim Alhassane","nameZh":"","rating":71,"pos":"LB","price":500,"popularity":70.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/73502.png","url":"https://www.futbin.com/27/player/10863/rahim-alhassane","stats":{"速":86,"射":45,"传":58,"盘":63,"防":65,"身":72}},{"name":"Yana Kotyk","nameZh":"","rating":70,"pos":"CB","price":500,"popularity":0,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/87775.png","url":"https://www.futbin.com/27/player/15714/yana-kotyk","stats":{"速":64,"射":23,"传":49,"盘":64,"防":74,"身":59}},{"name":"Moon Hwan Kim","nameZh":"","rating":70,"pos":"RB","price":250,"popularity":75.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/244800.png","url":"https://www.futbin.com/27/player/2976/moon-hwan-kim","stats":{"速":83,"射":53,"传":61,"盘":69,"防":64,"身":68}},{"name":"Rion Ichihara","nameZh":"","rating":67,"pos":"CB","price":250,"popularity":69.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/83550.png","url":"https://www.futbin.com/27/player/10986/rion-ichihara","stats":{"速":76,"射":35,"传":64,"盘":59,"防":66,"身":68}},{"name":"Ryan Nyambe","nameZh":"","rating":65,"pos":"RB","price":250,"popularity":66.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/228684.png","url":"https://www.futbin.com/27/player/15282/ryan-nyambe","stats":{"速":77,"射":35,"传":56,"盘":63,"防":62,"身":74}},{"name":"Lindsay Rose","nameZh":"","rating":64,"pos":"CB","price":250,"popularity":0,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/236513.png","url":"https://www.futbin.com/27/player/21092/lindsay-rose","stats":{"速":60,"射":41,"传":53,"盘":57,"防":63,"身":73}},{"name":"Karsyn Cherry","nameZh":"","rating":62,"pos":"CB","price":250,"popularity":58.5,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/83033.png","url":"https://www.futbin.com/27/player/9855/karsyn-cherry","stats":{"速":58,"射":28,"传":42,"盘":44,"防":63,"身":65}},{"name":"Niamh Peacock","nameZh":"","rating":60,"pos":"CB","price":250,"popularity":0,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/76983.png","url":"https://www.futbin.com/27/player/6847/niamh-peacock","stats":{"速":57,"射":25,"传":45,"盘":51,"防":59,"身":60}},{"name":"Marcus Rashford","nameZh":"","rating":82,"pos":"LW","price":55000,"popularity":83.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/231677.png","url":"https://www.futbin.com/27/player/810/marcus-rashford","stats":{"速":92,"射":83,"传":78,"盘":81,"防":33,"身":68}},{"name":"Antony Matheus Dos Santos","nameZh":"","rating":81,"pos":"RW","price":19000,"popularity":85.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/255475.png","url":"https://www.futbin.com/27/player/958/antony-matheus-dos-santos","stats":{"速":85,"射":81,"传":79,"盘":82,"防":48,"身":71}},{"name":"Karim Adeyemi","nameZh":"","rating":82,"pos":"RM","price":13000,"popularity":83.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/251852.png","url":"https://www.futbin.com/27/player/846/karim-adeyemi","stats":{"速":95,"射":80,"传":72,"盘":82,"防":36,"身":69}},{"name":"Omar Marmoush","nameZh":"","rating":82,"pos":"LW","price":9500,"popularity":82.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/256675.png","url":"https://www.futbin.com/27/player/818/omar-marmoush","stats":{"速":87,"射":83,"传":76,"盘":83,"防":34,"身":69}},{"name":"Eduardo Camavinga","nameZh":"","rating":81,"pos":"CM","price":8000,"popularity":83.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/248243.png","url":"https://www.futbin.com/27/player/677/eduardo-camavinga","stats":{"速":79,"射":67,"传":80,"盘":82,"防":78,"身":80}},{"name":"Pedro Lomba Neto","nameZh":"","rating":81,"pos":"RM","price":7300,"popularity":85.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/238616.png","url":"https://www.futbin.com/27/player/423/pedro-lomba-neto","stats":{"速":91,"射":76,"传":77,"盘":82,"防":40,"身":70}},{"name":"Khephren Thuram","nameZh":"","rating":81,"pos":"CM","price":7000,"popularity":83.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/247246.png","url":"https://www.futbin.com/27/player/944/khephren-thuram","stats":{"速":79,"射":74,"传":78,"盘":79,"防":81,"身":85}},{"name":"Mamadou Sangare","nameZh":"","rating":81,"pos":"CM","price":4400,"popularity":82.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/258601.png","url":"https://www.futbin.com/27/player/409/mamadou-sangare","stats":{"速":80,"射":67,"传":76,"盘":81,"防":78,"身":72}},{"name":"Federico Chiesa","nameZh":"","rating":80,"pos":"RM","price":4400,"popularity":83.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/235805.png","url":"https://www.futbin.com/27/player/1037/federico-chiesa","stats":{"速":87,"射":79,"传":75,"盘":83,"防":44,"身":68}},{"name":"Bars Alper Ylmaz","nameZh":"","rating":80,"pos":"LM","price":3400,"popularity":85.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/263205.png","url":"https://www.futbin.com/27/player/1114/bars-alper-ylmaz","stats":{"速":93,"射":75,"传":72,"盘":80,"防":69,"身":86}},{"name":"Moussa Diaby","nameZh":"","rating":82,"pos":"RM","price":3300,"popularity":86.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/241852.png","url":"https://www.futbin.com/27/player/863/moussa-diaby","stats":{"速":94,"射":69,"传":76,"盘":85,"防":44,"身":59}},{"name":"Inaki Williams Arthuer","nameZh":"","rating":80,"pos":"RW","price":2800,"popularity":82.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/216201.png","url":"https://www.futbin.com/27/player/1095/inaki-williams-arthuer","stats":{"速":92,"射":79,"传":74,"盘":77,"防":47,"身":83}},{"name":"Ruben Loftus Cheek","nameZh":"","rating":79,"pos":"CAM","price":2600,"popularity":77.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/213666.png","url":"https://www.futbin.com/27/player/1254/ruben-loftus-cheek","stats":{"速":80,"射":76,"传":77,"盘":79,"防":76,"身":79}},{"name":"Gabriel Teodoro Martinelli Silva","nameZh":"","rating":80,"pos":"LW","price":2200,"popularity":81.4,"evo":"⚡ Inverted Instinct","image":"https://assets.easysbc.io/fc27/players/ea/251566.png","url":"https://www.futbin.com/27/player/1049/gabriel-teodoro-martinelli-silva","stats":{"速":88,"射":76,"传":74,"盘":82,"防":46,"身":69}},{"name":"Iliman Ndiaye","nameZh":"","rating":82,"pos":"LM","price":2100,"popularity":82.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/261188.png","url":"https://www.futbin.com/27/player/822/iliman-ndiaye","stats":{"速":86,"射":77,"传":74,"盘":86,"防":44,"身":65}},{"name":"Julien Duranville","nameZh":"","rating":72,"pos":"RM","price":2000,"popularity":77.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/262105.png","url":"https://www.futbin.com/27/player/2479/julien-duranville","stats":{"速":88,"射":61,"传":63,"盘":82,"防":26,"身":49}},{"name":"Yankuba Minteh","nameZh":"","rating":80,"pos":"RM","price":1900,"popularity":82.5,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/271800.png","url":"https://www.futbin.com/27/player/601/yankuba-minteh","stats":{"速":93,"射":72,"传":73,"盘":84,"防":57,"身":57}},{"name":"Ederson Jose Dos Santos","nameZh":"","rating":82,"pos":"CM","price":1300,"popularity":81.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/266866.png","url":"https://www.futbin.com/27/player/839/ederson-jose-dos-santos","stats":{"速":81,"射":73,"传":78,"盘":80,"防":80,"身":81}},{"name":"Alberto Moleiro Gonzalez","nameZh":"","rating":82,"pos":"LM","price":1000,"popularity":85.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/264388.png","url":"https://www.futbin.com/27/player/849/alberto-moleiro-gonzalez","stats":{"速":86,"射":76,"传":77,"盘":84,"防":51,"身":68}},{"name":"Irvin Cardona","nameZh":"","rating":72,"pos":"RM","price":1000,"popularity":72.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/235888.png","url":"https://www.futbin.com/27/player/2716/irvin-cardona","stats":{"速":89,"射":71,"传":64,"盘":71,"防":30,"身":74}},{"name":"Anthony Gordon","nameZh":"","rating":82,"pos":"LW","price":750,"popularity":82.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/242964.png","url":"https://www.futbin.com/27/player/843/anthony-gordon","stats":{"速":91,"射":78,"传":77,"盘":82,"防":50,"身":71}},{"name":"Marco Asensio Willemsen","nameZh":"","rating":82,"pos":"CAM","price":750,"popularity":82.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/220834.png","url":"https://www.futbin.com/27/player/853/marco-asensio-willemsen","stats":{"速":73,"射":81,"传":82,"盘":82,"防":44,"身":63}},{"name":"Natalia Ramos Alvarez","nameZh":"","rating":82,"pos":"CDM","price":750,"popularity":82.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/272224.png","url":"https://www.futbin.com/27/player/499/natalia-ramos-alvarez","stats":{"速":78,"射":74,"传":77,"盘":76,"防":78,"身":87}},{"name":"Orkun Kokcu","nameZh":"","rating":82,"pos":"CM","price":750,"popularity":83.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/243245.png","url":"https://www.futbin.com/27/player/854/orkun-kokcu","stats":{"速":72,"射":80,"传":84,"盘":80,"防":70,"身":80}},{"name":"Paula Fernandez Jimenez","nameZh":"","rating":82,"pos":"CM","price":750,"popularity":83.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/272007.png","url":"https://www.futbin.com/27/player/503/paula-fernandez-jimenez","stats":{"速":77,"射":74,"传":78,"盘":81,"防":78,"身":80}},{"name":"Mohammed Kudus","nameZh":"","rating":81,"pos":"RM","price":750,"popularity":81.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/245155.png","url":"https://www.futbin.com/27/player/916/mohammed-kudus","stats":{"速":88,"射":76,"传":74,"盘":86,"防":60,"身":74}},{"name":"Nicolas Pepe","nameZh":"","rating":81,"pos":"RW","price":750,"popularity":82.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/226110.png","url":"https://www.futbin.com/27/player/953/nicolas-pepe","stats":{"速":87,"射":80,"传":75,"盘":84,"防":37,"身":69}},{"name":"Xavi Simons","nameZh":"","rating":81,"pos":"CAM","price":750,"popularity":84.5,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/245367.png","url":"https://www.futbin.com/27/player/917/xavi-simons","stats":{"速":75,"射":76,"传":79,"盘":84,"防":61,"身":66}},{"name":"Estevao Willian Almeida","nameZh":"","rating":80,"pos":"RM","price":750,"popularity":84.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/76687.png","url":"https://www.futbin.com/27/player/424/estevao-willian-almeida","stats":{"速":89,"射":76,"传":75,"盘":84,"防":33,"身":57}},{"name":"Dae Won Kim","nameZh":"","rating":73,"pos":"LM","price":750,"popularity":80.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/233018.png","url":"https://www.futbin.com/27/player/17078/dae-won-kim","stats":{"速":90,"射":69,"传":68,"盘":72,"防":30,"身":72}},{"name":"Anderson Oliveira Da Silva","nameZh":"","rating":72,"pos":"LM","price":750,"popularity":77.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/254225.png","url":"https://www.futbin.com/27/player/5282/anderson-oliveira-da-silva","stats":{"速":86,"射":70,"传":64,"盘":72,"防":33,"身":66}},{"name":"Kian Fitz Jim","nameZh":"","rating":71,"pos":"CM","price":750,"popularity":73.1,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/262218.png","url":"https://www.futbin.com/27/player/10882/kian-fitz-jim","stats":{"速":73,"射":59,"传":69,"盘":77,"防":63,"身":54}},{"name":"Gerso Fernandes","nameZh":"","rating":70,"pos":"RM","price":750,"popularity":77.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/209449.png","url":"https://www.futbin.com/27/player/2954/gerso-fernandes","stats":{"速":94,"射":66,"传":59,"盘":73,"防":41,"身":77}},{"name":"Taha Ali","nameZh":"","rating":69,"pos":"LM","price":750,"popularity":73.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/260972.png","url":"https://www.futbin.com/27/player/11293/taha-ali","stats":{"速":86,"射":60,"传":58,"盘":75,"防":35,"身":49}},{"name":"Alvaro Garcia Rivera","nameZh":"","rating":81,"pos":"LW","price":500,"popularity":82.3,"evo":"⚡ Inverted Instinct","image":"https://assets.easysbc.io/fc27/players/ea/216447.png","url":"https://www.futbin.com/27/player/952/alvaro-garcia-rivera","stats":{"速":88,"射":77,"传":78,"盘":79,"防":51,"身":45}},{"name":"Kaishu Sano","nameZh":"","rating":81,"pos":"CDM","price":500,"popularity":85,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/73078.png","url":"https://www.futbin.com/27/player/930/kaishu-sano","stats":{"速":81,"射":59,"传":68,"盘":81,"防":83,"身":76}},{"name":"Maximilian Beier","nameZh":"","rating":81,"pos":"CAM","price":500,"popularity":80.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/254117.png","url":"https://www.futbin.com/27/player/936/maximilian-beier","stats":{"速":86,"射":80,"传":74,"盘":81,"防":56,"身":65}},{"name":"Maximiliano Araujo","nameZh":"","rating":81,"pos":"LM","price":500,"popularity":80.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/254817.png","url":"https://www.futbin.com/27/player/968/maximiliano-araujo","stats":{"速":85,"射":69,"传":76,"盘":81,"防":71,"身":75}},{"name":"Andreas Schjelderup","nameZh":"","rating":80,"pos":"LW","price":500,"popularity":81.2,"evo":"⚡ Inverted Instinct","image":"https://assets.easysbc.io/fc27/players/ea/260952.png","url":"https://www.futbin.com/27/player/1122/andreas-schjelderup","stats":{"速":81,"射":75,"传":75,"盘":82,"防":42,"身":59}},{"name":"Francisco Conceicao","nameZh":"","rating":80,"pos":"CAM","price":500,"popularity":82.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/261050.png","url":"https://www.futbin.com/27/player/1092/francisco-conceicao","stats":{"速":88,"射":72,"传":76,"盘":86,"防":44,"身":55}},{"name":"Johan Manzambi","nameZh":"","rating":80,"pos":"CM","price":500,"popularity":76.4,"evo":"⚡ Midfield Spark","image":"https://assets.easysbc.io/fc27/players/ea/276694.png","url":"https://www.futbin.com/27/player/300/johan-manzambi","stats":{"速":71,"射":74,"传":73,"盘":83,"防":70,"身":71}},{"name":"Matias Soule","nameZh":"","rating":80,"pos":"CAM","price":500,"popularity":81.5,"evo":"⚡ Midfield Spark","image":"https://assets.easysbc.io/fc27/players/ea/265695.png","url":"https://www.futbin.com/27/player/530/matias-soule","stats":{"速":82,"射":76,"传":79,"盘":81,"防":48,"身":66}},{"name":"Rafael A Ferreira Silva","nameZh":"","rating":80,"pos":"CAM","price":500,"popularity":83.5,"evo":"⚡ Midfield Spark","image":"https://assets.easysbc.io/fc27/players/ea/216547.png","url":"https://www.futbin.com/27/player/1116/rafael-a-ferreira-silva","stats":{"速":86,"射":75,"传":77,"盘":84,"防":48,"身":57}},{"name":"Youssouf Fofana","nameZh":"","rating":80,"pos":"CM","price":500,"popularity":78,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/245630.png","url":"https://www.futbin.com/27/player/1087/youssouf-fofana","stats":{"速":75,"射":69,"传":76,"盘":79,"防":78,"身":74}},{"name":"Diego Manuel J Da Silva Moreira","nameZh":"","rating":79,"pos":"RM","price":500,"popularity":80.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/270039.png","url":"https://www.futbin.com/27/player/1233/diego-manuel-j-da-silva-moreira","stats":{"速":89,"射":69,"传":70,"盘":83,"防":64,"身":69}},{"name":"Geny Cipriano Catamo","nameZh":"","rating":79,"pos":"RM","price":500,"popularity":82.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/266097.png","url":"https://www.futbin.com/27/player/1305/geny-cipriano-catamo","stats":{"速":92,"射":74,"传":69,"盘":82,"防":64,"身":62}},{"name":"Giannis Konstantelias","nameZh":"","rating":79,"pos":"CAM","price":500,"popularity":82.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/259633.png","url":"https://www.futbin.com/27/player/1300/giannis-konstantelias","stats":{"速":80,"射":69,"传":76,"盘":84,"防":38,"身":63}},{"name":"Kevin Schade","nameZh":"","rating":79,"pos":"LM","price":500,"popularity":81,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/260926.png","url":"https://www.futbin.com/27/player/1220/kevin-schade","stats":{"速":92,"射":75,"传":71,"盘":78,"防":30,"身":73}},{"name":"Martin Baturina","nameZh":"","rating":79,"pos":"CAM","price":500,"popularity":80.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/262842.png","url":"https://www.futbin.com/27/player/493/martin-baturina","stats":{"速":76,"射":72,"传":79,"盘":83,"防":62,"身":58}},{"name":"Victor Munoz Villanueva","nameZh":"","rating":79,"pos":"LM","price":500,"popularity":80.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/76042.png","url":"https://www.futbin.com/27/player/1186/victor-munoz-villanueva","stats":{"速":94,"射":74,"传":70,"盘":80,"防":50,"身":65}},{"name":"Daizen Maeda","nameZh":"","rating":78,"pos":"LM","price":500,"popularity":84.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/246321.png","url":"https://www.futbin.com/27/player/1423/daizen-maeda","stats":{"速":92,"射":77,"传":70,"盘":76,"防":64,"身":77}},{"name":"Lucas Da Cunha","nameZh":"","rating":78,"pos":"CDM","price":500,"popularity":78.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/254579.png","url":"https://www.futbin.com/27/player/496/lucas-da-cunha","stats":{"速":77,"射":72,"传":76,"盘":81,"防":75,"身":59}},{"name":"Mathys Tel","nameZh":"","rating":78,"pos":"LM","price":500,"popularity":79.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/268421.png","url":"https://www.futbin.com/27/player/1433/mathys-tel","stats":{"速":86,"射":80,"传":70,"盘":79,"防":29,"身":64}},{"name":"Sergio Canales Madrazo","nameZh":"","rating":78,"pos":"RM","price":500,"popularity":79,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/190286.png","url":"https://www.futbin.com/27/player/1527/sergio-canales-madrazo","stats":{"速":77,"射":76,"传":80,"盘":77,"防":63,"身":70}},{"name":"Franco Mastantuono","nameZh":"","rating":77,"pos":"RM","price":500,"popularity":74.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/279173.png","url":"https://www.futbin.com/27/player/1864/franco-mastantuono","stats":{"速":74,"射":71,"传":75,"盘":79,"防":50,"身":65}},{"name":"Leandro Barreiro","nameZh":"","rating":77,"pos":"CM","price":500,"popularity":77.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/245253.png","url":"https://www.futbin.com/27/player/1894/leandro-barreiro","stats":{"速":80,"射":70,"传":69,"盘":79,"防":73,"身":69}},{"name":"Yuito Suzuki","nameZh":"","rating":77,"pos":"CAM","price":500,"popularity":77.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/255185.png","url":"https://www.futbin.com/27/player/1789/yuito-suzuki","stats":{"速":85,"射":68,"传":71,"盘":79,"防":48,"身":57}},{"name":"Junya Ito","nameZh":"","rating":76,"pos":"RM","price":500,"popularity":81,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/232905.png","url":"https://www.futbin.com/27/player/2027/junya-ito","stats":{"速":86,"射":69,"传":72,"盘":76,"防":58,"身":70}},{"name":"Angelo Fulgini","nameZh":"","rating":75,"pos":"CM","price":500,"popularity":75.8,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/226789.png","url":"https://www.futbin.com/27/player/6827/angelo-fulgini","stats":{"速":72,"射":71,"传":77,"盘":77,"防":66,"身":71}},{"name":"Frank Onyeka","nameZh":"","rating":75,"pos":"CDM","price":500,"popularity":75.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/239529.png","url":"https://www.futbin.com/27/player/4455/frank-onyeka","stats":{"速":75,"射":66,"传":68,"盘":74,"防":73,"身":79}},{"name":"Ali Al Musrati","nameZh":"","rating":74,"pos":"CDM","price":500,"popularity":70.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/252308.png","url":"https://www.futbin.com/27/player/11533/ali-al-musrati","stats":{"速":43,"射":66,"传":68,"盘":66,"防":72,"身":77}},{"name":"Jairo Concha","nameZh":"","rating":74,"pos":"CM","price":500,"popularity":75.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/264796.png","url":"https://www.futbin.com/27/player/12523/jairo-concha","stats":{"速":73,"射":71,"传":70,"盘":78,"防":60,"身":63}},{"name":"Jin Gyu Kim","nameZh":"","rating":73,"pos":"CM","price":500,"popularity":74.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/227659.png","url":"https://www.futbin.com/27/player/17077/jin-gyu-kim","stats":{"速":70,"射":68,"传":72,"盘":73,"防":52,"身":70}},{"name":"Sarah Schupansky","nameZh":"","rating":72,"pos":"CM","price":500,"popularity":69.9,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/76216.png","url":"https://www.futbin.com/27/player/19512/sarah-schupansky","stats":{"速":68,"射":65,"传":73,"盘":73,"防":55,"身":65}},{"name":"Nicolas Gaitan","nameZh":"","rating":70,"pos":"CAM","price":500,"popularity":71.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/184144.png","url":"https://www.futbin.com/27/player/4250/nicolas-gaitan","stats":{"速":57,"射":67,"传":73,"盘":74,"防":47,"身":54}},{"name":"Seung Woo Lee","nameZh":"","rating":70,"pos":"LW","price":500,"popularity":75.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/232000.png","url":"https://www.futbin.com/27/player/2965/seung-woo-lee","stats":{"速":80,"射":65,"传":64,"盘":75,"防":41,"身":64}},{"name":"Marco Ilaimaharitra","nameZh":"","rating":71,"pos":"CDM","price":250,"popularity":68.3,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/220782.png","url":"https://www.futbin.com/27/player/8023/marco-ilaimaharitra","stats":{"速":43,"射":62,"传":67,"盘":67,"防":70,"身":74}},{"name":"Ronaldo Augusto Vieira Nan","nameZh":"","rating":69,"pos":"CDM","price":250,"popularity":69.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/233943.png","url":"https://www.futbin.com/27/player/9602/ronaldo-augusto-vieira-nan","stats":{"速":71,"射":58,"传":64,"盘":70,"防":65,"身":74}},{"name":"Ian Poveda","nameZh":"","rating":68,"pos":"RW","price":250,"popularity":0,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/243390.png","url":"https://www.futbin.com/27/player/21005/ian-poveda","stats":{"速":76,"射":57,"传":62,"盘":72,"防":33,"身":52}},{"name":"Takeshi Kanamori","nameZh":"","rating":64,"pos":"RM","price":250,"popularity":67,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/232963.png","url":"https://www.futbin.com/27/player/14923/takeshi-kanamori","stats":{"速":90,"射":58,"传":53,"盘":67,"防":30,"身":71}},{"name":"Lois Openda","nameZh":"","rating":80,"pos":"ST","price":8000,"popularity":83.9,"evo":"⚡ Born to Shine","image":"https://assets.easysbc.io/fc27/players/ea/243580.png","url":"https://www.futbin.com/27/player/1058/lois-openda","stats":{"速":94,"射":79,"传":69,"盘":78,"防":30,"身":75}},{"name":"John Yeboah","nameZh":"","rating":73,"pos":"ST","price":1500,"popularity":75.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/242755.png","url":"https://www.futbin.com/27/player/16002/john-yeboah","stats":{"速":92,"射":70,"传":67,"盘":79,"防":30,"身":54}},{"name":"Olavio Vieira Dos Santos Junior","nameZh":"","rating":73,"pos":"ST","price":1000,"popularity":74.7,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/235371.png","url":"https://www.futbin.com/27/player/17909/olavio-vieira-dos-santos-junior","stats":{"速":88,"射":73,"传":60,"盘":69,"防":29,"身":67}},{"name":"Sirlord Conteh","nameZh":"","rating":69,"pos":"ST","price":1000,"popularity":71.2,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/251002.png","url":"https://www.futbin.com/27/player/8543/sirlord-conteh","stats":{"速":95,"射":64,"传":56,"盘":70,"防":37,"身":63}},{"name":"Benjamin Sesko","nameZh":"","rating":82,"pos":"ST","price":750,"popularity":82.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/260592.png","url":"https://www.futbin.com/27/player/821/benjamin-sesko","stats":{"速":85,"射":82,"传":67,"盘":78,"防":46,"身":77}},{"name":"Endrick Felipe Moreira De Sousa","nameZh":"","rating":79,"pos":"ST","price":500,"popularity":81.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/272505.png","url":"https://www.futbin.com/27/player/616/endrick-felipe-moreira-de-sousa","stats":{"速":87,"射":81,"传":66,"盘":80,"防":30,"身":73}},{"name":"Pierre Emerick Aubameyang","nameZh":"","rating":79,"pos":"ST","price":500,"popularity":80.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/188567.png","url":"https://www.futbin.com/27/player/1272/pierre-emerick-aubameyang","stats":{"速":82,"射":81,"传":71,"盘":78,"防":36,"身":63}},{"name":"Matias Fernandez Pardo","nameZh":"","rating":78,"pos":"ST","price":500,"popularity":78.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/276048.png","url":"https://www.futbin.com/27/player/1464/matias-fernandez-pardo","stats":{"速":91,"射":77,"传":70,"盘":82,"防":43,"身":76}},{"name":"Gift Orban","nameZh":"","rating":73,"pos":"ST","price":500,"popularity":72.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/273564.png","url":"https://www.futbin.com/27/player/17071/gift-orban","stats":{"速":75,"射":78,"传":65,"盘":75,"防":19,"身":57}},{"name":"Dastan Satpayev","nameZh":"","rating":68,"pos":"ST","price":500,"popularity":0,"evo":"在进化池","image":"","url":"https://www.futbin.com/27/player/21437/dastan-satpayev","stats":{"速":83,"射":67,"传":60,"盘":69,"防":27,"身":64}},{"name":"Assad Al Hamlawi","nameZh":"","rating":69,"pos":"ST","price":250,"popularity":66.6,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/255969.png","url":"https://www.futbin.com/27/player/13088/assad-al-hamlawi","stats":{"速":71,"射":69,"传":51,"盘":67,"防":30,"身":73}},{"name":"Artem Stepanov","nameZh":"","rating":68,"pos":"ST","price":250,"popularity":64.4,"evo":"在进化池","image":"https://assets.easysbc.io/fc27/players/ea/74749.png","url":"https://www.futbin.com/27/player/16943/artem-stepanov","stats":{"速":69,"射":67,"传":51,"盘":64,"防":26,"身":71}},{"name":"Tariq Al Sadi","nameZh":"","rating":58,"pos":"ST","price":250,"popularity":0,"evo":"在进化池","image":"","url":"https://www.futbin.com/27/player/21199/tariq-al-sadi","stats":{"速":74,"射":58,"传":45,"盘":62,"防":20,"身":52}}]</script>
+<script>
+(function(){
+  var raw = document.getElementById('db-data').textContent;
+  var players = [];
+  try { players = JSON.parse(raw); } catch (e) {}
+  var state = { q: '', pos: '全部', rating: '全部', price: '全部', evo: '全部', sort: 'rating-desc' };
+  var tbody = document.getElementById('db-body');
+  var countEl = document.getElementById('db-count');
+  function fmtPrice(v){ if(v==null) return '—'; if(v>=10000) return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000) return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
+  function statCls(v){ if(v==null) return 'na'; if(v>=80) return 'hi'; if(v>=70) return 'mid'; if(v>=60) return 'lo'; return 'bad'; }
+  function posGroup(pos){ if(!pos) return '其他'; var p=pos.toUpperCase(); if(p==='GK') return '门将'; if(/CB|LB|RB|LWB|RWB/.test(p)) return '后卫'; if(/CM|CDM|CAM|LM|RM/.test(p)) return '中场'; if(/ST|CF|LW|RW/.test(p)) return '前锋'; return '其他'; }
+  function matches(p){
+    var g = posGroup(p.pos);
+    if (state.q && (p.name+' '+(p.nameZh||'')).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
+    if (state.pos !== '全部' && g !== state.pos) return false;
+    if (state.rating === '80+' && (p.rating||0) < 80) return false;
+    if (state.rating === '75-79' && ((p.rating||0) < 75 || (p.rating||0) > 79)) return false;
+    if (state.rating === '70-74' && ((p.rating||0) < 70 || (p.rating||0) > 74)) return false;
+    if (state.rating === '69以下' && (p.rating||0) >= 70) return false;
+    var pr = p.price || 0;
+    if (state.price === '1万以上' && pr < 10000) return false;
+    if (state.price === '5000-1万' && (pr < 5000 || pr >= 10000)) return false;
+    if (state.price === '5000以下' && pr >= 5000) return false;
+    if (state.evo !== '全部' && p.evo !== state.evo) return false;
+    return true;
+  }
+  function sortFn(a, b){
+    switch (state.sort) {
+      case 'rating-asc': return (a.rating||0) - (b.rating||0);
+      case 'price-asc': return (a.price||0) - (b.price||0);
+      case 'price-desc': return (b.price||0) - (a.price||0);
+      case 'pop-desc': return (b.popularity||0) - (a.popularity||0);
+      default: return (b.rating||0) - (a.rating||0);
+    }
+  }
+  function render(){
+    var list = players.filter(matches).sort(sortFn);
+    var six = ['速','射','传','盘','防','身'];
+    tbody.innerHTML = list.map(function(p, i){
+      var cells = '<td class="c-rank">' + (i+1) + '</td>';
+      cells += '<td class="c-name">' + (p.image ? '<img class="pimg" src="' + p.image + '" loading="lazy" alt="">' : '') + (p.url ? '<a href="' + p.url + '" target="_blank" rel="noopener">' + (p.name||'') + '</a>' : (p.name||'')) + (p.nameZh ? '<span class="zh">' + p.nameZh + '</span>' : '') + '</td>';
+      cells += '<td class="c-rating">' + (p.rating||'—') + '</td>';
+      cells += '<td class="c-pos">' + (p.pos||'') + '</td>';
+      for (var j=0;j<6;j++){ var v = p.stats && p.stats[six[j]]; cells += '<td><span class="stat-v ' + statCls(v) + '">' + (v==null?'—':v) + '</span></td>'; }
+      cells += '<td class="c-price">' + fmtPrice(p.price) + '</td>';
+      cells += '<td class="c-pop">' + (p.popularity!=null ? p.popularity : '—') + '</td>';
+      var evoIn = p.evo === '在进化池';
+      cells += '<td><span class="c-evo ' + (evoIn ? 'in' : 'out') + '">' + (p.evo||'—') + '</span></td>';
+      return '<tr>' + cells + '</tr>';
+    }).join('');
+    countEl.textContent = '共 ' + list.length + ' 名球员';
+  }
+  function bind(el, fn){ if (el) el.addEventListener('input', fn); }
+  var q = document.getElementById('db-q'), pos = document.getElementById('db-pos'), rating = document.getElementById('db-rating'), price = document.getElementById('db-price'), evo = document.getElementById('db-evo'), sort = document.getElementById('db-sort');
+  bind(q, function(){ state.q = q.value; render(); });
+  [pos, rating, price, evo, sort].forEach(function(el){ if (el) el.addEventListener('change', function(){ state.pos = pos.value; state.rating = rating.value; state.price = price.value; state.evo = evo.value; state.sort = sort.value; render(); }); });
+  document.querySelectorAll('.idx-chip').forEach(function(chip){ chip.addEventListener('click', function(){
+    if (chip.dataset.setPos !== undefined) { pos.value = chip.dataset.setPos; state.pos = chip.dataset.setPos; }
+    if (chip.dataset.setRating !== undefined) { rating.value = chip.dataset.setRating; state.rating = chip.dataset.setRating; }
+    if (chip.dataset.setPrice !== undefined) { price.value = chip.dataset.setPrice; state.price = chip.dataset.setPrice; }
+    if (chip.dataset.setEvo !== undefined) { evo.value = chip.dataset.setEvo; state.evo = chip.dataset.setEvo; }
+    render();
+    var db = document.getElementById('db'); if (db && db.scrollIntoView) db.scrollIntoView({behavior:'smooth', block:'start'});
+  });});
+  render();
+})();</script>
 
-<div class="footer">FC27 市场扫描 · 2026-09-15 · 双维度版式由 render-market-report.mjs 渲染 · 数据仅作游戏市场研究，不构成投资或交易建议</div>
+<div class="footer">FC27 市场扫描（索引 + 数据库）· 2026-09-15 · 由 render-market-report.mjs 渲染 · 六维与推荐价来自 EasySBC，热度为 FUTBIN 评分 · 仅供游戏内研究，不构成投资建议</div>
 </body></html>
