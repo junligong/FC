@@ -2,30 +2,36 @@
   "date": "2026-09-16",
   "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
   "publicUrl": "https://fc27-site.app.workbuddy.host/",
-  "published": false,
-  "reason": "合并未发生（coordinate.mjs 返回 merge=no_current_snapshot）：本轮四个采集模块（football/news/market/evolution）均因 Chrome 插件 extension 通道无法建立而失败，无任何 success/partial 快照可合并，发布按契约跳过，保留线上旧版本（2026-09-15）。",
-  "mergeResult": "no_current_snapshot",
-  "publishResult": "skipped",
+  "published": true,
+  "reason": "公网首页与本地文件逐字节一致；发布触发方式未确认",
+  "mergeResult": "success",
+  "publishResult": "delegated",
   "modules": {
-    "football": "failed",
-    "news": "failed",
-    "market": "failed",
-    "evolution": "failed"
+    "football": "partial",
+    "news": "partial",
+    "market": "partial",
+    "evolution": "partial",
+    "icons-heroes": "partial"
   },
-  "failureCause": "Chrome 插件 extension 通道不可用（RelayUnreachable：缺 DUMATE_HOST_URL；relay.connected=false；native messaging 宿主 com.workbuddy.extension.json 未注册；用户日常 Chrome 未开启 --remote-debugging-port）。已按契约提交 failed，未回退 IAB、未新建 profile、未用旧日期数据填充。",
   "publicVerification": {
-    "verified": false,
-    "note": "线上仍为 2026-09-15 内容（未更新），与本地 daily-merged/index.html 逐字节一致，旧版完好、未下线。",
+    "verified": true,
     "checks": {
       "matchesLocal": true,
-      "hasArchiveLink": false,
-      "hasDateAnchor": false,
+      "hasArchiveLink": true,
+      "hasDateAnchor": true,
       "completeHtml": true
     },
-    "localSha256": "3f4a95d18205b598e3a497f2baefb72a50071a374adfc1cedb2160351307ee6b",
-    "remoteSha256": "3f4a95d18205b598e3a497f2baefb72a50071a374adfc1cedb2160351307ee6b",
-    "bytes": 47749249,
-    "checkedAt": "2026-09-15T19:11:34.413Z"
+    "localSha256": "8b9c6b002386d5f7c30d8e5189ec6112712ffaa188d92d39663f9dd11c51d127",
+    "remoteSha256": "8b9c6b002386d5f7c30d8e5189ec6112712ffaa188d92d39663f9dd11c51d127",
+    "bytes": 26497051,
+    "checkedAt": "2026-09-16T08:55:13.157Z"
   },
-  "unattendedPublishingVerified": false
+  "unattendedPublishingVerified": false,
+  "runIds": {
+    "football": "b00094d9-d015-4461-85aa-43edb0bb8a36",
+    "news": "ed96664c-a876-4182-bc53-1a3a05dbfc50",
+    "market": "46212049-3c4b-4df8-b236-73d21571413c",
+    "evolution": "508e769b-13f2-4676-a486-ff8dd7cd4075",
+    "icons-heroes": "4cdd026c-0765-4a42-9042-819dc52db0b5"
+  }
 }

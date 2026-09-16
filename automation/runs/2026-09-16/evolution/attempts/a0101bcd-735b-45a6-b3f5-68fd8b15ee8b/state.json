@@ -1,0 +1,49 @@
+{
+  "module": "evolution",
+  "date": "2026-09-16",
+  "runId": "a0101bcd-735b-45a6-b3f5-68fd8b15ee8b",
+  "status": "failed",
+  "startedAt": "2026-09-16T04:51:33.523Z",
+  "deadlineAt": "2026-09-16T05:06:33.523Z",
+  "reportPath": "reports/daily/2026-09-16/evolution.html",
+  "completedAt": "2026-09-16T04:53:06.005Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "dataCutoff": "2026-09-16 12:52 +08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-16T12:52:39+08:00",
+        "note": "热门进化卡主来源；经 Web Access（浏览器自动化）技能尝试打开失败，未取得页面内容，无卡片数据"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T12:52:39+08:00",
+        "note": "候选球员 Rating/位置参考页；同一原因未能打开"
+      }
+    ],
+    "missingItems": [
+      "热门进化卡：https://www.futbin.com/27/popular/evolutions 本轮未能打开，无任何卡片数据。",
+      "卡片字段（评分、位置、进化名称、费用、到期时间、前置条件）：无来源页面，全部缺失。",
+      "进化路线与前置条件核验：无卡可核验，本轮未输出路线建议。",
+      "候选球员口径：https://www.futbin.com/27/players 未打开，未确定候选范围。"
+    ],
+    "notes": [
+      "失败原因：Web Access 技能要求的「用户日常 Chrome 远程调试开关」未开启，CDP 通道无法建立，采集在第一步即中止。",
+      "实测证据 1：node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs 返回 exit 1，输出「browser: 未连接 — 没有任何浏览器打开远程调试开关」，并提示在浏览器地址栏访问 chrome://inspect/#remote-debugging 手动勾选。",
+      "实测证据 2：~/Library/Application Support 下 Google/Chrome、Google/Chrome Canary、Chromium、Microsoft Edge 四个目录均无 DevToolsActivePort 文件，说明无任一浏览器开启该开关。",
+      "实测证据 3：兜底固定端口 9222 / 9229 / 9333 经 TCP 连接检测全部关闭；CDP Proxy http://127.0.0.1:3456/health 无响应（代理未连接浏览器）。",
+      "实测证据 4：已执行技能允许的自动补救——open -a \"Google Chrome\" chrome://inspect/#remote-debugging 后复跑 check-deps.mjs，结果仍为 exit 1（该开关只能在浏览器界面手动勾选，Agent 不能代勾）。",
+      "实测证据 5（诊断，未用于采集）：curl 请求 https://www.futbin.com/27/popular/evolutions 返回 HTTP 403、641 字节，FUTBIN 拒绝非浏览器静态请求，静态路线不可用。",
+      "处置：按 evolution.md 第 5 条提交 failed，未调用或探测本项目明令禁止的通道（dumate-browser-cli、DUMATE_*、automation/browser-env.sh、fc-browser-channel-check、agent-browser），未打开 IAB、未使用临时浏览器、未新建独立 profile。",
+      "产物：本轮渲染 reports/daily/2026-09-16/evolution.html（FAILED 空状态、卡片数 0），内容不含任何 FC26 或历史日期数据；历史日期报告未被覆盖。"
+    ],
+    "remediation": [
+      "用户侧一次性操作：在用户日常 Chrome 地址栏打开 chrome://inspect/#remote-debugging，勾选「Allow remote debugging for this browser instance」，之后本任务无需改动即可正常采集。",
+      "替代方案：以用户日常 profile 启动 Chrome 并附加 --remote-debugging-port=9222（需先完全退出 Chrome，属破坏性操作，需用户明确同意），Web Access 技能的兜底端口探测可自动接管。"
+    ]
+  },
+  "sha256": "4f2cb9d344039c8c07157857d11191d95133711033383537caacfdaa13944bcf",
+  "bytes": 6090,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/evolution/report.html"
+}

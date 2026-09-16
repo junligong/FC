@@ -1,0 +1,85 @@
+{
+  "module": "market",
+  "date": "2026-09-16",
+  "runId": "bc1ad0ee-a2ef-4fc5-9087-61e7f1add6f0",
+  "status": "partial",
+  "startedAt": "2026-09-16T05:32:24.436Z",
+  "deadlineAt": "2026-09-16T05:47:24.436Z",
+  "reportPath": "reports/daily/2026-09-16/market.html",
+  "previousAttempt": "automation/runs/2026-09-16/market/attempts/773c9855-c52d-470e-b8d7-5fe627fabe53",
+  "completedAt": "2026-09-16T05:34:14.237Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "status": "partial",
+    "dataCutoff": "2026-09-16 13:34 +08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T13:32:56+08:00",
+        "dataCutoff": "2026-09-16 13:32 +08:00",
+        "note": "本轮实测打开成功。表格 1 个、tbody 30 行，列为 NAME|RAT|IS|POS|PRICE|...|POP|IGS|BODY；已提取首屏 30 行（含价格、评分、位置、POP）。价格为开服前列表页占位/估算价。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=2",
+        "openedAt": "2026-09-16T13:33:06+08:00",
+        "dataCutoff": "2026-09-16 13:33 +08:00",
+        "note": "本轮实测打开成功，提取第 2 页 30 行（如 92 Puskás Icon 30000、92 Charlton Icon 45000）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=3",
+        "openedAt": "2026-09-16T13:33:10+08:00",
+        "dataCutoff": "2026-09-16 13:33 +08:00",
+        "note": "本轮实测打开成功，提取第 3 页 30 行（如 91 van Basten Icon 42750、91 Cafu Icon 28500）。三页合计 90 行用于价格分档。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-16T13:32:56+08:00",
+        "dataCutoff": "2026-09-16 13:32 +08:00",
+        "note": "本轮实测打开成功。.popular-cards-wrapper 下 254 个卡片节点，成功解析 194 条（名称/评分/位置/热度计数）。排序指标为 FUTBIN 热门页引用热度，非搜索热度。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-16T13:32:56+08:00",
+        "dataCutoff": "2026-09-16 13:32 +08:00",
+        "note": "本轮实测打开成功。.popular-cards-wrapper 下 466 个卡片节点，成功解析 367 条（含进化名称，如 Intro to Evolutions / Intro to Training Camp EVOs）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?pc_price=1000000%2B",
+        "openedAt": "2026-09-16T13:33:21+08:00",
+        "dataCutoff": "2026-09-16 13:33 +08:00",
+        "note": "本轮已实际打开，表头正常渲染（hasTable=true）但 tbody 为 0 行。开服前 FUTBIN 价格筛选参数不可用，本档据实测为空，非采集失败。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?pc_price=300000-1000000",
+        "openedAt": "2026-09-16T13:33:27+08:00",
+        "dataCutoff": "2026-09-16 13:33 +08:00",
+        "note": "本轮已实际打开，hasTable=true 但 0 行数据，页面无 no-results 提示。判定为筛选参数开服前不可用，本档如实空状态。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?pc_price=10000-100000",
+        "openedAt": "2026-09-16T13:33:34+08:00",
+        "dataCutoff": "2026-09-16 13:33 +08:00",
+        "note": "本轮已实际打开，仍为 0 行。该区间在无筛选榜单中确有卡（如 Maradona Icon 60000），可确认是筛选参数在开服前失效，而非该档无卡。故价格分档改用无筛选榜单实测价格直接分档。"
+      }
+    ],
+    "missingItems": [
+      "概览·本周活动卡（Promo）与本周周黑（TOTW）：本轮未打开对应来源页，名单与发布时间未采集，如实空状态。",
+      "概览·价格分层 ≥100 万 / 30-100 万 / 10-30 万 三档：FUTBIN 价格筛选页实测 0 行，且无筛选榜单前 90 行中亦无卡满足该三个价格区间，如实空状态。",
+      "价格分层覆盖范围：取 /27/players 无筛选第 1-3 页共 90 行（按 Rating 降序）分档，未继续翻页；1-10 万档已达每档 50 张上限，其余档为 0。",
+      "扫描·价格维度 大卡 / 中卡 / 热门卡 / 万元以下：实测无满足区间卡，如实空状态；适用卡（1-10 万）50 张。",
+      "传奇监控逐日快照：数据源 base-icons.json 为本日 11:08 抓取（131 张 / 有效价 97），早于本轮 startedAt 13:32:24，本轮未重新抓取传奇卡价格，仅按同日快照规则重新固化当日文件。",
+      "概览·传奇卡与英雄卡：为 /27/players 前 90 行中标注 Icon 的卡（去重后按展示上限截断 50 张），非 FC27 全量基础传奇卡名单；完整 131 张名单见传奇监控页。",
+      "FUTBIN 开服前价格均为 listing-estimate 占位/估算价，本报告未计算日环比与累计涨跌。"
+    ],
+    "notes": [
+      "浏览器通道：web-access（CDP Proxy :3456 直连用户日常 Chrome），check-deps.mjs exit 0；未使用 dumate-browser-cli / DUMATE_* / browser-env.sh / agent-browser / IAB / 独立 profile。",
+      "FUTBIN 对 curl/WebFetch 返回 403，本轮全部数据均来自 CDP 实测打开页面后从 DOM 提取。",
+      "openedAt 记录为本轮实际读取页面 DOM 并落盘原始数据的时刻（+08:00），全部晚于本轮 startedAt 2026-09-16T13:32:24+08:00。",
+      "本轮为 2026-09-16 market 的第二次重跑：首轮 runId 773c9855-c52d-470e-b8d7-5fe627fabe53 已提交 partial 并归档，但其证据时间戳记录有误（早于实际采集时刻），因 finish 拒绝覆盖已完成运行，故按官方重跑流程新开本轮以留下时间戳准确的记录。",
+      "本轮未超时：15 分钟预算内完成采集、生成与提交；自建 tab 已全部关闭，未触碰用户已有 tab。"
+    ]
+  },
+  "sha256": "063c666bf1d7c602d2a7a557e087e1be85c60dbc5a7c61394219723bf511fa6e",
+  "bytes": 53842,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/market/report.html"
+}

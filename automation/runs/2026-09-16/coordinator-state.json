@@ -1,172 +1,529 @@
 {
   "date": "2026-09-16",
-  "startedAt": "2026-09-15T19:10:50.546Z",
+  "startedAt": "2026-09-16T08:26:19.352Z",
   "modules": {
     "football": {
       "module": "football",
       "date": "2026-09-16",
-      "runId": "e3b7351d-205c-458b-81d0-b9f313d44547",
-      "status": "failed",
-      "startedAt": "2026-09-15T19:08:22.943Z",
-      "deadlineAt": "2026-09-15T19:23:22.943Z",
+      "runId": "b00094d9-d015-4461-85aa-43edb0bb8a36",
+      "status": "partial",
+      "startedAt": "2026-09-16T07:00:48.491Z",
+      "deadlineAt": "2026-09-16T07:15:48.491Z",
       "reportPath": "reports/daily/2026-09-16/football.html",
-      "completedAt": "2026-09-15T19:09:42.955Z",
+      "previousAttempt": "automation/runs/2026-09-16/football/attempts/5dd8a205-8579-40e9-89e2-917d6d7ec8b6",
+      "completedAt": "2026-09-16T07:15:39.211Z",
       "evidence": {
         "date": "2026-09-16",
-        "runId": "e3b7351d-205c-458b-81d0-b9f313d44547",
-        "startedAt": "2026-09-15T19:08:22.943Z",
-        "finishedAt": "2026-09-16T03:10:00+08:00",
-        "dataCutoff": "2026-09-16 03:09 +08:00",
-        "sources": [],
-        "missingItems": [
-          "积分榜：英超 / 西甲 / 意甲 / 德甲 / 法甲 / 美职联（东区、西区）/ 沙特联 / 欧冠，本轮均未逐条核验，如实留空。",
-          "射手榜：各联赛均未逐条核验，无任何球员进球数据。",
-          "助攻榜：各联赛均未逐条核验，无任何球员助攻数据。",
-          "足球资讯（今日头条 + 转会/战报/伤停/杯赛/俱乐部动态）：无来源页面，0 条可核验资讯。",
-          "三榜数据块 standingsData / scorersData / assistsData：本轮内容均为空对象，未用旧日期、FC26 或他联赛数据填充，未做「缺数据回退英超」静默兜底。"
+        "runId": "b00094d9-d015-4461-85aa-43edb0bb8a36",
+        "startedAt": "2026-09-16T07:00:48.491Z",
+        "finishedAt": "2026-09-16T07:21:00.000Z",
+        "dataCutoff": "2026-09-16 15:06 +08:00",
+        "rerun": true,
+        "previousAttempt": "5dd8a205-8579-40e9-89e2-917d6d7ec8b6",
+        "browserChannel": "web-access CDP Proxy http://localhost:3456 -> 用户日常 Chrome (port 9222)",
+        "seasonStage": "2026-27 赛季进行中：英超/西甲/意甲/德甲/法甲第 3-6 轮，沙特联第 7 轮，欧冠联赛阶段第 1 轮已结束；美职联 2026 常规赛（各队 23-26 场）。",
+        "sources": [
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/eng.1",
+            "openedAt": "2026-09-16T07:04:10.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "英超积分榜（20 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/eng.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:20.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "英超射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/esp.1",
+            "openedAt": "2026-09-16T07:04:12.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "西甲积分榜（20 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/esp.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:22.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "西甲射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ita.1",
+            "openedAt": "2026-09-16T07:04:14.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "意甲积分榜（20 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ita.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:24.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "意甲射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ger.1",
+            "openedAt": "2026-09-16T07:04:16.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "德甲积分榜（18 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ger.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:26.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "德甲射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/fra.1",
+            "openedAt": "2026-09-16T07:04:18.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "法甲积分榜（18 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/fra.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:28.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "法甲射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/usa.1",
+            "openedAt": "2026-09-16T07:04:20.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "美职联积分榜（东区 15 队 / 西区 15 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/usa.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:30.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "美职联射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ksa.1",
+            "openedAt": "2026-09-16T07:04:22.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "沙特联积分榜（18 队，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ksa.1/view/scoring",
+            "openedAt": "2026-09-16T07:06:32.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "沙特联射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/uefa.champions",
+            "openedAt": "2026-09-16T07:04:24.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "欧冠联赛阶段官方排名（36 队，第 1 轮后，本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/uefa.champions/view/scoring",
+            "openedAt": "2026-09-16T07:06:34.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "欧冠射手榜前 10（本轮打开核验）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/eng.1/view/assists",
+            "openedAt": "2026-09-16T07:12:40.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "尝试核验英超助攻榜：页面三次重载后仍无任何表格节点，未取得数据（失败留证）"
+          },
+          {
+            "url": "https://fbref.com/en/comps/9/assist-leaders/",
+            "openedAt": "2026-09-16T07:17:10.000Z",
+            "dataCutoff": "2026-09-16 15:06 +08:00",
+            "note": "尝试用 fbref 交叉核验助攻榜：返回反爬挑战页（标题「请稍候…」），未取得数据（失败留证）"
+          }
         ],
-        "notes": [
-          "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步（init --mode extension）即中止，未打开任何来源。",
-          "探针1（init --mode extension --json）：返回 {\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":109}。",
-          "探针2（doctor）：relay.httpBase=http://127.0.0.1:19228，relay.enabled/chromeEnabled/connected 均为空字符串（未连通），iab.enabled=false，cdp.endpoint=http://127.0.0.1:19222(alive=true)；用户日常 Chrome 未开启 --remote-debugging-port（ps 计数=0）。",
-          "探针3（native 宿主）：ls ~/Library/Application Support/Google/Chrome/NativeMessagingHosts/ 仅存在 com.openai.codexextension.json，不存在 com.workbuddy.extension.json，WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde）的 connectNative('com.workbuddy.extension') 桥接不可用。",
-          "探针4（远程调试）：用户日常 Chrome（MacOS/Google Chrome 进程）无 --remote-debugging-port 参数，计数为 0。",
-          "CDP 127.0.0.1:19222 由 --user-data-dir 独立 profile 启动，属「临时浏览器/新建独立 profile」，违反项目条款，未采用。",
-          "处置：按根 AGENTS.md「浏览器强制规则」与 football.md「扩展连接失败即记录采集失败，不得改用 IAB」执行；未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
-          "三榜校验闸门（node automation/verify-football-boards.mjs 2026-09-16）未通过：三榜数据块均为空对象，校验规则 R6「至少 1 个联赛有射手榜、至少 1 个联赛有助攻榜」无法满足，退出码非 0，故按契约不得提交 success，本轮提交 failed。",
-          "已渲染 reports/daily/2026-09-16/football.html：页面标记 FAILED、三榜与资讯均为 0，并在「本轮说明」「缺失项记录」写明失败原因，不含任何旧日期或 FC26 数据；历史日期报告未被覆盖。"
-        ]
-      }
+        "boardCoverage": {
+          "standings": {
+            "epl": 20,
+            "laliga": 20,
+            "seriea": 20,
+            "bundesliga": 18,
+            "ligue1": 18,
+            "mls_east": 15,
+            "mls_west": 15,
+            "saudi": 18,
+            "ucl": 36
+          },
+          "scorers": {
+            "epl": 10,
+            "laliga": 10,
+            "seriea": 10,
+            "bundesliga": 10,
+            "ligue1": 10,
+            "mls": 10,
+            "saudi": 10,
+            "ucl": 10
+          },
+          "assists": {
+            "note": "本轮未取得可核验助攻数据，全部联赛留空；报告沿用本日 13:36 已核验版本，并在页脚显式标注本轮未重新核实"
+          }
+        },
+        "missing": [
+          {
+            "item": "助攻榜（全部 8 个联赛）",
+            "reason": "ESPN assists 视图（/soccer/stats/_/league/{id}/view/assists）本轮流式重载 3 次，页面均无 table 节点；fbref assist-leaders 返回反爬挑战页。未改用其他禁止通道，也未凭搜索摘要填写。",
+            "handling": "沿用本日 13:36 已核验的助攻榜数据，页脚已显式标注「本轮未重新核实」，不计为当日无数据。"
+          },
+          {
+            "item": "今日头条（目标 6-8 条）及转会/战报/伤停/杯赛/俱乐部动态",
+            "reason": "本轮 15 分钟预算中前 13 分钟全部用于三榜逐联赛核验（16 个来源页重开 + 助攻榜多轮重试），未再分配时间打开新闻原文，因此未在本轮逐条核实新闻。",
+            "handling": "保留本日 13:36 已核验的同日新闻内容（同日重跑保留当日内容），页脚已显式标注本轮未重新核实。"
+          }
+        ],
+        "notes": "同日重跑：旧 attempt 5dd8a205-8579-40e9-89e2-917d6d7ec8b6 已非破坏性归档。本轮实际复核的 16 个来源页中，积分榜与射手榜数据与报告内表格一致，未发现冲突；三榜内容互不相同，无回退英超兜底。"
+      },
+      "sha256": "744f0f06ed1a371df0dc4ce8e719923054cea2f33839a43ac15eee8c05be85ce",
+      "bytes": 50239,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/football/report.html"
     },
     "news": {
       "module": "news",
       "date": "2026-09-16",
-      "runId": "db98e026-c514-4ed7-8b2a-c59f9985999a",
-      "status": "failed",
-      "startedAt": "2026-09-15T19:04:04.972Z",
-      "deadlineAt": "2026-09-15T19:19:04.972Z",
+      "runId": "ed96664c-a876-4182-bc53-1a3a05dbfc50",
+      "status": "partial",
+      "startedAt": "2026-09-16T07:00:54.265Z",
+      "deadlineAt": "2026-09-16T07:15:54.265Z",
       "reportPath": "reports/daily/2026-09-16/news.html",
-      "completedAt": "2026-09-15T19:05:03.276Z",
+      "previousAttempt": "automation/runs/2026-09-16/news/attempts/a8e77103-dd80-40e2-998d-3896461ce72d",
+      "completedAt": "2026-09-16T07:15:30.608Z",
       "evidence": {
         "date": "2026-09-16",
-        "runId": "db98e026-c514-4ed7-8b2a-c59f9985999a",
-        "startedAt": "2026-09-15T19:04:04.972Z",
-        "finishedAt": "2026-09-16T03:04:43+08:00",
-        "dataCutoff": "2026-09-16 03:04 +08:00",
-        "sources": [],
-        "missingItems": [
-          "FC27 资讯采集：X 平台 16 个来源账号（sources.txt）在本轮均未能打开，浏览器扩展通道未建立，0 条推文可采集。",
-          "推文字段（正文、发布时间、原推链接、配图）：无来源页面，全部缺失。",
-          "中文翻译与去重：无原始推文，翻译与去重步骤未执行。"
+        "module": "news",
+        "runId": "ed96664c-a876-4182-bc53-1a3a05dbfc50",
+        "attempt": "rerun",
+        "startedAt": "2026-09-16T15:00:54+08:00",
+        "sources": [
+          {
+            "url": "https://x.com/EASFCDirect",
+            "openedAt": "2026-09-16T07:03:04.976Z",
+            "dataCutoff": "2026-09-16T07:03:04.976Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 0 条"
+          },
+          {
+            "url": "https://x.com/easportsfc",
+            "openedAt": "2026-09-16T07:04:15.365Z",
+            "dataCutoff": "2026-09-16T07:04:15.365Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 2 条"
+          },
+          {
+            "url": "https://x.com/fifa_romania",
+            "openedAt": "2026-09-16T07:04:55.270Z",
+            "dataCutoff": "2026-09-16T07:04:55.270Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 9 条"
+          },
+          {
+            "url": "https://x.com/AsyFutTrader",
+            "openedAt": "2026-09-16T07:05:29.374Z",
+            "dataCutoff": "2026-09-16T07:05:29.375Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 10 条"
+          },
+          {
+            "url": "https://x.com/FIFA22_INFO",
+            "openedAt": "2026-09-16T07:05:57.726Z",
+            "dataCutoff": "2026-09-16T07:05:57.726Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 7 条"
+          },
+          {
+            "url": "https://x.com/FutSheriff",
+            "openedAt": "2026-09-16T07:06:25.673Z",
+            "dataCutoff": "2026-09-16T07:06:25.673Z",
+            "note": "DOM 渲染 9 条，落窗 9 条；当日快照中该账号共 17 条"
+          },
+          {
+            "url": "https://x.com/FutPoliceLeaks",
+            "openedAt": "2026-09-16T07:06:36.626Z",
+            "dataCutoff": "2026-09-16T07:06:36.626Z",
+            "note": "DOM 渲染 7 条，落窗 7 条；当日快照中该账号共 10 条"
+          },
+          {
+            "url": "https://x.com/FUTBIN",
+            "openedAt": "2026-09-16T07:06:50.409Z",
+            "dataCutoff": "2026-09-16T07:06:50.409Z",
+            "note": "DOM 渲染 5 条，落窗 5 条；当日快照中该账号共 10 条"
+          },
+          {
+            "url": "https://x.com/easysbc",
+            "openedAt": "2026-09-16T07:07:17.736Z",
+            "dataCutoff": "2026-09-16T07:07:17.736Z",
+            "note": "DOM 渲染 5 条，落窗 5 条；当日快照中该账号共 5 条"
+          },
+          {
+            "url": "https://x.com/Razzerstrading",
+            "openedAt": "2026-09-16T07:08:21.254Z",
+            "dataCutoff": "2026-09-16T07:08:21.254Z",
+            "note": "DOM 渲染 0 条，落窗 0 条；当日快照中该账号共 3 条"
+          },
+          {
+            "url": "https://x.com/EAFCassist",
+            "openedAt": "2026-09-16T07:08:40.337Z",
+            "dataCutoff": "2026-09-16T07:08:40.337Z",
+            "note": "DOM 渲染 9 条，落窗 9 条；当日快照中该账号共 11 条"
+          },
+          {
+            "url": "https://x.com/Fut_scoreboard",
+            "openedAt": "2026-09-16T07:08:49.380Z",
+            "dataCutoff": "2026-09-16T07:08:49.380Z",
+            "note": "DOM 渲染 2 条，落窗 2 条；当日快照中该账号共 2 条"
+          },
+          {
+            "url": "https://x.com/DetectiveFUT",
+            "openedAt": "2026-09-16T07:08:55.679Z",
+            "dataCutoff": "2026-09-16T07:08:55.679Z",
+            "note": "DOM 渲染 5 条，落窗 5 条；当日快照中该账号共 6 条"
+          },
+          {
+            "url": "https://x.com/FGZNews",
+            "openedAt": "2026-09-16T07:09:02.162Z",
+            "dataCutoff": "2026-09-16T07:09:02.162Z",
+            "note": "DOM 渲染 16 条，落窗 16 条；当日快照中该账号共 20 条"
+          },
+          {
+            "url": "https://x.com/futagentt",
+            "openedAt": "2026-09-16T07:09:09.420Z",
+            "dataCutoff": "2026-09-16T07:09:09.420Z",
+            "note": "DOM 渲染 7 条，落窗 7 条；当日快照中该账号共 10 条"
+          },
+          {
+            "url": "https://x.com/Futdonk",
+            "openedAt": "2026-09-16T07:09:15.785Z",
+            "dataCutoff": "2026-09-16T07:09:15.785Z",
+            "note": "DOM 渲染 8 条，落窗 8 条；当日快照中该账号共 8 条"
+          }
         ],
-        "notes": [
-          "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步（init --mode extension）即中止，未打开任何来源。",
-          "实测证据 1（探针 1·init）：export PATH 补齐 DuMate 运行时后执行 dumate-browser-cli init --mode extension --json，返回 {\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":110}。",
-          "实测证据 2（探针 2·doctor）：dumate-browser-cli doctor 返回 relay.httpBase=http://127.0.0.1:19228，relay.enabled/chromeEnabled/connected 均为空字符串（未连通），iab.enabled=false，cdp.endpoint=http://127.0.0.1:19222(alive=true)；用户日常 Chrome 未开启 --remote-debugging-port（ps 计数=0）。",
-          "实测证据 3（探针 3·native 宿主）：ls ~/Library/Application Support/Google/Chrome/NativeMessagingHosts/ 仅存在 com.openai.codexextension.json，不存在 com.workbuddy.extension.json，WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde）的 connectNative('com.workbuddy.extension') 桥接不可用。",
-          "实测证据 4（探针 4·远程调试）：用户日常 Chrome（MacOS/Google Chrome 进程）无 --remote-debugging-port 参数，计数为 0。",
-          "CDP 127.0.0.1:19222 由 --user-data-dir 独立 profile 启动，属「临时浏览器/新建独立 profile」，违反项目条款，未采用。",
-          "处置：按根 AGENTS.md「浏览器强制规则」与 news.md「扩展连接失败即记录采集失败，不得改用 IAB」执行；未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
-          "未产出可核验推文卡片。已渲染 reports/daily/2026-09-16/news.html，页面标记 FAILED、卡片数 0，并在「本轮说明」「缺失项记录」写明失败原因，不含任何历史日期数据；历史日期报告（如 2026-09-15）未被覆盖。"
-        ]
-      }
+        "missingItems": [
+          "时间线覆盖不完整：本轮经 Web Access（CDP 直连用户 Chrome）成功打开 16/16 个账号主页，但其中 6 个账号（EASFCDirect、easportsfc、fifa_romania、AsyFutTrader、FIFA22_INFO、Razzerstrading）本轮后台标签页未渲染出落在 24 小时窗口内的推文（通道固有节流，非本轮新增回归）；这些账号当日早前同轮采集的推文已保留在快照中，未丢失。",
+          "单账号在后台标签页通常仅渲染 3–16 条，24 小时覆盖无法保证 100%。",
+          "图片落盘：需求 133 张，已落盘 128 张，5 张未落盘（https://pbs.twimg.com/media/HSUdweiWQAAzAdn.jpg、HSRFqufXMAAH6Bw.jpg、HSRFqufWEAA9caQ.jpg、HSQ-mGYWwAA7FjK.jpg、HSQwLahXkAEqUlV.jpg）。本环境出口代理到 pbs.twimg.com 不通（curl 报 SSL 错属预期），浏览器兜底对这 5 个地址同样未成功，报告中这 5 处仍为远程地址。",
+          "媒体解析失败 1 条：推文 2100100377098002627（syndication 接口 fetch failed），已按契约标记为媒体未解析。",
+          "本轮未新增可发布的独立事件：相对当日早前快照新增 4 条推文（EAFCassist 1 条、FGZNews 3 条），其余均为同日早前已采集内容。",
+          "自检差异：enrich 失败 1 条（推文 2100100377098002627），但报告中未渲染出「媒体未解析」占位文案（该处媒质区为空），自检表「媒体解析」一项不吻合，故本轮按 partial 提交。"
+        ],
+        "counts": {
+          "tweetsInSnapshot": 132,
+          "translated": 132,
+          "tweetsWithImages": 96,
+          "videos": 11,
+          "cards": 4,
+          "mediaResolvedFalse": 1,
+          "accountsOpened": 16,
+          "accountsTotal": 16,
+          "accountsWithoutInWindowTweets": 6,
+          "imagesCached": 128,
+          "imagesNeeded": 133
+        }
+      },
+      "sha256": "d4686d0cd94956b3310eddd481e950ec6e9483f19888987f815224afd128da51",
+      "bytes": 232747,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/news/report.html"
     },
     "market": {
       "module": "market",
       "date": "2026-09-16",
-      "runId": "4d4ee634-7252-4c9e-a0c9-e44282d3ad3a",
-      "status": "failed",
-      "startedAt": "2026-09-15T19:06:03.371Z",
-      "deadlineAt": "2026-09-15T19:21:03.371Z",
+      "runId": "46212049-3c4b-4df8-b236-73d21571413c",
+      "status": "partial",
+      "startedAt": "2026-09-16T08:17:07.549Z",
+      "deadlineAt": "2026-09-16T08:32:07.549Z",
       "reportPath": "reports/daily/2026-09-16/market.html",
-      "completedAt": "2026-09-15T19:07:04.176Z",
+      "completedAt": "2026-09-16T08:18:21.004Z",
       "evidence": {
         "date": "2026-09-16",
-        "status": "failed",
-        "dataCutoff": "2026-09-16 03:07 +08:00",
         "sources": [
           {
             "url": "https://www.futbin.com/27/players",
-            "openedAt": null,
-            "dataCutoff": null,
-            "note": "未能打开：Chrome 插件 extension 通道不可用（RelayUnreachable），未采集价格分层数据。"
+            "openedAt": "2026-09-16T08:17:36.749Z",
+            "dataCutoff": "2026-09-16T08:17:36.749Z",
+            "note": "价格分层四档取数页；每行同时含 platform-ps-only(Console) 与 platform-pc-only(PC) 单元格，table-item-score 为开服前估值列",
+            "observed": {
+              "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+              "url": "https://www.futbin.com/27/players",
+              "plats": [
+                "ps",
+                "pc"
+              ],
+              "rows": 30,
+              "psCells": 30,
+              "pcCells": 30,
+              "scoreCells": 30
+            }
           },
           {
             "url": "https://www.futbin.com/27/popular",
-            "openedAt": null,
-            "dataCutoff": null,
-            "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门球员维度。"
+            "openedAt": "2026-09-16T08:17:53.055Z",
+            "dataCutoff": "2026-09-16T08:17:53.055Z",
+            "note": "热门球员维度主来源（价值卡）",
+            "observed": {
+              "title": "EA FC 27 Popular Players | FUTBIN",
+              "url": "https://www.futbin.com/27/popular",
+              "plats": [
+                "ps",
+                "pc"
+              ],
+              "rows": 0,
+              "psCells": 0,
+              "pcCells": 0,
+              "scoreCells": 0
+            }
           },
           {
             "url": "https://www.futbin.com/27/popular/evolutions",
-            "openedAt": null,
-            "dataCutoff": null,
-            "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门进化卡。"
+            "openedAt": "2026-09-16T08:18:14.540Z",
+            "dataCutoff": "2026-09-16T08:18:14.540Z",
+            "note": "热门进化卡维度来源",
+            "observed": {
+              "title": "EA FC 27 Popular Evolution Players | FUTBIN",
+              "url": "https://www.futbin.com/27/popular/evolutions",
+              "plats": [
+                "ps",
+                "pc"
+              ],
+              "rows": 0,
+              "psCells": 0,
+              "pcCells": 0,
+              "scoreCells": 0
+            }
           }
         ],
+        "dataCutoff": "2026-09-16T08:18:14.540Z",
         "missingItems": [
-          "本轮浏览器通道不可用，无法访问 FUTBIN，未采集任何 FC27 市场数据。",
-          "概览·本周活动卡与本周周黑（Promo/TOTW）：未采集名单与发布时间。",
-          "概览·价格分层（≥100万 / 30-100万 / 10-30万 / 1-10万，每档 Top50 按 Rating）：未采集，四档均为如实空状态。",
-          "概览·传奇卡与英雄卡：未采集。",
-          "概览·热门进化卡（/27/popular/evolutions）：未采集。",
-          "扫描·价格维度（大卡/中卡/热门卡/适用卡/万元以下）：未采集。",
-          "扫描·热门球员维度（热门进化卡 / 价值卡，/27/popular）：未采集。"
+          "FUTBIN 在 FC27 开服前（launchDate=2026-09-25）不产生成交价：Console 与 PC 两个平台的平台价均为 0，列表页只有 table-item-score 估值列（如 60000）。因此本日 market.html / market-scan.html 的两平台价格为如实空状态，页面以「估值」标注估值来源。",
+          "开服前不计算日环比与累计涨跌，符合 listing-estimate 口径红线。"
         ],
         "notes": [
-          "浏览器通道四项探针（2026-09-16 03:06 GMT+8）原始返回如下：",
-          "探针1 init --mode extension：{\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":111}",
-          "探针2 doctor：relay.connected=\"\"（false），session.extConnected=false，session.mode=cdp，cdp.endpoint=http://127.0.0.1:19222（该实例由 --user-data-dir 独立 profile 启动，属禁止的临时 profile）。",
-          "探针3 NativeMessagingHosts：仅存在 com.openai.codexextension.json，缺少 com.workbuddy.extension.json，Chrome 扩展 ajnnogdfpilbhkeggdjlcokgglijmdde 的 native messaging 桥接未注册。",
-          "探针4 remote-debugging-port 进程计数：0，用户日常 Chrome 未开启远程调试。",
-          "判定结论：Chrome 插件 extension 通道不可用，按契约提交 failed，不回退 IAB、不新建独立 profile、不用旧日期或 FC26 数据填充。"
+          "本轮为 2026-09-16 报告改版后的重新提交：概览由四段式改为三段式（传奇/英雄迁出），两页新增 Console(PS/Xbox) 与 PC 双平台切换；采集数据与上一轮一致，未重新抓取卡片数据。",
+          "平台模型已实机核验：form.desktop-platform-change-form 内按钮为 ps:Console / pc:PC，同一行同时渲染平台价单元格。"
         ]
-      }
+      },
+      "sha256": "d9e7a5bf4121f517ebc50aae9c1dd862d1733329ba76da1456c398d8aa8b3e91",
+      "bytes": 53317,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/market/report.html"
     },
     "evolution": {
       "module": "evolution",
       "date": "2026-09-16",
-      "runId": "643732d2-e91b-4417-9c44-a370768e9151",
-      "status": "failed",
-      "startedAt": "2026-09-15T19:00:22.776Z",
-      "deadlineAt": "2026-09-15T19:15:22.776Z",
+      "runId": "508e769b-13f2-4676-a486-ff8dd7cd4075",
+      "status": "partial",
+      "startedAt": "2026-09-16T07:00:58.150Z",
+      "deadlineAt": "2026-09-16T07:15:58.150Z",
       "reportPath": "reports/daily/2026-09-16/evolution.html",
-      "completedAt": "2026-09-15T19:02:45.844Z",
+      "previousAttempt": "automation/runs/2026-09-16/evolution/attempts/7c887658-d1d7-41f8-93fb-59fe396754af",
+      "completedAt": "2026-09-16T07:10:52.011Z",
       "evidence": {
         "date": "2026-09-16",
-        "dataCutoff": "2026-09-16 03:02 +08:00",
+        "dataCutoff": "2026-09-16 15:09 +08:00",
         "sources": [
           {
             "url": "https://www.futbin.com/27/popular/evolutions",
-            "openedAt": "2026-09-16T03:01:20+08:00",
-            "note": "热门进化卡主来源；尝试打开失败，未取得页面内容（浏览器扩展通道未建立），无卡片数据"
+            "openedAt": "2026-09-16T15:06:10+08:00",
+            "dataCutoff": "2026-09-16 15:09 +08:00",
+            "note": "热门进化卡主来源；本轮经 Web Access CDP（用户日常 Chrome）实际打开并提取 div.popular-cards-wrapper 下 499 个有效卡片节点，去重后入库 473 张进化卡。页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，未出现 No evolutions found。"
           },
           {
-            "url": "https://www.futbin.com/27/players",
-            "openedAt": "2026-09-16T03:01:20+08:00",
-            "note": "候选球员 Rating/位置参考页；同样未能打开"
+            "url": "https://www.futbin.com/27/evolutions",
+            "openedAt": "2026-09-16T15:07:05+08:00",
+            "dataCutoff": "2026-09-16 15:09 +08:00",
+            "note": "FC27 进化总览（All 5：Pathway Evolutions 2 / Training Camp 1；Active 2 / Expired 0）；逐条取得本日 5 个进化的费用（均为 FREE）、UNLOCK / EXPIRES 有效期、Player Requirements 与 Total Upgrades，用于补齐卡片费用、到期与前置条件字段。"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions/5/intro-to-evolutions",
+            "openedAt": "2026-09-16T15:08:20+08:00",
+            "dataCutoff": "2026-09-16 15:09 +08:00",
+            "note": "Intro to Evolutions 详情页核验：LEVELS 3 / CHALLENGES 3、UNLOCK 12 Months / EXPIRES 12 Months、REPEATABLE；Requirements（Overall Max 75 / Pace Max 80 / Total Positions Max 2 / PlayStyle Max 7 / Position RB / Not Position CB）与总升级表与总览页完全一致，三级挑战依次为 Play 3 / Play 2 / Play 2 matches。"
           }
         ],
         "missingItems": [
-          "热门进化卡：https://www.futbin.com/27/popular/evolutions 本轮未能打开，无任何卡片数据。",
-          "卡片字段（评分、位置、进化名称、费用、到期时间、前置条件）：无来源页面，全部缺失。",
-          "进化路线与前置条件核验：无卡可核验，本轮未输出路线建议。"
+          "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长（多数进化 12 MONTHS，Repeat Delivery 为 1 MONTHS），FUTBIN 未提供绝对到期日期，故无法换算成具体日期。",
+          "Intro to Training Camp EVOs 与 Intro to Pathway Evolutions 未给出逐项数值升级表（Training Camp 示例球员进化前后卡面完全一致；Pathway 页面仅展示 PATH A 的 PlayStyle 选项），两者的具体属性收益缺失。",
+          "中文译名缺失：来源页只有英文球员名与俱乐部信息，本轮未找到权威中文译名来源，故未擅自翻译。",
+          "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选，候选范围以 /27/popular/evolutions 榜单本身为准。",
+          "价格上涨/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出任何涨跌或精确收益预测。"
         ],
         "notes": [
-          "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步即中止。",
-          "实测证据 1：export PATH 补齐 DuMate 运行时后执行 dumate-browser-cli init --mode extension --json，返回 {\"ok\":false,\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\"}；枚举全部环境变量确认无任何 DUMATE_* 变量。",
-          "实测证据 2：dumate-browser-cli doctor 显示 relay.httpBase=http://127.0.0.1:19228，chromeEnabled=true，但 relay.connected=false；用户日常 Chrome（PID 1039）未开启 --remote-debugging-port。",
-          "实测证据 3：Chrome Default profile 已安装 WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde，v0.2.3，permissions 含 nativeMessaging/debugger），background.js 使用 connectNative('com.workbuddy.extension')；但 Chrome 的 NativeMessagingHosts 目录下不存在 com.workbuddy.extension.json，全盘查找亦无该宿主清单，扩展桥接不可用。",
-          "实测证据 4：CDP 端点 127.0.0.1:19222 返回 Chrome/153.0.8010.37，但该进程由 --remote-debugging-port=19222 --user-data-dir=/Users/wuyanzu/Library/Application Support/... 启动，属独立 profile 的自动化实例（/json/list 为空），违反项目「禁止临时浏览器或新建独立 profile」条款，故未采用。",
-          "实测证据 5：WorkBuddy 桌面端本机端口 127.0.0.1:18488 已穷举 health/status/browser/extension/relay/tools/tabs 等 20 条路由，均返回 404，不存在可供调用的浏览器扩展桥接端点。",
-          "处置：按 evolution.md「扩展连接失败则提交 failed/partial，不得先试或回退 IAB」执行，未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
-          "未产出可核验进化卡。已按契约渲染 reports/daily/2026-09-16/evolution.html，页面标记 FAILED、卡片数 0，并在「本轮说明」与「缺失项记录」中写明失败原因，不含任何 FC26 或历史日期数据；历史日期报告（如 2026-09-15）未被覆盖。"
+          "本轮为 2026-09-16 当日重跑（runId 508e769b-13f2-4676-a486-ff8dd7cd4075），上一轮 attempt 7c887658-d1d7-41f8-93fb-59fe396754af 已由 run-state 归档（仅 rename）。浏览器通道为项目唯一授权通道 Web Access CDP(:3456) 直连用户日常 Chrome，check-deps 退出码 0；未调用任何被禁止的入口。",
+          "实采分布（按进化名称）：Repeat Delivery 159 张；Intro to Repeatable Evolutions 110 张；Intro to Pathway Evolutions 106 张；Intro to Evolutions 63 张；Intro to Training Camp EVOs 35 张；合计 473 张，名称+评分+位置+进化名去重后 473 张（无重复），字段完整性校验 0 条缺失。",
+          "评分口径：榜单 Rating 列显示的是「进化后」OVR，不是基础卡评分。例：Intro to Evolutions 要求基础 Overall ≤75，榜单首条 Malić 显示 79（= 75 + 34，封顶 79）。不得把该 Rating 当作基础卡评分。",
+          "费用口径：本日 5 个进化在 FUTBIN 上均标注 FREE（免费），cost 字段即来源于此。榜单卡片上的数字（如 Malić 477）是热度/使用计数，已单独记为 popularityCount，不是价格，不参与费用判断。",
+          "FUTBIN 对 curl / WebFetch 静态请求稳定返回 403（本机实测），本轮全部数据均经真实浏览器打开来源页读取，无任何静态抓取兜底、无 FC26 或历史日期数据填充。",
+          "本轮只写「可证实的卡面事实」与来源页明示的路线整理；routes 中每条均给出前提条件与失效情形，不输出无依据的精确收益预测。FC27 开服前价格属估算口径，不作为投资依据。"
         ]
-      }
+      },
+      "sha256": "99b0f6307b438741c177716df6d89bf53908653d6da95b74e7e484f8f5517728",
+      "bytes": 231973,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/evolution/report.html"
+    },
+    "icons-heroes": {
+      "module": "icons-heroes",
+      "date": "2026-09-16",
+      "runId": "4cdd026c-0765-4a42-9042-819dc52db0b5",
+      "status": "partial",
+      "startedAt": "2026-09-16T08:25:15.699Z",
+      "deadlineAt": "2026-09-16T08:40:15.699Z",
+      "reportPath": "reports/daily/2026-09-16/icons-heroes.html",
+      "completedAt": "2026-09-16T08:25:55.969Z",
+      "evidence": {
+        "date": "2026-09-16",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/players?rarity=icon",
+            "openedAt": "2026-09-16T08:25:34.544Z",
+            "dataCutoff": "2026-09-16T08:25:34.544Z",
+            "note": "传奇卡（Icon）名单与价格来源；每行含 platform-ps-only(Console)/platform-pc-only(PC) 两个价格单元格",
+            "observed": {
+              "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+              "url": "https://www.futbin.com/27/players?rarity=icon",
+              "plats": [
+                "ps",
+                "pc"
+              ],
+              "rows": 30,
+              "psCells": 30,
+              "pcCells": 30
+            }
+          },
+          {
+            "url": "https://www.futbin.com/27/players?rarity=hero",
+            "openedAt": "2026-09-16T08:25:55.625Z",
+            "dataCutoff": "2026-09-16T08:25:55.625Z",
+            "note": "英雄卡（Hero）名单与价格来源",
+            "observed": {
+              "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+              "url": "https://www.futbin.com/27/players?rarity=hero",
+              "plats": [
+                "ps",
+                "pc"
+              ],
+              "rows": 30,
+              "psCells": 30,
+              "pcCells": 30
+            }
+          }
+        ],
+        "dataCutoff": "2026-09-16T08:25:55.625Z",
+        "missingItems": [
+          "FC27 未开服（launchDate=2026-09-25）：Console 与 PC 两个平台价均为 0，FUTBIN 只提供列表页估值（占位值 <1000 视为无效）。本期只做台账与记录进度，不计算日环比与累计涨跌。",
+          "英雄卡（Hero）台账尚未完整建立（apps/market/engine/heroes/data 下已有部分文件），英雄区块按实际存在的文件渲染，缺失部分如实空状态。",
+          "历史快照仅 1 天，逐日变化与走势需开服后连续累积才有意义。"
+        ],
+        "notes": [
+          "本任务 2026-09-16 从 FC27 市场任务拆出，独立监控全部传奇卡（Icon）与英雄卡（Hero）。",
+          "本轮为版式改版后的重新提交：台账标题区分 Icon/Hero、监控口径补充双平台说明；采集数据与上一轮一致。",
+          "快照逐卡含 platforms.console（PS/Xbox 合并）与 platforms.pc；报告页提供 Console / PC 平台切换。"
+        ]
+      },
+      "sha256": "a2aa575e194f7d6fa16cf3f933cbbe7b54cdd9ce5f4a25eecc0f5998ec8e1e1d",
+      "bytes": 147969,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/icons-heroes/report.html"
     }
   },
-  "publish": "skipped",
+  "publish": "delegated",
   "unattendedPublishingVerified": false,
-  "merge": "no_current_snapshot",
-  "completedAt": "2026-09-15T19:10:50.705Z"
+  "merge": "success",
+  "indexSha256": "8b9c6b002386d5f7c30d8e5189ec6112712ffaa188d92d39663f9dd11c51d127",
+  "failedPanels": 0,
+  "publishTarget": {
+    "kind": "workbuddy-sites",
+    "directory": "/Users/wuyanzu/Desktop/FC/daily-merged",
+    "entry": "index.html"
+  },
+  "reason": "本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。",
+  "completedAt": "2026-09-16T08:26:20.532Z"
 }

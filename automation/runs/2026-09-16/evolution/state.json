@@ -1,41 +1,53 @@
 {
   "module": "evolution",
   "date": "2026-09-16",
-  "runId": "643732d2-e91b-4417-9c44-a370768e9151",
-  "status": "failed",
-  "startedAt": "2026-09-15T19:00:22.776Z",
-  "deadlineAt": "2026-09-15T19:15:22.776Z",
+  "runId": "508e769b-13f2-4676-a486-ff8dd7cd4075",
+  "status": "partial",
+  "startedAt": "2026-09-16T07:00:58.150Z",
+  "deadlineAt": "2026-09-16T07:15:58.150Z",
   "reportPath": "reports/daily/2026-09-16/evolution.html",
-  "completedAt": "2026-09-15T19:02:45.844Z",
+  "previousAttempt": "automation/runs/2026-09-16/evolution/attempts/7c887658-d1d7-41f8-93fb-59fe396754af",
+  "completedAt": "2026-09-16T07:10:52.011Z",
   "evidence": {
     "date": "2026-09-16",
-    "dataCutoff": "2026-09-16 03:02 +08:00",
+    "dataCutoff": "2026-09-16 15:09 +08:00",
     "sources": [
       {
         "url": "https://www.futbin.com/27/popular/evolutions",
-        "openedAt": "2026-09-16T03:01:20+08:00",
-        "note": "热门进化卡主来源；尝试打开失败，未取得页面内容（浏览器扩展通道未建立），无卡片数据"
+        "openedAt": "2026-09-16T15:06:10+08:00",
+        "dataCutoff": "2026-09-16 15:09 +08:00",
+        "note": "热门进化卡主来源；本轮经 Web Access CDP（用户日常 Chrome）实际打开并提取 div.popular-cards-wrapper 下 499 个有效卡片节点，去重后入库 473 张进化卡。页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，未出现 No evolutions found。"
       },
       {
-        "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-16T03:01:20+08:00",
-        "note": "候选球员 Rating/位置参考页；同样未能打开"
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-16T15:07:05+08:00",
+        "dataCutoff": "2026-09-16 15:09 +08:00",
+        "note": "FC27 进化总览（All 5：Pathway Evolutions 2 / Training Camp 1；Active 2 / Expired 0）；逐条取得本日 5 个进化的费用（均为 FREE）、UNLOCK / EXPIRES 有效期、Player Requirements 与 Total Upgrades，用于补齐卡片费用、到期与前置条件字段。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions/5/intro-to-evolutions",
+        "openedAt": "2026-09-16T15:08:20+08:00",
+        "dataCutoff": "2026-09-16 15:09 +08:00",
+        "note": "Intro to Evolutions 详情页核验：LEVELS 3 / CHALLENGES 3、UNLOCK 12 Months / EXPIRES 12 Months、REPEATABLE；Requirements（Overall Max 75 / Pace Max 80 / Total Positions Max 2 / PlayStyle Max 7 / Position RB / Not Position CB）与总升级表与总览页完全一致，三级挑战依次为 Play 3 / Play 2 / Play 2 matches。"
       }
     ],
     "missingItems": [
-      "热门进化卡：https://www.futbin.com/27/popular/evolutions 本轮未能打开，无任何卡片数据。",
-      "卡片字段（评分、位置、进化名称、费用、到期时间、前置条件）：无来源页面，全部缺失。",
-      "进化路线与前置条件核验：无卡可核验，本轮未输出路线建议。"
+      "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长（多数进化 12 MONTHS，Repeat Delivery 为 1 MONTHS），FUTBIN 未提供绝对到期日期，故无法换算成具体日期。",
+      "Intro to Training Camp EVOs 与 Intro to Pathway Evolutions 未给出逐项数值升级表（Training Camp 示例球员进化前后卡面完全一致；Pathway 页面仅展示 PATH A 的 PlayStyle 选项），两者的具体属性收益缺失。",
+      "中文译名缺失：来源页只有英文球员名与俱乐部信息，本轮未找到权威中文译名来源，故未擅自翻译。",
+      "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选，候选范围以 /27/popular/evolutions 榜单本身为准。",
+      "价格上涨/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出任何涨跌或精确收益预测。"
     ],
     "notes": [
-      "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步即中止。",
-      "实测证据 1：export PATH 补齐 DuMate 运行时后执行 dumate-browser-cli init --mode extension --json，返回 {\"ok\":false,\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\"}；枚举全部环境变量确认无任何 DUMATE_* 变量。",
-      "实测证据 2：dumate-browser-cli doctor 显示 relay.httpBase=http://127.0.0.1:19228，chromeEnabled=true，但 relay.connected=false；用户日常 Chrome（PID 1039）未开启 --remote-debugging-port。",
-      "实测证据 3：Chrome Default profile 已安装 WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde，v0.2.3，permissions 含 nativeMessaging/debugger），background.js 使用 connectNative('com.workbuddy.extension')；但 Chrome 的 NativeMessagingHosts 目录下不存在 com.workbuddy.extension.json，全盘查找亦无该宿主清单，扩展桥接不可用。",
-      "实测证据 4：CDP 端点 127.0.0.1:19222 返回 Chrome/153.0.8010.37，但该进程由 --remote-debugging-port=19222 --user-data-dir=/Users/wuyanzu/Library/Application Support/... 启动，属独立 profile 的自动化实例（/json/list 为空），违反项目「禁止临时浏览器或新建独立 profile」条款，故未采用。",
-      "实测证据 5：WorkBuddy 桌面端本机端口 127.0.0.1:18488 已穷举 health/status/browser/extension/relay/tools/tabs 等 20 条路由，均返回 404，不存在可供调用的浏览器扩展桥接端点。",
-      "处置：按 evolution.md「扩展连接失败则提交 failed/partial，不得先试或回退 IAB」执行，未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
-      "未产出可核验进化卡。已按契约渲染 reports/daily/2026-09-16/evolution.html，页面标记 FAILED、卡片数 0，并在「本轮说明」与「缺失项记录」中写明失败原因，不含任何 FC26 或历史日期数据；历史日期报告（如 2026-09-15）未被覆盖。"
+      "本轮为 2026-09-16 当日重跑（runId 508e769b-13f2-4676-a486-ff8dd7cd4075），上一轮 attempt 7c887658-d1d7-41f8-93fb-59fe396754af 已由 run-state 归档（仅 rename）。浏览器通道为项目唯一授权通道 Web Access CDP(:3456) 直连用户日常 Chrome，check-deps 退出码 0；未调用任何被禁止的入口。",
+      "实采分布（按进化名称）：Repeat Delivery 159 张；Intro to Repeatable Evolutions 110 张；Intro to Pathway Evolutions 106 张；Intro to Evolutions 63 张；Intro to Training Camp EVOs 35 张；合计 473 张，名称+评分+位置+进化名去重后 473 张（无重复），字段完整性校验 0 条缺失。",
+      "评分口径：榜单 Rating 列显示的是「进化后」OVR，不是基础卡评分。例：Intro to Evolutions 要求基础 Overall ≤75，榜单首条 Malić 显示 79（= 75 + 34，封顶 79）。不得把该 Rating 当作基础卡评分。",
+      "费用口径：本日 5 个进化在 FUTBIN 上均标注 FREE（免费），cost 字段即来源于此。榜单卡片上的数字（如 Malić 477）是热度/使用计数，已单独记为 popularityCount，不是价格，不参与费用判断。",
+      "FUTBIN 对 curl / WebFetch 静态请求稳定返回 403（本机实测），本轮全部数据均经真实浏览器打开来源页读取，无任何静态抓取兜底、无 FC26 或历史日期数据填充。",
+      "本轮只写「可证实的卡面事实」与来源页明示的路线整理；routes 中每条均给出前提条件与失效情形，不输出无依据的精确收益预测。FC27 开服前价格属估算口径，不作为投资依据。"
     ]
-  }
+  },
+  "sha256": "99b0f6307b438741c177716df6d89bf53908653d6da95b74e7e484f8f5517728",
+  "bytes": 231973,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/evolution/report.html"
 }

@@ -1,0 +1,149 @@
+{
+  "date": "2026-09-16",
+  "module": "news",
+  "runId": "01db5b1b-b582-4f3b-af3f-1990ace0ae01",
+  "attempt": "rerun",
+  "goal": "重跑：核验来源、按 medium 档重新落图、重新提交快照（上一轮误用 name=orig 导致单文件站点膨胀至 34MB）",
+  "startedAt": "2026-09-16T14:17:49+08:00",
+  "imagesTier": "medium",
+  "sources": [
+    {
+      "handle": "EASFCDirect",
+      "url": "https://x.com/EASFCDirect",
+      "openedAt": "2026-09-16T14:19:10+08:00",
+      "tweetsInWindow": 0,
+      "ok": true
+    },
+    {
+      "handle": "easportsfc",
+      "url": "https://x.com/easportsfc",
+      "openedAt": "2026-09-16T14:19:21+08:00",
+      "tweetsInWindow": 4,
+      "ok": true
+    },
+    {
+      "handle": "fifa_romania",
+      "url": "https://x.com/fifa_romania",
+      "openedAt": "2026-09-16T14:19:27+08:00",
+      "tweetsInWindow": 6,
+      "ok": true
+    },
+    {
+      "handle": "AsyFutTrader",
+      "url": "https://x.com/AsyFutTrader",
+      "openedAt": "2026-09-16T14:19:34+08:00",
+      "tweetsInWindow": 10,
+      "ok": true
+    },
+    {
+      "handle": "FIFA22_INFO",
+      "url": "https://x.com/FIFA22_INFO",
+      "openedAt": "2026-09-16T14:19:40+08:00",
+      "tweetsInWindow": 7,
+      "ok": true
+    },
+    {
+      "handle": "FutSheriff",
+      "url": "https://x.com/FutSheriff",
+      "openedAt": "2026-09-16T14:19:47+08:00",
+      "tweetsInWindow": 12,
+      "ok": true
+    },
+    {
+      "handle": "FutPoliceLeaks",
+      "url": "https://x.com/FutPoliceLeaks",
+      "openedAt": "2026-09-16T14:19:53+08:00",
+      "tweetsInWindow": 6,
+      "ok": true
+    },
+    {
+      "handle": "FUTBIN",
+      "url": "https://x.com/FUTBIN",
+      "openedAt": "2026-09-16T14:19:59+08:00",
+      "tweetsInWindow": 10,
+      "ok": true
+    },
+    {
+      "handle": "easysbc",
+      "url": "https://x.com/easysbc",
+      "openedAt": "2026-09-16T14:20:06+08:00",
+      "tweetsInWindow": 5,
+      "ok": true
+    },
+    {
+      "handle": "Razzerstrading",
+      "url": "https://x.com/Razzerstrading",
+      "openedAt": "2026-09-16T14:20:12+08:00",
+      "tweetsInWindow": 3,
+      "ok": true
+    },
+    {
+      "handle": "EAFCassist",
+      "url": "https://x.com/EAFCassist",
+      "openedAt": "2026-09-16T14:20:19+08:00",
+      "tweetsInWindow": 10,
+      "ok": true
+    },
+    {
+      "handle": "Fut_scoreboard",
+      "url": "https://x.com/Fut_scoreboard",
+      "openedAt": "2026-09-16T14:20:25+08:00",
+      "tweetsInWindow": 2,
+      "ok": true
+    },
+    {
+      "handle": "DetectiveFUT",
+      "url": "https://x.com/DetectiveFUT",
+      "openedAt": "2026-09-16T14:20:31+08:00",
+      "tweetsInWindow": 5,
+      "ok": true
+    },
+    {
+      "handle": "FGZNews",
+      "url": "https://x.com/FGZNews",
+      "openedAt": "2026-09-16T14:20:38+08:00",
+      "tweetsInWindow": 11,
+      "ok": true
+    },
+    {
+      "handle": "futagentt",
+      "url": "https://x.com/futagentt",
+      "openedAt": "2026-09-16T14:20:55+08:00",
+      "tweetsInWindow": 8,
+      "ok": true
+    },
+    {
+      "handle": "Futdonk",
+      "url": "https://x.com/Futdonk",
+      "openedAt": "2026-09-16T14:21:01+08:00",
+      "tweetsInWindow": 5,
+      "ok": true
+    }
+  ],
+  "accountsOpened": 16,
+  "accountsTotal": 16,
+  "snapshotFile": "apps/news/data/tweets-2026-09-16.json",
+  "snapshotCount": 116,
+  "snapshotCountBeforeRerun": 94,
+  "newTweetsThisRun": 22,
+  "dataCutoff": "2026-09-16T05:52:02.000Z",
+  "mediaResolvedFailed": 0,
+  "videoTweets": 9,
+  "imageCount": 108,
+  "cardsInReportHtml": 94,
+  "assetRequests": 117,
+  "assetsLanded": 2,
+  "assetsFailed": 1,
+  "assetDirBytes": 266216,
+  "assetDirMB": 0.25,
+  "remoteHotlinks": 0,
+  "missingItems": [
+    "图片落盘未完成：本轮需落盘 117 张 medium 档图片，实际仅落盘 2 张。curl 直连 pbs.twimg.com 失败属本环境预期现象，但浏览器兜底路径本轮同样不可用——在 x.com 页内 fetch 该 CDN 单次 22 秒无任何返回（挂起，非快速报错），generate_report.mjs 因此阻塞在图片落盘阶段约 11 分钟后被终止。这是本轮提交 partial 的直接原因。",
+    "报告未按 medium 档重新生成：reports/daily/2026-09-16/news.html 仍是上一轮 14:14 的版本，其引用的 98 张 name=orig 资产已被清空，故报告内配图当前不可用；assets/news 目录现仅 2 个文件 / 0.26MB。",
+    "X 账号主页时间线在后台标签页只渲染有限条数（本轮实测每账号 0–12 条，多数 3–11 条），滚到底后不再增长，24 小时窗口覆盖无法保证 100%。这是通道固有限制，非本轮回归。",
+    "EASFCDirect（https://x.com/EASFCDirect）页面已成功打开并渲染 17 条推文，但其最新一条时间为 2026-09-15T00:47:28Z，早于本轮 24 小时窗口，故窗口内抽取 0 条，属「窗口内无新推文」而非采集失败。",
+    "因 finish 硬上限为 startedAt+20 分钟（2026-09-16T14:37:49+08:00），本轮在第 15 分钟收口提交 partial，未继续等待图片落盘。"
+  ],
+  "reportPath": "reports/daily/2026-09-16/news.html",
+  "evidenceWrittenAt": "2026-09-16T06:33:47.515Z"
+}

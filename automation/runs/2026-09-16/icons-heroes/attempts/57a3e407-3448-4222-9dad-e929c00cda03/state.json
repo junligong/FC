@@ -1,0 +1,64 @@
+{
+  "module": "icons-heroes",
+  "date": "2026-09-16",
+  "runId": "57a3e407-3448-4222-9dad-e929c00cda03",
+  "status": "partial",
+  "startedAt": "2026-09-16T08:18:39.116Z",
+  "deadlineAt": "2026-09-16T08:33:39.116Z",
+  "reportPath": "reports/daily/2026-09-16/icons-heroes.html",
+  "completedAt": "2026-09-16T08:20:15.603Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/players?rarity=icon",
+        "openedAt": "2026-09-16T08:20:01.272Z",
+        "dataCutoff": "2026-09-16T08:19:06.319Z",
+        "note": "传奇卡（Icon）名单与价格来源",
+        "observed": {
+          "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+          "url": "https://www.futbin.com/27/players?rarity=icon",
+          "plats": [
+            "ps",
+            "pc"
+          ],
+          "rows": 30,
+          "psCells": 30,
+          "pcCells": 30,
+          "attempt": 1
+        },
+        "retried": true
+      },
+      {
+        "url": "https://www.futbin.com/27/players?rarity=hero",
+        "openedAt": "2026-09-16T08:19:17.490Z",
+        "dataCutoff": "2026-09-16T08:19:17.490Z",
+        "note": "英雄卡（Hero）名单与价格来源",
+        "observed": {
+          "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+          "url": "https://www.futbin.com/27/players?rarity=hero",
+          "plats": [
+            "ps",
+            "pc"
+          ],
+          "rows": 30,
+          "iconRows": 0
+        }
+      }
+    ],
+    "dataCutoff": "2026-09-16T08:19:17.490Z",
+    "missingItems": [
+      "FC27 未开服（launchDate=2026-09-25）：Console 与 PC 两个平台价均为 0，FUTBIN 只提供列表页估值（占位值 <1000 视为无效）。本期只做台账与记录进度，不计算日环比与累计涨跌。",
+      "英雄卡（Hero）数据源尚未建立完整台账（apps/market/engine/heroes/data 下已有部分快照），英雄区块按实际存在的文件渲染，缺失部分如实空状态。",
+      "历史快照仅 1 天，逐日变化与走势需开服后连续累积才有意义。"
+    ],
+    "notes": [
+      "本任务 2026-09-16 从 FC27 市场任务拆出，独立监控全部传奇卡（Icon）与英雄卡（Hero）。",
+      "快照已扩展为双平台：逐卡写入 platforms.console（PS/Xbox 合并）与 platforms.pc，旧快照回退单一 price。",
+      "报告页新增 Console / PC 平台切换按钮，价格、日环比、累计涨跌、走势均按所选平台分别计算。"
+    ]
+  },
+  "sha256": "d1197a51cb0997719b7225a2f573d3758893d2b47c584031a8dd20087fd5bb12",
+  "bytes": 147670,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/icons-heroes/report.html"
+}

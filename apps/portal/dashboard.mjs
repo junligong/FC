@@ -1,5 +1,5 @@
 // 作用：生成 dashboard 风格的「单日日报」页面，index.html 与 archive/D.html 共用同一模板，保证格式完全一致。
-// 布局：左侧固定导航栏（含紧凑海报） + 顶栏 + hero + 主内容区（报告卡/历史日报） + 右侧栏目（进化专栏 + 本期速览）。
+// 布局：左侧固定导航栏（含紧凑海报） + 顶栏 + hero + 主内容区（报告卡/历史日报） + 右侧栏目（进化专栏 + 本期速览 + 传奇/英雄专栏）。
 // 配色：取自「彦祖工作室」海报并做提纯（近黑 #101713 / 深红 #ff6259 / 金 #e3b341 / 冷灰文字 #aeb5aa）。
 // 输入：date 日期；panels 已 srcdoc 转义的板块 HTML（含可选 evolution-column）；archiveLinks 历史日报链接；assetBase 资源前缀（index 为 ''，archive 页为 '../'）。
 // 输出：完整 HTML 字符串。
@@ -11,6 +11,7 @@ const ICONS = {
   news: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.2" y="4.6" width="17.6" height="14.8" rx="2.2"/><path d="M7 9.2h6.4M7 12.8h10M7 16.4h7"/></svg>',
   market: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.4l4.8-4.9 3.9 3 8-8.8"/><path d="M15 6.2h5.2v5.2"/></svg>',
   evolution: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg>',
+  legend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.6 7.3 12 12 5.2 16.7 12 20 8.6 18.5 18.2h-13z"/><path d="M6.8 20.6h10.4"/></svg>',
   archive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2v5.2l3.4 2"/></svg>',
   share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7.2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V12"/><path d="M12 3.2v12.4M7.6 7.6 12 3.2l4.4 4.4"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg>',
@@ -21,15 +22,20 @@ const ICONS = {
 const TABS = [
   { id: 'football-daily', view: 'football', label: '足球动态', en: 'FOOTBALL', icon: 'football', desc: '七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备' },
   { id: 'fc27-news', view: 'news', label: 'FC27 资讯', en: 'FC27 NEWS', icon: 'news', desc: 'X.com 信息源自动采集 · 智能过滤与中文翻译' },
-  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '两个视图可切换：市场概览（活动卡/周黑/热门金卡/进化/传奇英雄）+ 市场扫描（价格分层 × 热门球员双维度）' },
+  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '两个视图可切换：市场概览（本周活动卡/周黑 · 价格分层每档 Top50 · 热门进化卡，支持 PC / Console 双平台切换）+ 市场扫描（价格分层 × 热门球员双维度）' },
 ];
 
 const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进化专栏', en: 'EVOLUTION', icon: 'evolution' };
 
-// 首页卡片顺序：三个数据板块 + 进化专栏，与左侧导航一一对应
+// 传奇/英雄专栏：承接原「FC27 市场的传奇/英雄部分」，跨日期常驻的独立栏目。
+// 内含两个子标签：传奇/英雄监控（每日逐卡价格台账）+ 传奇卡研究（FC26↔FC27 对照与价格预测）。
+const LEGEND_TAB = { id: 'legend-column', view: 'legend', label: '传奇/英雄专栏', en: 'ICONS / HEROES', icon: 'legend' };
+
+// 首页卡片顺序：三个数据板块 + 进化专栏 + 传奇/英雄专栏，与左侧导航一一对应
 const CARD_ITEMS = [
   ...TABS,
   { ...EVOLUTION_TAB, desc: '热门进化卡与进化路线建议 · 来源 FUTBIN Popular Evolutions，由进化任务每日补充' },
+  { ...LEGEND_TAB, desc: '传奇卡与英雄卡专栏目 · 双子标签：逐日价格监控台账（PC / Console 双平台）+ FC27 vs FC26 对比与全量价格预测研究，跨日期常驻' },
 ];
 
 const CSS = `:root{
@@ -131,6 +137,8 @@ h3{font-size:15.5px;font-weight:700;margin:0}
 .rc-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:1px}
 .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:4px 11px;border-radius:999px;white-space:nowrap;font-weight:600}
 .badge.ok{background:rgba(227,179,65,.16);color:var(--gold);border:1px solid var(--gold-line)}
+.badge.partial{background:var(--lime-soft);color:var(--lime);border:1px solid var(--lime-line)}
+.badge.fail{background:var(--red-soft);color:#ff6259;border:1px solid var(--red-line)}
 .badge.no{background:#242d25;color:var(--quiet);border:1px solid var(--line)}
 
 /* 历史日报条 */
@@ -156,6 +164,9 @@ h3{font-size:15.5px;font-weight:700;margin:0}
 .rail-list li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted);padding:9px 0;border-bottom:1px dashed var(--line)}
 .rail-list li:last-child{border-bottom:0}
 .rail-list li span.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:7px;flex:none}
+.rail-cta{padding:2px 20px 18px}
+.rail-cta .btn{width:100%}
+.legend-rail .rail-list li span.dot{background:var(--red)}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
 .stat-grid div{background:var(--bg-soft);padding:14px 16px}
 .stat-grid b{display:block;font-size:22px;font-weight:800;color:var(--text);line-height:1.2}
@@ -214,11 +225,12 @@ dialog#poster-modal .pm-bar button{color:var(--gold);font-size:13px;font-weight:
  .stat-grid{grid-template-columns:1fr}
 }`;
 
-export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = '', evolutionLinks = '', subPanels = {} }) {
+export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks = '', assetBase = '', evolutionLinks = '', subPanels = {} }) {
   const navItems = [
     { view: 'home', icon: 'home', label: '今日总览' },
     ...TABS.map(t => ({ view: t.view, icon: t.icon, label: t.label })),
     { view: EVOLUTION_TAB.view, icon: EVOLUTION_TAB.icon, label: EVOLUTION_TAB.label },
+    { view: LEGEND_TAB.view, icon: LEGEND_TAB.icon, label: LEGEND_TAB.label },
     { view: 'archive', icon: 'archive', label: '历史日报' },
   ];
   const nav = navItems.map(n =>
@@ -227,41 +239,53 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
   // 首页卡片覆盖全部内容栏目（含进化专栏），与左侧导航一一对应
   const cards = CARD_ITEMS.map(t => {
     const has = Boolean(panels[t.id]);
-    return `<article class="panel report-card"><div class="rc-top"><span class="rc-icon">${ICONS[t.icon]}</span><div><div class="rc-title">${esc(t.label)}</div><div class="rc-en">${esc(t.en)}</div></div></div><p class="rc-desc">${esc(t.desc)}</p><div class="rc-foot"><span class="badge ${has ? 'ok' : 'no'}">${has ? '● 当日已收录' : '○ 当日暂无'}</span><button type="button" class="btn gold" data-view="${t.view}">阅读全文 ${ICONS.arrow}</button></div></article>`;
+    const state = panelStates[t.id] || (has ? 'ok' : 'none');
+    const badge = state === 'failed' ? ['fail', '● 当日采集失败'] : state === 'partial' ? ['partial', '● 当日部分完成'] : has ? ['ok', '● 当日已收录'] : ['no', '○ 当日暂无'];
+    return `<article class="panel report-card"><div class="rc-top"><span class="rc-icon">${ICONS[t.icon]}</span><div><div class="rc-title">${esc(t.label)}</div><div class="rc-en">${esc(t.en)}</div></div></div><p class="rc-desc">${esc(t.desc)}</p><div class="rc-foot"><span class="badge ${badge[0]}">${badge[1]}</span><button type="button" class="btn gold" data-view="${t.view}">阅读全文 ${ICONS.arrow}</button></div></article>`;
   }).join('');
 
-  const views = TABS.map(t => {
-    const subs = subPanels[t.view];
-    let inner;
+  // 栏目内子标签内容组装（市场概览/市场扫描、传奇/英雄监控/传奇卡研究共用）：
+  // 有多个来源时渲染子标签条并默认展示第一项；只有一份时直接内嵌，不显示多余的标签条。
+  function buildViewBody(view, label, subs, content, emptyHtml) {
     if (Array.isArray(subs) && subs.length) {
-      // 子标签：同一栏目下的多份内容切换（例：市场概览 / 市场扫描），默认展示第一项。
-      const bar = `<div class="subtabs" role="tablist" aria-label="${esc(t.label)}子栏目">${subs
-        .map((s, i) => `<button type="button" role="tab" class="subtab${i === 0 ? ' active' : ''}" data-subview="${t.view}" data-subid="${esc(s.id)}" aria-selected="${i === 0}">${esc(s.label)}</button>`)
+      const bar = `<div class="subtabs" role="tablist" aria-label="${esc(label)}子栏目">${subs
+        .map((s, i) => `<button type="button" role="tab" class="subtab${i === 0 ? ' active' : ''}" data-subview="${view}" data-subid="${esc(s.id)}" aria-selected="${i === 0}">${esc(s.label)}</button>`)
         .join('')}</div>`;
       const bodies = subs
-        .map((s, i) => `<div class="subpanel${i === 0 ? ' active' : ''}" id="sub-${t.view}-${esc(s.id)}"><iframe class="panel-iframe" srcdoc="${s.html}" title="${esc(t.label)} · ${esc(s.label)}" loading="lazy"></iframe></div>`)
+        .map((s, i) => `<div class="subpanel${i === 0 ? ' active' : ''}" id="sub-${view}-${esc(s.id)}"><iframe class="panel-iframe" srcdoc="${s.html}" title="${esc(label)} · ${esc(s.label)}" loading="lazy"></iframe></div>`)
         .join('');
-      inner = bar + bodies;
-    } else {
-      const content = panels[t.id];
-      inner = content
-        ? `<iframe class="panel-iframe" srcdoc="${content}" title="${esc(t.label)}" loading="lazy"></iframe>`
-        : `<div class="panel empty-panel"><h2>${esc(t.label)}</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div>`;
+      return bar + bodies;
     }
+    if (content) return `<iframe class="panel-iframe" srcdoc="${content}" title="${esc(label)}" loading="lazy"></iframe>`;
+    return emptyHtml;
+  }
+
+  const views = TABS.map(t => {
+    const inner = buildViewBody(t.view, t.label, subPanels[t.view], panels[t.id],
+      `<div class="panel empty-panel"><h2>${esc(t.label)}</h2><p class="muted" style="margin-top:10px">该板块当日暂无有效报告。缺失内容不会被其他日期的数据替代。</p></div>`);
     return `<section class="view" id="view-${t.view}" hidden><header class="view-header"><div class="eyebrow">${esc(t.en)}</div><h1>${esc(t.label)}</h1><p>${esc(t.desc)}</p></header>${inner}</section>`;
   }).join('');
 
   // 进化专栏：有内容则内嵌，否则给出占位空状态（后续进化任务补充）
   const evolutionContent = panels[EVOLUTION_TAB.id];
+  const evolutionState = panelStates[EVOLUTION_TAB.id] || (evolutionContent ? 'ok' : 'none');
   const evolutionBody = evolutionContent
     ? `<iframe class="panel-iframe" srcdoc="${evolutionContent}" title="进化专栏" loading="lazy"></iframe>`
     : `<div class="rail-empty"><div class="re-ic">${ICONS.evolution}</div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div>`;
 
   const evolutionView = `<section class="view" id="view-${EVOLUTION_TAB.view}" hidden><header class="view-header"><div class="eyebrow">${esc(EVOLUTION_TAB.en)}</div><h1>${esc(EVOLUTION_TAB.label)}</h1><p>热门进化卡与进化路线。内容由后续进化任务补充，未就绪时如实显示空状态。</p></header>${evolutionContent ? `<iframe class="panel-iframe" srcdoc="${evolutionContent}" title="进化专栏" loading="lazy"></iframe>` : `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.evolution}</div><b>进化专栏待补充</b><p>本栏目用于汇总 FC27 热门进化卡（来源 FUTBIN /27/popular/evolutions）与进化路线建议，由后续进化任务填充。</p></div></div>`}</section>`;
 
+  // 传奇/英雄专栏：跨日期常驻内容，两个子标签——逐日价格监控台账（当日产物 icons-heroes.html）
+  // 与传奇卡研究底稿（FC26↔FC27 对照与价格预测）。缺稿时如实空状态，不用其他日期数据顶替。
+  const legendContent = panels[LEGEND_TAB.id];
+  const legendState = panelStates[LEGEND_TAB.id] || (legendContent ? 'ok' : 'none');
+  const legendEmpty = `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.legend}</div><b>传奇/英雄专栏待补充</b><p>本栏目收录 FC27 全部传奇卡（Icon）与英雄卡（Hero）：逐日价格监控台账（PC / Console 双平台切换），以及 FC26 ↔ FC27 属性与金特技对照、FC26 首月基准价、FC27 全量价格预测与投资分档研究。监控台账由「FC27 传奇/英雄卡监控」任务每日 03:00 产出 reports/daily/D/icons-heroes.html；研究底稿位于 apps/market/engine/icons/reports/fc27-icon-analysis.html，重跑分析后覆盖更新。</p></div></div>`;
+  const legendInner = buildViewBody(LEGEND_TAB.view, LEGEND_TAB.label, subPanels[LEGEND_TAB.view], legendContent, legendEmpty);
+  const legendView = `<section class="view" id="view-${LEGEND_TAB.view}" hidden><header class="view-header"><div class="eyebrow">${esc(LEGEND_TAB.en)}</div><h1>${esc(LEGEND_TAB.label)}</h1><p>传奇卡与英雄卡专区：逐日价格监控台账（PC / Console 双平台）+ FC26 ↔ FC27 对比与价格预测研究。跨日期常驻，不随日报日期变化；原「FC27 市场」中的传奇/英雄部分已整体迁移至此。</p></header>${legendInner}</section>`;
+
   const poster = `${assetBase}assets/yanzu-banner.jpg`;
   const archiveCount = (archiveLinks.match(/class="report-item"/g) || []).length;
-  // 分类计数：内容板块（足球/资讯/市场/进化）= 4；市场栏目内含 2 个视图
+  // 分类计数：内容板块（足球/资讯/市场/进化/传奇/英雄）= 5；市场栏目内含 2 个视图
   const boardCount = CARD_ITEMS.length;
   const marketViews = (subPanels.market || []).length || 1;
   const evoLinksBlock = evolutionLinks
@@ -287,13 +311,14 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
 
 <section class="view" id="view-home">
 <header class="hero">
- <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">四个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描）、进化专栏。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
+ <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">五个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描，PC / Console 双平台）、进化专栏、传奇/英雄专栏（逐日价格监控 + FC26↔FC27 对比与投资预测）。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
  <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
 </header>
 <div class="home-grid">
  <div class="col-stack">${cards}<article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
  <aside class="col-stack">
-  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:00</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
+  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionState === 'failed' ? '采集失败' : evolutionState === 'partial' ? '部分完成' : evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:00</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
+  <article class="panel rail-panel legend-rail"><div class="panel-head"><h2>${ICONS.legend}传奇/英雄专栏</h2><span class="eyebrow">Icons / Heroes</span></div><div class="stat-grid"><div><b>${legendState === 'none' ? '待补充' : '已收录'}</b><small>本期状态</small></div><div><b>2</b><small>子栏目</small></div></div><ul class="rail-list"><li><span class="dot"></span><span>逐日价格监控台账（PC / Console 双平台）</span></li><li><span class="dot"></span><span>双版本阵容对照与属性 · 金特技变化</span></li><li><span class="dot"></span><span>FC27 全量传奇/英雄卡价格预测与投资分档</span></li></ul><div class="rail-cta"><button type="button" class="btn gold" data-view="${LEGEND_TAB.view}">进入传奇/英雄专栏 ${ICONS.arrow}</button></div></article>
   <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>内容板块</small></div><div><b>${marketViews}</b><small>市场视图</small></div><div><b>3</b><small>足球三榜</small></div><div><b>${archiveCount}</b><small>历史日报</small></div></div></article>
  </aside>
 </div>
@@ -301,6 +326,7 @@ export function dailyReport({ date, panels = {}, archiveLinks = '', assetBase = 
 
 ${views}
 ${evolutionView}
+${legendView}
 
 <section class="view" id="view-archive" hidden>
 <header class="view-header"><div class="eyebrow">Archive</div><h1>历史日报</h1><p>按日期回看足球、FC27 资讯与市场报告。每份日报均为独立归档文件。</p></header>

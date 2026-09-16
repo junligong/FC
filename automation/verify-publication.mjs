@@ -26,6 +26,40 @@ export function comparePublication(local, remote, date) {
   };
 }
 
+// 由「上一轮记录 + 本轮核验结果 + 当日协调器状态」合成发布状态记录（纯函数，便于测试）。
+// 关键行为：同一日期先失败、后重跑成功时，previous 里仍留着出错轮次的
+// mergeResult='no_current_snapshot' / publishResult='skipped' / failureCause —— 验证成功时必须丢弃，
+// 否则会出现「published:true 却写着失败原因」的自相矛盾记录；合并与发布的权威值改取当日 coordinator-state。
+export function buildPublishStatus({ previous = {}, verification, date, localIndexHtml, coordinator = null }) {
+  const status = {
+    ...previous, date, localIndexHtml, publicUrl,
+    published: verification.verified ? true : null,
+    reason: verification.verified ? '公网首页与本地文件逐字节一致；发布触发方式未确认' : '未能确认当前本地版本已上线，详见 publicVerification',
+    publicVerification: verification,
+    unattendedPublishingVerified: false,
+  };
+  if (previous.publicVerification?.localSha256 !== verification.localSha256) delete status.browserVerification;
+  if (previous.reason && !previous.publicVerification) {
+    status.previousAttempt = { published: previous.published, reason: previous.reason, details: previous.details };
+  }
+  delete status.details;
+  delete status.suggestedActions;
+  if (verification.verified) {
+    if (coordinator) {
+      status.mergeResult = coordinator.merge;
+      status.publishResult = coordinator.publish;
+      status.modules = Object.fromEntries(
+        Object.entries(coordinator.modules || {}).map(([name, state]) => [name, state?.status ?? null]),
+      );
+      status.runIds = Object.fromEntries(
+        Object.entries(coordinator.modules || {}).map(([name, state]) => [name, state?.runId ?? null]),
+      );
+    }
+    delete status.failureCause;
+  }
+  return status;
+}
+
 export async function verify(date) {
   date = reportDate(date);
   const file = path.join(root, 'automation', `publish-status-${date}.json`);
@@ -45,19 +79,12 @@ export async function verify(date) {
     verification = { verified: false, checkedAt, error: error.message };
   }
   // A successful HTTP comparison proves current content, not how it was published.
-  const status = {
-    ...previous, date, localIndexHtml, publicUrl,
-    published: verification.verified ? true : null,
-    reason: verification.verified ? '公网首页与本地文件逐字节一致；发布触发方式未确认' : '未能确认当前本地版本已上线，详见 publicVerification',
-    publicVerification: verification,
-    unattendedPublishingVerified: false,
-  };
-  if (previous.publicVerification?.localSha256 !== verification.localSha256) delete status.browserVerification;
-  if (previous.reason && !previous.publicVerification) {
-    status.previousAttempt = { published: previous.published, reason: previous.reason, details: previous.details };
-  }
-  delete status.details;
-  delete status.suggestedActions;
+  const status = buildPublishStatus({
+    previous, verification, date, localIndexHtml,
+    coordinator: verification.verified
+      ? readJSON(path.join(root, 'automation', 'runs', date, 'coordinator-state.json'), null)
+      : null,
+  });
   atomicWrite(file, JSON.stringify(status, null, 2) + '\n');
   console.log(JSON.stringify({ date, publicUrl, ...verification }, null, 2));
   return verification.verified;

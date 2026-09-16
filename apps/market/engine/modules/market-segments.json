@@ -1,6 +1,27 @@
 {
   "currency": "coins",
-  "platformDefault": "cross",
+  "platformDefault": "console",
+  "platforms": [
+    {
+      "id": "console",
+      "label": "Console",
+      "short": "PS/Xbox",
+      "futbinParam": "ps",
+      "futbinFilterTemplate": "ps_price={RANGE}",
+      "cellClass": "platform-ps-only",
+      "note": "FUTBIN 把 PlayStation 与 Xbox 合并为一个 Console 市场（platform 表单按钮 value=ps，文案 Console）。"
+    },
+    {
+      "id": "pc",
+      "label": "PC",
+      "short": "PC",
+      "futbinParam": "pc",
+      "futbinFilterTemplate": "pc_price={RANGE}",
+      "cellClass": "platform-pc-only",
+      "note": "FUTBIN platform 表单按钮 value=pc，文案 PC。"
+    }
+  ],
+  "platformNote": "FUTBIN 仅提供 Console / PC 两个平台。列表页每一行同时渲染 td.table-price.platform-ps-only 与 td.table-price.platform-pc-only 两个价格单元格，由站点 CSS 按当前所选平台显隐；采集时必须两个单元格都取，页面顶部提供平台切换按钮。开服前（launchDate=2026-09-25 之前）两个平台价均为 0，此时展示的是列表页 IS 列（table-item-score）的开服前估值，必须与平台价分开标注。",
   "topN": 50,
   "outputs": [
     {
@@ -10,8 +31,10 @@
       "sections": [
         { "id": "weekly", "name": "本周活动卡与本周周黑" },
         { "id": "price-tiers", "name": "价格分层（每档 Top 50，按 Rating 排序）" },
-        { "id": "icons-heroes", "name": "传奇卡与英雄卡" },
         { "id": "evolutions", "name": "热门进化卡" }
+      ],
+      "removedSections": [
+        { "id": "icons-heroes", "movedTo": "icons-heroes 任务 / 传奇-英雄专栏", "movedAt": "2026-09-16" }
       ]
     },
     {
@@ -24,44 +47,61 @@
       ]
     }
   ],
+  "legendColumn": {
+    "tab": "传奇/英雄专栏",
+    "navView": "legend",
+    "subTabs": [
+      {
+        "id": "monitor",
+        "label": "传奇/英雄监控",
+        "file": "reports/daily/D/icons-heroes.html",
+        "producer": "icons-heroes 任务（engine/scripts/render-icons-heroes.mjs）",
+        "note": "FC27 全部传奇卡（Icon）与英雄卡（Hero）的逐日价格变化台账。每日产物。"
+      },
+      {
+        "id": "research",
+        "label": "传奇/英雄研究",
+        "file": "apps/market/engine/icons/reports/fc27-icon-analysis.html",
+        "fallbackDailyFile": "reports/daily/D/market-icons-research.html",
+        "note": "跨日期常驻底稿（FC26↔FC27 阵容对照 / 属性与金特技变化 / 首月价格预测 / 投资分档）。不是每日产物；重跑分析后需同步覆盖底稿。"
+      }
+    ],
+    "note": "传奇/英雄内容在 2026-09-16 从 FC27 市场栏目整体迁出，独立成栏目，并由新的 icons-heroes 任务产出监控数据。"
+  },
   "priceTiers": [
     {
       "id": "tier-1m",
       "name": "≥ 100 万",
       "min": 1000000,
       "maxExclusive": null,
-      "futbinFilter": "pc_price=1000000%2B",
-      "futbinUrl": "https://www.futbin.com/27/players?pc_price=1000000%2B"
+      "rangeParam": "1000000%2B"
     },
     {
       "id": "tier-300k",
       "name": "30 - 100 万",
       "min": 300000,
       "maxExclusive": 1000000,
-      "futbinFilter": "pc_price=300000-1000000",
-      "futbinUrl": "https://www.futbin.com/27/players?pc_price=300000-1000000"
+      "rangeParam": "300000-1000000"
     },
     {
       "id": "tier-100k",
       "name": "10 - 30 万",
       "min": 100000,
       "maxExclusive": 300000,
-      "futbinFilter": "pc_price=100000-300000",
-      "futbinUrl": "https://www.futbin.com/27/players?pc_price=100000-300000"
+      "rangeParam": "100000-300000"
     },
     {
       "id": "tier-10k",
       "name": "1 - 10 万",
       "min": 10000,
       "maxExclusive": 100000,
-      "futbinFilter": "pc_price=10000-100000",
-      "futbinUrl": "https://www.futbin.com/27/players?pc_price=10000-100000"
+      "rangeParam": "10000-100000"
     }
   ],
   "playersSource": {
     "url": "https://www.futbin.com/27/players",
     "sortKey": "Rating（页面 Rating 列，降序取前 50）",
-    "note": "PC 平台用 pc_price，PlayStation 用 ps_price，两参数可叠加在同一 URL。"
+    "note": "分档筛选参数按平台拼接：Console 用 ps_price=<range>，PC 用 pc_price=<range>。两个平台的筛选结果与价格都必须分别采集。"
   },
   "popularSource": {
     "url": "https://www.futbin.com/27/popular",
@@ -74,7 +114,9 @@
   "renderers": {
     "all": "scripts/render-market.mjs",
     "overview": "scripts/render-market-overview.mjs",
-    "scan": "scripts/render-market-report.mjs"
+    "scan": "scripts/render-market-report.mjs",
+    "iconsHeroes": "scripts/render-icons-heroes.mjs"
   },
-  "dataFile": "automation/runs/D/market/market.json"
+  "dataFile": "automation/runs/D/market/market.json",
+  "iconsHeroesDataFile": "automation/runs/D/icons-heroes/icons-heroes.json"
 }

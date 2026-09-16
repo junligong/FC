@@ -1,0 +1,541 @@
+{
+  "date": "2026-09-16",
+  "startedAt": "2026-09-16T05:37:07.761Z",
+  "modules": {
+    "football": {
+      "module": "football",
+      "date": "2026-09-16",
+      "runId": "5dd8a205-8579-40e9-89e2-917d6d7ec8b6",
+      "status": "partial",
+      "startedAt": "2026-09-16T05:28:19.345Z",
+      "deadlineAt": "2026-09-16T05:43:19.345Z",
+      "reportPath": "reports/daily/2026-09-16/football.html",
+      "previousAttempt": "automation/runs/2026-09-16/football/attempts/e3b7351d-205c-458b-81d0-b9f313d44547",
+      "completedAt": "2026-09-16T05:36:54.635Z",
+      "evidence": {
+        "date": "2026-09-16",
+        "runId": "5dd8a205-8579-40e9-89e2-917d6d7ec8b6",
+        "startedAt": "2026-09-16T05:28:19.345Z",
+        "dataCutoff": "2026-09-16 13:36 +08:00",
+        "seasonStage": "2026-27 赛季进行中（英超/西甲/意甲/德甲/法甲 第 4 轮前后、沙特联开局、欧冠联赛阶段第 1 轮后）；美职联 2025 赛季常规赛（各队 24-25 场）。",
+        "sources": [
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/eng.1",
+            "openedAt": "2026-09-16T05:31:36.171Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "英超积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/eng.1/view/scoring",
+            "openedAt": "2026-09-16T05:31:39.280Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "英超射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/esp.1",
+            "openedAt": "2026-09-16T05:31:42.489Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "西甲积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/esp.1/view/scoring",
+            "openedAt": "2026-09-16T05:31:45.489Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "西甲射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ita.1",
+            "openedAt": "2026-09-16T05:31:49.294Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "意甲积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ita.1/view/scoring",
+            "openedAt": "2026-09-16T05:31:53.483Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "意甲射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ger.1",
+            "openedAt": "2026-09-16T05:31:58.096Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "德甲积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ger.1/view/scoring",
+            "openedAt": "2026-09-16T05:32:01.432Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "德甲射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/fra.1",
+            "openedAt": "2026-09-16T05:32:04.705Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "法甲积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/fra.1/view/scoring",
+            "openedAt": "2026-09-16T05:32:09.867Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "法甲射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/usa.1",
+            "openedAt": "2026-09-16T05:32:13.798Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "美职联积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/usa.1/view/scoring",
+            "openedAt": "2026-09-16T05:32:17.610Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "美职联射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/ksa.1",
+            "openedAt": "2026-09-16T05:32:21.030Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "沙特联积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/ksa.1/view/scoring",
+            "openedAt": "2026-09-16T05:32:24.681Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "沙特联射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/standings/_/league/uefa.champions",
+            "openedAt": "2026-09-16T05:32:28.120Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "欧冠积分榜（2026-27 赛季官方实时榜；美职联为东/西区）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/stats/_/league/uefa.champions/view/scoring",
+            "openedAt": "2026-09-16T05:32:31.780Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "欧冠射手榜 + 助攻榜（同页 Top Scorers / Top Assists）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/",
+            "openedAt": "2026-09-16T05:33:03.627Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "ESPN 足球栏目页（资讯发现入口）"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football",
+            "openedAt": "2026-09-16T05:33:08.566Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "BBC Sport 足球栏目页（资讯发现入口）"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49945295/all-20-premier-league-teams-ranked-which-managers-fired-first",
+            "openedAt": "2026-09-16T05:33:13.192Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：All 20 Premier League teams ranked: Which managers will be fired first?"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49940737/judging-premier-league-overreactions-title-race-var-arsenal-man-city-hull-spurs-coventry-lampard",
+            "openedAt": "2026-09-16T05:33:17.406Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Soccer"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49951684/cristiano-ronaldo-al-nassr-asian-champions-league-al-ain",
+            "openedAt": "2026-09-16T05:33:20.920Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Ronaldo suffers biggest loss with Al Nassr in Asian CL rout"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49952712/barcelona-re-sign-egypt-striker-abdelkarim",
+            "openedAt": "2026-09-16T05:33:24.650Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Barcelona re-sign Egypt striker Abdelkarim, 'Haaland of the Nile'"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49952550/mourinho-risked-everything-subs-real-madrid-win",
+            "openedAt": "2026-09-16T05:33:28.249Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Mourinho 'risked everything' with subs in Real Madrid win"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49951994/arsenal-max-dowman-wayne-rooney-carabao-cup-ipswich-record-16",
+            "openedAt": "2026-09-16T05:33:32.445Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Arsenal's Max Dowman equals Wayne Rooney record with Carabao Cup double"
+          },
+          {
+            "url": "https://www.espn.com/soccer/story/_/id/49952015/lionel-messi-called-argentina-friendly-last-tango-farewell",
+            "openedAt": "2026-09-16T05:33:36.347Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Lionel Messi called up for Oct. 6 Argentina friendly for 'last tango'"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football/articles/c54g7w2jz77mo",
+            "openedAt": "2026-09-16T05:33:39.636Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：'Superstar' Dowman shows his class - but Arsenal know caution is needed"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football/articles/cxj06nmjl3l6o",
+            "openedAt": "2026-09-16T05:33:42.933Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Let them ref the games and be humans - Andrews"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football/articles/cv4g5rp56p55o",
+            "openedAt": "2026-09-16T05:33:46.257Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：VAR did not even consider if Fernandez was offside - Webb"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football/articles/c8ly49lv3vx1o",
+            "openedAt": "2026-09-16T05:33:49.602Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Messi in Argentina squad for farewell friendly"
+          },
+          {
+            "url": "https://www.bbc.com/sport/football/articles/cqzezjn3wzjpo",
+            "openedAt": "2026-09-16T05:33:52.879Z",
+            "dataCutoff": "2026-09-16 13:36 +08:00",
+            "note": "资讯原文（已打开核实标题与首段）：Barcelona monitor Kane & Haaland - Wednesday's gossip"
+          }
+        ],
+        "missingItems": [
+          "资讯仅覆盖已核验的 12 条（今日头条 8 条 + 英超 2 条 + 西甲 1 条 + 沙特联 1 条）；意甲 / 德甲 / 法甲 / 欧冠 / 美职联 本轮无单独核验的联赛条目，对应筛选 Tab 为 0 条，未用模板旧条目或旧日期数据填充。",
+          "「伤停」类资讯本轮未单独核验，无条目。",
+          "美职联射手榜 / 助攻榜按联盟整体给出（mls），未按东、西区拆分；积分榜已按 mls_east / mls_west 拆分。",
+          "欧冠为 2026-27 联赛阶段第 1 轮后的官方联赛阶段排名；抽签种子、赔率与预测未作为积分榜内容。"
+        ],
+        "notes": [
+          "本轮三榜逐联赛核验并互不复制：积分榜 8 个联赛块（含 mls_east / mls_west 拆分）、射手榜 8 个、助攻榜 8 个，各取前 10。",
+          "校验闸门 node automation/verify-football-boards.mjs 2026-09-16 退出码 0。",
+          "模板 apps/football/templates/football-daily.html 中「美职联积分榜」分支引用了未定义的 header / eastRows，会导致切换该 Tab 报错；渲染脚本已改为按 mls_east 渲染（仅修数据绑定，未改版式）。",
+          "浏览器通道：web-access 技能 CDP Proxy(3456) 直连用户日常 Chrome，未使用 IAB / 临时浏览器 / 新 profile / dumate-browser-cli。",
+          "本轮未打开、未使用任何旧日期或 FC26 数据；模板中的示例资讯与旧日期已全部替换。"
+        ]
+      },
+      "sha256": "d21594cbdf322e0722c6d13e7a856d1fbd7ae97e0351abf7e158e9b493000b37",
+      "bytes": 49689,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/football/report.html"
+    },
+    "news": {
+      "module": "news",
+      "date": "2026-09-16",
+      "runId": "03987969-22a5-4fe9-a36d-b5da250a7062",
+      "status": "partial",
+      "startedAt": "2026-09-16T05:28:17.964Z",
+      "deadlineAt": "2026-09-16T05:43:17.964Z",
+      "reportPath": "reports/daily/2026-09-16/news.html",
+      "previousAttempt": "automation/runs/2026-09-16/news/attempts/db98e026-c514-4ed7-8b2a-c59f9985999a",
+      "completedAt": "2026-09-16T05:33:41.136Z",
+      "evidence": {
+        "date": "2026-09-16",
+        "module": "news",
+        "runId": "03987969-22a5-4fe9-a36d-b5da250a7062",
+        "startedAt": "2026-09-16T05:28:17.964Z",
+        "dataCutoff": "2026-09-16T05:28:17.964Z",
+        "windowStart": "2026-09-15T05:28:17.964Z",
+        "browserChannel": "web-access skill / CDP Proxy :3456 → 用户日常 Chrome（已登录 X，账号 @DreamworldJony）",
+        "sources": [
+          {
+            "account": "EA SPORTS FC Direct Communication",
+            "handle": "EASFCDirect",
+            "url": "https://x.com/EASFCDirect",
+            "openedAt": "2026-09-16T05:28:26.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，24 小时窗口内无符合收录标准的推文"
+          },
+          {
+            "account": "EA SPORTS FC",
+            "handle": "easportsfc",
+            "url": "https://x.com/easportsfc",
+            "openedAt": "2026-09-16T05:28:48.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "FifaTradingRomania",
+            "handle": "fifa_romania",
+            "url": "https://x.com/fifa_romania",
+            "openedAt": "2026-09-16T05:28:48.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "ASY FUT",
+            "handle": "AsyFutTrader",
+            "url": "https://x.com/AsyFutTrader",
+            "openedAt": "2026-09-16T05:28:48.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "EAFC 27 News",
+            "handle": "FIFA22_INFO",
+            "url": "https://x.com/FIFA22_INFO",
+            "openedAt": "2026-09-16T05:28:48.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 5 条"
+          },
+          {
+            "account": "Fut Sheriff",
+            "handle": "FutSheriff",
+            "url": "https://x.com/FutSheriff",
+            "openedAt": "2026-09-16T05:28:48.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 3 条"
+          },
+          {
+            "account": "FUT POLICE LEAKS",
+            "handle": "FutPoliceLeaks",
+            "url": "https://x.com/FutPoliceLeaks",
+            "openedAt": "2026-09-16T05:28:54.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 1 条（其余为金币交易推广，已剔除）"
+          },
+          {
+            "account": "FUTBIN",
+            "handle": "FUTBIN",
+            "url": "https://x.com/FUTBIN",
+            "openedAt": "2026-09-16T05:28:54.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "EasySBC",
+            "handle": "easysbc",
+            "url": "https://x.com/easysbc",
+            "openedAt": "2026-09-16T05:28:54.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "Razzer FC27",
+            "handle": "Razzerstrading",
+            "url": "https://x.com/Razzerstrading",
+            "openedAt": "2026-09-16T05:28:54.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "FC 26 NEWS & TIPS",
+            "handle": "EAFCassist",
+            "url": "https://x.com/EAFCassist",
+            "openedAt": "2026-09-16T05:28:54.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，24 小时窗口内推文均为付费社群推广，已全部剔除"
+          },
+          {
+            "account": "Fut Scoreboard",
+            "handle": "Fut_scoreboard",
+            "url": "https://x.com/Fut_scoreboard",
+            "openedAt": "2026-09-16T05:28:58.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "DetectiveFUT",
+            "handle": "DetectiveFUT",
+            "url": "https://x.com/DetectiveFUT",
+            "openedAt": "2026-09-16T05:28:58.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "FGZ",
+            "handle": "FGZNews",
+            "url": "https://x.com/FGZNews",
+            "openedAt": "2026-09-16T05:28:58.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 3 条（其余为推广与无实质内容，已剔除）"
+          },
+          {
+            "account": "FUT Agent",
+            "handle": "futagentt",
+            "url": "https://x.com/futagentt",
+            "openedAt": "2026-09-16T05:28:58.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 2 条"
+          },
+          {
+            "account": "Donk",
+            "handle": "Futdonk",
+            "url": "https://x.com/Futdonk",
+            "openedAt": "2026-09-16T05:28:58.000Z",
+            "dataCutoff": "2026-09-16T05:28:17.964Z",
+            "result": "打开成功，收录 1 条（1 条为视频贴，已剔除）"
+          }
+        ],
+        "coverage": {
+          "sourcesTotal": 16,
+          "sourcesOpened": 16,
+          "sourcesWithContent": 14,
+          "tweetsCollectedInWindow": 42,
+          "tweetsPublished": 31,
+          "accountsInReport": 14,
+          "imagesCached": 1
+        },
+        "missingItems": [
+          "EA SPORTS FC Direct Communication（@EASFCDirect）与 FC 26 NEWS & TIPS（@EAFCassist）在 2026-09-15T05:28Z–2026-09-16T05:28Z 窗口内没有符合收录标准的推文，属无内容而非访问失败。",
+          "X 主页时间线存在虚拟化与后台标签页加载节流，多数账号单次仅渲染 3–7 条推文；已通过重载 + 分步滚动累计提取，但不保证 24 小时窗口内推文 100% 完整。",
+          "配图覆盖不完整：仅 1 条推文的配图在 DOM 中完成加载并成功缓存（easportsfc 的亨利/KSI 首球贴）。其余账号的卡片类配图因懒加载未进入 DOM，无法确认原帖是否带图，未强行伪造本地资产。",
+          "已按契约剔除纯推广（Patreon/Gumroad/金币代充交易）、视频贴、纯预测贴与无实质内容贴（如「Oh…」），共剔除 11 条；剔除项不计入收录条数。",
+          "泄露类内容（FUT POLICE LEAKS 回归欢迎包、Razzer FC27 的 TOTW1 泄露）与官方公告已在数据中分开标注，其中泄露项标注为 unverified-leak。"
+        ]
+      },
+      "sha256": "df881b7e8210ec685bd9950864f01afc2d5726f99eda0fe2517497c6c588cd04",
+      "bytes": 48018,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/news/report.html"
+    },
+    "market": {
+      "module": "market",
+      "date": "2026-09-16",
+      "runId": "bc1ad0ee-a2ef-4fc5-9087-61e7f1add6f0",
+      "status": "partial",
+      "startedAt": "2026-09-16T05:32:24.436Z",
+      "deadlineAt": "2026-09-16T05:47:24.436Z",
+      "reportPath": "reports/daily/2026-09-16/market.html",
+      "previousAttempt": "automation/runs/2026-09-16/market/attempts/773c9855-c52d-470e-b8d7-5fe627fabe53",
+      "completedAt": "2026-09-16T05:34:14.237Z",
+      "evidence": {
+        "date": "2026-09-16",
+        "status": "partial",
+        "dataCutoff": "2026-09-16 13:34 +08:00",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-16T13:32:56+08:00",
+            "dataCutoff": "2026-09-16 13:32 +08:00",
+            "note": "本轮实测打开成功。表格 1 个、tbody 30 行，列为 NAME|RAT|IS|POS|PRICE|...|POP|IGS|BODY；已提取首屏 30 行（含价格、评分、位置、POP）。价格为开服前列表页占位/估算价。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=2",
+            "openedAt": "2026-09-16T13:33:06+08:00",
+            "dataCutoff": "2026-09-16 13:33 +08:00",
+            "note": "本轮实测打开成功，提取第 2 页 30 行（如 92 Puskás Icon 30000、92 Charlton Icon 45000）。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=3",
+            "openedAt": "2026-09-16T13:33:10+08:00",
+            "dataCutoff": "2026-09-16 13:33 +08:00",
+            "note": "本轮实测打开成功，提取第 3 页 30 行（如 91 van Basten Icon 42750、91 Cafu Icon 28500）。三页合计 90 行用于价格分档。"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-16T13:32:56+08:00",
+            "dataCutoff": "2026-09-16 13:32 +08:00",
+            "note": "本轮实测打开成功。.popular-cards-wrapper 下 254 个卡片节点，成功解析 194 条（名称/评分/位置/热度计数）。排序指标为 FUTBIN 热门页引用热度，非搜索热度。"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-16T13:32:56+08:00",
+            "dataCutoff": "2026-09-16 13:32 +08:00",
+            "note": "本轮实测打开成功。.popular-cards-wrapper 下 466 个卡片节点，成功解析 367 条（含进化名称，如 Intro to Evolutions / Intro to Training Camp EVOs）。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?pc_price=1000000%2B",
+            "openedAt": "2026-09-16T13:33:21+08:00",
+            "dataCutoff": "2026-09-16 13:33 +08:00",
+            "note": "本轮已实际打开，表头正常渲染（hasTable=true）但 tbody 为 0 行。开服前 FUTBIN 价格筛选参数不可用，本档据实测为空，非采集失败。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?pc_price=300000-1000000",
+            "openedAt": "2026-09-16T13:33:27+08:00",
+            "dataCutoff": "2026-09-16 13:33 +08:00",
+            "note": "本轮已实际打开，hasTable=true 但 0 行数据，页面无 no-results 提示。判定为筛选参数开服前不可用，本档如实空状态。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?pc_price=10000-100000",
+            "openedAt": "2026-09-16T13:33:34+08:00",
+            "dataCutoff": "2026-09-16 13:33 +08:00",
+            "note": "本轮已实际打开，仍为 0 行。该区间在无筛选榜单中确有卡（如 Maradona Icon 60000），可确认是筛选参数在开服前失效，而非该档无卡。故价格分档改用无筛选榜单实测价格直接分档。"
+          }
+        ],
+        "missingItems": [
+          "概览·本周活动卡（Promo）与本周周黑（TOTW）：本轮未打开对应来源页，名单与发布时间未采集，如实空状态。",
+          "概览·价格分层 ≥100 万 / 30-100 万 / 10-30 万 三档：FUTBIN 价格筛选页实测 0 行，且无筛选榜单前 90 行中亦无卡满足该三个价格区间，如实空状态。",
+          "价格分层覆盖范围：取 /27/players 无筛选第 1-3 页共 90 行（按 Rating 降序）分档，未继续翻页；1-10 万档已达每档 50 张上限，其余档为 0。",
+          "扫描·价格维度 大卡 / 中卡 / 热门卡 / 万元以下：实测无满足区间卡，如实空状态；适用卡（1-10 万）50 张。",
+          "传奇监控逐日快照：数据源 base-icons.json 为本日 11:08 抓取（131 张 / 有效价 97），早于本轮 startedAt 13:32:24，本轮未重新抓取传奇卡价格，仅按同日快照规则重新固化当日文件。",
+          "概览·传奇卡与英雄卡：为 /27/players 前 90 行中标注 Icon 的卡（去重后按展示上限截断 50 张），非 FC27 全量基础传奇卡名单；完整 131 张名单见传奇监控页。",
+          "FUTBIN 开服前价格均为 listing-estimate 占位/估算价，本报告未计算日环比与累计涨跌。"
+        ],
+        "notes": [
+          "浏览器通道：web-access（CDP Proxy :3456 直连用户日常 Chrome），check-deps.mjs exit 0；未使用 dumate-browser-cli / DUMATE_* / browser-env.sh / agent-browser / IAB / 独立 profile。",
+          "FUTBIN 对 curl/WebFetch 返回 403，本轮全部数据均来自 CDP 实测打开页面后从 DOM 提取。",
+          "openedAt 记录为本轮实际读取页面 DOM 并落盘原始数据的时刻（+08:00），全部晚于本轮 startedAt 2026-09-16T13:32:24+08:00。",
+          "本轮为 2026-09-16 market 的第二次重跑：首轮 runId 773c9855-c52d-470e-b8d7-5fe627fabe53 已提交 partial 并归档，但其证据时间戳记录有误（早于实际采集时刻），因 finish 拒绝覆盖已完成运行，故按官方重跑流程新开本轮以留下时间戳准确的记录。",
+          "本轮未超时：15 分钟预算内完成采集、生成与提交；自建 tab 已全部关闭，未触碰用户已有 tab。"
+        ]
+      },
+      "sha256": "063c666bf1d7c602d2a7a557e087e1be85c60dbc5a7c61394219723bf511fa6e",
+      "bytes": 53842,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/market/report.html"
+    },
+    "evolution": {
+      "module": "evolution",
+      "date": "2026-09-16",
+      "runId": "7c887658-d1d7-41f8-93fb-59fe396754af",
+      "status": "partial",
+      "startedAt": "2026-09-16T05:28:18.284Z",
+      "deadlineAt": "2026-09-16T05:43:18.284Z",
+      "reportPath": "reports/daily/2026-09-16/evolution.html",
+      "previousAttempt": "automation/runs/2026-09-16/evolution/attempts/a0101bcd-735b-45a6-b3f5-68fd8b15ee8b",
+      "completedAt": "2026-09-16T05:31:34.837Z",
+      "evidence": {
+        "date": "2026-09-16",
+        "dataCutoff": "2026-09-16 13:32 +08:00",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-16T13:28:30+08:00",
+            "note": "热门进化卡主来源；本轮实际打开并提取 .popular-cards-wrapper 下 460 个卡片节点，去重后 456 张有效进化卡；页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，正文 47370 字符，未出现 No evolutions found"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions",
+            "openedAt": "2026-09-16T13:29:22+08:00",
+            "note": "FC27 进化总览（All 5：Pathway Evolutions 2 / Training Camp 1，Active 2 / Expired 0）；逐条取得本日 5 个进化的费用（均为 FREE）、UNLOCK / EXPIRES 有效期与 Player Requirements 前置条件"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions/5/intro-to-evolutions",
+            "openedAt": "2026-09-16T13:29:38+08:00",
+            "note": "Intro to Evolutions 详情页；核验 LEVELS 3 / CHALLENGES 3、Free、UNLOCK 12 Months / EXPIRES 12 Months、REPEATABLE，以及 Requirements 明细与三级挑战内容"
+          },
+          {
+            "url": "https://www.futbin.com/27/player/3955_5/nicolo-savona",
+            "openedAt": "2026-09-16T13:30:22+08:00",
+            "note": "评分口径核验页；确认榜单显示的 Rating 为进化后 OVR（Savona 基础卡 75 → 进化后 79），且进化费用在卡面上标注为 Free"
+          }
+        ],
+        "missingItems": [
+          "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长（多数进化 12 MONTHS，Repeat Delivery 为 1 MONTHS），FUTBIN 未提供绝对到期日期，故无法换算成具体日期。",
+          "Intro to Training Camp EVOs 与 Intro to Pathway Evolutions 未给出逐项数值升级表（Training Camp 示例球员进化前后卡面完全一致；Pathway 页面仅展示 PATH A 的 PlayStyle 选项），两者的具体属性收益缺失。",
+          "中文译名缺失：来源页只有英文球员名与俱乐部信息，本轮未找到权威中文译名来源，故未擅自翻译。",
+          "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选，候选范围以 /27/popular/evolutions 榜单本身为准。",
+          "价格上涨/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出任何涨跌或精确收益预测。"
+        ],
+        "notes": [
+          "本轮为故障修复后的当日重跑（runId 7c887658-d1d7-41f8-93fb-59fe396754af），浏览器通道恢复正常；/27/popular/evolutions 实采 460 个卡片节点，去重后入库 456 张进化卡。",
+          "评分口径：榜单 Rating 列显示的是「进化后」OVR。已用 Savona 球员页交叉核验：基础卡 75 OVR，经 Intro to Evolutions（前置 Overall Max 75）后为 79 OVR，与榜单一致。阅读表格时请勿把该 Rating 当作基础卡评分。",
+          "费用口径：本日 5 个进化在 FUTBIN 上均标注 FREE（免费），费用列即来源于此。榜单卡片上的 🔥 数字（如 Savona 1635）是热度/使用计数，不是价格，已单独记为 popularityCount，不参与费用判断。",
+          "本节只写「可证实的卡面事实」与基于来源页明示内容的路线整理；不输出无依据的精确收益预测。开服前价格属估算口径，不作为投资依据。"
+        ]
+      },
+      "sha256": "12b412109209f2369451ce05f4d319202e7dbc02f79878b443309bc215b7924a",
+      "bytes": 223685,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/evolution/report.html"
+    }
+  },
+  "publish": "delegated",
+  "unattendedPublishingVerified": false,
+  "merge": "success",
+  "indexSha256": "2df002f68c49a82e7942d0a6716b9a0f04ad94f9f5696f7d98b6f5d523efcbdc",
+  "failedPanels": 0,
+  "publishTarget": {
+    "kind": "workbuddy-sites",
+    "directory": "/Users/wuyanzu/Desktop/FC/daily-merged",
+    "entry": "index.html"
+  },
+  "reason": "本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。",
+  "completedAt": "2026-09-16T05:37:08.264Z"
+}

@@ -1,6 +1,6 @@
 # FC共享组件
 
-这里集中维护四个日常任务与未来WorkBuddy都会使用的稳定接口：
+这里集中维护四个内容任务、汇总发布任务与 WorkBuddy 共用的稳定接口：
 
 - `config/project.json`：任务ID、顺序、启用状态、每日输出和固定汇总地址。
 - `lib/runtime.mjs`：项目根目录、Asia/Shanghai日期、路径和原子写入。
@@ -10,5 +10,5 @@
 业务任务只引用这些文件，不复制实现。WorkBuddy后续可从共享配置发现报告，或直接读取
 `reports/daily/D/`与`reports/research/`中的稳定产物。
 
-DuMate 与未来 WorkBuddy 均读取 `config/project.json`，不要为不同执行器复制第二套路径、
-主题或业务数据库；执行器差异只应留在各自的启动配置中。
+WorkBuddy 统一读取 `config/project.json`，不要为执行器复制第二套路径、主题或业务数据库；
+旧 DuMate 兼容层不得继续扩散到共享实现。

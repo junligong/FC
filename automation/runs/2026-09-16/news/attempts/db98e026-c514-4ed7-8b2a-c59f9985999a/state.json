@@ -1,0 +1,33 @@
+{
+  "module": "news",
+  "date": "2026-09-16",
+  "runId": "db98e026-c514-4ed7-8b2a-c59f9985999a",
+  "status": "failed",
+  "startedAt": "2026-09-15T19:04:04.972Z",
+  "deadlineAt": "2026-09-15T19:19:04.972Z",
+  "reportPath": "reports/daily/2026-09-16/news.html",
+  "completedAt": "2026-09-15T19:05:03.276Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "runId": "db98e026-c514-4ed7-8b2a-c59f9985999a",
+    "startedAt": "2026-09-15T19:04:04.972Z",
+    "finishedAt": "2026-09-16T03:04:43+08:00",
+    "dataCutoff": "2026-09-16 03:04 +08:00",
+    "sources": [],
+    "missingItems": [
+      "FC27 资讯采集：X 平台 16 个来源账号（sources.txt）在本轮均未能打开，浏览器扩展通道未建立，0 条推文可采集。",
+      "推文字段（正文、发布时间、原推链接、配图）：无来源页面，全部缺失。",
+      "中文翻译与去重：无原始推文，翻译与去重步骤未执行。"
+    ],
+    "notes": [
+      "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步（init --mode extension）即中止，未打开任何来源。",
+      "实测证据 1（探针 1·init）：export PATH 补齐 DuMate 运行时后执行 dumate-browser-cli init --mode extension --json，返回 {\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":110}。",
+      "实测证据 2（探针 2·doctor）：dumate-browser-cli doctor 返回 relay.httpBase=http://127.0.0.1:19228，relay.enabled/chromeEnabled/connected 均为空字符串（未连通），iab.enabled=false，cdp.endpoint=http://127.0.0.1:19222(alive=true)；用户日常 Chrome 未开启 --remote-debugging-port（ps 计数=0）。",
+      "实测证据 3（探针 3·native 宿主）：ls ~/Library/Application Support/Google/Chrome/NativeMessagingHosts/ 仅存在 com.openai.codexextension.json，不存在 com.workbuddy.extension.json，WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde）的 connectNative('com.workbuddy.extension') 桥接不可用。",
+      "实测证据 4（探针 4·远程调试）：用户日常 Chrome（MacOS/Google Chrome 进程）无 --remote-debugging-port 参数，计数为 0。",
+      "CDP 127.0.0.1:19222 由 --user-data-dir 独立 profile 启动，属「临时浏览器/新建独立 profile」，违反项目条款，未采用。",
+      "处置：按根 AGENTS.md「浏览器强制规则」与 news.md「扩展连接失败即记录采集失败，不得改用 IAB」执行；未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
+      "未产出可核验推文卡片。已渲染 reports/daily/2026-09-16/news.html，页面标记 FAILED、卡片数 0，并在「本轮说明」「缺失项记录」写明失败原因，不含任何历史日期数据；历史日期报告（如 2026-09-15）未被覆盖。"
+    ]
+  }
+}

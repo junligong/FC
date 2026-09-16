@@ -27,12 +27,17 @@ const BASE_DIR = root;
 const SOURCES = [
   { id: 'football-daily', title: '足球日报', icon: '⚽', fileName: 'football.html', desc: '七大联赛+欧冠，积分榜/射手榜/助攻榜三榜齐备' },
   { id: 'fc27-news', title: 'FC27 资讯雷达', icon: '📡', fileName: 'news.html', desc: 'X.com 信息源自动采集，智能过滤翻译' },
-  { id: 'market-analysis', title: 'FC27 市场分析', icon: '📊', fileName: 'market.html', desc: '双维度：价格分层（大卡/中卡/热门卡/适用卡）× 热门球员（进化卡/价值卡）' },
+  { id: 'market-analysis', title: 'FC27 市场分析', icon: '📊', fileName: 'market.html', desc: '两个子标签：市场概览（PC / Console 双平台切换） / 市场扫描' },
 ];
 
 // 进化专栏：独立于三个主板块，作为首页右栏 / 独立视图的可选内容源。
 // 由后续进化任务写入 reports/daily/D/evolution.html；未就绪时如实显示空状态。
 const EVOLUTION_SOURCE = { id: 'evolution-column', title: '进化专栏', fileName: 'evolution.html' };
+
+// 传奇/英雄专栏：跨日期常驻的独立栏目（左侧导航），承载原「FC27 市场」中的传奇/英雄内容。
+// 两个子标签：监控（当日产物 icons-heroes.html，由「FC27 传奇/英雄卡监控」任务产出）+
+// 研究（跨日期研究底稿 fc27-icon-analysis.html）。视图键为 'legend'，与 dashboard.mjs 的 LEGEND_TAB.view 对齐。
+const LEGEND_SOURCE = { id: 'legend-column', title: '传奇/英雄专栏' };
 
 const REPORT_ROOT = path.join(BASE_DIR, 'reports', 'daily');
 const MERGED_DIR = path.join(BASE_DIR, 'daily-merged');
@@ -51,7 +56,18 @@ function findReport(source, dateStr) {
   return null;
 }
 
-// 读取并处理单个板块：主题化 + 本地图片内联 + srcdoc 转义
+// 读取并处理单个报告：主题化 + 本地图片内联 + srcdoc 转义
+function themedPanel(raw, baseDir) {
+  if (!/<html[\s>]/i.test(raw) || !/<\/html>/i.test(raw)) return null;
+  try {
+    const themed = inlineLocalReportImages(themeReport(raw), baseDir);
+    return themed.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  } catch {
+    return null;
+  }
+}
+
+// 读取并处理单个板块（当日产物必须自带当日日期，防止拿旧报告冒充当天内容）
 function buildPanel(source, dateStr) {
   const reportPath = findReport(source, dateStr);
   if (!reportPath) return null;
@@ -61,18 +77,40 @@ function buildPanel(source, dateStr) {
   } catch {
     return null;
   }
-  if (!/<html[\s>]/i.test(raw) || !/<\/html>/i.test(raw) || !raw.includes(dateStr)) return null;
-  try {
-    const themed = inlineLocalReportImages(themeReport(raw), path.dirname(reportPath));
-    return themed.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-  } catch {
-    return null;
-  }
+  if (!raw.includes(dateStr)) return null;
+  return themedPanel(raw, path.dirname(reportPath));
 }
 
 // 按文件名直接构建面板（用于栏目内子标签内容，如 market-scan.html）
 function buildPanelByFile(fileName, dateStr) {
   return buildPanel({ id: fileName, fileName }, dateStr);
+}
+
+// 传奇卡研究：跨日期保留的常驻研究底稿（自带成稿日期，不参与当日日期校验）。
+// 供给「传奇/英雄专栏」的「传奇卡研究」子标签（已从 FC27 市场栏迁出）。
+// 优先使用当日同名产物 reports/daily/D/market-icons-research.html，否则回退到 icons/reports/ 下的底稿。
+function buildIconResearchPanel(dateStr) {
+  const candidates = [
+    path.join(REPORT_ROOT, dateStr, 'market-icons-research.html'),
+    path.join(BASE_DIR, 'apps', 'market', 'engine', 'icons', 'reports', 'fc27-icon-analysis.html'),
+  ];
+  for (const p of candidates) {
+    if (!existsSync(p)) continue;
+    try {
+      const panel = themedPanel(readFileSync(p, 'utf8'), path.dirname(p));
+      if (panel) return panel;
+    } catch { /* 读取失败则尝试下一个来源 */ }
+  }
+  return null;
+}
+
+function reportStatus(fileName, dateStr) {
+  const reportPath = path.join(REPORT_ROOT, dateStr, fileName);
+  if (!existsSync(reportPath)) return 'none';
+  const raw = readFileSync(reportPath, 'utf8');
+  if (/(采集失败|\bFAILED\b|data-status=["']failed)/i.test(raw)) return 'failed';
+  if (/(部分完成|\bPARTIAL\b|data-status=["']partial)/i.test(raw)) return 'partial';
+  return 'ok';
 }
 
 // 扫描所有存在日报的日期（倒序）。以 summary.html 为准；当前正在生成的日期尚未落盘，单独补入。
@@ -114,28 +152,45 @@ function buildArchiveLinks(currentDate, linkBase) {
 // linkBase: ''=本页在 archive 目录；assetBase: ''=本页在 daily-merged 根目录（素材前缀）
 function generateDaily(dateStr, { linkBase, assetBase }) {
   const panels = {};
+  const panelStates = {};
+  // 栏目内子标签容器：键为 dashboard.mjs 的视图名（market / legend）
+  const subPanels = {};
   for (const src of SOURCES) {
     const panel = buildPanel(src, dateStr);
-    if (panel) panels[src.id] = panel;
+    if (panel) { panels[src.id] = panel; panelStates[src.id] = reportStatus(src.fileName, dateStr); }
   }
   // 进化专栏为可选板块：存在 evolution.html 时内嵌，否则由模板给出占位空状态。
   const evolutionPanel = buildPanel(EVOLUTION_SOURCE, dateStr);
-  if (evolutionPanel) panels[EVOLUTION_SOURCE.id] = evolutionPanel;
+  if (evolutionPanel) { panels[EVOLUTION_SOURCE.id] = evolutionPanel; panelStates[EVOLUTION_SOURCE.id] = reportStatus(EVOLUTION_SOURCE.fileName, dateStr); }
 
-  // FC27 市场：保留原版布局 market.html 作为主视图，另加「市场扫描」子标签（market-scan.html）。
-  // 两者并存时用子标签切换；只有一份时直接作为该栏目内容，不显示多余的标签条。
+  // 传奇/英雄专栏：两个子标签——「监控」为当日产物 icons-heroes.html（须自带当日日期），
+  // 「研究」为跨日期研究底稿（自带成稿日期，不参与当日日期校验）。全部缺稿时由模板给出如实空状态。
+  const legendSubs = [];
+  const iconsHeroesPanel = buildPanelByFile('icons-heroes.html', dateStr);
+  if (iconsHeroesPanel) legendSubs.push({ id: 'monitor', label: '传奇/英雄监控', html: iconsHeroesPanel });
+  const researchPanel = buildIconResearchPanel(dateStr);
+  if (researchPanel) legendSubs.push({ id: 'research', label: '传奇卡研究', html: researchPanel });
+  if (legendSubs.length) {
+    subPanels.legend = legendSubs;
+    panels[LEGEND_SOURCE.id] = legendSubs[0].html;
+    panelStates[LEGEND_SOURCE.id] = legendSubs[0].id === 'monitor'
+      ? reportStatus('icons-heroes.html', dateStr) : 'ok';
+  }
+
+  // FC27 市场：保留原版布局 market.html 作为主视图，另加「市场扫描」子标签。
+  // 传奇/英雄相关内容已整体迁出至「传奇/英雄专栏」，此处不再收录。
+  // 多份并存时用子标签切换；只有一份时直接作为该栏目内容，不显示多余的标签条。
   const marketSubs = [];
   const overviewPanel = buildPanelByFile('market.html', dateStr);
   if (overviewPanel) marketSubs.push({ id: 'overview', label: '市场概览', html: overviewPanel });
   const scanPanel = buildPanelByFile('market-scan.html', dateStr);
   if (scanPanel) marketSubs.push({ id: 'scan', label: '市场扫描', html: scanPanel });
-  const subPanels = {};
   if (marketSubs.length >= 2) subPanels.market = marketSubs;
   else if (marketSubs.length === 1) panels['market-analysis'] = marketSubs[0].html;
   else delete panels['market-analysis'];
 
   const archiveLinks = buildArchiveLinks(dateStr, linkBase);
-  return dailyReport({ date: dateStr, panels, archiveLinks, assetBase, subPanels });
+  return dailyReport({ date: dateStr, panels, panelStates, archiveLinks, assetBase, subPanels });
 }
 
 // ========== 主流程 ==========

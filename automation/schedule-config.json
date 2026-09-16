@@ -1,8 +1,8 @@
 {
   "timezone": "Asia/Shanghai",
   "time": "03:00",
-  "verifiedAt": "2026-09-15T10:20:00.000Z",
-  "verification": "WorkBuddy 定时任务已创建并读回；DuMate 调度停用，发布迁移到 WorkBuddy 站点发布能力",
+  "verifiedAt": "2026-09-16T05:10:00.000Z",
+  "verification": "WorkBuddy 五个定时任务已读回；四个采集任务已绑定 Web Access 浏览器技能并禁止旧 DuMate 探针，汇总发布保持 03:05",
   "tasks": [
     {
       "name": "FC·足球日报",
@@ -47,5 +47,6 @@
   "dailyArchiveDirectory": "daily-merged/archive",
   "sharedAssetsDirectory": "daily-merged/assets",
   "actualSchedulerPromptsUpdated": true,
+  "collectionBrowserSkill": "Web Access（浏览器自动化）",
   "verificationFile": "automation/runs/2026-09-15/coordinator-state.json"
 }

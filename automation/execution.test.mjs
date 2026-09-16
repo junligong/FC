@@ -67,3 +67,16 @@ test('coordinator copies today assets into the isolated stage so images inline',
   assert.ok(summary.includes('data:image/jpeg;base64'),'summary 应内嵌今日 assets 图片');
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
+
+test('all failed tasks still publish a truthful current-date status page',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'fc-failed-status-'));const date='2026-09-16';const env={...process.env,FC_PROJECT_ROOT:root};const run=(...args)=>spawnSync(process.execPath,[path.join(here,'run-state.mjs'),...args],{env,encoding:'utf8'});
+ try{
+  for(const module of ['football','news','market']){
+   const state=JSON.parse(run('begin',module,date).stdout);const report=path.join(root,`reports/daily/${date}/${module}.html`);fs.mkdirSync(path.dirname(report),{recursive:true});fs.writeFileSync(report,`<html><head><title>${module} ${date}</title></head><body><h1>采集失败</h1><p>${date}</p></body></html>`);
+   const done=run('finish',module,date,state.runId,'failed');assert.equal(done.status,0,done.stderr);assert.ok(JSON.parse(done.stdout).snapshotPath,`${module} failed report should be snapshotted`);
+  }
+  const coordinated=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date],{env,encoding:'utf8',timeout:5000});assert.equal(coordinated.status,0,coordinated.stderr);
+  const result=JSON.parse(fs.readFileSync(path.join(root,'automation/runs',date,'coordinator-state.json')));assert.equal(result.merge,'status_only');assert.equal(result.publish,'delegated');
+  const index=fs.readFileSync(path.join(root,'daily-merged/index.html'),'utf8');assert.match(index,new RegExp(`<title>FC27情报台 · ${date}`));assert.equal((index.match(/当日采集失败/g)||[]).length,3);
+ }finally{fs.rmSync(root,{recursive:true,force:true});}
+});

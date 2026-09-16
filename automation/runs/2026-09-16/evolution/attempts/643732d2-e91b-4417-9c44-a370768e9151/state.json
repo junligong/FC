@@ -1,0 +1,41 @@
+{
+  "module": "evolution",
+  "date": "2026-09-16",
+  "runId": "643732d2-e91b-4417-9c44-a370768e9151",
+  "status": "failed",
+  "startedAt": "2026-09-15T19:00:22.776Z",
+  "deadlineAt": "2026-09-15T19:15:22.776Z",
+  "reportPath": "reports/daily/2026-09-16/evolution.html",
+  "completedAt": "2026-09-15T19:02:45.844Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "dataCutoff": "2026-09-16 03:02 +08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-16T03:01:20+08:00",
+        "note": "热门进化卡主来源；尝试打开失败，未取得页面内容（浏览器扩展通道未建立），无卡片数据"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T03:01:20+08:00",
+        "note": "候选球员 Rating/位置参考页；同样未能打开"
+      }
+    ],
+    "missingItems": [
+      "热门进化卡：https://www.futbin.com/27/popular/evolutions 本轮未能打开，无任何卡片数据。",
+      "卡片字段（评分、位置、进化名称、费用、到期时间、前置条件）：无来源页面，全部缺失。",
+      "进化路线与前置条件核验：无卡可核验，本轮未输出路线建议。"
+    ],
+    "notes": [
+      "失败原因：项目规定的 Chrome 插件 extension 通道在本轮 WorkBuddy 运行时无法建立，采集在第一步即中止。",
+      "实测证据 1：export PATH 补齐 DuMate 运行时后执行 dumate-browser-cli init --mode extension --json，返回 {\"ok\":false,\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\"}；枚举全部环境变量确认无任何 DUMATE_* 变量。",
+      "实测证据 2：dumate-browser-cli doctor 显示 relay.httpBase=http://127.0.0.1:19228，chromeEnabled=true，但 relay.connected=false；用户日常 Chrome（PID 1039）未开启 --remote-debugging-port。",
+      "实测证据 3：Chrome Default profile 已安装 WorkBuddy 扩展（ajnnogdfpilbhkeggdjlcokgglijmdde，v0.2.3，permissions 含 nativeMessaging/debugger），background.js 使用 connectNative('com.workbuddy.extension')；但 Chrome 的 NativeMessagingHosts 目录下不存在 com.workbuddy.extension.json，全盘查找亦无该宿主清单，扩展桥接不可用。",
+      "实测证据 4：CDP 端点 127.0.0.1:19222 返回 Chrome/153.0.8010.37，但该进程由 --remote-debugging-port=19222 --user-data-dir=/Users/wuyanzu/Library/Application Support/... 启动，属独立 profile 的自动化实例（/json/list 为空），违反项目「禁止临时浏览器或新建独立 profile」条款，故未采用。",
+      "实测证据 5：WorkBuddy 桌面端本机端口 127.0.0.1:18488 已穷举 health/status/browser/extension/relay/tools/tabs 等 20 条路由，均返回 404，不存在可供调用的浏览器扩展桥接端点。",
+      "处置：按 evolution.md「扩展连接失败则提交 failed/partial，不得先试或回退 IAB」执行，未打开 IAB、未新建 profile、未使用 FC26 或历史日期数据填充。",
+      "未产出可核验进化卡。已按契约渲染 reports/daily/2026-09-16/evolution.html，页面标记 FAILED、卡片数 0，并在「本轮说明」与「缺失项记录」中写明失败原因，不含任何 FC26 或历史日期数据；历史日期报告（如 2026-09-15）未被覆盖。"
+    ]
+  }
+}

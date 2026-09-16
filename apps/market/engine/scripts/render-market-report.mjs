@@ -5,8 +5,11 @@
  *       该文件是 FC27 市场页里的「市场扫描」标签页内容。
  * 结构：一、索引（按位置/总评/价格/进化状态分类概览，可点击联动筛选）
  *       二、数据库（可搜索/筛选/排序的球员表，含 FUTBIN /27 维度：总评、位置、六维、价格、热度、状态）
+ * 平台：页面顶部提供 Console（PS / Xbox 合并）与 PC 两个平台口径切换按钮，价格为平台成交价；
+ *       开服前两个平台价均为 0，此时显示列表页估值并标注「估值」，不计算涨跌。
  * 输入：automation/runs/D/market/market.json（也可用 FC_MARKET_JSON 指定）；
  *       球员数据库 automation/runs/D/market/players.json（也可用 FC_MARKET_PLAYERS 指定）。
+ *       球员价格取自 market.json 的 players[].psPrice / pcPrice（平台）与 price（估值）。
  * 输出：reports/daily/D/market-scan.html
  * 采集缺失时渲染为如实空状态，绝不伪造或复用其他日期数据。
  *
@@ -84,29 +87,71 @@ function statClass(v) {
   return 'bad';
 }
 
+// 平台定义：与 FUTBIN 的 platform 表单按钮一致（value=ps 文案 Console / value=pc 文案 PC）。
+// 列表页每行同时渲染 platform-ps-only 与 platform-pc-only 两个价格单元格，由 CSS 按所选平台显隐。
+export const PLATFORMS = [
+  { id: 'console', label: 'Console', short: 'PS / Xbox', key: 'psPrice' },
+  { id: 'pc', label: 'PC', short: 'PC', key: 'pcPrice' },
+];
+export const DEFAULT_PLATFORM = 'console';
+
+// 平台成交价：< 1000 视为占位值（开服前两个平台均返回 0），此时退回列表页估值并明确标注。
+function platformPrice(p, platform) {
+  const v = p && p[platform.key];
+  return typeof v === 'number' && Number.isFinite(v) && v >= 1000 ? v : 0;
+}
+
 export function renderScan(dateStr, data) {
   const d = data || {};
-  const { players, jsonPath: playersPath } = loadPlayers(dateStr);
+  // 球员表优先取独立的 players.json；缺失时回退到 market.json 的 players（同一批球员，
+  // 且带 psPrice / pcPrice 平台价），避免数据库恒为空。
+  let { players, jsonPath: playersPath } = loadPlayers(dateStr);
+  let playersSource = 'players.json';
+  if (!players.length && Array.isArray(d.players) && d.players.length) {
+    players = d.players;
+    playersSource = 'market.json.players';
+    playersPath = playersPath + '（缺失，已回退 market.json）';
+  }
   const status = (d.status || 'partial').toUpperCase();
   const total = players.length;
   const cutoff = d.dataCutoff || d.generatedAt || '未标注';
+  const priceBasis = d.priceBasis || '';
+  const platformPricesAvailable = players.some(p => PLATFORMS.some(pl => platformPrice(p, pl) > 0));
+  const platform = DEFAULT_PLATFORM;
 
   // 分类索引统计
   const posCounts = { '门将': 0, '后卫': 0, '中场': 0, '前锋': 0 };
   const ratingCounts = { '80+': 0, '75-79': 0, '70-74': 0, '69以下': 0 };
-  const priceCounts = { '1万以上': 0, '5000-1万': 0, '5000以下': 0 };
+  // 价格分档按平台分别统计（平台价缺失时退回列表页估值，与表内显示口径一致）
+  const priceBuckets = ['1万以上', '5000-1万', '5000以下'];
+  const priceCounts = Object.fromEntries(PLATFORMS.map(p => [p.id, Object.fromEntries(priceBuckets.map(b => [b, 0]))]));
   const evoCounts = { '在进化池': 0, '非进化池': 0 };
+  // 每名球员的展示价：平台成交价优先，无平台价时用列表页估值
+  const effPrice = p => {
+    const out = {};
+    for (const pl of PLATFORMS) out[pl.id] = platformPrice(p, pl) || (typeof p.price === 'number' ? p.price : 0);
+    return out;
+  };
   players.forEach(p => {
     const g = posGroup(p.pos); if (posCounts[g] !== undefined) posCounts[g]++;
     const r = p.rating || 0;
     if (r >= 80) ratingCounts['80+']++; else if (r >= 75) ratingCounts['75-79']++; else if (r >= 70) ratingCounts['70-74']++; else ratingCounts['69以下']++;
-    const pr = p.price ?? 0;
-    if (pr >= 10000) priceCounts['1万以上']++; else if (pr >= 5000) priceCounts['5000-1万']++; else priceCounts['5000以下']++;
+    const prices = effPrice(p);
+    for (const pl of PLATFORMS) {
+      const pr = prices[pl.id];
+      const bucket = pr >= 10000 ? '1万以上' : pr >= 5000 ? '5000-1万' : '5000以下';
+      priceCounts[pl.id][bucket]++;
+    }
     if (p.evo === '在进化池') evoCounts['在进化池']++; else evoCounts['非进化池']++;
   });
 
+  // 索引卡片：价格卡按平台分别给出计数，随顶部平台按钮一起切换
+  const countHtml = it => {
+    if (!it.counts) return `<b>${it.count}</b>`;
+    return PLATFORMS.map(p => `<b class="pv pv-${p.id}">${it.counts[p.id]}</b>`).join('');
+  };
   const idxCard = (title, items) => `<div class="idx-card"><h3>${esc(title)}</h3>${items.map(it =>
-    `<button type="button" class="idx-chip" ${it.pos ? `data-set-pos="${esc(it.pos)}"` : ''}${it.rating ? ` data-set-rating="${esc(it.rating)}"` : ''}${it.price ? ` data-set-price="${esc(it.price)}"` : ''}${it.evo ? ` data-set-evo="${esc(it.evo)}"` : ''}>${esc(it.label)}<b>${it.count}</b></button>`).join('')}</div>`;
+    `<button type="button" class="idx-chip" ${it.pos ? `data-set-pos="${esc(it.pos)}"` : ''}${it.rating ? ` data-set-rating="${esc(it.rating)}"` : ''}${it.price ? ` data-set-price="${esc(it.price)}"` : ''}${it.evo ? ` data-set-evo="${esc(it.evo)}"` : ''}>${esc(it.label)}${countHtml(it)}</button>`).join('')}</div>`;
 
   const indexHtml = `<div class="index-grid">
 ${idxCard('按位置', [
@@ -121,10 +166,10 @@ ${idxCard('按总评', [
   { label: '70-74', rating: '70-74', count: ratingCounts['70-74'] },
   { label: '69 以下', rating: '69以下', count: ratingCounts['69以下'] },
 ])}
-${idxCard('按价格（EasySBC 推荐价）', [
-  { label: '1 万以上', price: '1万以上', count: priceCounts['1万以上'] },
-  { label: '5000 - 1万', price: '5000-1万', count: priceCounts['5000-1万'] },
-  { label: '5000 以下', price: '5000以下', count: priceCounts['5000以下'] },
+${idxCard('按价格（随平台切换）', [
+  { label: '1 万以上', price: '1万以上', counts: Object.fromEntries(PLATFORMS.map(p => [p.id, priceCounts[p.id]['1万以上']])) },
+  { label: '5000 - 1万', price: '5000-1万', counts: Object.fromEntries(PLATFORMS.map(p => [p.id, priceCounts[p.id]['5000-1万']])) },
+  { label: '5000 以下', price: '5000以下', counts: Object.fromEntries(PLATFORMS.map(p => [p.id, priceCounts[p.id]['5000以下']])) },
 ])}
 ${idxCard('进化状态', [
   { label: '在进化池', evo: '在进化池', count: evoCounts['在进化池'] },
@@ -133,8 +178,10 @@ ${idxCard('进化状态', [
 </div>`;
 
   // 数据库数据注入（转义 </ 防止提前闭合 script）
+  // cPrice = Console（PS/Xbox）平台价，pPrice = PC 平台价，price = 开服前列表页估值。
   const dbJson = JSON.stringify(players.map(p => ({
     name: p.name, nameZh: p.nameZh, rating: p.rating, pos: p.pos, price: p.price,
+    cPrice: platformPrice(p, PLATFORMS[0]), pPrice: platformPrice(p, PLATFORMS[1]),
     popularity: p.popularity, evo: p.evo, image: p.image, url: p.url,
     stats: p.stats || {},
   }))).replace(/</g, '\\u003c');
@@ -175,6 +222,18 @@ tbody tr:hover{background:#1d271b}
 .stat-v{font-weight:700}
 .stat-v.hi{color:var(--green)}.stat-v.mid{color:var(--teal)}.stat-v.lo{color:var(--amber)}.stat-v.bad{color:var(--quiet)}.stat-v.na{color:#4a5345}
 .c-price{color:var(--amber);font-weight:600}
+.pv{display:none}
+body[data-platform="console"] .pv-console,
+body[data-platform="pc"] .pv-pc{display:inline}
+.c-price .est{font-style:normal;font-size:9.5px;color:var(--quiet);border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:4px;vertical-align:1px}
+.plat-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin:0 0 18px}
+.plat-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--quiet);font-weight:700}
+.plat-btn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:6px 14px;border-radius:9px;border:1px solid var(--line);background:#1d271b;color:var(--muted);font-size:13px;font-weight:650;cursor:pointer;transition:.15s}
+.plat-btn small{font-size:10px;color:var(--quiet);font-weight:500;letter-spacing:.05em}
+.plat-btn:hover{border-color:var(--lime);color:var(--text)}
+.plat-btn.active{background:rgba(200,246,70,.12);border-color:rgba(200,246,70,.5);color:var(--lime)}
+.plat-btn.active small{color:rgba(200,246,70,.75)}
+.plat-hint{font-size:11px;color:var(--quiet);margin-left:auto;max-width:52ch}
 .c-pop{color:var(--teal);font-weight:600}
 .c-evo{font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
 .c-evo.in{background:rgba(79,181,131,.16);color:var(--green)}
@@ -193,6 +252,16 @@ tbody tr:hover{background:#1d271b}
   function fmtPrice(v){ if(v==null) return '—'; if(v>=10000) return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000) return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
   function statCls(v){ if(v==null) return 'na'; if(v>=80) return 'hi'; if(v>=70) return 'mid'; if(v>=60) return 'lo'; return 'bad'; }
   function posGroup(pos){ if(!pos) return '其他'; var p=pos.toUpperCase(); if(p==='GK') return '门将'; if(/CB|LB|RB|LWB|RWB/.test(p)) return '后卫'; if(/CM|CDM|CAM|LM|RM/.test(p)) return '中场'; if(/ST|CF|LW|RW/.test(p)) return '前锋'; return '其他'; }
+  function curPrice(p){ var plat=document.body.getAttribute('data-platform')||'console'; var v=(plat==='pc')?p.pPrice:p.cPrice; return (v>0)?v:(p.price||0); }
+  function priceCell(p){
+    var parts=[];
+    ['console','pc'].forEach(function(id){
+      var v=(id==='pc')?p.pPrice:p.cPrice;
+      var est=!(v>0); if(est) v=p.price;
+      parts.push('<span class="pv pv-'+id+'">'+fmtPrice(v)+(est?'<i class="est">估值</i>':'')+'</span>');
+    });
+    return '<td class="c-price">'+parts.join('')+'</td>';
+  }
   function matches(p){
     var g = posGroup(p.pos);
     if (state.q && (p.name+' '+(p.nameZh||'')).toLowerCase().indexOf(state.q.toLowerCase()) < 0) return false;
@@ -226,7 +295,7 @@ tbody tr:hover{background:#1d271b}
       cells += '<td class="c-rating">' + (p.rating||'—') + '</td>';
       cells += '<td class="c-pos">' + (p.pos||'') + '</td>';
       for (var j=0;j<6;j++){ var v = p.stats && p.stats[six[j]]; cells += '<td><span class="stat-v ' + statCls(v) + '">' + (v==null?'—':v) + '</span></td>'; }
-      cells += '<td class="c-price">' + fmtPrice(p.price) + '</td>';
+      cells += priceCell(p);
       cells += '<td class="c-pop">' + (p.popularity!=null ? p.popularity : '—') + '</td>';
       var evoIn = p.evo === '在进化池';
       cells += '<td><span class="c-evo ' + (evoIn ? 'in' : 'out') + '">' + (p.evo||'—') + '</span></td>';
@@ -246,15 +315,34 @@ tbody tr:hover{background:#1d271b}
     render();
     var db = document.getElementById('db'); if (db && db.scrollIntoView) db.scrollIntoView({behavior:'smooth', block:'start'});
   });});
+  // 平台切换：切换价格口径并重排表格（价格排序与筛选均跟随当前平台）
+  function setPlatform(id){
+    document.body.setAttribute('data-platform', id);
+    document.querySelectorAll('.plat-btn').forEach(function(b){
+      var on = b.getAttribute('data-platform') === id;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    render();
+  }
+  document.querySelectorAll('.plat-btn').forEach(function(b){
+    b.addEventListener('click', function(){ setPlatform(b.getAttribute('data-platform')); });
+  });
   render();
 })();`;
 
   return `<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>FC27 市场扫描 ${esc(dateStr)}</title>
-<style>${css}</style></head><body>
+<style>${css}</style></head><body data-platform="${esc(platform)}">
 <h1>FC27 市场扫描 <span class="badge">${esc(status)}</span></h1>
-<div class="sub">数据日期 ${esc(dateStr)} · 数据截止 ${esc(cutoff)} · 索引 + 数据库 · 来源 FUTBIN /27/popular + EasySBC</div>
+<div class="sub">数据日期 ${esc(dateStr)} · 数据截止 ${esc(cutoff)} · 索引 + 数据库 · 球员来源 ${esc(playersSource)} · 数据来源 FUTBIN /27/popular + EasySBC${platformPricesAvailable ? '' : ' · 当前为开服前口径（' + esc(priceBasis || 'listing-estimate') + '），平台成交价尚未产生'}</div>
+
+<div class="plat-bar" role="group" aria-label="平台切换">
+  <span class="plat-label">平台</span>
+  ${PLATFORMS.map(p => `<button type="button" class="plat-btn${p.id === platform ? ' active' : ''}" data-platform="${p.id}" aria-pressed="${p.id === platform}">${esc(p.label)}<small>${esc(p.short)}</small></button>`).join('')}
+  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径；开服前两个平台价均为 0，此时显示列表页估值并以「估值」标注，不计算涨跌。</span>
+</div>
 
 <h2>一、索引（分类概览）</h2>
 ${total ? indexHtml : '<div class="empty">球员数据库为空（来源 <code>' + esc(playersPath) + '</code>），如实空状态。</div>'}
@@ -274,7 +362,7 @@ ${total ? indexHtml : '<div class="empty">球员数据库为空（来源 <code>'
 <script type="application/json" id="db-data">${dbJson}</script>
 <script>${dbJs}</script>
 
-<div class="footer">FC27 市场扫描（索引 + 数据库）· ${esc(dateStr)} · 由 render-market-report.mjs 渲染 · 六维与推荐价来自 EasySBC，热度为 FUTBIN 评分 · 仅供游戏内研究，不构成投资建议</div>
+<div class="footer">FC27 市场扫描（索引 + 数据库）· ${esc(dateStr)} · 由 render-market-report.mjs 渲染 · 六维与推荐价来自 EasySBC，热度为 FUTBIN 评分 · 价格为 Console（PS/Xbox）与 PC 两个平台口径，平台价缺失时显示列表页估值并标注「估值」 · 仅供游戏内研究，不构成投资建议</div>
 </body></html>
 `;
 }

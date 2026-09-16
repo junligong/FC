@@ -1,52 +1,81 @@
 {
   "module": "market",
   "date": "2026-09-16",
-  "runId": "4d4ee634-7252-4c9e-a0c9-e44282d3ad3a",
-  "status": "failed",
-  "startedAt": "2026-09-15T19:06:03.371Z",
-  "deadlineAt": "2026-09-15T19:21:03.371Z",
+  "runId": "46212049-3c4b-4df8-b236-73d21571413c",
+  "status": "partial",
+  "startedAt": "2026-09-16T08:17:07.549Z",
+  "deadlineAt": "2026-09-16T08:32:07.549Z",
   "reportPath": "reports/daily/2026-09-16/market.html",
-  "completedAt": "2026-09-15T19:07:04.176Z",
+  "completedAt": "2026-09-16T08:18:21.004Z",
   "evidence": {
     "date": "2026-09-16",
-    "status": "failed",
-    "dataCutoff": "2026-09-16 03:07 +08:00",
     "sources": [
       {
         "url": "https://www.futbin.com/27/players",
-        "openedAt": null,
-        "dataCutoff": null,
-        "note": "未能打开：Chrome 插件 extension 通道不可用（RelayUnreachable），未采集价格分层数据。"
+        "openedAt": "2026-09-16T08:17:36.749Z",
+        "dataCutoff": "2026-09-16T08:17:36.749Z",
+        "note": "价格分层四档取数页；每行同时含 platform-ps-only(Console) 与 platform-pc-only(PC) 单元格，table-item-score 为开服前估值列",
+        "observed": {
+          "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+          "url": "https://www.futbin.com/27/players",
+          "plats": [
+            "ps",
+            "pc"
+          ],
+          "rows": 30,
+          "psCells": 30,
+          "pcCells": 30,
+          "scoreCells": 30
+        }
       },
       {
         "url": "https://www.futbin.com/27/popular",
-        "openedAt": null,
-        "dataCutoff": null,
-        "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门球员维度。"
+        "openedAt": "2026-09-16T08:17:53.055Z",
+        "dataCutoff": "2026-09-16T08:17:53.055Z",
+        "note": "热门球员维度主来源（价值卡）",
+        "observed": {
+          "title": "EA FC 27 Popular Players | FUTBIN",
+          "url": "https://www.futbin.com/27/popular",
+          "plats": [
+            "ps",
+            "pc"
+          ],
+          "rows": 0,
+          "psCells": 0,
+          "pcCells": 0,
+          "scoreCells": 0
+        }
       },
       {
         "url": "https://www.futbin.com/27/popular/evolutions",
-        "openedAt": null,
-        "dataCutoff": null,
-        "note": "未能打开：Chrome 插件 extension 通道不可用，未采集热门进化卡。"
+        "openedAt": "2026-09-16T08:18:14.540Z",
+        "dataCutoff": "2026-09-16T08:18:14.540Z",
+        "note": "热门进化卡维度来源",
+        "observed": {
+          "title": "EA FC 27 Popular Evolution Players | FUTBIN",
+          "url": "https://www.futbin.com/27/popular/evolutions",
+          "plats": [
+            "ps",
+            "pc"
+          ],
+          "rows": 0,
+          "psCells": 0,
+          "pcCells": 0,
+          "scoreCells": 0
+        }
       }
     ],
+    "dataCutoff": "2026-09-16T08:18:14.540Z",
     "missingItems": [
-      "本轮浏览器通道不可用，无法访问 FUTBIN，未采集任何 FC27 市场数据。",
-      "概览·本周活动卡与本周周黑（Promo/TOTW）：未采集名单与发布时间。",
-      "概览·价格分层（≥100万 / 30-100万 / 10-30万 / 1-10万，每档 Top50 按 Rating）：未采集，四档均为如实空状态。",
-      "概览·传奇卡与英雄卡：未采集。",
-      "概览·热门进化卡（/27/popular/evolutions）：未采集。",
-      "扫描·价格维度（大卡/中卡/热门卡/适用卡/万元以下）：未采集。",
-      "扫描·热门球员维度（热门进化卡 / 价值卡，/27/popular）：未采集。"
+      "FUTBIN 在 FC27 开服前（launchDate=2026-09-25）不产生成交价：Console 与 PC 两个平台的平台价均为 0，列表页只有 table-item-score 估值列（如 60000）。因此本日 market.html / market-scan.html 的两平台价格为如实空状态，页面以「估值」标注估值来源。",
+      "开服前不计算日环比与累计涨跌，符合 listing-estimate 口径红线。"
     ],
     "notes": [
-      "浏览器通道四项探针（2026-09-16 03:06 GMT+8）原始返回如下：",
-      "探针1 init --mode extension：{\"ok\":false,\"cmd\":\"init\",\"error\":{\"kind\":\"RelayUnreachable\",\"message\":\"headed 模式需要 DUMATE_HOST_URL 指向宿主机（用于 POST /browser/launch 拉起 Chrome），当前未设置。\",\"retryable\":true,\"hint\":\"请确认 DuMate 宿主环境已注入 DUMATE_HOST_URL。\"},\"elapsedMs\":111}",
-      "探针2 doctor：relay.connected=\"\"（false），session.extConnected=false，session.mode=cdp，cdp.endpoint=http://127.0.0.1:19222（该实例由 --user-data-dir 独立 profile 启动，属禁止的临时 profile）。",
-      "探针3 NativeMessagingHosts：仅存在 com.openai.codexextension.json，缺少 com.workbuddy.extension.json，Chrome 扩展 ajnnogdfpilbhkeggdjlcokgglijmdde 的 native messaging 桥接未注册。",
-      "探针4 remote-debugging-port 进程计数：0，用户日常 Chrome 未开启远程调试。",
-      "判定结论：Chrome 插件 extension 通道不可用，按契约提交 failed，不回退 IAB、不新建独立 profile、不用旧日期或 FC26 数据填充。"
+      "本轮为 2026-09-16 报告改版后的重新提交：概览由四段式改为三段式（传奇/英雄迁出），两页新增 Console(PS/Xbox) 与 PC 双平台切换；采集数据与上一轮一致，未重新抓取卡片数据。",
+      "平台模型已实机核验：form.desktop-platform-change-form 内按钮为 ps:Console / pc:PC，同一行同时渲染平台价单元格。"
     ]
-  }
+  },
+  "sha256": "d9e7a5bf4121f517ebc50aae9c1dd862d1733329ba76da1456c398d8aa8b3e91",
+  "bytes": 53317,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/market/report.html"
 }

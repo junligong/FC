@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-16",
+  "status": "partial",
+  "dataCutoff": "2026-09-16 13:31 +08:00",
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/players",
+      "openedAt": "2026-09-16T13:29:47+08:00",
+      "dataCutoff": "2026-09-16 13:29 +08:00",
+      "note": "本轮实测打开成功。表格 1 个、tbody 30 行，列为 NAME|RAT|IS|POS|PRICE|...|POP|IGS|BODY；已提取首屏 30 行（含价格、评分、位置、POP）。价格为开服前列表页占位/估算价。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=2",
+      "openedAt": "2026-09-16T13:31:42+08:00",
+      "dataCutoff": "2026-09-16 13:31 +08:00",
+      "note": "本轮实测打开成功，提取第 2 页 30 行（如 92 Puskás Icon 30000、92 Charlton Icon 45000）。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=3",
+      "openedAt": "2026-09-16T13:31:42+08:00",
+      "dataCutoff": "2026-09-16 13:31 +08:00",
+      "note": "本轮实测打开成功，提取第 3 页 30 行（如 91 van Basten Icon 42750、91 Cafu Icon 28500）。三页合计 90 行用于价格分档。"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": "2026-09-16T13:29:47+08:00",
+      "dataCutoff": "2026-09-16 13:29 +08:00",
+      "note": "本轮实测打开成功。.popular-cards-wrapper 下 254 个卡片节点，成功解析 192 条（名称/评分/位置/热度计数）。排序指标为 FUTBIN 热门页引用热度，非搜索热度。"
+    },
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-16T13:29:47+08:00",
+      "dataCutoff": "2026-09-16 13:29 +08:00",
+      "note": "本轮实测打开成功。.popular-cards-wrapper 下 310 个卡片节点，成功解析 249 条（含进化名称，如 Intro to Evolutions / Intro to Training Camp EVOs）。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?pc_price=1000000%2B",
+      "openedAt": "2026-09-16T13:30:07+08:00",
+      "dataCutoff": "2026-09-16 13:30 +08:00",
+      "note": "已实际打开，表头正常渲染但 tbody 为 0 行。开服前 FUTBIN 价格筛选参数不可用，本档据实测为空，非采集失败。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?pc_price=300000-1000000",
+      "openedAt": "2026-09-16T13:30:08+08:00",
+      "dataCutoff": "2026-09-16 13:30 +08:00",
+      "note": "已实际打开，表格存在（hasTable=true）但 0 行数据，页面无 no-results 提示。判定为筛选参数在开服前不可用，本档如实空状态。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?pc_price=10000-100000",
+      "openedAt": "2026-09-16T13:30:24+08:00",
+      "dataCutoff": "2026-09-16 13:30 +08:00",
+      "note": "已实际打开，仍为 0 行。该区间在无筛选榜单中确有卡（如 Maradona Icon 60000），可确认是筛选参数在开服前失效，而非该档无卡。故价格分档改用无筛选榜单实测价格直接分档。"
+    }
+  ],
+  "missingItems": [
+    "概览·本周活动卡（Promo）与本周周黑（TOTW）：本轮未打开对应来源页，名单与发布时间未采集，如实空状态。",
+    "概览·价格分层 ≥100 万 / 30-100 万 / 10-30 万 三档：FUTBIN 价格筛选页实测 0 行，且无筛选榜单前 90 行中亦无卡满足该三个价格区间，如实空状态。",
+    "价格分层覆盖范围：取 /27/players 无筛选第 1-3 页共 90 行（按 Rating 降序）分档，未继续翻页；1-10 万档已达每档 50 张上限，其余档为 0。",
+    "扫描·价格维度 大卡 / 中卡 / 热门卡 / 万元以下：实测无满足区间卡，如实空状态；适用卡（1-10 万）50 张。",
+    "传奇监控逐日快照：数据源 base-icons.json 为本日 11:08 抓取（131 张 / 有效价 97），非本轮 13:28 运行窗口内重新抓取；本轮仅按同日快照规则重新固化当日文件，未重抓价格。",
+    "概览·传奇卡与英雄卡：为 /27/players 前 90 行中标注 Icon 的卡（去重后 50 张，展示上限截断），非 FC27 全量基础传奇卡名单；完整 131 张名单见传奇监控页。",
+    "FUTBIN 开服前价格均为 listing-estimate 占位/估算价，本报告未计算日环比与累计涨跌。"
+  ],
+  "notes": [
+    "浏览器通道：web-access（CDP Proxy :3456 直连用户日常 Chrome），check-deps.mjs exit 0；未使用 dumate-browser-cli / DUMATE_* / browser-env.sh / agent-browser / IAB / 独立 profile。",
+    "FUTBIN 对 curl/WebFetch 返回 403，本轮全部数据均来自 CDP 实测打开页面后从 DOM 提取。",
+    "openedAt 记录为本轮实际读取页面 DOM 并落盘原始数据的时刻（+08:00），全部晚于本轮 startedAt 2026-09-16T13:28:18+08:00。",
+    "本轮未超时：20 分钟上限内完成采集、生成与提交；自建 tab 已全部关闭，未触碰用户已有 tab。"
+  ]
+}

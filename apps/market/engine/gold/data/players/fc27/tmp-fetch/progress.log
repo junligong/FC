@@ -1,0 +1,17 @@
+15:07:29 PAGE-DEAD reopening...
+15:08:12 BATCH-FAIL page=1, reopen and retry
+15:08:53 BATCH-FAIL2 page=1 giveup-on-retry, sleep 20
+15:09:18 BATCH-FAIL page=1, reopen and retry
+15:09:48 BATCH-FAIL2 page=1 giveup-on-retry, sleep 20
+15:10:13 BATCH-FAIL page=1, reopen and retry
+15:10:41 BATCH-FAIL2 page=1 giveup-on-retry, sleep 20
+15:11:06 BATCH-FAIL page=1, reopen and retry
+15:11:39 BATCH-FAIL page=1 (streak 1), reopen+retry
+15:13:02 PAGE-DEAD, reopening ...
+15:13:45 BATCH-FAIL page=1 (streak 2), reopen+retry
+15:15:11 BATCH-FAIL p=1 streak=1, recover+wait 20s
+15:15:23 PAGE-DEAD -> recover+open page=1
+15:16:17 BATCH-FAIL p=1 streak=2, recover+wait 40s
+15:16:28 PAGE-DEAD -> recover+open page=1
+15:18:13 PAGE-DEAD, recover+reopen at page 1
+15:18:26 PAGE-DEAD -> recover+open page=1

@@ -1,11 +1,15 @@
 #!/usr/bin/env node
 /**
  * FC27 市场报告统一渲染入口
- * 用途：读取一份 market.json，一次性渲染市场栏目的两份产物，保证结构与版式稳定：
- *       - reports/daily/D/market.html      「市场概览」：四段式（活动卡+周黑 / 价格分层Top50 / 传奇英雄 / 热门进化卡）
- *       - reports/daily/D/market-scan.html 「市场扫描」：双维度（价格维度 / 热门球员维度）
+ * 用途：一次性渲染市场栏目的两份产物，保证结构与版式稳定：
+ *       - reports/daily/D/market.html       「市场概览」：三段式（活动卡+周黑 / 价格分层Top50 / 热门进化卡）
+ *       - reports/daily/D/market-scan.html  「市场扫描」：双维度（价格维度 / 热门球员维度）
  * 输入：automation/runs/D/market/market.json（overview 段 + scan 段；可用 FC_MARKET_JSON 指定其他路径）。
  * 输出：上述两个 HTML 文件，均对缺失数据渲染为如实空状态。
+ *
+ * 注意（2026-09-16 拆分）：传奇卡与英雄卡已**不再属于市场栏目**，改由独立的 icons-heroes 任务产出，
+ *   渲染入口为 scripts/render-icons-heroes.mjs，产物 reports/daily/D/icons-heroes.html，
+ *   挂载在站点「传奇/英雄专栏」。本脚本不再生成 market-icons.html。
  *
  * 用法：node apps/market/engine/scripts/render-market.mjs [YYYY-MM-DD]
  *   （也可单独运行 render-market-overview.mjs / render-market-report.mjs 只渲染其中之一）
@@ -33,5 +37,6 @@ const overviewPath = path.join(outDir, 'market.html');
 const scanPath = path.join(outDir, 'market-scan.html');
 writeFileSync(overviewPath, renderOverview(dateStr, data), 'utf8');
 writeFileSync(scanPath, renderScan(dateStr, data), 'utf8');
+
 console.log(`市场概览已渲染: ${overviewPath}`);
 console.log(`市场扫描已渲染: ${scanPath}`);

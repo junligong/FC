@@ -16,16 +16,20 @@
     "note": "每日任务在 coordinate.mjs 合并成功后，用 WorkBuddy 站点发布能力发布 daily-merged/；多文件站点，index.html + archive/ + assets/ 相对路径可用。"
   },
   "browser": {
-    "required": "chrome-extension",
-    "cliMode": "extension",
+    "required": "web-access",
+    "cliMode": "cdp-proxy",
     "reuseLoggedInProfile": true,
-    "forbidden": ["iab", "guest", "temporary-profile", "new-profile"]
+    "reuseUserChrome": true,
+    "preflight": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs",
+    "note": "唯一通道为 Web Access 技能（CDP Proxy :3456）直连用户日常 Chrome；extension/Chrome 插件模式已废弃。",
+    "forbidden": ["iab", "guest", "temporary-profile", "new-profile", "chrome-extension", "dumate-browser-cli", "agent-browser"]
   },
   "tasks": [
     { "order": 1, "id": "football", "name": "足球日报", "enabled": true, "output": "football.html" },
     { "order": 2, "id": "news", "name": "FC27资讯采集", "enabled": true, "output": "news.html" },
     { "order": 3, "id": "market", "name": "FC27市场监控", "enabled": true, "output": "market.html" },
     { "order": 4, "id": "evolution", "name": "FC27进化专栏", "enabled": true, "output": "evolution.html" },
-    { "order": 5, "id": "portal", "name": "汇总链接", "enabled": true, "output": "summary.html" }
+    { "order": 5, "id": "icons-heroes", "name": "FC27传奇/英雄卡监控", "enabled": true, "output": "icons-heroes.html" },
+    { "order": 6, "id": "portal", "name": "汇总链接", "enabled": true, "output": "summary.html" }
   ]
 }

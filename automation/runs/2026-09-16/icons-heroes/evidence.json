@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-16",
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/players?rarity=icon",
+      "openedAt": "2026-09-16T08:25:34.544Z",
+      "dataCutoff": "2026-09-16T08:25:34.544Z",
+      "note": "传奇卡（Icon）名单与价格来源；每行含 platform-ps-only(Console)/platform-pc-only(PC) 两个价格单元格",
+      "observed": {
+        "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+        "url": "https://www.futbin.com/27/players?rarity=icon",
+        "plats": [
+          "ps",
+          "pc"
+        ],
+        "rows": 30,
+        "psCells": 30,
+        "pcCells": 30
+      }
+    },
+    {
+      "url": "https://www.futbin.com/27/players?rarity=hero",
+      "openedAt": "2026-09-16T08:25:55.625Z",
+      "dataCutoff": "2026-09-16T08:25:55.625Z",
+      "note": "英雄卡（Hero）名单与价格来源",
+      "observed": {
+        "title": "EA FC 27 Players - Ultimate Team Ratings | FUTBIN",
+        "url": "https://www.futbin.com/27/players?rarity=hero",
+        "plats": [
+          "ps",
+          "pc"
+        ],
+        "rows": 30,
+        "psCells": 30,
+        "pcCells": 30
+      }
+    }
+  ],
+  "dataCutoff": "2026-09-16T08:25:55.625Z",
+  "missingItems": [
+    "FC27 未开服（launchDate=2026-09-25）：Console 与 PC 两个平台价均为 0，FUTBIN 只提供列表页估值（占位值 <1000 视为无效）。本期只做台账与记录进度，不计算日环比与累计涨跌。",
+    "英雄卡（Hero）台账尚未完整建立（apps/market/engine/heroes/data 下已有部分文件），英雄区块按实际存在的文件渲染，缺失部分如实空状态。",
+    "历史快照仅 1 天，逐日变化与走势需开服后连续累积才有意义。"
+  ],
+  "notes": [
+    "本任务 2026-09-16 从 FC27 市场任务拆出，独立监控全部传奇卡（Icon）与英雄卡（Hero）。",
+    "本轮为版式改版后的重新提交：台账标题区分 Icon/Hero、监控口径补充双平台说明；采集数据与上一轮一致。",
+    "快照逐卡含 platforms.console（PS/Xbox 合并）与 platforms.pc；报告页提供 Console / PC 平台切换。"
+  ]
+}

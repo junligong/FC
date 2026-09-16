@@ -1,15 +1,43 @@
 {
   "date": "2026-09-16",
   "html": "/Users/wuyanzu/Desktop/FC/reports/daily/2026-09-16/football.html",
-  "ok": false,
-  "errors": [
-    "R6 没有任何联赛提供射手榜数据",
-    "R6 没有任何联赛提供助攻榜数据"
+  "ok": true,
+  "errors": [],
+  "warnings": [
+    "射手榜未覆盖联赛：mls_east、mls_west",
+    "助攻榜未覆盖联赛：mls_east、mls_west"
   ],
-  "warnings": [],
   "stats": {
-    "leagues": [],
-    "scorerLeagues": [],
-    "assistLeagues": []
+    "leagues": [
+      "epl",
+      "laliga",
+      "seriea",
+      "bundesliga",
+      "ligue1",
+      "mls_east",
+      "mls_west",
+      "saudi",
+      "ucl"
+    ],
+    "scorerLeagues": [
+      "epl",
+      "laliga",
+      "seriea",
+      "bundesliga",
+      "ligue1",
+      "mls",
+      "saudi",
+      "ucl"
+    ],
+    "assistLeagues": [
+      "epl",
+      "laliga",
+      "seriea",
+      "bundesliga",
+      "ligue1",
+      "mls",
+      "saudi",
+      "ucl"
+    ]
   }
 }

@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {root,reportDate,atomicWrite,readJSON} from '../shared/lib/runtime.mjs';
-export const outputs={news:d=>`reports/daily/${d}/news.html`,football:d=>`reports/daily/${d}/football.html`,market:d=>`reports/daily/${d}/market.html`,evolution:d=>`reports/daily/${d}/evolution.html`};
+export const outputs={news:d=>`reports/daily/${d}/news.html`,football:d=>`reports/daily/${d}/football.html`,market:d=>`reports/daily/${d}/market.html`,evolution:d=>`reports/daily/${d}/evolution.html`,'icons-heroes':d=>`reports/daily/${d}/icons-heroes.html`};
 export const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
 const archivedEntries=['owner.json','state.json','report.html','tweets.json','evidence.json','work','legacy-work'];
 function archivePreviousRun(dir,now){
@@ -60,6 +60,15 @@ export function finish(module,date,runId,status,evidencePath,now=Date.now()){
   if(status==='success' && (evidence.missingItems?.length || evidence.missing?.length)) result.status='partial';
   result.sha256=digest(html);result.bytes=html.length;result.snapshotPath=path.join(dir,'report.html');atomicWrite(result.snapshotPath,html.toString());
   const newsData=path.join(root,`apps/news/data/tweets-${date}.json`);if(module==='news'&&fs.existsSync(newsData)){const data=readJSON(newsData,null);if(data?.date===date)atomicWrite(path.join(dir,'tweets.json'),JSON.stringify(data));}
+ }
+ if(status==='failed'){
+  const file=path.join(root,state.reportPath);
+  if(fs.existsSync(file)){
+   const html=fs.readFileSync(file),stat=fs.statSync(file),text=html.toString();
+   if(stat.mtimeMs>=Date.parse(state.startedAt)&&html.includes(Buffer.from(date))&&/<\/html>/i.test(text)&&/(采集失败|\bFAILED\b|data-status=["']failed)/i.test(text)){
+    result.sha256=digest(html);result.bytes=html.length;result.snapshotPath=path.join(dir,'report.html');atomicWrite(result.snapshotPath,text);
+   }
+  }
  }
  atomicWrite(statePath,JSON.stringify(result,null,2));return result;
 }

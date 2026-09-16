@@ -6,7 +6,12 @@ import { execFile, execFileSync } from 'node:child_process';
 import { promisify } from 'node:util';
 import path from 'node:path';
 import { root, reportDate, atomicWrite, readJSON } from '../../shared/lib/runtime.mjs';
-import { originalXImageUrl, reportImageAssetName } from '../../shared/lib/report-assets.mjs';
+import { originalXImageUrl, reportImageAssetName, isCacheableXImage } from '../../shared/lib/report-assets.mjs';
+import { collectTweetImageUrls } from './x-media.mjs';
+import { downloadImagesViaBrowser } from './fetch-images-browser.mjs';
+
+// 报告内图片统一取 medium 档；改这里会同时改变落盘文件名，旧文件会成为孤儿资产需清理。
+const X_IMAGE_SIZE = 'medium';
 
 const DATA_DIR = path.join(root, 'apps/news/data');
 const today = reportDate(process.env.FC_REPORT_DATE);
@@ -271,17 +276,26 @@ const reportTweets = [...merged.values()];
 async function cacheReportImages(tweets) {
   mkdirSync(IMAGE_DIR, { recursive: true });
   const downloads = new Map();
+  // 报告内展示不需要原图：orig 单张可达 1.5MB，98 张就会把单文件汇总顶到 30MB+。
+  // 统一取 medium（约 1200px），体积约为原图的 1/4~1/5，肉眼观感无差别。
+  const localAsset = image => {
+    if (typeof image !== 'string' || !isCacheableXImage(image)) return '';
+    const name = reportImageAssetName(image, X_IMAGE_SIZE);
+    return existsSync(path.join(IMAGE_DIR, name)) ? `assets/news/${name}` : '';
+  };
   for (const tweet of tweets) {
-    for (const image of tweet.images || []) {
-      if (!/^https:\/\/pbs\.twimg\.com\/media\//.test(image)) continue;
-      const url = originalXImageUrl(image);
-      const name = reportImageAssetName(url);
+    // 正文配图 + 视频封面 + 链接卡片缩略图，三者都要落盘
+    for (const image of collectTweetImageUrls(tweet)) {
+      if (!isCacheableXImage(image)) continue;
+      const url = originalXImageUrl(image, X_IMAGE_SIZE);
+      const name = reportImageAssetName(url, X_IMAGE_SIZE);
       const target = path.join(IMAGE_DIR, name);
       if (!existsSync(target)) downloads.set(url, { url, name, target });
     }
   }
   const queue = [...downloads.values()];
   let cursor = 0;
+  const localFailures = [];
   async function worker() {
     while (cursor < queue.length) {
       const item = queue[cursor++];
@@ -296,25 +310,44 @@ async function cacheReportImages(tweets) {
         renameSync(pending, item.target);
       } catch (error) {
         rmSync(pending, { force: true });
-        console.error(`Image cache failed: ${item.url} (${error.message})`);
+        // 本机出口对 pbs.twimg.com 常常不通（沙箱代理），先记下来，稍后交给浏览器兜底
+        localFailures.push({ url: item.url, target: item.target, reason: error.message });
       }
     }
   }
   await Promise.all(Array.from({ length: Math.min(6, queue.length) }, () => worker()));
+  if (localFailures.length) {
+    // 浏览器兜底：用户浏览器能正常访问该 CDN，这里把本机拉不下来的图补回来
+    try {
+      const result = await downloadImagesViaBrowser(localFailures.map(item => ({ url: item.url, target: item.target })));
+      if (result.saved.length) console.error(`Image cache via browser: ${result.saved.length} recovered (local failures: ${localFailures.length})`);
+      for (const item of result.failed) console.error(`Image cache failed: ${item.url} (${item.error})`);
+    } catch (error) {
+      console.error(`Browser image fallback unavailable: ${error.message}`);
+      for (const item of localFailures) console.error(`Image cache failed: ${item.url} (${item.reason})`);
+    }
+  }
   return tweets.map(tweet => ({
     ...tweet,
     localImages: (tweet.images || []).map(image => {
-      if (/^data:image\//.test(image)) return image;
-      if (!/^https:\/\/pbs\.twimg\.com\/media\//.test(image)) return '';
-      const name = reportImageAssetName(image);
-      return existsSync(path.join(IMAGE_DIR, name)) ? `assets/news/${name}` : '';
+      if (typeof image === 'string' && image.startsWith('data:image/')) return image;
+      return localAsset(image);
     }),
+    localVideoPoster: tweet.video?.poster ? localAsset(tweet.video.poster) : '',
+    localCardImage: tweet.card?.image ? localAsset(tweet.card.image) : '',
   }));
 }
 
 const reportTweetsWithAssets = await cacheReportImages(reportTweets);
-const requestedImageCount = reportTweetsWithAssets.reduce((sum, tweet) => sum + (tweet.images?.length || 0), 0);
-const cachedImageCount = reportTweetsWithAssets.reduce((sum, tweet) => sum + (tweet.localImages?.filter(Boolean).length || 0), 0);
+// 统计口径覆盖三类可缓存图片：正文配图、视频封面、链接卡片缩略图
+const requestedImageCount = reportTweetsWithAssets.reduce(
+  (sum, tweet) => sum + collectTweetImageUrls(tweet).length, 0);
+const cachedImageCount = reportTweetsWithAssets.reduce(
+  (sum, tweet) => sum + (tweet.localImages?.filter(Boolean).length || 0)
+    + (tweet.localVideoPoster ? 1 : 0) + (tweet.localCardImage ? 1 : 0), 0);
+const unresolvedMediaCount = reportTweetsWithAssets.filter(tweet => tweet.mediaResolved === false).length;
+const videoCount = reportTweetsWithAssets.filter(tweet => tweet.video).length;
+const cardCount = reportTweetsWithAssets.filter(tweet => tweet.card).length;
 const snapshot = JSON.stringify({date: today, count: reportTweetsWithAssets.length, tweets: reportTweetsWithAssets}, null, 2);
 const pendingData = path.join(WORK_DIR, 'pending-tweets.json');
 writeFileSync(pendingData, snapshot);
@@ -361,18 +394,54 @@ def render_tweet(t, idx):
         ts_str = ts.strftime('%Y-%m-%d %H:%M UTC')
     except (ValueError, AttributeError):
         ts_str = '时间未知'
-    imgs_html = ''
-    if t['images']:
-        imgs_html = '<div class="tweet-images">'
-        local_images = t.get('localImages') or []
-        for image_index, img in enumerate(t['images']):
-            local_img = local_images[image_index] if image_index < len(local_images) else ''
-            source = local_img or img.replace('name=small', 'name=orig').replace('name=medium', 'name=orig').replace('name=large', 'name=orig').replace('name=360x360', 'name=orig').replace('name=240x240', 'name=orig').replace('name=900x900', 'name=orig')
-            img_url = html.escape(source).replace('&amp;', '&')
-            imgs_html += f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img_url}" loading="lazy" referrerpolicy="no-referrer" alt="FC27 tweet image" /></a>'
-        imgs_html += '</div>'
-    else:
+    media_bits = []
+    local_images = t.get('localImages') or []
+    for image_index, img in enumerate(t.get('images') or []):
+        local_img = local_images[image_index] if image_index < len(local_images) else ''
+        img_url = html.escape(local_img or img).replace('&amp;', '&')
+        media_bits.append(f'<a href="{url}" target="_blank" rel="noopener noreferrer"><img src="{img_url}" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a>')
+
+    video = t.get('video') or {}
+    if video:
+        poster = html.escape(t.get('localVideoPoster') or video.get('poster') or '').replace('&amp;', '&')
+        kind_label = '动图 GIF' if video.get('kind') == 'animated_gif' else '视频'
+        duration = video.get('durationMs')
+        secs = ''
+        if isinstance(duration, (int, float)):
+            secs = '・' + str(round(duration / 1000)) + ' 秒'
+        if poster:
+            media_bits.append(f'<a class="video-poster" href="{url}" target="_blank" rel="noopener noreferrer"><span class="media-badge">{kind_label}</span><img src="{poster}" loading="lazy" referrerpolicy="no-referrer" alt="{kind_label}封面" /></a>')
+        media_bits.append(f'<div class="media-meta">{kind_label}{secs}　<a href="{url}" target="_blank" rel="noopener noreferrer">在原推中观看</a></div>')
+
+    card = t.get('card') or {}
+    if card:
+        card_img = html.escape(t.get('localCardImage') or card.get('image') or '').replace('&amp;', '&')
+        card_link = html.escape(card.get('url') or url)
+        card_title = html.escape(card.get('title') or '')
+        card_desc = html.escape(card.get('description') or '')
+        card_thumb = f'<img src="{card_img}" loading="lazy" referrerpolicy="no-referrer" alt="链接卡片缩略图" />' if card_img else ''
+        media_bits.append(f'<a class="link-card" href="{card_link}" target="_blank" rel="noopener noreferrer">{card_thumb}<div class="link-card-text"><strong>{card_title}</strong><span>{card_desc}</span></div></a>')
+
+    if media_bits:
+        imgs_html = '<div class="tweet-images">' + ''.join(media_bits) + '</div>'
+    elif t.get('mediaResolved') is False:
+        imgs_html = f'<div class="tweet-media-unknown">本条推文的媒体信息本轮未能解析，<strong>不代表原推没有配图</strong>。<a href="{url}" target="_blank" rel="noopener noreferrer">查看原推</a></div>'
+    elif t.get('hasVideo') or t.get('hasPhoto') or t.get('hasCard'):
+        imgs_html = f'<div class="tweet-media-unknown">原推含媒体（视频/图片/链接卡片），本轮未取到媒体地址。<a href="{url}" target="_blank" rel="noopener noreferrer">查看原推</a></div>'
+    elif t.get('text'):
         imgs_html = f'<div class="tweet-no-image"><a href="{url}" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>'
+    else:
+        imgs_html = ''
+
+    quoted = t.get('quoted') or {}
+    quoted_html = ''
+    if quoted.get('url'):
+        q_handle = html.escape(quoted.get('handle') or '')
+        q_text = html.escape((quoted.get('text') or '')[:200]).replace('\\n', '<br>')
+        q_link = html.escape(quoted.get('url') or '')
+        q_count = len(quoted.get('images') or [])
+        q_note = ('　被引用推文含 ' + str(q_count) + ' 张配图') if q_count else ''
+        quoted_html = f'<div class="quoted-tweet"><span class="quoted-label">引用推文 @{q_handle}{q_note}</span><div class="quoted-text">{q_text}</div><a href="{q_link}" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>'
     return f'''
     <article class="tweet-card" id="tweet-{idx}">
       <div class="tweet-header">
@@ -386,6 +455,7 @@ def render_tweet(t, idx):
       <div class="tweet-body-zh">{zh_text}</div>
       <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">{orig_text}</div></details>
       {imgs_html}
+      {quoted_html}
       <div class="tweet-footer">
         <a href="{url}" target="_blank" rel="noopener noreferrer" class="source-link">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -435,6 +505,21 @@ html_output = f'''<!DOCTYPE html>
   .tweet-original .orig-text {{ color: #71767b; font-size: 14px; margin-top: 8px; padding: 10px 12px; background: #0a0a0a; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }}
   .tweet-images {{ display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px; }}
   .tweet-images img {{ width: 100%; border-radius: 12px; border: 1px solid #2f3336; display: block; }}
+  .video-poster {{ position: relative; display: block; }}
+  .video-poster .media-badge {{ position: absolute; top: 10px; left: 10px; z-index: 2; background: rgba(0,0,0,0.72); color: #fff; font-size: 12px; padding: 3px 9px; border-radius: 999px; letter-spacing: 0.02em; }}
+  .media-meta {{ color: #71767b; font-size: 13px; padding: 2px 4px 4px; }}
+  .media-meta a {{ color: #1d9bf0; }}
+  .link-card {{ display: block; border: 1px solid #2f3336; border-radius: 12px; overflow: hidden; text-decoration: none; background: #0a0a0a; }}
+  .link-card img {{ width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }}
+  .link-card-text {{ padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }}
+  .link-card-text strong {{ color: #e7e9ea; font-size: 14px; font-weight: 600; }}
+  .link-card-text span {{ color: #71767b; font-size: 13px; }}
+  .tweet-media-unknown {{ margin-bottom: 12px; padding: 10px 14px; background: #0a0a0a; border: 1px dashed #6b7280; border-radius: 8px; color: #9aa0a6; font-size: 13px; }}
+  .tweet-media-unknown a {{ color: #1d9bf0; }}
+  .quoted-tweet {{ margin-bottom: 12px; padding: 10px 12px; border: 1px solid #2f3336; border-radius: 12px; background: #0a0a0a; }}
+  .quoted-label {{ display: block; color: #71767b; font-size: 12px; margin-bottom: 6px; }}
+  .quoted-text {{ color: #c9ccd1; font-size: 13px; line-height: 1.55; margin-bottom: 6px; white-space: pre-wrap; }}
+  .quoted-tweet a {{ color: #1d9bf0; font-size: 13px; }}
   .tweet-no-image {{ margin-bottom: 12px; padding: 10px 14px; background: #0a0a0a; border: 1px dashed #2f3336; border-radius: 8px; text-align: center; }}
   .tweet-no-image span {{ color: #71767b; font-size: 13px; }}
   .tweet-footer {{ display: flex; justify-content: flex-start; padding-top: 8px; border-top: 1px solid #2f3336; }}
@@ -495,6 +580,7 @@ console.log(`New tweets (after cross-exec dedup): ${newTweetsRaw.length}`);
 console.log(`Content-deduped clusters: ${clusters.length}`);
 console.log(`Final tweets in report: ${reportTweetsWithAssets.length}`);
 console.log(`Original images cached: ${cachedImageCount}/${requestedImageCount}`);
+console.log(`Media summary: videos=${videoCount} cards=${cardCount} unresolved=${unresolvedMediaCount}`);
 if (cachedImageCount < requestedImageCount) console.error('WARNING: 部分原图未保存，本轮应按 partial 提交并记录缺失数量。');
 console.log(`Seen tweets total: ${seenData.tweets.length}`);
 console.log(`Report: ${reportFile}`);

@@ -1,0 +1,53 @@
+{
+  "module": "evolution",
+  "date": "2026-09-16",
+  "runId": "7c887658-d1d7-41f8-93fb-59fe396754af",
+  "status": "partial",
+  "startedAt": "2026-09-16T05:28:18.284Z",
+  "deadlineAt": "2026-09-16T05:43:18.284Z",
+  "reportPath": "reports/daily/2026-09-16/evolution.html",
+  "previousAttempt": "automation/runs/2026-09-16/evolution/attempts/a0101bcd-735b-45a6-b3f5-68fd8b15ee8b",
+  "completedAt": "2026-09-16T05:31:34.837Z",
+  "evidence": {
+    "date": "2026-09-16",
+    "dataCutoff": "2026-09-16 13:32 +08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-16T13:28:30+08:00",
+        "note": "热门进化卡主来源；本轮实际打开并提取 .popular-cards-wrapper 下 460 个卡片节点，去重后 456 张有效进化卡；页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，正文 47370 字符，未出现 No evolutions found"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-16T13:29:22+08:00",
+        "note": "FC27 进化总览（All 5：Pathway Evolutions 2 / Training Camp 1，Active 2 / Expired 0）；逐条取得本日 5 个进化的费用（均为 FREE）、UNLOCK / EXPIRES 有效期与 Player Requirements 前置条件"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions/5/intro-to-evolutions",
+        "openedAt": "2026-09-16T13:29:38+08:00",
+        "note": "Intro to Evolutions 详情页；核验 LEVELS 3 / CHALLENGES 3、Free、UNLOCK 12 Months / EXPIRES 12 Months、REPEATABLE，以及 Requirements 明细与三级挑战内容"
+      },
+      {
+        "url": "https://www.futbin.com/27/player/3955_5/nicolo-savona",
+        "openedAt": "2026-09-16T13:30:22+08:00",
+        "note": "评分口径核验页；确认榜单显示的 Rating 为进化后 OVR（Savona 基础卡 75 → 进化后 79），且进化费用在卡面上标注为 Free"
+      }
+    ],
+    "missingItems": [
+      "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长（多数进化 12 MONTHS，Repeat Delivery 为 1 MONTHS），FUTBIN 未提供绝对到期日期，故无法换算成具体日期。",
+      "Intro to Training Camp EVOs 与 Intro to Pathway Evolutions 未给出逐项数值升级表（Training Camp 示例球员进化前后卡面完全一致；Pathway 页面仅展示 PATH A 的 PlayStyle 选项），两者的具体属性收益缺失。",
+      "中文译名缺失：来源页只有英文球员名与俱乐部信息，本轮未找到权威中文译名来源，故未擅自翻译。",
+      "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选，候选范围以 /27/popular/evolutions 榜单本身为准。",
+      "价格上涨/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出任何涨跌或精确收益预测。"
+    ],
+    "notes": [
+      "本轮为故障修复后的当日重跑（runId 7c887658-d1d7-41f8-93fb-59fe396754af），浏览器通道恢复正常；/27/popular/evolutions 实采 460 个卡片节点，去重后入库 456 张进化卡。",
+      "评分口径：榜单 Rating 列显示的是「进化后」OVR。已用 Savona 球员页交叉核验：基础卡 75 OVR，经 Intro to Evolutions（前置 Overall Max 75）后为 79 OVR，与榜单一致。阅读表格时请勿把该 Rating 当作基础卡评分。",
+      "费用口径：本日 5 个进化在 FUTBIN 上均标注 FREE（免费），费用列即来源于此。榜单卡片上的 🔥 数字（如 Savona 1635）是热度/使用计数，不是价格，已单独记为 popularityCount，不参与费用判断。",
+      "本节只写「可证实的卡面事实」与基于来源页明示内容的路线整理；不输出无依据的精确收益预测。开服前价格属估算口径，不作为投资依据。"
+    ]
+  },
+  "sha256": "12b412109209f2369451ce05f4d319202e7dbc02f79878b443309bc215b7924a",
+  "bytes": 223685,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-16/evolution/report.html"
+}
