@@ -1,0 +1,80 @@
+{
+ "date": "2026-09-17",
+ "module": "market",
+ "runId": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+ "collectedAt": "2026-09-17T03:24:00+08:00",
+ "channel": "web-access CDP Proxy :3456 -> 用户日常 Chrome（check-deps exit 0，Chrome port 9222）",
+ "sources": [
+  {
+   "url": "https://www.futbin.com/27/players",
+   "openedAt": "2026-09-17T03:18:26+08:00",
+   "dataCutoff": null,
+   "note": "返回 FUTBIN 自有 403 拦截页，0 行"
+  },
+  {
+   "url": "https://www.futbin.com/",
+   "openedAt": "2026-09-17T03:19:05+08:00",
+   "dataCutoff": null,
+   "note": "正常，建立同源会话（同源对照基准）"
+  },
+  {
+   "url": "https://www.futbin.com/27/players",
+   "openedAt": "2026-09-17T03:19:35+08:00",
+   "dataCutoff": null,
+   "note": "会话建立后重试，仍 403 拦截页"
+  },
+  {
+   "url": "https://www.futbin.com/27/popular",
+   "openedAt": "2026-09-17T03:20:00+08:00",
+   "dataCutoff": "2026-09-17T03:22:54+08:00",
+   "note": "正常；250 张唯一卡，Console 有效价 193 / PC 有效价 197（价格 ≥1000 coins 记有效），含 FUTBIN 热度计数"
+  },
+  {
+   "url": "https://www.futbin.com/27/popular/evolutions",
+   "openedAt": "2026-09-17T03:21:00+08:00",
+   "dataCutoff": "2026-09-17T03:22:10+08:00",
+   "note": "正常；500 张唯一进化卡（含进化名与热度计数），页面未渲染平台价格单元格"
+  },
+  {
+   "url": "https://www.futbin.com/27/players",
+   "openedAt": "2026-09-17T03:22:40+08:00",
+   "dataCutoff": null,
+   "note": "第二次重试，仍 403"
+  },
+  {
+   "url": "https://www.futbin.com/27/popular",
+   "openedAt": "2026-09-17T03:22:50+08:00",
+   "dataCutoff": null,
+   "note": "补齐热度计数 250/250"
+  },
+  {
+   "url": "https://www.futbin.com/27/players",
+   "openedAt": "2026-09-17T03:24:00+08:00",
+   "dataCutoff": null,
+   "note": "60 秒退避后第三次重试，仍 403；停止重试"
+  }
+ ],
+ "outputs": [
+  "reports/daily/2026-09-17/market.html",
+  "reports/daily/2026-09-17/market-scan.html"
+ ],
+ "dataFile": "automation/runs/2026-09-17/market/market.json",
+ "workFiles": [
+  "automation/runs/2026-09-17/market/work/popular.json",
+  "automation/runs/2026-09-17/market/work/popular-evolutions.json"
+ ],
+ "missing": [
+  "概览·本周活动卡（Promo）与本周周黑（TOTW）：未打开对应来源页，如实空状态。",
+  "概览·价格分层四档 + 扫描·价格维度五档：/27/players 三次间隔实测（含会话建立与 60 秒退避重试）均被 FUTBIN 403 拦截页拒绝，如实空状态（不等于该档无卡）。",
+  "进化卡平台价：/27/popular/evolutions 未渲染价格单元格，如实为空。",
+  "部分卡牌平台价为 0（FUTBIN 未更新），按占位值处理，不以估值顶替。"
+ ],
+ "integrity": {
+  "playersTotal": 750,
+  "psValid": 193,
+  "pcValid": 197,
+  "platformField": "console+pc（psPrice=Console / pcPrice=PC 分别落库）",
+  "dayOverDay": "未计算：昨日两平台价基线全为 0，无有效基线；FC27 launchDate=2026-09-25 未到",
+  "fc26DataUsed": false
+ }
+}

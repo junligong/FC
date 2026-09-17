@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-17",
+  "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
+  "publicUrl": "https://fc27-site.app.workbuddy.host/",
+  "published": true,
+  "reason": "已通过 WorkBuddy 站点发布能力（workbuddy_sites_deploy，updateExistingApp，entryHtml=index.html）发布 daily-merged/ 并复核：公网首页与本地文件逐字节一致（SHA-256 d0a490c3…bff04，11,781,323 B），分享链接不变 https://fc27-site.app.workbuddy.host/；verify-publication.mjs 四检全过 exit 0",
+  "publicVerification": {
+    "verified": true,
+    "checks": {
+      "matchesLocal": true,
+      "hasArchiveLink": true,
+      "hasDateAnchor": true,
+      "completeHtml": true
+    },
+    "localSha256": "d0a490c3b27e50cc65f7558675a5b32932b5752478a487c1e93865c0713bff04",
+    "remoteSha256": "d0a490c3b27e50cc65f7558675a5b32932b5752478a487c1e93865c0713bff04",
+    "bytes": 11781323,
+    "checkedAt": "2026-09-16T19:48:58.997Z"
+  },
+  "unattendedPublishingVerified": false,
+  "mergeResult": "success",
+  "publishResult": "delegated",
+  "modules": {
+    "football": "partial",
+    "news": "partial",
+    "market": "partial",
+    "evolution": "partial",
+    "icons-heroes": "failed"
+  },
+  "runIds": {
+    "football": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
+    "news": "a1cb95c8-11f8-4614-b3a6-d1cd877555ac",
+    "market": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+    "evolution": "2ee3c6af-388a-4020-9586-b63d58bd2f2c",
+    "icons-heroes": "adb415d7-98d7-4c64-9ded-a186c31d1ed5"
+  }
+}

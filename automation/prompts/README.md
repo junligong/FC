@@ -1,6 +1,6 @@
 # 调度器提示词入口
 
-本目录中的六份文件是 WorkBuddy 任务的完整提示词，覆盖五个内容任务和一个汇总发布任务：
+本目录中的七份文件是 WorkBuddy 任务的完整提示词，覆盖五个内容任务、一个汇总发布任务和一个下游内容生产任务：
 
 - `football.md`：足球日报 —— 逐联赛核验积分榜 / 射手榜 / 助攻榜与足球资讯。
 - `news.md`：FC27 资讯采集 —— 从 `apps/news/sources.txt` 的 X 账号采集近 24 小时资讯；**采集固定四步**（DOM 抽取 → syndication 接口补媒体 → 生成报告 → 校验提交），媒体不得从 DOM 抠取，带视频的推文不得整条丢弃。
@@ -8,6 +8,7 @@
 - `icons-heroes.md`：FC27 传奇/英雄卡监控 —— 监控全部传奇卡（Icon）与英雄卡（Hero）的逐日价格台账，双平台口径，产出 `reports/daily/D/icons-heroes.html`，挂「传奇/英雄专栏」。
 - `evolution.md`：FC27 进化专栏 —— 热门进化卡与前置条件核验。
 - `daily.md`：汇总链接 —— 纯本地等待快照、隔离合并并发布站点。
+- `douyin.md`：抖音素材 —— 日报发布后把线上情报台各栏目**截成分析长图**并写出配套**视频讲解稿**（`apps/douyin/capture-shots.py`），供导入剪映出片；不参与日报合并发布，也不改动 `reports/daily/` 与站点产物。
 
 WorkBuddy 定时任务只保存 `../task-definitions.json` 中对应的 `bootstrapPrompt`。启动后先读取根 `AGENTS.md`，再完整读取对应 `promptFile`；不得把业务规则复制回 WorkBuddy 或另一份配置。修改任务要求时只改本目录的完整提示词。
 

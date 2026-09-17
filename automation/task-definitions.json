@@ -38,6 +38,12 @@
       "name": "汇总链接",
       "promptFile": "automation/prompts/daily.md",
       "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/daily.md；后者是唯一完整业务提示词。只按本地文件执行，不使用 WorkBuddy 中的旧规则副本。"
+    },
+    {
+      "id": "douyin",
+      "name": "抖音素材",
+      "promptFile": "automation/prompts/douyin.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/douyin.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、agent-browser、IAB 或新 profile。本任务在日报发布后把线上情报台各栏目截成分析长图并写出配套视频讲解稿，供导入剪映出片；不参与日报合并发布，也不得改动 reports/daily 与站点产物。"
     }
   ]
 }

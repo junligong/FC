@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-17",
+  "runId": "362bfbe5-768c-4c4b-a576-c3a956ec7458",
+  "status": "partial",
+  "generatedAt": "2026-09-17T03:45:54+08:00",
+  "dataCutoff": "2026-09-17 03:45 +08:00",
+  "browserChannel": {
+    "skill": "web-access",
+    "precheck": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs → exit 0（node ok / browser: ok (Chrome, port 9222) / proxy: ready (Chrome)）",
+    "profile": "用户日常 Chrome，复用登录态；未新建 profile、未使用 IAB/临时浏览器"
+  },
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-17T03:44:30+08:00",
+      "dataCutoff": "2026-09-17 03:45 +08:00",
+      "note": "热门进化卡主来源。页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」。div.popular-cards-wrapper > div.column 共 500 个卡片节点；滚动至底部（body scrollHeight 25882）后节点数不变，页面无分页控件、无「加载更多」入口。提取 rank/name/rating/pos/altPos/热度计数/估值/六维/PAC 等属性/球员 URL/进化 URL。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions",
+      "openedAt": "2026-09-17T03:45:10+08:00",
+      "dataCutoff": "2026-09-17 03:45 +08:00",
+      "note": "FC27 进化总览。标签计数 All 14 / Evolutions 8 / Pathway Evolutions 4 / Training Camp 2。逐条提取 14 个进化的名称、详情 URL、类型标签、UNLOCK / EXPIRES 时长、费用、REPEATABLE 标记、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles、PATH 分支）。14 个进化费用均为 FREE。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions/expired",
+      "openedAt": "2026-09-17T03:45:30+08:00",
+      "dataCutoff": "2026-09-17 03:45 +08:00",
+      "note": "已过期进化核验：页面 div.evolutions-overview-wrapper 节点数为 0，即本轮 14 个进化全部处于有效期内。"
+    }
+  ],
+  "counts": {
+    "listCardNodes": 500,
+    "evolutions": 500,
+    "evolutionPaths": 14,
+    "routes": 14,
+    "byEvolutionName": {
+      "Striker Glow Up": 70,
+      "Intro to Training Camp EVOs": 16,
+      "Believe": 38,
+      "Intro to Evolutions": 71,
+      "Winger Glow Up": 33,
+      "Repeat Delivery": 88,
+      "Intro to Pathway Evolutions": 39,
+      "Shooting Practice": 49,
+      "Intro to Repeatable Evolutions": 51,
+      "Pinged Pass": 7,
+      "Midfield Polish": 7,
+      "Relentless": 5,
+      "Tactical Ascent": 21,
+      "Creative or Composed": 5
+    }
+  },
+  "verification": {
+    "dedupeKey": "球员 URL + 进化名称（同一球员的不同卡版本在 FUTBIN 上是独立条目，500 个球员 URL 全部唯一）",
+    "ratingSemantics": "榜单 Rating 为「进化后」OVR，非同基础卡评分；已用 Intro to Evolutions（基础 Overall Max 75 + 34 → 榜单 79）交叉核对口径。",
+    "costSemantics": "费用来自 /27/evolutions 卡片上的 FREE 标记；榜单卡片的数字为热度/使用计数（popularityCount），不计入费用。",
+    "expirySemantics": "FUTBIN 只提供相对时长（UNLOCK / EXPIRES），无绝对到期日期，未做换算。",
+    "distinctFromPreviousDay": "本轮 14 条进化路径，较 2026-09-16 的 5 条新增 9 条；未引用任何 FC26 或旧日期数据。",
+    "statusAlignment": "evolution.json 与证据文件状态均写 partial：run-state finish 在 evidence.missing 非空时会把 success 降级为 partial，故直接提交 partial，避免报告徽标与权威状态不一致。"
+  },
+  "outputs": {
+    "json": "automation/runs/2026-09-17/evolution/evolution.json",
+    "html": "reports/daily/2026-09-17/evolution.html",
+    "htmlBytes": 280470
+  },
+  "missing": [
+    "到期时间只有相对口径（UNLOCK / EXPIRES，入门系列 12 MONTHS、其余 1 MONTHS），FUTBIN 未提供绝对到期日期，无法换算成具体日期。",
+    "中文译名缺失：来源页只有英文球员名与俱乐部信息，未找到权威中文译名来源，未擅自翻译。",
+    "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 具体内容；本轮未逐条打开 14 个详情页，steps 字段按页面可得事实证明归纳。",
+    "Intro to Training Camp EVOs（仅 Role「Fullback++」）、Pinged Pass、Relentless、Creative or Composed、Tactical Ascent 等未给出逐项属性数值升级表。",
+    "候选球员口径：未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单为准。",
+    "榜单条数上限未知：页面渲染 500 条且无「共 N 条」计数或分页控件，无法排除服务端截断。",
+    "价格/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出涨跌或精确收益预测。"
+  ]
+}

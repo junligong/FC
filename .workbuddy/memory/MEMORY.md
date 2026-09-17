@@ -7,7 +7,7 @@
 ## FUTBIN 平台口径（实机核验；市场 + 传奇英雄必须遵守）
 - 只有 Console（PS/Xbox 合并）与 PC 两档；每行**同时**含 `platform-ps-only` 与 `platform-pc-only` 单元格，一次打开即得两平台价。
 - 平台按钮（`form.desktop-platform-change-form`）是**纯前端显隐切换**：不刷新、不改 URL、不重取数。`ps_price`/`pc_price`/`rarity`/`version`/`page` 参数全无效；Icon/Hero 名单须用页面筛选 UI 或全量列表比对台账。
-- `td.table-item-score` 是开服前估值列 IS，非成交价；开服前两平台价均为 0。
+- `td.table-item-score` 是开服前估值列 IS，非成交价。**「开服前两平台价均为 0」不是恒定前提**（2026-09-17 实测已被推翻）：FUTBIN 会在正式开服前开始对部分卡滚动更新平台价，此时 `market.json` 的 `priceBasis` 变为 `partial-live`（当日 750 人中 Console 有效价 193、PC 197；仍为 0 的按占位处理、页面标「估值」）。**每次以当日 `priceBasis` 为准**，不要照抄「均为 0」；无论哪种口径都仍不计算日环比/累计涨跌（昨日基线全 0 时无可比值）。
 - 落库：市场 `players[].psPrice`/`pcPrice`；传奇英雄逐卡 `platforms.console`/`platforms.pc`；顶层 `platform='console+pc'`。价格 <1000 视为占位。
 - 静态路线不存在（curl 403），必须走 CDP；`?rarity=icon` 首访常命中 Cloudflare，重试等 8–12 秒。
 
@@ -30,3 +30,11 @@
 
 ## 工程约定与踩坑
 红涨绿跌（`--up:#ff6259` `--dn:#4ec08a`）。脚本定位项目根锚点是 `shared/config/project.json`（`FC_PROJECT_ROOT` 可覆盖），不能用 `AGENTS.md`。新增任务同改 `project.json`、`task-definitions.json`、`prompts/README.md`。**同一文件禁止并行编辑**（互相覆盖且回报成功，症状 `ReferenceError`；同文件串行 + Grep 复核）——2026-09-16 二次踩中：`render-market-overview.mjs` 丢 `const PTOTAL` 致概览渲染抛错，平台提示又把「两平台全 0」误判为「均已采集」，已修为三态提示 + 回归用例。改生成器后跑 `automation/{execution,regression,verify-publication,news-media}.test.mjs`（36 例全绿）。Bash `grep` 对中文多分支正则偶发失配，改用 Grep 工具。
+
+## run-state.mjs 三条硬约束（2026-09-17 固化，6 个任务通用）
+1. `evidence.missing` 非空时 `finish success` 被自动降级为 `partial`（run-state.mjs:60）→ 直接提交 partial 并同步产物 JSON 的 `status`，否则报告徽标与权威状态矛盾。
+2. `evidence.sources[].openedAt` 必须 ≥ 本轮 `startedAt`，否则「来源记录不是本轮实际打开」；`begin --rerun` 后必须**在本轮内重新打开来源页**。
+3. `begin --rerun` 把 `automation/runs/D/<module>/` 内容（含 `work/`、`evidence.json`、`report.html`）整体 rename 进 `attempts/<旧runId>/`，重跑前从 attempts 拷回工作脚本。
+
+## 进化专栏（evolution）采集口径（2026-09-17）
+链路 `extract-cards.js`（`/27/popular/evolutions`，`div.popular-cards-wrapper > div.column`）→ `extract-evolutions.js`（`/27/evolutions`，`div.evolutions-overview-wrapper` 含 Requirements+Total Upgrades，不必逐条开详情页）→ `build-json.mjs` → `render-evolution.mjs`，脚本可从 `automation/runs/2026-09-17/evolution/work/` 拷。**去重按 `球员 URL + 进化名称`，不按球员名**（同名不同卡版本是独立条目）。榜单稳定渲染 500 条、无分页，是否截断未证实。`/27/evolutions/expired` 可判过期数。FUTBIN 站点经验见 `~/.workbuddy/skills/web-access/references/site-patterns/futbin.com.md`。

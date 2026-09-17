@@ -1,0 +1,116 @@
+{
+  "module": "icons-heroes",
+  "date": "2026-09-17",
+  "runId": "adb415d7-98d7-4c64-9ded-a186c31d1ed5",
+  "status": "failed",
+  "startedAt": "2026-09-16T19:00:30.484Z",
+  "deadlineAt": "2026-09-16T19:15:30.484Z",
+  "reportPath": "reports/daily/2026-09-17/icons-heroes.html",
+  "completedAt": "2026-09-16T19:04:19.072Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "module": "icons-heroes",
+    "status": "failed",
+    "channel": {
+      "tool": "web-access (CDP Proxy :3456 → 用户日常 Chrome, port 9222)",
+      "checkDeps": "exit 0 — browser: ok (Chrome, port 9222) [config.env 偏好]",
+      "note": "浏览器通道本身可用；失败源于 FUTBIN 来源侧拦截，非通道故障。"
+    },
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T19:01:20Z",
+        "dataCutoff": null,
+        "result": "blocked",
+        "observedText": "Error - 403. Your client does not have permission to access this page at this time.",
+        "note": "传奇/英雄名单与 IS 估值的主来源；直接 POST /new 打开即 403，标题为空。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T19:02:10Z",
+        "result": "blocked",
+        "note": "先访问首页建立会话后重试同 URL，仍 403。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-16T19:03:05Z",
+        "result": "blocked",
+        "note": "改用站内 /click 点击导航栏 Players 链接（带 referer 的自然导航），仍 403。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1",
+        "openedAt": "2026-09-16T19:04:10Z",
+        "result": "blocked",
+        "note": "带分页参数重试，仍 403。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?rarity=icon",
+        "openedAt": "2026-09-16T19:05:20Z",
+        "result": "blocked",
+        "note": "新建独立标签页 + 等待 14 秒重试，仍 403。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players/evolutions",
+        "openedAt": "2026-09-16T19:06:40Z",
+        "result": "blocked",
+        "note": "同目录下子路径，同样 403。"
+      },
+      {
+        "url": "https://www.futbin.com/26/players",
+        "openedAt": "2026-09-16T19:11:30Z",
+        "result": "blocked",
+        "note": "对照组：FC26 列表页同样 403，说明拦截作用于 /players 目录整体，而非 FC27 专属。"
+      },
+      {
+        "url": "https://www.futbin.com/",
+        "openedAt": "2026-09-16T19:02:00Z",
+        "result": "ok",
+        "observed": {
+          "title": "EA FC 27 Ultimate Team Prices, Squad Builder, Draft and Players Database | FUTBIN",
+          "htmlLen": 335630
+        },
+        "note": "对照组：站点根路径正常渲染，证明通道与站点可达。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-16T19:06:10Z",
+        "result": "ok",
+        "observed": {
+          "title": "EA FC 27 Popular Players | FUTBIN",
+          "rows": 0
+        },
+        "note": "对照组：非 /players 目录页面正常渲染（该页为热门球员，非传奇名单，不能替代）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/player/21487/maradona",
+        "openedAt": "2026-09-16T19:13:10Z",
+        "result": "ok",
+        "observed": {
+          "title": "Maradona Icon EA FC 27 - 95 - Rating and Price | FUTBIN",
+          "psCells": 11,
+          "pcCells": 11
+        },
+        "note": "对照组：球员详情页可达且同时含 Console/PC 单元格；但详情页不含全量名单与 IS 估值列，无法替代列表页，且逐卡 131 次并不能在预算内完成。"
+      }
+    ],
+    "dataCutoff": null,
+    "missingItems": [
+      "2026-09-17 全量基础传奇卡（Icon，台账 131 张）名单与 IS 估值未取得 —— 来源列表页 FUTBIN /players 全路径返回 403。",
+      "2026-09-17 英雄卡（Hero）名单与价格未取得 —— 同一被拦来源。",
+      "两个平台（Console / PC）价格均未采集：开服日 launchDate=2026-09-25 之前两平台价本就为 0，今日连可用于记录进度的名单与估值列也未取得。",
+      "未写入 2026-09-17 逐日快照 —— 契约禁止用旧日期数据冒充当日；record-icons-daily.mjs 以昨日 base-icons.json（generatedAt 2026-09-16T02:59:17Z）为输入会生成虚假当日快照，故主动跳过。"
+    ],
+    "notes": [
+      "判定：FUTBIN 对 /players 目录返回自有 403 拦截页，非 Cloudflare 挑战页，非通道故障；同源对照（/、/27/popular、球员详情页）均正常，可确证是来源侧对该目录的访问拦截（疑似 IP/会话级反爬触发）。",
+      "合规处置：未回退任何禁止入口，未使用 FC26 或历史日期数据填充，未计算日环比与累计涨跌。",
+      "渲染件未发布：按契约先渲染 reports/daily/2026-09-17/icons-heroes.html 后发现两处不符合「如实」要求，已移存至本运行 work/ 目录而不作为当日产物提交 —— (1) 渲染器 today 回退到最近快照，页面无任何「本日无新采集」标识，会把 2026-09-16 价格呈现为 2026-09-17 数据；(2) 英雄区块由 heroes/data 递归扫描读入 heroes/data/prices/fc26/base-heroes.json（93 张 FC26 英雄卡）并渲染为「英雄卡台账」，属跨代数据混入。",
+      "缺陷（非本轮引入，2026-09-16 版已存在）：reports/daily/2026-09-16/icons-heroes.html 同样渲染了这 93 张 FC26 英雄卡（「英雄卡全量 93 张」），线上「传奇/英雄监控」子标签的英雄区块自建版起即含 FC26 数据，建议单独修正渲染器的英雄数据源约束。",
+      "下次执行建议：优先复跑 https://www.futbin.com/27/players（列表页 403 多为时限性，2026-09-16 08:17Z 曾正常返回 30 行 × 双平台单元格）；若持续 403，应延长退避间隔而非密集重试，密集重试可能加重拦截。"
+    ],
+    "artifacts": {
+      "renderedNotShipped": "automation/runs/2026-09-17/icons-heroes/work/icons-heroes.rendered-notShipped.html",
+      "snapshotWritten": false,
+      "reportReleased": false
+    }
+  }
+}

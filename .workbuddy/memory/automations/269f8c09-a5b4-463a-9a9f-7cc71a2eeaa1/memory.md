@@ -44,3 +44,9 @@
 - 本轮**没有**重跑 `coordinate.mjs`、没有重新发布：当日 09-16 站点已于 16:27 发布并核验通过，本轮改动不影响报告数据；09-16 市场概览与修好的渲染器仅差平台提示一句话，按快照不可变约定留待次日生效。
 - `verify-publication.mjs 2026-09-16` 复核 **exit 0**：四检全过，本地=线上 sha `8b9c6b002386…`，26,497,051 B，链接仍为 `https://fc27-site.app.workbuddy.host/`。
 - 经验：改生成器后**务必先跑回归**——本次若不跑，次日市场采集会以一个必崩的渲染器上线。另：bash `grep` 对含中文的多分支正则会失配（曾误判 `AGENTS.md` 缺章节），必须用 Grep 工具复核。
+
+## 2026-09-17（常规每日执行，成功）
+- 日期 D=2026-09-17（Asia/Shanghai）。流程：`coordinate.mjs 2026-09-17` → `merge=success`、`failedPanels=0`、index sha `d0a490c3…bff04`；`workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html）发布 daily-merged/；`verify-publication.mjs` exit 0 四检全过，本地=线上 11,781,323 B，链接不变 https://fc27-site.app.workbuddy.host/。
+- 模块状态：football/news/market/evolution 均 partial（有真实快照）；icons-heroes **failed**（FUTBIN `/27/players` 全路径 403，含 /26/players 对照、会话建立、/click 自然导航、带 referer、分页参数、独立标签页 14 秒退避均被拦；对照 / 与 /27/popular、球员详情页正常 → 判定来源侧拦截非通道故障）。该模块按契约如实空状态、未用旧数据填充、未写逐日快照（record-icons-daily.mjs 以昨日 base-icons.json 为输入会生成虚假当日快照，主动跳过）。
+- 注意事项：icons-heroes 报告还暴露出渲染器既有缺陷（英雄区块会读 heroes/data/prices/fc26/ 混入 93 张 FC26 英雄卡；today 回退最近快照且无「本日无新采集」标识），建议单独修正渲染器英雄数据源约束——与本次发布无关，属遗留项。
+- 修正：`publish-status-2026-09-17.json` 的 `reason` 原为脚本既有写法「发布触发方式未确认」，已改为明确记录本轮实际经 workbuddy_sites_deploy 发布并复核。

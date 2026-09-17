@@ -14,3 +14,12 @@
 - 自检：`node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs` → exit 0 才继续。FUTBIN 拒绝 curl/WebFetch（403），必须走 CDP。
 - 同日重跑用 `node automation/run-state.mjs begin market D --rerun`；`finish` 硬上限 `startedAt + 20 分钟`。
 - 2026-09-16 13:30 重跑结果：提交 `partial`，三份产物齐全；传奇快照 131 张 / 有效价 97 / `listing-estimate`。实测开服前 `pc_price` 三档筛选页返回 0 行，是筛选失效而非「无卡」。
+
+## 2026-09-17 03:00 调度（runId 5ffd24f4）
+- 状态：**partial**（03:28:58 提交，快照 SHA-256 b56ed319…）。
+- 通道：check-deps exit 0（Chrome 9222），CDP 正常。
+- 关键发现：**FUTBIN 已开始滚动更新 FC27 双平台实价**——/27/popular 250 张唯一卡中 Console 有效价 193 / PC 197（昨日全为 0）。明日基线已存在，可评估是否恢复日环比（注意 launchDate=2026-09-25 未到，契约措辞需再核）。
+- 采集：/27/popular（250 卡，双平台价+热度计数 .xxs-font.bold）、/27/popular/evolutions（500 卡，含 .og-pill 进化名，无价格单元格）均成功；**/27/players 三次间隔重试（03:18/03:22/03:24，含建会话+60s 退避）均 403 拦截页**，价格分层/价格维度如实空状态。
+- 落库：market.json players[] 750 条（250 热门 + 500 进化，URL 去重），psPrice/pcPrice 分开，platform=console+pc；priceBasis=partial-live。
+- 踩坑：① market.json 组装时漏写 overview 键导致概览全空（已补）；② evidence/market.json 的 openedAt 误写成 2026-09-16T19:xx+08:00（=UTC 上午，早于 startedAt 被 finish 拒收「复用旧证据」），正确写法 2026-09-17T03:xx+08:00。
+- 产物：reports/daily/2026-09-17/market.html + market-scan.html；evidence 同目录。

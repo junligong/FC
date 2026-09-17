@@ -1,0 +1,124 @@
+{
+  "date": "2026-09-17",
+  "site": "https://fc27-site.app.workbuddy.host/index.html",
+  "capturedAt": "2026-09-17T06:02:29+0800",
+  "columns": {
+    "home": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/00-今日总览.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/00-今日总览.png",
+      "full_h": 132871,
+      "captured_h": 1400,
+      "truncated": true,
+      "size": [
+        3240,
+        2800
+      ],
+      "screens": 2
+    },
+    "football": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/01-足球动态.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/01-足球动态.png",
+      "full_h": 1248,
+      "captured_h": 1248,
+      "truncated": false,
+      "size": [
+        3240,
+        2477
+      ],
+      "screens": 2
+    },
+    "news": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/02-FC27资讯.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/02-FC27资讯.png",
+      "full_h": 24520,
+      "captured_h": 7000,
+      "truncated": true,
+      "size": [
+        3240,
+        14000
+      ],
+      "screens": 8
+    },
+    "market-ov": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/03-市场概览.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/03-市场概览.png",
+      "full_h": 4048,
+      "captured_h": 4048,
+      "truncated": false,
+      "size": [
+        3240,
+        8048
+      ],
+      "screens": 5
+    },
+    "market-sc": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/04-市场扫描.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/04-市场扫描.png",
+      "full_h": 30020,
+      "captured_h": 7000,
+      "truncated": true,
+      "size": [
+        3240,
+        14000
+      ],
+      "screens": 8
+    },
+    "evolution": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/05-进化专栏.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/05-进化专栏.png",
+      "full_h": 32219,
+      "captured_h": 7000,
+      "truncated": true,
+      "size": [
+        3240,
+        14000
+      ],
+      "screens": 8
+    },
+    "legend-mo": {
+      "status": "missing_subtab",
+      "subid": "monitor"
+    },
+    "legend-re": {
+      "status": "ok",
+      "file": "deliverables/douyin/2026-09-17/shots/07-传奇卡研究.png",
+      "preview": "deliverables/douyin/2026-09-17/shots/preview/07-传奇卡研究.png",
+      "full_h": 13138,
+      "captured_h": 7000,
+      "truncated": true,
+      "size": [
+        3240,
+        14000
+      ],
+      "screens": 8
+    }
+  },
+  "notes": {
+    "channel": "web-access CDP Proxy :3456 → 用户日常 Chrome(9222)；运行前 check-deps.mjs exit 0（browser: ok）。未使用任何禁止通道。",
+    "legend_mo_missing": {
+      "column": "06-传奇英雄监控",
+      "status": "missing_subtab",
+      "subid": "monitor",
+      "attemptedSelector": "#view-legend .subtab[data-subid=\"monitor\"]",
+      "attemptedUrl": "https://fc27-site.app.workbuddy.host/index.html",
+      "attemptedAt": "2026-09-17T06:02:20+0800",
+      "observed": "该子标签在当日站点 DOM 中不存在：#view-legend 下只有一个「传奇卡研究」子标签（data-subid=\"research\"）。实测 daily-merged/index.html 中字符串「传奇英雄监控」命中 0 次、「data-subid=\"monitor\"」命中 0 次。",
+      "rootCause": "上游「FC·传奇英雄监控」任务本轮 status=failed（runId adb415d7-98d7-4c64-9ded-a186c31d1ed5）：FUTBIN /27/players 目录连续 403 拦截（同源对照 / 与 /27/popular 正常渲染），未产出 reports/daily/2026-09-17/icons-heroes.html，因此 merge_daily_report.mjs 未挂载 monitor 子面板。",
+      "notAccessFailure": "非浏览器通道故障（controls：同轮本脚本另外 7 个栏目全部截图成功）。",
+      "noBackfill": "未用旧日期截图或 FC26 来源填充该栏目。"
+    },
+    "sideObservations": [
+      "首页「传奇/英雄专栏」卡片徽标显示「当日已收录」，与当日实际（监控子面板缺失）不一致，疑为 apps/portal/merge_daily_report.mjs:176 在 legendSubs[0] 为 research 时把 panelStates 固定为 ok 所致；本任务未改站点产物。",
+      "reports/daily/2026-09-17/football.html 的 <title> 为「足球日报 - 2026年9月1日」，与页内数据截止 2026年9月17日 不一致。",
+      "market-scan.html 顶部静态提示仍写「开服前两个平台价均为 0」，而本轮 market.json priceBasis=partial-live（750 人中 Console 有效价 193、PC 197），静态文案与当日数据不一致。",
+      "足球动态图落在默认「新闻」子标签（英超 4 条），积分榜/射手榜/助攻榜三个子标签未入图。"
+    ],
+    "truncationNote": "00/02/04/05/07 为限高截断（captured_h 见各栏目 max，full_h 为真实高度）；01/03 为完整截取。"
+  }
+}

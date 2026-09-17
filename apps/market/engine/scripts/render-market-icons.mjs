@@ -125,7 +125,10 @@ ${dots}${labels}</svg></div>`;
 
 export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   const days = snapshots.map(s => s.date);
+  // 当日快照优先；缺失时仅回退最近快照用于台账展示，但必须显式标注「本日无新采集」，
+  // 不得把历史快照的价格冒充当日数据（todayIsCurrent=false 时页面出现 STALE 徽标与缺失说明）。
   const today = snapshots.find(s => s.date === dateStr) || snapshots[snapshots.length - 1] || null;
+  const todayIsCurrent = Boolean(today && today.date === dateStr);
   // 历史序列：以日期升序，取当日及之前（未来日期不参与“今日”计算）
   const history = snapshots.filter(s => !isDate(dateStr) || s.date <= dateStr);
   const prev = history.length >= 2 ? history[history.length - 2] : null;
@@ -251,10 +254,13 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   const recordingDays = history.filter(s => (s.counts?.valid ?? 0) > 0).length;
   const stateBadge = !today
     ? '<span class="badge">NO SNAPSHOT</span>'
-    : isMarket ? '<span class="badge">LIVE MARKET</span>' : '<span class="badge">PRE-LAUNCH</span>';
+    : !todayIsCurrent
+      ? '<span class="badge" style="background:rgba(255,98,89,.14);border-color:rgba(255,98,89,.45);color:var(--red)">STALE · 本日无新采集</span>'
+      : isMarket ? '<span class="badge">LIVE MARKET</span>' : '<span class="badge">PRE-LAUNCH</span>';
 
   const missing = [];
   if (!today) missing.push(`未找到 ${dateStr} 的传奇卡快照，本期无当日价格可展示。`);
+  if (today && !todayIsCurrent) missing.push(`本日（${dateStr}）无新采集快照，下方价格列展示的是最近一次快照（${today.date}）的数据，不代表 ${dateStr} 采集结果；当日采集失败与本日无数据严格区分，未用历史数据冒充当日。`);
   if (today && !isMarket) missing.push(`FC27 尚未开服（开服日 ${launchDate}），FUTBIN 列表页价不是市场成交价，因此本期不计算日环比与累计涨跌。`);
   if (today && (today.counts?.missing || 0) > 0) missing.push(`当日 ${today.counts.missing} 张传奇卡无有效价格（FUTBIN 返回占位值），已在表中如实标注为占位。`);
   if (history.length < 2) missing.push('历史快照不足两天，逐日变化与走势需开服后连续累积才有意义。');
@@ -332,7 +338,7 @@ code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 .footer{color:var(--quiet);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body data-platform="${esc(activePlatform)}">
 <h1>FC27 传奇/英雄监控 ${stateBadge}</h1>
-<div class="sub">数据日期 ${esc(dateStr)} · 平台 Console（PS / Xbox）+ PC 双口径可切换 · 监控对象 FC27 全部基础传奇卡（Icon，全量 ${roster.length} 张）· 来源 FUTBIN · 逐日快照累积</div>
+<div class="sub">数据日期 ${esc(dateStr)}${today && !todayIsCurrent ? `（价格数据取自最近快照 ${esc(today.date)}，本日无新采集）` : ''} · 平台 Console（PS / Xbox）+ PC 双口径可切换 · 监控对象 FC27 全部基础传奇卡（Icon，全量 ${roster.length} 张）· 来源 FUTBIN · 逐日快照累积</div>
 
 <div class="plat-bar" role="group" aria-label="平台切换">
   <span class="plat-label">平台</span>
@@ -342,7 +348,7 @@ code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 
 <div class="stat-grid">
 ${statCard(roster.length, '监控传奇卡总数')}
-${statCard(today ? `${today.counts?.valid ?? validPrices.length}<em>/${roster.length}</em>` : '—', '当日有效价格卡数')}
+${statCard(today ? `${today.counts?.valid ?? validPrices.length}<em>/${roster.length}</em>` : '—', todayIsCurrent ? '当日有效价格卡数' : `最近快照(${today ? today.date : '—'})有效价卡数`)}
 ${statCard(recordingDays, '已记录快照天数')}
 ${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${countdown}` : '—'), isMarket ? `口径 ${basis}` : `距 FC27 开服（${launchDate}）`)}
 </div>

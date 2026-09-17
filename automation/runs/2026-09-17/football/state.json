@@ -1,0 +1,78 @@
+{
+  "module": "football",
+  "date": "2026-09-17",
+  "runId": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
+  "status": "partial",
+  "startedAt": "2026-09-16T19:30:20.065Z",
+  "deadlineAt": "2026-09-16T19:45:20.065Z",
+  "reportPath": "reports/daily/2026-09-17/football.html",
+  "completedAt": "2026-09-16T19:42:41.920Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "module": "football",
+    "runId": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
+    "status": "success",
+    "collectedAtBeijing": "2026-09-17 03:30-03:43",
+    "browserChannel": "web-access CDP Proxy :3456（check-deps exit 0，Chrome 9222，复用用户日常登录态）",
+    "sources": [
+      {
+        "scope": "epl 积分/射手/助攻",
+        "url": "https://www.bbc.com/sport/football/premier-league/table 及 /top-scorers",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "英超第4轮战罢",
+        "crossCheck": "ESPN 2026-27 Standings/Stats 交叉核验，排名一致"
+      },
+      {
+        "scope": "laliga 积分/射手/助攻",
+        "url": "https://www.bbc.com/sport/football/spanish-la-liga/table 及 /top-scorers",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "西甲第6轮（巴萨、贝蒂斯等少赛一轮）",
+        "crossCheck": "ESPN esp.1 交叉核验一致"
+      },
+      {
+        "scope": "seriea/bundesliga/ligue1 积分/射手/助攻",
+        "url": "https://www.worldfootball.net/competition/co111|co12|co71/...results-and-standings|statistics-goals|statistics-assists",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "意甲4轮 / 德甲3轮 / 法甲4轮",
+        "note": "curl 静态路线被 Cloudflare 拦截，经 CDP 浏览器渲染读取"
+      },
+      {
+        "scope": "ucl 联赛阶段排名/射手",
+        "url": "https://www.espn.com/soccer/standings/_/league/uefa.champions 与 /stats/_/league/uefa.champions",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "联赛阶段第1轮战罢（36队各赛1场）",
+        "note": "uefa.com 被 Cookie 弹窗与懒加载阻塞，改用 ESPN 并如实标注"
+      },
+      {
+        "scope": "mls 东西区积分榜 + 射手/助攻",
+        "url": "https://www.espn.com/soccer/standings/_/league/usa.1 与 /stats/_/league/usa.1",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "2026-09-17 常规赛"
+      },
+      {
+        "scope": "saudi 积分/射手",
+        "url": "https://www.espn.com/soccer/standings/_/league/ksa.1",
+        "openedAt": "2026-09-17T03:36:00+08:00",
+        "cutoff": "沙特联第7轮后"
+      },
+      {
+        "scope": "新闻 14 条（头条6 + 分联赛8）",
+        "url": "sohu.com/a/1077036246, sports.sina.cn/2026-09-17/detail-inisaawv0381594, 163.com/dy/article/L70EP7P00549BAP0, dongqiudi.com/articles/6356643, sohu.com/a/1077045102, dongqiudi.com/articles/6357058, 163.com/dy/article/L704IGOV05561FXO, 163.com/dy/article/L70BKJ3Q05561FXP, news.qq.com/rain/a/20260917A0164100, 163.com/dy/article/L70B796B0556DMYT, sohu.com/a/1077012631",
+        "openedAt": "2026-09-17T03:38:00+08:00",
+        "cutoff": "2026-09-16 至 09-17 凌晨（北京时间）"
+      }
+    ],
+    "verification": "node automation/verify-football-boards.mjs 2026-09-17 退出码 0（三榜结构/去重/覆盖率通过）；HTML 与模板 div 配平一致（grid region diff 0）；无旧数据残留",
+    "missing": [
+      "欧冠、沙特联助攻榜：本轮公开渠道未能取得可靠数据，报告中如实以『本轮无助攻数据来源』占位，未借用的确未借用其他联赛数据",
+      "欧冠独立战报新闻：9月16-17日窗口内未能核实到可用的欧冠战报原文，欧冠筛选页为空状态",
+      "美职联东西区射手/助攻未按分区拆分（ESPN 仅提供全联盟榜），以共享 mls 榜呈现（校验提示性说明，非错误）",
+      "德甲/法甲部分球员源站仅给缩写名（S. Becker、F. Honorat、P. Šulc 等），已按常见对应译出并在备注说明",
+      "24直播网『曼联15岁新星JJ加布里埃尔申请离队』打开两次 eval 超时，无法核实，放弃采用"
+    ],
+    "generator": "automation/runs/2026-09-17/football/work/build-football.mjs（复用模板 apps/football/templates/football-daily.html，原子替换写入）"
+  },
+  "sha256": "7f3b26a4beeb59ede33a1960087eca9617a75daa37989175ec14ba3061b85bf7",
+  "bytes": 64698,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/football/report.html"
+}

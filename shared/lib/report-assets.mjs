@@ -5,10 +5,12 @@ import path from 'node:path';
 
 const FORMATS = new Set(['jpg', 'jpeg', 'png', 'webp', 'gif']);
 
-// X 上可以下载并打进报告的图片路径。历史上只放行了 /media/，导致两类图被静默丢弃：
+// X 上可以下载并打进报告的图片路径。历史上只放行了 /media/，导致三类图被静默丢弃：
 //   - /card_img/…            链接卡片（YouTube/官网等）的缩略图
 //   - /amplify_video_thumb/… 视频首帧占位图（syndication 接口一般给 /media/ 海报，这里作为兜底）
-const X_IMAGE_PREFIXES = ['/media/', '/card_img/', '/amplify_video_thumb/', '/ext_tw_video_thumb/'];
+//   - /tweet_video_thumb/…   动图（animated_gif）封面（2026-09-17：GIF 封面走该路径，
+//                            未放行时报告会残留远程热链）
+const X_IMAGE_PREFIXES = ['/media/', '/card_img/', '/amplify_video_thumb/', '/ext_tw_video_thumb/', '/tweet_video_thumb/'];
 // 这些路径的尺寸写在 query 的 name= 上，可以安全地改写成指定尺寸
 const X_ORIGINALIZABLE_PREFIXES = ['/media/', '/card_img/'];
 // 允许请求的尺寸档位。注意 orig 是原图，单张可达 1.5MB；

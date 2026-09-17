@@ -9,6 +9,8 @@
  *   - 传奇卡逐日快照 apps/market/engine/icons/data/prices/fc27/daily/*.json（record-icons-daily.mjs 写入）
  *   - 传奇卡卡库台账 apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json（131 张）
  *   - 英雄卡（Hero）数据：apps/market/engine/heroes/data/**（由 icons-heroes 任务采集，目前尚未建立，缺失时如实空状态）
+ *     代际口径（2026-09-17 固化）：只监控 FC27；fc26 目录下的历史英雄数据仅渲染在
+ *     「FC26 参考对比」独立区，禁止混入 FC27 台账。
  * 平台：传奇卡区块由 render-market-icons.mjs 渲染，自带 Console（PS / Xbox）/ PC 双平台切换；
  *       英雄卡区块同样按 platforms.console / platforms.pc 输出双平台价格列。
  * 输出：reports/daily/D/icons-heroes.html
@@ -36,9 +38,11 @@ const snapshots = loadIconSnapshots();
 const ledger = loadIconLedger();
 if (!snapshots.length) console.error(`未找到传奇卡逐日快照（${ICON_DAILY_DIR}），传奇/英雄监控将渲染为如实空状态。`);
 
-// ---- 英雄卡（Hero）：数据源尚未建立，存在则计入，缺失时如实空状态 ----
+// ---- 英雄卡（Hero）：只把 FC27 英雄数据计入监控台账；FC26 数据仅作参考对比 ----
 // 递归扫描 heroes/data 下的 json（采集结果可能落在 players/ 或 prices/ 子目录），
-// 每个文件接受 cards / players 两种数组字段名。
+// 每个文件接受 cards / players 两种数组字段名，并带上来源文件的代际标记（__game）。
+// 口径（2026-09-17 固化）：本模块只监控 FC27；heroes/data/**/fc26/** 下的历史数据
+// 不属于 FC27 监控范围，禁止混入 FC27 台账，只能渲染在独立的「FC26 参考对比」区。
 function collectHeroes(dir, out = []) {
   if (!existsSync(dir)) return out;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -48,40 +52,61 @@ function collectHeroes(dir, out = []) {
     try {
       const data = JSON.parse(readFileSync(full, 'utf8'));
       const list = Array.isArray(data) ? data : (data.cards || data.players || []);
-      for (const item of list) if (item && (item.name || item.nameZh || item.id)) out.push({ ...item, __file: path.relative(ROOT, full) });
+      // 代际判定：优先文件内 game 字段，否则按路径中的 fc26 / fc27 目录名
+      const rel = path.relative(ROOT, full).replace(/\\/g, '/');
+      const game = typeof data.game === 'string' && /^fc2[67]$/.test(data.game)
+        ? data.game
+        : (/\/fc26\//.test(rel) ? 'fc26' : (/\/fc27\//.test(rel) ? 'fc27' : 'unknown'));
+      for (const item of list) if (item && (item.name || item.nameZh || item.id)) out.push({ ...item, __file: rel, __game: game });
     } catch { /* 单个文件损坏不影响整体 */ }
   }
   return out;
 }
 const heroDir = path.join(ROOT, 'apps', 'market', 'engine', 'heroes', 'data');
-const heroes = collectHeroes(heroDir);
-if (!heroes.length) console.error(`未找到英雄卡（Hero）数据（${path.relative(ROOT, heroDir)}），英雄部分渲染为如实空状态。`);
+const allHeroItems = collectHeroes(heroDir);
+const heroes = allHeroItems.filter(h => h.__game === 'fc27' || (h.__game === 'unknown' && !/fc26/.test(h.__file)));
+const heroesFc26Ref = allHeroItems.filter(h => h.__game === 'fc26');
+if (!heroes.length) console.error(`未找到 FC27 英雄卡（Hero）数据（${path.relative(ROOT, heroDir)} 下 fc27 代际），英雄台账渲染为如实空状态；FC26 数据仅作参考对比。`);
 
 let html = renderIcons(dateStr, { snapshots, ledger });
 
-// 英雄卡区块：有数据才插入（插在页脚之前，保持既有版式不动）
+// 英雄卡区块：FC27 台账（有数据才出表，缺失时如实空状态）+ FC26 参考对比（独立区、明确标注）
+const heroCell = h => ICON_PLATFORMS.map(pl => {
+  const cell = h.platforms && typeof h.platforms === 'object' ? h.platforms[pl.id] : null;
+  const v = cell && typeof cell.price === 'number' ? cell.price : (typeof h.currentPrice === 'number' ? h.currentPrice : null);
+  const valid = cell ? Boolean(cell.valid) : (typeof h.currentPrice === 'number' && h.currentPrice >= 1000);
+  const est = !valid && h.__file.includes('prices');
+  return `<span class="pv pv-${pl.id}">${typeof v === 'number' && v > 0 ? v.toLocaleString('en-US') : '—'}${est ? '<span class="hint">估值</span>' : ''}</span>`;
+}).join('');
+const heroRows = list => list.map((h, i) => `<tr><td class="c-rank">${i + 1}</td><td class="c-name">${esc(h.nameZh || h.name || '')}</td><td class="c-rating">${esc(h.rating ?? '—')}</td><td class="c-pos">${esc(h.pos ?? '—')}</td><td class="c-price">${heroCell(h)}</td></tr>`).join('');
+
+let block = `\n<h2>六、英雄卡（Hero）台账（FC27）</h2>\n<div class="card">\n`;
 if (heroes.length) {
-  const heroCell = h => ICON_PLATFORMS.map(pl => {
-    const cell = h.platforms && typeof h.platforms === 'object' ? h.platforms[pl.id] : null;
-    const v = cell && typeof cell.price === 'number' ? cell.price : (typeof h.currentPrice === 'number' ? h.currentPrice : null);
-    const valid = cell ? Boolean(cell.valid) : (typeof h.currentPrice === 'number' && h.currentPrice >= 1000);
-    const est = !valid && h.__file.includes('prices');
-    return `<span class="pv pv-${pl.id}">${typeof v === 'number' && v > 0 ? v.toLocaleString('en-US') : '—'}${est ? '<span class="hint">估值</span>' : ''}</span>`;
-  }).join('');
-  const rows = heroes.map((h, i) => `<tr><td class="c-rank">${i + 1}</td><td class="c-name">${esc(h.nameZh || h.name || '')}</td><td class="c-rating">${esc(h.rating ?? '—')}</td><td class="c-pos">${esc(h.pos ?? '—')}</td><td class="c-price">${heroCell(h)}</td></tr>`).join('');
   const unique = new Set(heroes.map(h => h.__file)).size;
-  const block = `
-<h2>六、英雄卡（Hero）台账</h2>
-<div class="card">
-<div class="sub" style="margin:0 0 12px">英雄卡全量 ${heroes.length} 张 · 数据来源 ${unique} 个文件 · 价格为 Console（PS / Xbox）/ PC 双平台口径，随顶部平台按钮切换。</div>
-<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>价格(coins)</th></tr></thead><tbody>${rows}</tbody></table></div>
+  block += `<div class="sub" style="margin:0 0 12px">FC27 英雄卡 ${heroes.length} 张 · 数据来源 ${unique} 个文件 · 价格为 Console（PS / Xbox）/ PC 双平台口径，随顶部平台按钮切换。</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>价格(coins)</th></tr></thead><tbody>${heroRows(heroes)}</tbody></table></div>
+`;
+} else {
+  block += `<div class="empty">FC27 英雄卡（Hero）暂无监控数据：本模块只监控 FC27，英雄名单与双平台价格需由 icons-heroes 任务经 FUTBIN 采集后落库（heroes/data/**/fc27/**），缺失时如实空状态，不使用 FC26 或其他代际数据顶替。</div>
+`;
+}
+block += `</div>\n`;
+
+// FC26 参考对比：仅作跨代参考，不参与 FC27 监控统计，默认折叠
+if (heroesFc26Ref.length) {
+  const refUnique = new Set(heroesFc26Ref.map(h => h.__file)).size;
+  block += `\n<h2>七、FC26 英雄卡参考对比（仅供参考，非 FC27 监控口径）</h2>\n<div class="card">\n<div class="sub" style="margin:0 0 12px">以下 ${heroesFc26Ref.length} 张为 FC26 英雄卡历史参考数据（来源 ${refUnique} 个文件），<b>仅用于跨代对比参考</b>，不属于 FC27 监控范围，不参与上方任何统计与台账。</div>
+<details><summary style="cursor:pointer;color:var(--muted);font-size:12.5px">展开 FC26 参考数据（${heroesFc26Ref.length} 张）</summary>
+<div class="tbl-wrap" style="margin-top:10px"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>FC26 价格参考(coins)</th></tr></thead><tbody>${heroRows(heroesFc26Ref)}</tbody></table></div>
+</details>
 </div>
 `;
-  html = html.includes('<div class="footer">')
-    ? html.replace('<div class="footer">', `${block}<div class="footer">`)
-    : html + block;
 }
+
+html = html.includes('<div class="footer">')
+  ? html.replace('<div class="footer">', `${block}<div class="footer">`)
+  : html + block;
 
 const outPath = path.join(outDir, 'icons-heroes.html');
 writeFileSync(outPath, html, 'utf8');
-console.log(`传奇/英雄监控已渲染: ${outPath}（传奇 ${ledger.length} 张台账 / 快照 ${snapshots.length} 天，英雄 ${heroes.length} 张）`);
+console.log(`传奇/英雄监控已渲染: ${outPath}（传奇 ${ledger.length} 张台账 / 快照 ${snapshots.length} 天，FC27 英雄 ${heroes.length} 张，FC26 参考 ${heroesFc26Ref.length} 张）`);

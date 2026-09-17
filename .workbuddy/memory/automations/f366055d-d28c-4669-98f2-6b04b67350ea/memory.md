@@ -1,31 +1,29 @@
 # evolution 自动化运行记忆（f366055d）
 
-## 2026-09-16 03:00 (Asia/Shanghai) · 状态 failed
-- runId `643732d2-e91b-4417-9c44-a370768e9151`，03:00:22 启动，03:02:45 提交 failed（未超期）。
-- 结果：**0 张进化卡**。原因不是「页面无数据」，而是浏览器扩展通道不可用，采集在第一步即中止。
-- 四个已确证事实（下次执行可先复跑这些探针，2 分钟内即可判定）：
-  1. `dumate-browser-cli init --mode extension` → `RelayUnreachable`，需 `DUMATE_HOST_URL`，WorkBuddy 运行时不注入。
-  2. `dumate-browser-cli doctor` → `relay.connected=false`（relay 在 127.0.0.1:19228）。
-  3. Chrome 已装 WorkBuddy 扩展 `ajnnogdfpilbhkeggdjlcokgglijmdde`，但 `com.workbuddy.extension` 本机消息宿主**未注册**（NativeMessagingHosts 下无清单）。
-  4. CDP `127.0.0.1:19222` 是 `--user-data-dir` 独立 profile 实例，**禁止使用**；127.0.0.1:18488 穷举 20 条路由全 404。
-- 处置：按 evolution.md 提交 failed，未回退 IAB、未新建 profile、未用 FC26/旧日期填充。
-- 产物：`automation/runs/2026-09-16/evolution/evolution.json`、`evidence.json`、`reports/daily/2026-09-16/evolution.html`（FAILED 空状态）。
-- ~~待办（需用户侧操作）：把 Chrome 扩展与 WorkBuddy 桌面端接通（注册 native messaging 宿主）~~ —— **该待办作废，见下方更正。**
+## 2026-09-17 03:44 (Asia/Shanghai) · 状态 partial（采集成功）
+- runId `2ee3c6af-388a-4020-9586-b63d58bd2f2c`，03:46:14 启动，03:47:06 提交 partial（硬上限 04:06:14，远未超期）。全流程约 3 分钟。
+- 通道：`check-deps.mjs` exit 0（Chrome :9222 / proxy ready）。**上文的通道故障结论全部作废，不要再排查。**
+- 采集结果：500 张进化卡（14 条进化路径，路径数较 09-16 的 5 条新增 9 条）+ 14 条路线。产物 `reports/daily/2026-09-17/evolution.html`（280,470 B，徽标 PARTIAL），快照 SHA-256 `1f7fc5d7…`。
+- 三个来源页均在本轮内打开：`/27/popular/evolutions`（500 节点，无分页）、`/27/evolutions`（14 条，全 FREE/REPEATABLE）、`/27/evolutions/expired`（0）。
+- 本轮为当日第 2 次运行（首次 `362bfbe5` 已归档 attempts/），重跑原因仅是把状态从 success 对齐为 partial。两次数据一致。
 
-## 2026-09-16 13:40 更正（覆盖上文所有「待用户侧修复」结论）
-- **WorkBuddy 桌面端 v5.5.6 根本没有实现 `com.workbuddy.extension` 原生消息宿主**（`app.asar` 中 `connectNative`/`NativeMessaging`/扩展 ID 命中数全为 0），属产品侧缺口，用户侧无法修复；该扩展已在用户机器上禁用。不要再排查或配置它，也不要用 Chrome 插件 / `extension` 模式。
-- **现行唯一通道 = `Web Access（浏览器自动化）` 技能**（CDP Proxy :3456 直连用户日常 Chrome）。上文 12:51 记录的 exit 1「没有任何浏览器打开远程调试开关」已解决：用户已勾选该开关，且**跨重启持久**（`Local State → devtools.remote_debugging={"user-enabled":true}`，`DevToolsActivePort` 端口 9222）；`config.env` 已固化 `WEB_ACCESS_BROWSER=chrome`。
-- 自检：`node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs` → exit 0 才继续；exit 1 时才需 `open -a "Google Chrome" chrome://inspect/#remote-debugging`（勾选必须人工完成）。FUTBIN 静态路线仍不存在（curl 403），必须走 CDP。
-- 同日重跑用 `node automation/run-state.mjs begin evolution D --rerun`；`finish` 硬上限 `startedAt + 20 分钟`。
-- 2026-09-16 13:30 重跑结果：提交 `partial`，采集 456 张进化卡（去重后），`evolution.html` 223,685 B。评分口径：榜单 Rating 是「进化后 OVR」（已用 Savona 球员页交叉核验 75 → 79）。
+### 下次执行直接照做
+1. `node automation/run-state.mjs begin evolution D` → 记 runId/startedAt。
+2. `node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs`，exit 0 才继续。
+3. `/new` 打开三个来源页；用 CDP `/eval` 跑 `extract-cards.js`（榜单）与 `extract-evolutions.js`（总览路径）。
+4. `node build-json.mjs` → 渲染 → 写 evidence → `finish`。
+   - 上述三个脚本可从 `automation/runs/2026-09-17/evolution/work/`（或 09-16 同名目录）直接拷到当日 `work/`。
 
-## 2026-09-16 12:51 (Asia/Shanghai) · 状态 failed（同日重跑）
-- runId `a0101bcd-735b-45a6-b3f5-68fd8b15ee8b`，12:51:33 启动，12:53:06 提交 failed（期限 13:06:33，未超期）；上轮 03:00 的 runId `643732d2` 已自动归档进 attempts/。
-- 结果：**0 张进化卡**。本轮起改用契约规定的 **web-access（CDP Proxy → 用户日常 Chrome）** 技能，失败点与上轮不同，且**一步可修**：
-  - `node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs` → exit 1「没有任何浏览器打开远程调试开关」；
-  - 四个 profile（Chrome / Chrome Canary / Chromium / Edge）均无 `DevToolsActivePort`；兜底端口 9222/9229/9333 全关；`127.0.0.1:3456/health` 无响应；
-  - 已执行技能允许的唯一自动补救（`open -a "Google Chrome" chrome://inspect/#remote-debugging`）后复跑，结果不变——**勾选只能人工完成**。
-- 诊断补充：`curl futbin.com/27/popular/evolutions` → **403 / 641 B**，FUTBIN 拒绝非浏览器请求，静态路线不存在，不能用 curl/WebFetch 替代浏览器。
-- 处置：按 evolution.md 第 5 条提交 failed，未回退 IAB、未新建 profile、未用 FC26 或旧日期数据填充；历史日期报告未覆盖。
-- 产物：`automation/runs/2026-09-16/evolution/{evolution.json,evidence.json,report.html}`（快照 SHA-256 `4f2cb9d3…`）、`reports/daily/2026-09-16/evolution.html`（FAILED 空状态，6090 B）。
-- **下次执行提示**：先跑 `check-deps.mjs`（约 5 秒）即可判定通道；exit 1 时不要再尝试静态抓取或任何被禁通道，直接留证提交 failed，并在最终回复里提醒用户勾选远程调试开关。
+### 三条硬约束（每次都适用）
+1. `evidence.missing` 非空时 `finish success` 会被自动降级为 `partial`（run-state.mjs:60）。**直接提交 partial，并把 evolution.json 的 `status` 与之一致**，否则报告徽标（SUCCESS）与权威状态（partial）矛盾。
+2. `evidence.sources[].openedAt` 必须 ≥ 本轮 `startedAt`。`begin --rerun` 会让上一轮的 openedAt 全部失效，**必须在重跑轮内重新打开来源页并记录新时间**。
+3. `begin --rerun` 会把 `automation/runs/D/evolution/` 下内容（含 `work/`、`evidence.json`、`report.html`）整体 rename 进 `attempts/<旧runId>/`；重跑前从 attempts 拷回工作脚本。
+
+### 采集口径
+- **去重按 `球员 URL + 进化名称`**，不按球员名：同一球员的不同卡版本是独立条目（URL 含版本后缀，估值/热度各异），500 个 URL 全部唯一。09-16 按名去重把 500 条压成 449 条属丢失。
+- 榜单 Rating 是「进化后」OVR；费用取自 `/27/evolutions` 卡片的 FREE 标记；榜单卡片数字是热度计数（popularityCount）。FUTBIN 只给 UNLOCK/EXPIRES 相对时长，无绝对到期日。
+- `/27/players` 列表目录对当前 IP/会话 403（已知，不要靠它做候选筛选）；榜单是否被服务端截断无法证实（500 条整齐，无「共 N 条」计数），已如实记入 missing。
+- 站点经验见 `~/.workbuddy/skills/web-access/references/site-patterns/futbin.com.md`。
+
+### 历史（仅备查）
+- 2026-09-16 03:00 failed（扩展通道，作废）；09-16 12:51 failed（远程调试开关未开）；09-16 13:30 partial（456 张卡，5 条路径）。相关「待用户修复」结论均已作废：桌面端 v5.5.6 不实现原生消息宿主，唯一通道是 Web Access CDP。

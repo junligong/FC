@@ -1,6 +1,15 @@
 # FC·资讯采集 自动化执行记忆
 
+## 2026-09-17（partial，成功采集）
+- runId：`a1cb95c8-11f8-4614-b3a6-d1cd877555ac`；03:05:42 启动，03:16:39 提交 partial。
+- 16/16 账号全部打开成功（@EASFCDirect 24h 窗口 0 条，如实记录），入库 71 条推文。
+- 媒体解析 71/71（52 配图 / 9 视频 / 4 卡片 / 17 被引用带图）；图片落盘 61/61，0 远程热链；news-media 回归 14/14 绿。
+- **新坑①**：CDP Proxy `/eval` 返回包裹为 `{"value": "..."}`（不是 `result`），解析脚本必须同时兼容两键，否则会把成功抽取误判为异常。
+- **新坑②**：syndication 给动图（animated_gif）封面的路径是 `pbs.twimg.com/tweet_video_thumb/…`，不在 `isCacheableXImage` 白名单 → 报告残留远程热链。已修 `shared/lib/report-assets.mjs`（新增 `/tweet_video_thumb/`）并重跑生成器补齐。
+- partial 原因：翻译服务本轮 0 条译文，71 条卡片按契约标「待翻译，请查看原文」。下次可考虑在 enrich 后由 AI 批量补 `translations_patch.json`。
+
 ## 2026-09-16（failed）
+
 - runId：`db98e026-c514-4ed7-8b2a-c59f9985999a`
 - 状态：**failed**（采集第一步即中止，0 条推文）
 - 根因：浏览器 Chrome 插件 extension 通道未建立 —— `init --mode extension` 返回 `RelayUnreachable`（缺 `DUMATE_HOST_URL`）；relay.connected 空；NativeMessagingHosts 无 `com.workbuddy.extension.json`；日常 Chrome 未开 `--remote-debugging-port`。
