@@ -12,20 +12,39 @@
 
 在 /Users/wuyanzu/Desktop/FC 生成 FC27 资讯雷达。日期 D 使用总任务提供的 Asia/Shanghai 日期；独立执行时在开始时固定日期。
 
-浏览器只使用本任务已绑定的 `Web Access（浏览器自动化）` 技能（CDP Proxy 直连用户日常已登录 Chrome），**不再使用 Chrome 插件 / `extension` 模式**。采集前先运行 `node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs`：`exit 0` 才继续；`exit 1` 表示 Chrome 远程调试开关未开，只能请用户勾选，不得改用其他浏览器。不得运行 `dumate-browser-cli`、`automation/browser-env.sh`、`apps/news/auto_news.sh` 或 `automation/collect-news.mjs`，也不得因缺少 `DUMATE_*` 环境变量把本轮误判为失败。是否能采集以本轮实际打开来源并读取页面为准。不得打印、复制或改写任何认证文件。
+浏览器采集遵循根 AGENTS.md「浏览器强制规则」，采集前先运行 `node automation/browser-triage.mjs`（唯一判据），`exit 0` 才继续。不得运行 `dumate-browser-cli`、`automation/browser-env.sh`、`apps/news/auto_news.sh` 或 `automation/collect-news.mjs`，也不得因缺少 `DUMATE_*` 环境变量把本轮误判为失败。不得打印、复制或改写任何认证文件。
 
 每次重新读取 `apps/news/sources.txt`，不硬编码账号数量。采集按下面四步走，不要自创步骤：
 
 1. **时间线抽取（DOM）**：用 Web Access 技能逐个访问账号主页，对页面执行 `apps/news/extract-timeline.js` 的内容（可直接读取该文件后 `/eval`）。它只负责拿推文 ID、链接、作者、时间和正文，以及 `hasVideo/hasPhoto/hasCard` 三个媒体存在标记。**不要**在 DOM 里抠图片地址——X 在后台标签页把媒体渲染成模糊骨架占位符（`[data-testid="tweetPhoto"]` 内没有 `<img>`），DOM 里的图既不可靠也不完整。
 2. **媒体解析（接口）**：把第 1 步的结果写入 `apps/news/data/tweets-D.json`，再运行 `node apps/news/enrich-tweet-media.mjs D`。它调用 X 公开 syndication 接口，补齐权威的 `images`（正文配图）、`video`（封面 + mp4 直链 + 时长 + kind）、`card`（链接卡片标题/缩略图/目标地址）、`quoted`（被引用推文及其配图）与 `mediaResolved` 标记。
 3. **生成报告**：`node apps/news/generate_report.mjs D`。
-4. **翻译与校验**：见下文。
+4. **翻译与校验**：见下文「中文翻译」节。
 
 总采集阶段以 10 分钟为上限，剩余时间用于翻译、原图保存、校验和提交；**提交的硬上限是 `startedAt + 20 分钟`**，超时会因「超过提交期限」被拒，故最迟第 14 分钟必须收口转 `partial`。遇到运行锁先核实原任务是否仍运行，不盲目删除；同日重跑用 `node automation/run-state.mjs begin news D --rerun`。
 
 只收录可核对发布时间、原始推文链接和正文的 FC27 相关信息。排除纯预测、纯推广，以及**除视频封面外没有任何信息文本**的纯视频/纯 GIF 内容；**带信息量的视频推文正常收录**，并在卡片上标注「视频 / 动图 GIF + 时长」与在原推中观看的入口（历史上「带 video 元素整条丢弃」的做法导致视频内容长期缺失，不要再那样做）。同一账号转发与同一推文 ID 去重。同一球员或同一 SBC 主题不能直接当作同一事件合并。官方公告与未经证实的爆料分开标注，不把 FC26 消息自动当作 FC27。
 
-每张卡片包含博主、时间、完整中文翻译、可折叠原文、媒体区、原推链接，保留多列网格与移动端单列布局。媒体区按下面三态之一渲染，且所有媒体与占位都链接到原推：① 有配图/视频封面/链接卡片 → 正常展示，视频额外标注「视频 / 动图 GIF + 时长」；② `mediaResolved=false` → 显示「本条推文的媒体信息本轮未能解析，不代表原推没有配图」；③ 有 `hasVideo/hasPhoto/hasCard` 但未取到地址 → 显示「原推含媒体，本轮未取到媒体地址」；只有三者皆无才可写「原推为纯文本，无配图」。翻译服务失败时由执行任务的 AI 完成翻译，使用当日 `data/tweets-D.json` 保存完整数据；「术语替换」和英文混排不算翻译完成，未完成项必须明确标记为「待翻译，请查看原文」。
+每张卡片包含博主、时间、完整中文翻译、可折叠原文、媒体区、原推链接，保留多列网格与移动端单列布局。媒体区按下面三态之一渲染，且所有媒体与占位都链接到原推：① 有配图/视频封面/链接卡片 → 正常展示，视频额外标注「视频 / 动图 GIF + 时长」；② `mediaResolved=false` → 显示「本条推文的媒体信息本轮未能解析，不代表原推没有配图」；③ 有 `hasVideo/hasPhoto/hasCard` 但未取到地址 → 显示「原推含媒体，本轮未取到媒体地址」；只有三者皆无才可写「原推为纯文本，无配图」。
+
+## 中文翻译（必做，2026-09-17 起：走译文文件通道）
+
+**每条收录推文都必须有完整中文译文**，不允许整页英文或「术语替换」凑数。
+
+1. **翻译由执行任务的 AI 完成**，结果写成 `apps/news/data/translations-D.json`：
+   ```json
+   {
+     "schemaVersion": 1,
+     "date": "YYYY-MM-DD",
+     "source": "执行 AI 翻译",
+     "translations": { "<推文ID>": "<完整中文译文>" }
+   }
+   ```
+   键**必须是推文 ID**（与 `data/tweets-D.json` 的 `id` 一致），值为完整中文译文；保留原推语气、表情符号、URL 与 @提及，不要缩写、不要只译术语。
+2. 写完后运行 `node apps/news/generate_report.mjs D`。生成器**优先取译文文件**（这是历史上唯一的失效点：旧代码依赖已废弃的 DuMate 千帆代理 / `apps/news/.api_key`，迁移到 WorkBuddy 后该通道必然全部返回空，导致 71 条全部「待翻译」）。生成器另外还会对同日重跑时的旧卡片统一补齐翻译。
+3. 译文文件缺失或某条未译时，生成器会回落到在线翻译，再失败才渲染「待翻译，请查看原文」；**出现该标记即为 `partial`**，必须记入 `missingItems`。
+4. 提交前自检：`grep -c "待翻译" reports/daily/D/news.html` 必须为 `0`，并抽查 2–3 条确认是真正的完整译文而非英文原文。
+
 
 凡是 `pbs.twimg.com` 上的推文媒体都要落盘到 `reports/daily/D/assets/news/` 后再写入报告：正文配图（`/media/`，规范为 `name=orig`）、视频/动图封面（`/media/` 或 `/amplify_video_thumb/`）、链接卡片缩略图（`/card_img/`）。放行规则由 `shared/lib/report-assets.mjs` 的 `isCacheableXImage()` 统一判定，**不要**再自己写 `/media/` 正则。下载是两级：`generate_report.mjs` 先用 curl 直连，**本机拉不下来的会自动经用户浏览器（CDP）补下**——本运行环境的出口代理到 `pbs.twimg.com` 不通（直连被 reset、走代理 TLS 握手失败），所以「curl 报 SSL_ERROR_SYSCALL」属预期现象，不要据此判定图片无法保存。浏览器兜底需要 CDP Proxy 在线（本任务采集阶段本就在用），若 proxy 不可用则报告至少为 `partial` 并记录未落盘数量。合并器负责把这些本地资产内嵌到单文件汇总。不得只保留远程热链，也不得用 `onerror` 隐藏加载失败。媒体接口解析失败（`mediaResolved=false`）时，报告必须显示「媒体未解析」，**不得**写成「原推为纯文本，无配图」。
 
@@ -45,4 +64,4 @@ data/seen_tweets.json 是历史资产，禁止重置。只有 `generate_report.m
 
 只有全部来源成功且确实无相关内容时才可写「本期无新资讯」；访问失败、媒体解析失败、图片落盘失败、翻译失败分别记录，不得合并成一句「部分失败」。失败时保留上次有效报告。
 
-浏览器强制规则：每次先读取根 AGENTS.md 对应段落；直接调用定时任务已绑定的 `Web Access（浏览器自动化）` 技能，复用用户日常 Chrome 登录态。禁止调用或探测 `dumate-browser-cli`、`DUMATE_*`、`automation/browser-env.sh`、`apps/news/auto_news.sh`、`automation/collect-news.mjs`、`fc-browser-channel-check` 历史探针、`agent-browser`、IAB、临时浏览器或新 profile；是否成功只以本轮实际打开来源并读取页面为准。
+浏览器强制规则见根 AGENTS.md「浏览器强制规则」；禁止调用或探测 `dumate-browser-cli`、`DUMATE_*`、`automation/browser-env.sh`、`apps/news/auto_news.sh`、`automation/collect-news.mjs`、`fc-browser-channel-check`、`agent-browser`、IAB、临时浏览器或新 profile。

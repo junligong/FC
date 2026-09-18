@@ -1,0 +1,62 @@
+{
+  "module": "market",
+  "date": "2026-09-18",
+  "runId": "0991f958-4fe3-4f5d-adb2-8f63699fc2c4",
+  "status": "partial",
+  "startedAt": "2026-09-17T19:18:43.765Z",
+  "deadlineAt": "2026-09-17T19:33:43.765Z",
+  "reportPath": "reports/daily/2026-09-18/market.html",
+  "completedAt": "2026-09-17T19:35:51.237Z",
+  "evidence": {
+    "date": "2026-09-18",
+    "module": "market",
+    "status": "partial",
+    "collectedAt": "2026-09-18T03:35:00+08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/",
+        "openedAt": "2026-09-18T03:19:00+08:00",
+        "note": "CDP 宿主页实测打开正常，建立会话"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-18T03:20:30+08:00",
+        "note": "200，提取 250 张唯一卡（双平台价+热度）"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-18T03:23:00+08:00",
+        "note": "200，提取 500 张唯一进化卡"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1..4",
+        "openedAt": "2026-09-18T03:24:30+08:00",
+        "note": "页内 fetch 实测 4 页全部 403 拦截页"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1",
+        "openedAt": "2026-09-18T03:27:30+08:00",
+        "note": "退避后单次重试仍 403，停止重试"
+      },
+      {
+        "url": "https://www.futbin.com/totw 等候选路由",
+        "openedAt": "2026-09-18T03:25:30+08:00",
+        "note": "实测均 404，周黑/活动卡无来源"
+      }
+    ],
+    "missing": [
+      "概览价格分层与扫描价格维度：/27/players 被 403 拦截，如实空状态",
+      "周黑/活动卡：候选路由 404，如实空状态",
+      "进化卡无平台价（来源页未渲染价格单元格）",
+      "部分卡平台价仍为 0（占位）"
+    ],
+    "notes": [
+      "译名注入 1750/1750 命中、未命中 0（本轮新增 261 条词库）",
+      "头像补全 +179 键、下载 175 张，渲染后复核",
+      "统一行情 current.json 已按 cardId 合并一次（750 张）"
+    ]
+  },
+  "sha256": "b0311d2e123f725c6fe07b02d22debaf1b839561a4b0b15433cd42ab7f914193",
+  "bytes": 226616,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-18/market/report.html"
+}

@@ -1,5 +1,12 @@
 # FC·资讯采集 自动化执行记忆
 
+## 2026-09-18（success，首次 success）
+- runId：`86edccb1-2780-4286-ab59-74574960dcf8`；03:00:42 启动，03:09:27 提交 success。
+- 16/16 账号全部打开成功（@Fut_scoreboard 当日 DOM 内 0 条，如实记录），入库 89 条推文。
+- 媒体解析 89/89（配图 72 张 / 11 视频 / 4 卡片 / 17 被引用带图）；图片落盘 83/83，0 远程热链；「待翻译」0。
+- **流程定型（本轮起为 success 基线）**：单 tab 顺序采集（每页开→探 article 数→eval→close，共约 4 分钟）→ 合并 tweets-D.json → enrich（syndication 全成）→ **enrich 进行期间即读正文写 translations-D.json**（键=推文 ID 全量 89 条）→ generate_report 一次成型 → 自检（待翻译/媒体未解析/热链均 0）→ finish success。采集驱动脚本留存于 `automation/runs/2026-09-18/news/work/collect-news-run.mjs`，可复用（改 DAY 常量）。
+- X 关键节点内容：预购传奇包（Pre-Order Icons）12:30 起 Xbox/PS 全开放；Xbox 提前解锁（NZ 地区）争议；新 SBC 积分制系统明日上线；EASFCDirect 两条 SBC 补偿公告（TOTW 金卡误发、金卡升级修复）。
+
 ## 2026-09-17（partial，成功采集）
 - runId：`a1cb95c8-11f8-4614-b3a6-d1cd877555ac`；03:05:42 启动，03:16:39 提交 partial。
 - 16/16 账号全部打开成功（@EASFCDirect 24h 窗口 0 条，如实记录），入库 71 条推文。

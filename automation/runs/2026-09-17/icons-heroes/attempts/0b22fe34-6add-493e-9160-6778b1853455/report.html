@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC27 传奇/英雄监控 2026-09-17</title>
+<style>
+:root{color-scheme:dark;--bg:#101713;--surface:#161e18;--line:#30392f;--line2:#3a4438;
+--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--red:#ff6259;--gold:#e3b341;
+--up:#ff6259;--dn:#4ec08a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px 28px 40px;line-height:1.6}
+h1{font-size:21px;font-weight:800;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(227,179,65,.16);border:1px solid rgba(227,179,65,.4);color:var(--gold)}
+.sub{color:var(--quiet);font-size:12.5px;margin:8px 0 18px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:10px;margin-bottom:22px}
+.stat{background:linear-gradient(180deg,var(--surface),#141c15);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.stat b{display:block;font-size:22px;font-weight:800;line-height:1.25;color:var(--text)}
+.stat b em{font-size:13px;font-style:normal;color:var(--quiet);font-weight:600;margin-left:3px}
+.stat small{display:block;color:var(--quiet);font-size:11.5px;margin-top:4px}
+h2{font-size:17px;font-weight:750;margin:30px 0 14px;display:flex;align-items:center;gap:9px}
+h2:before{content:"";width:3px;height:17px;background:var(--red);border-radius:2px}
+.card{background:linear-gradient(180deg,var(--surface),#141c15);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.toolbar input{background:#1d271b;border:1px solid var(--line2);border-radius:9px;color:var(--text);padding:8px 12px;font-size:13px;min-width:220px}
+.toolbar input:focus{outline:2px solid var(--gold);outline-offset:2px}
+.toolbar .tip{font-size:11.5px;color:var(--quiet)}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--quiet);font-weight:600;padding:8px 9px;border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:.03em;white-space:nowrap}
+th.sortable{cursor:pointer;user-select:none}
+th.sortable:hover{color:var(--text)}
+td{padding:7px 9px;border-bottom:1px solid #242d25;vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#1a211b}
+.c-rank{color:var(--gold);font-weight:700;width:38px}
+.c-name{font-weight:600;white-space:nowrap}
+.c-name .en{display:block;color:var(--quiet);font-size:10.5px;font-weight:400;letter-spacing:.02em}
+.c-rating{font-weight:700;width:56px}
+.c-pos{color:var(--muted);width:64px}
+.c-six{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;font-size:11.5px;letter-spacing:.02em}
+.six{cursor:help;border-bottom:1px dotted var(--line2)}
+.c-gold{width:62px}
+.gold-n{color:var(--gold);font-weight:700}
+.c-price{font-variant-numeric:tabular-nums;white-space:nowrap}
+.c-num{color:var(--muted);font-variant-numeric:tabular-nums;width:60px}
+.c-date{white-space:nowrap;font-weight:600}
+.c-basis{white-space:nowrap}
+.c-note{color:var(--quiet);font-size:11.5px;white-space:nowrap}
+.c-spark{width:110px}
+.spark{display:block}
+.pv{display:none}
+body[data-platform="console"] .pv-console,
+body[data-platform="pc"] .pv-pc{display:inline}
+body[data-platform="console"] .c-spark .pv-console,
+body[data-platform="pc"] .c-spark .pv-pc{display:block}
+.plat-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin:0 0 18px}
+.plat-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--quiet);font-weight:700}
+.plat-btn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:6px 14px;border-radius:9px;border:1px solid var(--line);background:#1d271b;color:var(--muted);font-size:13px;font-weight:650;cursor:pointer;transition:.15s}
+.plat-btn small{font-size:10px;color:var(--quiet);font-weight:500;letter-spacing:.05em}
+.plat-btn:hover{border-color:var(--gold);color:var(--text)}
+.plat-btn.active{background:rgba(227,179,65,.14);border-color:rgba(227,179,65,.5);color:var(--gold)}
+.plat-btn.active small{color:rgba(227,179,65,.75)}
+.plat-hint{font-size:11px;color:var(--quiet);margin-left:auto;max-width:54ch}
+.up{color:var(--up);font-weight:700}
+.dn{color:var(--dn);font-weight:700}
+.hint{color:var(--quiet);font-size:10px;font-weight:500;margin-left:4px}
+.tag{font-size:10.5px;padding:2px 8px;border-radius:999px;font-weight:600}
+.tag.ok{background:rgba(78,192,138,.16);color:var(--dn);border:1px solid rgba(78,192,138,.4)}
+.tag.warn{background:rgba(227,179,65,.16);color:var(--gold);border:1px solid rgba(227,179,65,.4)}
+.empty{color:var(--quiet);font-size:12.5px;padding:14px;border:1px dashed var(--line);border-radius:9px;background:#161d17}
+ul{padding-left:18px}li{margin:5px 0;font-size:12.5px;color:var(--muted)}
+code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body data-platform="console">
+<h1>FC27 传奇/英雄监控 <span class="badge">PRE-LAUNCH</span></h1>
+<div class="sub">数据日期 2026-09-17 · 平台 Console（PS / Xbox）+ PC 双口径可切换 · 监控对象 FC27 全部基础传奇卡（Icon，全量 131 张）· 来源 FUTBIN · 逐日快照累积</div>
+
+<div class="plat-bar" role="group" aria-label="平台切换">
+  <span class="plat-label">平台</span>
+  <button type="button" class="plat-btn active" data-platform="console" aria-pressed="true">Console<small>PS / Xbox</small></button><button type="button" class="plat-btn" data-platform="pc" aria-pressed="false">PC<small>PC</small></button>
+  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径。当前 Console 有效价 5 张 / PC 有效价 1 张；开服前两平台均为 0，此时显示列表页估值并以「占位」标注。</span>
+</div>
+
+<div class="stat-grid">
+<div class="stat"><b>131</b><small>监控传奇卡总数</small></div>
+<div class="stat"><b>0&lt;em&gt;/131&lt;/em&gt;</b><small>当日有效价格卡数</small></div>
+<div class="stat"><b>1</b><small>已记录快照天数</small></div>
+<div class="stat"><b>D-8</b><small>距 FC27 开服（2026-09-25）</small></div>
+</div>
+
+<h2>一、本期监控口径</h2>
+<div class="card">
+<ul>
+<li>监控对象：FC27 全部基础传奇卡（Icon）<strong>131</strong> 张，逐日记录每一张的价格，含评分、位置、六维、金特技台账。</li>
+<li>平台口径：FUTBIN 只提供 <b>Console（PS / Xbox 合并）</b> 与 <b>PC</b> 两个市场，页面顶部按钮可切换；每张卡的「今日价 / 日环比 / 累计涨跌 / 走势」均按所选平台分别计算，不混用。当前有效价 Console 5 张 / PC 1 张。</li>
+<li>当前口径：<code>listing-estimate</code> —— FC27 未开服（开服日 2026-09-25），FUTBIN 仅提供列表页占位/估算价，不是市场成交价，不能当作行情信号。</li>
+<li>快照位置：<code>apps/market/engine/icons/data/prices/fc27/daily/&lt;DATE&gt;.json</code>，一天一份、同日重跑只覆盖当天，历史不被清空。</li>
+<li>未开服：列表页占位价的日变化没有行情含义，因此本期不计算日环比与累计涨跌，仅做台账与记录进度；开服后自动切换为成交价监控。</li>
+<li>本页只做<b>逐日价格监控台账</b>；FC26↔FC27 阵容对照、属性与金特技变化、131 张首月价格预测与投资分档，见本栏目「<b>传奇卡研究</b>」子标签。</li>
+</ul>
+</div>
+
+<h2>二、大盘中位价走势（全部传奇卡）</h2>
+<div class="card"><div class="empty">逐日快照不足两天，暂无法绘制大盘中位价走势；开服后每日累积，第 2 天起自动显示。</div></div>
+
+<h2>三、传奇卡（Icon）台账（全量 131 张）</h2>
+<div class="card">
+<div class="toolbar">
+<input type="search" id="q" placeholder="搜索球员中文名 / 英文名 / 位置" aria-label="搜索传奇卡">
+<span class="tip">点击「列表页价」「评分」表头可排序 · 共 131 张</span>
+</div>
+<div class="tbl-wrap"><table class="tbl" id="icons-table">
+<thead><tr>
+<th class="sortable" data-key="rank">#</th>
+<th class="sortable" data-key="name">球员</th>
+<th class="sortable" data-key="rating">评分</th>
+<th class="sortable" data-key="pos">位置</th>
+<th>六维</th>
+<th>金特技</th>
+<th class="sortable" data-key="price">列表页价(非市场价)</th>
+<th class="sortable" data-key="d1">日环比</th>
+<th class="sortable" data-key="cum">累计涨跌</th>
+<th>记录天数</th>
+<th>走势(近30条)</th>
+</tr></thead><tbody><tr>
+<td class="c-rank">1</td>
+<td class="c-name">贝利<span class="en">arantes nascimento</span></td>
+<td class="c-rating">95</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">93/94/91/94/58/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">2</td>
+<td class="c-name">马拉多纳<span class="en">maradona</span></td>
+<td class="c-rating">95</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/91/91/97/40/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">3</td>
+<td class="c-name">罗纳尔多<span class="en">nazário de lima</span></td>
+<td class="c-rating">94</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">94/94/79/96/43/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">4</td>
+<td class="c-name">齐达内<span class="en">zidane</span></td>
+<td class="c-rating">94</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/90/94/96/73/84</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">5</td>
+<td class="c-name">贝肯鲍尔<span class="en">franz beckenbauer</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/73/88/79/93/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">6</td>
+<td class="c-name">弗朗茨·贝肯鲍尔<span class="en">franc. dos santos</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">RW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/87/92/96/40/66</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">7</td>
+<td class="c-name">克鲁伊夫<span class="en">cruyff</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/91/90/94/42/73</span></td>
+<td class="c-gold"><span class="gold-n" title="Tiki Taka">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">8</td>
+<td class="c-name">罗纳尔迪尼奥<span class="en">de assis moreira</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">LW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">91/89/90/96/38/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Trickster">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">9</td>
+<td class="c-name">马尔蒂尼<span class="en">maldini</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/55/75/65/95/84</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">10</td>
+<td class="c-name">米娅·哈姆<span class="en">hamm</span></td>
+<td class="c-rating">93</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">92/93/86/93/54/81</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">11</td>
+<td class="c-name">安格勒<span class="en">angerer</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">58/22/34/13/24/60</span></td>
+<td class="c-gold"><span class="gold-n" title="Far Reach">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">12</td>
+<td class="c-name">博比·查尔顿<span class="en">charlton</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/91/87/92/50/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">13</td>
+<td class="c-name">布冯<span class="en">buffon</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">50/26/36/25/19/60</span></td>
+<td class="c-gold"><span class="gold-n" title="Far Reach">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">14</td>
+<td class="c-name">克里斯汀·辛克莱<span class="en">sinclair</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/93/86/89/54/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">15</td>
+<td class="c-name">穆勒<span class="en">müller</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/92/76/80/44/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">16</td>
+<td class="c-name">普林茨<span class="en">prinz</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/92/80/83/52/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Enforcer">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">17</td>
+<td class="c-name">普斯卡什<span class="en">puskás</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/94/89/90/45/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">18</td>
+<td class="c-name">伊涅斯塔<span class="en">iniesta luján</span></td>
+<td class="c-rating">92</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/80/91/93/62/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">19</td>
+<td class="c-name">巴雷西<span class="en">baresi</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">75/48/75/62/94/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">20</td>
+<td class="c-name">巴乔<span class="en">baggio</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/86/90/93/38/65</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">21</td>
+<td class="c-name">范巴斯滕<span class="en">van basten</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/93/76/87/37/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Acrobatic">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 13，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">22</td>
+<td class="c-name">古利特<span class="en">gullit</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/88/89/86/80/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">23</td>
+<td class="c-name">哈维<span class="en">hernández creus</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/78/92/90/69/70</span></td>
+<td class="c-gold"><span class="gold-n" title="Tiki Taka">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">24</td>
+<td class="c-name">亨利<span class="en">henry</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">93/90/84/89/51/78</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">25</td>
+<td class="c-name">卡恩<span class="en">kahn</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">58/20/33/13/16/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Far Reach">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">26</td>
+<td class="c-name">卡福<span class="en">cafu</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/56/84/86/88/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Relentless">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">27</td>
+<td class="c-name">卡洛斯·阿尔贝托·托雷斯<span class="en">torres</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/64/82/83/88/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">28</td>
+<td class="c-name">亚历克斯·摩根<span class="en">morgan</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">93/90/80/90/48/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">29</td>
+<td class="c-name">伊布拉希莫维奇<span class="en">ibrahimovic</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/93/82/90/46/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">30</td>
+<td class="c-name">尤西比奥<span class="en">antunes coimbra</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/92/91/92/62/71</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">31</td>
+<td class="c-name">尤西比奥<span class="en">da silva ferreira</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">92/92/84/94/44/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">32</td>
+<td class="c-name">泽穗希<span class="en">sawa</span></td>
+<td class="c-rating">91</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/87/91/91/83/76</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">33</td>
+<td class="c-name">阿比利<span class="en">abily</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/89/90/88/80/78</span></td>
+<td class="c-gold"><span class="gold-n" title="Tiki Taka">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">34</td>
+<td class="c-name">博比·摩尔<span class="en">moore</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">74/62/81/65/92/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">35</td>
+<td class="c-name">博格坎普<span class="en">bergkamp</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/89/85/87/35/76</span></td>
+<td class="c-gold"><span class="gold-n" title="First Touch">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 15，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">36</td>
+<td class="c-name">达格利什<span class="en">dalglish</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/90/83/89/41/73</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">37</td>
+<td class="c-name">德尔·皮耶罗<span class="en">del piero</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/90/87/93/41/69</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">38</td>
+<td class="c-name">菲戈<span class="en">madeira caeiro figo</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">RW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/84/88/92/38/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">39</td>
+<td class="c-name">福迪<span class="en">foudy</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/84/88/87/76/81</span></td>
+<td class="c-gold"><span class="gold-n" title="Relentless">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">40</td>
+<td class="c-name">宫间绫<span class="en">miyama</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">LM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/86/88/89/60/70</span></td>
+<td class="c-gold"><span class="gold-n" title="Gamechanger">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 12，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">41</td>
+<td class="c-name">卡西利亚斯<span class="en">casillas fernández</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">58/36/51/29/24/57</span></td>
+<td class="c-gold"><span class="gold-n" title="FootWork">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">42</td>
+<td class="c-name">克罗斯<span class="en">kroos</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">74/82/91/84/76/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 21，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">43</td>
+<td class="c-name">劳尔<span class="en">gonzález blanco</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/90/80/85/45/72</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">44</td>
+<td class="c-name">里瓦尔多<span class="en">borba ferreira</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">LW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/88/87/92/42/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">45</td>
+<td class="c-name">里瓦尔多<span class="en">dos santos leite</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/85/87/92/43/71</span></td>
+<td class="c-gold"><span class="gold-n" title="Rapid">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">46</td>
+<td class="c-name">里维利诺<span class="en">rivellino</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/88/90/94/46/72</span></td>
+<td class="c-gold"><span class="gold-n" title="Trickster">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">47</td>
+<td class="c-name">鲁尼<span class="en">rooney</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/91/84/87/59/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 3，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">48</td>
+<td class="c-name">马特乌斯<span class="en">matthäus</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/87/88/76/89/82</span></td>
+<td class="c-gold"><span class="gold-n" title="Pinged Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">49</td>
+<td class="c-name">皮尔洛<span class="en">pirlo</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">75/79/93/89/69/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">50</td>
+<td class="c-name">乔治·贝斯特<span class="en">best</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">RW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">91/89/82/93/56/69</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">51</td>
+<td class="c-name">儒尼尼奥<span class="en">da silva rocha</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">LB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">91/83/83/76/85/86</span></td>
+<td class="c-gold"><span class="gold-n" title="Dead Ball">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">52</td>
+<td class="c-name">塞格<span class="en">seger</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/79/90/85/85/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Tiki Taka">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">53</td>
+<td class="c-name">舍林<span class="en">schelin</span></td>
+<td class="c-rating">90</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">91/89/82/91/46/82</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 42，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 2，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">54</td>
+<td class="c-name">阿兰·希勒<span class="en">shearer</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/91/76/79/49/86</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">55</td>
+<td class="c-name">埃托奥<span class="en">eto&#39;o</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">92/90/79/87/45/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">56</td>
+<td class="c-name">巴蒂斯图塔<span class="en">batistuta</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/92/74/80/38/81</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">57</td>
+<td class="c-name">布特拉格诺<span class="en">butragueño santos</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">92/89/78/91/40/66</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 59，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">58</td>
+<td class="c-name">德罗巴<span class="en">drogba</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/90/74/79/44/90</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">59</td>
+<td class="c-name">德塞利<span class="en">desailly</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/51/65/59/89/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">60</td>
+<td class="c-name">范尼斯特鲁伊<span class="en">van nistelrooy</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/89/71/82/38/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">61</td>
+<td class="c-name">费迪南德<span class="en">ferdinand</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/48/65/54/90/86</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">62</td>
+<td class="c-name">加林查<span class="en">ventura filho</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">RW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">91/89/84/93/49/73</span></td>
+<td class="c-gold"><span class="gold-n" title="Rapid">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">63</td>
+<td class="c-name">杰拉德<span class="en">gerrard</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/88/89/86/78/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">64</td>
+<td class="c-name">卡纳瓦罗<span class="en">cannavaro</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/44/62/57/93/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Aerial Fortress">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">65</td>
+<td class="c-name">凯莉·史密斯<span class="en">smith</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/90/84/90/46/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Dead Ball">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">66</td>
+<td class="c-name">坎通纳<span class="en">cantona</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/89/86/89/50/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Gamechanger">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">67</td>
+<td class="c-name">科曼<span class="en">koeman</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/86/86/76/89/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Dead Ball">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">68</td>
+<td class="c-name">拉姆<span class="en">lahm</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/68/85/78/86/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">69</td>
+<td class="c-name">莱因克尔<span class="en">lineker</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/89/71/83/40/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">70</td>
+<td class="c-name">兰帕德<span class="en">lampard</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/91/88/85/75/81</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">71</td>
+<td class="c-name">卢西奥<span class="en">da silva ferreira</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/72/74/75/91/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Aerial Fortress">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">72</td>
+<td class="c-name">罗比·基恩<span class="en">keane</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/74/82/80/88/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Pinged Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">73</td>
+<td class="c-name">内德维德<span class="en">nedved</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">LM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/86/87/89/58/77</span></td>
+<td class="c-gold"><span class="gold-n" title="Gamechanger">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">74</td>
+<td class="c-name">内斯塔<span class="en">nesta</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">76/44/63/64/92/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Block">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">75</td>
+<td class="c-name">佩佩<span class="en">lima ferreira</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/51/61/58/90/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">76</td>
+<td class="c-name">普约尔<span class="en">puyol saforcada</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">75/46/66/50/91/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Slide Tackle">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 800，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">77</td>
+<td class="c-name">琼斯<span class="en">jones</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/59/74/64/91/86</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">680,462</span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">78</td>
+<td class="c-name">让-皮埃尔·帕潘<span class="en">papin</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/93/73/79/44/76</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">79</td>
+<td class="c-name">儒尼尼奥<span class="en">vieira de oliveira</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/88/89/90/43/82</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">80</td>
+<td class="c-name">萨内蒂<span class="en">zanetti</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/60/85/77/86/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Relentless">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">81</td>
+<td class="c-name">塞尔吉奥·阿圭罗<span class="en">agüero</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/90/78/88/33/74</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">82</td>
+<td class="c-name">桑切斯<span class="en">sánchez</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/90/78/90/41/73</span></td>
+<td class="c-gold"><span class="gold-n" title="Acrobatic">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">83</td>
+<td class="c-name">舍甫琴科<span class="en">shevchenko</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/90/72/88/35/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">8,001,111</span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">84</td>
+<td class="c-name">舒梅切尔<span class="en">schmeichel</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">46/38/40/30/26/70</span></td>
+<td class="c-gold"><span class="gold-n" title="Far Throw">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">85</td>
+<td class="c-name">斯科尔斯<span class="en">scholes</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">79/85/90/87/68/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 200，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">86</td>
+<td class="c-name">斯托伊奇科夫<span class="en">stoichkov</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/91/84/91/49/84</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">87</td>
+<td class="c-name">图拉姆<span class="en">thuram</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/58/76/71/90/90</span></td>
+<td class="c-gold"><span class="gold-n" title="Jockey">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">88</td>
+<td class="c-name">托蒂<span class="en">totti</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/91/89/90/40/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Power Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">89</td>
+<td class="c-name">维埃拉<span class="en">vieira da silva</span></td>
+<td class="c-rating">89</td>
+<td class="c-pos">LB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">87/72/87/89/83/76</span></td>
+<td class="c-gold"><span class="gold-n" title="First Touch">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">90</td>
+<td class="c-name">阿隆索<span class="en">alonso olano</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">74/77/86/76/83/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">91</td>
+<td class="c-name">阿什利·科尔<span class="en">cole</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">LB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/65/79/78/86/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Jockey">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 12，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">92</td>
+<td class="c-name">埃辛<span class="en">essien</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/73/77/73/86/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">7,996,195</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">93</td>
+<td class="c-name">巴恩斯<span class="en">barnes</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">LW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/85/83/92/44/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Gamechanger">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 14，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">94</td>
+<td class="c-name">贝尔<span class="en">bale</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">RW</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">95/89/84/90/65/79</span></td>
+<td class="c-gold"><span class="gold-n" title="Rapid">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">95</td>
+<td class="c-name">贝克汉姆<span class="en">beckham</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">RM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/86/92/84/66/80</span></td>
+<td class="c-gold"><span class="gold-n" title="Dead Ball">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">96</td>
+<td class="c-name">布兰科<span class="en">blanc</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/75/75/76/90/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">97</td>
+<td class="c-name">车范根<span class="en">cha</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/87/78/87/60/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">98</td>
+<td class="c-name">道格拉斯<span class="en">douglas sisenando</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/82/81/84/83/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Whipped Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">99</td>
+<td class="c-name">范德萨<span class="en">van der sar</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">38/18/39/8/13/58</span></td>
+<td class="c-gold"><span class="gold-n" title="Rush Out">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 134，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">100</td>
+<td class="c-name">范佩西<span class="en">van persie</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/91/84/87/45/73</span></td>
+<td class="c-gold"><span class="gold-n" title="First Touch">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">101</td>
+<td class="c-name">哈吉<span class="en">hagi</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/87/88/89/41/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Dead Ball">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">102</td>
+<td class="c-name">基耶利尼<span class="en">chiellini</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/55/62/57/92/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">103</td>
+<td class="c-name">加林查<span class="en">lima do amor</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/89/88/88/41/69</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">129,077</span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">104</td>
+<td class="c-name">加图索<span class="en">gattuso</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">76/62/69/64/88/88</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 500，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">105</td>
+<td class="c-name">杰夫·赫斯特<span class="en">hurst</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/91/72/80/39/78</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">106</td>
+<td class="c-name">卡福<span class="en">bledorn verri</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">76/77/82/80/87/85</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">107</td>
+<td class="c-name">坎贝尔<span class="en">campbell</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">81/45/60/50/89/89</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 13，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">108</td>
+<td class="c-name">克雷斯波<span class="en">crespo</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/88/71/88/36/71</span></td>
+<td class="c-gold"><span class="gold-n" title="Precision Header">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">109</td>
+<td class="c-name">克洛泽<span class="en">klose</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/87/73/80/40/79</span></td>
+<td class="c-gold"><span class="gold-n" title="Precision Header">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">110</td>
+<td class="c-name">肯佩斯<span class="en">mario alberto kempes</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/91/77/85/47/82</span></td>
+<td class="c-gold"><span class="gold-n" title="Low Driven Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">111</td>
+<td class="c-name">拉斐尔·瓦拉内<span class="en">varane</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/49/66/67/88/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Anticipate">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">112</td>
+<td class="c-name">拉什<span class="en">rush</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/90/69/84/43/79</span></td>
+<td class="c-gold"><span class="gold-n" title="Gamechanger">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">113</td>
+<td class="c-name">劳德鲁普<span class="en">laudrup</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">84/82/89/92/40/64</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">600,909</span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">114</td>
+<td class="c-name">里贝里<span class="en">ribéry</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">LM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/85/85/91/37/67</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">115</td>
+<td class="c-name">里杰卡尔德<span class="en">rijkaard</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">77/76/80/75/87/87</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">116</td>
+<td class="c-name">里克尔梅<span class="en">riquelme</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">74/85/90/92/33/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Inventive">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">117</td>
+<td class="c-name">马克莱莱<span class="en">makélélé</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">81/48/76/70/88/87</span></td>
+<td class="c-gold"><span class="gold-n" title="Intercept">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">118</td>
+<td class="c-name">迈克尔·欧文<span class="en">owen</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/88/69/89/35/68</span></td>
+<td class="c-gold"><span class="gold-n" title="Quick Step">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">119</td>
+<td class="c-name">佩蒂特<span class="en">petit</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CDM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">77/77/79/70/85/87</span></td>
+<td class="c-gold"><span class="gold-n" title="Relentless">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">120</td>
+<td class="c-name">皮雷<span class="en">pirès</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">LM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">86/81/86/88/38/67</span></td>
+<td class="c-gold"><span class="gold-n" title="Technical">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">121</td>
+<td class="c-name">皮琼<span class="en">pichon</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">85/89/80/88/44/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Acrobatic">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">122</td>
+<td class="c-name">切赫<span class="en">cech</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">GK</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">54/22/37/18/22/60</span></td>
+<td class="c-gold"><span class="gold-n" title="Deflector">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 896，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">123</td>
+<td class="c-name">施魏因斯泰格<span class="en">schweinsteiger</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">78/83/86/81/83/83</span></td>
+<td class="c-gold"><span class="gold-n" title="Long Ball Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">124</td>
+<td class="c-name">托雷斯<span class="en">torres sanz</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">90/87/76/88/43/75</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">125</td>
+<td class="c-name">维埃拉<span class="en">vieira</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">82/78/80/82/88/90</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">126</td>
+<td class="c-name">维迪奇<span class="en">vidic</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">79/48/62/50/90/90</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">127</td>
+<td class="c-name">亚亚·图雷<span class="en">touré</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">80/85/89/83/81/90</span></td>
+<td class="c-gold"><span class="gold-n" title="Incisive Pass">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">128</td>
+<td class="c-name">耶罗<span class="en">hierro ruiz</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">75/75/76/64/92/84</span></td>
+<td class="c-gold"><span class="gold-n" title="Bruiser">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">129</td>
+<td class="c-name">伊恩·赖特<span class="en">wright</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">ST</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">89/89/70/80/40/76</span></td>
+<td class="c-gold"><span class="gold-n" title="Finesse Shot">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">130</td>
+<td class="c-name">永里优季<span class="en">nagasato</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">CAM</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">83/88/84/87/47/78</span></td>
+<td class="c-gold"><span class="gold-n" title="First Touch">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">37,075</span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr><tr>
+<td class="c-rank">131</td>
+<td class="c-name">赞布罗塔<span class="en">zambrotta</span></td>
+<td class="c-rating">88</td>
+<td class="c-pos">RB</td>
+<td class="c-six"><span class="six" title="PAC 速度 / SHO 射门 / PAS 传球 / DRI 盘带 / DEF 防守 / PHY 身体">88/69/81/81/85/82</span></td>
+<td class="c-gold"><span class="gold-n" title="Relentless">1 <span class="hint">金</span></span></td>
+<td class="c-price"><span class="pv pv-console">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span><span class="pv pv-pc">—<span class="hint" title="FUTBIN 返回 0，低于有效价格下限，按占位值处理">占位</span></span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-price"><span class="pv pv-console">—</span><span class="pv pv-pc">—</span></td>
+<td class="c-num">—</td>
+<td class="c-spark"><div class="pv pv-console">—</div><div class="pv pv-pc">—</div></td>
+</tr></tbody></table></div>
+</div>
+
+<h2>四、逐日快照记录</h2>
+<div class="card">
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>日期</th><th>卡数</th><th>有效价</th><th>口径</th><th>中位价(coins)</th><th>采集时间</th></tr></thead><tbody><tr>
+<td class="c-date">2026-09-17 <span class="hint">周四</span></td>
+<td class="c-num">131</td>
+<td class="c-num">0</td>
+<td class="c-basis"><span class="tag warn">列表页占位价</span></td>
+<td class="c-price">—</td>
+<td class="c-note">2026-09-17T02:02:36.435Z</td>
+</tr><tr>
+<td class="c-date">2026-09-16 <span class="hint">周三</span></td>
+<td class="c-num">131</td>
+<td class="c-num">97</td>
+<td class="c-basis"><span class="tag warn">列表页占位价</span></td>
+<td class="c-price">21,000</td>
+<td class="c-note">2026-09-16T02:59:17.669Z</td>
+</tr></tbody></table></div>
+</div>
+
+<h2>五、数据来源与缺失项</h2>
+<div class="card">
+<ul>
+<li>来源：<code>https://www.futbin.com/27/players</code> · 抓取时间 2026-09-17T02:02:36.435Z</li>
+<li>原始抓取文件：<code>apps/market/engine/icons/data/prices/fc27/base-icons.json</code></li>
+</ul>
+<ul><li>FC27 尚未开服（开服日 2026-09-25），FUTBIN 列表页价不是市场成交价，因此本期不计算日环比与累计涨跌。</li><li>当日 131 张传奇卡无有效价格（FUTBIN 返回占位值），已在表中如实标注为占位。</li></ul>
+</div>
+
+
+<h2>六、英雄卡（Hero）台账（FC27）</h2>
+<div class="card">
+<div class="sub" style="margin:0 0 12px">FC27 英雄卡 50 张 · 数据来源 1 个文件 · 价格为 Console（PS / Xbox）/ PC 双平台口径，随顶部平台按钮切换。</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>价格(coins)</th></tr></thead><tbody><tr><td class="c-rank">1</td><td class="c-name">吉诺拉<span class="en">Ginola</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">2</td><td class="c-name">沙希奇<span class="en">Šašic</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">3</td><td class="c-name">阿尤<span class="en">Ayew</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">4</td><td class="c-name">科勒<span class="en">Kohler</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">5</td><td class="c-name">维亚利<span class="en">Vialli</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">6</td><td class="c-name">沃勒尔<span class="en">Völler</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">7</td><td class="c-name">阿扎尔<span class="en">Hazard</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">8</td><td class="c-name">维亚利<span class="en">Vialli</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">9</td><td class="c-name">沃勒尔<span class="en">Völler</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">10</td><td class="c-name">吉诺拉<span class="en">Ginola</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">11</td><td class="c-name">沙希奇<span class="en">Šašic</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">12</td><td class="c-name">阿扎尔<span class="en">Hazard</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">13</td><td class="c-name">阿尤<span class="en">Ayew</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">14</td><td class="c-name">科勒<span class="en">Kohler</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">15</td><td class="c-name">奥科查<span class="en">Okocha</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">16</td><td class="c-name">斯内德<span class="en">Sneijder</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">17</td><td class="c-name">米利托<span class="en">Milito</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">18</td><td class="c-name">弗兰<span class="en">Forlán</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">19</td><td class="c-name">马克斯<span class="en">Márquez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">20</td><td class="c-name">利扎拉祖<span class="en">Lizarazu</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">21</td><td class="c-name">恩佐·弗朗切斯科利<span class="en">Enzo Francescoli</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">22</td><td class="c-name">迪纳塔莱<span class="en">Di Natale</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">23</td><td class="c-name">克斯勒<span class="en">Keßler</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">24</td><td class="c-name">特维斯<span class="en">Tévez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">25</td><td class="c-name">恩佐·弗朗切斯科利<span class="en">Enzo Francescoli</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">26</td><td class="c-name">卡瓦略<span class="en">Silveira Carvalho</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">27</td><td class="c-name">富特雷<span class="en">dos Santos Futre</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">28</td><td class="c-name">法布雷加斯<span class="en">Fàbregas i Soler</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">29</td><td class="c-name">奥科查<span class="en">Okocha</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">30</td><td class="c-name">法布雷加斯<span class="en">Fàbregas i Soler</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">31</td><td class="c-name">利特马宁<span class="en">Litmanen</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">32</td><td class="c-name">马克斯<span class="en">Márquez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">33</td><td class="c-name">孔帕尼<span class="en">Kompany</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">34</td><td class="c-name">马斯切拉诺<span class="en">Mascherano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">35</td><td class="c-name">斯内德<span class="en">Sneijder</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">36</td><td class="c-name">萨莫拉诺<span class="en">Zamorano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">37</td><td class="c-name">西蒙娜·劳德尔<span class="en">Simone Laudehr</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">38</td><td class="c-name">利特马宁<span class="en">Litmanen</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">39</td><td class="c-name">利扎拉祖<span class="en">Lizarazu</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">40</td><td class="c-name">弗兰<span class="en">Forlán</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">41</td><td class="c-name">迪纳塔莱<span class="en">Di Natale</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">42</td><td class="c-name">西蒙娜·劳德尔<span class="en">Simone Laudehr</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">43</td><td class="c-name">米利托<span class="en">Milito</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">44</td><td class="c-name">孔帕尼<span class="en">Kompany</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">45</td><td class="c-name">克斯勒<span class="en">Keßler</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">46</td><td class="c-name">卡瓦略<span class="en">Silveira Carvalho</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">47</td><td class="c-name">富特雷<span class="en">dos Santos Futre</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">48</td><td class="c-name">特维斯<span class="en">Tévez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">49</td><td class="c-name">马斯切拉诺<span class="en">Mascherano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">50</td><td class="c-name">萨莫拉诺<span class="en">Zamorano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">—<span class="hint">估值</span></span><span class="pv pv-pc">—<span class="hint">估值</span></span></td></tr></tbody></table></div>
+</div>
+
+<h2>七、FC26 英雄卡参考对比（仅供参考，非 FC27 监控口径）</h2>
+<div class="card">
+<div class="sub" style="margin:0 0 12px">以下 93 张为 FC26 英雄卡历史参考数据（来源 1 个文件），<b>仅用于跨代对比参考</b>，不属于 FC27 监控范围，不参与上方任何统计与台账。</div>
+<details><summary style="cursor:pointer;color:var(--muted);font-size:12.5px">展开 FC26 参考数据（93 张）</summary>
+<div class="tbl-wrap" style="margin-top:10px"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>FC26 价格参考(coins)</th></tr></thead><tbody><tr><td class="c-rank">1</td><td class="c-name">帕潘<span class="en">papin</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">2</td><td class="c-name">德科<span class="en">da silva ferreira</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">3</td><td class="c-name">沃勒尔<span class="en">voller</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">4</td><td class="c-name">科勒<span class="en">kohler</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">5</td><td class="c-name">莫伦特斯<span class="en">morientes sanchez</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">6</td><td class="c-name">萨西奇<span class="en">sasic</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">7</td><td class="c-name">阿尤<span class="en">ayew</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">8</td><td class="c-name">维亚利<span class="en">vialli</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">9</td><td class="c-name">吉诺拉<span class="en">ginola</span></td><td class="c-rating">89</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">89<span class="hint">估值</span></span><span class="pv pv-pc">89<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">10</td><td class="c-name">特维斯<span class="en">tevez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">11</td><td class="c-name">马斯切拉诺<span class="en">mascherano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">12</td><td class="c-name">奥科查<span class="en">okocha</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">13</td><td class="c-name">马克斯<span class="en">marquez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">14</td><td class="c-name">利特马宁<span class="en">litmanen</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">15</td><td class="c-name">富特雷<span class="en">dos santos futre</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">16</td><td class="c-name">利扎拉祖<span class="en">lizarazu</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">17</td><td class="c-name">弗兰<span class="en">forlan</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">18</td><td class="c-name">卢西奥<span class="en">silveira carvalho</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">19</td><td class="c-name">米利托<span class="en">milito</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">20</td><td class="c-name">戈麦斯<span class="en">gomez</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">21</td><td class="c-name">孔帕尼<span class="en">kompany</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">22</td><td class="c-name">弗朗西斯科利<span class="en">enzo francescoli</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">23</td><td class="c-name">斯内德<span class="en">sneijder</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">24</td><td class="c-name">道格拉斯·科斯塔<span class="en">douglas sisenando</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">25</td><td class="c-name">凯勒<span class="en">keler</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">26</td><td class="c-name">迪纳塔莱<span class="en">di natale</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">27</td><td class="c-name">阿扎尔<span class="en">hazard</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">28</td><td class="c-name">劳德尔<span class="en">simone laudehr</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">29</td><td class="c-name">法布雷加斯<span class="en">cesc fabregas</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">30</td><td class="c-name">萨莫拉诺<span class="en">ivan zamorano</span></td><td class="c-rating">88</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">88<span class="hint">估值</span></span><span class="pv pv-pc">88<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">31</td><td class="c-name">图雷<span class="en">toure</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">32</td><td class="c-name">斯塔姆<span class="en">stam</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">33</td><td class="c-name">科尔多巴<span class="en">cordoba</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">34</td><td class="c-name">儒西尼奥<span class="en">da silva junior</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">35</td><td class="c-name">布罗林<span class="en">brolin</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">36</td><td class="c-name">麦克马纳曼<span class="en">mcmanaman</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">37</td><td class="c-name">坎波斯<span class="en">campos</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">38</td><td class="c-name">乔治斯<span class="en">georges</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">39</td><td class="c-name">哈姆西克<span class="en">hamsik</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">40</td><td class="c-name">马尔基西奥<span class="en">marchisio</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">41</td><td class="c-name">科威尔<span class="en">kewell</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">42</td><td class="c-name">贝尔巴托夫<span class="en">berbatov</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">43</td><td class="c-name">塞萨尔<span class="en">cesar costa</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">44</td><td class="c-name">阿什利·科尔<span class="en">cole</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">45</td><td class="c-name">中田英寿<span class="en">nakata</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">46</td><td class="c-name">萨尔加多<span class="en">michel salgado</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">47</td><td class="c-name">德罗西<span class="en">daniele de rossi</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">48</td><td class="c-name">艾马尔<span class="en">pablo aimar</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">49</td><td class="c-name">内西布<span class="en">necib cadamuro</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">50</td><td class="c-name">阿帕雷西多<span class="en">aparecido da silva</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">51</td><td class="c-name">马凯<span class="en">roy makaay</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">52</td><td class="c-name">巴尔扎利<span class="en">barzagli</span></td><td class="c-rating">87</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">87<span class="hint">估值</span></span><span class="pv pv-pc">87<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">53</td><td class="c-name">多诺万<span class="en">donovan</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">54</td><td class="c-name">斯莫拉雷克<span class="en">smolarek</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">55</td><td class="c-name">罗比·基恩<span class="en">keane</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">56</td><td class="c-name">杜德克<span class="en">dudek</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">57</td><td class="c-name">索尔斯克亚<span class="en">solskjaer</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">58</td><td class="c-name">永贝里<span class="en">ljungberg</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">59</td><td class="c-name">罗西基<span class="en">rosicky</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">60</td><td class="c-name">邦帕斯托<span class="en">bompastor</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">61</td><td class="c-name">里瑟<span class="en">riise</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">62</td><td class="c-name">久利<span class="en">giuly</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">63</td><td class="c-name">卡拉格<span class="en">carragher</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">64</td><td class="c-name">阿尔·贾贝尔<span class="en">al jaber</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">65</td><td class="c-name">朴智星<span class="en">park</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">66</td><td class="c-name">古铁雷斯<span class="en">gutierrez hernandez</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">67</td><td class="c-name">纳西门托<span class="en">santos do nascimen</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">68</td><td class="c-name">卡努<span class="en">kanu</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">69</td><td class="c-name">马图伊迪<span class="en">matuidi</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">70</td><td class="c-name">卡普德维拉<span class="en">capdevila mendez</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">71</td><td class="c-name">库伊特<span class="en">kuyt</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">72</td><td class="c-name">戈武<span class="en">govou</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">73</td><td class="c-name">威廉姆斯<span class="en">williams</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">74</td><td class="c-name">莱德利·金<span class="en">ledley king</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">75</td><td class="c-name">皮萨罗<span class="en">pizarro bosio</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">76</td><td class="c-name">赫内斯<span class="en">ulrich hoene</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">77</td><td class="c-name">比埃尔霍夫<span class="en">oliver bierhoff</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">78</td><td class="c-name">曼朱基奇<span class="en">mandzukic</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">79</td><td class="c-name">坎比亚索<span class="en">cambiasso</span></td><td class="c-rating">86</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">86<span class="hint">估值</span></span><span class="pv pv-pc">86<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">80</td><td class="c-name">努尔<span class="en">noor</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">81</td><td class="c-name">伊瓦尔博<span class="en">victor ibarbo</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">82</td><td class="c-name">卡希尔<span class="en">cahill</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">83</td><td class="c-name">比斯利<span class="en">beasley</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">84</td><td class="c-name">亚奥<span class="en">yao kouassi</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">85</td><td class="c-name">霍华德<span class="en">howard</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">86</td><td class="c-name">克劳奇<span class="en">crouch</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">87</td><td class="c-name">奥维兰<span class="en">al owairan</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">88</td><td class="c-name">杜姆比亚<span class="en">seydou doumbia</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">89</td><td class="c-name">斯科特<span class="en">scott</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">90</td><td class="c-name">邓普西<span class="en">dempsey</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">91</td><td class="c-name">夸雷斯马<span class="en">quaresma bernardo</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">92</td><td class="c-name">吉尔·斯科特<span class="en">jill scott</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr><tr><td class="c-rank">93</td><td class="c-name">理查兹<span class="en">micah richards</span></td><td class="c-rating">85</td><td class="c-pos">—</td><td class="c-price"><span class="pv pv-console">85<span class="hint">估值</span></span><span class="pv pv-pc">85<span class="hint">估值</span></span></td></tr></tbody></table></div>
+</details>
+</div>
+<div class="footer">FC27 传奇/英雄监控 · 2026-09-17 · 由 render-icons-heroes.mjs（传奇区块由 render-market-icons.mjs 渲染）生成 · 价格为 FUT 金币，Console / PC 双平台口径，仅作游戏市场研究，不构成投资或交易建议</div>
+<script>
+(function(){
+  var table=document.getElementById('icons-table');if(!table)return;
+  var tbody=table.tBodies[0];
+  function cells(tr){return Array.prototype.slice.call(tr.children);}
+  // 平台切换：只取当前平台那一份取值，避免两个平台的值被拼在一起影响排序与数值解析
+  function activeText(cell){
+    var plat=document.body.getAttribute('data-platform')||'console';
+    var el=cell.querySelector('.pv.pv-'+plat);
+    return el?el.textContent:cell.textContent;
+  }
+  var specs={rank:{i:0,type:'num'},rating:{i:2,type:'num'},pos:{i:3,type:'str'},name:{i:1,type:'str'}};
+  var priceKeys=(function(){var th=table.tHead.rows[0].cells;var m={};for(var i=0;i<th.length;i++){var k=th[i].getAttribute('data-key');if(k)m[k]=i;}return m;})();
+  function val(tr,key){
+    var i=(key==='price')?priceKeys.price:(key==='d1'?priceKeys.d1:(key==='cum'?priceKeys.cum:null));
+    var raw;
+    if(i!==null&&i!==undefined){raw=activeText(tr.children[i]).replace(/[^0-9.+-]/g,'');return raw===''?null:parseFloat(raw);}
+    var s=specs[key];if(!s)return null;raw=activeText(tr.children[s.i]).trim();
+    return s.type==='num'?(isNaN(parseFloat(raw))?null:parseFloat(raw)):raw;
+  }
+  var dir={};
+  Array.prototype.forEach.call(table.tHead.rows[0].querySelectorAll('th.sortable'),function(th){
+    th.addEventListener('click',function(){
+      var key=th.getAttribute('data-key');dir[key]=dir[key]==='asc'?'desc':'asc';
+      var rows=cells(tbody.rows).slice();
+      rows.sort(function(a,b){var x=val(a,key),y=val(b,key);
+        if(x===null&&y===null)return 0;if(x===null)return 1;if(y===null)return -1;
+        var r=(typeof x==='string')?x.localeCompare(y,'zh'):x-y;return dir[key]==='asc'?r:-r;});
+      rows.forEach(function(tr){tbody.appendChild(tr);});
+    });
+  });
+  var q=document.getElementById('q');
+  if(q)q.addEventListener('input',function(){
+    var s=q.value.trim().toLowerCase();
+    Array.prototype.forEach.call(tbody.rows,function(tr){
+      tr.style.display=!s||tr.children[1].textContent.toLowerCase().indexOf(s)>-1||tr.children[3].textContent.toLowerCase().indexOf(s)>-1?'':'none';
+    });
+  });
+  // 平台切换按钮（纯展示切换，不重新渲染）
+  Array.prototype.forEach.call(document.querySelectorAll('.plat-btn'),function(b){
+    b.addEventListener('click',function(){
+      var id=b.getAttribute('data-platform');
+      document.body.setAttribute('data-platform',id);
+      Array.prototype.forEach.call(document.querySelectorAll('.plat-btn'),function(x){
+        var on=x.getAttribute('data-platform')===id;
+        x.classList.toggle('active',on);x.setAttribute('aria-pressed',on?'true':'false');
+      });
+    });
+  });
+})();
+</script>
+</body></html>

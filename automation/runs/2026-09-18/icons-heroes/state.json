@@ -1,0 +1,113 @@
+{
+  "module": "icons-heroes",
+  "date": "2026-09-18",
+  "runId": "bd2ebc99-0330-4c5a-bad2-50a28b3ce979",
+  "status": "partial",
+  "startedAt": "2026-09-17T19:10:34.421Z",
+  "deadlineAt": "2026-09-17T19:25:34.421Z",
+  "reportPath": "reports/daily/2026-09-18/icons-heroes.html",
+  "completedAt": "2026-09-17T19:17:23.117Z",
+  "evidence": {
+    "date": "2026-09-18",
+    "runId": "bd2ebc99-0330-4c5a-bad2-50a28b3ce979",
+    "status": "partial",
+    "task": "icons-heroes（FC27 基础传奇卡 Icon 与英雄卡 Hero 监控）",
+    "startedAt": "2026-09-17T19:10:34.421Z",
+    "finishedAt": "2026-09-17T19:17:20Z",
+    "browser": {
+      "channel": "Web Access（CDP Proxy :3456 → 用户日常 Chrome）",
+      "checkDepsExit": 0,
+      "note": "check-deps.mjs 输出 browser: ok (Chrome, port 9222) / proxy: ready；未使用任何禁止通道"
+    },
+    "sources": [
+      {
+        "name": "futbin 首页（建会话）",
+        "url": "https://www.futbin.com/",
+        "openedAt": "2026-09-17T19:13:00Z",
+        "result": "ok",
+        "detail": "335KB 正常渲染，标题 EA FC 27 Ultimate Team..."
+      },
+      {
+        "name": "FC27 球员列表页",
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-17T19:13:30Z",
+        "result": "ok",
+        "detail": "HTTP 200，30 行；表头含 NAME/RAT/IS/POS/PRICE/FUTBIN RATING 等；每行同时含 td.table-price.platform-ps-only 与 platform-pc-only"
+      },
+      {
+        "name": "列表页翻页 1-10",
+        "url": "https://www.futbin.com/27/players?page=1..10",
+        "openedAt": "2026-09-17T19:14:00Z",
+        "result": "ok",
+        "detail": "每页 200 / 30 行，共 300 行；按评分降序（95→88）"
+      },
+      {
+        "name": "列表页翻页 11-26",
+        "url": "https://www.futbin.com/27/players?page=11..26",
+        "openedAt": "2026-09-17T19:14:30Z",
+        "result": "blocked",
+        "detail": "全部 HTTP 403（FUTBIN 自有拦截页），非浏览器通道故障；首页与 1-10 页同时可读，判为分路径/会话级反爬"
+      },
+      {
+        "name": "列表页退避重试 11-20",
+        "url": "https://www.futbin.com/27/players?page=11..20",
+        "openedAt": "2026-09-17T19:17:00Z",
+        "result": "blocked",
+        "detail": "按契约分钟级退避 120s 后单次重试，仍全部 403；未做秒级密集重试（本轮共 2 次尝试，在「最多再试 2 次」预算内）"
+      },
+      {
+        "name": "version 参数直连（对照）",
+        "url": "https://www.futbin.com/27/players?version=base_icon",
+        "openedAt": "2026-09-17T19:14:10Z",
+        "result": "empty",
+        "detail": "返回 0 行空表（表头在、行数为 0），再次确认「直接导航 version 参数」不可用；站内版本下拉为纯 JS 状态，点击 li 后未改变列表，不采用"
+      },
+      {
+        "name": "头像补全接口（DOM 内）",
+        "url": "https://www.futbin.com/27/playerhover/<cardId>",
+        "openedAt": "2026-09-17T19:25:00Z",
+        "result": "ok",
+        "detail": "backfill-avatar-keys.mjs 2026-09-18：榜单球员 181 个 cardId 全部可解析，无需补全，未新增映射"
+      }
+    ],
+    "deliverables": [
+      "apps/market/engine/icons/data/prices/fc27/base-icons.json（131 张，102 张带当日列表价）",
+      "apps/market/engine/heroes/data/prices/fc27/base-heroes.json（50 张，双平台价，全部含中文名）",
+      "apps/market/engine/icons/data/prices/fc27/daily/2026-09-18.json（131 张，价格区间 131/131）",
+      "reports/daily/2026-09-18/icons-heroes.html",
+      "automation/runs/2026-09-18/icons-heroes/work/list-raw.json（原始抓取：每页状态 + 300 行明细）",
+      "apps/market/engine/scripts/collect-icons-list.mjs（本任务此前缺失的列表页采集器）"
+    ],
+    "counts": {
+      "listPagesOk": 10,
+      "listPagesRequested": 26,
+      "rowsRaw": 300,
+      "iconsLedger": 131,
+      "iconsWithTodayListPrice": 102,
+      "iconsLabeledRowTotal": 199,
+      "iconsNotInLedger": 97,
+      "heroes": 50,
+      "consoleValid": 59,
+      "pcValid": 35,
+      "snapshotValidPrice": 48,
+      "snapshotPriceRange": 131,
+      "avatarIcons": "131/131",
+      "avatarHeroes": "48/50"
+    },
+    "missingItems": [
+      "列表页第 11 页及以后（评分 87 及以下）被来源 403 拦截：131 张基础传奇卡中 29 张未取得「当日列表页价」，价按 0 / valid=false 如实留空，未用旧日期数据填充；这 29 张的当前价与区间仍来自每小时任务写入的 current.json（快照内 priceRange 131/131）。",
+      "英雄卡 2 张（Márquez，cardId 21587 / 21600，同一球员两名目）头像键不可解析，如实不显示图片；未用他人图片或占位图顶替。",
+      "base-heroes.json 仅覆盖列表页 1-10 页，未能验证第 11 页以下是否还有 Base Heroes 条目（本日抓到的 50 张与既有台账 50 张数量一致，评分区间 88-89）。",
+      "因 403 拦截，未能对 131 张台账做「全量列表页名单复核」；本次以卡库台账 fc27-icons-playstyles.json（131 张）判定归属：列表页带 Icon 标签的 199 行中有 97 行不在台账内，已排除并记入 list-raw.json 的 counts.iconNotInLedger。"
+    ],
+    "notes": [
+      "口径：launchDate=2026-09-25，未开服，priceBasis=listing-estimate；未计算日环比与累计涨跌。",
+      "平台：每行一次读取 Console（platform-ps-only）与 PC（platform-pc-only）两列，顶层 platform=console+pc；未依赖 ps_price/pc_price URL 参数，未为切平台重复导航。",
+      "未渲染、未提交 market.html / market-scan.html；未发布站点；未新增定时任务。",
+      "证据写入后由 run-state.mjs finish 快照校验并保存 SHA-256。"
+    ]
+  },
+  "sha256": "e2d1edac1589889023592f93e20d0a39d9eac35bf85b225ae8ce0e5b5446e6ad",
+  "bytes": 312410,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-18/icons-heroes/report.html"
+}

@@ -1,49 +1,61 @@
 {
-  "version": 2,
+  "version": 3,
   "projectRoot": "/Users/wuyanzu/Desktop/FC",
-  "promptPolicy": "本地 promptFile 是唯一完整提示词；WorkBuddy 调度器只保存 bootstrapPrompt，不复制业务规则。项目已迁移到 WorkBuddy，发布走 WorkBuddy 站点发布能力。",
+  "promptPolicy": "本地 promptFile 是唯一完整业务契约；bootstrapPrompt 只做指路（不复制业务规则）。项目已迁移到 WorkBuddy，发布走 WorkBuddy 站点发布能力。",
   "tasks": [
     {
       "id": "football",
       "name": "足球日报",
       "promptFile": "automation/prompts/football.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/football.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、fc-browser-channel-check 历史探针、agent-browser、IAB 或新 profile。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/football.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "news",
       "name": "FC27资讯采集",
       "promptFile": "automation/prompts/news.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/news.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、apps/news/auto_news.sh、fc-browser-channel-check 历史探针、agent-browser、IAB 或新 profile。采集固定四步：extract-timeline.js 抽 DOM（只取 ID/正文/时间与 has* 标记，不得抠图）→ enrich-tweet-media.mjs D 经 syndication 接口补媒体 → generate_report.mjs D → 翻译校验后提交快照。严禁因推文含视频/动图丢弃整条推文。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/news.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "market",
       "name": "FC27市场监控",
       "promptFile": "automation/prompts/market.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/market.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、fc-browser-channel-check 历史探针、agent-browser、IAB 或新 profile。产物为 market.html 与 market-scan.html 两份（不再产出 market-icons.html）。平台口径必须同时覆盖 Console（PS/Xbox 合并）与 PC 两档：列表页每行同时渲染 td.table-price.platform-ps-only 与 td.table-price.platform-pc-only，一次打开即可读到两平台价，分别落库 psPrice / pcPrice；不要依赖 ps_price / pc_price URL 参数，平台按钮只是纯前端显隐切换。td.table-item-score 是开服前估值列，不是成交价。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/market.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "evolution",
       "name": "FC27进化专栏",
       "promptFile": "automation/prompts/evolution.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/evolution.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、fc-browser-channel-check 历史探针、agent-browser、IAB 或新 profile。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/evolution.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "icons-heroes",
       "name": "FC27传奇/英雄卡监控",
       "promptFile": "automation/prompts/icons-heroes.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/icons-heroes.md；后者是唯一完整业务提示词。本任务只监控传奇卡（Icon）与英雄卡（Hero），已从 FC27 市场任务拆出，不得渲染或提交市场报告。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、fc-browser-channel-check 历史探针、agent-browser、IAB 或新 profile。平台口径必须同时覆盖 Console（PS/Xbox 合并）与 PC 两档：列表页每行同时渲染 td.table-price.platform-ps-only 与 td.table-price.platform-pc-only，一次打开即可读到两平台价，逐卡落库 platforms.console / platforms.pc；不要依赖 ps_price / pc_price URL 参数。开服前两平台价均为 0，只做台账不计算涨跌。产出 reports/daily/D/icons-heroes.html。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/icons-heroes.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "portal",
       "name": "汇总链接",
       "promptFile": "automation/prompts/daily.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/daily.md；后者是唯一完整业务提示词。只按本地文件执行，不使用 WorkBuddy 中的旧规则副本。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/daily.md（唯一业务契约）。只按本地文件执行，不采集、不启动浏览器。"
     },
     {
       "id": "douyin",
       "name": "抖音素材",
       "promptFile": "automation/prompts/douyin.md",
-      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。启动后完整读取根 AGENTS.md 和 automation/prompts/douyin.md；后者是唯一完整业务提示词。浏览器必须调用任务已绑定的 Web Access 技能并复用用户日常 Chrome；禁止调用或探测 dumate-browser-cli、DUMATE_*、agent-browser、IAB 或新 profile。本任务在日报发布后把线上情报台各栏目截成分析长图并写出配套视频讲解稿，供导入剪映出片；不参与日报合并发布，也不得改动 reports/daily 与站点产物。"
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/douyin.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
+    },
+    {
+      "id": "icons-pricerange-hourly",
+      "name": "FC27传奇价格区间(每小时)",
+      "promptFile": "automation/prompts/icons-pricerange-hourly.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/icons-pricerange-hourly.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
+    },
+    {
+      "id": "market-hourly",
+      "name": "FC27市场价格(每小时)",
+      "promptFile": "automation/prompts/market-hourly.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/market-hourly.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     }
   ]
 }

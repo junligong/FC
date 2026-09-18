@@ -1,6 +1,6 @@
-# icons-heroes 单项执行契约（2026-09-16 新建）
+# icons-heroes 单项执行契约（2026-09-16 新建 · 2026-09-17 修订）
 
-本文件为「FC27 传奇/英雄卡监控」任务的执行入口规则。每日 03:00 调度，只采集和生成传奇卡（Icon）与英雄卡（Hero）的监控数据；绝不执行合并、发布、修改首页、修补布局、修改其他模块文件或再次启动任务。
+本文件为「FC27 传奇/英雄卡监控」任务的执行入口规则。每日 03:20 调度（2026-09-18 起日任务按 5 分钟错开发起，权威时刻表见 `shared/config/project.json` 的 `dailySchedule`），只采集和生成传奇卡（Icon）与英雄卡（Hero）的监控数据；绝不执行合并、发布、修改首页、修补布局、修改其他模块文件或再次启动任务。
 
 > 背景：2026-09-16 起，传奇/英雄内容从 FC27 市场任务中**整体迁出**。市场任务不再监控传奇/英雄卡，也不再产出 `market-icons.html`；本任务独立承担该职责，产物挂在站点「传奇/英雄专栏」下。
 
@@ -14,12 +14,22 @@
 
 监控 FC27 **全部基础传奇卡（Icon）与全部英雄卡（Hero）**：
 
-- 传奇卡与英雄卡名单：入口 `https://www.futbin.com/27/players`。**URL 查询参数不可用于筛选**（已实机核验：`?rarity=icon`、`?rarity=hero`、`?version=icons` 三个地址返回的都是**同一批默认列表**，服务端并未按参数过滤；`page` 参数同样不生效）。因此必须走以下两条路之一：
-  1. **用页面自身的筛选 UI**：点击 FUTBIN 列表页的版本/稀有度筛选控件（Icon / Hero）后再读取表格；或
-  2. **读全量列表后用台账比对归属**：以卡库台账 `apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json`（131 张 Icon）与英雄卡台账为基准判定每张卡的版本，列表未覆盖的卡逐一记录为缺失。
+- 传奇卡与英雄卡名单：入口 `https://www.futbin.com/27/players`。**URL 查询参数筛选不可依赖**（实机核验：`?rarity=icon`、`?rarity=hero`、`?version=icons` 三个地址返回的都是**同一批默认列表**，服务端并未按参数过滤）。**`page` 翻页参数在会话建立后可用**（2026-09-17 实测：`?page=2` 起按评分降序返回后续名单，每页 30 行）；注意 `?version=base_icon` / `?version=heroes` 虽是站点筛选下拉自带的 href，但**直接导航会返回 0 行空表**（疑似依赖站内 JS 状态），不得当作采集路线。因此必须走以下两条路之一：
+  1. **用页面自身的筛选 UI**：点击 FUTBIN 列表页的 Version 下拉（Base Icon / Heroes / Debut Icon）后在页内读取表格（不要依赖点选后 URL 直接重开）；或
+  2. **翻页读全量列表后用台账比对归属**：以卡库台账 `apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json`（131 张 Icon）为基准判定归属；英雄卡以页面版本标签 `Base Heroes` 识别。**列表页每行 `td.table-name` 自带版本标签**（如 `95\nMaradona\nIcon`，英雄为 `Base Heroes`），以此区分版本最可靠。
+- **采集通道注意事项（2026-09-17 实测）**：① CDP 代理对含可选链 `?.` 的较长 eval 表达式会偶发返回空对象，提取脚本用 `function` + 显式判空写法；② eval 必须等导航完成后再发（导航后 `sleep 3–6` 秒，返回空对象就重试）；③ 列表页无法整页滚动懒加载（30 行即全部，翻页靠 `page` 参数）。
 - **每张卡必须写明版本字段（`version`: `"Icon"` / `"Hero"`）**，两个版本严格区分，不得互相混入；不得因为筛选控件难用就把两版混成一份。
 - 排除一切特殊版本（Debut Icon、进化后版本、SBC/任务/租借/交换卡等），只保留基础卡。
-- 列表页首屏约 30 行且分页不生效，凑齐全量需靠滚动加载或按价格/评分区间分档多次读取；凑不全时如实记 `missingItems` 并提交 `partial`，不得用部分数据冒充全量。
+- 列表页首屏约 30 行，凑齐全量需按 `page` 参数逐页翻取直到名单穷尽（或用筛选 UI）；按评分降序时，131 张基础传奇卡（85–95 评分）集中在前 10 页左右，英雄卡（`Base Heroes` 标签）多在 84–88 评分区间。凑不全时如实记 `missingItems` 并提交 `partial`，不得用部分数据冒充全量。
+- **FC26 数据口径（2026-09-17 固化）：本模块只监控 FC27**。`apps/market/engine/heroes/data/prices/fc26/` 下的 FC26 英雄卡历史数据**只作跨代参考对比**，渲染器已将其单独放入「FC26 参考对比」折叠区；**严禁把 FC26 数据混入 FC27 台账或当日统计**，也不得用 FC26 数据填充当日缺失。
+
+## 来源 403 的处置策略（2026-09-17 固化）
+
+FUTBIN 对 `/players` 列表目录的 403 拦截**具时限性**（2026-09-17 03:00 全路径 403，09:46 重试即解除）。处置规则：
+
+1. 先开 `https://www.futbin.com/` 建立会话（同源对照基准），再单次尝试 `/27/players`。
+2. 仍 403 时**延长退避（分钟级）**，最多再试 2 次；**禁止秒级密集重试或连续变形重试**（换参数/换标签页轮番轰炸会加重拦截，2026-09-17 实测 7 连败即为教训）。
+3. 预算内始终未通过时，按契约提交 `failed`/`partial` 并留证（URL、打开时间、错误摘要），**不得**用 FC26、旧日期快照或昨日台账冒充当日数据。
 
 ## 平台口径（2026-09-16 起必须，实机核验）
 
@@ -43,10 +53,17 @@ FUTBIN 只有 **Console（PS/Xbox 合并）** 与 **PC** 两个平台。列表�
    - `apps/market/engine/icons/data/prices/fc27/base-icons.json`（沿用现有格式：`id` / `slug` / `nameZh` / `rating` / `currentPrice` / `prices` / `marketUrl` / `launchDate`）
    - `apps/market/engine/heroes/data/prices/fc27/base-heroes.json`（同一格式，新增；`version: "Hero"`）
 2. 运行 `node apps/market/engine/scripts/record-icons-daily.mjs D` 固化当日传奇卡快照到 `icons/data/prices/fc27/daily/D.json`（一天一份，同日重跑只覆盖当天，原子写入，禁止删改历史日期；抓取失败必须非 0 退出且不写快照）。
-3. 运行 `node apps/market/engine/scripts/render-icons-heroes.mjs D`，生成 `reports/daily/D/icons-heroes.html`（传奇/英雄专栏主视图）。
-   - 渲染器对缺失数据一律输出如实空状态；英雄卡数据缺失时如实标注「英雄卡数据源待建立」，不得用传奇卡顶替。
-4. 校验：卡牌 ID 去重、Icon/Hero 版本字段齐全、平台字段齐全、时间戳、价格有效性与数量一致性。失败保留原始数据和上次有效报告。
+   - 该脚本会**顺带合并**逐小时任务产出的价格区间 `icons/data/prices/fc27/pricerange/latest.json`（逐卡 `priceRange{min,max}`，卡级字段）。**区间文件缺失不构成失败**：区间列如实留空即可，不得因此跳过快照写入，也不得用估值或别的卡顶替。
+3. 运行 `node apps/market/engine/scripts/render-icons-heroes.mjs D`，生成 `reports/daily/D/icons-heroes.html`（传奇/英雄专栏主视图）。台账含「当前价 / 最低价 / 最高价」三列，姓名单元格带头像（渲染器自动缩放到 `reports/daily/D/assets/players/`）。
+   - 逐日快照只保存历史台账；页面当前价与最低/最高区间统一按 cardId 从 `current.json` 读取。不得把 `base-icons.json`、`pricerange/latest.json` 或逐日快照的末值再次当作另一份当前行情进行分析。
+   - 传奇卡（Icon，cardId 21400+）在 canonical 里，头像天然 131/131 命中；**英雄卡（Base Heroes）不在 canonical 中，必须靠补全脚本**：渲染前后各跑一次 `node apps/market/engine/scripts/backfill-avatar-keys.mjs D`（浏览器通道已由任务开头的 `browser-triage.mjs` 预检验证，如需复检用 `node automation/browser-triage.mjs`，exit 0 才可用）。补全走 FUTBIN `playerhover` 接口，**单并发 + 450ms 间隔**，不要调高并发，也不要为了补头像逐页打开球员详情页。
+   - 渲染器对缺失数据一律输出如实空状态；英雄卡数据缺失时如实标注「英雄卡数据源待建立」，不得用传奇卡顶替。解析不到头像的条目如实不显示图片，**严禁**用其他球员的图或占位图顶替。
+   - 价格区间是**卡级**字段（FUTBIN 同一卡的 Console / PC 渲染同值），切换平台时区间列不变；平台差异只体现在「当前价」列，不得把区间拆成每平台一套。
+   - 本任务只负责 FC27 传奇/英雄名单与日历史记录；实时价和区间已由每小时传奇任务写入统一行情，不得再次逐卡打开详情页重复采集。
+4. 校验：卡牌 ID 去重、Icon/Hero 版本字段齐全、平台字段齐全、时间戳、价格有效性与数量一致性，并核对页头「球员头像 X/Y」计数已收敛。失败保留原始数据和上次有效报告。
+
+> 价格区间（最低价-最高价）与「传奇卡研究」由独立的**每小时**任务 `icons-pricerange-hourly` 采集与刷新（见 `automation/prompts/icons-pricerange-hourly.md`）。本任务只消费它的产物，不自行采集区间，也不要改它的数据文件。
 
 ## 浏览器强制规则
 
-每次先读取根 AGENTS.md 对应段落；FUTBIN 直接调用 `Web Access（浏览器自动化）` 技能，复用用户日常 Chrome 登录态。**采集前先运行 `node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs`：`exit 0` 才继续；`exit 1` 表示 Chrome 远程调试开关未开，只能请用户勾选（不得代勾、不得改用其他浏览器）；也不要使用 Chrome 插件 / `extension` 模式（该扩展在产品侧永远连不上）。FUTBIN 拒绝 curl/WebFetch 静态请求（403），必须走 CDP。** 禁止调用或探测 `dumate-browser-cli`、`DUMATE_*`、`automation/browser-env.sh`、`fc-browser-channel-check` 历史探针、`agent-browser`、IAB、临时浏览器或新 profile；是否成功只以本轮实际打开来源并读取页面为准。
+采集前先运行 `node automation/browser-triage.mjs`（唯一判据），`exit 0` 才继续；完整规则（自愈链、分诊、红线、禁止入口、FUTBIN 必须走 CDP）见根 AGENTS.md「浏览器强制规则」，此处不重复。

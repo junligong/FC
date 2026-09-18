@@ -1,0 +1,26 @@
+{
+  "task": "market-hourly",
+  "scheduledHour": "2026-09-18T08 (UTC+8)",
+  "checkedAt": "2026-09-18T00:22:53Z",
+  "result": "failed",
+  "stage": "browser-precheck",
+  "reason": "Web Access 自检 exit 1：CDP 代理连接 Chrome :9222 WS 握手挂起（Received network error or non-101 status code），Chrome 调试服务卡死。与 2026-09-18 07 点整点失败症状相同。",
+  "browserCheck": {
+    "exitCode": 1,
+    "node": "ok (v22.22.2)",
+    "browser": "ok (Chrome, port 9222) [config.env 偏好]",
+    "proxy": "连接超时"
+  },
+  "remediesAttempted": [
+    { "action": "check-deps retry #1", "at": "2026-09-18T00:22:53Z", "result": "exit 1（连接超时，2m17s）" },
+    { "action": "pkill cdp-proxy + check-deps retry #2", "at": "2026-09-18T00:27:48Z", "result": "exit 1（连接超时）" },
+    { "action": "open chrome://inspect/#remote-debugging 推前台 + pkill + check-deps retry #3", "at": "2026-09-18T00:29:30Z", "result": "exit 1（连接超时）" }
+  ],
+  "notAttemptedAndWhy": {
+    "collect-market-prices.mjs": "浏览器通道不可用，按契约不采集不填充",
+    "build/render/publish": "采集失败后不进行，保留上次有效结果（06 点成功轮次）"
+  },
+  "lastValidResultKept": "2026-09-18 06 点整点成功轮次（current.json generatedAt 22:03:12Z；线上 T06 已发布）",
+  "manualActionNeeded": "需人工重启 Chrome（或重勾 chrome://inspect/#remote-debugging 调试开关），下一整点任务自动恢复。",
+  "logFile": "/var/folders/d0/4_z8t9_j7sbbv3h5f10ws14c0000gn/T/cdp-proxy.log"
+}

@@ -12,6 +12,7 @@ const ICONS = {
   market: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 17.4l4.8-4.9 3.9 3 8-8.8"/><path d="M15 6.2h5.2v5.2"/></svg>',
   evolution: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18c3.2 0 4.4-2.4 6-5.6C11.4 9.2 13 6 16.4 6"/><path d="M13.6 6H20v6.4"/><circle cx="4.6" cy="18.2" r="1.6"/></svg>',
   legend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8.6 7.3 12 12 5.2 16.7 12 20 8.6 18.5 18.2h-13z"/><path d="M6.8 20.6h10.4"/></svg>',
+  review: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.4 20.4h17.2"/><path d="M6.2 20.4v-6.6M11 20.4V8.6M15.8 20.4v-9.4M20.6 20.4V4.6"/></svg>',
   archive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.2v5.2l3.4 2"/></svg>',
   share: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v7.2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V12"/><path d="M12 3.2v12.4M7.6 7.6 12 3.2l4.4 4.4"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg>',
@@ -22,7 +23,7 @@ const ICONS = {
 const TABS = [
   { id: 'football-daily', view: 'football', label: '足球动态', en: 'FOOTBALL', icon: 'football', desc: '七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备' },
   { id: 'fc27-news', view: 'news', label: 'FC27 资讯', en: 'FC27 NEWS', icon: 'news', desc: 'X.com 信息源自动采集 · 智能过滤与中文翻译' },
-  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '两个视图可切换：市场概览（本周活动卡/周黑 · 价格分层每档 Top50 · 热门进化卡，支持 PC / Console 双平台切换）+ 市场扫描（价格分层 × 热门球员双维度）' },
+  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '三个视图可切换：市场概览（本周活动卡/周黑 · 价格分层每档 Top50 · 热门进化卡）+ 市场扫描（索引 + 球员数据库）+ 关注列表（按热度 / 价格 / 本日挂单价变动打分，每小时刷新），全部支持 PC / Console 双平台切换' },
 ];
 
 const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进化专栏', en: 'EVOLUTION', icon: 'evolution' };
@@ -31,11 +32,17 @@ const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进�
 // 内含两个子标签：传奇/英雄监控（每日逐卡价格台账）+ 传奇卡研究（FC26↔FC27 对照与价格预测）。
 const LEGEND_TAB = { id: 'legend-column', view: 'legend', label: '传奇/英雄专栏', en: 'ICONS / HEROES', icon: 'legend' };
 
-// 首页卡片顺序：三个数据板块 + 进化专栏 + 传奇/英雄专栏，与左侧导航一一对应
+// FC26 球员回顾：跨日期常驻的复盘栏目（不采集、不联网），内容源为项目内本地 FC26 数据集。
+// 由 apps/market/engine/scripts/render-fc26-review.mjs 生成
+// apps/market/engine/gold/reports/fc26-season-review.html。
+const FC26_TAB = { id: 'fc26-review-column', view: 'fc26', label: 'FC26 球员回顾', en: 'FC26 REVIEW', icon: 'review' };
+
+// 首页卡片顺序：三个数据板块 + 进化专栏 + 传奇/英雄专栏 + FC26 球员回顾，与左侧导航一一对应
 const CARD_ITEMS = [
   ...TABS,
   { ...EVOLUTION_TAB, desc: '热门进化卡与进化路线建议 · 来源 FUTBIN Popular Evolutions，由进化任务每日补充' },
   { ...LEGEND_TAB, desc: '传奇卡与英雄卡专栏目 · 双子标签：逐日价格监控台账（PC / Console 双平台）+ FC27 vs FC26 对比与全量价格预测研究，跨日期常驻' },
+  { ...FC26_TAB, desc: 'FC26 开服首月复盘 · 按能力值（OVR）分档汇总价格变化：各档价格指数走势、涨跌幅与峰谷时点，全部取用项目内本地 FC26 数据，不联网采集' },
 ];
 
 const CSS = `:root{
@@ -167,6 +174,7 @@ h3{font-size:15.5px;font-weight:700;margin:0}
 .rail-cta{padding:2px 20px 18px}
 .rail-cta .btn{width:100%}
 .legend-rail .rail-list li span.dot{background:var(--red)}
+.review-rail .rail-list li span.dot{background:var(--lime)}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
 .stat-grid div{background:var(--bg-soft);padding:14px 16px}
 .stat-grid b{display:block;font-size:22px;font-weight:800;color:var(--text);line-height:1.2}
@@ -231,6 +239,7 @@ export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks 
     ...TABS.map(t => ({ view: t.view, icon: t.icon, label: t.label })),
     { view: EVOLUTION_TAB.view, icon: EVOLUTION_TAB.icon, label: EVOLUTION_TAB.label },
     { view: LEGEND_TAB.view, icon: LEGEND_TAB.icon, label: LEGEND_TAB.label },
+    { view: FC26_TAB.view, icon: FC26_TAB.icon, label: FC26_TAB.label },
     { view: 'archive', icon: 'archive', label: '历史日报' },
   ];
   const nav = navItems.map(n =>
@@ -279,9 +288,17 @@ export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks 
   // 与传奇卡研究底稿（FC26↔FC27 对照与价格预测）。缺稿时如实空状态，不用其他日期数据顶替。
   const legendContent = panels[LEGEND_TAB.id];
   const legendState = panelStates[LEGEND_TAB.id] || (legendContent ? 'ok' : 'none');
-  const legendEmpty = `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.legend}</div><b>传奇/英雄专栏待补充</b><p>本栏目收录 FC27 全部传奇卡（Icon）与英雄卡（Hero）：逐日价格监控台账（PC / Console 双平台切换），以及 FC26 ↔ FC27 属性与金特技对照、FC26 首月基准价、FC27 全量价格预测与投资分档研究。监控台账由「FC27 传奇/英雄卡监控」任务每日 03:00 产出 reports/daily/D/icons-heroes.html；研究底稿位于 apps/market/engine/icons/reports/fc27-icon-analysis.html，重跑分析后覆盖更新。</p></div></div>`;
+  const legendEmpty = `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.legend}</div><b>传奇/英雄专栏待补充</b><p>本栏目收录 FC27 全部传奇卡（Icon）与英雄卡（Hero）：逐日价格监控台账（PC / Console 双平台切换），以及 FC26 ↔ FC27 属性与金特技对照、FC26 首月基准价、FC27 全量价格预测与投资分档研究。监控台账由「FC27 传奇/英雄卡监控」任务每日 03:20 产出 reports/daily/D/icons-heroes.html；研究底稿位于 apps/market/engine/icons/reports/fc27-icon-analysis.html，重跑分析后覆盖更新。</p></div></div>`;
   const legendInner = buildViewBody(LEGEND_TAB.view, LEGEND_TAB.label, subPanels[LEGEND_TAB.view], legendContent, legendEmpty);
   const legendView = `<section class="view" id="view-${LEGEND_TAB.view}" hidden><header class="view-header"><div class="eyebrow">${esc(LEGEND_TAB.en)}</div><h1>${esc(LEGEND_TAB.label)}</h1><p>传奇卡与英雄卡专区：逐日价格监控台账（PC / Console 双平台）+ FC26 ↔ FC27 对比与价格预测研究。跨日期常驻，不随日报日期变化；原「FC27 市场」中的传奇/英雄部分已整体迁移至此。</p></header>${legendInner}</section>`;
+
+  // FC26 球员回顾：跨日期常驻的复盘栏目。内容完全由项目内本地 FC26 数据集离线渲染
+  // （apps/market/engine/scripts/render-fc26-review.mjs），不采集、不联网、不随日报日期变化；
+  // 因此不参与当日日期校验，只要底稿存在即收录，缺失时如实空状态、不用其它数据顶替。
+  const fc26Content = panels[FC26_TAB.id];
+  const fc26State = panelStates[FC26_TAB.id] || (fc26Content ? 'ok' : 'none');
+  const fc26Empty = `<div class="panel empty-panel"><div class="rail-empty"><div class="re-ic">${ICONS.review}</div><b>FC26 球员回顾底稿缺失</b><p>本栏目按能力值（OVR）分档汇总 FC26 开服首月（2025-09-18 ~ 2025-10-17）的球员价格变化：各档价格指数走势、涨跌幅、峰谷时点与 OVR × 卡池热力矩阵。全部数据取用项目内本地 FC26 数据集（gold / icon / hero 三池），不联网采集，亦不随日报日期变化。请运行 <code>node apps/market/engine/scripts/render-fc26-review.mjs</code> 重新生成底稿后合并。</p></div></div>`;
+  const fc26View = `<section class="view" id="view-${FC26_TAB.view}" hidden><header class="view-header"><div class="eyebrow">${esc(FC26_TAB.en)}</div><h1>${esc(FC26_TAB.label)}</h1><p>FC26 开服首月复盘：把项目内本地 FC26 球员数据（gold 金卡 / icon 传奇 / hero 英雄三池）按能力值（OVR）分档，汇总各档的价格变化图——价格指数走势、涨跌幅双向条、OVR × 卡池热力矩阵与峰谷时点。<b>本栏目不联网采集</b>，数据来自项目本地数据集，跨日期常驻。</p></header>${fc26Content ? `<iframe class="panel-iframe" srcdoc="${fc26Content}" title="FC26 球员回顾" loading="lazy"></iframe>` : fc26Empty}</section>`;
 
   const poster = `${assetBase}assets/yanzu-banner.jpg`;
   const archiveCount = (archiveLinks.match(/class="report-item"/g) || []).length;
@@ -311,14 +328,15 @@ export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks 
 
 <section class="view" id="view-home">
 <header class="hero">
- <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">五个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描，PC / Console 双平台）、进化专栏、传奇/英雄专栏（逐日价格监控 + FC26↔FC27 对比与投资预测）。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
+ <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">六个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描，PC / Console 双平台）、进化专栏、传奇/英雄专栏（逐日价格监控 + FC26↔FC27 对比与投资预测）、FC26 球员回顾（按能力值分档的价格变化复盘，本地数据离线渲染）。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
  <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
 </header>
 <div class="home-grid">
  <div class="col-stack">${cards}<article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
  <aside class="col-stack">
-  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionState === 'failed' ? '采集失败' : evolutionState === 'partial' ? '部分完成' : evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:00</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
+  <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionState === 'failed' ? '采集失败' : evolutionState === 'partial' ? '部分完成' : evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:15</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
   <article class="panel rail-panel legend-rail"><div class="panel-head"><h2>${ICONS.legend}传奇/英雄专栏</h2><span class="eyebrow">Icons / Heroes</span></div><div class="stat-grid"><div><b>${legendState === 'none' ? '待补充' : '已收录'}</b><small>本期状态</small></div><div><b>2</b><small>子栏目</small></div></div><ul class="rail-list"><li><span class="dot"></span><span>逐日价格监控台账（PC / Console 双平台）</span></li><li><span class="dot"></span><span>双版本阵容对照与属性 · 金特技变化</span></li><li><span class="dot"></span><span>FC27 全量传奇/英雄卡价格预测与投资分档</span></li></ul><div class="rail-cta"><button type="button" class="btn gold" data-view="${LEGEND_TAB.view}">进入传奇/英雄专栏 ${ICONS.arrow}</button></div></article>
+  <article class="panel rail-panel review-rail"><div class="panel-head"><h2>${ICONS.review}FC26 球员回顾</h2><span class="eyebrow">FC26 Review</span></div><div class="stat-grid"><div><b>${fc26State === 'none' ? '待生成' : '已收录'}</b><small>底稿状态</small></div><div><b>本地离线</b><small>数据来源</small></div></div><ul class="rail-list"><li><span class="dot"></span><span>按能力值（OVR）六档聚合首月价格变化</span></li><li><span class="dot"></span><span>价格指数走势 / 涨跌幅 / 峰谷时点 / 热力矩阵</span></li><li><span class="dot"></span><span>取用项目内 FC26 本地数据集，不联网采集</span></li></ul><div class="rail-cta"><button type="button" class="btn gold" data-view="${FC26_TAB.view}">进入 FC26 球员回顾 ${ICONS.arrow}</button></div></article>
   <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>内容板块</small></div><div><b>${marketViews}</b><small>市场视图</small></div><div><b>3</b><small>足球三榜</small></div><div><b>${archiveCount}</b><small>历史日报</small></div></div></article>
  </aside>
 </div>
@@ -327,6 +345,7 @@ export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks 
 ${views}
 ${evolutionView}
 ${legendView}
+${fc26View}
 
 <section class="view" id="view-archive" hidden>
 <header class="view-header"><div class="eyebrow">Archive</div><h1>历史日报</h1><p>按日期回看足球、FC27 资讯与市场报告。每份日报均为独立归档文件。</p></header>

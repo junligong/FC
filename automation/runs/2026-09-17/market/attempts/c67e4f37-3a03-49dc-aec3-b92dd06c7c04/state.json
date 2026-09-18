@@ -1,0 +1,46 @@
+{
+  "module": "market",
+  "date": "2026-09-17",
+  "runId": "c67e4f37-3a03-49dc-aec3-b92dd06c7c04",
+  "status": "partial",
+  "startedAt": "2026-09-17T07:26:03.203Z",
+  "deadlineAt": "2026-09-17T07:41:03.203Z",
+  "reportPath": "reports/daily/2026-09-17/market.html",
+  "completedAt": "2026-09-17T07:27:00.483Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "runId": "c67e4f37-3a03-49dc-aec3-b92dd06c7c04",
+    "module": "market",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日第二次重跑：为市场概览 / 市场扫描的全部球员行接入球员头像（新增 shared/lib/player-avatar.mjs 头像解析与落盘链路、补全 FUTBIN 卡 ID→头像键索引、给四个市场侧渲染器加 .pimg 头像单元格）。报告数据未变，仅版式与图像资源变化，按契约重提 run-state 快照并重新合并发布。",
+    "dataCutoff": "2026-09-17 03:28 +08:00（采集）；2026-09-17 15:26 +08:00（头像链路重渲染与快照重提）",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-17T15:26:09+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Players - Ultimate Team Ratings | FUTBIN，document.readyState=complete，未再命中 Cloudflare 挑战页。列表 30 行；td.table-price.platform-ps-only 30 个、td.table-price.platform-pc-only 30 个同时存在；form.desktop-platform-change-form 存在，确认 Console / PC 双平台口径不变。前三行 td.table-name：95 Maradona Icon / 95 Arantes Nascimento Icon / 95 Maradona Icon。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-17T15:26:26+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Players | FUTBIN；div.popular-cards-wrapper 有 253 个直接子卡片（热门球员榜当日快照取前 250 名）。样例首两项 「0 11K 89 LW ++ LM ST R 4 5 91.5 Claudia Pina …」「0 4.1K 86 CAM RB CDM RM CM R 4 4 85.8 Szoboszlai …」。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-17T15:26:39+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 有 503 个直接子卡片（当日市场概览「热门进化卡」段落取前 50）。样例首两项「79 RB ++ RM R 2 4 77.3 Savona … Intro to…」「80 ST RM CAM RW L 4 2 80.7 Endrick …」。"
+      }
+    ],
+    "missing": [
+      "球员头像覆盖非 100%：reports/daily/2026-09-17/market.html 为 49/50，market-scan.html 为 743/750（99.1%）。缺口为真实缺口——当日榜单集合中仍有少量 FUTBIN 卡 ID 在本地头像库与球员台账（shared/data/fc27/players.json，2961 卡）中均无记录，经 FUTBIN /27/playerhover/<cardId> 探针返回 noface（该站未提供头像）或 http404（卡页不存在），因此无图可显示。渲染器对无图中位留空、不占位、不误配他人图片。"
+    ],
+    "missingItems": [
+      "market.html：1 名球员无可用头像（占该页 50 名的 2%）",
+      "market-scan.html：7 名球员无可用头像（占该页 750 名的 0.9%）"
+    ]
+  },
+  "sha256": "8601f70aeca4d581875ea0b404fa821ae98127a66bb754d774e9ee6d8a308f67",
+  "bytes": 31951,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/market/report.html"
+}

@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-17",
+  "game": "fc27",
+  "cardType": "icon",
+  "cardLabel": "基础传奇",
+  "platform": "console+pc",
+  "scope": "card",
+  "scopeNote": "FUTBIN 详情页「Price Range」在同一张卡的 Console 与 PC 价格盒中渲染为相同数值，属卡级字段，不按平台拆分。",
+  "launchDate": "2026-09-25",
+  "collectedAt": "2026-09-17T09:38:18.214Z",
+  "priceBasis": "listing-estimate",
+  "priceBasisNote": "FC27 未开服（开服日 2026-09-25），该区间是 FUTBIN 的挂单/估值区间，不是成交价，不能据此计算涨跌。",
+  "minValidPrice": 1000,
+  "source": {
+    "name": "FUTBIN",
+    "rosterFrom": "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+    "detailUrlPattern": "https://www.futbin.com/27/player/<id>/<slug>",
+    "rangeLogUrl": "https://www.futbin.com/27/priceranges",
+    "note": "逐卡读取详情页 Price Range（最低价-最高价）、Price Updated 与双平台当前价；价格区间为卡级字段。"
+  },
+  "counts": {
+    "total": 8,
+    "ok": 8,
+    "missing": 0,
+    "minFloor": 71000,
+    "maxCeiling": 15000000
+  },
+  "missingItems": [
+    "FC27 未开服，双平台当前价多为 0（占位值），已按 <1000 判为无效，未参与任何涨跌计算。"
+  ],
+  "errors": [],
+  "cards": [
+    {
+      "id": "21487",
+      "slug": "maradona",
+      "nameZh": "马拉多纳",
+      "name": "MARADONA",
+      "rating": 95,
+      "marketUrl": "https://www.futbin.com/27/player/21487/maradona",
+      "ok": true,
+      "priceRange": {
+        "min": 75000,
+        "max": 14500000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 60000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21488",
+      "slug": "arantes-nascimento",
+      "nameZh": "贝利",
+      "name": "PELÉ",
+      "rating": 95,
+      "marketUrl": "https://www.futbin.com/27/player/21488/arantes-nascimento",
+      "ok": true,
+      "priceRange": {
+        "min": 75000,
+        "max": 15000000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 60000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21491",
+      "slug": "zidane",
+      "nameZh": "齐达内",
+      "name": "ZIDANE",
+      "rating": 94,
+      "marketUrl": "https://www.futbin.com/27/player/21491/zidane",
+      "ok": true,
+      "priceRange": {
+        "min": 74000,
+        "max": 9800000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 45000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21492",
+      "slug": "nazario-de-lima",
+      "nameZh": "罗纳尔多",
+      "name": "RONALDO",
+      "rating": 94,
+      "marketUrl": "https://www.futbin.com/27/player/21492/nazario-de-lima",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 67000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21495",
+      "slug": "franc-dos-santos",
+      "nameZh": "弗朗茨·贝肯鲍尔",
+      "name": "GARRINCHA",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21495/franc-dos-santos",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 56000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21497",
+      "slug": "cruyff",
+      "nameZh": "克鲁伊夫",
+      "name": "CRUYFF",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21497/cruyff",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 56000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21498",
+      "slug": "hamm",
+      "nameZh": "米娅·哈姆",
+      "name": "HAMM",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21498/hamm",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 56000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    },
+    {
+      "id": "21499",
+      "slug": "maldini",
+      "nameZh": "马尔蒂尼",
+      "name": "MALDINI",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21499/maldini",
+      "ok": true,
+      "priceRange": {
+        "min": 73000,
+        "max": 8400000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 37000,
+      "fetchedAt": "2026-09-17T09:38:18.214Z",
+      "error": null
+    }
+  ]
+}

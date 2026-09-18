@@ -22,6 +22,7 @@ import { writeFileSync, mkdirSync, existsSync, readdirSync, readFileSync } from 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderIcons, loadIconSnapshots, loadIconLedger, ICON_DAILY_DIR, ICON_PLATFORMS } from './render-market-icons.mjs';
+import { avatarIndex, avatarSrc, materializeAvatars } from '../../../../shared/lib/player-avatar.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = process.env.FC_PROJECT_ROOT || path.resolve(here, '../../../..');
@@ -78,12 +79,32 @@ const heroCell = h => ICON_PLATFORMS.map(pl => {
   const est = !valid && h.__file.includes('prices');
   return `<span class="pv pv-${pl.id}">${typeof v === 'number' && v > 0 ? v.toLocaleString('en-US') : '—'}${est ? '<span class="hint">估值</span>' : ''}</span>`;
 }).join('');
-const heroRows = list => list.map((h, i) => `<tr><td class="c-rank">${i + 1}</td><td class="c-name">${esc(h.nameZh || h.name || '')}</td><td class="c-rating">${esc(h.rating ?? '—')}</td><td class="c-pos">${esc(h.pos ?? '—')}</td><td class="c-price">${heroCell(h)}</td></tr>`).join('');
+// 与传奇台账一致：中文名在前、英文原名在后（便于回 FUTBIN 对照）。
+// 头像：英雄卡与传奇卡共用同一套头像解析（本地卡库对英雄卡覆盖有限，
+// 解析不到的条目如实不显示头像，绝不用其他球员的图顶替）。
+const avatarIdx = avatarIndex();
+const avatarResolvedHeroes = [...heroes, ...heroesFc26Ref].map(h => avatarIdx.resolve(h)?.resourceId || null);
+const avatarReady = materializeAvatars(outDir, avatarResolvedHeroes.filter(Boolean));
+const avatarHitCount = list => list.filter(h => {
+  const rid = avatarIdx.resolve(h)?.resourceId;
+  return rid && avatarReady.has(String(rid));
+}).length;
+// FC26 参考对比区**不配头像**（2026-09-17 实测结论）：
+// FC26 的 FUTBIN 卡 ID 与 FC27 头像库不同源，复用 FC27 索引会命中「同数值卡 ID」或
+// 「同姓」的另一个人 —— 实测 82 张里至少 6 张配错（Ledley King→Joshua King、
+// Micah Richards→Chris Richards、Jill Scott→Alex Scott 等）。按「宁可缺图，不可配错人」
+// 的口径，跨代参考区一律不出头像。
+const heroAvatar = h => {
+  if (h && h.__game === 'fc26') return '';
+  const rid = avatarIdx.resolve(h)?.resourceId;
+  return rid && avatarReady.has(String(rid)) ? avatarSrc(rid) : '';
+};
+const heroRows = list => list.map((h, i) => `<tr><td class="c-rank">${i + 1}</td><td class="c-name">${heroAvatar(h) ? `<img class="pimg" src="${esc(heroAvatar(h))}" loading="lazy" alt="">` : ''}<span class="pname">${esc(h.nameZh || h.name || '')}${h.nameZh && h.name && h.nameZh !== h.name ? `<span class="en">${esc(h.name)}</span>` : ''}</span></td><td class="c-rating">${esc(h.rating ?? '—')}</td><td class="c-pos">${esc(h.pos ?? '—')}</td><td class="c-price">${heroCell(h)}</td></tr>`).join('');
 
 let block = `\n<h2>六、英雄卡（Hero）台账（FC27）</h2>\n<div class="card">\n`;
 if (heroes.length) {
   const unique = new Set(heroes.map(h => h.__file)).size;
-  block += `<div class="sub" style="margin:0 0 12px">FC27 英雄卡 ${heroes.length} 张 · 数据来源 ${unique} 个文件 · 价格为 Console（PS / Xbox）/ PC 双平台口径，随顶部平台按钮切换。</div>
+  block += `<div class="sub" style="margin:0 0 12px">FC27 英雄卡 ${heroes.length} 张 · 数据来源 ${unique} 个文件 · 球员头像 ${avatarHitCount(heroes)}/${heroes.length} · 价格为 Console（PS / Xbox）/ PC 双平台口径，随顶部平台按钮切换。</div>
 <div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>价格(coins)</th></tr></thead><tbody>${heroRows(heroes)}</tbody></table></div>
 `;
 } else {
@@ -95,7 +116,7 @@ block += `</div>\n`;
 // FC26 参考对比：仅作跨代参考，不参与 FC27 监控统计，默认折叠
 if (heroesFc26Ref.length) {
   const refUnique = new Set(heroesFc26Ref.map(h => h.__file)).size;
-  block += `\n<h2>七、FC26 英雄卡参考对比（仅供参考，非 FC27 监控口径）</h2>\n<div class="card">\n<div class="sub" style="margin:0 0 12px">以下 ${heroesFc26Ref.length} 张为 FC26 英雄卡历史参考数据（来源 ${refUnique} 个文件），<b>仅用于跨代对比参考</b>，不属于 FC27 监控范围，不参与上方任何统计与台账。</div>
+  block += `\n<h2>七、FC26 英雄卡参考对比（仅供参考，非 FC27 监控口径）</h2>\n<div class="card">\n<div class="sub" style="margin:0 0 12px">以下 ${heroesFc26Ref.length} 张为 FC26 英雄卡历史参考数据（来源 ${refUnique} 个文件），<b>仅用于跨代对比参考</b>，不属于 FC27 监控范围，不参与上方任何统计与台账。本区不出头像：FC26 卡 ID 与 FC27 头像库不同源，复用会误配他人头像。</div>
 <details><summary style="cursor:pointer;color:var(--muted);font-size:12.5px">展开 FC26 参考数据（${heroesFc26Ref.length} 张）</summary>
 <div class="tbl-wrap" style="margin-top:10px"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>评分</th><th>位置</th><th>FC26 价格参考(coins)</th></tr></thead><tbody>${heroRows(heroesFc26Ref)}</tbody></table></div>
 </details>

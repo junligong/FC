@@ -23,6 +23,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { avatarIndex, avatarSrc, materializeAvatars } from '../../../../shared/lib/player-avatar.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = process.env.FC_PROJECT_ROOT || path.resolve(here, '../../../..');
@@ -32,6 +33,35 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const num = v => (typeof v === 'number' && Number.isFinite(v) ? v.toLocaleString('en-US') : '—');
 const price = v => (typeof v === 'number' && Number.isFinite(v) && v > 0 ? v.toLocaleString('en-US') : '—');
 const pct = v => (typeof v === 'number' && Number.isFinite(v) ? `${v >= 0 ? '+' : ''}${(v * 100).toFixed(1)}%` : '—');
+
+// 时间展示口径（2026-09-18 新增）：页面上的「数据更新」一律精确到**分钟**（Asia/Shanghai），
+// 形如 `09-18 15:54`；完整到秒的时刻放进 title / 快照表，避免表格列过宽。
+// 逐卡更新时刻优先取本次详情页采集时刻（daily 快照的 priceRange.fetchedAt），
+// 缺失时退回当日快照的采集时刻（capturedAt / 区间汇总 collectedAt），仍无则如实留空。
+const SH_OFFSET = 8 * 3600e3;
+const pad2 = n => String(n).padStart(2, '0');
+function fmtMinute(iso) {
+  const t = Date.parse(iso || '');
+  if (!Number.isFinite(t)) return '';
+  const d = new Date(t + SH_OFFSET);
+  return `${pad2(d.getUTCMonth() + 1)}-${pad2(d.getUTCDate())} ${pad2(d.getUTCHours())}:${pad2(d.getUTCMinutes())}`;
+}
+function fmtMinuteFull(iso) {
+  const t = Date.parse(iso || '');
+  if (!Number.isFinite(t)) return '';
+  const d = new Date(t + SH_OFFSET);
+  return `${d.getUTCFullYear()}-${pad2(d.getUTCMonth() + 1)}-${pad2(d.getUTCDate())} ${pad2(d.getUTCHours())}:${pad2(d.getUTCMinutes())}:${pad2(d.getUTCSeconds())}`;
+}
+/** 取一组 ISO 时刻中最新的一个（用于「该行数据的最新观测时刻」）。 */
+function latestIso(...list) {
+  let best = null, bestT = -Infinity;
+  for (const iso of list) {
+    const t = Date.parse(iso || '');
+    if (Number.isFinite(t) && t > bestT) { bestT = t; best = iso; }
+  }
+  return best;
+}
+
 const WEEKDAY = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 const weekday = d => WEEKDAY[new Date(`${d}T00:00:00Z`).getUTCDay()] || '';
 const todayShanghai = () => new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10);
@@ -141,6 +171,11 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
     pl.id, (today?.players || []).filter(p => platformCell(p, pl.id)?.valid).length,
   ]));
 
+  // 价格区间（最低价 / 最高价）覆盖统计：由逐小时任务采集，卡级口径
+  const rangeMeta = today?.priceRange || null;
+  const rangePlayers = (today?.players || []).filter(p => p.priceRange && typeof p.priceRange.min === 'number' && typeof p.priceRange.max === 'number');
+  const rangeCoverage = rangePlayers.length;
+
   // 卡库基线：优先台账文件，缺失则退回最近快照的名单
   const ledgerById = new Map(ledger.map(i => [String(i.id), i]));
   const rosterIds = new Set([...ledger.map(i => String(i.id)), ...(today?.players || []).map(p => String(p.id))]);
@@ -157,10 +192,19 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
       golds: (meta.playstyles || []).filter(s => s?.gold).map(s => s.name),
       skills: meta.skills ?? null,
       weakFoot: meta.weakFoot ?? null,
+      // 价格区间（最低价 / 最高价）：由逐小时任务采集、record-icons-daily.mjs 合并进当日快照；
+      // 卡级字段（FUTBIN 同一卡的 Console / PC 渲染同值），缺失为 null
+      range: (snap && snap.priceRange) || null,
       snap,
     };
   }).sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0) || String(a.nameZh).localeCompare(String(b.nameZh), 'zh'));
 
+  // 头像：先按 cardId 解析 resourceId 并批量缩放落盘到 reports/daily/D/assets/players/，
+  // HTML 只写相对路径，合并成单文件站点时由 inlineLocalReportImages 内联为 data URL。
+  const avatarIdx = avatarIndex();
+  const avatarResolved = roster.map(p => avatarIdx.resolve({ id: p.id })?.resourceId || null);
+  const avatarReady = materializeAvatars(path.join(ROOT, 'reports', 'daily', dateStr),
+    avatarResolved.filter(Boolean));
   // 逐卡历史：按指定平台取有效价格序列（仅真实成交口径参与涨跌与走势）。
   // 旧快照没有 platforms 字段时回退到单一 price，两个平台显示同一口径。
   const seriesOf = (id, pid) => history
@@ -183,7 +227,7 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
         : (cell && typeof cell.price === 'number'
           ? `—<span class="hint" title="FUTBIN 返回 ${esc(cell.price)}，低于有效价格下限，按占位值处理">占位</span>`
           : '—');
-      priceCells.push(`<span class="pv pv-${pl.id}">${shown}</span>`);
+      priceCells.push(`<span class="pv pv-${pl.id} live-icon-price" data-card-id="${esc(p.id)}" data-market-platform="${pl.id}">${shown}</span>`);
 
       let d1 = '—', cum = '—', sparks = '—';
       if (isMarket) {
@@ -213,19 +257,36 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
     const golds = p.golds.length
       ? `<span class="gold-n" title="${esc(p.golds.join(' / '))}">${p.golds.length} <span class="hint">金</span></span>`
       : '—';
-    return `<tr>
+    // 价格区间（最低价 / 最高价）：FUTBIN 详情页的 Price Range，卡级口径。
+    // 有值才展示；缺失如实空状态，绝不用估值（IS）或另一张卡的数据顶替。
+    const rng = p.range && typeof p.range.min === 'number' && typeof p.range.max === 'number' ? p.range : null;
+    const rngTitle = rng ? `最高价与最低价同来自 FUTBIN 详情页 Price Range（卡级：Console 与 PC 渲染同值）${rng.updatedText ? ` · 站点更新于 ${rng.updatedText}` : ''}${rng.fetchedAt ? ` · 本页采集于 ${rng.fetchedAt}` : ''}` : '未采集到该卡的价格区间';
+    // 逐卡「数据更新」时刻（精确到分钟，Asia/Shanghai）：该行价格与区间的实际观测时刻。
+    // 优先用本次详情页采集时刻（priceRange.fetchedAt）；该卡没采到区间时退回当日快照采集时刻。
+    const obsIso = latestIso(rng?.fetchedAt, today?.capturedAt, rangeMeta?.collectedAt);
+    const obsText = fmtMinute(obsIso);
+    const obsTitle = obsText
+      ? `本行数据观测时刻（Asia/Shanghai）${fmtMinuteFull(obsIso)}${rng?.updatedText ? ` · FUTBIN 站点标注「${rng.updatedText}」` : ''}${rng?.fetchedAt ? '' : ' · 该卡未采到价格区间，此处为当日快照采集时刻'}`
+      : '未获取到该卡的数据更新时刻';
+    const rid = avatarResolved[i];
+    const ava = rid && avatarReady.has(String(rid)) ? avatarSrc(rid) : '';
+    return `<tr data-card-id="${esc(p.id)}">
 <td class="c-rank">${i + 1}</td>
-<td class="c-name">${esc(p.nameZh)}${p.name ? `<span class="en">${esc(p.name)}</span>` : ''}</td>
+<td class="c-name">${ava ? `<img class="pimg" src="${esc(ava)}" loading="lazy" alt="">` : ''}<span class="pname">${esc(p.nameZh)}${p.name ? `<span class="en">${esc(p.name)}</span>` : ''}</span></td>
 <td class="c-rating">${esc(p.rating ?? '—')}</td>
 <td class="c-pos">${esc(p.pos)}</td>
 <td class="c-six">${six}</td>
 <td class="c-gold">${golds}</td>
 <td class="c-price">${priceCells.join('')}</td>
+<td class="c-price"><span class="live-icon-range" data-card-id="${esc(p.id)}" data-range-field="min" title="${esc(rngTitle)}">${rng ? price(rng.min) : '—'}</span></td>
+<td class="c-price"><span class="live-icon-range" data-card-id="${esc(p.id)}" data-range-field="max" title="${esc(rngTitle)}">${rng ? price(rng.max) : '—'}</span></td>
+<td class="c-time"><span class="live-icon-time" data-card-id="${esc(p.id)}" data-obs="${esc(obsIso || '')}" title="${esc(obsTitle)}">${obsText || '—'}</span></td>
 <td class="c-price">${d1Cells.join('')}</td>
 <td class="c-price">${cumCells.join('')}</td>
 <td class="c-num">${isMarket ? rec || '—' : '—'}</td>
 <td class="c-spark">${sparkCells.join('')}</td>
 </tr>`;
+
   }).join('');
 
   // 逐日快照记录表
@@ -233,13 +294,16 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
     const valid = (s.players || []).filter(p => p.priceValid);
     const vals = valid.map(p => p.price).sort((a, b) => a - b);
     const median = vals.length ? vals[Math.floor((vals.length - 1) / 2)] : null;
+    // 采集时刻精确到分钟展示（完整到秒写在 title），便于与上方台账逐卡对照。
+    const capIso = s.capturedAt || s.priceRange?.collectedAt || '';
+    const capText = fmtMinute(capIso);
     return `<tr>
 <td class="c-date">${esc(s.date)} <span class="hint">${esc(weekday(s.date))}</span></td>
 <td class="c-num">${s.counts?.total ?? (s.players || []).length}</td>
 <td class="c-num">${s.counts?.valid ?? valid.length}</td>
 <td class="c-basis">${s.priceBasis === 'market' ? '<span class="tag ok">成交价</span>' : '<span class="tag warn">列表页占位价</span>'}</td>
 <td class="c-price">${price(median)}</td>
-<td class="c-note">${esc(s.capturedAt || '')}</td>
+<td class="c-time" title="${esc(capText ? `${fmtMinuteFull(capIso)}（Asia/Shanghai）` : '')}">${esc(capText || s.capturedAt || '')}</td>
 </tr>`;
   }).join('');
 
@@ -251,6 +315,11 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   });
 
   const countdown = isDate(launchDate) ? daysBetween(dateStr, launchDate) : null;
+  // 当日数据更新时刻（精确到分钟，Asia/Shanghai）：优先取逐小时任务的详情页采集时刻
+  // （priceRange.collectedAt），退回当日快照采集时刻；无快照时如实留空。
+  const dataUpdatedIso = latestIso(rangeMeta?.collectedAt, today?.capturedAt);
+  const dataUpdatedText = fmtMinute(dataUpdatedIso);
+  const dataUpdatedTitle = dataUpdatedText ? `${fmtMinuteFull(dataUpdatedIso)}（Asia/Shanghai）` : '';
   const recordingDays = history.filter(s => (s.counts?.valid ?? 0) > 0).length;
   const stateBadge = !today
     ? '<span class="badge">NO SNAPSHOT</span>'
@@ -262,7 +331,9 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   if (!today) missing.push(`未找到 ${dateStr} 的传奇卡快照，本期无当日价格可展示。`);
   if (today && !todayIsCurrent) missing.push(`本日（${dateStr}）无新采集快照，下方价格列展示的是最近一次快照（${today.date}）的数据，不代表 ${dateStr} 采集结果；当日采集失败与本日无数据严格区分，未用历史数据冒充当日。`);
   if (today && !isMarket) missing.push(`FC27 尚未开服（开服日 ${launchDate}），FUTBIN 列表页价不是市场成交价，因此本期不计算日环比与累计涨跌。`);
-  if (today && (today.counts?.missing || 0) > 0) missing.push(`当日 ${today.counts.missing} 张传奇卡无有效价格（FUTBIN 返回占位值），已在表中如实标注为占位。`);
+  if (today && (today.counts?.missing || 0) > 0) missing.push(`当日 ${today.counts.missing} 张传奇卡无有效平台价（FUTBIN 返回占位值），已在表中如实标注为占位。`);
+  if (today && rangeCoverage === 0) missing.push('本期未采集到任何卡的低价/高价区间（逐小时价格区间任务未运行，或 FUTBIN 详情页不可用），「最低价」「最高价」两列如实留空，未用估值或其他卡数据顶替。');
+  else if (today && rangeCoverage < roster.length) missing.push(`本期 ${roster.length - rangeCoverage} 张传奇卡未采集到低价/高价区间（FUTBIN 详情页请求失败或超时），对应行如实留空。`);
   if (history.length < 2) missing.push('历史快照不足两天，逐日变化与走势需开服后连续累积才有意义。');
 
   return `<!DOCTYPE html>
@@ -299,6 +370,8 @@ tr:last-child td{border-bottom:0}
 tbody tr:hover{background:#1a211b}
 .c-rank{color:var(--gold);font-weight:700;width:38px}
 .c-name{font-weight:600;white-space:nowrap}
+.c-name .pimg{width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a;border:1px solid var(--line2)}
+.c-name .pname{display:inline-block;vertical-align:middle}
 .c-name .en{display:block;color:var(--quiet);font-size:10.5px;font-weight:400;letter-spacing:.02em}
 .c-rating{font-weight:700;width:56px}
 .c-pos{color:var(--muted);width:64px}
@@ -311,6 +384,7 @@ tbody tr:hover{background:#1a211b}
 .c-date{white-space:nowrap;font-weight:600}
 .c-basis{white-space:nowrap}
 .c-note{color:var(--quiet);font-size:11.5px;white-space:nowrap}
+.c-time{color:var(--muted);font-size:11.5px;white-space:nowrap;font-variant-numeric:tabular-nums;cursor:help}
 .c-spark{width:110px}
 .spark{display:block}
 .pv{display:none}
@@ -338,8 +412,7 @@ code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 .footer{color:var(--quiet);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
 </style></head><body data-platform="${esc(activePlatform)}">
 <h1>FC27 传奇/英雄监控 ${stateBadge}</h1>
-<div class="sub">数据日期 ${esc(dateStr)}${today && !todayIsCurrent ? `（价格数据取自最近快照 ${esc(today.date)}，本日无新采集）` : ''} · 平台 Console（PS / Xbox）+ PC 双口径可切换 · 监控对象 FC27 全部基础传奇卡（Icon，全量 ${roster.length} 张）· 来源 FUTBIN · 逐日快照累积</div>
-
+<div class="sub">数据日期 ${esc(dateStr)}${today && !todayIsCurrent ? `（价格数据取自最近快照 ${esc(today.date)}，本日无新采集）` : ''} · 平台 Console（PS / Xbox）+ PC 双口径可切换 · 监控对象 FC27 全部基础传奇卡（Icon，全量 ${roster.length} 张）· 价格区间（最低价-最高价）覆盖 ${rangeCoverage}/${roster.length} 张 · 球员头像 ${avatarResolved.filter(rid => rid && avatarReady.has(String(rid))).length}/${roster.length} · 来源 FUTBIN · 逐日快照累积 · <b${dataUpdatedTitle ? ` title="${esc(dataUpdatedTitle)}"` : ''}>数据更新至 ${dataUpdatedText || '—'}（Asia/Shanghai，精确到分钟）</b></div>
 <div class="plat-bar" role="group" aria-label="平台切换">
   <span class="plat-label">平台</span>
   ${ICON_PLATFORMS.map(pl => `<button type="button" class="plat-btn${pl.id === activePlatform ? ' active' : ''}" data-platform="${pl.id}" aria-pressed="${pl.id === activePlatform}">${esc(pl.label)}<small>${esc(pl.short)}</small></button>`).join('')}
@@ -350,6 +423,8 @@ code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 ${statCard(roster.length, '监控传奇卡总数')}
 ${statCard(today ? `${today.counts?.valid ?? validPrices.length}<em>/${roster.length}</em>` : '—', todayIsCurrent ? '当日有效价格卡数' : `最近快照(${today ? today.date : '—'})有效价卡数`)}
 ${statCard(recordingDays, '已记录快照天数')}
+${statCard(`${rangeCoverage}<em>/${roster.length}</em>`, '已采集最低/最高价卡数')}
+<div class="stat"${dataUpdatedTitle ? ` title="${esc(dataUpdatedTitle)}"` : ''}><b>${esc(dataUpdatedText ? dataUpdatedText.slice(0, 5) : '—')}<em>${esc(dataUpdatedText ? dataUpdatedText.slice(6) : '')}</em></b><small>数据更新时刻（Asia/Shanghai）</small></div>
 ${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${countdown}` : '—'), isMarket ? `口径 ${basis}` : `距 FC27 开服（${launchDate}）`)}
 </div>
 
@@ -361,7 +436,10 @@ ${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${
 <li>当前口径：<code>${esc(basis)}</code> —— ${esc(today?.priceBasisNote || '暂无当日快照，口径待定。')}</li>
 <li>快照位置：<code>apps/market/engine/icons/data/prices/fc27/daily/&lt;DATE&gt;.json</code>，一天一份、同日重跑只覆盖当天，历史不被清空。</li>
 <li>${isMarket ? '已开服：下方「今日价 / 日环比 / 累计涨跌 / 走势」按真实成交价逐日计算。' : '未开服：列表页占位价的日变化没有行情含义，因此本期不计算日环比与累计涨跌，仅做台账与记录进度；开服后自动切换为成交价监控。'}</li>
-<li>本页只做<b>逐日价格监控台账</b>；FC26↔FC27 阵容对照、属性与金特技变化、131 张首月价格预测与投资分档，见本栏目「<b>传奇卡研究</b>」子标签。</li>
+<li>价格区间（<b>最低价 / 最高价</b>）：取自 FUTBIN 球员详情页的 <code>Price Range</code>，由独立子任务每小时采集一次。该字段是<b>卡级</b>的 —— 同一张卡的 Console 与 PC 价格盒渲染出完全相同的区间值（2026-09-17 对 20 张卡批量核验，差异数为 0），因此不作为「每平台各一套」展示，切换平台时区间列不变；平台差异只体现在<b>当前价</b>列。<b>区间不是成交价</b>，开服前属挂单/估值区间，不参与涨跌计算。该区间与列表页 <code>IS</code>（开服前估值列）是两套不同口径，切勿混用。</li>
+<li>价格区间覆盖：<b>${rangeCoverage}/${roster.length}</b> 张${rangeMeta?.collectedAt ? ` · 最近采集于 ${esc(rangeMeta.collectedAt)}` : ''}${rangeMeta?.minFloor || rangeMeta?.maxCeiling ? ` · 全区间下沿最低 ${num(rangeMeta.minFloor)} / 上沿最高 ${num(rangeMeta.maxCeiling)}（coins）` : ''}${rangeCoverage < roster.length ? ` · 其余 ${roster.length - rangeCoverage} 张未采集到，如实留空` : ''}。</li>
+<li>数据更新时刻：本期数据更新至 <b>${dataUpdatedText || '—'}</b>（Asia/Shanghai，精确到分钟${dataUpdatedTitle ? `，即 ${esc(dataUpdatedTitle)}` : ''}）。台账「<b>数据更新</b>」列为<b>逐卡</b>观测时刻 —— 取该卡本次 FUTBIN 详情页采集时刻（<code>priceRange.fetchedAt</code>），未采到区间的卡退回当日快照采集时刻，两者都没有时如实留空；悬停该列可见到秒时刻与 FUTBIN 站点标注的相对更新时间（<code>updatedText</code>）。页面刷新时会按 <code>cardId</code> 从 <code>current.json</code> 重新取价，并把该列同步为该卡价格/区间的最新观测时刻。</li>
+<li>FC26↔FC27 跨代价格对照与投资建议见本栏目「<b>传奇卡研究</b>」子标签。</li>
 </ul>
 </div>
 
@@ -382,7 +460,10 @@ ${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${
 <th class="sortable" data-key="pos">位置</th>
 <th>六维</th>
 <th>金特技</th>
-<th class="sortable" data-key="price">${esc(isMarket ? '今日价' : '列表页价(非市场价)')}</th>
+<th class="sortable" data-key="price">${esc(isMarket ? '当前价' : '当前价(列表页)')}</th>
+<th class="sortable" data-key="min" title="FUTBIN 详情页 Price Range 的低值（卡级：Console 与 PC 渲染同值）">最低价</th>
+<th class="sortable" data-key="max" title="FUTBIN 详情页 Price Range 的高值（卡级：Console 与 PC 渲染同值）">最高价</th>
+<th class="sortable" data-key="obs" title="该行价格与区间的实际观测时刻（Asia/Shanghai，精确到分钟；悬停可见到秒与 FUTBIN 站点标注的更新时间）">数据更新</th>
 <th class="sortable" data-key="d1">日环比</th>
 <th class="sortable" data-key="cum">累计涨跌</th>
 <th>记录天数</th>
@@ -417,11 +498,19 @@ ${missing.length ? `<ul>${missing.map(m => `<li>${esc(m)}</li>`).join('')}</ul>`
     return el?el.textContent:cell.textContent;
   }
   var specs={rank:{i:0,type:'num'},rating:{i:2,type:'num'},pos:{i:3,type:'str'},name:{i:1,type:'str'}};
-  var priceKeys=(function(){var th=table.tHead.rows[0].cells;var m={};for(var i=0;i<th.length;i++){var k=th[i].getAttribute('data-key');if(k)m[k]=i;}return m;})();
+  var numKeys={price:1,min:1,max:1,d1:1,cum:1};
+  var colIdx=(function(){var th=table.tHead.rows[0].cells;var m={};for(var i=0;i<th.length;i++){var k=th[i].getAttribute('data-key');if(k)m[k]=i;}return m;})();
   function val(tr,key){
-    var i=(key==='price')?priceKeys.price:(key==='d1'?priceKeys.d1:(key==='cum'?priceKeys.cum:null));
+    // obs（数据更新）列按 ISO 时刻比较，取单元格上记录的原始时刻而非显示文本
+    if(key==='obs'){
+      var box=tr.children[colIdx.obs];
+      var b=box?box.querySelector('[data-obs]'):null;
+      var t=Date.parse(b?b.getAttribute('data-obs'):'');
+      return isFinite(t)?t:null;
+    }
+    // price / min / max / d1 / cum 这几列都按表头 data-key 定位，并取「当前平台」那份取值
     var raw;
-    if(i!==null&&i!==undefined){raw=activeText(tr.children[i]).replace(/[^0-9.+-]/g,'');return raw===''?null:parseFloat(raw);}
+    if(numKeys[key]){var i=colIdx[key];raw=activeText(tr.children[i]).replace(/[^0-9.+-]/g,'');return raw===''?null:parseFloat(raw);}
     var s=specs[key];if(!s)return null;raw=activeText(tr.children[s.i]).trim();
     return s.type==='num'?(isNaN(parseFloat(raw))?null:parseFloat(raw)):raw;
   }
@@ -454,6 +543,32 @@ ${missing.length ? `<ul>${missing.map(m => `<li>${esc(m)}</li>`).join('')}</ul>`
       });
     });
   });
+  function currentUrl(){
+    try{var host=window.parent&&window.parent!==window?window.parent.location:window.location;var prefix=host.pathname.indexOf('/archive/')!==-1?'../':'';return new URL(prefix+'assets/data/current.json',host.href).toString();}
+    catch(e){return 'assets/data/current.json';}
+  }
+  function fmt(v){return typeof v==='number'&&isFinite(v)&&v>0?v.toLocaleString('en-US'):'—';}
+  // 时刻格式化（Asia/Shanghai，精确到分钟），与页面静态渲染口径保持一致
+  function fmtMin(iso){var t=Date.parse(iso||'');if(!isFinite(t))return '';var d=new Date(t+8*3600e3);
+    function p(n){return (n<10?'0':'')+n;}
+    return p(d.getUTCMonth()+1)+'-'+p(d.getUTCDate())+' '+p(d.getUTCHours())+':'+p(d.getUTCMinutes());}
+  // 该卡行内价格/区间的最新观测时刻：在「本行展示的字段」中取最新，不用热度等未展示字段的时刻
+  function obsOf(c){
+    var cand=[c.priceRange&&c.priceRange.observedAt,c.platforms&&c.platforms.console&&c.platforms.console.observedAt,c.platforms&&c.platforms.pc&&c.platforms.pc.observedAt];
+    var best=null,bt=-Infinity;
+    for(var i=0;i<cand.length;i++){var t=Date.parse(cand[i]||'');if(isFinite(t)&&t>bt){bt=t;best=cand[i];}}
+    return best;
+  }
+  fetch(currentUrl(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(String(r.status));return r.json();}).then(function(doc){
+    var cards=doc.cards||{};
+    Array.prototype.forEach.call(document.querySelectorAll('.live-icon-price'),function(el){var c=cards[el.dataset.cardId],cell=c&&c.platforms&&c.platforms[el.dataset.marketPlatform];el.innerHTML=cell&&cell.valid?fmt(cell.price):'—<span class="hint">占位</span>';});
+    Array.prototype.forEach.call(document.querySelectorAll('.live-icon-range'),function(el){var c=cards[el.dataset.cardId],range=c&&c.priceRange,v=range&&range[el.dataset.rangeField];el.textContent=fmt(v);});
+    // 逐卡「数据更新」列同步为 current.json 里该卡的最新观测时刻（价格与区间中较新者）
+    Array.prototype.forEach.call(document.querySelectorAll('.live-icon-time'),function(el){
+      var c=cards[el.dataset.cardId];if(!c)return;var iso=obsOf(c);if(!iso)return;
+      var txt=fmtMin(iso);if(!txt)return;el.textContent=txt;el.setAttribute('data-obs',iso);
+    });
+  }).catch(function(){});
 })();
 </script>
 </body></html>

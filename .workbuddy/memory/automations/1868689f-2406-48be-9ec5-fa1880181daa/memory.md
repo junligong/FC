@@ -1,14 +1,13 @@
 # FC·传奇英雄监控 自动化执行记忆（1868689f）
 
-## 2026-09-17（首次记录，状态 failed）
-- runId `adb415d7-98d7-4c64-9ded-a186c31d1ed5`，03:00:30 启动，03:04 提交 `failed`（未超 deadline 03:15:30）。
-- **失败根因：来源侧拦截，不是浏览器通道故障。** `check-deps.mjs` → exit 0（Chrome, port 9222）正常。
-  FUTBIN `/players` 列表目录全部返回自有 403 页（`/27/players`、`?page=1`、`?rarity=icon`、`/27/players/evolutions`、乃至 `/26/players`），
-  而 `/`（335 KB 正常渲染）、`/27/popular`、`/27/player/21487/maradona`（双平台单元格 11+11）均正常 → 分路径拦截，疑似 IP/会话级反爬。
-- 合规处置：未回退任何禁止入口；**未写 2026-09-17 快照**（record-icons-daily 会拿昨日 base-icons.json 生成虚假当日快照）；未用 FC26/旧数据填充；未算涨跌。
-- **渲染件主动不发布**：渲染出的 `reports/daily/2026-09-17/icons-heroes.html` 移存到 `automation/runs/2026-09-17/icons-heroes/work/icons-heroes.rendered-notShipped.html`，`reports/daily/2026-09-17/` 保持为空。原因两条：
-  1. 渲染器 `today` 回退到最近快照（`snapshots[snapshots.length-1]`），且 `if (!today)` 分支永不触发 → 页面**无任何「本日无新采集」标识**，会把 09-16 价格呈现为 09-17 数据。
-  2. 英雄区块由 `heroes/data` **递归扫描**读入 `heroes/data/prices/fc26/base-heroes.json`，把 **93 张 FC26 英雄卡**渲染成「英雄卡（Hero）台账」。
-- **既有缺陷（非本轮引入）**：`reports/daily/2026-09-16/icons-heroes.html` 同样含「英雄卡全量 93 张」的 FC26 数据，线上「传奇/英雄监控」子标签的英雄区块自建版起即跨代混入。建议单独修 `render-icons-heroes.mjs` 的英雄数据源约束（限定 `fc27` 路径 + 校验 game 字段）。
-- 证据：`automation/runs/2026-09-17/icons-heroes/evidence.json`（含 10 个来源的 URL/打开时间/结果，其中 3 个对照组 ok）。
-- 下次执行要点：先单次重试 `/27/players`（该 403 具时限性，09-16 08:17Z 曾正常返回 30 行）；若仍 403，**退避到分钟级**再试，不要秒级密集重试。
+## 2026-09-18（第 2 次记录，状态 partial）— 首次拿到当日英雄卡数据
+- runId `bd2ebc99-0330-4c5a-bad2-50a28b3ce979`，19:10:34Z 启动、19:17:23Z 提交 `partial`（deadline 19:25:34Z 内，未触 20 分钟硬上限）。
+- 通道正常：check-deps exit 0。**`/27/players` 本次可读**（09-17 全路径 403 未复现），但**翻页至第 11 页起全部 403** → 属**滚动触发的限流**（首页与 1-10 页同轮可读）。按契约分钟级退避 120s 单次重试仍 403；共 2 次尝试后停止，未秒级密集重试。
+- 结果：131 张台账中 **102 张**取得当日列表价；**英雄卡 50 张全部取得双平台价 + 中文名**（与既有台账 50 张数量一致，评分 88–89）。快照 131 张、区间 131/131；页面传奇头像 131/131、FC27 英雄 48/50、FC26 参考 93 张。
+- 新增脚本 `apps/market/engine/scripts/collect-icons-list.mjs`（本任务此前无列表页采集器）：页内同源 fetch + DOMParser、每 3 批重建宿主页、`--from-page/--merge/--wait-sec` 支持退避补采、**内置台账收敛**。
+- 三条新增实测结论（下次直接用）：
+  1. `?version=base_icon` 直连仍是 0 行空表；站内版本下拉是纯 JS 状态，点 `li.searchable-version` 后列表不变、无可提交 Apply → **版本筛选路线不可用**，只能翻页 + 行内尾标签判定。
+  2. 列表页带 `Icon` 标签的行数**多于**台账（10 页 199 行，97 行不在台账内）→ 必须用 `fc27-icons-playstyles.json`（131）收敛，否则污染 base-icons.json 与逐小时快照。
+  3. 尾标签要按后缀匹配（`Base Heroes`/`Debut Icon`/`Icon`）；按空格切分会把多词姓名切给标签。
+- backfill-avatar-keys 判定 181 个 cardId 全部可解析、无需补全；渲染侧 48/50 的差异在于渲染还要求本地图片文件存在（Márquez 21587/21600 两个名目无图，如实不出图）。
+- 下次要点：① 先单次试 `/27/players`；② **控制翻页节奏**，页 1-10 后主动分批间隔，被 403 后按分钟级退避且不超 2 次重试；③ 补采直接用 `collect-icons-list.mjs --from-page N --merge --wait-sec <秒>`；④ 缺的 29 张卡当前价不影响展示（current.json 已覆盖），不必重复开详情页。

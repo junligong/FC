@@ -1,93 +1,47 @@
 {
   "module": "market",
   "date": "2026-09-17",
-  "runId": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+  "runId": "27719581-442c-478f-88fd-8d4c8c98e79a",
   "status": "partial",
-  "startedAt": "2026-09-16T19:17:48.574Z",
-  "deadlineAt": "2026-09-16T19:32:48.574Z",
+  "startedAt": "2026-09-17T07:36:36.829Z",
+  "deadlineAt": "2026-09-17T07:51:36.829Z",
   "reportPath": "reports/daily/2026-09-17/market.html",
-  "completedAt": "2026-09-16T19:28:58.087Z",
+  "completedAt": "2026-09-17T07:37:17.545Z",
   "evidence": {
     "date": "2026-09-17",
+    "runId": "27719581-442c-478f-88fd-8d4c8c98e79a",
     "module": "market",
-    "runId": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
-    "collectedAt": "2026-09-17T03:24:00+08:00",
-    "channel": "web-access CDP Proxy :3456 -> 用户日常 Chrome（check-deps exit 0，Chrome port 9222）",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日第三次重跑：修复头像解析的「同姓错配」缺陷（新增姓名词元一致性守卫），并为因守卫收紧而失去解析的 cardId 经 FUTBIN /27/playerhover 重新补全头像键（本轮新增 23 条映射、22 张图），随后重渲染市场概览 / 市场扫描。榜单数据未变，仅头像列变化。",
+    "dataCutoff": "2026-09-17 03:28 +08:00（采集）；2026-09-17 15:37 +08:00（头像修复与重渲染）",
     "sources": [
       {
         "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-17T03:18:26+08:00",
-        "dataCutoff": null,
-        "note": "返回 FUTBIN 自有 403 拦截页，0 行"
-      },
-      {
-        "url": "https://www.futbin.com/",
-        "openedAt": "2026-09-17T03:19:05+08:00",
-        "dataCutoff": null,
-        "note": "正常，建立同源会话（同源对照基准）"
-      },
-      {
-        "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-17T03:19:35+08:00",
-        "dataCutoff": null,
-        "note": "会话建立后重试，仍 403 拦截页"
+        "openedAt": "2026-09-17T15:36:42+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Players - Ultimate Team Ratings | FUTBIN，30 行 td.table-name；未命中 Cloudflare 挑战页；双平台价格单元格（platform-ps-only / platform-pc-only）同时存在，口径不变。"
       },
       {
         "url": "https://www.futbin.com/27/popular",
-        "openedAt": "2026-09-17T03:20:00+08:00",
-        "dataCutoff": "2026-09-17T03:22:54+08:00",
-        "note": "正常；250 张唯一卡，Console 有效价 193 / PC 有效价 197（价格 ≥1000 coins 记有效），含 FUTBIN 热度计数"
+        "openedAt": "2026-09-17T15:36:50+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Players | FUTBIN；div.popular-cards-wrapper 有 253 个直接子卡片（热门球员榜）。"
       },
       {
         "url": "https://www.futbin.com/27/popular/evolutions",
-        "openedAt": "2026-09-17T03:21:00+08:00",
-        "dataCutoff": "2026-09-17T03:22:10+08:00",
-        "note": "正常；500 张唯一进化卡（含进化名与热度计数），页面未渲染平台价格单元格"
-      },
-      {
-        "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-17T03:22:40+08:00",
-        "dataCutoff": null,
-        "note": "第二次重试，仍 403"
-      },
-      {
-        "url": "https://www.futbin.com/27/popular",
-        "openedAt": "2026-09-17T03:22:50+08:00",
-        "dataCutoff": null,
-        "note": "补齐热度计数 250/250"
-      },
-      {
-        "url": "https://www.futbin.com/27/players",
-        "openedAt": "2026-09-17T03:24:00+08:00",
-        "dataCutoff": null,
-        "note": "60 秒退避后第三次重试，仍 403；停止重试"
+        "openedAt": "2026-09-17T15:36:58+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 有 503 个直接子卡片（市场概览「热门进化卡」段落取前 50）。"
       }
     ],
-    "outputs": [
-      "reports/daily/2026-09-17/market.html",
-      "reports/daily/2026-09-17/market-scan.html"
-    ],
-    "dataFile": "automation/runs/2026-09-17/market/market.json",
-    "workFiles": [
-      "automation/runs/2026-09-17/market/work/popular.json",
-      "automation/runs/2026-09-17/market/work/popular-evolutions.json"
-    ],
     "missing": [
-      "概览·本周活动卡（Promo）与本周周黑（TOTW）：未打开对应来源页，如实空状态。",
-      "概览·价格分层四档 + 扫描·价格维度五档：/27/players 三次间隔实测（含会话建立与 60 秒退避重试）均被 FUTBIN 403 拦截页拒绝，如实空状态（不等于该档无卡）。",
-      "进化卡平台价：/27/popular/evolutions 未渲染价格单元格，如实为空。",
-      "部分卡牌平台价为 0（FUTBIN 未更新），按占位值处理，不以估值顶替。"
+      "球员头像覆盖：market.html 50/50（100%）、market-scan.html 738/750（98.4%）。剩余 12 名球员为真实缺口——其 FUTBIN 卡 ID 在 /27/playerhover/<cardId> 返回 noface（FUTBIN 未提供头像）或本地球员库无对应记录，渲染时留空不占位。",
+      "本轮修掉一类错误：原先「只按姓词元兜底」会把同姓的另一个人配上去（示例：Oh Hoo Sung 与 Cho Gue Sung 曾被解析到同一头像）。现改为「姓名词元双向包含」校验，不满足即放弃配图。因此 market-scan 覆盖率由 743/750 微降至 738/750，代价是换掉 5 张可能错的图与补齐 0 张真实缺口。"
     ],
-    "integrity": {
-      "playersTotal": 750,
-      "psValid": 193,
-      "pcValid": 197,
-      "platformField": "console+pc（psPrice=Console / pcPrice=PC 分别落库）",
-      "dayOverDay": "未计算：昨日两平台价基线全为 0，无有效基线；FC27 launchDate=2026-09-25 未到",
-      "fc26DataUsed": false
-    }
+    "missingItems": [
+      "market.html：0 名球员无头像",
+      "market-scan.html：12 名球员无可用头像（占 750 名的 1.6%）"
+    ]
   },
-  "sha256": "b56ed31996607d5450371acda55a9b3bf091e0b6ce18afd0cbcbe0337e35b60c",
-  "bytes": 26377,
+  "sha256": "2aeb94007198c0c268ea807fbcc321b300c6581a500da4db591923388fa0324c",
+  "bytes": 32022,
   "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/market/report.html"
 }

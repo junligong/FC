@@ -1,0 +1,23 @@
+{
+  "task": "FC·市场价格关注列表（每小时）",
+  "scheduledHour": "13",
+  "checkedAt": "2026-09-18T05:43:40.626Z",
+  "result": "failed",
+  "stage": "collect-popular",
+  "reason": "热门榜 https://www.futbin.com/27/popular 两次导航（首次 + 首页重建会话后 45 秒退避重试一次）均在 45 秒等待内未出现卡片元素，价格源 0 卡采到；脚本退出码 1。非 403 明示拦截，页面元素未渲染，按红线不追查、不第三次密集重试。",
+  "triage": {
+    "verdict": "OK",
+    "checkDepsExit": 0,
+    "chrome": { "port": 9333, "listener": true, "wsPath": null },
+    "actions": [],
+    "note": "浏览器通道健康（独立调试 profile，check-deps 报 proxy: ready），故障与通道无关，属来源页取数失败。"
+  },
+  "collectedThisRound": {
+    "evolutions": { "status": "success", "total": 500, "withPopularity": 500, "snapshotHour": "13", "dailyPath": "apps/market/engine/data/prices/fc27/evolutions/daily/2026-09-18.json" },
+    "popular": null
+  },
+  "notAttemptedAndWhy": "未执行 build-market-watchlist / apply-market-name-zh / render-market-watch / render-market-report / 重发布：价格源（热门榜）本轮零卡采到，无新当前价可合并；按契约失败轮保留上次有效结果、不得用历史数据或 FC26 填充，渲染与发布只会原样重发 T12 数据，无意义且违反失败轮纪律。",
+  "currentJsonNote": "apps/market/engine/data/prices/fc27/current.json 本轮未被本任务触碰；其 generatedAt 2026-09-18T05:41:54Z（北京 13:41:54）来自同小时位的「传奇价格区间」T13 轮次写入，归属已核实（icons pricerange hourly 2026-09-18T13.json 落盘时间 13:41）。",
+  "lastValidResultKept": "apps/market/engine/data/prices/fc27/popular/hourly/2026-09-18T12.json（北京 12:39，热门榜 250 张：Console 有效价 165 / PC 有效价 155）；current.json 与线上保留该轮有效行情。",
+  "manualActionNeeded": "无需人工介入：脚本内置退避重试已穷尽，属 FUTBIN 分钟级滚动拦截形态，预期下一整点轮次自动恢复；若连续 ≥3 轮同形态失败，再考虑分钟级退避后人工核验页面结构（不属本任务自动化范围）。"
+}

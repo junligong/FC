@@ -1,40 +1,46 @@
-# FC 长期记忆（2026-09-16 精简；详细契约见根 `AGENTS.md` 与 `automation/prompts/*.md`）
+# FC 长期记忆（契约正文一律看根 `AGENTS.md` 与 `automation/prompts/*.md`，此处只存踩坑与口径）
 
-## 任务与站点
-6 个 WorkBuddy 任务（Asia/Shanghai）：足球日报 / 资讯采集 / 市场监控 / 进化专栏 / 传奇英雄监控 03:00，汇总发布 03:05。产物 `reports/daily/D/`：`football.html`、`news.html`、`market.html`（三段式）+`market-scan.html`、`evolution.html`、`icons-heroes.html`。站点 https://fc27-site.app.workbuddy.host/ （应用「FC27每日情报台」；发布走 WorkBuddy 站点能力，`entryHtml=index.html`+`updateExistingApp`）。
-产物一律 `render-*.mjs` 渲染，不手改 HTML；改渲染器或报告后必须走 run-state 重提快照（技能 `fc-run-state-resnapshot`）。栏目结构、子标签接线四处（`merge_daily_report` / `dashboard` / `coordinate` / `run-state`，键为视图名 market/legend）见 `AGENTS.md`。
+## 任务与产物
+- 6 个日任务（2026-09-18 起 5 分钟错开）：资讯 03:00 → 市场 03:05 → 足球 03:10 → 进化 03:15 → 传奇英雄 03:20；汇总发布 03:35。时刻表权威源 `shared/config/project.json#dailySchedule`。
+- 2 个每小时任务（icons-pricerange-hourly / market-hourly）**分钟相位不可控**：`HOURLY` 不接受 `BYHOUR`，`BYMINUTE` 被静默忽略（nextRunAt = 上次配置更新时间 +1h）→ 共用 `current.json` 的并发防护必须做在脚本层（幂等合并 / 原子写），不要依赖调度相位。两者均**不调用 run-state.mjs**（owner.json 是一天一次语义，会拒掉当日全部小时轮次）。
+- 预检失败留证：`automation/runs/D/icons-heroes/hourly-<HH>-failed.json`、`automation/runs/D/market/hourly-<HH>-failed.json`；失败轮**不得**写 `pricerange/hourly/` 快照（该目录只放真实成功观测）。
+- 产物 `reports/daily/D/`；站点 fc27-site.app.workbuddy.host（`entryHtml=index.html` + `updateExistingApp`）。一律 `render-*.mjs` 渲染，**不手改 HTML**；受 run-state 快照校验的产物（`market.html`）改动后必须重提快照，否则站点静默回退旧版。每小时任务**不得渲染 market.html、不写 run-state**。
+- **`daily-merged/index.html` 是整体内联单文件，渲染产物不会自动上线**：market-hourly 第 ⑥ 步必须 **先 `FC_PROJECT_ROOT=… node apps/portal/merge_daily_report.mjs D`（无锁、约 1.6 秒）再发布**，否则线上栏目的页头/统计/榜单会冻结在每日 03:35 那一版，而价格因走客户端 `current.json` 仍是最新——形成「只有价格是活的」这种最易漏检的形态（2026-09-18 实测冻结在 T02 达 13 小时，此前各轮只核对 `current.json` 全部漏检）。`merge_daily_report.mjs` 不写入任何受 `run-state` 校验的产物；有锁的 `coordinate.mjs` 仍禁跑。**核对发布不能只验 JSON，必须验页面正文里的构建期字段**。
+- 页面里任何「时间」一律做成客户端实时读取（`render-market-watch.mjs` 的「行情更新于」与逐行「更新于」列即此模式：读 `current.json` 的 `generatedAt`/`updatedAt`/逐平台 `observedAt`），构建期固化值只作兜底，保证合并失败时时间也不会骗人。
 
-## FUTBIN 平台口径（实机核验；市场 + 传奇英雄必须遵守）
-- 只有 Console（PS/Xbox 合并）与 PC 两档；每行**同时**含 `platform-ps-only` 与 `platform-pc-only` 单元格，一次打开即得两平台价。
-- 平台按钮（`form.desktop-platform-change-form`）是**纯前端显隐切换**：不刷新、不改 URL、不重取数。`ps_price`/`pc_price`/`rarity`/`version`/`page` 参数全无效；Icon/Hero 名单须用页面筛选 UI 或全量列表比对台账。
-- `td.table-item-score` 是开服前估值列 IS，非成交价。**「开服前两平台价均为 0」不是恒定前提**（2026-09-17 实测已被推翻）：FUTBIN 会在正式开服前开始对部分卡滚动更新平台价，此时 `market.json` 的 `priceBasis` 变为 `partial-live`（当日 750 人中 Console 有效价 193、PC 197；仍为 0 的按占位处理、页面标「估值」）。**每次以当日 `priceBasis` 为准**，不要照抄「均为 0」；无论哪种口径都仍不计算日环比/累计涨跌（昨日基线全 0 时无可比值）。
-- 落库：市场 `players[].psPrice`/`pcPrice`；传奇英雄逐卡 `platforms.console`/`platforms.pc`；顶层 `platform='console+pc'`。价格 <1000 视为占位。
-- 静态路线不存在（curl 403），必须走 CDP；`?rarity=icon` 首访常命中 Cloudflare，重试等 8–12 秒。
+## 踩坑（高价值）
+- coordinate stage 只复制白名单目录，新增跨日期底稿必须同步加 `cpSync`，否则栏目静默空白。
+- `apply-market-name-zh.mjs --file` 须传实际日期目录 `automation/runs/<YYYY-MM-DD>/...`，传 `D` 字面路径读不到。
+- 台账非 ASCII 名防 latin-1 乱码：`Buffer.from(s,'latin1').toString('utf8')` 反解。
+- CDP 代理对含 `?.` 的长 eval 偶发返回空对象 → 用 function + 显式判空。Bash grep 中文多分支正则偶发失配 → 改用 Grep 工具。
+- **长驻宿主页会劣化**：单宿主页跑到某进度后连续 `Runtime.evaluate` 超时 + `Unexpected end of JSON input`，补采 0 张；check-deps 仍 exit 0、单批试跑永远成功。修法 = 每 N 批关闭重建宿主页（`collect-icon-priceranges.mjs` 内置 `HOST_RECYCLE_EVERY=3`）；该修只是**延后**非根治，依赖内置补采轮。**不要调并发、不要反复手动补采**。前提：页内脚本无状态（fetch + DOMParser）。
+- 同一文件禁止并行编辑（症状 `ReferenceError`）；改生成器后跑 `node --test automation/execution.test.mjs automation/regression.test.mjs automation/verify-publication.test.mjs automation/news-media.test.mjs`。
+- /players 403 具时限性（03:00 全拦、09:46 解除）；FUTBIN 403 分钟级退避、禁密集重试；Cloudflare 挑战页约 30 秒自过。
 
-## 传奇/英雄监控
-入口 `render-icons-heroes.mjs`（传奇区块由 `render-market-icons.mjs` 拼入）。链路：`base-icons.json` → `record-icons-daily.mjs D` → `icons/data/prices/fc27/daily/<DATE>.json` → `render-icons-heroes.mjs D`。台账 `fc27-icons-playstyles.json`（131 张）；英雄卡在 `heroes/data/**` 递归扫。快照一天一份、同日只覆盖当天、原子写、禁止删改历史。`launchDate=2026-09-25` 前不算日环比/累计涨跌；缺失如实空状态，不用 FC26 或旧日期填充。市场任务不再采/渲染/提交传奇英雄内容。
+## 口径
+- FUTBIN 只有 Console/PC 两档（一行 DOM 同时含两平台价）；`ps_price/pc_price/rarity/version` 参数无效，`page` 翻页在会话建立后有效（30 行/页）；名单判定靠 `td.table-name` 版本标签；`td.table-item-score` 是估值列非成交价。落库 `psPrice`/`pcPrice`（<1000 占位）、`platform='console+pc'`；开服（2026-09-25）前不算日环比/累计涨跌，priceBasis 以当日实测为准。
+- 传奇区间是**卡级**字段（`scope:"card"`），Console 与 PC 同值，禁按平台拆；投资建议 condA（FC26 开服价 > FC27 当前价）**仅在当前价有效（≥1000）时参与**，condB 用区间上沿。命中集随实时价滚动**增减**，回报须附触发变化的价格证据，否则易被误读为脚本回归。
+- 译名：词库 `name-zh-supplement-fc27.json` 只增不改、禁空字符串；注入顺序 URL slug → 姓名 slug；当日未命中清单译完重跑至 0。资讯译文写 `apps/news/data/translations-D.json`（旧千帆代理已废弃）。
+- 头像：键 = EA resourceId，唯一入口 `shared/lib/player-avatar.mjs`；姓氏兜底有双向一致性守卫，宁缺勿错配；FC26 数据一律不配头像。
+- 市场每小时评分：0.45 热度 + 0.40 同档相对价 + 0.15 变动分；变动分只取两个真实整点观测（basis=hourly）。顺序红线：build → inject 译名 → render。
+- 进化卡无挂牌价，价格 = 基础卡双平台参考价（PC 优先）；`futbinListValue` 实为 Rating。
+- 传奇/英雄只监控 FC27，fc26 仅参考对比折叠区；快照原子写、禁删改历史；无当日快照显示 STALE 徽标不回退。
+- 红涨绿跌（`--up:#ff6259` `--dn:#4ec08a`）；脚本根锚点 `shared/config/project.json`。
 
-## 浏览器通道（可用）
-唯一通道 = `web-access` 技能（CDP Proxy :3456 直连用户日常 Chrome）。自检 `check-deps.mjs`：0 可用 / 2 需 `WEB_ACCESS_BROWSER=chrome`（已固化）/ 1 需用户手勾 `chrome://inspect/#remote-debugging`（Agent 不得代勾）。`curl :9222/json/version` 在开关模式下返回空，不能判可用性。禁用：Chrome 插件/extension（无 native messaging 宿主，永远连不上）、`dumate-browser-cli`、`DUMATE_*`、`browser-env.sh`、:19228/:19222、`agent-browser`、IAB、新 profile。通道不可用即 failed/partial + 留证，不回退、不填充旧数据。
+## 浏览器通道
+唯一通道 = `web-access` 技能（CDP :3456）。**2026-09-18 起走「独立调试 profile」**（`Chrome-FC-Debug` + 9333，零弹框），不再走日常 Chrome 开关模式。前置检查唯一入口 = `node automation/browser-triage.mjs`（有界：健康约 1 秒、失败最坏约 85 秒）。`OK`/`OK_RECOVERED` 继续；`TOGGLE_OFF` / `CHANNEL_UNSERVING` → `node automation/start-debug-profile.mjs [--restart]`（零弹框，无需人工）；`CONFIG_MISSING`(2) 需 `WEB_ACCESS_BROWSER=chrome`（已固化）。禁用：Chrome 插件 / extension、dumate-browser-cli、DUMATE_*、browser-env.sh、:19228/:19222、agent-browser、IAB。通道不可用即 failed/partial + 留证，不回退不填充。
+- 独立 profile 关键坑：必须 `--no-sandbox --disable-gpu`（否则 GPU 崩溃秒退）；必须 `spawn detached`（`nohup &` / `run_in_background` 会被沙箱回收）；不写 `DevToolsActivePort`，浏览器级 WS 需 `/devtools/browser/<id>` 后缀（从 `/json/version` 取）。无日常登录态（FUTBIN/X 需用户手动重登一次）。
+- **补丁风险**：`cdp-proxy.mjs`（含保活心跳 `CDP_KEEPALIVE_INTERVAL` 默认 60s）、`check-deps.mjs`、`config.env` 均为本地补丁，`web-access` 技能更新/重装会**静默覆盖**；备份 `.workbuddy/patches/cdp-proxy.mjs.bak-20260918`。
+- 旧开关模式（仅作历史参照，勿回退）：`:9222` 的 `/json/version`、`/json/list`、`/` 返回裸 404（`Content-Length:0`）**是正常表现**，不得据此写诊断（「监听 socket 未接入 DevTools 消息泵」已被证伪）；唯一判据是 check-deps 退出码。带 URL 的 `open -a "Google Chrome" chrome://inspect/...` 返回 `-10820` **完全空转**，有效形式是不带 URL 的 `open -a "Google Chrome"`。`Local State` 的 `user-enabled=true` 与 `DevToolsActivePort` 存在**都只是必要条件**。失败时不得 `pkill -f cdp-proxy.mjs` 反复复跑（4 个独立实例同样 non-101）。通道故障期教训：2026-09-18 06:04 Chrome 被 launchd 以 `--no-startup-window` 重建后失效约 4 小时（T06–T09 四轮空转，06:04–10:20 恢复），「开关跨重启持久生效」不成立。
+- 弹框（旧开关模式）：每条新 DevTools 连接弹一次「要允许远程调试吗？」，**授权无法持久化**（官方 wont-fix），官方唯一建议是保持长连接；**按「连接」计、不按「标签页」计**；企业策略 `RemoteDebuggingAllowed` 只管允不允许、**不抑制弹框**，无策略逃生口。⇒ 零弹框只有独立 profile 一条路（已采用）。
+- 插件通道已二次实证为死路（扩展已启用，但四款浏览器 `NativeMessagingHosts/` 无 `com.workbuddy.extension`，`app.asar` 命中数全 0），**勿再排查**。
+- 测量仪器：`cdp-proxy.mjs` 写连接事件 JSONL 到 `~/.workbuddy/logs/cdp-proxy-journal.jsonl`，用 `node automation/browser-channel-watch.mjs --report` 读；`os.tmpdir()/cdp-proxy.log` **不可当仪器**。本环境 `launchctl bootstrap gui/501` 稳定报 `5: Input/output error`，无法用 LaunchAgent 承载后台采样。
 
-## 汇总发布 `coordinate.mjs`
-只等待 football/news/market；evolution、icons-heroes 为可选模块（缺失不算失败）。`merge` 三态：`no_current_snapshot`（都无快照→不发布，**有意设计**）/`status_only`/`success`；本任务 failed 通常不是独立故障，**先查采集任务的浏览器通道**。`unattendedPublishingVerified` 恒 false，不代表失败；权威记录在 `automation/publish-status-D.json`。发布后根路径有边缘缓存，显式 `…/index.html` 立即最新。归档逐文件 `copyFileSync`，EIO 缺档时 `--rerun` 恢复。栏目在 iframe `srcdoc` 内，卡片在 `iframe.contentDocument`，父文档查不到别误判空白。
+## run-state 硬约束
+`evidence.missing` 非空 → success 自动降级 partial；`sources.openedAt` 必须 ≥ 本轮 `startedAt`（`--rerun` 后须重开来源页）；`--rerun` 会把 `runs/D/<module>/` 整体 rename 进 `attempts/`。
 
-## X 媒体链路（news）
-① `extract-timeline.js` 只取文字类字段 + `hasVideo/hasPhoto/hasCard`，不得抠图（后台标签页只有骨架）；② `enrich-tweet-media.mjs D` 经 `cdn.syndication.twimg.com/tweet-result?id=<ID>&token=a` 补 `images`/`video`/`card`/`quoted`，无需登录态。**严禁因含 video/animated_gif 丢推文。** 图片白名单 `report-assets.mjs#isCacheableXImage`；报告内一律 `size='medium'`；尺寸进哈希，换档位须清旧资产。下载两级：先 curl，失败项交 `fetch-images-browser.mjs` 在**自建宿主页**（`x.com/robots.txt`）**串行** fetch→base64；本环境代理到 `pbs.twimg.com` 不通（curl SSL 错属预期）。时间线上限 5–7 条/账号，不足记 `missingItems` 并提交 partial。契约同步 `prompts/news.md`、`apps/news/AGENTS.md`、`apps/news/README.md`、`task-definitions.json`。
-
-## 其他边界
-- **公众号**：凭证 `apps/market/integrations/wechat/.env`，号未认证 → **API 只能进草稿箱**（48001 无发布/群发），脚本 `publish_article.py`，排版走 `gzh-design`。
-- **FC26 数据集**：`engine/gold/data/prices/fc26/` 152 金卡×30 天（主入口 `fc26-first-month-dashboard.json`；`maxDrawdown` 在 `trading` 下且存正幅度值）；`fc27-price-matrix.json` 227 人对照，新卡 `ovr_diff` 可能 null 须过滤。四规律：开盘价最强；峰值随档位前移；OVR↔倍率秩相关 0.77；金特技 +1≈1.69× / -1≈0.42×。
-- **ima 知识库** `001aaa7e88002f6a`：仅文档格式（JSON/.mjs 须转 txt）；`create_media` → COS 签名 PUT → `add_knowledge`；HTML 单文件 ≤10MB；无删除/改名/移动。本地留档 `.workbuddy/exports/`。
-
-## 工程约定与踩坑
-红涨绿跌（`--up:#ff6259` `--dn:#4ec08a`）。脚本定位项目根锚点是 `shared/config/project.json`（`FC_PROJECT_ROOT` 可覆盖），不能用 `AGENTS.md`。新增任务同改 `project.json`、`task-definitions.json`、`prompts/README.md`。**同一文件禁止并行编辑**（互相覆盖且回报成功，症状 `ReferenceError`；同文件串行 + Grep 复核）——2026-09-16 二次踩中：`render-market-overview.mjs` 丢 `const PTOTAL` 致概览渲染抛错，平台提示又把「两平台全 0」误判为「均已采集」，已修为三态提示 + 回归用例。改生成器后跑 `automation/{execution,regression,verify-publication,news-media}.test.mjs`（36 例全绿）。Bash `grep` 对中文多分支正则偶发失配，改用 Grep 工具。
-
-## run-state.mjs 三条硬约束（2026-09-17 固化，6 个任务通用）
-1. `evidence.missing` 非空时 `finish success` 被自动降级为 `partial`（run-state.mjs:60）→ 直接提交 partial 并同步产物 JSON 的 `status`，否则报告徽标与权威状态矛盾。
-2. `evidence.sources[].openedAt` 必须 ≥ 本轮 `startedAt`，否则「来源记录不是本轮实际打开」；`begin --rerun` 后必须**在本轮内重新打开来源页**。
-3. `begin --rerun` 把 `automation/runs/D/<module>/` 内容（含 `work/`、`evidence.json`、`report.html`）整体 rename 进 `attempts/<旧runId>/`，重跑前从 attempts 拷回工作脚本。
-
-## 进化专栏（evolution）采集口径（2026-09-17）
-链路 `extract-cards.js`（`/27/popular/evolutions`，`div.popular-cards-wrapper > div.column`）→ `extract-evolutions.js`（`/27/evolutions`，`div.evolutions-overview-wrapper` 含 Requirements+Total Upgrades，不必逐条开详情页）→ `build-json.mjs` → `render-evolution.mjs`，脚本可从 `automation/runs/2026-09-17/evolution/work/` 拷。**去重按 `球员 URL + 进化名称`，不按球员名**（同名不同卡版本是独立条目）。榜单稳定渲染 500 条、无分页，是否截断未证实。`/27/evolutions/expired` 可判过期数。FUTBIN 站点经验见 `~/.workbuddy/skills/web-access/references/site-patterns/futbin.com.md`。
+## 其他
+- 公众号：凭证 `apps/market/integrations/wechat/.env`，未认证只能进草稿箱（48001）。
+- FC26 数据集 `engine/gold/data/prices/fc26/`（152 金卡 × 30 天）；fc27-price-matrix 227 人对照；四规律见 prompts。
+- ima 知识库 `001aaa7e88002f6a`：仅文档格式、无删除；本地留档 `.workbuddy/exports/`。
+- X 媒体：extract 只取文字字段；`enrich-tweet-media.mjs` 走 syndication token=a；下载两级（curl → 自建宿主页串行 fetch）；**严禁因 video 丢推文**。

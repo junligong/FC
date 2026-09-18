@@ -1,0 +1,50 @@
+{
+  "module": "evolution",
+  "date": "2026-09-17",
+  "runId": "ce839fbe-f92e-4421-81bf-efc20d708a13",
+  "status": "partial",
+  "startedAt": "2026-09-17T07:27:03.896Z",
+  "deadlineAt": "2026-09-17T07:42:03.896Z",
+  "reportPath": "reports/daily/2026-09-17/evolution.html",
+  "completedAt": "2026-09-17T07:28:05.441Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "runId": "ce839fbe-f92e-4421-81bf-efc20d708a13",
+    "module": "evolution",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日第二次重跑：进化专栏 500 条进化卡接入球员头像（render-evolution.mjs 行内新增 .pimg 头像单元格，头像键经 FUTBIN 卡 ID→头像键索引补全）。榜单数据与中文译名均未变，仅新增头像列，按契约重提 run-state 快照并重新合并发布。",
+    "dataCutoff": "2026-09-17 03:47 +08:00（采集）；2026-09-17 15:27 +08:00（头像链路重渲染与快照重提）",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-17T15:27:13+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 有 503 个直接子卡片（当日落库 500 条）。前三项与 evolution.json 一致：79 RB++ Savona / 80 ST Endrick / 79 RB++ Furlong。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-17T15:27:20+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Player Evolutions | FUTBIN；div.evolutions-overview-wrapper 存在，含 28 个直接子节点（Requirements + Total Upgrades 的进化路径分组）；样例首项「82 LW LM ST R 3 3 81.4 Gordon …」、次项即投票统计块。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions/expired",
+        "openedAt": "2026-09-17T15:27:36+08:00",
+        "note": "重开核验（本轮实际打开）：页面可达、无 evolutions-overview-wrapper，页面未列出过期进化条目 → 过期数如实为 0，与当日报告一致。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-17T15:27:45+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Players - Ultimate Team Ratings | FUTBIN，30 行 td.table-name（首两行 95 Maradona Icon / 95 Arantes Nascimento Icon），用于头像键补全链路与球员台账的当日一致性核对。"
+      }
+    ],
+    "missing": [
+      "球员头像覆盖 487/500（97.4%）：13 条进化卡在本地球员台账（shared/data/fc27/players.json，2961 卡）与 FUTBIN 头像键索引中均无记录，经 /27/playerhover/<cardId> 探针返回 noface 或 http404，属真实缺口，无图可显示。渲染器对无图条目留空，绝不挪用同名他人的头像。"
+    ],
+    "missingItems": [
+      "evolution.html：13 条进化卡无可用头像（占 500 条的 2.6%）"
+    ]
+  },
+  "sha256": "08c1c3bbab1e1d7b6cef0ea5b5b68a7d71a7e4249ce510e4c0cfcd16ce5239c0",
+  "bytes": 333455,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/evolution/report.html"
+}

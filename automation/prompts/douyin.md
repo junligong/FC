@@ -2,7 +2,7 @@
 
 日报发布之后的下游内容生产任务：把线上情报台的各栏目**截成分析长图**，并写出**配套的视频讲解稿**，交付给剪映出片。
 
-- 调度：每天 06:00（Asia/Shanghai），在「FC·汇总发布」（03:05）之后，确保线上站点已是当日版本
+- 调度：每天 06:00（Asia/Shanghai），在「FC·汇总发布」（03:35）之后，确保线上站点已是当日版本
 - 产物：`deliverables/douyin/<日期>/`（截图 + 讲解稿）
 - **不参与**日报合并发布链路：不改 `reports/daily/`、不改站点产物、不碰 `automation/runs/`
 
@@ -49,13 +49,12 @@
 
 ## 浏览器通道
 
-唯一通道是 Web Access 技能（CDP Proxy :3456 直连用户日常 Chrome）。截图前自检：
-
+唯一通道是 Web Access 技能（CDP Proxy :3456 直连用户日常 Chrome）。截图前自检（唯一判据，有界：健康约 1 秒、失败最坏约 85 秒；内部含 check-deps 预算 40s → 不带 URL 的 `open -a "Google Chrome"` 一次 → 再复测一次）：
 ```bash
-node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs    # 退出码 0 才可用
+node automation/browser-triage.mjs    # 退出码 0（OK / OK_RECOVERED）才可用
 ```
 
-通道不可用时把本次标为 `failed` 并留证（尝试的 URL、时间、错误摘要），**不回退**到禁止通道（`dumate-browser-cli`、`agent-browser`、IAB、新 profile），也不用旧日期截图填充。
+通道不可用时把本次标为 `failed` 并留证（尝试的 URL、时间、错误摘要），**不回退**到禁止通道（`dumate-browser-cli`、`agent-browser`、IAB、新 profile），也不用旧日期截图填充。不得反复复跑 `check-deps.mjs`（失败时每轮约 2m17s）、不得 `pkill` cdp-proxy 后反复重试、不得用带 URL 的 `open -a`（-10820 空转）、不得 kill Chrome。
 
 ## 已知约束
 

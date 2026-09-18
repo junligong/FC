@@ -1,6 +1,15 @@
 # 自动化 d39303af（FC·足球日报）执行记忆
 
-## 2026-09-17 03:00 执行摘要（最新）
+## 2026-09-18 03:00 执行摘要（最新）
+- 状态：`partial`，runId `cfa681a3-4694-4cea-871d-a0dbf04516e8`，03:37:35 启动 → 03:48:50 提交（11 分钟收口）。
+- 浏览器通道：web-access CDP（check-deps exit 0）正常。4 个并行子代理（英超+西甲 / 意德法 / 欧冠+MLS+沙特 / 新闻），约 7 分钟收齐。
+- 数据：三榜 9 个联赛块全覆盖（英超第4轮、西甲第6轮、意甲4轮、德甲3轮、法甲4轮、欧冠联赛阶段第1轮 36 队、MLS 东西区各15队、沙特联第7轮）；射手/助攻 8 联赛各前10；新闻 14 条（头条6+分联赛8）逐条打开原文。
+- `verify-football-boards.mjs` 退出码 0。
+- 终态 partial 原因（evidence.missing 非空自动降级，设计行为）：法甲/沙特联窗口内无独立新闻；MLS 射助榜无东西分区拆分；英超 Calvert-Lewin 进球 BBC(3)/ESPN(2) 冲突按 BBC 记录；维拉欧冠战报仅单一自媒体来源。
+- **踩坑（新增）**：`verify-football-boards.mjs` R3 要求射助榜每行 `r[3]` 为 **number 类型**（字符串数字会被判「不是 [排名,球员,球队,数字] 结构」）；生成器里统一 `Number()` 转换后通过。
+- 产物：`reports/daily/2026-09-18/football.html`（47382 字节，快照 SHA-256 4a8ec4cc…）；证据 `automation/runs/2026-09-18/football/evidence.json`；生成器 `automation/runs/2026-09-18/football/work/build-football.mjs`。
+
+## 2026-09-17 03:00 执行摘要
 - 状态：`partial`，runId `6faaafbd-51f1-4c0a-aa74-135d3f427ebc`，03:30:20 启动 → 03:42:41 提交。
 - 浏览器通道：web-access CDP（check-deps exit 0）正常。4 个并行子代理分治采集（英超+西甲 / 意德法 / 欧冠+美职联+沙特 / 新闻），约 8 分钟收齐。
 - 数据：三榜覆盖 9 个联赛块（英超第4轮、西甲第6轮、意甲4轮、德甲3轮、法甲4轮、欧冠联赛阶段第1轮、MLS 东西区、沙特联第7轮）；新闻 14 条（头条6+分联赛8，均打开原文核实）。来源：BBC/ESPN/worldfootball.net/ESPN-MLS-沙特。

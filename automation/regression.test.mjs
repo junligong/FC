@@ -197,6 +197,7 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
   const iconsRoot = path.join(dir, 'apps', 'market', 'engine', 'icons');
   const dailyDir = path.join(iconsRoot, 'data', 'prices', 'fc27', 'daily');
   mkdirSync(path.join(iconsRoot, 'data', 'prices', 'fc27'), { recursive: true });
+  mkdirSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'pricerange'), { recursive: true });
   mkdirSync(path.join(iconsRoot, 'data', 'players', 'fc27'), { recursive: true });
   // 原始抓取：一张有有效价、一张只有占位值、一张完全无价
   writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'base-icons.json'), JSON.stringify({
@@ -212,6 +213,13 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
     { id: '2', nameZh: '乙', rating: 88, position: 'ST', six: { PAC: 80, SHO: 85, PAS: 70, DRI: 78, DEF: 40, PHY: 80 }, playstyles: [], skills: 3, weakFoot: 3 },
     { id: '3', nameZh: '丙', rating: 89, position: 'CB', six: { PAC: 70, SHO: 40, PAS: 60, DRI: 62, DEF: 88, PHY: 86 }, playstyles: [{ name: 'Block', gold: true }], skills: 2, weakFoot: 3 },
   ]));
+  writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'pricerange', 'latest.json'), JSON.stringify({
+    date, collectedAt: '2026-09-16T10:00:00.000Z', cards: [
+      { id: '1', current: { console: 71000, pc: 72000 }, priceRange: { min: 10000, max: 100000 }, ok: true },
+      { id: '2', current: { console: 0, pc: 1500 }, priceRange: { min: 1000, max: 10000 }, ok: true },
+      { id: '3', current: { console: 0, pc: 0 }, priceRange: { min: 1000, max: 20000 }, ok: true },
+    ],
+  }));
   const env = { ...process.env, FC_PROJECT_ROOT: dir };
   const run = script => spawnSync(process.execPath, [path.join(here, '..', script), date], { env, encoding: 'utf8', timeout: 30000 });
   try {
@@ -220,9 +228,12 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
     const snapPath = path.join(dailyDir, `${date}.json`);
     const snap = JSON.parse(readFileSync(snapPath, 'utf8'));
     assert.equal(snap.counts.total, 3);
-    assert.equal(snap.counts.valid, 1, '88 与 null 都应被判为无效价');
+    assert.equal(snap.counts.valid, 2, '逐小时详情里的 PC 有效价必须传播进当日快照');
     assert.equal(snap.priceBasis, 'listing-estimate');
     assert.equal(snap.players.find(p => p.id === '1').pos, 'CAM', '位置应来自卡库台账');
+    assert.equal(snap.players.find(p => p.id === '1').platforms.console.price, 71000, '传奇 Console 实时价必须覆盖旧 base-icons 值');
+    assert.equal(snap.players.find(p => p.id === '1').platforms.pc.price, 72000, '传奇 PC 实时价必须传播');
+    assert.equal(snap.players.find(p => p.id === '2').platforms.pc.price, 1500, '单边有效价不得丢失');
 
     // 同日重跑：只覆盖当天文件，不新增、不清空
     r = run('apps/market/engine/scripts/record-icons-daily.mjs');
@@ -277,6 +288,96 @@ test('传奇监控开服后逐日计算日环比、累计涨跌与走势', () =>
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
+test('统一 current.json 按 cardId 合并多来源且旧观测不能覆盖新价', () => {
+  const here = path.dirname(new URL(import.meta.url).pathname);
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-current-market-'));
+  const date = '2026-09-17';
+  const marketDir = path.join(dir, 'automation', 'runs', date, 'market');
+  const popularDir = path.join(dir, 'apps', 'market', 'engine', 'data', 'prices', 'fc27', 'popular');
+  const iconDir = path.join(dir, 'apps', 'market', 'engine', 'icons', 'data', 'prices', 'fc27', 'pricerange');
+  mkdirSync(marketDir, { recursive: true });
+  mkdirSync(popularDir, { recursive: true });
+  mkdirSync(iconDir, { recursive: true });
+  writeFileSync(path.join(marketDir, 'market.json'), JSON.stringify({
+    date, dataCutoff: '2026-09-17T03:00:00+08:00',
+    players: [{ name: '甲', url: 'https://www.futbin.com/27/player/1/jia', psPrice: 1000, pcPrice: 1100 }],
+  }));
+  writeFileSync(path.join(popularDir, 'latest.json'), JSON.stringify({
+    date, collectedAt: '2026-09-17T04:00:00+08:00',
+    cards: [
+      { name: '甲', url: 'https://www.futbin.com/27/player/1/jia', psPrice: 2000, pcPrice: 2100, popularity: 9 },
+      { name: '乙', url: 'https://www.futbin.com/27/player/2/yi', psPrice: 3000, pcPrice: 3100, popularity: 8 },
+    ],
+  }));
+  writeFileSync(path.join(iconDir, 'latest.json'), JSON.stringify({
+    date, collectedAt: '2026-09-17T05:00:00+08:00',
+    cards: [{ id: '3', slug: 'bing', name: '丙', ok: true, current: { console: 4000, pc: 4100 }, priceRange: { min: 1000, max: 5000 } }],
+  }));
+  const env = { ...process.env, FC_PROJECT_ROOT: dir };
+  const run = () => spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/sync-current-market.mjs'), date], { env, encoding: 'utf8', timeout: 30000 });
+  try {
+    let r = run();
+    assert.equal(r.status, 0, r.stderr + r.stdout);
+    const currentPath = path.join(dir, 'apps', 'market', 'engine', 'data', 'prices', 'fc27', 'current.json');
+    let current = JSON.parse(readFileSync(currentPath, 'utf8'));
+    assert.equal(Object.keys(current.cards).length, 3);
+    assert.equal(current.cards['1'].platforms.console.price, 2000, '较新的每小时观测应覆盖日更价格');
+    assert.equal(current.cards['3'].priceRange.max, 5000, '传奇卡级区间应进入同一行情源');
+    assert.ok(existsSync(path.join(dir, 'reports', 'daily', date, 'assets', 'data', 'current.json')));
+    assert.ok(existsSync(path.join(dir, 'daily-merged', 'assets', 'data', 'current.json')));
+
+    const popular = JSON.parse(readFileSync(path.join(popularDir, 'latest.json'), 'utf8'));
+    popular.collectedAt = '2026-09-17T02:00:00+08:00';
+    popular.cards[0].psPrice = 900;
+    writeFileSync(path.join(popularDir, 'latest.json'), JSON.stringify(popular));
+    r = run();
+    assert.equal(r.status, 0, r.stderr + r.stdout);
+    current = JSON.parse(readFileSync(currentPath, 'utf8'));
+    assert.equal(current.cards['1'].platforms.console.price, 2000, '旧观测不得回退已写入的新价格');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('关注列表只用 current.json 作为当前值，逐小时序列只提供历史比较点', () => {
+  const here = path.dirname(new URL(import.meta.url).pathname);
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-watch-current-'));
+  const date = '2026-09-17';
+  const runDir = path.join(dir, 'automation', 'runs', date, 'market');
+  const priceRoot = path.join(dir, 'apps', 'market', 'engine', 'data', 'prices', 'fc27');
+  mkdirSync(runDir, { recursive: true });
+  mkdirSync(path.join(priceRoot, 'popular', 'daily'), { recursive: true });
+  mkdirSync(path.join(priceRoot, 'evolutions'), { recursive: true });
+  const url = 'https://www.futbin.com/27/player/1/jia';
+  writeFileSync(path.join(runDir, 'market.json'), JSON.stringify({
+    date, players: [{ url, name: '甲', nameZh: '甲', rating: 80, pos: 'ST', psPrice: 99999, pcPrice: 99999 }],
+  }));
+  writeFileSync(path.join(priceRoot, 'popular', 'daily', `${date}.json`), JSON.stringify({
+    date, points: [{ hour: '18' }, { hour: '19' }],
+    cards: { [url]: { name: '甲', rating: 80, pos: 'ST', ps: [{ h: '18', v: 2000 }, { h: '19', v: 1000 }], pc: [{ h: '18', v: 3000 }, { h: '19', v: 1000 }], pop: [{ h: '18', v: 5 }, { h: '19', v: 6 }] } },
+  }));
+  writeFileSync(path.join(priceRoot, 'current.json'), JSON.stringify({
+    schemaVersion: 1, game: 'fc27', generatedAt: '2026-09-17T11:00:00Z', cards: {
+      '1': { cardId: '1', popularity: 9, popularityObservedAt: '2026-09-17T11:00:00Z', platforms: {
+        console: { price: 5000, valid: true, observedAt: '2026-09-17T11:00:00Z' },
+        pc: { price: 6000, valid: true, observedAt: '2026-09-17T11:00:00Z' },
+      } },
+    },
+  }));
+  try {
+    const r = spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/build-market-watchlist.mjs'), date], {
+      env: { ...process.env, FC_PROJECT_ROOT: dir }, encoding: 'utf8', timeout: 30000,
+    });
+    assert.equal(r.status, 0, r.stderr + r.stdout);
+    const watch = JSON.parse(readFileSync(path.join(runDir, 'watchlist.json'), 'utf8'));
+    assert.equal(watch.universe.psValid, 1);
+    assert.equal(watch.universe.pcValid, 1);
+    assert.equal(watch.source.currentMarket, 'apps/market/engine/data/prices/fc27/current.json');
+    const row = watch.lists.watch[0];
+    assert.equal(row.popularity, 9, '当前热度必须来自 current.json，而不是逐小时末值');
+    assert.ok(row.intradayChange.some(move => move.platform === 'console' && move.now === 5000), '变化的当前端必须来自 current.json');
+    assert.ok(!Object.hasOwn(row, 'psPrice') && !Object.hasOwn(row, 'pcPrice') && !Object.hasOwn(row, 'refPrice'), 'watchlist 不得保存当前价格副本');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
 test('市场概览固定三段式、价格分层四档 Top50 且含 Console/PC 平台切换', async () => {
   const here = path.dirname(new URL(import.meta.url).pathname);
   const dir = mkdtempSync(path.join(tmpdir(), 'fc-market-overview-'));
@@ -321,14 +422,13 @@ test('市场概览固定三段式、价格分层四档 Top50 且含 Console/PC �
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-test('市场概览平台提示三态：双平台齐备 / 单边缺失告警 / 全空不误报', async () => {
+test('市场概览不再固化平台价，页面运行时读取统一 current.json', async () => {
   const here = path.dirname(new URL(import.meta.url).pathname);
   const date = '2026-09-12';
-  // 两平台价全为 0 时 pricedPlatforms 也是空集，不能据此声称「两平台均已采集」——本次回归即针对该误述。
   const cases = [
-    { name: 'both-ready', ps: 500000, pc: 480000, expect: /本页两种平台价均已采集/, warn: false },
-    { name: 'one-sided', ps: 500000, pc: 0, expect: /平台数据不完整/, warn: true },
-    { name: 'all-zero', ps: 0, pc: 0, expect: /两个平台价当前均为 0/, warn: false },
+    { name: 'both-ready', ps: 500000, pc: 480000 },
+    { name: 'one-sided', ps: 500000, pc: 0 },
+    { name: 'all-zero', ps: 0, pc: 0 },
   ];
   for (const c of cases) {
     const dir = mkdtempSync(path.join(tmpdir(), `fc-market-hint-${c.name}-`));
@@ -352,13 +452,14 @@ test('市场概览平台提示三态：双平台齐备 / 单边缺失告警 / �
       });
       assert.equal(r.status, 0, r.stderr);
       const html = readFileSync(path.join(dir, 'reports', 'daily', date, 'market.html'), 'utf8');
-      assert.match(html, c.expect, `${c.name}：平台提示文案不符`);
-      assert.equal(html.includes('<b class="plat-warn">'), c.warn, `${c.name}：平台告警状态不符`);
+      assert.match(html, /正在读取统一行情 current\.json/, `${c.name}：必须明确运行时行情源`);
+      assert.ok(html.includes("fetch(currentUrl(),{cache:'no-store'})"), `${c.name}：页面必须禁用缓存读取 current.json`);
+      assert.ok(!html.includes('<b class="plat-warn">'), `${c.name}：不得按生成时的价格副本固化平台告警`);
     } finally { rmSync(dir, { recursive: true, force: true }); }
   }
 });
 
-test('市场扫描页加载球员库并渲染双平台价格列', () => {
+test('市场扫描页只嵌入静态球员字段，双平台价按 cardId 读取 current.json', () => {
   const here = path.dirname(new URL(import.meta.url).pathname);
   const dir = mkdtempSync(path.join(tmpdir(), 'fc-market-scan-'));
   const date = '2026-09-12';
@@ -368,8 +469,8 @@ test('市场扫描页加载球员库并渲染双平台价格列', () => {
   const data = {
     date, status: 'partial', priceBasis: 'listing-estimate',
     players: [
-      { name: '测试球员', nameZh: '测试', rating: 88, pos: 'ST', price: 60000, priceValid: true, psPrice: 75000, pcPrice: 68000, popularity: 5, evo: '非进化池' },
-      { name: '无平台价球员', rating: 85, pos: 'GK', price: 900, priceValid: false, psPrice: 0, pcPrice: 0 },
+      { name: '测试球员', nameZh: '测试', rating: 88, pos: 'ST', price: 60000, priceValid: true, psPrice: 75000, pcPrice: 68000, popularity: 5, evo: '非进化池', url: 'https://www.futbin.com/27/player/123/test' },
+      { name: '无平台价球员', rating: 85, pos: 'GK', price: 900, priceValid: false, psPrice: 0, pcPrice: 0, url: 'https://www.futbin.com/27/player/456/empty' },
     ],
     sources: [{ url: 'https://www.futbin.com/27/popular', openedAt: '2026-09-12T10:00:00+08:00' }],
     missing: [],
@@ -384,9 +485,10 @@ test('市场扫描页加载球员库并渲染双平台价格列', () => {
     assert.ok(/class="plat-btn[^"]*" data-platform="pc"/.test(html), '扫描页应有 PC 平台按钮');
     assert.ok(/<body data-platform="console"/.test(html), '默认平台应为 console');
     const db = JSON.parse(html.match(/id="db-data">([\s\S]*?)<\/script>/)[1].replace(/\\u003c/g, '<'));
-    assert.equal(db.length, 2, '球员库应从 market.json 回退加载，不得为空');
-    assert.equal(db[0].cPrice, 75000, 'Console 平台价应独立落库');
-    assert.equal(db[0].pPrice, 68000, 'PC 平台价应独立落库');
-    assert.equal(db[1].cPrice, 0, '无平台价的卡应如实写 0，不用另一平台顶替');
+    assert.equal(db.length, 2, '球员静态名单应从 market.json 加载，不得为空');
+    assert.equal(db[0].cardId, '123', '页面关联键必须是稳定 cardId');
+    assert.equal(db[0].cPrice, 0, '不得把 market.json 的 Console 价格副本嵌入页面');
+    assert.equal(db[0].pPrice, 0, '不得把 market.json 的 PC 价格副本嵌入页面');
+    assert.ok(html.includes("fetch(currentUrl(), {cache:'no-store'})"), '页面必须运行时读取 current.json');
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });

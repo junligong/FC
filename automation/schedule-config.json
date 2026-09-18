@@ -1,8 +1,17 @@
 {
   "timezone": "Asia/Shanghai",
   "time": "03:00",
-  "verifiedAt": "2026-09-16T05:10:00.000Z",
-  "verification": "WorkBuddy 五个定时任务已读回；四个采集任务已绑定 Web Access 浏览器技能并禁止旧 DuMate 探针，汇总发布保持 03:05",
+  "dailySchedule": {
+    "note": "2026-09-18 起日任务按 5 分钟错开发起，权威定义见 shared/config/project.json 的 dailySchedule。",
+    "news": "03:00",
+    "market": "03:05",
+    "football": "03:10",
+    "evolution": "03:15",
+    "icons-heroes": "03:20",
+    "portal": "03:35"
+  },
+  "verifiedAt": "2026-09-18T03:40:00.000Z",
+  "verification": "WorkBuddy 定时任务已读回并核对下次触发时刻；日任务错开序列（资讯 03:00 / 市场 03:05 / 足球 03:10 / 进化 03:15 / 传奇英雄 03:20 / 汇总发布 03:35）与 shared/config/project.json 的 dailySchedule 一致；采集任务已绑定 Web Access 浏览器技能并禁止旧 DuMate 探针。注意：两条每小时任务的分钟相位不可控——WorkBuddy 的 HOURLY 规则不支持指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定。",
   "tasks": [
     {
       "name": "FC·足球日报",
@@ -30,6 +39,14 @@
       "name": "FC·汇总发布",
       "role": "coordinate-merge-publish",
       "promptFile": "automation/prompts/daily.md"
+    },
+    {
+      "name": "FC·市场价格关注列表（每小时）",
+      "role": "market-hourly",
+      "promptFile": "automation/prompts/market-hourly.md",
+      "schedule": "hourly",
+      "contentExecution": "enabled",
+      "note": "不发布站点、不写 run-state：运行记录以 popular/hourly/<D>T<HH>.json 逐小时快照为准"
     }
   ],
   "publicUrl": "https://fc27-site.app.workbuddy.host/",

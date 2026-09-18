@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-17",
+  "runId": "0b22fe34-6add-493e-9160-6778b1853455",
+  "module": "icons-heroes",
+  "status": "partial",
+  "rerun": true,
+  "rerunReason": "同日重跑：英雄卡中文译名（base-heroes.json 注入 nameZh）晚于上次快照提交，线下 icons-heroes.html 与快照不一致（快照仍是英文名）。本轮重开来源核验、重渲染并重提快照，同时修复台账英文名 UTF-8 乱码。",
+  "dataCutoff": "2026-09-17 10:04 +08:00（采集与快照）；2026-09-17 11:05 +08:00（重渲染与快照重提）",
+  "sources": [
+    { "url": "https://www.futbin.com/", "openedAt": "2026-09-17T10:58:24+08:00", "note": "重开核验：站点首页可达（标题 EA FC 27 Ultimate Team Prices, Squad Builder, Draft and Players Database | FUTBIN），用于建立会话基准后再访问 /players。" },
+    { "url": "https://www.futbin.com/27/players?page=2", "openedAt": "2026-09-17T10:58:35+08:00", "note": "重开核验：翻页参数在会话建立后有效；本页 30 行，其中 27 行 td.table-name 版本标签含 Icon；首行「92 Puskás Icon」双平台价已出现实价（30000），确认 td.table-name 版本标签仍是判定 Icon / Base Heroes 最可靠依据。" },
+    { "url": "https://www.futbin.com/27/players?page=8", "openedAt": "2026-09-17T10:59:26+08:00", "note": "重开核验：30 行，19 行含 Icon 标签。" },
+    { "url": "https://www.futbin.com/27/players?page=12", "openedAt": "2026-09-17T10:59:38+08:00", "note": "重开核验：30 行，30 行含 Icon 标签；与当日 12 页共 360 行、台账 131/131 命中的采集结论一致。" }
+  ],
+  "counts": {
+    "baseIconsLedger": 131,
+    "fc27Heroes": 50,
+    "heroRowsRendered": 50,
+    "fc26ReferenceRows": 93,
+    "snapshotDays": 2,
+    "mojibakeNamesFixed": 15,
+    "zhCellsInReport": 0
+  },
+  "missing": [
+    "本轮为同日重跑，未重新执行 12 页全量翻页采集：落库的 131 张台账与 50 张 FC27 英雄卡仍是 10:04 采集结果；本轮只重开 4 个来源页核验可达性与 DOM 结构不变（首页、page=2/8/12）。",
+    "本轮未定位到 Base Heroes 标签所在分页（page=2/8/12 均未出现 Heroes 标签）：50 张英雄卡的来源分页未在本轮复现，沿用 10:04 采集结论，未做二次核验。",
+    "FC27 英雄卡快照仅 2 天（2026-09-16、2026-09-17），launchDate=2026-09-25 前不计算日环比与累计涨跌。",
+    "英雄卡台账表 2 张卡的 rating / pos 字段为空（FUTBIN 榜单未提供），如实显示「—」，未做推断填充。"
+  ],
+  "notes": [
+    "本轮修复 1（快照一致性）：线下 reports/daily/2026-09-17/icons-heroes.html 与上次快照 sha256 不一致（快照为 5c26b609，线下为 7bf44175），差异为英雄台账区姓名由英文变为中文。coordinate.mjs 对可选面板优先采用 sha 匹配的快照，若不重提，线上将回退成英文名的旧版。已重提快照修正。",
+    "本轮修复 2（渲染一致性）：英雄台账原先只输出中文名，无法回 FUTBIN 对照；已与传奇台账统一为「中文名 + <span class=\"en\">英文原名</span>」。",
+    "本轮修复 3（数据编码缺陷）：台账 apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json 有 15 条英文名的 UTF-8 字节被按 latin-1 解码产生乱码（如 nazário→nazÃ¡rio、müller→mÃ¼ller、puskás→puskÃ¡s），已按 latin1→utf8 反解修复，重渲染后报告内 'Ã/Â' 残留为 0。base-icons.json / daily 快照 / base-heroes.json 未受影响。",
+    "FC26 口径（用户 2026-09-17 指定）：本模块只监控 FC27，FC26 英雄数据仅作跨代参考对比，渲染为独立的默认可折叠「FC26 英雄卡参考对比」区，不参与 FC27 台账与任何统计。",
+    "本日无新采集快照时渲染器显示 STALE · 本日无新采集 徽标；本日有当日快照，未触发该徽标。",
+    "回归测试：node --test automation/execution.test.mjs automation/regression.test.mjs automation/verify-publication.test.mjs automation/news-media.test.mjs → 36/36 通过。",
+    "浏览器通道：web-access 技能（CDP Proxy :3456），check-deps.mjs exit 0；本轮创建的 1 个 tab 已 /close。未调用或探测 dumate-browser-cli / DUMATE_* / agent-browser / IAB / 新 profile。"
+  ]
+}

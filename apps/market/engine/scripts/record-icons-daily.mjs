@@ -7,13 +7,18 @@
  * 输入：
  *   apps/market/engine/icons/data/prices/fc27/base-icons.json     当日抓取原始结果（默认）
  *   apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json  卡库台账（位置/六维/特技）
- *   （可用 FC_ICON_RAW / FC_ICON_LEDGER 指定其他路径；FC_PROJECT_ROOT 指定项目根）
+ *   apps/market/engine/icons/data/prices/fc27/pricerange/latest.json  逐小时任务采集的价格区间
+ *       （最低价 / 最高价 + 双平台实时价；缺失时回退当日列表页平台价）
+ *   （可用 FC_ICON_RAW / FC_ICON_LEDGER / FC_ICON_PRICERANGE 指定其他路径；FC_PROJECT_ROOT 指定项目根）
  * 输出：
  *   apps/market/engine/icons/data/prices/fc27/daily/<DATE>.json   当日快照（原子写入）
  * 平台口径：
  *   FUTBIN 只提供 Console（PS / Xbox 合并）与 PC 两个市场。原始抓取里 prices.console / prices.pc
  *   分别承载两平台价（历史文件用 prices.cross 表示 Console，本脚本兼容两种写法）。
  *   逐卡同时写入 platforms.console / platforms.pc，并保留 price（用于展示的当轮价）以便向后兼容。
+ * 区间口径（2026-09-17 新增）：
+ *   FUTBIN 详情页的「Price Range」是**卡级**字段（同一张卡的 Console 与 PC 价格盒渲染同值），
+ *   故逐卡写入单个 priceRange{min,max}，不按平台拆分；缺失一律 null，不用估值或其他卡顶替。
  * 口径：
  *   date < launchDate（2026-09-25）时 FUTBIN 只有列表页占位/估算价，priceBasis 记为 listing-estimate；
  *   开服后记为 market。价格 < 1000 视为占位值而非有效市场价，priceValid=false。
@@ -29,7 +34,9 @@ const ROOT = process.env.FC_PROJECT_ROOT || path.resolve(here, '../../../..');
 const ICON_DIR = path.join(ROOT, 'apps', 'market', 'engine', 'icons');
 const RAW_PATH = process.env.FC_ICON_RAW || path.join(ICON_DIR, 'data', 'prices', 'fc27', 'base-icons.json');
 const LEDGER_PATH = process.env.FC_ICON_LEDGER || path.join(ICON_DIR, 'data', 'players', 'fc27', 'fc27-icons-playstyles.json');
+const PRICERANGE_PATH = process.env.FC_ICON_PRICERANGE || path.join(ICON_DIR, 'data', 'prices', 'fc27', 'pricerange', 'latest.json');
 const DAILY_DIR = path.join(ICON_DIR, 'data', 'prices', 'fc27', 'daily');
+
 
 const FALLBACK_LAUNCH_DATE = '2026-09-25';
 // 有效市场价格下限：列表页占位值集中在 88~95，明显不是金币成交价
@@ -61,6 +68,18 @@ const launchDate = /^\d{4}-\d{2}-\d{2}$/.test(raw.launchDate || '') ? raw.launch
 const ledger = readJSON(LEDGER_PATH);
 const ledgerById = new Map();
 if (Array.isArray(ledger)) for (const item of ledger) if (item && item.id) ledgerById.set(String(item.id), item);
+
+// 价格区间（逐小时任务采集）：卡级字段 min/max，缺失一律 null
+const pricerange = readJSON(PRICERANGE_PATH);
+const rangeById = new Map();
+if (pricerange && Array.isArray(pricerange.cards)) {
+  for (const c of pricerange.cards) {
+    if (c && c.ok && c.priceRange && typeof c.id === 'string') rangeById.set(c.id, c);
+  }
+}
+const rangeCollectedAt = pricerange && typeof pricerange.collectedAt === 'string' ? pricerange.collectedAt : null;
+const rangeIsCurrentDate = pricerange?.date === dateStr;
+
 
 function positionOf(player, meta) {
   if (meta && meta.position) return String(meta.position);
@@ -103,12 +122,28 @@ function platformPricesOf(player) {
   return out;
 }
 
+// 逐小时详情页采集同时包含双平台实时价；只有快照日期与目标日期相同才可覆盖列表页价。
+function latestPlatformPricesOf(rng, fallback) {
+  if (!rangeIsCurrentDate || !rng || !rng.current) return fallback;
+  const out = { ...fallback };
+  for (const pid of ['console', 'pc']) {
+    const value = rng.current[pid];
+    if (typeof value === 'number' && Number.isFinite(value)) {
+      out[pid] = { price: value, valid: value >= MIN_VALID_PRICE };
+    }
+  }
+  return out;
+}
+
 const players = raw.players.map(p => {
   const id = String(p.id ?? p.slug ?? '');
   const meta = ledgerById.get(id) || null;
-  const price = typeof p.currentPrice === 'number' && Number.isFinite(p.currentPrice) ? p.currentPrice : null;
-  const priceValid = price !== null && price >= MIN_VALID_PRICE;
-  const platforms = platformPricesOf(p);
+  const rng = rangeById.get(id) || null;
+  const platforms = latestPlatformPricesOf(rng, platformPricesOf(p));
+  const validPlatformPrices = Object.values(platforms).filter(cell => cell.valid).map(cell => cell.price);
+  const rawPrice = typeof p.currentPrice === 'number' && Number.isFinite(p.currentPrice) ? p.currentPrice : null;
+  const price = validPlatformPrices.length ? Math.max(...validPlatformPrices) : rawPrice;
+  const priceValid = validPlatformPrices.length > 0 || (price !== null && price >= MIN_VALID_PRICE);
   return {
     id,
     slug: p.slug || '',
@@ -124,6 +159,8 @@ const players = raw.players.map(p => {
     price,
     priceValid,
     platforms,
+    // 价格区间：卡级字段（FUTBIN 同一卡的 Console / PC 渲染同值），缺失为 null
+    priceRange: rng ? { min: rng.priceRange.min, max: rng.priceRange.max, updatedText: rng.priceRange.updatedText || null, fetchedAt: rng.fetchedAt || null } : null,
     marketUrl: p.marketUrl || '',
   };
 }).sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0) || String(a.nameZh).localeCompare(String(b.nameZh), 'zh'));
@@ -131,6 +168,11 @@ const players = raw.players.map(p => {
 const validCount = players.filter(p => p.priceValid).length;
 const platformValidCount = Object.fromEntries(Object.keys(PLATFORM_KEYS).map(pid => [pid, players.filter(p => p.platforms[pid]?.valid).length]));
 const priceBasis = dateStr < launchDate ? 'listing-estimate' : 'market';
+
+// 区间覆盖统计：用于监控页如实说明「有多少张卡拿到了最低价/最高价」
+const withRange = players.filter(p => p.priceRange && typeof p.priceRange.min === 'number' && typeof p.priceRange.max === 'number');
+const rangeMins = withRange.map(p => p.priceRange.min);
+const rangeMaxs = withRange.map(p => p.priceRange.max);
 
 const snapshot = {
   schemaVersion: 1,
@@ -141,19 +183,31 @@ const snapshot = {
   platform: raw.platform || 'console+pc',
   platforms: Object.keys(PLATFORM_KEYS),
   launchDate,
-  capturedAt: raw.generatedAt || new Date().toISOString(),
+  capturedAt: rangeIsCurrentDate && rangeCollectedAt ? rangeCollectedAt : (raw.generatedAt || new Date().toISOString()),
   recordedAt: new Date().toISOString(),
   priceBasis,
   priceBasisNote: priceBasis === 'listing-estimate'
     ? `FC27 未开服（开服日 ${launchDate}），FUTBIN 仅提供列表页占位/估算价，不是市场成交价，不能当作行情信号。`
     : 'FC27 已开服，价格为 FUTBIN 当日成交价。',
   counts: { total: players.length, valid: validCount, missing: players.length - validCount, platformValid: platformValidCount },
+  priceRange: {
+    scope: 'card',
+    scopeNote: 'FUTBIN 详情页「Price Range」为卡级字段（同一张卡的 Console / PC 价格盒渲染同值），不按平台拆分。',
+    withRange: withRange.length,
+    missing: players.length - withRange.length,
+    minFloor: rangeMins.length ? Math.min(...rangeMins) : null,
+    maxCeiling: rangeMaxs.length ? Math.max(...rangeMaxs) : null,
+    collectedAt: rangeCollectedAt,
+    sourceFile: existsSync(PRICERANGE_PATH) ? path.relative(ROOT, PRICERANGE_PATH) : null,
+  },
   source: {
     name: 'FUTBIN',
     listUrl: 'https://www.futbin.com/27/players',
     rawFile: path.relative(ROOT, RAW_PATH),
-    capturedAt: raw.generatedAt || null,
-    note: raw.source ? `原始抓取来源：${raw.source}` : '',
+    capturedAt: rangeIsCurrentDate && rangeCollectedAt ? rangeCollectedAt : (raw.generatedAt || null),
+    note: rangeIsCurrentDate && rangeCollectedAt
+      ? `双平台当前价与价格区间来自逐小时详情页采集；名单与静态字段来自 ${path.relative(ROOT, RAW_PATH)}。`
+      : (raw.source ? `原始抓取来源：${raw.source}` : ''),
   },
   players,
 };
@@ -164,6 +218,11 @@ atomicWrite(target, JSON.stringify(snapshot, null, 2) + '\n');
 
 console.log(`传奇卡快照已写入: ${path.relative(ROOT, target)}${existed ? '（同日重跑，已覆盖当日快照）' : ''}`);
 console.log(`  卡数 ${players.length} · 有效价格 ${validCount} · 口径 ${priceBasis} · 开服日 ${launchDate}`);
-console.log(`  平台有效价：Console ${platformValidCount.console} / PC ${platformValidCount.pc}（开服前两平台均为 0，属预期）`);
+// 平台有效价提示必须按当日实测走，不能写死「均为 0」：FUTBIN 会在正式开服前滚动放出部分平台价
+const anyPlatformValid = platformValidCount.console > 0 || platformValidCount.pc > 0;
+console.log(`  平台有效价：Console ${platformValidCount.console} / PC ${platformValidCount.pc}（${anyPlatformValid
+  ? 'FUTBIN 已开始滚动放出部分平台价，其余为 0 按占位值处理'
+  : '开服前两平台均为 0，属预期'}）`);
+console.log(`  价格区间（最低价-最高价，卡级）：${withRange.length}/${players.length} 张${rangeCollectedAt ? ` · 采集于 ${rangeCollectedAt}` : ' · 未找到逐小时采集结果'}`);
 const days = existsSync(DAILY_DIR) ? readdirSync(DAILY_DIR).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).length : 0;
 console.log(`  历史快照累计天数: ${days}`);

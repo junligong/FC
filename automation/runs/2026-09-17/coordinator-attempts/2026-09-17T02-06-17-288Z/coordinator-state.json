@@ -1,0 +1,538 @@
+{
+  "date": "2026-09-17",
+  "startedAt": "2026-09-17T02:06:15.927Z",
+  "modules": {
+    "football": {
+      "module": "football",
+      "date": "2026-09-17",
+      "runId": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
+      "status": "partial",
+      "startedAt": "2026-09-16T19:30:20.065Z",
+      "deadlineAt": "2026-09-16T19:45:20.065Z",
+      "reportPath": "reports/daily/2026-09-17/football.html",
+      "completedAt": "2026-09-16T19:42:41.920Z",
+      "evidence": {
+        "date": "2026-09-17",
+        "module": "football",
+        "runId": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
+        "status": "success",
+        "collectedAtBeijing": "2026-09-17 03:30-03:43",
+        "browserChannel": "web-access CDP Proxy :3456（check-deps exit 0，Chrome 9222，复用用户日常登录态）",
+        "sources": [
+          {
+            "scope": "epl 积分/射手/助攻",
+            "url": "https://www.bbc.com/sport/football/premier-league/table 及 /top-scorers",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "英超第4轮战罢",
+            "crossCheck": "ESPN 2026-27 Standings/Stats 交叉核验，排名一致"
+          },
+          {
+            "scope": "laliga 积分/射手/助攻",
+            "url": "https://www.bbc.com/sport/football/spanish-la-liga/table 及 /top-scorers",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "西甲第6轮（巴萨、贝蒂斯等少赛一轮）",
+            "crossCheck": "ESPN esp.1 交叉核验一致"
+          },
+          {
+            "scope": "seriea/bundesliga/ligue1 积分/射手/助攻",
+            "url": "https://www.worldfootball.net/competition/co111|co12|co71/...results-and-standings|statistics-goals|statistics-assists",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "意甲4轮 / 德甲3轮 / 法甲4轮",
+            "note": "curl 静态路线被 Cloudflare 拦截，经 CDP 浏览器渲染读取"
+          },
+          {
+            "scope": "ucl 联赛阶段排名/射手",
+            "url": "https://www.espn.com/soccer/standings/_/league/uefa.champions 与 /stats/_/league/uefa.champions",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "联赛阶段第1轮战罢（36队各赛1场）",
+            "note": "uefa.com 被 Cookie 弹窗与懒加载阻塞，改用 ESPN 并如实标注"
+          },
+          {
+            "scope": "mls 东西区积分榜 + 射手/助攻",
+            "url": "https://www.espn.com/soccer/standings/_/league/usa.1 与 /stats/_/league/usa.1",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "2026-09-17 常规赛"
+          },
+          {
+            "scope": "saudi 积分/射手",
+            "url": "https://www.espn.com/soccer/standings/_/league/ksa.1",
+            "openedAt": "2026-09-17T03:36:00+08:00",
+            "cutoff": "沙特联第7轮后"
+          },
+          {
+            "scope": "新闻 14 条（头条6 + 分联赛8）",
+            "url": "sohu.com/a/1077036246, sports.sina.cn/2026-09-17/detail-inisaawv0381594, 163.com/dy/article/L70EP7P00549BAP0, dongqiudi.com/articles/6356643, sohu.com/a/1077045102, dongqiudi.com/articles/6357058, 163.com/dy/article/L704IGOV05561FXO, 163.com/dy/article/L70BKJ3Q05561FXP, news.qq.com/rain/a/20260917A0164100, 163.com/dy/article/L70B796B0556DMYT, sohu.com/a/1077012631",
+            "openedAt": "2026-09-17T03:38:00+08:00",
+            "cutoff": "2026-09-16 至 09-17 凌晨（北京时间）"
+          }
+        ],
+        "verification": "node automation/verify-football-boards.mjs 2026-09-17 退出码 0（三榜结构/去重/覆盖率通过）；HTML 与模板 div 配平一致（grid region diff 0）；无旧数据残留",
+        "missing": [
+          "欧冠、沙特联助攻榜：本轮公开渠道未能取得可靠数据，报告中如实以『本轮无助攻数据来源』占位，未借用的确未借用其他联赛数据",
+          "欧冠独立战报新闻：9月16-17日窗口内未能核实到可用的欧冠战报原文，欧冠筛选页为空状态",
+          "美职联东西区射手/助攻未按分区拆分（ESPN 仅提供全联盟榜），以共享 mls 榜呈现（校验提示性说明，非错误）",
+          "德甲/法甲部分球员源站仅给缩写名（S. Becker、F. Honorat、P. Šulc 等），已按常见对应译出并在备注说明",
+          "24直播网『曼联15岁新星JJ加布里埃尔申请离队』打开两次 eval 超时，无法核实，放弃采用"
+        ],
+        "generator": "automation/runs/2026-09-17/football/work/build-football.mjs（复用模板 apps/football/templates/football-daily.html，原子替换写入）"
+      },
+      "sha256": "7f3b26a4beeb59ede33a1960087eca9617a75daa37989175ec14ba3061b85bf7",
+      "bytes": 64698,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/football/report.html"
+    },
+    "news": {
+      "module": "news",
+      "date": "2026-09-17",
+      "runId": "a1cb95c8-11f8-4614-b3a6-d1cd877555ac",
+      "status": "partial",
+      "startedAt": "2026-09-16T19:05:42.702Z",
+      "deadlineAt": "2026-09-16T19:20:42.702Z",
+      "reportPath": "reports/daily/2026-09-17/news.html",
+      "completedAt": "2026-09-16T19:16:39.100Z",
+      "evidence": {
+        "date": "2026-09-17",
+        "runId": "a1cb95c8-11f8-4614-b3a6-d1cd877555ac",
+        "status": "partial",
+        "startedAt": "2026-09-16T19:11:18.863Z",
+        "collectedAt": "2026-09-16T19:16:39.068Z",
+        "sources": [
+          {
+            "name": "EA SPORTS FC Direct Communication",
+            "handle": "EASFCDirect",
+            "url": "https://x.com/EASFCDirect",
+            "openedAt": "2026-09-16T19:11:18.863Z",
+            "opened": true,
+            "tweets": 0,
+            "attempts": 3,
+            "error": null
+          },
+          {
+            "name": "EA SPORTS FC",
+            "handle": "easportsfc",
+            "url": "https://x.com/easportsfc",
+            "openedAt": "2026-09-16T19:11:38.503Z",
+            "opened": true,
+            "tweets": 5,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FifaTradingRomania",
+            "handle": "fifa_romania",
+            "url": "https://x.com/fifa_romania",
+            "openedAt": "2026-09-16T19:11:45.425Z",
+            "opened": true,
+            "tweets": 5,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "ASY FUT",
+            "handle": "AsyFutTrader",
+            "url": "https://x.com/AsyFutTrader",
+            "openedAt": "2026-09-16T19:11:52.370Z",
+            "opened": true,
+            "tweets": 5,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "EAFC 27 News",
+            "handle": "FIFA22_INFO",
+            "url": "https://x.com/FIFA22_INFO",
+            "openedAt": "2026-09-16T19:11:59.292Z",
+            "opened": true,
+            "tweets": 6,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "Fut Sheriff",
+            "handle": "FutSheriff",
+            "url": "https://x.com/FutSheriff",
+            "openedAt": "2026-09-16T19:12:06.231Z",
+            "opened": true,
+            "tweets": 4,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FUT POLICE LEAKS",
+            "handle": "FutPoliceLeaks",
+            "url": "https://x.com/FutPoliceLeaks",
+            "openedAt": "2026-09-16T19:12:13.277Z",
+            "opened": true,
+            "tweets": 4,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FUTBIN",
+            "handle": "FUTBIN",
+            "url": "https://x.com/FUTBIN",
+            "openedAt": "2026-09-16T19:12:20.221Z",
+            "opened": true,
+            "tweets": 7,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "EasySBC",
+            "handle": "easysbc",
+            "url": "https://x.com/easysbc",
+            "openedAt": "2026-09-16T19:12:27.148Z",
+            "opened": true,
+            "tweets": 4,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "Razzer FC27",
+            "handle": "Razzerstrading",
+            "url": "https://x.com/Razzerstrading",
+            "openedAt": "2026-09-16T19:12:34.062Z",
+            "opened": true,
+            "tweets": 1,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FC 26 NEWS & TIPS",
+            "handle": "EAFCassist",
+            "url": "https://x.com/EAFCassist",
+            "openedAt": "2026-09-16T19:12:40.971Z",
+            "opened": true,
+            "tweets": 5,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "Fut Scoreboard",
+            "handle": "Fut_scoreboard",
+            "url": "https://x.com/Fut_scoreboard",
+            "openedAt": "2026-09-16T19:12:47.885Z",
+            "opened": true,
+            "tweets": 2,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "DetectiveFUT",
+            "handle": "DetectiveFUT",
+            "url": "https://x.com/DetectiveFUT",
+            "openedAt": "2026-09-16T19:12:54.794Z",
+            "opened": true,
+            "tweets": 6,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FGZ",
+            "handle": "FGZNews",
+            "url": "https://x.com/FGZNews",
+            "openedAt": "2026-09-16T19:13:01.720Z",
+            "opened": true,
+            "tweets": 10,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "FUT Agent",
+            "handle": "futagentt",
+            "url": "https://x.com/futagentt",
+            "openedAt": "2026-09-16T19:13:08.655Z",
+            "opened": true,
+            "tweets": 3,
+            "attempts": 1,
+            "error": null
+          },
+          {
+            "name": "Donk",
+            "handle": "Futdonk",
+            "url": "https://x.com/Futdonk",
+            "openedAt": "2026-09-16T19:13:16.237Z",
+            "opened": true,
+            "tweets": 4,
+            "attempts": 1,
+            "error": null
+          }
+        ],
+        "accountCoverage": "16/16",
+        "pipeline": {
+          "tweetsRaw": 71,
+          "tweetsFinal": 71,
+          "mediaEnrich": "71/71 成功（52 配图 / 9 视频 / 4 链接卡片 / 17 被引用带图）",
+          "imagesCached": "61/61（1 张 tweet_video_thumb GIF 封面首跑因白名单缺 /tweet_video_thumb/ 未落盘，已修正 shared/lib/report-assets.mjs 后重跑补齐，0 远程热链）",
+          "regression": "automation/news-media.test.mjs 14/14 通过"
+        },
+        "missingItems": [
+          "翻译服务本轮输出 0 条译文，71 条卡片均以「待翻译，请查看原文」标注（符合契约兜底规范，但未达完整中文翻译）",
+          "@EASFCDirect 在 24 小时窗口内检出 0 条推文，已如实记录，未用旧数据填充"
+        ],
+        "notes": "浏览器通道 = Web Access CDP Proxy(:3456) 直连日常 Chrome，16/16 账号后台 tab 打开并抽取成功；未使用任何禁止入口。"
+      },
+      "sha256": "48b1e09cb33467ccb5bfa8891513f7c053ec1899fedc3394b43fb61e2d6d0575",
+      "bytes": 119424,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/news/report.html"
+    },
+    "market": {
+      "module": "market",
+      "date": "2026-09-17",
+      "runId": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+      "status": "partial",
+      "startedAt": "2026-09-16T19:17:48.574Z",
+      "deadlineAt": "2026-09-16T19:32:48.574Z",
+      "reportPath": "reports/daily/2026-09-17/market.html",
+      "completedAt": "2026-09-16T19:28:58.087Z",
+      "evidence": {
+        "date": "2026-09-17",
+        "module": "market",
+        "runId": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+        "collectedAt": "2026-09-17T03:24:00+08:00",
+        "channel": "web-access CDP Proxy :3456 -> 用户日常 Chrome（check-deps exit 0，Chrome port 9222）",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-17T03:18:26+08:00",
+            "dataCutoff": null,
+            "note": "返回 FUTBIN 自有 403 拦截页，0 行"
+          },
+          {
+            "url": "https://www.futbin.com/",
+            "openedAt": "2026-09-17T03:19:05+08:00",
+            "dataCutoff": null,
+            "note": "正常，建立同源会话（同源对照基准）"
+          },
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-17T03:19:35+08:00",
+            "dataCutoff": null,
+            "note": "会话建立后重试，仍 403 拦截页"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-17T03:20:00+08:00",
+            "dataCutoff": "2026-09-17T03:22:54+08:00",
+            "note": "正常；250 张唯一卡，Console 有效价 193 / PC 有效价 197（价格 ≥1000 coins 记有效），含 FUTBIN 热度计数"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-17T03:21:00+08:00",
+            "dataCutoff": "2026-09-17T03:22:10+08:00",
+            "note": "正常；500 张唯一进化卡（含进化名与热度计数），页面未渲染平台价格单元格"
+          },
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-17T03:22:40+08:00",
+            "dataCutoff": null,
+            "note": "第二次重试，仍 403"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-17T03:22:50+08:00",
+            "dataCutoff": null,
+            "note": "补齐热度计数 250/250"
+          },
+          {
+            "url": "https://www.futbin.com/27/players",
+            "openedAt": "2026-09-17T03:24:00+08:00",
+            "dataCutoff": null,
+            "note": "60 秒退避后第三次重试，仍 403；停止重试"
+          }
+        ],
+        "outputs": [
+          "reports/daily/2026-09-17/market.html",
+          "reports/daily/2026-09-17/market-scan.html"
+        ],
+        "dataFile": "automation/runs/2026-09-17/market/market.json",
+        "workFiles": [
+          "automation/runs/2026-09-17/market/work/popular.json",
+          "automation/runs/2026-09-17/market/work/popular-evolutions.json"
+        ],
+        "missing": [
+          "概览·本周活动卡（Promo）与本周周黑（TOTW）：未打开对应来源页，如实空状态。",
+          "概览·价格分层四档 + 扫描·价格维度五档：/27/players 三次间隔实测（含会话建立与 60 秒退避重试）均被 FUTBIN 403 拦截页拒绝，如实空状态（不等于该档无卡）。",
+          "进化卡平台价：/27/popular/evolutions 未渲染价格单元格，如实为空。",
+          "部分卡牌平台价为 0（FUTBIN 未更新），按占位值处理，不以估值顶替。"
+        ],
+        "integrity": {
+          "playersTotal": 750,
+          "psValid": 193,
+          "pcValid": 197,
+          "platformField": "console+pc（psPrice=Console / pcPrice=PC 分别落库）",
+          "dayOverDay": "未计算：昨日两平台价基线全为 0，无有效基线；FC27 launchDate=2026-09-25 未到",
+          "fc26DataUsed": false
+        }
+      },
+      "sha256": "b56ed31996607d5450371acda55a9b3bf091e0b6ce18afd0cbcbe0337e35b60c",
+      "bytes": 26377,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/market/report.html"
+    },
+    "evolution": {
+      "module": "evolution",
+      "date": "2026-09-17",
+      "runId": "2ee3c6af-388a-4020-9586-b63d58bd2f2c",
+      "status": "partial",
+      "startedAt": "2026-09-16T19:46:14.741Z",
+      "deadlineAt": "2026-09-16T20:01:14.741Z",
+      "reportPath": "reports/daily/2026-09-17/evolution.html",
+      "previousAttempt": "automation/runs/2026-09-17/evolution/attempts/362bfbe5-768c-4c4b-a576-c3a956ec7458",
+      "completedAt": "2026-09-16T19:47:06.269Z",
+      "evidence": {
+        "date": "2026-09-17",
+        "runId": "2ee3c6af-388a-4020-9586-b63d58bd2f2c",
+        "status": "partial",
+        "generatedAt": "2026-09-17T03:50:00+08:00",
+        "dataCutoff": "2026-09-17 03:46 +08:00",
+        "browserChannel": {
+          "skill": "web-access",
+          "precheck": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs → exit 0（node ok / browser: ok (Chrome, port 9222) / proxy: ready (Chrome)）",
+          "profile": "CDP Proxy :3456 直连用户日常 Chrome，复用登录态；未新建 profile、未使用 IAB/临时浏览器/extension 模式"
+        },
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-17T03:46:24+08:00",
+            "dataCutoff": "2026-09-17 03:46 +08:00",
+            "note": "热门进化卡主来源。本轮内实际导航打开并复核：页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper > div.column = 500 个卡片节点。滚动到底部（body scrollHeight 25882）后节点数不变，页面无分页控件、无「加载更多」入口。逐卡提取球员名/评分/位置/备选位置/热度计数/估值/六维属性/球员 URL/进化 URL。"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions",
+            "openedAt": "2026-09-17T03:46:31+08:00",
+            "dataCutoff": "2026-09-17 03:46 +08:00",
+            "note": "FC27 进化总览。本轮内实际导航打开并复核：div.evolutions-overview-wrapper = 14 个。标签计数 All 14 / Evolutions 8 / Pathway Evolutions 4 / Training Camp 2。逐条提取名称、详情 URL、类型标签、UNLOCK / EXPIRES 时长、费用、REPEATABLE 标记、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles、PATH 分支）。14 个进化费用均为 FREE。"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions/expired",
+            "openedAt": "2026-09-17T03:46:38+08:00",
+            "dataCutoff": "2026-09-17 03:46 +08:00",
+            "note": "已过期进化核验：本轮内实际导航打开，div.evolutions-overview-wrapper 节点数为 0，即 14 个进化全部处于有效期内，无过期路径。"
+          }
+        ],
+        "counts": {
+          "listCardNodes": 500,
+          "evolutions": 500,
+          "evolutionPaths": 14,
+          "routes": 14,
+          "byEvolutionName": {
+            "Striker Glow Up": 70,
+            "Intro to Training Camp EVOs": 16,
+            "Believe": 38,
+            "Intro to Evolutions": 71,
+            "Winger Glow Up": 33,
+            "Repeat Delivery": 88,
+            "Intro to Pathway Evolutions": 39,
+            "Shooting Practice": 49,
+            "Intro to Repeatable Evolutions": 51,
+            "Pinged Pass": 7,
+            "Midfield Polish": 7,
+            "Relentless": 5,
+            "Tactical Ascent": 21,
+            "Creative or Composed": 5
+          }
+        },
+        "verification": {
+          "dedupeKey": "球员 URL + 进化名称。同一球员的不同卡版本在 FUTBIN 上是独立条目（URL 内含版本后缀，估值与热度各异），实测 500 个球员 URL 全部唯一，故不按球员名折叠。",
+          "ratingSemantics": "榜单 Rating 为「进化后」OVR，不是基础卡评分；用 Intro to Evolutions（基础 Overall Max 75，+34 封顶 79 → 榜单显示 79）交叉核对口径一致。",
+          "costSemantics": "费用取自 /27/evolutions 卡片上的 FREE 标记；榜单卡片数字（如 Aubameyang 675）为热度/使用计数，记为 popularityCount，不计入费用。",
+          "expirySemantics": "FUTBIN 只提供相对时长（UNLOCK / EXPIRES），无绝对到期日期，未做换算。",
+          "distinctFromPreviousDay": "本轮 14 条进化路径，较 2026-09-16 的 5 条新增 9 条（Believe、Pinged Pass、Shooting Practice、Creative or Composed、Winger Glow Up、Tactical Ascent、Relentless、Striker Glow Up、Midfield Polish）。未引用任何 FC26 或旧日期数据。",
+          "statusAlignment": "evolution.json 与证据文件均写 partial：run-state finish 在 evidence.missing 非空时会把 success 降级为 partial，故直接提交 partial，避免报告徽标与权威运行状态不一致。",
+          "rerunNote": "本轮为当日第 2 次运行（runId 2ee3c6af）。第 1 次运行 362bfbe5 的数据一致（同为 500 张卡 / 14 条路径），该 attempt 已归档到 attempts/362bfbe5-768c-4c4b-a576-c3a956ec7458/，仅因状态对齐需要而重跑；本轮三个来源页均已在本轮内重新打开并复核。"
+        },
+        "outputs": {
+          "json": "automation/runs/2026-09-17/evolution/evolution.json",
+          "html": "reports/daily/2026-09-17/evolution.html",
+          "work": "automation/runs/2026-09-17/evolution/work/{extract-cards.js,extract-evolutions.js,build-json.mjs,cards-raw.json,evolutions-raw.json}"
+        },
+        "missing": [
+          "到期时间只有相对口径（UNLOCK / EXPIRES：入门系列 12 MONTHS，其余含 9 条新增均为 1 MONTHS），FUTBIN 未提供绝对到期日期，无法换算成具体日期。",
+          "中文译名缺失：来源页只有英文球员名与俱乐部信息，未找到权威中文译名来源，未擅自翻译。",
+          "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 具体内容；本轮未逐条打开 14 个详情页（预算与反爬风险），steps 字段按页面可得事实证明归纳。",
+          "部分路径未给出逐项属性数值升级表：Intro to Training Camp EVOs 仅 Role「Fullback++」；Pinged Pass「PlayStyle Pinged Pass」、Relentless、Creative or Composed、Tactical Ascent、Shooting Practice 等仅给出 PlayStyle / PATH 选项。",
+          "候选球员口径：未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单为准。",
+          "榜单条数上限未知：/27/popular/evolutions 渲染 500 条且页面无「共 N 条」计数或分页控件，无法排除服务端截断。",
+          "价格/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为 listing-estimate 口径，本轮不输出涨跌或精确收益预测。"
+        ]
+      },
+      "sha256": "1f7fc5d7817b15d40043d18342a1cfa7c30590471f5f03011f874a7ba5ca0da5",
+      "bytes": 280470,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/evolution/report.html"
+    },
+    "icons-heroes": {
+      "module": "icons-heroes",
+      "date": "2026-09-17",
+      "runId": "213a542c-310e-4089-8a94-4c6b4a567b26",
+      "status": "partial",
+      "startedAt": "2026-09-17T01:46:03.115Z",
+      "deadlineAt": "2026-09-17T02:01:03.115Z",
+      "reportPath": "reports/daily/2026-09-17/icons-heroes.html",
+      "previousAttempt": "automation/runs/2026-09-17/icons-heroes/attempts/adb415d7-98d7-4c64-9ded-a186c31d1ed5",
+      "completedAt": "2026-09-17T02:04:02.663Z",
+      "evidence": {
+        "date": "2026-09-17",
+        "runId": "213a542c-310e-4089-8a94-4c6b4a567b26",
+        "status": "partial",
+        "collectedAtBeijing": "2026-09-17 09:46-10:04",
+        "browserChannel": "web-access CDP Proxy :3456 直连用户日常 Chrome（check-deps exit 0，port 9222）",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/",
+            "openedAt": "2026-09-17T09:47:30+08:00",
+            "dataCutoff": "2026-09-17T09:47+08:00",
+            "note": "会话建立 + 同源对照基准，正常渲染（title 命中 FC27 数据库页）。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players（首轮探测）",
+            "openedAt": "2026-09-17T09:48:20+08:00",
+            "dataCutoff": null,
+            "note": "本轮实测可达（昨日 03 时该目录 403，具时限性已解除）：30 行、含 td.table-name 版本标签、IS 估值列、platform-ps-only / platform-pc-only 双平台价单元格。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?version=base_icon 与 ?version=heroes（筛选路由）",
+            "openedAt": "2026-09-17T09:51:00+08:00",
+            "dataCutoff": null,
+            "note": "站点自身筛选 href，但直接导航返回 0 行空表（非拦截页）；改走契约第 2 条路：全量默认列表翻页 + 版本标签比对台账。"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=1..12（翻页采集）",
+            "openedAt": "2026-09-17T09:59:40+08:00",
+            "dataCutoff": "2026-09-17T10:02+08:00",
+            "note": "逐页打开并按页提取（每页 30 行，共 360 行；原始逐页文件在 work/players-page-*.json）。131 张台账传奇卡全部命中（0 缺失）；Base Heroes 50 张；无 Debut Icon 混入（版本标签严格区分）。"
+          }
+        ],
+        "counts": {
+          "pagesFetched": 12,
+          "rows": 360,
+          "baseIconsLedgerHit": "131/131",
+          "fc27Heroes": 50,
+          "platformValid": "Console 5 / PC 1（开服前 FUTBIN 滚动更新中，其余为 0 占位）",
+          "isEstimateRecorded": true
+        },
+        "missing": [
+          "英雄卡（Hero）无台账基准文件，仅捕获 50 张 Base Heroes（页 1-12 范围），无法证明已覆盖全量英雄名单；英雄台账待后续建立后复核。",
+          "/27/players 仅翻页 1-12（按评分降序，页 12 后为 ≤88 评分的普通金卡与少量低价卡）；131 张基础传奇卡已全部命中，但未穷尽全库分页。",
+          "FC27 未开服（launchDate=2026-09-25），两平台价绝大多数为 0 占位（Console 5 / PC 1 有效），IS 估值列已单独记 isEstimate，不当作平台成交价，不计算日环比与累计涨跌。",
+          "?version=base_icon / ?version=heroes 服务端筛选路由直接导航返回空表（疑似依赖站内 JS 状态），本轮以全量翻页 + 版本标签替代，该路由行为需后续复核。",
+          "CDP 代理对含可选链（?.）的长 eval 表达式偶发返回空对象（时序敏感），本轮以 function+显式判空表达式绕过；属通道工具层已知问题，与来源无关。"
+        ],
+        "notes": "合规处置：未回退任何禁止入口，未使用 FC26 或旧日期数据填充当日；FC26 英雄数据仅作参考对比（渲染器已修正为独立参考区）。渲染件由 render-icons-heroes.mjs 生成并含本日快照，STALE 回退缺陷已修复。"
+      },
+      "sha256": "5c26b609e4121424a20d5dc71a3a478b6d7381ff5c1906ce3f5db7e93870fd32",
+      "bytes": 189632,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/icons-heroes/report.html"
+    }
+  },
+  "publish": "delegated",
+  "unattendedPublishingVerified": false,
+  "merge": "success",
+  "indexSha256": "8d1c0e41b6aa9cf166e4097cfce1d2c5f682d7694a4f90db7ef5e96295868664",
+  "failedPanels": 0,
+  "publishTarget": {
+    "kind": "workbuddy-sites",
+    "directory": "/Users/wuyanzu/Desktop/FC/daily-merged",
+    "entry": "index.html"
+  },
+  "reason": "本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。",
+  "completedAt": "2026-09-17T02:06:17.288Z"
+}

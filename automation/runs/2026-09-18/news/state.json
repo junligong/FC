@@ -1,0 +1,177 @@
+{
+  "module": "news",
+  "date": "2026-09-18",
+  "runId": "86edccb1-2780-4286-ab59-74574960dcf8",
+  "status": "success",
+  "startedAt": "2026-09-17T19:00:42.995Z",
+  "deadlineAt": "2026-09-17T19:15:42.995Z",
+  "reportPath": "reports/daily/2026-09-18/news.html",
+  "completedAt": "2026-09-17T19:09:27.292Z",
+  "evidence": {
+    "date": "2026-09-18",
+    "module": "news",
+    "runId": "86edccb1-2780-4286-ab59-74574960dcf8",
+    "channels": [
+      "web-access CDP proxy :3456 -> 用户日常 Chrome (port 9222)"
+    ],
+    "sources": [
+      {
+        "name": "ASY FUT",
+        "url": "https://x.com/AsyFutTrader",
+        "openedAt": "2026-09-17T19:02:27.785Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 3
+      },
+      {
+        "name": "DetectiveFUT",
+        "url": "https://x.com/DetectiveFUT",
+        "openedAt": "2026-09-17T19:04:39.829Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 1
+      },
+      {
+        "name": "FC 26 NEWS & TIPS",
+        "url": "https://x.com/EAFCassist",
+        "openedAt": "2026-09-17T19:04:10.494Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 7
+      },
+      {
+        "name": "EA SPORTS FC Direct Communication",
+        "url": "https://x.com/EASFCDirect",
+        "openedAt": "2026-09-17T19:01:42.744Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 3
+      },
+      {
+        "name": "FGZ",
+        "url": "https://x.com/FGZNews",
+        "openedAt": "2026-09-17T19:04:54.530Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 18
+      },
+      {
+        "name": "EAFC 27 News",
+        "url": "https://x.com/FIFA22_INFO",
+        "openedAt": "2026-09-17T19:02:42.459Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 7
+      },
+      {
+        "name": "FUTBIN",
+        "url": "https://x.com/FUTBIN",
+        "openedAt": "2026-09-17T19:03:26.486Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 6
+      },
+      {
+        "name": "FUT POLICE LEAKS",
+        "url": "https://x.com/FutPoliceLeaks",
+        "openedAt": "2026-09-17T19:03:11.808Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 5
+      },
+      {
+        "name": "Fut Sheriff",
+        "url": "https://x.com/FutSheriff",
+        "openedAt": "2026-09-17T19:02:57.136Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 9
+      },
+      {
+        "name": "Fut Scoreboard",
+        "url": "https://x.com/Fut_scoreboard",
+        "openedAt": "2026-09-17T19:04:25.168Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 0
+      },
+      {
+        "name": "Donk",
+        "url": "https://x.com/Futdonk",
+        "openedAt": "2026-09-17T19:05:23.886Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 10
+      },
+      {
+        "name": "Razzer FC27",
+        "url": "https://x.com/Razzerstrading",
+        "openedAt": "2026-09-17T19:03:55.823Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 3
+      },
+      {
+        "name": "EA SPORTS FC",
+        "url": "https://x.com/easportsfc",
+        "openedAt": "2026-09-17T19:01:58.322Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 2
+      },
+      {
+        "name": "EasySBC",
+        "url": "https://x.com/easysbc",
+        "openedAt": "2026-09-17T19:03:41.161Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 7
+      },
+      {
+        "name": "FifaTradingRomania",
+        "url": "https://x.com/fifa_romania",
+        "openedAt": "2026-09-17T19:02:13.103Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 6
+      },
+      {
+        "name": "FUT Agent",
+        "url": "https://x.com/futagentt",
+        "openedAt": "2026-09-17T19:05:09.228Z",
+        "status": "opened-ok",
+        "error": null,
+        "tweetsExtracted": 2
+      }
+    ],
+    "dataCutOff": "2026-09-17T19:02:14Z (最后一条推文时间戳)",
+    "collected": {
+      "accountsOpened": 16,
+      "accountsTotal": 16,
+      "rawTweets": 89,
+      "mediaResolved": "89/89",
+      "imagesCached": "83/83",
+      "videos": 11,
+      "cards": 4,
+      "quotedWithImages": 17
+    },
+    "translations": {
+      "file": "apps/news/data/translations-2026-09-18.json",
+      "translated": 89,
+      "pendingInReport": 0
+    },
+    "checks": {
+      "pendingTranslationCount": 0,
+      "mediaUnresolvedInReport": 0,
+      "remoteHotlinks": 0,
+      "reportAssetsRefs": 83
+    },
+    "missingItems": [],
+    "notes": [
+      "X 主页时间线虚拟化限制仍在：单账号 DOM 内仅渲染最新若干条，24h 覆盖不保证 100%（如 Fut_scoreboard 当日 DOM 内 0 条）。属平台渲染限制，非采集失败。"
+    ]
+  },
+  "sha256": "b40ccf0e12fefc8941ee9498aa600c341ab5c5d9575d5935e44ca27ef6a9af73",
+  "bytes": 159516,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-18/news/report.html"
+}

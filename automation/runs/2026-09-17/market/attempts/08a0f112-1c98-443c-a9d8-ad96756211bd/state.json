@@ -1,0 +1,69 @@
+{
+  "module": "market",
+  "date": "2026-09-17",
+  "runId": "08a0f112-1c98-443c-a9d8-ad96756211bd",
+  "status": "partial",
+  "startedAt": "2026-09-17T02:49:12.648Z",
+  "deadlineAt": "2026-09-17T03:04:12.648Z",
+  "reportPath": "reports/daily/2026-09-17/market.html",
+  "previousAttempt": "automation/runs/2026-09-17/market/attempts/5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
+  "completedAt": "2026-09-17T02:57:54.955Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "runId": "08a0f112-1c98-443c-a9d8-ad96756211bd",
+    "module": "market",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日重跑：两份产物补齐球员中文译名（nameZh），重渲染 market.html / market-scan.html 后重提 run-state 快照并重新合并发布。",
+    "dataCutoff": "2026-09-17 03:28 +08:00（采集）；2026-09-17 10:56 +08:00（译名注入与重渲染）",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-17T10:49:16+08:00",
+        "note": "重开核验：首访命中 Cloudflare 「正在进行安全验证」挑战页，等待约 30 秒后自行通过，标题变为 EA FC 27 Players - Ultimate Team Ratings | FUTBIN。第一页 30 行读取成功；首行 95 Maradona Icon，td.table-price.platform-ps-only=0、td.table-price.platform-pc-only=0；该页 Console 有价 0/30、PC 有价 1/30（价格仍在滚动更新，非全 0）。form.desktop-platform-change-form 存在，按钮文案 Console / PC，确认双平台口径。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-17T10:50:26+08:00",
+        "note": "重开核验：标题 EA FC 27 Popular Players | FUTBIN；div.popular-cards-wrapper 存在且有 254 个直接子卡片（热门球员榜）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-17T10:50:29+08:00",
+        "note": "重开核验：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 存在且有 504 个直接子卡片；样例卡「Pedro Neto … Shooting Practice 799」与当日概览「热门进化卡」段一致。"
+      }
+    ],
+    "counts": {
+      "playersRows": 750,
+      "playersWithNameZh": 750,
+      "playersWithNameZhBefore": 745,
+      "nameZhIndexEntries": 1482,
+      "scannedNames": 1050,
+      "missedNames": 0,
+      "psPriceAbove0": 207,
+      "pcPriceAbove0": 206,
+      "priceBasis": "partial-live",
+      "overviewZhCells": 50,
+      "scanEmbeddedPlayers": 750,
+      "scanEmbeddedWithNameZh": 750
+    },
+    "missing": [
+      "概览·本周活动卡（Promo）与本周周黑（TOTW）：本轮仍未打开对应来源页，如实空状态（沿用 03:28 采集结论）。",
+      "概览·价格分层四档 + 扫描·价格维度五档：开服日 launchDate=2026-09-25 之前，FUTBIN 价格筛选区间返回 0 行（筛选前置条件未满足，非「该档无卡」），各档如实空状态。",
+      "本轮重开 /27/players 未逐页翻取 750 行做全量价差比对：只核验第一页 30 行的平台价与双平台口径；落库的 750 行仍是 03:28 采集结果（价格随时间滚动，属已知时效差异，不做当日环比）。",
+      "部分卡牌平台价为 0（FUTBIN 未更新），按占位值处理，不以列表页 IS 估值顶替平台成交价。"
+    ],
+    "notes": [
+      "中文译名（本轮新增能力）：新增 apps/market/engine/scripts/apply-market-name-zh.mjs，把持久译名词库按「球员 URL 全名 slug → 姓名 slug」注入 market.json 的 players / popular / overview.priceTiers / priceDimensions 等段落，并输出未命中清单。",
+      "译名修复 1：slugOfUrl 原正则 /\\/player\\/\\d+\\// 无法匹配带版本后缀的球员 URL（如 /player/1272_8/pierre-emerick-aubameyang），导致进化榜条目全部退化成按姓氏匹配、重名风险高。已放宽 id 段为「任意非斜杠字符」，进化榜命中由 419/500 提升到 498/500。",
+      "译名修复 2：3 行采集时 name 为 null（FUTBIN 卡面名字单元格结构异常），新增「由 URL slug 回填英文显示名」兜底，本轮回填 3 条（gift-orban / franco-mastantuono / trent-kone-doherty），页面不再出现空白球员名。",
+      "译名修复 3：原词库把两个中国香港球员存成空字符串占位（等于永久失配）。经公开资料核实 Yue Tze-Nam = 茹子楠、Wang-Kit Tsui = 徐宏杰，已写入并清理空值占位；两个进球队员均有汉字依据，不再保留英文占位。",
+      "覆盖结果：market.json players 750/750 全部带 nameZh（本轮前 745/750），未命中 0；扫描页内嵌 750 名球员全部带 nameZh，搜索框同时匹配中英文。",
+      "渲染侧已就绪、未手改 HTML：render-market-overview.mjs / render-market-report.mjs 输出 <span class=\"zh\">，market.html 中文单元格 50 个（今日仅「热门进化卡」段有数据），market-scan.html 走客户端模板并由内嵌 JSON 提供 nameZh。",
+      "浏览器通道：web-access 技能（CDP Proxy :3456），check-deps.mjs exit 0；本轮创建的 3 个 tab 已全部 /close。未调用或探测 dumate-browser-cli / DUMATE_* / agent-browser / IAB / 新 profile。"
+    ]
+  },
+  "sha256": "0030e4933d0a291e8a8bf3aa6a3c6c22cd3ed367c025181a320041bfcca1f5fe",
+  "bytes": 28229,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/market/report.html"
+}

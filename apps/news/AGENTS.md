@@ -65,6 +65,13 @@ X 在后台标签页（`document.visibilityState === 'hidden'`，`requestAnimati
 
 翻译服务失败时由执行任务的 AI 完成翻译。「术语替换」和英文混排不算翻译完成；未完成的必须在报告中明确标记「待翻译，请查看原文」，不得伪装成中文。
 
+**译文文件通道（2026-09-17 起，必走）**：执行 AI 的翻译结果写成 `data/translations-D.json`，结构为
+`{ "schemaVersion": 1, "date": "D", "source": "执行 AI 翻译", "translations": { "<推文ID>": "<完整中文译文>" } }`。
+键必须是推文 ID（与 `data/tweets-D.json` 的 `id` 一致）。`generate_report.mjs` 会**优先取该文件**，并在同日重跑时对旧卡片统一补齐翻译。
+
+> 历史坑：原 `translateTweet()` 依赖已废弃的 DuMate 千帆代理（环境变量 `DUMATE_QIANFAN_PROXY`）或 `apps/news/.api_key`，迁移到 WorkBuddy 后两者都不可用（该文件不存在），导致当日 71 条全部显示「待翻译」。**不要再依赖该通道。**
+> 提交前自检：`grep -c "待翻译" reports/daily/D/news.html` 必须为 `0`；出现该标记即为 `partial` 并记入 `missingItems`。
+
 ## 相关文件
 
 - 共享路径与日期逻辑只从 `../../shared/lib/runtime.mjs` 导入；图片命名与内联从 `../../shared/lib/report-assets.mjs` 导入。

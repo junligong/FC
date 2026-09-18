@@ -4,8 +4,7 @@
 
 - `prompts/` 是 WorkBuddy 定时任务的入口；路径必须引用优化后的绝对项目位置。
 - 所有任务每次执行必须读取根 `../AGENTS.md` 的“浏览器强制规则”；编排提示应明确走 **Web Access（浏览器自动化）技能的 CDP 模式**，不要写 `extension` 或 Chrome 插件。
-- 四个采集任务必须在 WorkBuddy 定时任务配置中绑定 `Web Access（浏览器自动化）` 技能，并直接复用用户日常 Chrome 登录态。不得探测或调用 `dumate-browser-cli`、`automation/browser-env.sh`、`DUMATE_*`、`fc-browser-channel-check` 历史探针或 `agent-browser`；连接是否成功只以本轮实际打开来源并读取页面为准，不再按 DuMate 环境缺失判错。
-- 采集前先跑 `node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs`：`exit 0` 才继续；`exit 2` 表示 `~/.workbuddy/skills/web-access/config.env` 的 `WEB_ACCESS_BROWSER` 未设（无人值守会卡死，必须是 `chrome`）；`exit 1` 表示 Chrome 远程调试开关未开，只能请用户勾选，Agent 不能代勾。
+- 各采集任务必须在 WorkBuddy 定时任务配置中绑定 `Web Access（浏览器自动化）` 技能。浏览器通道、禁止入口与故障判定一律以根 `../AGENTS.md`「浏览器强制规则」为准（独立调试 profile 9333 是唯一采集通道）。
 - `prompts/*.md` 是完整提示词；调度器只保存 `task-definitions.json` 的短启动提示，不复制业务规则。
 - `runs/D/<module>/` 保存 owner、state、evidence、work 和不可变报告快照。同日重跑必须显式归档旧 attempt，不能静默覆盖。
 

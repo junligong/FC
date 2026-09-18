@@ -1,0 +1,170 @@
+{
+  "module": "football",
+  "date": "2026-09-18",
+  "runId": "cfa681a3-4694-4cea-871d-a0dbf04516e8",
+  "status": "partial",
+  "startedAt": "2026-09-17T19:37:35.387Z",
+  "deadlineAt": "2026-09-17T19:52:35.387Z",
+  "reportPath": "reports/daily/2026-09-18/football.html",
+  "completedAt": "2026-09-17T19:48:50.308Z",
+  "evidence": {
+    "date": "2026-09-18",
+    "module": "football",
+    "runId": "cfa681a3-4694-4cea-871d-a0dbf04516e8",
+    "generatedAt": "2026-09-17T19:48:30Z",
+    "dataCutoff": "2026-09-18 03:45 (北京时间)",
+    "browserChannel": "web-access CDP Proxy :3456（check-deps exit 0，Chrome port 9222）",
+    "collection": "4 个并行子代理分治采集，所有来源页均实际打开并从 DOM 提取",
+    "sources": [
+      {
+        "block": "英超积分榜/射手榜",
+        "url": "https://www.bbc.com/sport/football/premier-league/table",
+        "openedAt": "2026-09-17T19:38:50Z"
+      },
+      {
+        "block": "英超射手榜",
+        "url": "https://www.bbc.com/sport/football/premier-league/top-scorers",
+        "openedAt": "2026-09-17T19:39:16Z"
+      },
+      {
+        "block": "英超助攻榜",
+        "url": "https://www.espn.com/soccer/stats/_/league/eng.1",
+        "openedAt": "2026-09-17T19:40:05Z"
+      },
+      {
+        "block": "西甲积分榜/射手榜",
+        "url": "https://www.bbc.com/sport/football/spanish-la-liga/table",
+        "openedAt": "2026-09-17T19:40:45Z"
+      },
+      {
+        "block": "西甲射手榜",
+        "url": "https://www.bbc.com/sport/football/spanish-la-liga/top-scorers",
+        "openedAt": "2026-09-17T19:41:20Z"
+      },
+      {
+        "block": "西甲助攻榜",
+        "url": "https://www.espn.com/soccer/stats/_/league/esp.1",
+        "openedAt": "2026-09-17T19:41:50Z"
+      },
+      {
+        "block": "意甲积分榜",
+        "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/results-and-standings/",
+        "openedAt": "2026-09-17T19:39:40Z"
+      },
+      {
+        "block": "意甲射手榜/助攻榜",
+        "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/statistics-goals/",
+        "openedAt": "2026-09-17T19:40:48Z"
+      },
+      {
+        "block": "德甲积分榜",
+        "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/results-and-standings/",
+        "openedAt": "2026-09-17T19:40:48Z"
+      },
+      {
+        "block": "德甲射手榜/助攻榜",
+        "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/statistics-goals/",
+        "openedAt": "2026-09-17T19:40:48Z"
+      },
+      {
+        "block": "法甲积分榜",
+        "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/results-and-standings/",
+        "openedAt": "2026-09-17T19:40:48Z"
+      },
+      {
+        "block": "法甲射手榜/助攻榜",
+        "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/statistics-goals/",
+        "openedAt": "2026-09-17T19:40:48Z"
+      },
+      {
+        "block": "欧冠积分榜（联赛阶段第1轮）",
+        "url": "https://www.worldfootball.net/competition/co19/uefa-champions-league/results-and-standings/",
+        "openedAt": "2026-09-17T19:41:30Z"
+      },
+      {
+        "block": "欧冠射手榜/助攻榜",
+        "url": "https://www.worldfootball.net/competition/co19/uefa-champions-league/statistics-goals/",
+        "openedAt": "2026-09-17T19:40:50Z"
+      },
+      {
+        "block": "美职联积分榜（东西区）",
+        "url": "https://www.espn.com/soccer/standings/_/league/usa.1",
+        "openedAt": "2026-09-17T19:40:20Z"
+      },
+      {
+        "block": "美职联射手榜/助攻榜",
+        "url": "https://www.espn.com/soccer/stats/_/league/usa.1",
+        "openedAt": "2026-09-17T19:42:00Z"
+      },
+      {
+        "block": "沙特联积分榜",
+        "url": "https://www.worldfootball.net/competition/co1169/saudi-arabia-saudi-pro-league/results-and-standings/",
+        "openedAt": "2026-09-17T19:42:40Z"
+      },
+      {
+        "block": "沙特联射手榜/助攻榜",
+        "url": "https://www.worldfootball.net/competition/co1169/saudi-arabia-saudi-pro-league/statistics-goals/",
+        "openedAt": "2026-09-17T19:42:50Z"
+      },
+      {
+        "block": "新闻（曼联/切尔西/巴萨等，北青网+直播吧双源）",
+        "url": "https://www.toutiao.com/article/7686313136249274886/",
+        "openedAt": "2026-09-17T19:44:00Z"
+      },
+      {
+        "block": "新闻（曼城欧冠/维拉欧冠/斯通斯伤情/Sky 欧洲晨报）",
+        "url": "https://sports.sina.cn/2026-09-17/detail-inirfcpw5694020.d.html",
+        "openedAt": "2026-09-17T19:44:30Z"
+      },
+      {
+        "block": "新闻（Sky Sports 欧洲新闻聚合原文）",
+        "url": "https://www.skysports.com/football/live-blog/12023/13575723/european-football-news-and-transfers-barcelona-real-madrid-psg-bayern-munich-latest-and-more",
+        "openedAt": "2026-09-17T19:45:00Z"
+      },
+      {
+        "block": "新闻（国米5-3乌迪内斯/罗马2-0都灵）",
+        "url": "https://www.163.com/dy/article/L72A8E5M05561FXE.html",
+        "openedAt": "2026-09-17T19:45:20Z"
+      },
+      {
+        "block": "新闻（阿森纳 U16 签约）",
+        "url": "https://news.qq.com/rain/a/20260917A0EJR700",
+        "openedAt": "2026-09-17T19:45:40Z"
+      },
+      {
+        "block": "新闻（多特三连胜）",
+        "url": "https://onefootball.com/en/news/nine-points-confidence-highbvb-ahead-of-the-bundesliga-match-in-stuttgart-43478192",
+        "openedAt": "2026-09-17T19:45:55Z"
+      },
+      {
+        "block": "新闻（梅西美冠杯百球）",
+        "url": "https://thesportscast.net/2026/09/17/lionel-messi-reaches-100-goals-for-inter-miami-how-many-has-cristiano-ronaldo-scored-for-al-nassr/",
+        "openedAt": "2026-09-17T19:46:10Z"
+      }
+    ],
+    "coverage": {
+      "standings": "9 个联赛块全覆盖：英超20队/西甲20队/意甲20队/德甲18队/法甲18队/美职联东西区各15队/沙特联18队/欧冠联赛阶段36队",
+      "scorers": "8 个联赛榜各前10（美职联、沙特联为联盟总榜）",
+      "assists": "8 个联赛榜各前10（美职联、沙特联为联盟总榜）",
+      "news": "14 条（头条6 + 分联赛8），全部逐条打开原文核实"
+    },
+    "missing": [
+      "法甲、沙特联在过去24小时窗口内无可靠独立大事件新闻，对应栏目如实留空（C罗沙特联队史射手王为8月29日事件，超出窗口，已排除）",
+      "美职联射手榜/助攻榜：ESPN 仅提供联盟总榜，无东西分区拆分，已如实按总榜取前10并注明",
+      "英超射手榜卡尔弗特-勒温进球数 BBC(3) 与 ESPN(2) 不一致，按 BBC 页面记录（口径冲突已在证据中留痕）",
+      "欧冠「维拉3-2布鲁日」一条仅搜狐自媒体单一来源可核实，已在卡片上如实标注"
+    ],
+    "verification": {
+      "gate": "node automation/verify-football-boards.mjs 2026-09-18",
+      "exitCode": 0,
+      "note": "三榜结构与去重检查通过；射手/助攻榜覆盖 epl/laliga/seriea/bundesliga/ligue1/mls/saudi/ucl（mls_east/mls_west 为积分榜分区键，射助榜共用 mls 键，属预期提醒）"
+    },
+    "outputs": {
+      "report": "reports/daily/2026-09-18/football.html",
+      "generator": "automation/runs/2026-09-18/football/work/build-football.mjs"
+    }
+  },
+  "sha256": "4a8ec4ccc8af40c394d2a2add40cb066a8d2bbcec84bf8332c31c50669c126a1",
+  "bytes": 47382,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-18/football/report.html"
+}

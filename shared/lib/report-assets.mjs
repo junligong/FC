@@ -62,8 +62,16 @@ export function reportAssetDataUrl(reportDir, relativePath) {
 }
 
 export function inlineLocalReportImages(html, reportDir) {
-  return html.replace(/(<img\b[^>]*\bsrc=")([^"#]+)(")/gi, (match, prefix, src, suffix) => {
+  const withImg = html.replace(/(<img\b[^>]*\bsrc=")([^"#]+)(")/gi, (match, prefix, src, suffix) => {
     if (!/^(?:\.\/)?assets\//.test(src)) return match;
+    const dataUrl = reportAssetDataUrl(reportDir, src);
+    return dataUrl ? `${prefix}${dataUrl}${suffix}` : match;
+  });
+  // 第二遍：不是所有本地图片都写在 <img src> 里。市场扫描页把球员头像路径塞在
+  // <script type="application/json" id="db-data"> 的数据块里，由前端 JS 拼成 <img>，
+  // 合并期若不改写就会在单文件站点里变成断链。这里对所有以 assets/ 开头的带引号字符串
+  // 做同样的内联；第一遍已经转成 data: 的不会再匹配（前缀不再是 assets/）。
+  return withImg.replace(/(")((?:\.\/)?assets\/[^"\\\n]+)(")/g, (match, prefix, src, suffix) => {
     const dataUrl = reportAssetDataUrl(reportDir, src);
     return dataUrl ? `${prefix}${dataUrl}${suffix}` : match;
   });

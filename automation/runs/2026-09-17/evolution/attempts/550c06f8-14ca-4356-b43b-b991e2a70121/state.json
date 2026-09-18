@@ -1,0 +1,51 @@
+{
+  "module": "evolution",
+  "date": "2026-09-17",
+  "runId": "550c06f8-14ca-4356-b43b-b991e2a70121",
+  "status": "partial",
+  "startedAt": "2026-09-17T07:37:24.087Z",
+  "deadlineAt": "2026-09-17T07:52:24.087Z",
+  "reportPath": "reports/daily/2026-09-17/evolution.html",
+  "completedAt": "2026-09-17T07:38:19.376Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "runId": "550c06f8-14ca-4356-b43b-b991e2a70121",
+    "module": "evolution",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日第三次重跑：修复头像解析的「同姓错配」缺陷（姓名词元一致性守卫）并重渲染进化专栏 500 条。榜单数据与中文译名未变，仅头像列变化。",
+    "dataCutoff": "2026-09-17 03:47 +08:00（采集）；2026-09-17 15:37 +08:00（头像修复与重渲染）",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-17T15:37:28+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 有 503 个直接子卡片（当日落库 500 条）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-17T15:37:34+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Player Evolutions | FUTBIN；div.evolutions-overview-wrapper 存在，含 28 个直接子节点（Requirements + Total Upgrades 分组）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions/expired",
+        "openedAt": "2026-09-17T15:37:42+08:00",
+        "note": "重开核验（本轮实际打开）：页面可达、无 evolutions-overview-wrapper，未列出过期进化条目 → 过期数如实为 0，与当日报告一致。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players",
+        "openedAt": "2026-09-17T15:37:53+08:00",
+        "note": "重开核验（本轮实际打开）：标题 EA FC 27 Players - Ultimate Team Ratings | FUTBIN，30 行 td.table-name，用于头像补全链路与球员台账的当日一致性核对。"
+      }
+    ],
+    "missing": [
+      "球员头像覆盖 487/500（97.4%）：13 条进化卡在其 FUTBIN 卡 ID 上经 /27/playerhover 返回 noface，或无对应本地球员记录，属真实缺口，渲染时留空。",
+      "本轮修掉一类错误：原先「只按姓词元兜底」可能配错人（同姓不同人）。改为姓名词元双向包含校验后，进化专栏覆盖率由 487/500 保持 487/500（其中换掉了若干张此前可能配错的图）。"
+    ],
+    "missingItems": [
+      "evolution.html：13 条进化卡无可用头像（占 500 条的 2.6%）"
+    ]
+  },
+  "sha256": "5f6f9f3c588ecacf37729ac64854ab59906300b14726380173b47b71fd240495",
+  "bytes": 333447,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/evolution/report.html"
+}

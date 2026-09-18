@@ -3,7 +3,7 @@
   "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
   "publicUrl": "https://fc27-site.app.workbuddy.host/",
   "published": true,
-  "reason": "已通过 WorkBuddy 站点发布能力（workbuddy_sites_deploy，updateExistingApp，entryHtml=index.html）发布 daily-merged/ 并复核：公网首页与本地文件逐字节一致（SHA-256 d0a490c3…bff04，11,781,323 B），分享链接不变 https://fc27-site.app.workbuddy.host/；verify-publication.mjs 四检全过 exit 0",
+  "reason": "用户 17:37 明确要求「跑合并并发布到 FC27每日情报台」。本轮以 --rerun 重新执行 coordinate.mjs（merge=success、failedPanels=0、indexSha256 68d64c9d…），再通过 WorkBuddy 站点发布能力更新同一应用（应用名 FC27每日情报台，updateExistingApp，入口 index.html，分享链接不变），并重复发布一次以促使边缘缓存收敛。公网固定入口与本地 daily-merged/index.html 逐字节一致（20,366,817 B，SHA-256 68d64c9d…）。",
   "publicVerification": {
     "verified": true,
     "checks": {
@@ -12,26 +12,48 @@
       "hasDateAnchor": true,
       "completeHtml": true
     },
-    "localSha256": "d0a490c3b27e50cc65f7558675a5b32932b5752478a487c1e93865c0713bff04",
-    "remoteSha256": "d0a490c3b27e50cc65f7558675a5b32932b5752478a487c1e93865c0713bff04",
-    "bytes": 11781323,
-    "checkedAt": "2026-09-16T19:48:58.997Z"
+    "localSha256": "68d64c9de90b75d16425d4410ee84340a4190836db6e118f11be51fec0ba4609",
+    "remoteSha256": "68d64c9de90b75d16425d4410ee84340a4190836db6e118f11be51fec0ba4609",
+    "bytes": 20366817,
+    "checkedAt": "2026-09-17T09:59:57.135Z",
+    "contentChecks": {
+      "evolutionThreeViews": true,
+      "evolutionKpi": true,
+      "evolutionPriceColumn": true,
+      "archiveLink2026_09_17": true,
+      "bannerAsset": "assets/yanzu-banner.jpg 返回 200（346,090 B）",
+      "archivePage": "archive/2026-09-17.html 返回 200（20,366,767 B）且含新版进化三视角",
+      "navItems": 6,
+      "noLocalPaths": true
+    },
+    "cacheConvergence": "既知边缘缓存滞后。本轮实测存在多个缓存条目并存：新版条目 last-modified=09:38:23Z（age 0–6），旧版条目 last-modified=07:38:32Z（age 曾达 ~1215s）。09:38–09:52 期间同一 URL 连续请求出现版本漂移（曾 8/10、5/5、4/10 命中新版）；09:50:56 起连续 3 次 verify-publication.mjs 均返回 verified=true，最终采样 age=0 命中新版。发布本身已成功且可验证；残余旧版条目随其 TTL 自行过期。已按契约的「最多重试两次」执行两次部署，不再重复发布。"
   },
   "unattendedPublishingVerified": false,
   "mergeResult": "success",
-  "publishResult": "delegated",
+  "failedPanels": 0,
+  "publishResult": "workbuddy-sites-deploy",
+  "indexSha256": "68d64c9de90b75d16425d4410ee84340a4190836db6e118f11be51fec0ba4609",
+  "indexBytes": 20366817,
   "modules": {
     "football": "partial",
     "news": "partial",
     "market": "partial",
     "evolution": "partial",
-    "icons-heroes": "failed"
+    "icons-heroes": "partial"
   },
   "runIds": {
     "football": "6faaafbd-51f1-4c0a-aa74-135d3f427ebc",
-    "news": "a1cb95c8-11f8-4614-b3a6-d1cd877555ac",
-    "market": "5ffd24f4-24b7-4f62-aa28-60ce43c91c69",
-    "evolution": "2ee3c6af-388a-4020-9586-b63d58bd2f2c",
-    "icons-heroes": "adb415d7-98d7-4c64-9ded-a186c31d1ed5"
+    "news": "492e3d7b-e2d6-4bcd-b085-5f4a24e2ce1c",
+    "market": "27719581-442c-478f-88fd-8d4c8c98e79a",
+    "evolution": "d3cf1981-f835-42fc-83e8-1139ff82eb02",
+    "icons-heroes": "32edb6b3-533a-4cd1-b1b7-e6108ef09c4a"
+  },
+  "rerunReason": "用户要求「主页所有和球员相关的监控都加上球员图片」：新增球员头像链路（解析 / 落盘 / 内联 / 五个渲染器），并修复两类配错人缺陷（同姓词元兜底、FC26 跨代卡 ID 混用）。报告采集数据与中文译名未变。",
+  "rerunReasonSecond": "用户要求优化进化专栏（展示热度与价格、不全量、按位置/价格/进化区分、每条进化只出热门 Top5）：渲染器改为「精选池 × 三视角」，新增 enrich-evolution-prices.mjs 价格关接；指数体积由 22,441,726 B 降至 20,366,817 B。",
+  "coordinator": {
+    "mode": "rerun",
+    "completedAt": "2026-09-17T09:38:24.139Z",
+    "indexSha256": "68d64c9de90b75d16425d4410ee84340a4190836db6e118f11be51fec0ba4609",
+    "publish": "delegated（由本轮的站点发布能力执行，见 publishResult）"
   }
 }

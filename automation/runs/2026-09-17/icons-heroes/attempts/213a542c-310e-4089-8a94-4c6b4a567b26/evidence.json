@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-17",
+  "runId": "213a542c-310e-4089-8a94-4c6b4a567b26",
+  "status": "partial",
+  "collectedAtBeijing": "2026-09-17 09:46-10:04",
+  "browserChannel": "web-access CDP Proxy :3456 直连用户日常 Chrome（check-deps exit 0，port 9222）",
+  "sources": [
+    {
+      "url": "https://www.futbin.com/",
+      "openedAt": "2026-09-17T09:47:30+08:00",
+      "dataCutoff": "2026-09-17T09:47+08:00",
+      "note": "会话建立 + 同源对照基准，正常渲染（title 命中 FC27 数据库页）。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players（首轮探测）",
+      "openedAt": "2026-09-17T09:48:20+08:00",
+      "dataCutoff": null,
+      "note": "本轮实测可达（昨日 03 时该目录 403，具时限性已解除）：30 行、含 td.table-name 版本标签、IS 估值列、platform-ps-only / platform-pc-only 双平台价单元格。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?version=base_icon 与 ?version=heroes（筛选路由）",
+      "openedAt": "2026-09-17T09:51:00+08:00",
+      "dataCutoff": null,
+      "note": "站点自身筛选 href，但直接导航返回 0 行空表（非拦截页）；改走契约第 2 条路：全量默认列表翻页 + 版本标签比对台账。"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=1..12（翻页采集）",
+      "openedAt": "2026-09-17T09:59:40+08:00",
+      "dataCutoff": "2026-09-17T10:02+08:00",
+      "note": "逐页打开并按页提取（每页 30 行，共 360 行；原始逐页文件在 work/players-page-*.json）。131 张台账传奇卡全部命中（0 缺失）；Base Heroes 50 张；无 Debut Icon 混入（版本标签严格区分）。"
+    }
+  ],
+  "counts": {
+    "pagesFetched": 12,
+    "rows": 360,
+    "baseIconsLedgerHit": "131/131",
+    "fc27Heroes": 50,
+    "platformValid": "Console 5 / PC 1（开服前 FUTBIN 滚动更新中，其余为 0 占位）",
+    "isEstimateRecorded": true
+  },
+  "missing": [
+    "英雄卡（Hero）无台账基准文件，仅捕获 50 张 Base Heroes（页 1-12 范围），无法证明已覆盖全量英雄名单；英雄台账待后续建立后复核。",
+    "/27/players 仅翻页 1-12（按评分降序，页 12 后为 ≤88 评分的普通金卡与少量低价卡）；131 张基础传奇卡已全部命中，但未穷尽全库分页。",
+    "FC27 未开服（launchDate=2026-09-25），两平台价绝大多数为 0 占位（Console 5 / PC 1 有效），IS 估值列已单独记 isEstimate，不当作平台成交价，不计算日环比与累计涨跌。",
+    "?version=base_icon / ?version=heroes 服务端筛选路由直接导航返回空表（疑似依赖站内 JS 状态），本轮以全量翻页 + 版本标签替代，该路由行为需后续复核。",
+    "CDP 代理对含可选链（?.）的长 eval 表达式偶发返回空对象（时序敏感），本轮以 function+显式判空表达式绕过；属通道工具层已知问题，与来源无关。"
+  ],
+  "notes": "合规处置：未回退任何禁止入口，未使用 FC26 或旧日期数据填充当日；FC26 英雄数据仅作参考对比（渲染器已修正为独立参考区）。渲染件由 render-icons-heroes.mjs 生成并含本日快照，STALE 回退缺陷已修复。"
+}

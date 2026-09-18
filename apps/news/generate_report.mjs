@@ -197,6 +197,16 @@ for (const cluster of clusters) {
 }
 
 // ========== 6. 翻译为中文 ==========
+// 翻译主通道：apps/news/data/translations-<D>.json（键为推文 ID，由执行 AI 每日预算内写入，增量累积）。
+// 兜底通道 1：千帆 API（DUMATE_QIANFAN_PROXY 或 apps/news/.api_key，DuMate 迁移后默认不可用）。
+// 两者皆未命中时如实留空，由渲染器标记「待翻译，请查看原文」，不得伪装成中文。
+const TRANSLATIONS_FILE = path.join(DATA_DIR, `translations-${today}.json`);
+const preTranslations = readJSON(TRANSLATIONS_FILE, {}) || {};
+const preTranslationsMap = preTranslations.translations || preTranslations;
+function preTranslationOf(tweet) {
+  const v = preTranslationsMap[tweet && tweet.id];
+  return (typeof v === 'string' && v.trim() && /[\u4e00-\u9fff]/.test(v)) ? v.trim() : '';
+}
 // 使用 AI 模型翻译每条推文
 function translateTweet(text, handle) {
   if (!text || text.trim().length === 0) return '';
@@ -238,6 +248,13 @@ function translateTweet(text, handle) {
 console.log(`Translating ${newTweets.length} tweets...`);
 for (const t of newTweets) {
   if (t.text && t.text.trim().length > 0) {
+    // 主通道：译文文件已有该推文的译文则直接采用
+    const pre = preTranslationOf(t);
+    if (pre) {
+      t.translation = pre;
+      console.log(`  @${t.handle}: [译文文件] ${pre.substring(0, 50)}...`);
+      continue;
+    }
     // Skip translation if already has a valid Chinese translation (e.g., from patch)
     if (t.translation && t.translation !== t.text && /[\u4e00-\u9fff]/.test(t.translation)) {
       console.log(`  @${t.handle}: [cached] ${(t.translation || '').substring(0, 50)}...`);
@@ -272,6 +289,13 @@ if (!previous && existsSync(path.join(REPORTS_DIR, 'news.html')) && existsSync(F
 const merged = new Map((previous?.tweets || []).map(t => [t.id, t]));
 for (const tweet of newTweets) merged.set(tweet.id, tweet);
 const reportTweets = [...merged.values()];
+// 同日重跑时旧卡片不经翻译循环，统一在此用译文文件补齐/覆盖翻译
+let preApplied = 0;
+for (const t of reportTweets) {
+  const pre = preTranslationOf(t);
+  if (pre) { t.translation = pre; preApplied++; }
+}
+console.log(`Pre-translated from file: ${preApplied}/${reportTweets.length}`);
 
 async function cacheReportImages(tweets) {
   mkdirSync(IMAGE_DIR, { recursive: true });

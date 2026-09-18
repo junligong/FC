@@ -1,0 +1,85 @@
+{
+  "module": "evolution",
+  "date": "2026-09-18",
+  "runId": "83e83d3c-558d-4aa0-aea9-3583124114b6",
+  "status": "partial",
+  "startedAt": "2026-09-17T19:49:56.979Z",
+  "deadlineAt": "2026-09-17T20:04:56.979Z",
+  "reportPath": "reports/daily/2026-09-18/evolution.html",
+  "completedAt": "2026-09-17T19:54:30.908Z",
+  "evidence": {
+    "date": "2026-09-18",
+    "runId": "83e83d3c-558d-4aa0-aea9-3583124114b6",
+    "status": "partial",
+    "generatedAt": "2026-09-18T03:54:30+08:00",
+    "dataCutoff": "2026-09-18 03:50 +08:00（三个来源页本轮实采）· 译名注入 / 头像补全 / 派生指标补全 03:54 +08:00",
+    "browserChannel": {
+      "skill": "web-access",
+      "precheck": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs → exit 0（node: ok (v22.22.2) / browser: ok (Chrome, port 9222) / proxy: ready (Chrome)）",
+      "profile": "CDP Proxy :3456 直连用户日常 Chrome，复用现有登录态；未新建 profile、未使用 IAB / 临时浏览器 / extension 模式；未调用 dumate-browser-cli、DUMATE_*、browser-env.sh、fc-browser-channel-check、agent-browser"
+    },
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-18T03:50:44+08:00",
+        "dataCutoff": "2026-09-18 03:50 +08:00",
+        "note": "热门进化卡主来源，本轮内实际打开并提取。页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper > div.column = 500 个卡片节点；滚动到底部节点数不变，无分页与「加载更多」控件，页面无「共 N 条」计数。按「球员 URL + 进化名称」去重后 500 张（500 个 URL 全部唯一），未出现 No evolutions found。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions",
+        "openedAt": "2026-09-18T03:50:44+08:00",
+        "dataCutoff": "2026-09-18 03:50 +08:00",
+        "note": "FC27 进化总览，本轮内实际打开。div.evolutions-overview-wrapper = 14 条；标签计数 All 14 / Evolutions 8 / Pathway Evolutions 4 / Training Camp 2；逐条取得费用（全部 FREE）、UNLOCK / EXPIRES 相对时长、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles、PATH 分支）。"
+      },
+      {
+        "url": "https://www.futbin.com/27/evolutions/expired",
+        "openedAt": "2026-09-18T03:50:44+08:00",
+        "dataCutoff": "2026-09-18 03:50 +08:00",
+        "note": "已过期进化核验，本轮内实际打开：div.evolutions-overview-wrapper 节点数为 0，即 14 个进化全部处于有效期内，无过期路径。"
+      }
+    ],
+    "counts": {
+      "evolutionPaths": 14,
+      "cardNodes": 500,
+      "candidates": 500,
+      "uniquePlayerUrls": 500,
+      "poolSize": 70,
+      "marketJoinMatched": 54,
+      "marketJoinWithPrice": 34,
+      "nameZhCovered": 500,
+      "avatarCoveragePool": "70/70",
+      "futbinRatingMissing": 42,
+      "unresolvableAvatarCardIds": 2
+    },
+    "verification": {
+      "dedupe": "按「球员 URL + 进化名称」去重：500 条 → 500 条（unique(url+evolutionName) = 500，unique(url) = 500）。未按球员名去重（同名不同卡版本为独立条目，按名去重会误删真实条目）。",
+      "chineseNames": "apply-market-name-zh.mjs 首轮扫描 500 名、命中 454、未命中 39（39 个唯一 slug）；逐条补译后追加到 name-zh-supplement-fc27.json（新增 39 条，词库 963 → 1002 条，只增不改、无空字符串占位），重跑后「扫描 500 · 命中 500 · 未命中 0」。",
+      "avatars": "backfill-avatar-keys.mjs 执行 2 次：第 1 次发现 32 个不可解析 cardId → playerhover 新增 cardId→头像键 30 条（索引累计 526）、下载头像 28 张（28/28 成功）；第 2 次仅剩 2 个（21437 / 4234，FUTBIN 返回 noface，来源侧无人脸图）。渲染后页头「球员头像 70/70」已收敛；解析不到的条目如实不显示图片，未用他人头像或占位图顶替。",
+      "priceScope": "本任务未为进化卡采集或分析任何市场价格；evolution.json 内无 priceRef、无任何当前价副本（逐卡仅 baseCardId）。价格在页面运行时按 baseCardId 从唯一行情 apps/market/engine/data/prices/fc27/current.json 读取（渲染产物内 4 处引用，PC 有效价优先、PC 无有效价取 Console），未命中或两平台均无有效价时显示「无报价」，未写成价格为 0。",
+      "fixedThisRun": "修正采集脚本两处解析缺陷（均在本轮内重采重渲染）：(1) 少部分卡片 innerText 无六维块时，旧写法把进化名称当球员名（5 张，如 Stoica / Mastantuono / Livaković / Paradela），改为按尾部位置解析并取回 FUTBIN Rating 与热度；(2) 门将卡的属性标签是 DIV/HAN/KIC/REF/SPD/POS，旧写法定位不到数值块会把姓名解析成标签（如 'POS'），已纳入标签集合。重采后 500 条姓名全部为真实球员名（可疑姓名 0 条），GK 卡 1 张解析正确。",
+      "checks": "产物 reports/daily/2026-09-18/evolution.html：class=\"zh\" 146 处（精选池全部行）、img.pimg 146 处、页头「球员头像 70/70」、徽标 PARTIAL；14 条路线全部标注来源 URL；费用字段取值集合为 ['Free']；expires 均为「解锁 … · 到期 …（页面原文 …）」格式。"
+    },
+    "outputs": {
+      "json": "automation/runs/2026-09-18/evolution/evolution.json",
+      "html": "reports/daily/2026-09-18/evolution.html",
+      "wordbank": "apps/market/engine/data/players/name-zh-supplement-fc27.json（+39 条）",
+      "avatarIndex": "shared/data/fc27/avatar-index.json（+30 条 cardId→头像键）",
+      "work": "automation/runs/2026-09-18/evolution/work/（extract-cards.js / extract-evolutions.js / build-json.mjs / cards-raw.json / evolutions-raw.json）"
+    },
+    "missing": [
+      "进化卡自身价格缺失（来源侧事实）：FUTBIN 对进化卡不公布 Console/PC 挂牌价，本页「参考价（基础卡）」是按 baseCardId 关接到的基础卡市价（持仓成本参考），不是该进化卡的成交价。",
+      "FUTBIN Rating 缺失 42/500：来源页 500 张进化卡中仅 458 张存在 div.playercard-27-futbin-rating（本轮 DOM 实测），其余 42 条 futbinRating 如实留空，未用 Rating 列、六维合计或其它数值顶替。",
+      "价格覆盖率低：500 名候选中仅 54 名关接到统一行情、34 名有有效报价（2026-09-17 为 45/500）。覆盖率取决于市场模块采集范围与 FUTBIN 开服后的价格投放，每次以当日 marketJoin 为准。",
+      "头像 2 条不可解析：cardId 21437 / 4234 的 playerhover 返回 noface（来源侧无头像图），如实不显示图片。",
+      "到期时间只有相对口径：FUTBIN 只给 UNLOCK / EXPIRES 时长（入门系列 12 MONTHS、多数 1 MONTHS、Believe 1 YEARS），未提供绝对到期日期，无法换算成具体日期。",
+      "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 具体内容；本轮未逐条打开 14 个详情页（预算与反爬风险）。",
+      "部分路径未给出逐项属性数值升级表：Intro to Training Camp EVOs 仅给 Role「Fullback++」；Pinged Pass / Relentless 等仅给 PlayStyle 项。",
+      "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单本身为准。",
+      "榜单条数上限未知：/27/popular/evolutions 渲染 500 个节点且无「共 N 条」计数或分页控件，无法排除服务端截断，故以页面实际渲染的 500 条为准。",
+      "价格/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为估算口径，本轮不输出任何涨跌或精确收益预测。"
+    ]
+  },
+  "sha256": "30b26c5852f8d9d2ef968d384e2f6e66f9749e3d2c9362353afc9bec61fa8028",
+  "bytes": 137959,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-18/evolution/report.html"
+}

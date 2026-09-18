@@ -2,12 +2,28 @@
   "projectRoot": "/Users/wuyanzu/Desktop/FC",
   "timezone": "Asia/Shanghai",
   "dailyTime": "03:00",
+  "dailySchedule": {
+    "note": "日任务按 5 分钟错开发起，避免同一分钟并发触发进入排队；汇总发布排在全部上游之后，并在 coordinate.mjs 内等待三个必需 run-state 快照（football / news / market），evolution 与 icons-heroes 为可选模块。",
+    "news": "03:00",
+    "market": "03:05",
+    "football": "03:10",
+    "evolution": "03:15",
+    "icons-heroes": "03:20",
+    "portal": "03:35"
+  },
+  "hourlySchedule": {
+    "note": "两条每小时任务只声明「每小时」，不声明分钟相位：WorkBuddy 定时规则不支持在 HOURLY 下指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定，可能落在任何分钟。两条任务都要写同一个 current.json，并发写冲突的防护应做在脚本层（锁文件或原子写），不要依赖调度相位。",
+    "market-hourly": "hourly",
+    "icons-pricerange-hourly": "hourly"
+  },
   "sharedRoot": "shared",
   "runStatePattern": "automation/runs/{DATE}",
   "dailyOutputPattern": "reports/daily/{DATE}",
   "fixedLocalIndex": "daily-merged/index.html",
   "fixedPublicUrl": "https://fc27-site.app.workbuddy.host/",
-  "consumers": ["WorkBuddy"],
+  "consumers": [
+    "WorkBuddy"
+  ],
   "publish": {
     "kind": "workbuddy-sites",
     "appName": "FC27每日情报台",
@@ -22,14 +38,86 @@
     "reuseUserChrome": true,
     "preflight": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs",
     "note": "唯一通道为 Web Access 技能（CDP Proxy :3456）直连用户日常 Chrome；extension/Chrome 插件模式已废弃。",
-    "forbidden": ["iab", "guest", "temporary-profile", "new-profile", "chrome-extension", "dumate-browser-cli", "agent-browser"]
+    "forbidden": [
+      "iab",
+      "guest",
+      "temporary-profile",
+      "new-profile",
+      "chrome-extension",
+      "dumate-browser-cli",
+      "agent-browser"
+    ]
   },
   "tasks": [
-    { "order": 1, "id": "football", "name": "足球日报", "enabled": true, "output": "football.html" },
-    { "order": 2, "id": "news", "name": "FC27资讯采集", "enabled": true, "output": "news.html" },
-    { "order": 3, "id": "market", "name": "FC27市场监控", "enabled": true, "output": "market.html" },
-    { "order": 4, "id": "evolution", "name": "FC27进化专栏", "enabled": true, "output": "evolution.html" },
-    { "order": 5, "id": "icons-heroes", "name": "FC27传奇/英雄卡监控", "enabled": true, "output": "icons-heroes.html" },
-    { "order": 6, "id": "portal", "name": "汇总链接", "enabled": true, "output": "summary.html" }
+    {
+      "order": 1,
+      "id": "football",
+      "name": "足球日报",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:10",
+      "output": "football.html"
+    },
+    {
+      "order": 2,
+      "id": "news",
+      "name": "FC27资讯采集",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:00",
+      "output": "news.html"
+    },
+    {
+      "order": 3,
+      "id": "market",
+      "name": "FC27市场监控",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:05",
+      "output": "market.html"
+    },
+    {
+      "order": 4,
+      "id": "evolution",
+      "name": "FC27进化专栏",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:15",
+      "output": "evolution.html"
+    },
+    {
+      "order": 5,
+      "id": "icons-heroes",
+      "name": "FC27传奇/英雄卡监控",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:20",
+      "output": "icons-heroes.html"
+    },
+    {
+      "order": 6,
+      "id": "portal",
+      "name": "汇总链接",
+      "enabled": true,
+      "scheduleType": "daily",
+      "scheduleTime": "03:35",
+      "output": "summary.html"
+    },
+    {
+      "order": 7,
+      "id": "icons-pricerange-hourly",
+      "name": "FC27传奇价格区间(每小时)",
+      "enabled": true,
+      "schedule": "hourly",
+      "output": "market-icons-research.html"
+    },
+    {
+      "order": 8,
+      "id": "market-hourly",
+      "name": "FC27市场价格(每小时)",
+      "enabled": true,
+      "schedule": "hourly",
+      "output": "market-watch.html"
+    }
   ]
 }

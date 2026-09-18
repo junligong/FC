@@ -1,0 +1,28 @@
+{
+  "hour": "T07",
+  "status": "failed",
+  "reason": "browser-channel-unavailable",
+  "collectedAt": null,
+  "evidence": {
+    "checkDepsExit": 1,
+    "attempts": [
+      { "at": "07:09+08", "action": "check-deps", "result": "exit 1, proxy 连接超时（log: Received network error or non-101 status code）" },
+      { "at": "07:11+08", "action": "check-deps 重试", "result": "exit 1, 同样非 101" },
+      { "at": "07:14+08", "action": "pkill cdp-proxy 后重启代理再自检", "result": "exit 1, 仍非 101" },
+      { "at": "07:16+08", "action": "裸 WS 握手探测 9222", "result": "请求无响应挂起（既非 101 也非拒绝）" },
+      { "at": "07:20+08", "action": "open -a Google Chrome chrome://inspect/#remote-debugging 推前台后重试", "result": "exit 1, 仍超时" }
+    ],
+    "context": {
+      "chromeMainPid": 49850,
+      "chromeStartedAt": "2026-09-18 06:04:12 +08（06 点整点成功采集之后约 1 分钟重启）",
+      "port9222": "LISTEN (lsof 确认)",
+      "devToolsActivePort": "存在, 内容 9222 + GUID, mtime 2026-09-18 06:04:16",
+      "localStateSwitch": "devtools.remote_debugging = {user-enabled: true}（持久化正常）",
+      "httpProbe": "/json/version 返回 HTTP 404（Content-Length:0）",
+      "wsProbe": "GET /devtools/browser/<GUID> 挂起无响应",
+      "cdpProxy": "重启后仍失败, 日志 /var/folders/d0/4_z8t9_j7sbbv3h5f10ws14c0000gn/T/cdp-proxy.log"
+    }
+  },
+  "consequence": "本轮未执行采集/打分/渲染/发布；current.json 与线上行情保留 06 点整点（generatedAt 22:03:12Z）有效结果，未用历史或 FC26 数据填充",
+  "remedy": "调试开关持久化正常但重启后调试服务卡死；需人工干预（如重启 Chrome 或重勾开关）后下一整点自动恢复"
+}

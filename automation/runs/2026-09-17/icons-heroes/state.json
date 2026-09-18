@@ -1,10 +1,53 @@
 {
   "module": "icons-heroes",
   "date": "2026-09-17",
-  "runId": "213a542c-310e-4089-8a94-4c6b4a567b26",
-  "status": "running",
-  "startedAt": "2026-09-17T01:46:03.115Z",
-  "deadlineAt": "2026-09-17T02:01:03.115Z",
+  "runId": "32edb6b3-533a-4cd1-b1b7-e6108ef09c4a",
+  "status": "partial",
+  "startedAt": "2026-09-17T07:28:09.037Z",
+  "deadlineAt": "2026-09-17T07:43:09.037Z",
   "reportPath": "reports/daily/2026-09-17/icons-heroes.html",
-  "previousAttempt": "automation/runs/2026-09-17/icons-heroes/attempts/adb415d7-98d7-4c64-9ded-a186c31d1ed5"
+  "completedAt": "2026-09-17T07:36:31.778Z",
+  "evidence": {
+    "date": "2026-09-17",
+    "runId": "32edb6b3-533a-4cd1-b1b7-e6108ef09c4a",
+    "module": "icons-heroes",
+    "status": "partial",
+    "rerun": true,
+    "rerunReason": "同日第二次重跑：① 为传奇卡（131 张）与 FC27 英雄卡（50 张）台账接入球员头像；② 修复头像解析的「同姓错配」缺陷（新增姓名词元一致性守卫）；③ FC26 参考对比区改为不出头像（FC26 卡 ID 与 FC27 头像库不同源，实测至少 6 张配错人）。报告价格数据与中文译名未变。",
+    "dataCutoff": "2026-09-17 10:02 +08:00（传奇/英雄采集快照）；2026-09-17 15:21 +08:00（价格区间并库）；2026-09-17 15:36 +08:00（头像链路重渲染与快照重提）",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/",
+        "openedAt": "2026-09-17T15:28:15+08:00",
+        "note": "重开核验（本轮实际打开）：站点首页可达（标题 EA FC 27 Ultimate Team Prices, Squad Builder, Draft and Players Database | FUTBIN），用于建立同源会话基准后再访问 /players。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=2",
+        "openedAt": "2026-09-17T15:28:22+08:00",
+        "note": "重开核验（本轮实际打开）：翻页参数在会话建立后有效；本页 30 行 td.table-name，其中 27 行带 Icon 版本标签；首两行「92 Puskás Icon」「92 Charlton Icon」。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=8",
+        "openedAt": "2026-09-17T15:28:38+08:00",
+        "note": "重开核验（本轮实际打开）：30 行，19 行含 Icon 版本标签，0 行 Base Heroes。"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=12",
+        "openedAt": "2026-09-17T15:28:47+08:00",
+        "note": "重开核验（本轮实际打开）：30 行全部含 Icon 版本标签，0 行 Base Heroes。页面可达，未命中 Cloudflare 挑战页。"
+      }
+    ],
+    "missing": [
+      "FC27 英雄卡头像覆盖 48/50（96%）：2 张英雄卡在本地球员库与 FUTBIN 头像键索引中均无记录，/27/playerhover/<cardId> 返回 noface，属真实缺口，渲染时留空不占位。",
+      "FC26 英雄卡参考对比区（93 张）**不出头像**，属有意设计而非缺失：FC26 的 FUTBIN 卡 ID 与 FC27 头像库不同源，复用 FC27 索引会命中同数值卡 ID 或同姓的另一个人（本轮实测 82 张里至少 6 张配错：Ledley King→Joshua King、Micah Richards→Chris Richards、Jill Scott→Alex Scott、Seydou Doumbia→Kamory Doumbia、Daniele De Rossi→Diego Rossi）。按「宁可缺图，不可配错人」的口径，该区一律不配图，并在页面上明确标注原因。",
+      "传奇卡区块 131/131 全部带图，但其中 2 张的 resourceId 在 canonical 球员库里存在重复登记（190042 同时登记为马拉多纳与 Sergio Agüero；168473 同时登记为贝肯鲍尔与 Rummenigge），这是 shared/data/fc27/players.json 的既有数据缺陷。渲染结果经 FUTBIN 卡 ID 通道核验为**正确**（190042 即马拉多纳、168473 即贝肯鲍尔），本条记录旨在说明 canonical 需另行修正，与本次头像渲染无关。"
+    ],
+    "missingItems": [
+      "FC27 英雄卡 2/50 无可用头像（FUTBIN 返回 noface）",
+      "FC26 参考对比区 93 张按口径不配头像（跨代卡 ID 不同源）"
+    ]
+  },
+  "sha256": "21173413fa2ef07e5e463b7e6ee003c6437b6bc84647cdb06ded1f176c5bda0a",
+  "bytes": 276677,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-17/icons-heroes/report.html"
 }

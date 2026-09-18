@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-17",
+  "runId": "f1bb9f35-54c3-4256-b4be-31f50bc30115",
+  "module": "evolution",
+  "status": "partial",
+  "rerun": true,
+  "rerunReason": "同日重跑：进化榜单补齐球员中文译名（nameZh），重渲染 evolution.html 后重提 run-state 快照并重新合并发布。",
+  "dataCutoff": "2026-09-17 03:47 +08:00（采集）；2026-09-17 10:56 +08:00（译名注入与重渲染）",
+  "sources": [
+    { "url": "https://www.futbin.com/27/popular/evolutions", "openedAt": "2026-09-17T10:50:29+08:00", "note": "重开核验：标题 EA FC 27 Popular Evolution Players | FUTBIN；div.popular-cards-wrapper 有 504 个直接子卡片（当日落库 500 条）；样例「81 Pedro Neto … Shooting Practice 799」与 evolution.json 一致。" },
+    { "url": "https://www.futbin.com/27/evolutions", "openedAt": "2026-09-17T10:51:19+08:00", "note": "重开核验：标题 EA FC 27 Player Evolutions | FUTBIN；div.evolutions-overview-wrapper 存在，内含 3 组进化路径（首个 Believe EVOLUTIONS NEW，82 LW LM ST R）。" },
+    { "url": "https://www.futbin.com/27/evolutions/expired", "openedAt": "2026-09-17T10:51:21+08:00", "note": "重开核验：页面可达、无 evolutions-overview-wrapper，页面未列出过期进化条目（过期数为 0 的如实显示）。" },
+    { "url": "https://www.futbin.com/27/players", "openedAt": "2026-09-17T10:49:16+08:00", "note": "重开核验：候选球员来源页可达（首访经 Cloudflare 挑战后通过），第一页 30 行读取成功。" }
+  ],
+  "counts": {
+    "evolutions": 500,
+    "withNameZh": 500,
+    "scannedNames": 500,
+    "missedNames": 0,
+    "popularEvolutionCardsOnPage": 504,
+    "routes": 14,
+    "zhCellsInReport": 500
+  },
+  "missing": [
+    "榜单条目数差异：重开 /27/popular/evolutions 时 div.popular-cards-wrapper 有 504 个直接子卡片，而 evolution.json 落库 500 条。差异原因未证实（抽取上限截断或日内新增），本轮未重新抽取、未改动落库；已如实记录，待下次 03:00 采集核对。",
+    "到期时间只有相对口径（UNLOCK / EXPIRES：入门系列 12 MONTHS，其余含 9 条新增均为 1 MONTHS），FUTBIN 未提供绝对到期日期，无法换算成具体日期。",
+    "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 具体内容；本轮未逐条打开 14 个详情页（预算与反爬风险），steps 字段按页面可得事实证明归纳。",
+    "部分路径未给出逐项属性数值升级表。"
+  ],
+  "notes": [
+    "中文译名（本轮新增能力）：写入 evolution.json 后运行 node apps/market/engine/scripts/apply-market-name-zh.mjs D --file automation/runs/D/evolution/evolution.json 注入 nameZh；本轮修复了 slugOfUrl 对「带版本后缀球员 URL」的匹配缺陷（/player/1272_8/pierre-emerick-aubameyang），使进化榜条目从按姓氏匹配改为按全名 slug 匹配（重名风险显著下降）：命中由 413/500 → 419/500 → 498/500 → 500/500。",
+    "本轮共补译 62 条进化榜球员译名并追加到 apps/market/engine/data/players/name-zh-supplement-fc27.json（只增不改）；未命中 0，进化榜 500/500 全部带中文名。",
+    "入库前逐条核对译名依据：通用音译按新华社口径；两个中国香港球员经公开资料核实（Yue Tze-Nam = 茹子楠、Wang-Kit Tsui = 徐宏杰），不猜测填充。",
+    "原词库中的空字符串占位（等于永久失配）已清理，避免同类问题复发。",
+    "渲染侧：render-evolution.mjs 输出 <span class=\"zh\">，evolution.html 中文单元格 500 个（500/500）。去重仍按「球员 URL + 进化名称」，不按球员名。",
+    "浏览器通道：web-access 技能（CDP Proxy :3456），check-deps.mjs exit 0；本轮创建的 4 个 tab 已全部 /close。未调用或探测 dumate-browser-cli / DUMATE_* / agent-browser / IAB / 新 profile。"
+  ]
+}

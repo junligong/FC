@@ -1,0 +1,5733 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-18",
+  "game": "fc27",
+  "cardType": "icon",
+  "cardLabel": "基础传奇",
+  "platform": "console+pc",
+  "platforms": [
+    "console",
+    "pc"
+  ],
+  "launchDate": "2026-09-25",
+  "capturedAt": "2026-09-18T10:03:49.596Z",
+  "recordedAt": "2026-09-18T10:03:54.739Z",
+  "priceBasis": "listing-estimate",
+  "priceBasisNote": "FC27 未开服（开服日 2026-09-25），FUTBIN 仅提供列表页占位/估算价，不是市场成交价，不能当作行情信号。",
+  "counts": {
+    "total": 131,
+    "valid": 100,
+    "missing": 31,
+    "platformValid": {
+      "console": 98,
+      "pc": 52
+    }
+  },
+  "priceRange": {
+    "scope": "card",
+    "scopeNote": "FUTBIN 详情页「Price Range」为卡级字段（同一张卡的 Console / PC 价格盒渲染同值），不按平台拆分。",
+    "withRange": 131,
+    "missing": 0,
+    "minFloor": 69000,
+    "maxCeiling": 15000000,
+    "collectedAt": "2026-09-18T10:03:49.596Z",
+    "sourceFile": "apps/market/engine/icons/data/prices/fc27/pricerange/latest.json"
+  },
+  "source": {
+    "name": "FUTBIN",
+    "listUrl": "https://www.futbin.com/27/players",
+    "rawFile": "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+    "capturedAt": "2026-09-18T10:03:49.596Z",
+    "note": "双平台当前价与价格区间来自逐小时详情页采集；名单与静态字段来自 apps/market/engine/icons/data/prices/fc27/base-icons.json。"
+  },
+  "players": [
+    {
+      "id": "21488",
+      "slug": "arantes-nascimento",
+      "nameZh": "贝利",
+      "name": "",
+      "rating": 95,
+      "pos": "CAM",
+      "altPos": [
+        "ST",
+        "ST"
+      ],
+      "six": {
+        "PAC": 93,
+        "SHO": 94,
+        "PAS": 91,
+        "DRI": 94,
+        "DEF": 58,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 12000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 12000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 75000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21488/arantes-nascimento"
+    },
+    {
+      "id": "21487",
+      "slug": "maradona",
+      "nameZh": "马拉多纳",
+      "name": "",
+      "rating": 95,
+      "pos": "CAM",
+      "altPos": [
+        "ST",
+        "ST"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 91,
+        "PAS": 91,
+        "DRI": 97,
+        "DEF": 40,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 5,
+      "weakFoot": 3,
+      "price": 13251000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 13251000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 75000,
+        "max": 14500000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21487/maradona"
+    },
+    {
+      "id": "21492",
+      "slug": "nazario-de-lima",
+      "nameZh": "罗纳尔多",
+      "name": "",
+      "rating": 94,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 94,
+        "SHO": 94,
+        "PAS": 79,
+        "DRI": 96,
+        "DEF": 43,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21492/nazario-de-lima"
+    },
+    {
+      "id": "21491",
+      "slug": "zidane",
+      "nameZh": "齐达内",
+      "name": "",
+      "rating": 94,
+      "pos": "CAM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 90,
+        "PAS": 94,
+        "DRI": 96,
+        "DEF": 73,
+        "PHY": 84
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": 9800000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 7999000,
+          "valid": true
+        },
+        "pc": {
+          "price": 9800000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 74000,
+        "max": 9800000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21491/zidane"
+    },
+    {
+      "id": "21503",
+      "slug": "franz-beckenbauer",
+      "nameZh": "贝肯鲍尔",
+      "name": "",
+      "rating": 93,
+      "pos": "CB",
+      "altPos": [
+        "CDM",
+        "CM",
+        "CDM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 73,
+        "PAS": 88,
+        "DRI": 79,
+        "DEF": 93,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 3100000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2222000,
+          "valid": true
+        },
+        "pc": {
+          "price": 3100000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 73000,
+        "max": 5900000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21503/franz-beckenbauer"
+    },
+    {
+      "id": "21495",
+      "slug": "franc-dos-santos",
+      "nameZh": "弗朗茨·贝肯鲍尔",
+      "name": "",
+      "rating": 93,
+      "pos": "RW",
+      "altPos": [
+        "RM",
+        "RM"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 87,
+        "PAS": 92,
+        "DRI": 96,
+        "DEF": 40,
+        "PHY": 66
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21495/franc-dos-santos"
+    },
+    {
+      "id": "21497",
+      "slug": "cruyff",
+      "nameZh": "克鲁伊夫",
+      "name": "",
+      "rating": 93,
+      "pos": "CAM",
+      "altPos": [
+        "ST",
+        "ST"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 91,
+        "PAS": 90,
+        "DRI": 94,
+        "DEF": 42,
+        "PHY": 73
+      },
+      "goldPlaystyles": [
+        "Tiki Taka"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21497/cruyff"
+    },
+    {
+      "id": "21501",
+      "slug": "de-assis-moreira",
+      "nameZh": "罗纳尔迪尼奥",
+      "name": "",
+      "rating": 93,
+      "pos": "LW",
+      "altPos": [
+        "LM",
+        "CAM",
+        "LM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 91,
+        "SHO": 89,
+        "PAS": 90,
+        "DRI": 96,
+        "DEF": 38,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Trickster"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 14000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 14000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 73000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21501/de-assis-moreira"
+    },
+    {
+      "id": "21499",
+      "slug": "maldini",
+      "nameZh": "马尔蒂尼",
+      "name": "",
+      "rating": 93,
+      "pos": "CB",
+      "altPos": [
+        "LB",
+        "LB"
+      ],
+      "six": {
+        "PAC": 85,
+        "SHO": 55,
+        "PAS": 75,
+        "DRI": 65,
+        "DEF": 95,
+        "PHY": 84
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 2,
+      "weakFoot": 4,
+      "price": 2899000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2899000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 73000,
+        "max": 8400000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21499/maldini"
+    },
+    {
+      "id": "21498",
+      "slug": "hamm",
+      "nameZh": "米娅·哈姆",
+      "name": "",
+      "rating": 93,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "RW",
+        "CAM",
+        "RW"
+      ],
+      "six": {
+        "PAC": 92,
+        "SHO": 93,
+        "PAS": 86,
+        "DRI": 93,
+        "DEF": 54,
+        "PHY": 81
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21498/hamm"
+    },
+    {
+      "id": "21507",
+      "slug": "angerer",
+      "nameZh": "安格勒",
+      "name": "",
+      "rating": 92,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 58,
+        "SHO": 22,
+        "PAS": 34,
+        "DRI": 13,
+        "DEF": 24,
+        "PHY": 60
+      },
+      "goldPlaystyles": [
+        "Far Reach"
+      ],
+      "skills": 1,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21507/angerer"
+    },
+    {
+      "id": "21514",
+      "slug": "charlton",
+      "nameZh": "博比·查尔顿",
+      "name": "",
+      "rating": 92,
+      "pos": "CAM",
+      "altPos": [
+        "CM",
+        "LM",
+        "LW",
+        "CM"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 91,
+        "PAS": 87,
+        "DRI": 92,
+        "DEF": 50,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 6300000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 6300000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 6300000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21514/charlton"
+    },
+    {
+      "id": "21519",
+      "slug": "buffon",
+      "nameZh": "布冯",
+      "name": "",
+      "rating": 92,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 50,
+        "SHO": 26,
+        "PAS": 36,
+        "DRI": 25,
+        "DEF": 19,
+        "PHY": 60
+      },
+      "goldPlaystyles": [
+        "Far Reach"
+      ],
+      "skills": 1,
+      "weakFoot": 2,
+      "price": 4000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 4000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "32 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21519/buffon"
+    },
+    {
+      "id": "21510",
+      "slug": "sinclair",
+      "nameZh": "克里斯汀·辛克莱",
+      "name": "",
+      "rating": 92,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 93,
+        "PAS": 86,
+        "DRI": 89,
+        "DEF": 54,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21510/sinclair"
+    },
+    {
+      "id": "21508",
+      "slug": "muller",
+      "nameZh": "穆勒",
+      "name": "",
+      "rating": 92,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 87,
+        "SHO": 92,
+        "PAS": 76,
+        "DRI": 80,
+        "DEF": 44,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21508/muller"
+    },
+    {
+      "id": "21511",
+      "slug": "prinz",
+      "nameZh": "普林茨",
+      "name": "",
+      "rating": 92,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 92,
+        "PAS": 80,
+        "DRI": 83,
+        "DEF": 52,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Enforcer"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 444000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 444000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21511/prinz"
+    },
+    {
+      "id": "21513",
+      "slug": "puskas",
+      "nameZh": "普斯卡什",
+      "name": "",
+      "rating": 92,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 90,
+        "SHO": 94,
+        "PAS": 89,
+        "DRI": 90,
+        "DEF": 45,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21513/puskas"
+    },
+    {
+      "id": "21509",
+      "slug": "iniesta-lujan",
+      "nameZh": "伊涅斯塔",
+      "name": "",
+      "rating": 92,
+      "pos": "CM",
+      "altPos": [
+        "LM",
+        "CAM",
+        "LW",
+        "LM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 80,
+        "PAS": 91,
+        "DRI": 93,
+        "DEF": 62,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 3000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1390000,
+          "valid": true
+        },
+        "pc": {
+          "price": 3000000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 5100000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21509/iniesta-lujan"
+    },
+    {
+      "id": "21524",
+      "slug": "baresi",
+      "nameZh": "巴雷西",
+      "name": "",
+      "rating": 91,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 75,
+        "SHO": 48,
+        "PAS": 75,
+        "DRI": 62,
+        "DEF": 94,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 330000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 310000,
+          "valid": true
+        },
+        "pc": {
+          "price": 330000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 600000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21524/baresi"
+    },
+    {
+      "id": "21530",
+      "slug": "baggio",
+      "nameZh": "巴乔",
+      "name": "",
+      "rating": 91,
+      "pos": "CAM",
+      "altPos": [
+        "ST",
+        "ST"
+      ],
+      "six": {
+        "PAC": 85,
+        "SHO": 86,
+        "PAS": 90,
+        "DRI": 93,
+        "DEF": 38,
+        "PHY": 65
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21530/baggio"
+    },
+    {
+      "id": "21539",
+      "slug": "van-basten",
+      "nameZh": "范巴斯滕",
+      "name": "",
+      "rating": 91,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 85,
+        "SHO": 93,
+        "PAS": 76,
+        "DRI": 87,
+        "DEF": 37,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Acrobatic"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 600000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 600000,
+          "valid": true
+        },
+        "pc": {
+          "price": 490000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 1300000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21539/van-basten"
+    },
+    {
+      "id": "21533",
+      "slug": "gullit",
+      "nameZh": "古利特",
+      "name": "",
+      "rating": 91,
+      "pos": "CAM",
+      "altPos": [
+        "CB",
+        "CDM",
+        "CM",
+        "ST"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 88,
+        "PAS": 89,
+        "DRI": 86,
+        "DEF": 80,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21533/gullit"
+    },
+    {
+      "id": "21523",
+      "slug": "hernandez-creus",
+      "nameZh": "哈维",
+      "name": "",
+      "rating": 91,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 80,
+        "SHO": 78,
+        "PAS": 92,
+        "DRI": 90,
+        "DEF": 69,
+        "PHY": 70
+      },
+      "goldPlaystyles": [
+        "Tiki Taka"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 680000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 680000,
+          "valid": true
+        },
+        "pc": {
+          "price": 670000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 2300000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21523/hernandez-creus"
+    },
+    {
+      "id": "21525",
+      "slug": "henry",
+      "nameZh": "亨利",
+      "name": "",
+      "rating": 91,
+      "pos": "ST",
+      "altPos": [
+        "LM",
+        "LW",
+        "LM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 93,
+        "SHO": 90,
+        "PAS": 84,
+        "DRI": 89,
+        "DEF": 51,
+        "PHY": 78
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 3760000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 3760000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 9700000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21525/henry"
+    },
+    {
+      "id": "21528",
+      "slug": "kahn",
+      "nameZh": "卡恩",
+      "name": "",
+      "rating": 91,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 58,
+        "SHO": 20,
+        "PAS": 33,
+        "DRI": 13,
+        "DEF": 16,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Far Reach"
+      ],
+      "skills": 1,
+      "weakFoot": 2,
+      "price": 1502000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1502000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21528/kahn"
+    },
+    {
+      "id": "21527",
+      "slug": "cafu",
+      "nameZh": "卡福",
+      "name": "",
+      "rating": 91,
+      "pos": "RB",
+      "altPos": [
+        "RM",
+        "RM"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 56,
+        "PAS": 84,
+        "DRI": 86,
+        "DEF": 88,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Relentless"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 15000000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21527/cafu"
+    },
+    {
+      "id": "21526",
+      "slug": "torres",
+      "nameZh": "卡洛斯·阿尔贝托·托雷斯",
+      "name": "",
+      "rating": 91,
+      "pos": "RB",
+      "altPos": [
+        "CB",
+        "CB"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 64,
+        "PAS": 82,
+        "DRI": 83,
+        "DEF": 88,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21526/torres"
+    },
+    {
+      "id": "21540",
+      "slug": "morgan",
+      "nameZh": "亚历克斯·摩根",
+      "name": "",
+      "rating": 91,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 93,
+        "SHO": 90,
+        "PAS": 80,
+        "DRI": 90,
+        "DEF": 48,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 4150000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 4150000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 12800000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21540/morgan"
+    },
+    {
+      "id": "21538",
+      "slug": "ibrahimovic",
+      "nameZh": "伊布拉希莫维奇",
+      "name": "",
+      "rating": 91,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 93,
+        "PAS": 82,
+        "DRI": 90,
+        "DEF": 46,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21538/ibrahimovic"
+    },
+    {
+      "id": "21531",
+      "slug": "antunes-coimbra",
+      "nameZh": "尤西比奥",
+      "name": "",
+      "rating": 91,
+      "pos": "CAM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 92,
+        "PAS": 91,
+        "DRI": 92,
+        "DEF": 62,
+        "PHY": 71
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": 9980000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 4993000,
+          "valid": true
+        },
+        "pc": {
+          "price": 9980000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 11000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21531/antunes-coimbra"
+    },
+    {
+      "id": "21548",
+      "slug": "da-silva-ferreira",
+      "nameZh": "尤西比奥",
+      "name": "",
+      "rating": 91,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 92,
+        "SHO": 92,
+        "PAS": 84,
+        "DRI": 94,
+        "DEF": 44,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 12999000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 12999000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 72000,
+        "max": 13100000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21548/da-silva-ferreira"
+    },
+    {
+      "id": "21534",
+      "slug": "sawa",
+      "nameZh": "泽穗希",
+      "name": "",
+      "rating": 91,
+      "pos": "CM",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 84,
+        "SHO": 87,
+        "PAS": 91,
+        "DRI": 91,
+        "DEF": 83,
+        "PHY": 76
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21534/sawa"
+    },
+    {
+      "id": "21558",
+      "slug": "abily",
+      "nameZh": "阿比利",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 89,
+        "PAS": 90,
+        "DRI": 88,
+        "DEF": 80,
+        "PHY": 78
+      },
+      "goldPlaystyles": [
+        "Tiki Taka"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 1499000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1499000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21558/abily"
+    },
+    {
+      "id": "21780",
+      "slug": "moore",
+      "nameZh": "博比·摩尔",
+      "name": "",
+      "rating": 90,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 74,
+        "SHO": 62,
+        "PAS": 81,
+        "DRI": 65,
+        "DEF": 92,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 950000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 950000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21780/moore"
+    },
+    {
+      "id": "21556",
+      "slug": "bergkamp",
+      "nameZh": "博格坎普",
+      "name": "",
+      "rating": 90,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 89,
+        "PAS": 85,
+        "DRI": 87,
+        "DEF": 35,
+        "PHY": 76
+      },
+      "goldPlaystyles": [
+        "First Touch"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 433000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 433000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 1500000,
+        "updatedText": "29 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21556/bergkamp"
+    },
+    {
+      "id": "21787",
+      "slug": "dalglish",
+      "nameZh": "达格利什",
+      "name": "",
+      "rating": 90,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 90,
+        "PAS": 83,
+        "DRI": 89,
+        "DEF": 41,
+        "PHY": 73
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 6300000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1990000,
+          "valid": true
+        },
+        "pc": {
+          "price": 6300000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 6300000,
+        "updatedText": "50 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21787/dalglish"
+    },
+    {
+      "id": "21565",
+      "slug": "del-piero",
+      "nameZh": "德尔·皮耶罗",
+      "name": "",
+      "rating": 90,
+      "pos": "CAM",
+      "altPos": [
+        "ST",
+        "ST"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 90,
+        "PAS": 87,
+        "DRI": 93,
+        "DEF": 41,
+        "PHY": 69
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 2100000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 849000,
+          "valid": true
+        },
+        "pc": {
+          "price": 2100000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 2900000,
+        "updatedText": "41 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21565/del-piero"
+    },
+    {
+      "id": "21555",
+      "slug": "madeira-caeiro-figo",
+      "nameZh": "菲戈",
+      "name": "",
+      "rating": 90,
+      "pos": "RW",
+      "altPos": [
+        "RM",
+        "CAM",
+        "RM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 84,
+        "PAS": 88,
+        "DRI": 92,
+        "DEF": 38,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 1363000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 550000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1363000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 2000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21555/madeira-caeiro-figo"
+    },
+    {
+      "id": "21562",
+      "slug": "foudy",
+      "nameZh": "福迪",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 80,
+        "SHO": 84,
+        "PAS": 88,
+        "DRI": 87,
+        "DEF": 76,
+        "PHY": 81
+      },
+      "goldPlaystyles": [
+        "Relentless"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 1250000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 350000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1250000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 1400000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21562/foudy"
+    },
+    {
+      "id": "21778",
+      "slug": "miyama",
+      "nameZh": "宫间绫",
+      "name": "",
+      "rating": 90,
+      "pos": "LM",
+      "altPos": [
+        "CM",
+        "CAM",
+        "LW",
+        "CM"
+      ],
+      "six": {
+        "PAC": 84,
+        "SHO": 86,
+        "PAS": 88,
+        "DRI": 89,
+        "DEF": 60,
+        "PHY": 70
+      },
+      "goldPlaystyles": [
+        "Gamechanger"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 440000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 392000,
+          "valid": true
+        },
+        "pc": {
+          "price": 440000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 1200000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21778/miyama"
+    },
+    {
+      "id": "21557",
+      "slug": "casillas-fernandez",
+      "nameZh": "卡西利亚斯",
+      "name": "",
+      "rating": 90,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 58,
+        "SHO": 36,
+        "PAS": 51,
+        "DRI": 29,
+        "DEF": 24,
+        "PHY": 57
+      },
+      "goldPlaystyles": [
+        "FootWork"
+      ],
+      "skills": 1,
+      "weakFoot": 3,
+      "price": 800000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 610000,
+          "valid": true
+        },
+        "pc": {
+          "price": 800000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 1800000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21557/casillas-fernandez"
+    },
+    {
+      "id": "21551",
+      "slug": "kroos",
+      "nameZh": "克罗斯",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 74,
+        "SHO": 82,
+        "PAS": 91,
+        "DRI": 84,
+        "DEF": 76,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 5,
+      "price": 650000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 640000,
+          "valid": true
+        },
+        "pc": {
+          "price": 650000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 2100000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21551/kroos"
+    },
+    {
+      "id": "21784",
+      "slug": "gonzalez-blanco",
+      "nameZh": "劳尔",
+      "name": "",
+      "rating": 90,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 90,
+        "PAS": 80,
+        "DRI": 85,
+        "DEF": 45,
+        "PHY": 72
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21784/gonzalez-blanco"
+    },
+    {
+      "id": "21567",
+      "slug": "borba-ferreira",
+      "nameZh": "里瓦尔多",
+      "name": "",
+      "rating": 90,
+      "pos": "LW",
+      "altPos": [
+        "LM",
+        "CAM",
+        "LM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 87,
+        "SHO": 88,
+        "PAS": 87,
+        "DRI": 92,
+        "DEF": 42,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 655000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 548000,
+          "valid": true
+        },
+        "pc": {
+          "price": 655000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 1900000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21567/borba-ferreira"
+    },
+    {
+      "id": "21779",
+      "slug": "dos-santos-leite",
+      "nameZh": "里瓦尔多",
+      "name": "",
+      "rating": 90,
+      "pos": "CAM",
+      "altPos": [],
+      "six": {
+        "PAC": 90,
+        "SHO": 85,
+        "PAS": 87,
+        "DRI": 92,
+        "DEF": 43,
+        "PHY": 71
+      },
+      "goldPlaystyles": [
+        "Rapid"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 15000000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21779/dos-santos-leite"
+    },
+    {
+      "id": "21781",
+      "slug": "rivellino",
+      "nameZh": "里维利诺",
+      "name": "",
+      "rating": 90,
+      "pos": "CAM",
+      "altPos": [
+        "LM",
+        "LW",
+        "LM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 87,
+        "SHO": 88,
+        "PAS": 90,
+        "DRI": 94,
+        "DEF": 46,
+        "PHY": 72
+      },
+      "goldPlaystyles": [
+        "Trickster"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 1242000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1242000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21781/rivellino"
+    },
+    {
+      "id": "21554",
+      "slug": "rooney",
+      "nameZh": "鲁尼",
+      "name": "",
+      "rating": 90,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 91,
+        "PAS": 84,
+        "DRI": 87,
+        "DEF": 59,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 1850000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1235000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1850000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 3000000,
+        "updatedText": "9 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21554/rooney"
+    },
+    {
+      "id": "21563",
+      "slug": "matthaus",
+      "nameZh": "马特乌斯",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CB",
+        "CDM",
+        "CB",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 88,
+        "SHO": 87,
+        "PAS": 88,
+        "DRI": 76,
+        "DEF": 89,
+        "PHY": 82
+      },
+      "goldPlaystyles": [
+        "Pinged Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21563/matthaus"
+    },
+    {
+      "id": "21552",
+      "slug": "pirlo",
+      "nameZh": "皮尔洛",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 75,
+        "SHO": 79,
+        "PAS": 93,
+        "DRI": 89,
+        "DEF": 69,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 1121000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1121000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21552/pirlo"
+    },
+    {
+      "id": "21568",
+      "slug": "best",
+      "nameZh": "乔治·贝斯特",
+      "name": "",
+      "rating": 90,
+      "pos": "RW",
+      "altPos": [
+        "RM",
+        "LM",
+        "CAM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 91,
+        "SHO": 89,
+        "PAS": 82,
+        "DRI": 93,
+        "DEF": 56,
+        "PHY": 69
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 2875000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2200000,
+          "valid": true
+        },
+        "pc": {
+          "price": 2875000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 4400000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21568/best"
+    },
+    {
+      "id": "21560",
+      "slug": "da-silva-rocha",
+      "nameZh": "儒尼尼奥",
+      "name": "",
+      "rating": 90,
+      "pos": "LB",
+      "altPos": [
+        "LM",
+        "LM"
+      ],
+      "six": {
+        "PAC": 91,
+        "SHO": 83,
+        "PAS": 83,
+        "DRI": 76,
+        "DEF": 85,
+        "PHY": 86
+      },
+      "goldPlaystyles": [
+        "Dead Ball"
+      ],
+      "skills": 3,
+      "weakFoot": 2,
+      "price": 1401000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 975000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1401000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 4500000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21560/da-silva-rocha"
+    },
+    {
+      "id": "21559",
+      "slug": "seger",
+      "nameZh": "塞格",
+      "name": "",
+      "rating": 90,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 79,
+        "PAS": 90,
+        "DRI": 85,
+        "DEF": 85,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Tiki Taka"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 888000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 888000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21559/seger"
+    },
+    {
+      "id": "21785",
+      "slug": "schelin",
+      "nameZh": "舍林",
+      "name": "",
+      "rating": 90,
+      "pos": "ST",
+      "altPos": [
+        "LM",
+        "LW",
+        "LM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 91,
+        "SHO": 89,
+        "PAS": 82,
+        "DRI": 91,
+        "DEF": 46,
+        "PHY": 82
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 1751000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1650000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1751000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 4200000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21785/schelin"
+    },
+    {
+      "id": "21810",
+      "slug": "shearer",
+      "nameZh": "阿兰·希勒",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 82,
+        "SHO": 91,
+        "PAS": 76,
+        "DRI": 79,
+        "DEF": 49,
+        "PHY": 86
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 550000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 550000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21810/shearer"
+    },
+    {
+      "id": "21805",
+      "slug": "eto-o",
+      "nameZh": "埃托奥",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 92,
+        "SHO": 90,
+        "PAS": 79,
+        "DRI": 87,
+        "DEF": 45,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 15000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "58 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21805/eto-o"
+    },
+    {
+      "id": "21834",
+      "slug": "batistuta",
+      "nameZh": "巴蒂斯图塔",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 86,
+        "SHO": 92,
+        "PAS": 74,
+        "DRI": 80,
+        "DEF": 38,
+        "PHY": 81
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 300000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 300000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 300000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21834/batistuta"
+    },
+    {
+      "id": "21841",
+      "slug": "butragueno-santos",
+      "nameZh": "布特拉格诺",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 92,
+        "SHO": 89,
+        "PAS": 78,
+        "DRI": 91,
+        "DEF": 40,
+        "PHY": 66
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 3,
+      "weakFoot": 5,
+      "price": 5900000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2740000,
+          "valid": true
+        },
+        "pc": {
+          "price": 5900000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 5900000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21841/butragueno-santos"
+    },
+    {
+      "id": "21869",
+      "slug": "drogba",
+      "nameZh": "德罗巴",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 87,
+        "SHO": 90,
+        "PAS": 74,
+        "DRI": 79,
+        "DEF": 44,
+        "PHY": 90
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 3900000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 780000,
+          "valid": true
+        },
+        "pc": {
+          "price": 3900000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 3900000,
+        "updatedText": "8 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21869/drogba"
+    },
+    {
+      "id": "21816",
+      "slug": "desailly",
+      "nameZh": "德塞利",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 51,
+        "PAS": 65,
+        "DRI": 59,
+        "DEF": 89,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 1000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21816/desailly"
+    },
+    {
+      "id": "21802",
+      "slug": "van-nistelrooy",
+      "nameZh": "范尼斯特鲁伊",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 89,
+        "PAS": 71,
+        "DRI": 82,
+        "DEF": 38,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 872000,
+          "valid": true
+        },
+        "pc": {
+          "price": 15000000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21802/van-nistelrooy"
+    },
+    {
+      "id": "21854",
+      "slug": "ferdinand",
+      "nameZh": "费迪南德",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 48,
+        "PAS": 65,
+        "DRI": 54,
+        "DEF": 90,
+        "PHY": 86
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21854/ferdinand"
+    },
+    {
+      "id": "21807",
+      "slug": "ventura-filho",
+      "nameZh": "加林查",
+      "name": "",
+      "rating": 89,
+      "pos": "RW",
+      "altPos": [
+        "RM",
+        "ST",
+        "RM",
+        "ST"
+      ],
+      "six": {
+        "PAC": 91,
+        "SHO": 89,
+        "PAS": 84,
+        "DRI": 93,
+        "DEF": 49,
+        "PHY": 73
+      },
+      "goldPlaystyles": [
+        "Rapid"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21807/ventura-filho"
+    },
+    {
+      "id": "21821",
+      "slug": "gerrard",
+      "nameZh": "杰拉德",
+      "name": "",
+      "rating": 89,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 80,
+        "SHO": 88,
+        "PAS": 89,
+        "DRI": 86,
+        "DEF": 78,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 4582000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 4582000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21821/gerrard"
+    },
+    {
+      "id": "21852",
+      "slug": "cannavaro",
+      "nameZh": "卡纳瓦罗",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 80,
+        "SHO": 44,
+        "PAS": 62,
+        "DRI": 57,
+        "DEF": 93,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Aerial Fortress"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21852/cannavaro"
+    },
+    {
+      "id": "21806",
+      "slug": "smith",
+      "nameZh": "凯莉·史密斯",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 88,
+        "SHO": 90,
+        "PAS": 84,
+        "DRI": 90,
+        "DEF": 46,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Dead Ball"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 599000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 599000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21806/smith"
+    },
+    {
+      "id": "21804",
+      "slug": "cantona",
+      "nameZh": "坎通纳",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 86,
+        "SHO": 89,
+        "PAS": 86,
+        "DRI": 89,
+        "DEF": 50,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Gamechanger"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 1933000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1933000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21804/cantona"
+    },
+    {
+      "id": "21809",
+      "slug": "koeman",
+      "nameZh": "科曼",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 86,
+        "PAS": 86,
+        "DRI": 76,
+        "DEF": 89,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Dead Ball"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21809/koeman"
+    },
+    {
+      "id": "21823",
+      "slug": "lahm",
+      "nameZh": "拉姆",
+      "name": "",
+      "rating": 89,
+      "pos": "RB",
+      "altPos": [
+        "LB",
+        "CDM",
+        "LB",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 84,
+        "SHO": 68,
+        "PAS": 85,
+        "DRI": 78,
+        "DEF": 86,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21823/lahm"
+    },
+    {
+      "id": "21843",
+      "slug": "lineker",
+      "nameZh": "莱因克尔",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 86,
+        "SHO": 89,
+        "PAS": 71,
+        "DRI": 83,
+        "DEF": 40,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 290000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 290000,
+          "valid": true
+        },
+        "pc": {
+          "price": 285000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 500000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21843/lineker"
+    },
+    {
+      "id": "21844",
+      "slug": "lampard",
+      "nameZh": "兰帕德",
+      "name": "",
+      "rating": 89,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 91,
+        "PAS": 88,
+        "DRI": 85,
+        "DEF": 75,
+        "PHY": 81
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21844/lampard"
+    },
+    {
+      "id": "21815",
+      "slug": "da-silva-ferreira",
+      "nameZh": "卢西奥",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 82,
+        "SHO": 72,
+        "PAS": 74,
+        "DRI": 75,
+        "DEF": 91,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Aerial Fortress"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21815/da-silva-ferreira"
+    },
+    {
+      "id": "21811",
+      "slug": "keane",
+      "nameZh": "罗比·基恩",
+      "name": "",
+      "rating": 89,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 74,
+        "PAS": 82,
+        "DRI": 80,
+        "DEF": 88,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Pinged Pass"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 800000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 800000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21811/keane"
+    },
+    {
+      "id": "21812",
+      "slug": "nedved",
+      "nameZh": "内德维德",
+      "name": "",
+      "rating": 89,
+      "pos": "LM",
+      "altPos": [
+        "CAM",
+        "LW",
+        "CAM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 86,
+        "PAS": 87,
+        "DRI": 89,
+        "DEF": 58,
+        "PHY": 77
+      },
+      "goldPlaystyles": [
+        "Gamechanger"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 420000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 420000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21812/nedved"
+    },
+    {
+      "id": "21833",
+      "slug": "nesta",
+      "nameZh": "内斯塔",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 76,
+        "SHO": 44,
+        "PAS": 63,
+        "DRI": 64,
+        "DEF": 92,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Block"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 15000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21833/nesta"
+    },
+    {
+      "id": "21822",
+      "slug": "lima-ferreira",
+      "nameZh": "佩佩",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 78,
+        "SHO": 51,
+        "PAS": 61,
+        "DRI": 58,
+        "DEF": 90,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 1100000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1100000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21822/lima-ferreira"
+    },
+    {
+      "id": "21831",
+      "slug": "puyol-saforcada",
+      "nameZh": "普约尔",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [
+        "RB",
+        "RB"
+      ],
+      "six": {
+        "PAC": 75,
+        "SHO": 46,
+        "PAS": 66,
+        "DRI": 50,
+        "DEF": 91,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Slide Tackle"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 240000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 238000,
+          "valid": true
+        },
+        "pc": {
+          "price": 240000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 800000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21831/puyol-saforcada"
+    },
+    {
+      "id": "21826",
+      "slug": "jones",
+      "nameZh": "琼斯",
+      "name": "",
+      "rating": 89,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 80,
+        "SHO": 59,
+        "PAS": 74,
+        "DRI": 64,
+        "DEF": 91,
+        "PHY": 86
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 304000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 304000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 1100000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21826/jones"
+    },
+    {
+      "id": "21824",
+      "slug": "papin",
+      "nameZh": "让-皮埃尔·帕潘",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 83,
+        "SHO": 93,
+        "PAS": 73,
+        "DRI": 79,
+        "DEF": 44,
+        "PHY": 76
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 499000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 499000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21824/papin"
+    },
+    {
+      "id": "21829",
+      "slug": "vieira-de-oliveira",
+      "nameZh": "儒尼尼奥",
+      "name": "",
+      "rating": 89,
+      "pos": "CAM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 88,
+        "PAS": 89,
+        "DRI": 90,
+        "DEF": 43,
+        "PHY": 82
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 1140000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 660000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1140000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 2500000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21829/vieira-de-oliveira"
+    },
+    {
+      "id": "21835",
+      "slug": "zanetti",
+      "nameZh": "萨内蒂",
+      "name": "",
+      "rating": 89,
+      "pos": "RB",
+      "altPos": [
+        "LB",
+        "CDM",
+        "RM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 60,
+        "PAS": 85,
+        "DRI": 77,
+        "DEF": 86,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Relentless"
+      ],
+      "skills": 2,
+      "weakFoot": 4,
+      "price": 489000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 489000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21835/zanetti"
+    },
+    {
+      "id": "21803",
+      "slug": "aguero",
+      "nameZh": "塞尔吉奥·阿圭罗",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 88,
+        "SHO": 90,
+        "PAS": 78,
+        "DRI": 88,
+        "DEF": 33,
+        "PHY": 74
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 2000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21803/aguero"
+    },
+    {
+      "id": "21828",
+      "slug": "sanchez",
+      "nameZh": "桑切斯",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 89,
+        "SHO": 90,
+        "PAS": 78,
+        "DRI": 90,
+        "DEF": 41,
+        "PHY": 73
+      },
+      "goldPlaystyles": [
+        "Acrobatic"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 515000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 409000,
+          "valid": true
+        },
+        "pc": {
+          "price": 515000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 1700000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21828/sanchez"
+    },
+    {
+      "id": "21846",
+      "slug": "shevchenko",
+      "nameZh": "舍甫琴科",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [
+        "RW",
+        "RW"
+      ],
+      "six": {
+        "PAC": 87,
+        "SHO": 90,
+        "PAS": 72,
+        "DRI": 88,
+        "DEF": 35,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 600000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 310000,
+          "valid": true
+        },
+        "pc": {
+          "price": 600000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 900000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21846/shevchenko"
+    },
+    {
+      "id": "21813",
+      "slug": "schmeichel",
+      "nameZh": "舒梅切尔",
+      "name": "",
+      "rating": 89,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 46,
+        "SHO": 38,
+        "PAS": 40,
+        "DRI": 30,
+        "DEF": 26,
+        "PHY": 70
+      },
+      "goldPlaystyles": [
+        "Far Throw"
+      ],
+      "skills": 1,
+      "weakFoot": 3,
+      "price": 599000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 599000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "41 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21813/schmeichel"
+    },
+    {
+      "id": "21864",
+      "slug": "scholes",
+      "nameZh": "斯科尔斯",
+      "name": "",
+      "rating": 89,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 79,
+        "SHO": 85,
+        "PAS": 90,
+        "DRI": 87,
+        "DEF": 68,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 200000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21864/scholes"
+    },
+    {
+      "id": "21817",
+      "slug": "stoichkov",
+      "nameZh": "斯托伊奇科夫",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [
+        "RW",
+        "LW",
+        "RW",
+        "LW"
+      ],
+      "six": {
+        "PAC": 90,
+        "SHO": 91,
+        "PAS": 84,
+        "DRI": 91,
+        "DEF": 49,
+        "PHY": 84
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21817/stoichkov"
+    },
+    {
+      "id": "21819",
+      "slug": "thuram",
+      "nameZh": "图拉姆",
+      "name": "",
+      "rating": 89,
+      "pos": "RB",
+      "altPos": [
+        "CB",
+        "CB"
+      ],
+      "six": {
+        "PAC": 88,
+        "SHO": 58,
+        "PAS": 76,
+        "DRI": 71,
+        "DEF": 90,
+        "PHY": 90
+      },
+      "goldPlaystyles": [
+        "Jockey"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21819/thuram"
+    },
+    {
+      "id": "21814",
+      "slug": "totti",
+      "nameZh": "托蒂",
+      "name": "",
+      "rating": 89,
+      "pos": "ST",
+      "altPos": [
+        "CAM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 85,
+        "SHO": 91,
+        "PAS": 89,
+        "DRI": 90,
+        "DEF": 40,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Power Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 5600000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1280000,
+          "valid": true
+        },
+        "pc": {
+          "price": 5600000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 5600000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21814/totti"
+    },
+    {
+      "id": "21839",
+      "slug": "vieira-da-silva",
+      "nameZh": "维埃拉",
+      "name": "",
+      "rating": 89,
+      "pos": "LB",
+      "altPos": [],
+      "six": {
+        "PAC": 87,
+        "SHO": 72,
+        "PAS": 87,
+        "DRI": 89,
+        "DEF": 83,
+        "PHY": 76
+      },
+      "goldPlaystyles": [
+        "First Touch"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 2250000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 789000,
+          "valid": true
+        },
+        "pc": {
+          "price": 2250000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 70000,
+        "max": 3400000,
+        "updatedText": "39 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21839/vieira-da-silva"
+    },
+    {
+      "id": "21935",
+      "slug": "alonso-olano",
+      "nameZh": "阿隆索",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 74,
+        "SHO": 77,
+        "PAS": 86,
+        "DRI": 76,
+        "DEF": 83,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21935/alonso-olano"
+    },
+    {
+      "id": "21938",
+      "slug": "cole",
+      "nameZh": "阿什利·科尔",
+      "name": "",
+      "rating": 88,
+      "pos": "LB",
+      "altPos": [],
+      "six": {
+        "PAC": 88,
+        "SHO": 65,
+        "PAS": 79,
+        "DRI": 78,
+        "DEF": 86,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Jockey"
+      ],
+      "skills": 3,
+      "weakFoot": 2,
+      "price": 970000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 399000,
+          "valid": true
+        },
+        "pc": {
+          "price": 970000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1200000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21938/cole"
+    },
+    {
+      "id": "21941",
+      "slug": "essien",
+      "nameZh": "埃辛",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 73,
+        "PAS": 77,
+        "DRI": 73,
+        "DEF": 86,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 1901000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 751000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1901000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 2100000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21941/essien"
+    },
+    {
+      "id": "21916",
+      "slug": "barnes",
+      "nameZh": "巴恩斯",
+      "name": "",
+      "rating": 88,
+      "pos": "LW",
+      "altPos": [
+        "LM",
+        "CAM",
+        "LM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 85,
+        "PAS": 83,
+        "DRI": 92,
+        "DEF": 44,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Gamechanger"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 650000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 346000,
+          "valid": true
+        },
+        "pc": {
+          "price": 650000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1400000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21916/barnes"
+    },
+    {
+      "id": "21901",
+      "slug": "bale",
+      "nameZh": "贝尔",
+      "name": "",
+      "rating": 88,
+      "pos": "RW",
+      "altPos": [
+        "RM",
+        "LM",
+        "ST",
+        "LW"
+      ],
+      "six": {
+        "PAC": 95,
+        "SHO": 89,
+        "PAS": 84,
+        "DRI": 90,
+        "DEF": 65,
+        "PHY": 79
+      },
+      "goldPlaystyles": [
+        "Rapid"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 2950000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2950000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 8100000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21901/bale"
+    },
+    {
+      "id": "21878",
+      "slug": "beckham",
+      "nameZh": "贝克汉姆",
+      "name": "",
+      "rating": 88,
+      "pos": "RM",
+      "altPos": [
+        "CM",
+        "RW",
+        "CM",
+        "RW"
+      ],
+      "six": {
+        "PAC": 80,
+        "SHO": 86,
+        "PAS": 92,
+        "DRI": 84,
+        "DEF": 66,
+        "PHY": 80
+      },
+      "goldPlaystyles": [
+        "Dead Ball"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 601000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 601000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21878/beckham"
+    },
+    {
+      "id": "21880",
+      "slug": "blanc",
+      "nameZh": "布兰科",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [
+        "CDM",
+        "CM",
+        "CAM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 75,
+        "PAS": 75,
+        "DRI": 76,
+        "DEF": 90,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "24 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21880/blanc"
+    },
+    {
+      "id": "21899",
+      "slug": "cha",
+      "nameZh": "车范根",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [
+        "RM",
+        "RW",
+        "RM",
+        "RW"
+      ],
+      "six": {
+        "PAC": 88,
+        "SHO": 87,
+        "PAS": 78,
+        "DRI": 87,
+        "DEF": 60,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 2000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21899/cha"
+    },
+    {
+      "id": "21902",
+      "slug": "douglas-sisenando",
+      "nameZh": "道格拉斯",
+      "name": "",
+      "rating": 88,
+      "pos": "RB",
+      "altPos": [
+        "RM",
+        "RM"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 82,
+        "PAS": 81,
+        "DRI": 84,
+        "DEF": 83,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Whipped Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 830000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 750000,
+          "valid": true
+        },
+        "pc": {
+          "price": 830000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1400000,
+        "updatedText": "37 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21902/douglas-sisenando"
+    },
+    {
+      "id": "21945",
+      "slug": "van-der-sar",
+      "nameZh": "范德萨",
+      "name": "",
+      "rating": 88,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 38,
+        "SHO": 18,
+        "PAS": 39,
+        "DRI": 8,
+        "DEF": 13,
+        "PHY": 58
+      },
+      "goldPlaystyles": [
+        "Rush Out"
+      ],
+      "skills": 1,
+      "weakFoot": 3,
+      "price": 720000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 493000,
+          "valid": true
+        },
+        "pc": {
+          "price": 720000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1700000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21945/van-der-sar"
+    },
+    {
+      "id": "21882",
+      "slug": "van-persie",
+      "nameZh": "范佩西",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 91,
+        "PAS": 84,
+        "DRI": 87,
+        "DEF": 45,
+        "PHY": 73
+      },
+      "goldPlaystyles": [
+        "First Touch"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21882/van-persie"
+    },
+    {
+      "id": "21911",
+      "slug": "hagi",
+      "nameZh": "哈吉",
+      "name": "",
+      "rating": 88,
+      "pos": "CAM",
+      "altPos": [
+        "CM",
+        "LM",
+        "LW",
+        "CM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 87,
+        "PAS": 88,
+        "DRI": 89,
+        "DEF": 41,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Dead Ball"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 550000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 327000,
+          "valid": true
+        },
+        "pc": {
+          "price": 550000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1000000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21911/hagi"
+    },
+    {
+      "id": "21932",
+      "slug": "chiellini",
+      "nameZh": "基耶利尼",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 78,
+        "SHO": 55,
+        "PAS": 62,
+        "DRI": 57,
+        "DEF": 92,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 900000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 860000,
+          "valid": true
+        },
+        "pc": {
+          "price": 900000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 2700000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21932/chiellini"
+    },
+    {
+      "id": "21877",
+      "slug": "lima-do-amor",
+      "nameZh": "加林查",
+      "name": "",
+      "rating": 88,
+      "pos": "CAM",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 89,
+        "PAS": 88,
+        "DRI": 88,
+        "DEF": 41,
+        "PHY": 69
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 3,
+      "price": 1150000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 450000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1150000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1300000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21877/lima-do-amor"
+    },
+    {
+      "id": "21920",
+      "slug": "gattuso",
+      "nameZh": "加图索",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 76,
+        "SHO": 62,
+        "PAS": 69,
+        "DRI": 64,
+        "DEF": 88,
+        "PHY": 88
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 225000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 225000,
+          "valid": true
+        },
+        "pc": {
+          "price": 180000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 500000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21920/gattuso"
+    },
+    {
+      "id": "21888",
+      "slug": "hurst",
+      "nameZh": "杰夫·赫斯特",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 91,
+        "PAS": 72,
+        "DRI": 80,
+        "DEF": 39,
+        "PHY": 78
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 5,
+      "price": 900000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 900000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "22 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21888/hurst"
+    },
+    {
+      "id": "21924",
+      "slug": "bledorn-verri",
+      "nameZh": "卡福",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "CM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 76,
+        "SHO": 77,
+        "PAS": 82,
+        "DRI": 80,
+        "DEF": 87,
+        "PHY": 85
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 300000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21924/bledorn-verri"
+    },
+    {
+      "id": "21889",
+      "slug": "campbell",
+      "nameZh": "坎贝尔",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 81,
+        "SHO": 45,
+        "PAS": 60,
+        "DRI": 50,
+        "DEF": 89,
+        "PHY": 89
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 750000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 660000,
+          "valid": true
+        },
+        "pc": {
+          "price": 750000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1300000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21889/campbell"
+    },
+    {
+      "id": "21890",
+      "slug": "crespo",
+      "nameZh": "克雷斯波",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 88,
+        "SHO": 88,
+        "PAS": 71,
+        "DRI": 88,
+        "DEF": 36,
+        "PHY": 71
+      },
+      "goldPlaystyles": [
+        "Precision Header"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 400000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 400000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21890/crespo"
+    },
+    {
+      "id": "21884",
+      "slug": "klose",
+      "nameZh": "克洛泽",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 86,
+        "SHO": 87,
+        "PAS": 73,
+        "DRI": 80,
+        "DEF": 40,
+        "PHY": 79
+      },
+      "goldPlaystyles": [
+        "Precision Header"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 800000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 453000,
+          "valid": true
+        },
+        "pc": {
+          "price": 800000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21884/klose"
+    },
+    {
+      "id": "21914",
+      "slug": "mario-alberto-kempes",
+      "nameZh": "肯佩斯",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [
+        "LM",
+        "CAM",
+        "LW",
+        "LM"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 91,
+        "PAS": 77,
+        "DRI": 85,
+        "DEF": 47,
+        "PHY": 82
+      },
+      "goldPlaystyles": [
+        "Low Driven Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 500000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 500000,
+          "valid": true
+        },
+        "pc": {
+          "price": 500000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 800000,
+        "updatedText": "52 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21914/mario-alberto-kempes"
+    },
+    {
+      "id": "21875",
+      "slug": "varane",
+      "nameZh": "拉斐尔·瓦拉内",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 84,
+        "SHO": 49,
+        "PAS": 66,
+        "DRI": 67,
+        "DEF": 88,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Anticipate"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 2000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 2000000,
+        "updatedText": "24 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21875/varane"
+    },
+    {
+      "id": "21903",
+      "slug": "rush",
+      "nameZh": "拉什",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 85,
+        "SHO": 90,
+        "PAS": 69,
+        "DRI": 84,
+        "DEF": 43,
+        "PHY": 79
+      },
+      "goldPlaystyles": [
+        "Gamechanger"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 200000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 160000,
+          "valid": true
+        },
+        "pc": {
+          "price": 200000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 400000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21903/rush"
+    },
+    {
+      "id": "21915",
+      "slug": "laudrup",
+      "nameZh": "劳德鲁普",
+      "name": "",
+      "rating": 88,
+      "pos": "CAM",
+      "altPos": [
+        "LM",
+        "LW",
+        "LM",
+        "LW"
+      ],
+      "six": {
+        "PAC": 84,
+        "SHO": 82,
+        "PAS": 89,
+        "DRI": 92,
+        "DEF": 40,
+        "PHY": 64
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 390000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 330000,
+          "valid": true
+        },
+        "pc": {
+          "price": 390000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 800000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21915/laudrup"
+    },
+    {
+      "id": "21893",
+      "slug": "ribery",
+      "nameZh": "里贝里",
+      "name": "",
+      "rating": 88,
+      "pos": "LM",
+      "altPos": [
+        "LW",
+        "LW"
+      ],
+      "six": {
+        "PAC": 89,
+        "SHO": 85,
+        "PAS": 85,
+        "DRI": 91,
+        "DEF": 37,
+        "PHY": 67
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 5,
+      "weakFoot": 5,
+      "price": 1180000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1180000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 3900000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21893/ribery"
+    },
+    {
+      "id": "21883",
+      "slug": "rijkaard",
+      "nameZh": "里杰卡尔德",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "CB",
+        "CM",
+        "CB",
+        "CM"
+      ],
+      "six": {
+        "PAC": 77,
+        "SHO": 76,
+        "PAS": 80,
+        "DRI": 75,
+        "DEF": 87,
+        "PHY": 87
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 14000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 14000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21883/rijkaard"
+    },
+    {
+      "id": "21925",
+      "slug": "riquelme",
+      "nameZh": "里克尔梅",
+      "name": "",
+      "rating": 88,
+      "pos": "CAM",
+      "altPos": [],
+      "six": {
+        "PAC": 74,
+        "SHO": 85,
+        "PAS": 90,
+        "DRI": 92,
+        "DEF": 33,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Inventive"
+      ],
+      "skills": 5,
+      "weakFoot": 4,
+      "price": 399000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 340000,
+          "valid": true
+        },
+        "pc": {
+          "price": 399000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21925/riquelme"
+    },
+    {
+      "id": "21874",
+      "slug": "makelele",
+      "nameZh": "马克莱莱",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "RM",
+        "CM",
+        "RM",
+        "CM"
+      ],
+      "six": {
+        "PAC": 81,
+        "SHO": 48,
+        "PAS": 76,
+        "DRI": 70,
+        "DEF": 88,
+        "PHY": 87
+      },
+      "goldPlaystyles": [
+        "Intercept"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 1250000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1200000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1250000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21874/makelele"
+    },
+    {
+      "id": "21908",
+      "slug": "owen",
+      "nameZh": "迈克尔·欧文",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 89,
+        "SHO": 88,
+        "PAS": 69,
+        "DRI": 89,
+        "DEF": 35,
+        "PHY": 68
+      },
+      "goldPlaystyles": [
+        "Quick Step"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 650000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 650000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21908/owen"
+    },
+    {
+      "id": "21886",
+      "slug": "petit",
+      "nameZh": "佩蒂特",
+      "name": "",
+      "rating": 88,
+      "pos": "CDM",
+      "altPos": [
+        "LB",
+        "CM",
+        "LB",
+        "CM"
+      ],
+      "six": {
+        "PAC": 77,
+        "SHO": 77,
+        "PAS": 79,
+        "DRI": 70,
+        "DEF": 85,
+        "PHY": 87
+      },
+      "goldPlaystyles": [
+        "Relentless"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 750000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 750000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "52 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21886/petit"
+    },
+    {
+      "id": "21896",
+      "slug": "pires",
+      "nameZh": "皮雷",
+      "name": "",
+      "rating": 88,
+      "pos": "LM",
+      "altPos": [
+        "RM",
+        "CAM",
+        "RW",
+        "LW"
+      ],
+      "six": {
+        "PAC": 86,
+        "SHO": 81,
+        "PAS": 86,
+        "DRI": 88,
+        "DEF": 38,
+        "PHY": 67
+      },
+      "goldPlaystyles": [
+        "Technical"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 1000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 800000,
+          "valid": true
+        },
+        "pc": {
+          "price": 1000000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "17 secs ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21896/pires"
+    },
+    {
+      "id": "21879",
+      "slug": "pichon",
+      "nameZh": "皮琼",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 85,
+        "SHO": 89,
+        "PAS": 80,
+        "DRI": 88,
+        "DEF": 44,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Acrobatic"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 699000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 699000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21879/pichon"
+    },
+    {
+      "id": "21887",
+      "slug": "cech",
+      "nameZh": "切赫",
+      "name": "",
+      "rating": 88,
+      "pos": "GK",
+      "altPos": [],
+      "six": {
+        "PAC": 54,
+        "SHO": 22,
+        "PAS": 37,
+        "DRI": 18,
+        "DEF": 22,
+        "PHY": 60
+      },
+      "goldPlaystyles": [
+        "Deflector"
+      ],
+      "skills": 1,
+      "weakFoot": 3,
+      "price": 582000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 582000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21887/cech"
+    },
+    {
+      "id": "21897",
+      "slug": "schweinsteiger",
+      "nameZh": "施魏因斯泰格",
+      "name": "",
+      "rating": 88,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "RM",
+        "LM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 78,
+        "SHO": 83,
+        "PAS": 86,
+        "DRI": 81,
+        "DEF": 83,
+        "PHY": 83
+      },
+      "goldPlaystyles": [
+        "Long Ball Pass"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": null,
+      "priceValid": false,
+      "platforms": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21897/schweinsteiger"
+    },
+    {
+      "id": "21881",
+      "slug": "torres-sanz",
+      "nameZh": "托雷斯",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 90,
+        "SHO": 87,
+        "PAS": 76,
+        "DRI": 88,
+        "DEF": 43,
+        "PHY": 75
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 1500000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 1500000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21881/torres-sanz"
+    },
+    {
+      "id": "21898",
+      "slug": "vieira",
+      "nameZh": "维埃拉",
+      "name": "",
+      "rating": 88,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 82,
+        "SHO": 78,
+        "PAS": 80,
+        "DRI": 82,
+        "DEF": 88,
+        "PHY": 90
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 3,
+      "weakFoot": 3,
+      "price": 7200000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 6000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 7200000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 7200000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21898/vieira"
+    },
+    {
+      "id": "21919",
+      "slug": "vidic",
+      "nameZh": "维迪奇",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [],
+      "six": {
+        "PAC": 79,
+        "SHO": 48,
+        "PAS": 62,
+        "DRI": 50,
+        "DEF": 90,
+        "PHY": 90
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 2000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21919/vidic"
+    },
+    {
+      "id": "21885",
+      "slug": "toure",
+      "nameZh": "亚亚·图雷",
+      "name": "",
+      "rating": 88,
+      "pos": "CM",
+      "altPos": [
+        "CDM",
+        "CAM",
+        "CDM",
+        "CAM"
+      ],
+      "six": {
+        "PAC": 80,
+        "SHO": 85,
+        "PAS": 89,
+        "DRI": 83,
+        "DEF": 81,
+        "PHY": 90
+      },
+      "goldPlaystyles": [
+        "Incisive Pass"
+      ],
+      "skills": 4,
+      "weakFoot": 4,
+      "price": 4496000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 2360000,
+          "valid": true
+        },
+        "pc": {
+          "price": 4496000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 4500000,
+        "updatedText": "1 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21885/toure"
+    },
+    {
+      "id": "21918",
+      "slug": "hierro-ruiz",
+      "nameZh": "耶罗",
+      "name": "",
+      "rating": 88,
+      "pos": "CB",
+      "altPos": [
+        "CDM",
+        "CDM"
+      ],
+      "six": {
+        "PAC": 75,
+        "SHO": 75,
+        "PAS": 76,
+        "DRI": 64,
+        "DEF": 92,
+        "PHY": 84
+      },
+      "goldPlaystyles": [
+        "Bruiser"
+      ],
+      "skills": 2,
+      "weakFoot": 3,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 15000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21918/hierro-ruiz"
+    },
+    {
+      "id": "21892",
+      "slug": "wright",
+      "nameZh": "伊恩·赖特",
+      "name": "",
+      "rating": 88,
+      "pos": "ST",
+      "altPos": [],
+      "six": {
+        "PAC": 89,
+        "SHO": 89,
+        "PAS": 70,
+        "DRI": 80,
+        "DEF": 40,
+        "PHY": 76
+      },
+      "goldPlaystyles": [
+        "Finesse Shot"
+      ],
+      "skills": 3,
+      "weakFoot": 4,
+      "price": 15000000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 15000000,
+          "valid": true
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21892/wright"
+    },
+    {
+      "id": "21876",
+      "slug": "nagasato",
+      "nameZh": "永里优季",
+      "name": "",
+      "rating": 88,
+      "pos": "CAM",
+      "altPos": [
+        "RM",
+        "RW",
+        "ST",
+        "RM"
+      ],
+      "six": {
+        "PAC": 83,
+        "SHO": 88,
+        "PAS": 84,
+        "DRI": 87,
+        "DEF": 47,
+        "PHY": 78
+      },
+      "goldPlaystyles": [
+        "First Touch"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 500000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 488000,
+          "valid": true
+        },
+        "pc": {
+          "price": 500000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 500000,
+        "updatedText": "3 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21876/nagasato"
+    },
+    {
+      "id": "21917",
+      "slug": "zambrotta",
+      "nameZh": "赞布罗塔",
+      "name": "",
+      "rating": 88,
+      "pos": "RB",
+      "altPos": [
+        "LB",
+        "RM",
+        "LM",
+        "LB"
+      ],
+      "six": {
+        "PAC": 88,
+        "SHO": 69,
+        "PAS": 81,
+        "DRI": 81,
+        "DEF": 85,
+        "PHY": 82
+      },
+      "goldPlaystyles": [
+        "Relentless"
+      ],
+      "skills": 4,
+      "weakFoot": 5,
+      "price": 890000,
+      "priceValid": true,
+      "platforms": {
+        "console": {
+          "price": 395000,
+          "valid": true
+        },
+        "pc": {
+          "price": 890000,
+          "valid": true
+        }
+      },
+      "priceRange": {
+        "min": 69000,
+        "max": 1600000,
+        "updatedText": "2 mins ago",
+        "fetchedAt": "2026-09-18T10:03:49.596Z"
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21917/zambrotta"
+    }
+  ]
+}

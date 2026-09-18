@@ -39,6 +39,17 @@ const EVOLUTION_SOURCE = { id: 'evolution-column', title: '进化专栏', fileNa
 // 研究（跨日期研究底稿 fc27-icon-analysis.html）。视图键为 'legend'，与 dashboard.mjs 的 LEGEND_TAB.view 对齐。
 const LEGEND_SOURCE = { id: 'legend-column', title: '传奇/英雄专栏' };
 
+// FC26 球员回顾：跨日期常驻的离线复盘栏目（左侧导航 / 首页卡片 / 独立视图）。
+// 内容源为 apps/market/engine/gold/reports/fc26-season-review.html，由
+// node apps/market/engine/scripts/render-fc26-review.mjs 只读项目内本地 FC26 数据生成，
+// 不采集、不联网，也不随日报日期变化 —— 因此不参与当日日期校验，存在即收录。
+// 视图键为 'fc26'，与 dashboard.mjs 的 FC26_TAB.view 对齐。
+const FC26_SOURCE = {
+  id: 'fc26-review-column',
+  title: 'FC26 球员回顾',
+  file: path.join('apps', 'market', 'engine', 'gold', 'reports', 'fc26-season-review.html'),
+};
+
 const REPORT_ROOT = path.join(BASE_DIR, 'reports', 'daily');
 const MERGED_DIR = path.join(BASE_DIR, 'daily-merged');
 const ARCHIVE_DIR = path.join(MERGED_DIR, 'archive');
@@ -92,6 +103,9 @@ function buildPanelByFile(fileName, dateStr) {
 function buildIconResearchPanel(dateStr) {
   const candidates = [
     path.join(REPORT_ROOT, dateStr, 'market-icons-research.html'),
+    // 逐小时「传奇卡研究」常驻底稿（FC26 开服价 vs FC27 当前价/最高价的实时投资建议，
+    // 由 icons-pricerange-hourly 任务刷新）。放在静态预测底稿之前，保证往期日期也能看到最新研究。
+    path.join(BASE_DIR, 'apps', 'market', 'engine', 'icons', 'reports', 'fc27-icon-live-research.html'),
     path.join(BASE_DIR, 'apps', 'market', 'engine', 'icons', 'reports', 'fc27-icon-analysis.html'),
   ];
   for (const p of candidates) {
@@ -102,6 +116,18 @@ function buildIconResearchPanel(dateStr) {
     } catch { /* 读取失败则尝试下一个来源 */ }
   }
   return null;
+}
+
+// FC26 球员回顾：读项目内本地底稿并主题化。跨日期常驻（自带成稿口径，不参与当日日期校验），
+// 底稿由 render-fc26-review.mjs 离线生成，缺失时返回 null 交由模板给出如实空状态。
+function buildFc26ReviewPanel() {
+  const p = path.join(BASE_DIR, FC26_SOURCE.file);
+  if (!existsSync(p)) return null;
+  try {
+    return themedPanel(readFileSync(p, 'utf8'), path.dirname(p));
+  } catch {
+    return null;
+  }
 }
 
 function reportStatus(fileName, dateStr) {
@@ -126,11 +152,18 @@ function listReportDates(currentDate) {
 }
 
 // 确保海报等共享资源已就位（从 apps/portal/assets 复制到 daily-merged/assets）
-function ensureAssets() {
+function ensureAssets(dateStr) {
   if (!existsSync(ASSETS_DIR)) mkdirSync(ASSETS_DIR, { recursive: true });
   if (existsSync(POSTER_SRC)) {
     const target = path.join(ASSETS_DIR, POSTER_NAME);
     try { copyFileSync(POSTER_SRC, target); } catch { /* 已存在或无权限时忽略 */ }
+  }
+  // 运行时行情资源：各市场页面在加载/刷新时统一读取这一份 current.json。
+  const currentSrc = path.join(REPORT_ROOT, dateStr, 'assets', 'data', 'current.json');
+  if (existsSync(currentSrc)) {
+    const target = path.join(ASSETS_DIR, 'data', 'current.json');
+    mkdirSync(path.dirname(target), { recursive: true });
+    copyFileSync(currentSrc, target);
   }
 }
 
@@ -177,7 +210,7 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
       ? reportStatus('icons-heroes.html', dateStr) : 'ok';
   }
 
-  // FC27 市场：保留原版布局 market.html 作为主视图，另加「市场扫描」子标签。
+  // FC27 市场：保留原版布局 market.html 作为主视图，另加「市场扫描」与「关注列表」两个子标签。
   // 传奇/英雄相关内容已整体迁出至「传奇/英雄专栏」，此处不再收录。
   // 多份并存时用子标签切换；只有一份时直接作为该栏目内容，不显示多余的标签条。
   const marketSubs = [];
@@ -185,9 +218,16 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
   if (overviewPanel) marketSubs.push({ id: 'overview', label: '市场概览', html: overviewPanel });
   const scanPanel = buildPanelByFile('market-scan.html', dateStr);
   if (scanPanel) marketSubs.push({ id: 'scan', label: '市场扫描', html: scanPanel });
+  // 关注列表由每小时任务刷新的 reports/daily/D/market-watch.html 提供（热度 + 价格 + 本日挂单价变动）
+  const watchPanel = buildPanelByFile('market-watch.html', dateStr);
+  if (watchPanel) marketSubs.push({ id: 'watch', label: '关注列表', html: watchPanel });
   if (marketSubs.length >= 2) subPanels.market = marketSubs;
   else if (marketSubs.length === 1) panels['market-analysis'] = marketSubs[0].html;
   else delete panels['market-analysis'];
+
+  // FC26 球员回顾：离线常驻栏目，只要底稿存在即收录（无当日日期校验），跨日期一致。
+  const fc26Panel = buildFc26ReviewPanel();
+  if (fc26Panel) { panels[FC26_SOURCE.id] = fc26Panel; panelStates[FC26_SOURCE.id] = 'ok'; }
 
   const archiveLinks = buildArchiveLinks(dateStr, linkBase);
   return dailyReport({ date: dateStr, panels, panelStates, archiveLinks, assetBase, subPanels });
@@ -199,7 +239,7 @@ console.log(`=== 每日综合报告合并（dashboard 单日日报）===`);
 console.log(`日期: ${dateStr}`);
 
 mkdirSync(ARCHIVE_DIR, { recursive: true });
-ensureAssets();
+ensureAssets(dateStr);
 
 // archive 页视角：本页位于 archive 目录，历史链接用同目录文件名，素材前缀 '../'
 const archiveView = { linkBase: '', assetBase: '../' };

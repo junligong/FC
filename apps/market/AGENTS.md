@@ -8,13 +8,22 @@
 - 每天产出两个并列文件，互不覆盖，均由渲染器生成，不要手改 HTML 版式：
   1. `market.html` = **市场概览**，三段式固定结构：① 本周活动卡与本周周黑 ② 价格分层（≥100万 / 30-100万 / 10-30万 / 1-10万，每档 Top 50，按 `/27/players` 的 Rating 降序） ③ 热门进化卡。取数用 `/27/players` 的区间参数：`1000000%2B` / `300000-1000000` / `100000-300000` / `10000-100000`。
   2. `market-scan.html` = **市场扫描**，双维度：维度一价格（大卡/中卡/热门卡/适用卡，低于1万另列），维度二热门球员（热门进化卡 `/27/popular/evolutions` 与 价值卡 `/27/popular` 中的非进化卡）。
+- **第三个子标签「关注列表」`market-watch.html`（2026-09-17 起）**：由每小时任务产出，**不由本目录的每日任务负责**。链路与评分口径见 `automation/prompts/market-hourly.md`：
+  - 采集 `collect-market-prices.mjs`（`/27/popular` 双平台价 + 热度、`/27/popular/evolutions` 热度）→ 逐小时快照 `data/prices/fc27/{popular,evolutions}/{hourly,daily}/`；
+  - 计算 `build-market-watchlist.mjs D` → `automation/runs/D/market/watchlist.json`（只保存 cardId、评分与理由，不复制当前价）；
+  - 当前价唯一写入 `engine/data/prices/fc27/current.json`，市场扫描、关注列表、进化与传奇页面加载时按 cardId 读取同一份；
+  - 渲染 `render-market-watch.mjs D`。**`market.html` 是 `run-state` 受校验快照产物，每小时任务不得重写它。**
+  - 字段红线：`psPrice` = Console、`pcPrice` = PC 分别落库；<1000 为占位值；`.item-score-segment` 是卡片级 Item Score，不是成交价；不计算日环比与累计涨跌。
 - **平台口径（Console / PC 双平台，必须都采）**：FUTBIN 只提供 **Console（PS / Xbox 合并）** 与 **PC** 两个市场，没有第三档。列表页每一行**同时渲染** `td.table-price.platform-ps-only`（Console）与 `td.table-price.platform-pc-only`（PC），因此**一次打开列表页即可同时读到两个平台价**；页顶按钮 `form.desktop-platform-change-form` 内的 `button value="ps"`（Console）/ `button value="pc"`（PC）**只是纯前端显隐切换**（不刷新、不改 URL、不重新取数）。
-  - **不要**依赖 `ps_price` / `pc_price` URL 参数（开服前筛选失效），也**不要**为切换平台重复导航；`rarity=` / `version=` / `page` 参数同样被服务端忽略。
+  - **不要**依赖 `ps_price` / `pc_price` URL 参数（开服前筛选失效），也**不要**为切换平台重复导航；`rarity=` / `version=` 被服务端忽略。**但 `page` 翻页参数在会话建立后有效**（2026-09-17 实测，每页 30 行、Rating 降序）；`?version=base_icon` / `?version=heroes` 直接导航返回 0 行空表，不要走这条路线。
   - `td.table-item-score` 是开服前估值列，不是平台成交价。
   - 两平台价分别落库 `psPrice`（Console）/ `pcPrice`（PC）；顶层 `platform` 写 `"console+pc"`（不要再用旧的 `"cross"`）。渲染器自动输出两平台价格单元格与页顶切换按钮，**不要手改 HTML**。**不得只采 Console 漏 PC，也不得用一个平台价顶替另一个。**
 - 「传奇卡研究」自 2026-09-16 起同样迁至「传奇/英雄专栏」子标签，常驻底稿仍在 `engine/icons/reports/fc27-icon-analysis.html`（跨日期、非每日产物，日任务不重跑也不得清空）。
 - 数据统一写入 `../../automation/runs/D/market/market.json`（概览放 `overview`，扫描放顶层含 `players[]`），再运行 `node engine/scripts/render-market.mjs D` 一次渲染两份产物；缺失数据由渲染器输出如实空状态。站点上两者以「市场概览 / 市场扫描」子标签切换。`overview` 与 `players[]` 中不要写 `iconsHeroes` 字段。
+- **中文译名（2026-09-17 起必做）**：写完 `market.json` / `evolution.json` 后运行 `node engine/scripts/apply-market-name-zh.mjs D`（进化加 `--file ../../automation/runs/D/evolution/evolution.json`）注入 `nameZh`；未命中清单在 `../../automation/runs/D/market/work/missing-name-zh.json`，由当日任务译完后**追加**到 `engine/data/players/name-zh-supplement-fc27.json` 的 `mappings`（只增不改，禁止写空字符串占位）并重跑直到未命中 0。渲染器自动输出「英文名 + 中文名」，不要手改 HTML。
 - 传奇/英雄的逐日快照仍保存在 `engine/icons/data/prices/fc27/daily/<DATE>.json`，由 `engine/scripts/record-icons-daily.mjs D` 从当日抓取结果固化（含 `platforms.console` / `platforms.pc`）：一天一份、同日重跑只覆盖当天、原子写入，禁止删改历史日期；抓取失败时不写入快照。该快照由「传奇/英雄卡监控」任务驱动，市场任务不再写它。开服前（`launchDate` 之前）FUTBIN 只有列表页占位价，此口径下不计算日环比与累计涨跌。
+- **球员头像（2026-09-17 起必做）**：市场概览 / 市场扫描 / 进化专栏 / 传奇英雄监控的球员姓名单元格都带头像，由渲染器自动解析并缩放到 `../../reports/daily/D/assets/players/`（合并期由 `shared/lib/report-assets.mjs#inlineLocalReportImages` 内联成 data URL，不要手改 HTML）。解析与落盘统一走 `../../shared/lib/player-avatar.mjs`；本地卡库没覆盖的卡用 `node engine/scripts/backfill-avatar-keys.mjs D` 走 FUTBIN `playerhover` 接口补 `cardId → 头像键` 并下载图片（**单并发 + 450ms 间隔**，429 退避；不得逐页打开详情页，不得调高并发）。**头像键 = EA resourceId（无 EA 头像时为 FUTBIN 自绘 `p<数字>`），不是 URL 里的 cardId**；匹配多义时一律放弃（宁缺勿错）。解析不到的条目如实不显示图片，禁止用别的球员的图或占位图顶替。
+- **头像的两条红线（2026-09-17 实测踩到，勿放宽）**：① 姓氏词元兜底必须过「姓名词元双向包含」守卫，否则同姓不同人会互相串图（`Oh Hoo Sung`↔`Cho Gue Sung`、`Ethan Mbappé`↔Kylian Mbappé）；收紧后发现缺口要**重跑补全脚本用 `playerhover` 权威补回**，不是把守卫放宽。② **FC26 数据一律不配头像**——FC26 的 FUTBIN 卡 ID 与 FC27 头像库不同源，混用必错（同日 82 张里 6 张配错）。`backfill-avatar-keys.mjs` 聚合英雄数据时已排除 `heroes/data/**/fc26/**`，`render-icons-heroes.mjs` 的「FC26 参考对比」区也已显式返回空图。
 - 每次执行先回读根 `../../AGENTS.md` 的“浏览器强制规则”；FUTBIN 等站点只能通过 `web-access` 技能的 CDP 通道访问用户日常 Chrome，禁止先试 IAB，也不要用 Chrome 插件 / `extension` 模式。
 - **FUTBIN 静态路线不存在**：`curl`/WebFetch 请求（含 `/27/popular/evolutions`）返回 **HTTP 403 / 641 B**，必须走浏览器 CDP；实测 `/27/players`、`/27/popular`、`/27/popular/evolutions` 均可正常读取。
 - 已知取数限制（实测）：开服前 `pc_price` 三档筛选页（≥100万 / 30–100万 / 10–30万）返回 0 行，是**筛选在开服前失效**而非「无卡」；此类空档必须如实记为缺失，不能据此推断市场无卡，更不能编造价格。

@@ -1,0 +1,41 @@
+{
+  "task": "market-hourly",
+  "scheduledHour": "2026-09-18T09 (UTC+8)",
+  "checkedAt": "2026-09-18T01:45:30Z",
+  "result": "failed",
+  "stage": "browser-precheck",
+  "reason": "Web Access 自检 exit 1：Chrome 调试端点 TCP 可连但 DevTools 服务不响应（/json/version、/json/list 返回 404 空体；浏览器级 WS 升级无任何响应直至 curl 超时，代理侧报错为 non-101）。Chrome 主进程 main/IO/DevTools 三个线程采样均停在 kevent64 事件循环（非死锁），说明监听 socket 未接入 DevTools 消息泵。与 2026-09-18 07、08 两轮失败同一症状，为第三轮连续失败。",
+  "browserCheck": {
+    "exitCode": 1,
+    "node": "ok (v22.22.2)",
+    "browser": "ok (Chrome, port 9222) [config.env 偏好]",
+    "proxy": "连接超时（2m17s / 复跑同样超时）"
+  },
+  "channelDiagnostics": {
+    "port9222": "LISTEN by pid 49850 (Google Chrome --no-startup-window)",
+    "chromeStartedAt": "2026-09-18 06:04:12（launchd 重启，启动参数 --no-startup-window，无浏览器窗口）",
+    "chromeMainThread": "idle in -[NSApplication run] / _DPSNextEvent（正常空闲）",
+    "devtoolsHandlerThread": "Chrome_DevToolsHandlerThread idle in kevent64（未死锁）",
+    "ioThread": "Chrome_IOThread idle in kevent64",
+    "httpProbe": {
+      "/json/version": "http 404，body 为空",
+      "/json/list": "http 404，size 0",
+      "wsUpgradeBrowserPath": "无响应（curl http_code=000 超时），path=/devtools/browser/61448423-6d50-46d5-8e61-da19849eff47（与 DevToolsActivePort 文件一致）"
+    },
+    "sampleFile": "/tmp/chrome-hang-sample.txt"
+  },
+  "remediesAttempted": [
+    { "action": "check-deps 初次自检", "at": "2026-09-18T01:39:00Z", "result": "exit 1（连接超时 2m17s）" },
+    { "action": "open -a \"Google Chrome\" chrome://inspect/#remote-debugging 推前台 + 复测端点", "at": "2026-09-18T01:43:00Z", "result": "复测仍 404 / WS 无响应" },
+    { "action": "pkill cdp-proxy.mjs + 重启代理 + check-deps 复跑", "at": "2026-09-18T01:44:00Z", "result": "exit 1（连接超时）" }
+  ],
+  "notAttemptedAndWhy": {
+    "collect-market-prices.mjs": "浏览器通道不可用，按契约不采集、不填充",
+    "build/render/publish": "采集失败后不进行；保留上次有效结果（06 点成功轮次），本轮不重发布",
+    "killChrome": "重启用户浏览器不在允许的自动补救清单内（仅允许 open -a 推前台），且需人工确认调试开关；未执行"
+  },
+  "lastValidResultKept": "2026-09-18 06 点整点成功轮次（current.json generatedAt 2026-09-17T22:03:12Z，1425 张卡；线上 T06 已发布，未变更）",
+  "todayHourlySnapshots": ["T01", "T02", "T03", "T04", "T06"],
+  "manualActionNeeded": "需人工重启 Chrome（退出后重新打开，并在 chrome://inspect/#remote-debugging 重新勾选 Allow remote debugging for this browser instance）；下一整点任务将自动恢复。连续 07/08/09 三轮失败均指向同一故障，普通自动补救无效。",
+  "logFile": "/var/folders/d0/4_z8t9_j7sbbv3h5f10ws14c0000gn/T/cdp-proxy.log"
+}

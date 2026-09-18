@@ -7,9 +7,8 @@
  *       二、数据库（可搜索/筛选/排序的球员表，含 FUTBIN /27 维度：总评、位置、六维、价格、热度、状态）
  * 平台：页面顶部提供 Console（PS / Xbox 合并）与 PC 两个平台口径切换按钮，价格为平台成交价；
  *       开服前两个平台价均为 0，此时显示列表页估值并标注「估值」，不计算涨跌。
- * 输入：automation/runs/D/market/market.json（也可用 FC_MARKET_JSON 指定）；
- *       球员数据库 automation/runs/D/market/players.json（也可用 FC_MARKET_PLAYERS 指定）。
- *       球员价格取自 market.json 的 players[].psPrice / pcPrice（平台）与 price（估值）。
+ * 输入：automation/runs/D/market/market.json（球员名单与静态字段）；
+ *       页面运行时从 assets/data/current.json 按 cardId 读取唯一当前行情。
  * 输出：reports/daily/D/market-scan.html
  * 采集缺失时渲染为如实空状态，绝不伪造或复用其他日期数据。
  *
@@ -18,6 +17,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { avatarIndex, avatarSrc, materializeAvatars } from '../../../../shared/lib/player-avatar.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = process.env.FC_PROJECT_ROOT || path.resolve(here, '../../../..');
@@ -37,18 +37,6 @@ export function loadMarketData(dateStr) {
     return { data: JSON.parse(readFileSync(jsonPath, 'utf8')), jsonPath };
   } catch (e) {
     return { data: null, jsonPath, error: e.message };
-  }
-}
-
-// 球员数据库（含六维、价格、热度、进化状态），由提取脚本写入。
-function loadPlayers(dateStr) {
-  const jsonPath = process.env.FC_MARKET_PLAYERS
-    || path.join(ROOT, 'automation', 'runs', dateStr, 'market', 'players.json');
-  if (!existsSync(jsonPath)) return { players: [], jsonPath };
-  try {
-    return { players: JSON.parse(readFileSync(jsonPath, 'utf8')).players || [], jsonPath };
-  } catch (e) {
-    return { players: [], jsonPath, error: e.message };
   }
 }
 
@@ -72,13 +60,6 @@ function posGroup(pos) {
   return '其他';
 }
 
-function fmtPrice(v) {
-  if (v === null || v === undefined || Number.isNaN(v)) return '—';
-  if (v >= 10000) return (v / 10000).toFixed(v % 10000 === 0 ? 0 : 1) + '万';
-  if (v >= 1000) return (v / 1000).toFixed(v % 1000 === 0 ? 0 : 1) + 'K';
-  return String(v);
-}
-
 function statClass(v) {
   if (v === undefined || v === null) return 'na';
   if (v >= 80) return 'hi';
@@ -95,28 +76,14 @@ export const PLATFORMS = [
 ];
 export const DEFAULT_PLATFORM = 'console';
 
-// 平台成交价：< 1000 视为占位值（开服前两个平台均返回 0），此时退回列表页估值并明确标注。
-function platformPrice(p, platform) {
-  const v = p && p[platform.key];
-  return typeof v === 'number' && Number.isFinite(v) && v >= 1000 ? v : 0;
-}
-
 export function renderScan(dateStr, data) {
   const d = data || {};
-  // 球员表优先取独立的 players.json；缺失时回退到 market.json 的 players（同一批球员，
-  // 且带 psPrice / pcPrice 平台价），避免数据库恒为空。
-  let { players, jsonPath: playersPath } = loadPlayers(dateStr);
-  let playersSource = 'players.json';
-  if (!players.length && Array.isArray(d.players) && d.players.length) {
-    players = d.players;
-    playersSource = 'market.json.players';
-    playersPath = playersPath + '（缺失，已回退 market.json）';
-  }
+  // 名单与静态属性来自日报 market.json；价格不再复制到独立 players.json。
+  const players = Array.isArray(d.players) ? d.players : [];
+  const playersSource = 'market.json.players + current.json';
   const status = (d.status || 'partial').toUpperCase();
   const total = players.length;
   const cutoff = d.dataCutoff || d.generatedAt || '未标注';
-  const priceBasis = d.priceBasis || '';
-  const platformPricesAvailable = players.some(p => PLATFORMS.some(pl => platformPrice(p, pl) > 0));
   const platform = DEFAULT_PLATFORM;
 
   // 分类索引统计
@@ -126,10 +93,10 @@ export function renderScan(dateStr, data) {
   const priceBuckets = ['1万以上', '5000-1万', '5000以下'];
   const priceCounts = Object.fromEntries(PLATFORMS.map(p => [p.id, Object.fromEntries(priceBuckets.map(b => [b, 0]))]));
   const evoCounts = { '在进化池': 0, '非进化池': 0 };
-  // 每名球员的展示价：平台成交价优先，无平台价时用列表页估值
+  // 当前价由页面运行时加载；服务端索引只用非行情的列表页估值作初始占位统计。
   const effPrice = p => {
     const out = {};
-    for (const pl of PLATFORMS) out[pl.id] = platformPrice(p, pl) || (typeof p.price === 'number' ? p.price : 0);
+    for (const pl of PLATFORMS) out[pl.id] = typeof p.price === 'number' ? p.price : 0;
     return out;
   };
   players.forEach(p => {
@@ -179,10 +146,23 @@ ${idxCard('进化状态', [
 
   // 数据库数据注入（转义 </ 防止提前闭合 script）
   // cPrice = Console（PS/Xbox）平台价，pPrice = PC 平台价，price = 开服前列表页估值。
-  const dbJson = JSON.stringify(players.map(p => ({
-    name: p.name, nameZh: p.nameZh, rating: p.rating, pos: p.pos, price: p.price,
-    cPrice: platformPrice(p, PLATFORMS[0]), pPrice: platformPrice(p, PLATFORMS[1]),
-    popularity: p.popularity, evo: p.evo, image: p.image, url: p.url,
+  // image = 球员头像相对路径（assets/players/<resourceId>.png）；由合并期的
+  // inlineLocalReportImages 内联为 data URL，解析不到头像的球员如实留空。
+  const idx = avatarIndex();
+  const avatarResolved = players.map(p => idx.resolve(p)?.resourceId || null);
+  const avatarReady = materializeAvatars(path.join(ROOT, 'reports', 'daily', dateStr),
+    avatarResolved.filter(Boolean));
+  const avatarStat = players.length
+    ? ` · 球员头像 ${avatarResolved.filter(rid => rid && avatarReady.has(String(rid))).length}/${players.length}`
+    : '';
+  const avatarPath = i => {
+    const rid = avatarResolved[i];
+    return rid && avatarReady.has(String(rid)) ? avatarSrc(rid) : '';
+  };
+  const dbJson = JSON.stringify(players.map((p, i) => ({
+    cardId: String(p.url || '').match(/\/player\/([^/?#]+)/)?.[1]?.split('_')[0] || null,
+    name: p.name, nameZh: p.nameZh, rating: p.rating, pos: p.pos, estimate: p.price,
+    cPrice: 0, pPrice: 0, popularity: p.popularity, evo: p.evo, image: avatarPath(i), url: p.url,
     stats: p.stats || {},
   }))).replace(/</g, '\\u003c');
 
@@ -213,7 +193,7 @@ tr:last-child td{border-bottom:0}
 tbody tr:hover{background:#1d271b}
 .c-rank{color:var(--quiet);width:34px;font-size:11px}
 .c-name{text-align:left;min-width:170px}
-.c-name .pimg{width:26px;height:26px;border-radius:5px;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a}
+.c-name .pimg{width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a;border:1px solid #30392f}
 .c-name a{color:var(--text);text-decoration:none;font-weight:600}
 .c-name a:hover{color:var(--lime)}
 .c-name .zh{color:var(--quiet);font-size:10.5px;margin-left:5px;font-weight:400}
@@ -252,12 +232,12 @@ body[data-platform="pc"] .pv-pc{display:inline}
   function fmtPrice(v){ if(v==null) return '—'; if(v>=10000) return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000) return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
   function statCls(v){ if(v==null) return 'na'; if(v>=80) return 'hi'; if(v>=70) return 'mid'; if(v>=60) return 'lo'; return 'bad'; }
   function posGroup(pos){ if(!pos) return '其他'; var p=pos.toUpperCase(); if(p==='GK') return '门将'; if(/CB|LB|RB|LWB|RWB/.test(p)) return '后卫'; if(/CM|CDM|CAM|LM|RM/.test(p)) return '中场'; if(/ST|CF|LW|RW/.test(p)) return '前锋'; return '其他'; }
-  function curPrice(p){ var plat=document.body.getAttribute('data-platform')||'console'; var v=(plat==='pc')?p.pPrice:p.cPrice; return (v>0)?v:(p.price||0); }
+  function curPrice(p){ var plat=document.body.getAttribute('data-platform')||'console'; var v=(plat==='pc')?p.pPrice:p.cPrice; return (v>0)?v:(p.estimate||0); }
   function priceCell(p){
     var parts=[];
     ['console','pc'].forEach(function(id){
       var v=(id==='pc')?p.pPrice:p.cPrice;
-      var est=!(v>0); if(est) v=p.price;
+      var est=!(v>0); if(est) v=p.estimate;
       parts.push('<span class="pv pv-'+id+'">'+fmtPrice(v)+(est?'<i class="est">估值</i>':'')+'</span>');
     });
     return '<td class="c-price">'+parts.join('')+'</td>';
@@ -270,7 +250,7 @@ body[data-platform="pc"] .pv-pc{display:inline}
     if (state.rating === '75-79' && ((p.rating||0) < 75 || (p.rating||0) > 79)) return false;
     if (state.rating === '70-74' && ((p.rating||0) < 70 || (p.rating||0) > 74)) return false;
     if (state.rating === '69以下' && (p.rating||0) >= 70) return false;
-    var pr = p.price || 0;
+    var pr = curPrice(p);
     if (state.price === '1万以上' && pr < 10000) return false;
     if (state.price === '5000-1万' && (pr < 5000 || pr >= 10000)) return false;
     if (state.price === '5000以下' && pr >= 5000) return false;
@@ -280,8 +260,8 @@ body[data-platform="pc"] .pv-pc{display:inline}
   function sortFn(a, b){
     switch (state.sort) {
       case 'rating-asc': return (a.rating||0) - (b.rating||0);
-      case 'price-asc': return (a.price||0) - (b.price||0);
-      case 'price-desc': return (b.price||0) - (a.price||0);
+      case 'price-asc': return curPrice(a) - curPrice(b);
+      case 'price-desc': return curPrice(b) - curPrice(a);
       case 'pop-desc': return (b.popularity||0) - (a.popularity||0);
       default: return (b.rating||0) - (a.rating||0);
     }
@@ -328,7 +308,26 @@ body[data-platform="pc"] .pv-pc{display:inline}
   document.querySelectorAll('.plat-btn').forEach(function(b){
     b.addEventListener('click', function(){ setPlatform(b.getAttribute('data-platform')); });
   });
-  render();
+  function currentUrl(){
+    try {
+      var host = window.parent && window.parent !== window ? window.parent.location : window.location;
+      var prefix = host.pathname.indexOf('/archive/') !== -1 ? '../' : '';
+      return new URL(prefix+'assets/data/current.json', host.href).toString();
+    } catch (e) { return 'assets/data/current.json'; }
+  }
+  fetch(currentUrl(), {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(String(r.status)); return r.json(); }).then(function(doc){
+    var cards=doc.cards||{}, counts={console:0,pc:0};
+    players.forEach(function(p){
+      var c=p.cardId&&cards[p.cardId]; if(!c) return;
+      p.cPrice=c.platforms&&c.platforms.console&&c.platforms.console.valid?c.platforms.console.price:0;
+      p.pPrice=c.platforms&&c.platforms.pc&&c.platforms.pc.valid?c.platforms.pc.price:0;
+      if(typeof c.popularity==='number') p.popularity=c.popularity;
+      if(p.cPrice>0) counts.console++; if(p.pPrice>0) counts.pc++;
+    });
+    var hint=document.getElementById('live-market-hint');
+    if(hint) hint.textContent='统一行情已刷新：Console 有价 '+counts.console+'、PC 有价 '+counts.pc+'，共 '+players.length+' 名球员。';
+    render();
+  }).catch(function(){ var hint=document.getElementById('live-market-hint'); if(hint) hint.textContent='统一行情文件暂不可用，价格如实留空。'; render(); });
 })();`;
 
   return `<!DOCTYPE html>
@@ -336,16 +335,16 @@ body[data-platform="pc"] .pv-pc{display:inline}
 <title>FC27 市场扫描 ${esc(dateStr)}</title>
 <style>${css}</style></head><body data-platform="${esc(platform)}">
 <h1>FC27 市场扫描 <span class="badge">${esc(status)}</span></h1>
-<div class="sub">数据日期 ${esc(dateStr)} · 数据截止 ${esc(cutoff)} · 索引 + 数据库 · 球员来源 ${esc(playersSource)} · 数据来源 FUTBIN /27/popular + EasySBC${platformPricesAvailable ? '' : ' · 当前为开服前口径（' + esc(priceBasis || 'listing-estimate') + '），平台成交价尚未产生'}</div>
+<div class="sub">数据日期 ${esc(dateStr)} · 数据截止 ${esc(cutoff)} · 索引 + 数据库 · 球员来源 ${esc(playersSource)}${esc(avatarStat)} · 页面刷新时从统一行情 current.json 读取最新价</div>
 
 <div class="plat-bar" role="group" aria-label="平台切换">
   <span class="plat-label">平台</span>
   ${PLATFORMS.map(p => `<button type="button" class="plat-btn${p.id === platform ? ' active' : ''}" data-platform="${p.id}" aria-pressed="${p.id === platform}">${esc(p.label)}<small>${esc(p.short)}</small></button>`).join('')}
-  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径；开服前两个平台价均为 0，此时显示列表页估值并以「估值」标注，不计算涨跌。</span>
+  <span class="plat-hint" id="live-market-hint">正在读取统一行情 current.json…</span>
 </div>
 
 <h2>一、索引（分类概览）</h2>
-${total ? indexHtml : '<div class="empty">球员数据库为空（来源 <code>' + esc(playersPath) + '</code>），如实空状态。</div>'}
+${total ? indexHtml : '<div class="empty">market.json 球员名单为空，如实空状态。</div>'}
 
 <h2>二、数据库（可搜索 · 筛选 · 排序）</h2>
 <div class="db-toolbar" id="db">

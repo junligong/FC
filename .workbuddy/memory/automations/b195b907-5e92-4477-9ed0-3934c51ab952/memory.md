@@ -23,3 +23,10 @@
 - 落库：market.json players[] 750 条（250 热门 + 500 进化，URL 去重），psPrice/pcPrice 分开，platform=console+pc；priceBasis=partial-live。
 - 踩坑：① market.json 组装时漏写 overview 键导致概览全空（已补）；② evidence/market.json 的 openedAt 误写成 2026-09-16T19:xx+08:00（=UTC 上午，早于 startedAt 被 finish 拒收「复用旧证据」），正确写法 2026-09-17T03:xx+08:00。
 - 产物：reports/daily/2026-09-17/market.html + market-scan.html；evidence 同目录。
+
+## 2026-09-18 03:00 调度（runId 0991f958）
+- 状态：**partial**（03:35:51 提交，快照 SHA-256 b0311d2e…，在 20 分钟硬上限内）。
+- 采集：/27/popular 250 卡（Console 有效价 185 / PC 168，priceBasis=partial-live）、/27/popular/evolutions 500 卡成功；**/27/players 页 1-4 页内 fetch 与退避后单次重试均 403**（03:00 窗口时限性拦截，与 09-17 一致），价格分层与价格维度如实空状态；周黑/活动卡候选路由（/totw 等 6 个）实测 404，如实空状态。
+- 落库：players[] 750 条（URL 去重 750/750），译名注入 1750/1750 命中、未命中 0（新增 261 条通行音译）；sync-current-market 合并 750 张进 current.json（仅此一次）；头像 backfill +179 键、下载 175 张，渲染后复核 0 缺口（页面 499/500、749/750，同 1 张 noface 源卡）。
+- 产物：reports/daily/2026-09-18/market.html + market-scan.html；evidence 同 runs 目录。watchlist 未刷新（时间不足，非阻塞项）。
+- 踩坑：assemble 脚本 `new URL('.',import.meta.url)+'../market.json'` 把文件写到了 runs/D/ 上级，注入器「无法读取」；已移正并重跑。291 个未命中实为 261 个唯一 slug（三区重复计数）。

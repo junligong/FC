@@ -38,10 +38,12 @@ try{
   }
   if(!optWritten){const src=path.join(historyRoot,date,opt.file);if(fs.existsSync(src)){const dst=path.join(stage,'reports/daily',date,opt.file);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);}}
  }
- for(const extra of ['market-scan.html']){const src=path.join(historyRoot,date,extra);if(fs.existsSync(src)){const dst=path.join(stage,'reports/daily',date,extra);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);}}
+ for(const extra of ['market-scan.html','market-watch.html']){const src=path.join(historyRoot,date,extra);if(fs.existsSync(src)){const dst=path.join(stage,'reports/daily',date,extra);fs.mkdirSync(path.dirname(dst),{recursive:true});fs.copyFileSync(src,dst);}}
  const portalAssets=path.join(root,'apps/portal/assets');if(fs.existsSync(portalAssets))fs.cpSync(portalAssets,path.join(stage,'apps/portal/assets'),{recursive:true});
  // 传奇卡研究底稿是跨日期常驻内容（「传奇/英雄专栏」的「传奇卡研究」子标签的内容源），必须一并进隔离目录
  const iconReports=path.join(root,'apps/market/engine/icons/reports');if(fs.existsSync(iconReports))fs.cpSync(iconReports,path.join(stage,'apps/market/engine/icons/reports'),{recursive:true});
+ // FC26 球员回顾底稿同样是跨日期常驻内容（离线渲染，不采集），合并脚本会读取，必须一并进隔离目录
+ const goldReports=path.join(root,'apps/market/engine/gold/reports');if(fs.existsSync(goldReports))fs.cpSync(goldReports,path.join(stage,'apps/market/engine/gold/reports'),{recursive:true});
  let available=0,failedPanels=0;
  for(const module of modules){const state=states[module];if(state?.status==='success'&&(state.evidence?.missingItems?.length||state.evidence?.missing?.length))state.status='partial';if(!state||!['success','partial','failed'].includes(state.status)||!state.snapshotPath||!fs.existsSync(state.snapshotPath))continue;const buf=fs.readFileSync(state.snapshotPath);if(digest(buf)!==state.sha256)throw Error(module+' snapshot changed');const target=path.join(stage,outputs[module](date));fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,buf);available++;if(state.status==='failed')failedPanels++;else valid++;const data=path.join(dir,module,'tweets.json');if(module==='news'&&fs.existsSync(data)){const targetData=path.join(stage,`apps/news/data/tweets-${date}.json`);fs.mkdirSync(path.dirname(targetData),{recursive:true});fs.copyFileSync(data,targetData);}}
  if(!available){status.merge='no_current_snapshot';status.publish='skipped';}
@@ -52,7 +54,7 @@ try{
  // 同步历史日报独立归档目录（stage 里合并脚本已生成/补齐 archive/*.html）
  const stageArchive=path.join(stage,'daily-merged','archive');if(fs.existsSync(stageArchive)){fs.mkdirSync(path.join(root,'daily-merged','archive'),{recursive:true});for(const f of fs.readdirSync(stageArchive)){if(f.endsWith('.html'))fs.copyFileSync(path.join(stageArchive,f),path.join(root,'daily-merged','archive',f));}}
  // 同步共享静态资源（海报等），保证线上多文件站点相对路径可用
- const stageAssets=path.join(stage,'daily-merged','assets');if(fs.existsSync(stageAssets)){fs.mkdirSync(path.join(root,'daily-merged','assets'),{recursive:true});for(const f of fs.readdirSync(stageAssets))fs.copyFileSync(path.join(stageAssets,f),path.join(root,'daily-merged','assets',f));}
+ const stageAssets=path.join(stage,'daily-merged','assets');if(fs.existsSync(stageAssets))fs.cpSync(stageAssets,path.join(root,'daily-merged','assets'),{recursive:true});
  status.merge=valid?'success':'status_only';status.indexSha256=digest(fs.readFileSync(path.join(root,'daily-merged/index.html')));status.failedPanels=failedPanels;
  // 发布交由 WorkBuddy 站点发布能力完成：agent 在同一会话内对 daily-merged/ 调用 sites 发布。
  // 不再使用 DuMate 单文件 artifact 通道，也不再于此处猜测发布接口。
