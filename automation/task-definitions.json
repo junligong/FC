@@ -47,15 +47,27 @@
     },
     {
       "id": "icons-pricerange-hourly",
-      "name": "FC27传奇价格区间(每小时)",
+      "name": "FC27传奇价格区间(每4小时)",
       "promptFile": "automation/prompts/icons-pricerange-hourly.md",
       "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/icons-pricerange-hourly.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     },
     {
       "id": "market-hourly",
-      "name": "FC27市场价格(每小时)",
+      "name": "FC27市场价格(每4小时)",
       "promptFile": "automation/prompts/market-hourly.md",
       "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/market-hourly.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
+    },
+    {
+      "id": "totw-rollover",
+      "name": "FC27周黑滚动更新",
+      "promptFile": "automation/prompts/totw-rollover.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/totw-rollover.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
+    },
+    {
+      "id": "activity-rollover",
+      "name": "FC27本周活动卡滚动更新",
+      "promptFile": "automation/prompts/activity-rollover.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/activity-rollover.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
     }
   ]
 }

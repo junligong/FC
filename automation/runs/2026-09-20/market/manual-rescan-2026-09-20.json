@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-20",
+  "kind": "manual-market-scan-change",
+  "trigger": "用户 2026-09-20 第 5 组需求：① 市场扫描去掉英雄卡与传奇卡 ② 价格分档改为 6 档 ③ 默认没有价格的卡按最高价格处理 ④ 把这部分写进 AGENTS.md",
+  "changed": [
+    "apps/market/engine/scripts/render-market-report.mjs —— 新增 PRICE_BUCKETS（6 档）/ loadScanExclusions() / mergeByBaseCard().__versions / 无价卡按最高价 / 价格索引首屏留空",
+    "apps/market/engine/scripts/extract-market-prices.js —— 新增 cardVersion 采集（卡面图 img/cards/hd/<版本>.png，src 与 data-src 双取）",
+    "apps/market/engine/data/players/fc27/scan-exclusions.json —— 新增（14 张：Hero 2 / Icon 3 / Hall of FUT 9）",
+    "automation/regression.test.mjs —— 新增 1 条回归测试（排除 + 6 档 + 无价卡口径 + 首屏留空）",
+    "AGENTS.md / apps/market/AGENTS.md / automation/prompts/market.md —— 同步四项口径"
+  ],
+  "rerendered": [
+    "reports/daily/2026-09-20/market-scan.html（559 行 → 545 行）",
+    "reports/daily/2026-09-20/summary.html、daily-merged/archive/2026-09-20.html、daily-merged/index.html（重跑 apps/portal/merge_daily_report.mjs 2026-09-20）"
+  ],
+  "verification": {
+    "tests": "node --test automation/{execution,regression,verify-publication,news-media}.test.mjs → 39 passed / 0 failed",
+    "browserE2E": "真实浏览器加载本地重渲染页：545 行、重复 cardId 0、6 档计数之和 = 545（Console 与 PC 均自洽）、筛选联动正确、六维列有值、无价标注与提示一致",
+    "mergedArtifact": "daily-merged/index.html 含「归并 559 行」「排除英雄/传奇/活动卡 14 行 ⇒ 545 行」「data-set-price=\"100w+\"」，无残留旧档位名"
+  },
+  "publish": {
+    "attempted": true,
+    "result": "failed-online-stale",
+    "reason": "本会话工作区为 /Users/wuyanzu/WorkBuddy/2026-09-19-21-36-44，站点发布能力按会话工作区解析已发布应用，因此读不到绑定在 /Users/wuyanzu/Desktop/FC 工作区的应用 wbapp_4O4LtZ5SPnedAUHtvG64Jf（shareLink https://fc27-site.app.workbuddy.host/）；显式传 appId 被拒（sites_deploy_unknown_app）。用 domainPrefix=fc27-site 发布时被「应用预留域名未绑定到本次发布环境」拦下。",
+    "sideEffectRolledBack": "一次以项目根目录为 directory 的尝试误建了新应用 wbapp_ziwG8O5zIG3suzO8Y3SwtF（https://fc27-site-67118.app.workbuddy.host/，且会上传整个工作目录）；已立即 unpublish，该链接现为 404，原站点 https://fc27-site.app.workbuddy.host/ 未受影响（HTTP 200）。",
+    "nextStep": "线上仍是 2026-09-20 16:17 那一版（21,608,987 B），不含本轮改动。改由以下之一完成上线：① 在 /Users/wuyanzu/Desktop/FC 工作区的会话里执行发布；② 等下次「FC·汇总发布」（06:15）自动带上。",
+    "contractNote": "automation/publish-status-2026-09-20.json 是每日发布任务的权威记录，本次未改写它。"
+  }
+}

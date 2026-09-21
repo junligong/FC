@@ -1,0 +1,68 @@
+{
+  "module": "market",
+  "date": "2026-09-21",
+  "runId": "37a347ba-8eac-4463-9e51-8c7c171760ba",
+  "status": "partial",
+  "startedAt": "2026-09-20T19:13:32.291Z",
+  "deadlineAt": "2026-09-20T19:28:32.291Z",
+  "reportPath": "reports/daily/2026-09-21/market.html",
+  "completedAt": "2026-09-20T19:24:43.933Z",
+  "evidence": {
+    "date": "2026-09-21",
+    "module": "market",
+    "runId": "37a347ba-8eac-4463-9e51-8c7c171760ba",
+    "status": "success",
+    "finishedAt": "2026-09-21T03:24:10+08:00",
+    "sources": [
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-21T03:13:40+08:00",
+        "method": "宿主页(robots.txt) + 页内同源 fetch",
+        "result": "250 卡，Console 有效价 198 / PC 有效价 177"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-21T03:13:55+08:00",
+        "method": "宿主页(robots.txt) + 页内同源 fetch",
+        "result": "500 进化卡，热度 500"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1..4",
+        "openedAt": "2026-09-21T03:14:05+08:00",
+        "method": "宿主页 + 页内同源 fetch（渲染后 DOM 抽取）",
+        "result": "4 页 × 30 行 = 120 行，validPS 105 / validPC 78"
+      }
+    ],
+    "dataCutoff": "2026-09-21T03:13:00+08:00",
+    "priceBasis": "partial-live",
+    "products": [
+      "reports/daily/2026-09-21/market.html",
+      "reports/daily/2026-09-21/market-scan.html",
+      "reports/daily/2026-09-21/database-columns.html",
+      "reports/daily/2026-09-21/market-watch.html"
+    ],
+    "checks": {
+      "nameZh": "1833/1833 命中，未命中 0（新增 158 条译名）",
+      "scanDedupe": "574 行唯一基础 cardId，无重复；排除家族版本命中 0",
+      "scanExclusions": "已排除英雄/传奇/活动卡 10 张（今日池：Hall of FUT 10 张，含新增 Doumbia/Guarin；09-20 的 5 张 Icon/Hero 卡不在今日榜单）",
+      "avatars": "补全 115 键/113 图；概览 581/583、扫描 572/574，缺口 2 张（Franco 12014 / Banda 19000）为源站无人头像卡（CDN 404），如实空状态",
+      "priceBuckets": "6 档（含 100w+），无旧档名残留",
+      "statsKeys": "PAC/SHO/PAS/DRI/DEF/PHY 英文大写，GK 18 行",
+      "currentJson": "2827 卡，本轮 750 张合并一次（sync-current-market），未产生其他当前价副本"
+    },
+    "missing": [
+      "本周周黑（TOTW）名单尚未发布（TOTW 于周三滚动更新），概览对应区如实空状态",
+      "本周活动卡（Promo）台账本轮为 0 张（活动卡池轮换空档），如实空状态",
+      "周黑/活动卡候选路由未单独导航（/27/totw、/27/promos 历史实测无内容）；assemble 可选 work/totw-probe.json 本轮未提供",
+      "概览/扫描各 2 行球员无源站头像（如实空状态，未以占位图顶替）"
+    ],
+    "notes": [
+      "priceBasis=partial-live：当日已有 ≥1000 有效价，涨跌基线只取有效价",
+      "83+ 补采（collect-r83-prices.mjs）本轮未执行（时间预算收口），83+ 台账卡价由 current.json 既有观测兜底",
+      "未发布站点（发布归「FC·汇总发布」）"
+    ]
+  },
+  "sha256": "c5c737ea604b401a6ea4ef067c86be4d189ccee3b3ae364873a86f42cd24e285",
+  "bytes": 283544,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/market/report.html"
+}

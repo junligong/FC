@@ -23,12 +23,12 @@
  *   - 列表页每行**同时渲染**两个价格单元格：`td.table-price.platform-ps-only`（Console）与
  *     `td.table-price.platform-pc-only`（PC）；页顶平台按钮只是纯前端显隐切换，不刷新、不改 URL、
  *     不重新取数 —— 因此**一次打开即读两个平台价**，不要为切平台重复导航。
- *   - `ps_price=` / `pc_price=` URL 参数开服前筛选失效；`?version=base_icon` / `?version=heroes`
+ *   - `ps_price=` / `pc_price=` URL 参数在开服初期筛选失效；`?version=base_icon` / `?version=heroes`
  *     直接导航返回 **0 行空表**（依赖站内 JS 状态，2026-09-18 再次实测确认），不得走这条路线。
  *     版本归属只以行内 `td.table-name` 的**尾部版本标签**判定。
- *   - `td.table-item-score` 是开服前估值列（IS），单独记 `isEstimate`，**不是**平台成交价。
+ *   - `td.table-item-score` 是估值列（IS），单独记 `isEstimate`，**不是**平台成交价。
  *   - 价格 < 1000 视为占位值（`valid=false`），两平台都如实落库，缺失就留空，不得用一个顶替另一个。
- *   - 开服前（launchDate=2026-09-25）不计算日环比与累计涨跌，只做台账与进度记录。
+ *   - 开服日 `launchDate=2026-09-18`。**是否可计算日环比不看日期，看当日实测有效价**（价格 < 1000 视为占位值）。
  *   - 采集走**页内同源 fetch + DOMParser**（无状态，只依赖 futbin.com origin），
  *     并在每 3 批后重建宿主页：长驻宿主页在连续批量解析后会累积劣化（表现为连续
  *     `Runtime.evaluate` 超时 + `Unexpected end of JSON input`），重建可截断该累积。
@@ -48,7 +48,12 @@ const HOST_URL = 'https://www.futbin.com/robots.txt'; // 只需 futbin.com origi
 const ICON_OUT = path.join(ROOT, 'apps', 'market', 'engine', 'icons', 'data', 'prices', 'fc27', 'base-icons.json');
 const HERO_OUT = path.join(ROOT, 'apps', 'market', 'engine', 'heroes', 'data', 'prices', 'fc27', 'base-heroes.json');
 const LEDGER_PATH = path.join(ROOT, 'apps', 'market', 'engine', 'icons', 'data', 'players', 'fc27', 'fc27-icons-playstyles.json');
-const LAUNCH_DATE = '2026-09-25';
+// FC27 开服日 = **2026-09-18**（用户 2026-09-19 明确、2026-09-20 再次确认；与根 AGENTS.md
+// 「FUTBIN 平台口径强制规则」「同时段（开服第 N 天）对比口径」及 build-same-period-advice.mjs 一致）。
+// 2026-09-20 定案：本常量曾被一度改回 2026-09-25（FC27 正式全球发售日），但那是**发售日而非开服日**，
+// 会与「开服第 N 天」的 1-based 日历（9-18=第1天）以及 FC26（2025-09-18）的同比对齐冲突。
+// ⚠️ 不要再按「09-25」改回去。价格是否可作行情信号**不看日期**，看当日实测有效价（见下方 priceBasis）。
+const LAUNCH_DATE = '2026-09-18';
 const MIN_VALID_PRICE = 1000;
 
 const PAGES_PER_BATCH = 4;   // 单次 eval 抓取的页数，控制在 CDP 约 30 秒的 Runtime.evaluate 超时内
@@ -93,7 +98,11 @@ function buildBatchScript(pages) {
   return `(async function(){
   function parseCoins(text){
     if(typeof text!=='string')return 0;
-    var t=text.trim().replace(/,/g,'');
+    // 2026-09-20 FUTBIN 行结构变化：价格单元格 innerText 变为「币价 \\n 涨跌徽标(如 14.29%)」，
+    // 旧的整串锚定匹配会整体失配（实测 300 行只有 50 行解析出价）。价格固定在**首个非空行**，
+    // 涨跌徽标行必须丢弃（listing-estimate 口径下不得计算涨跌）。
+    var lines=text.split('\\n').map(function(s){return s.replace(/\\s+/g,' ').trim();}).filter(function(s){return s.length>0;});
+    var t=(lines[0]||'').replace(/,/g,'');
     var m=/^([\\d.]+)\\s*([KM]?)$/i.exec(t);
     if(!m)return 0;
     var v=parseFloat(m[1]);
@@ -256,8 +265,29 @@ async function main() {
   const iconNotInLedger = ledgerIds.size ? iconsRaw.filter(r => !ledgerIds.has(String(r.id))) : [];
   const iconsKept = ledgerIds.size ? iconsRaw.filter(r => ledgerIds.has(String(r.id))) : iconsRaw;
   const heroesRaw = uniq.filter(r => r.version === 'Hero');
-  const icons = iconsKept.map(r => { const o = mk(r); const zh = zhOf(prevIcons, o); if (zh) o.nameZh = zh; return o; });
+  const iconsCollected = iconsKept.map(r => { const o = mk(r); const zh = zhOf(prevIcons, o); if (zh) o.nameZh = zh; return o; });
   const heroes = heroesRaw.map(r => { const o = mk(r); const zh = zhOf(prevHeroes, o) || zhOf(prevIcons, o); if (zh) o.nameZh = zh; return o; });
+
+  // 台账补全（2026-09-19 固化）：当来源被 403 截断、成功页不足时，**未采到的台账卡仍以空价状态保留在名单中**
+  // （价格一律 price:0 / valid:false，只带名单与卡值字段），使逐日快照的卡数与台账一致（131 张）。
+  // 原因：本脚本此前只写「采到的行」，一次被 403 截断就会把当日台账从 131 静默缩到 102（2026-09-19 实发），
+  // 与 09-17/09-18 的 131 张不可比，也让「记录进度」失去意义。名单基准只取卡库台账，**不得**取旧日期文件或 FC26 补价。
+  const collectedIconIds = new Set(iconsCollected.map(o => String(o.id)));
+  const iconMissingFromLedger = (readJSON(LEDGER_PATH) || [])
+    .filter(x => x && x.id && !collectedIconIds.has(String(x.id)))
+    .map(x => {
+      const o = {
+        id: String(x.id), slug: x.slug, rating: x.rating, version: '',
+        position: x.position || '', isEstimate: null, currentPrice: null,
+        prices: { console: { price: 0, valid: false }, pc: { price: 0, valid: false } },
+        marketUrl: `https://www.futbin.com/27/player/${x.id}/${x.slug}`,
+        launchDate: LAUNCH_DATE,
+      };
+      const zh = zhOf(prevIcons, o) || x.nameZh;
+      if (zh) o.nameZh = zh;
+      return o;
+    });
+  const icons = [...iconsCollected, ...iconMissingFromLedger];
   const withZh = o => { if (!o.nameZh) delete o.nameZh; return o; };
   const sortDesc = (a, b) => (b.rating - a.rating) || String(a.name).localeCompare(String(b.name));
 
@@ -270,17 +300,30 @@ async function main() {
   atomicWrite(path.join(workDir, 'list-raw.json'), JSON.stringify(rawDoc, null, 2));
 
   const collected = Object.values(pageStats).filter(s => s && s.status === 200).length;
+  // priceBasis **按本轮实测有效价判定**（2026-09-20 用户口径）：不再用「日期 < launchDate」一刀切。
+  // 理由：09-18 当天两平台价多为 0/占位值，若按日期判成 market，会让「日环比」把占位价当成基线。
+  const iconPriced = iconsCollected.filter(i => i.prices.console.valid || i.prices.pc.valid).length;
+  const heroPriced = heroes.filter(h => h.prices.console.valid || h.prices.pc.valid).length;
+  const basisOf = n => (n > 0 ? 'partial-live' : 'listing-estimate');
+  const basisNoteOf = (n, total) => (n > 0
+    ? `本轮 ${total} 张中有 ${n} 张拿到平台级有效价（≥1000 coins），属 FUTBIN 滚动更新的挂单/估价口径，不是成交价。`
+    : `本轮 ${total} 张全部无平台级有效价（均 <1000 coins），FUTBIN 仅提供列表页占位/估算值，不是市场成交价，不得据此计算涨跌。`);
   const iconsOut = {
     schemaVersion: 1, generatedAt: nowIso(), game: 'fc27', cardType: 'base-icon',
-    source: `https://www.futbin.com/27/players（列表页翻页 1-${maxPage}，行内版本标签 Icon；成功页 ${collected}/${maxPage}）`,
-    launchDate: LAUNCH_DATE, priceBasis: 'listing-estimate',
-    priceBasisNote: 'FC27 未开服（开服日 2026-09-25），列表页价格为占位/估算口径，不是市场成交价，不得据此计算涨跌。',
+    source: `https://www.futbin.com/27/players（列表页翻页 1-${maxPage}，行内版本标签 Icon；成功页 ${collected}/${maxPage}；未采到页的 ${iconMissingFromLedger.length} 张台账卡以空价保留，价格未取到）`,
+    launchDate: LAUNCH_DATE, priceBasis: basisOf(iconPriced),
+    priceBasisNote: basisNoteOf(iconPriced, iconsCollected.length),
+    counts: {
+      total: icons.length, collected: iconsCollected.length, missingFromSource: iconMissingFromLedger.length,
+      withConsolePrice: iconsCollected.filter(i => i.prices.console.valid).length,
+      withPcPrice: iconsCollected.filter(i => i.prices.pc.valid).length,
+    },
     players: icons.map(withZh).sort(sortDesc),
   };
   const heroesOut = {
     schemaVersion: 1, generatedAt: nowIso(), game: 'fc27', cardType: 'hero',
     source: `https://www.futbin.com/27/players（列表页翻页 1-${maxPage}，行内版本标签 Base Heroes；成功页 ${collected}/${maxPage}）`,
-    launchDate: LAUNCH_DATE, priceBasis: 'listing-estimate',
+    launchDate: LAUNCH_DATE, priceBasis: basisOf(heroPriced),
     counts: { listed: heroes.length, withConsolePrice: heroes.filter(h => h.prices.console.valid).length, withPcPrice: heroes.filter(h => h.prices.pc.valid).length },
     players: heroes.map(withZh).sort(sortDesc),
   };
@@ -293,6 +336,7 @@ async function main() {
     date: dateStr, maxPage, hostBuilds, collectedPages: `${collected}/${maxPage}`,
     rows: allRows.length, unique: uniq.length,
     icons: icons.length, heroes: heroes.length, iconNotInLedger: iconNotInLedger.length,
+    iconMissingFromSource: iconMissingFromLedger.length,
     excludedDebutIcon: rawDoc.counts.deletedIcon, otherVersions: rawDoc.counts.other,
     consoleValid, pcValid, errors: errors.length,
     listRaw: path.relative(ROOT, path.join(workDir, 'list-raw.json')),

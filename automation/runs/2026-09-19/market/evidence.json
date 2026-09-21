@@ -1,0 +1,77 @@
+{
+ "date": "2026-09-19",
+ "module": "market",
+ "runId": "ee1b9a02-b119-4699-a553-8a49bde68084",
+ "status": "partial",
+ "generatedAt": "2026-09-19T03:53:30+08:00",
+ "browser": {
+  "triage": "OK",
+  "checkDepsExit": 0,
+  "proxy": "ready (Chrome 独立调试 profile :9333)",
+  "zeroPopup": true
+ },
+ "sources": [
+  {
+   "url": "https://www.futbin.com/",
+   "openedAt": "2026-09-19T03:39:00+08:00",
+   "dataCutoff": "2026-09-19T03:39:00+08:00",
+   "note": "建立同源会话，实测 200"
+  },
+  {
+   "url": "https://www.futbin.com/27/popular",
+   "openedAt": "2026-09-19T03:39:30+08:00",
+   "dataCutoff": "2026-09-19T03:40:00+08:00",
+   "note": "250 张唯一卡，双平台价+热度；Console 有效价 184、PC 有效价 183"
+  },
+  {
+   "url": "https://www.futbin.com/27/popular/evolutions",
+   "openedAt": "2026-09-19T03:40:00+08:00",
+   "dataCutoff": "2026-09-19T03:40:30+08:00",
+   "note": "500 张唯一进化卡（进化名+热度，无价格单元格）"
+  },
+  {
+   "url": "https://www.futbin.com/27/players?page=1..4",
+   "openedAt": "2026-09-19T03:42:00+08:00",
+   "dataCutoff": "2026-09-19T03:44:30+08:00",
+   "note": "本轮实测 200 可访问（非昨日 403 窗口），渲染 DOM 页 1-4 各 30 行共 120 行，Console 有效价 98、PC 有效价 71，价格分层据此分档"
+  },
+  {
+   "url": "https://www.futbin.com/27/totw 与 /27/promos",
+   "openedAt": "2026-09-19T03:40:30+08:00",
+   "dataCutoff": "2026-09-19T03:41:30+08:00",
+   "note": "候选路由实测打开后无名单内容（空页），周黑/活动卡如实空状态"
+  }
+ ],
+ "collected": {
+  "players": 750,
+  "popularUnique": 250,
+  "evolutionUnique": 500,
+  "playersTableRows": 120,
+  "priceBasis": "partial-live",
+  "validPS": 184,
+  "validPC": 183,
+  "tiers": {
+   "≥100万": 50,
+   "30-100万": 31,
+   "10-30万": 8,
+   "1-10万": 4
+  }
+ },
+ "pipeline": {
+  "nameZh": "命中 1843/1843，未命中 0（本轮新增 145 条译名到词库）",
+  "syncCurrentMarket": "750 张按 cardId 合并进 current.json（本轮唯一一次当前价写入）",
+  "avatarBackfill": "787 个 cardId，新增 109 键、下载 108 张；渲染后复核收敛 0 新增",
+  "render": "render-market.mjs 一次生成两份产物"
+ },
+ "missing": [
+  "概览·本周活动卡（Promo）与本周周黑（TOTW）：候选路由实测空页且 FC27 未开服无首期周黑，如实空状态。",
+  "进化卡平台价：/27/popular/evolutions 不渲染价格单元格，如实为空。",
+  "价格分层覆盖范围：开服前 FUTBIN 价格筛选参数失效，分档基于评分降序前 120 行实测双平台价（每档范围内 Top 50），非全量卡池。",
+  "部分卡牌平台价仍为 0（FUTBIN 尚未更新），按占位值处理。",
+  "头像：概览 589/593、扫描 746/750，缺口为 playerhover 无头像源卡（如 cardId 12690 noface），如实不显示图片，未用占位图顶替。",
+  "run-state 时限：首轮窗口内未完成译名补全（429 未命中 → 翻译追加词库耗时超出 20 分钟硬上限），按同日重跑机制归档旧 attempt 后以新 runId 收口提交。"
+ ],
+ "notes": [
+  "本任务不读 publish.md、不发布站点；未产出 market-icons.html，未渲染/提交任何传奇/英雄内容。"
+ ]
+}

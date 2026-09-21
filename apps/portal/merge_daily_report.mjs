@@ -11,16 +11,23 @@
  * 用法：node merge_daily_report.mjs [YYYY-MM-DD]
  *   不传日期则默认使用当天日期
  *
- * 体积策略：index.html 只内嵌当日三板块，历史日报全部改为独立文件链接，
- *          避免 index 随历史日报数量无限膨胀，稳定控制在 50M 以内。
+ * 体积策略（2026-09-20 重构）：
+ *   1) 面板里的本地图片不再内联成 base64，而是改写为指向 daily-merged/assets/ 的相对路径，
+ *      同一张图在所有页面（index / archive/<D>.html / summary.html）共用一份。
+ *      旧写法把 base64 复制进每一份文档，实测 daily-merged 达 191 MB（9,336 处 data:image / 170.5 MB，
+ *      单篇 archive 最高 46 MB）；改写后同一份内容不再随文档数与出现次数重复膨胀。
+ *   2) 图片文件名本身是内容寻址的（players 按 cardId、news 按内容哈希），同名必同图，
+ *      因此各日资源可安全合并进同一目录，而不必按日各存一份。
+ *   3) index.html 只内嵌当日板块，历史日报保持独立文件链接。
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, copyFileSync } from 'node:fs';
+import { readFileSync, existsSync, mkdirSync, readdirSync, copyFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { dailyReport } from './dashboard.mjs';
 import { themeReport } from '../../shared/presentation/report-theme.mjs';
 import { root, reportDate, atomicWrite } from '../../shared/lib/runtime.mjs';
-import { inlineLocalReportImages } from '../../shared/lib/report-assets.mjs';
+import { rewriteLocalReportAssets } from '../../shared/lib/report-assets.mjs';
+import { pruneReportAssets } from '../../shared/lib/prune-report-assets.mjs';
 
 // ========== 配置 ==========
 const BASE_DIR = root;
@@ -54,8 +61,7 @@ const REPORT_ROOT = path.join(BASE_DIR, 'reports', 'daily');
 const MERGED_DIR = path.join(BASE_DIR, 'daily-merged');
 const ARCHIVE_DIR = path.join(MERGED_DIR, 'archive');
 const ASSETS_DIR = path.join(MERGED_DIR, 'assets');
-const POSTER_SRC = path.join(BASE_DIR, 'apps', 'portal', 'assets', 'yanzu-banner.jpg');
-const POSTER_NAME = 'yanzu-banner.jpg';
+const PORTAL_ASSETS_DIR = path.join(BASE_DIR, 'apps', 'portal', 'assets');
 
 // ========== 日期处理 ==========
 const getDate = reportDate;
@@ -67,11 +73,12 @@ function findReport(source, dateStr) {
   return null;
 }
 
-// 读取并处理单个报告：主题化 + 本地图片内联 + srcdoc 转义
-function themedPanel(raw, baseDir) {
+// 读取并处理单个报告：主题化 + 本地图片改指共享资源目录 + srcdoc 转义
+// assetBase：本页回到 daily-merged/ 的相对前缀（见 generateDaily 的三个 view）。
+function themedPanel(raw, assetBase) {
   if (!/<html[\s>]/i.test(raw) || !/<\/html>/i.test(raw)) return null;
   try {
-    const themed = inlineLocalReportImages(themeReport(raw), baseDir);
+    const themed = rewriteLocalReportAssets(themeReport(raw), assetBase);
     return themed.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
   } catch {
     return null;
@@ -79,7 +86,7 @@ function themedPanel(raw, baseDir) {
 }
 
 // 读取并处理单个板块（当日产物必须自带当日日期，防止拿旧报告冒充当天内容）
-function buildPanel(source, dateStr) {
+function buildPanel(source, dateStr, assetBase) {
   const reportPath = findReport(source, dateStr);
   if (!reportPath) return null;
   let raw;
@@ -89,21 +96,21 @@ function buildPanel(source, dateStr) {
     return null;
   }
   if (!raw.includes(dateStr)) return null;
-  return themedPanel(raw, path.dirname(reportPath));
+  return themedPanel(raw, assetBase);
 }
 
 // 按文件名直接构建面板（用于栏目内子标签内容，如 market-scan.html）
-function buildPanelByFile(fileName, dateStr) {
-  return buildPanel({ id: fileName, fileName }, dateStr);
+function buildPanelByFile(fileName, dateStr, assetBase) {
+  return buildPanel({ id: fileName, fileName }, dateStr, assetBase);
 }
 
 // 传奇卡研究：跨日期保留的常驻研究底稿（自带成稿日期，不参与当日日期校验）。
 // 供给「传奇/英雄专栏」的「传奇卡研究」子标签（已从 FC27 市场栏迁出）。
 // 优先使用当日同名产物 reports/daily/D/market-icons-research.html，否则回退到 icons/reports/ 下的底稿。
-function buildIconResearchPanel(dateStr) {
+function buildIconResearchPanel(dateStr, assetBase) {
   const candidates = [
     path.join(REPORT_ROOT, dateStr, 'market-icons-research.html'),
-    // 逐小时「传奇卡研究」常驻底稿（FC26 开服价 vs FC27 当前价/最高价的实时投资建议，
+    // 高频刷新的「传奇卡研究」常驻底稿（FC26 开服价 vs FC27 当前价/最高价的实时投资建议，
     // 由 icons-pricerange-hourly 任务刷新）。放在静态预测底稿之前，保证往期日期也能看到最新研究。
     path.join(BASE_DIR, 'apps', 'market', 'engine', 'icons', 'reports', 'fc27-icon-live-research.html'),
     path.join(BASE_DIR, 'apps', 'market', 'engine', 'icons', 'reports', 'fc27-icon-analysis.html'),
@@ -111,7 +118,7 @@ function buildIconResearchPanel(dateStr) {
   for (const p of candidates) {
     if (!existsSync(p)) continue;
     try {
-      const panel = themedPanel(readFileSync(p, 'utf8'), path.dirname(p));
+      const panel = themedPanel(readFileSync(p, 'utf8'), assetBase);
       if (panel) return panel;
     } catch { /* 读取失败则尝试下一个来源 */ }
   }
@@ -120,11 +127,11 @@ function buildIconResearchPanel(dateStr) {
 
 // FC26 球员回顾：读项目内本地底稿并主题化。跨日期常驻（自带成稿口径，不参与当日日期校验），
 // 底稿由 render-fc26-review.mjs 离线生成，缺失时返回 null 交由模板给出如实空状态。
-function buildFc26ReviewPanel() {
+function buildFc26ReviewPanel(assetBase) {
   const p = path.join(BASE_DIR, FC26_SOURCE.file);
   if (!existsSync(p)) return null;
   try {
-    return themedPanel(readFileSync(p, 'utf8'), path.dirname(p));
+    return themedPanel(readFileSync(p, 'utf8'), assetBase);
   } catch {
     return null;
   }
@@ -151,20 +158,64 @@ function listReportDates(currentDate) {
   return Array.from(dates).sort().reverse();
 }
 
-// 确保海报等共享资源已就位（从 apps/portal/assets 复制到 daily-merged/assets）
-function ensureAssets(dateStr) {
-  if (!existsSync(ASSETS_DIR)) mkdirSync(ASSETS_DIR, { recursive: true });
-  if (existsSync(POSTER_SRC)) {
-    const target = path.join(ASSETS_DIR, POSTER_NAME);
-    try { copyFileSync(POSTER_SRC, target); } catch { /* 已存在或无权限时忽略 */ }
+// 按「仅在缺失或大小不同时写入」复制目录树。
+// 合并日报会被每日任务与每 4 小时的市场任务反复调用，而共享资源目录有 40 MB 以上，
+// 无条件整树覆盖会每轮白拷一次；按大小比对可让重复调用几乎零成本。
+function copyTreeIfChanged(srcDir, dstDir, counter) {
+  for (const entry of readdirSync(srcDir, { withFileTypes: true })) {
+    const src = path.join(srcDir, entry.name);
+    const dst = path.join(dstDir, entry.name);
+    if (entry.isDirectory()) {
+      mkdirSync(dst, { recursive: true });
+      copyTreeIfChanged(src, dst, counter);
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    try {
+      if (existsSync(dst) && statSync(dst).size === statSync(src).size) continue;
+      copyFileSync(src, dst);
+      counter.copied++;
+    } catch { /* 单个文件失败不阻断整体合并 */ }
   }
-  // 运行时行情资源：各市场页面在加载/刷新时统一读取这一份 current.json。
+}
+
+// 确保共享资源就位（从各日 reports/daily/<D>/assets 合并到 daily-merged/assets）。
+// 图片文件名本身就是内容寻址的（players 按 cardId、news 按内容哈希），同名必同图
+// ——已核对 4 天数据 0 例冲突——所以可以合并共用，而不必按日各存一份。
+function ensureAssets(dateStr) {
+  mkdirSync(ASSETS_DIR, { recursive: true });
+  const counter = { copied: 0 };
+
+  // 1) 海报等共享素材（apps/portal/assets → daily-merged/assets）
+  if (existsSync(PORTAL_ASSETS_DIR)) {
+    copyTreeIfChanged(PORTAL_ASSETS_DIR, ASSETS_DIR, counter);
+  }
+
+  // 2) 各日报告素材：除 data/ 外全部合并进同一目录（同名即同图，重复出现只留一份）
+  if (existsSync(REPORT_ROOT)) {
+    for (const d of readdirSync(REPORT_ROOT)) {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
+      const dayAssets = path.join(REPORT_ROOT, d, 'assets');
+      if (!existsSync(dayAssets)) continue;
+      for (const sub of readdirSync(dayAssets, { withFileTypes: true })) {
+        // data/ 是运行时可变资源（页面加载时 fetch 同一份 current.json），只认当日
+        if (!sub.isDirectory() || sub.name === 'data') continue;
+        const src = path.join(dayAssets, sub.name);
+        const dst = path.join(ASSETS_DIR, sub.name);
+        mkdirSync(dst, { recursive: true });
+        copyTreeIfChanged(src, dst, counter);
+      }
+    }
+  }
+
+  // 3) 运行时行情资源：各市场页面统一读取这一份，取当日版本
   const currentSrc = path.join(REPORT_ROOT, dateStr, 'assets', 'data', 'current.json');
   if (existsSync(currentSrc)) {
     const target = path.join(ASSETS_DIR, 'data', 'current.json');
     mkdirSync(path.dirname(target), { recursive: true });
     copyFileSync(currentSrc, target);
   }
+  return counter.copied;
 }
 
 // 生成历史日报链接列表（指向 archive/D.html 或同目录 D.html）
@@ -189,20 +240,24 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
   // 栏目内子标签容器：键为 dashboard.mjs 的视图名（market / legend）
   const subPanels = {};
   for (const src of SOURCES) {
-    const panel = buildPanel(src, dateStr);
+    const panel = buildPanel(src, dateStr, assetBase);
     if (panel) { panels[src.id] = panel; panelStates[src.id] = reportStatus(src.fileName, dateStr); }
   }
   // 进化专栏为可选板块：存在 evolution.html 时内嵌，否则由模板给出占位空状态。
-  const evolutionPanel = buildPanel(EVOLUTION_SOURCE, dateStr);
+  const evolutionPanel = buildPanel(EVOLUTION_SOURCE, dateStr, assetBase);
   if (evolutionPanel) { panels[EVOLUTION_SOURCE.id] = evolutionPanel; panelStates[EVOLUTION_SOURCE.id] = reportStatus(EVOLUTION_SOURCE.fileName, dateStr); }
 
   // 传奇/英雄专栏：两个子标签——「监控」为当日产物 icons-heroes.html（须自带当日日期），
   // 「研究」为跨日期研究底稿（自带成稿日期，不参与当日日期校验）。全部缺稿时由模板给出如实空状态。
   const legendSubs = [];
-  const iconsHeroesPanel = buildPanelByFile('icons-heroes.html', dateStr);
+  const iconsHeroesPanel = buildPanelByFile('icons-heroes.html', dateStr, assetBase);
   if (iconsHeroesPanel) legendSubs.push({ id: 'monitor', label: '传奇/英雄监控', html: iconsHeroesPanel });
-  const researchPanel = buildIconResearchPanel(dateStr);
+  const researchPanel = buildIconResearchPanel(dateStr, assetBase);
   if (researchPanel) legendSubs.push({ id: 'research', label: '传奇卡研究', html: researchPanel });
+  // 球员数据库三专栏（2026-09-20 重构新增）：传奇卡独立 / 英雄独立 / 周黑+活动卡+83+ 合一，
+  // 由 render-database-columns.mjs 渲染 reports/daily/D/database-columns.html。
+  const dbColumnsPanel = buildPanelByFile('database-columns.html', dateStr, assetBase);
+  if (dbColumnsPanel) legendSubs.push({ id: 'dbcolumns', label: '球员数据库', html: dbColumnsPanel });
   if (legendSubs.length) {
     subPanels.legend = legendSubs;
     panels[LEGEND_SOURCE.id] = legendSubs[0].html;
@@ -214,19 +269,19 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
   // 传奇/英雄相关内容已整体迁出至「传奇/英雄专栏」，此处不再收录。
   // 多份并存时用子标签切换；只有一份时直接作为该栏目内容，不显示多余的标签条。
   const marketSubs = [];
-  const overviewPanel = buildPanelByFile('market.html', dateStr);
+  const overviewPanel = buildPanelByFile('market.html', dateStr, assetBase);
   if (overviewPanel) marketSubs.push({ id: 'overview', label: '市场概览', html: overviewPanel });
-  const scanPanel = buildPanelByFile('market-scan.html', dateStr);
+  const scanPanel = buildPanelByFile('market-scan.html', dateStr, assetBase);
   if (scanPanel) marketSubs.push({ id: 'scan', label: '市场扫描', html: scanPanel });
-  // 关注列表由每小时任务刷新的 reports/daily/D/market-watch.html 提供（热度 + 价格 + 本日挂单价变动）
-  const watchPanel = buildPanelByFile('market-watch.html', dateStr);
+  // 关注列表由「FC·市场价格关注列表（每4小时）」任务刷新的 reports/daily/D/market-watch.html 提供（热度 + 价格 + 本日挂单价变动）
+  const watchPanel = buildPanelByFile('market-watch.html', dateStr, assetBase);
   if (watchPanel) marketSubs.push({ id: 'watch', label: '关注列表', html: watchPanel });
   if (marketSubs.length >= 2) subPanels.market = marketSubs;
   else if (marketSubs.length === 1) panels['market-analysis'] = marketSubs[0].html;
   else delete panels['market-analysis'];
 
   // FC26 球员回顾：离线常驻栏目，只要底稿存在即收录（无当日日期校验），跨日期一致。
-  const fc26Panel = buildFc26ReviewPanel();
+  const fc26Panel = buildFc26ReviewPanel(assetBase);
   if (fc26Panel) { panels[FC26_SOURCE.id] = fc26Panel; panelStates[FC26_SOURCE.id] = 'ok'; }
 
   const archiveLinks = buildArchiveLinks(dateStr, linkBase);
@@ -239,7 +294,11 @@ console.log(`=== 每日综合报告合并（dashboard 单日日报）===`);
 console.log(`日期: ${dateStr}`);
 
 mkdirSync(ARCHIVE_DIR, { recursive: true });
-ensureAssets(dateStr);
+const copiedAssets = ensureAssets(dateStr);
+console.log(`共享资源已就位: daily-merged/assets（本轮新增/更新 ${copiedAssets} 个文件）`);
+// 归并完成后立即清理报告目录里的副本：同一张图不再「报告目录 + 共享目录」各存一份。
+// 判据是「共享目录已有同名同大小文件」，所以只能在归并之后做；`data/` 永不清理。
+pruneReportAssets({ reportRoot: REPORT_ROOT, assetsDir: ASSETS_DIR, log: console.log });
 
 // archive 页视角：本页位于 archive 目录，历史链接用同目录文件名，素材前缀 '../'
 const archiveView = { linkBase: '', assetBase: '../' };
@@ -268,6 +327,9 @@ atomicWrite(path.join(MERGED_DIR, 'index.html'), indexHtml);
 console.log(`固定入口已更新: daily-merged/index.html`);
 
 // 5. 重建全部历史归档文件，使历史日报与最新版式保持一致（无有效板块时保留原文件，避免误清空）
+//    同时刷新 reports/daily/<D>/summary.html 这份本地归档副本：它与 archive/<D>.html 是同一份内容
+//    （只差素材前缀），若不同步，历史日报会长期滞留在「整篇内联 base64」的旧版式上，
+//    继续占据大量本地磁盘（2026-09-20 实测 reports/daily 因此达 297 MB）。
 let rebuilt = 0;
 for (const d of listReportDates(dateStr)) {
   if (d === dateStr) continue;
@@ -276,16 +338,19 @@ for (const d of listReportDates(dateStr)) {
     const histHtml = generateDaily(d, archiveView);
     if (!histHtml.includes('<iframe class="panel-iframe"')) { console.log(`  跳过 ${d}: 无有效板块`); continue; }
     atomicWrite(target, histHtml);
+    atomicWrite(path.join(REPORT_ROOT, d, 'summary.html'), generateDaily(d, summaryView));
     rebuilt++;
   } catch (e) {
     console.log(`  跳过 ${d}: ${e.message}`);
   }
 }
-console.log(`历史日报版式已统一: ${rebuilt} 篇`);
+console.log(`历史日报版式已统一: ${rebuilt} 篇（archive/<D>.html + reports/daily/<D>/summary.html）`);
 
 const sizeMb = (Buffer.byteLength(indexHtml) / 1024 / 1024).toFixed(1);
 console.log(`固定入口大小: ${sizeMb} MB`);
-// index 体积只由「当日」三个板块决定（几乎全部是当日资讯的内嵌图片），
-// 与历史日报数量无关（历史日报是独立文件，此处只放链接）。
-if (Number(sizeMb) > 50) console.warn(`⚠ 固定入口 ${sizeMb} MB 已超过 50MB 目标：主因是当日资讯内嵌图片过多，请在资讯侧压缩或减少内嵌图片后重跑。`);
+// 图片已改为共享资源目录的相对引用，index.html 只剩 HTML 文本（正常在 1 MB 量级）。
+// 若仍显著偏大，说明有产物把图片内联回了页面（例如某渲染器自行 base64），应去该渲染器排查，
+// 而不是靠压缩图片掩盖。
+if (Number(sizeMb) > 5) console.warn(`⚠ 固定入口 ${sizeMb} MB 明显超过预期（共享资源模式应在 1 MB 量级）：请检查是否有产物自行内联了图片。`);
+console.log(`历史日报链接数: ${listReportDates(dateStr).length}`);
 console.log(`历史日报链接数: ${listReportDates(dateStr).length}`);

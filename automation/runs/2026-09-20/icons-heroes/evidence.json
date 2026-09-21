@@ -1,0 +1,105 @@
+{
+  "date": "2026-09-20",
+  "module": "icons-heroes",
+  "runId": "7101b6da-badc-4cb5-bf00-151a806bb53d",
+  "status": "partial",
+  "startedAt": "2026-09-19T19:44:01.710Z",
+  "submittedAt": "2026-09-19T19:52:32Z",
+  "channel": {
+    "precheck": "node automation/browser-triage.mjs",
+    "verdict": "OK",
+    "exitCode": 0,
+    "selfHealed": false,
+    "note": "独立调试 profile 9333，未自愈；来源页 403 属来源侧限流，非通道故障"
+  },
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/players?page=1..10",
+      "openedAt": "2026-09-19T19:44:37Z",
+      "dataCutoff": "2026-09-19T19:44:57Z",
+      "status": 200,
+      "rows": 300,
+      "note": "列表页翻页，每页 30 行；一次打开即读 td.table-price.platform-ps-only（Console）与 platform-pc-only（PC）双平台单元格，未为切平台重复导航"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=11..26",
+      "openedAt": "2026-09-19T19:44:37Z",
+      "attempts": [
+        "2026-09-19T19:44:37Z 首轮（页 11–26 403）",
+        "2026-09-19T19:47:05Z 退避 120s 重试（第 1 次，仍 403）",
+        "2026-09-19T19:50:20Z 退避 180s 重试（第 2 次，契约上限，仍 403）"
+      ],
+      "status": 403,
+      "note": "第 11–26 页全 403，具时限性拦截；已按契约分钟级退避重试 2 次后停手，未秒级密集重试"
+    },
+    {
+      "url": "https://www.futbin.com/27/players（解析修复后复跑，0 行）",
+      "openedAt": "2026-09-19T19:51:20Z",
+      "status": 403,
+      "note": "修复后复跑（19:51:20Z）26 页全部被拦、0 行 → 解析修复未能在活数据上验证，改用本轮已取得的原始串离线验证（通过）。产物写盘 19:51:37Z、渲染 19:51:47Z。"
+    }
+  ],
+  "counts": {
+    "ledgerIcons": 131,
+    "iconsInSnapshot": 131,
+    "iconsWithListPrice": 102,
+    "iconsMissingFromSource": 29,
+    "heroes": 50,
+    "iconRowsExcludedNotInLedger": 97,
+    "debutIconExcluded": 0,
+    "otherVersionsExcluded": 51,
+    "snapshotValid": 113,
+    "snapshotPlatformValid": {
+      "console": 112,
+      "pc": 75
+    },
+    "priceRangeWithRange": 131,
+    "avatars": {
+      "icons": "131/131",
+      "heroes": "48/50",
+      "fc26Reference": "不出图（跨代红线）"
+    }
+  },
+  "missing": [
+    "29/131 传奇卡的「当日列表页价」缺失（第 11 页起页面 403），快照内以 price:0 / valid:false 如实留空；其当前价与卡级区间仍由 current.json + pricerange/latest.json 覆盖（131/131 区间完整）",
+    "英雄卡 Márquez 两个名目（cardId 21587 / 21600）源侧无头像（noface），如实不显示图片；未用他人图片或占位图顶替",
+    "本轮 base-icons.json 的列表页价因 FUTBIN 行结构变化而整体解析失败，已修复解析器但未能在活数据上复验（复跑被 403 全拦）"
+  ],
+  "defectsFoundAndFixed": [
+    {
+      "id": "price-cell-parse",
+      "file": "apps/market/engine/scripts/collect-icons-list.mjs",
+      "symptom": "2026-09-20 FUTBIN /27/players 行结构变化：价格单元格 innerText 变为「币价 \\n 涨跌徽标(如 14.29%)」多行串，旧的整串锚定正则 ^([\\d.]+)\\s*([KM]?)$ 整体失配 —— 实测 300 行只有 50 行解析出价（consoleValid 12 / pcValid 16 属失真低值）",
+      "fix": "价格改取首个非空行，丢弃涨跌徽标行（开服前不得计算涨跌）",
+      "validation": "用本轮实测原始串离线验证：'6M\\n…14.29%'→6000000、'11.57M…'→11570000、'15M'→15000000、'0'→0（全部正确）；同源问题今日已由 market 任务在 fetch-players-pages.mjs 中独立修复，口径一致"
+    },
+    {
+      "id": "launch-date-constant",
+      "file": "apps/market/engine/scripts/collect-icons-list.mjs",
+      "symptom": "LAUNCH_DATE 常量为 2026-09-18（注释称『2026-09-19 用户明确口径』），与根 AGENTS.md「FUTBIN 平台口径强制规则」、automation/prompts/icons-heroes.md、.workbuddy/memory/MEMORY.md 及 09-17/18/19 三份快照（均 2026-09-25）冲突；会把当日快照 priceBasis 由 listing-estimate 翻成 market，触碰『开服前不计算日环比与累计涨跌』红线",
+      "fix": "改回 2026-09-25，与上述契约对齐；本日快照已确认为 priceBasis=listing-estimate",
+      "outstanding": "collect-icon-priceranges.mjs / record-icons-daily.mjs / build-icon-research.mjs / build-same-period-advice.mjs 仍带 2026-09-18 常量（属其他任务文件，本轮未改动）；automation/scripts/fc27-buy-recommend.mjs 为 2026-09-25。开服日口径需用户一次性裁定后全局同步"
+    }
+  ],
+  "redlines": {
+    "renderedMarketPages": false,
+    "published": false,
+    "createdAutomation": false,
+    "calledRunState": true,
+    "reusedSnapshotAsCurrentPrice": false,
+    "currentPriceSource": "apps/market/engine/data/prices/fc27/current.json（按 cardId 读取；本轮未重复打开详情页采集当前价）"
+  },
+  "artifacts": [
+    "apps/market/engine/icons/data/prices/fc27/daily/2026-09-20.json",
+    "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+    "apps/market/engine/heroes/data/prices/fc27/base-heroes.json",
+    "reports/daily/2026-09-20/icons-heroes.html",
+    "automation/runs/2026-09-20/icons-heroes/work/list-raw.json"
+  ],
+  "checks": {
+    "tests": "38/38 通过（execution / regression / verify-publication / news-media）",
+    "snapshot": "131 张 · 有效价 113 · 区间 131/131 · launchDate 2026-09-25 · priceBasis listing-estimate · 无日环比/累计涨跌字段",
+    "page": "334,370 B · 头像计数 131/131 与 48/50 · FC26 参考区不出图 · 涨跌字样仅为口径说明（8 处，无实际计算）"
+  },
+  "finishedAt": "2026-09-19T19:52:32Z"
+}

@@ -1,0 +1,6342 @@
+{
+ "date": "2026-09-21",
+ "generatedAt": "2026-09-20T23:54:56.052Z",
+ "platform": "console+pc",
+ "priceBasis": "partial-live",
+ "minValidPrice": 1000,
+ "source": {
+  "currentMarket": "apps/market/engine/data/prices/fc27/current.json",
+  "currentMarketGeneratedAt": "2026-09-20T23:54:46.616Z",
+  "priceSeries": "apps/market/engine/data/prices/fc27/series/popular.json",
+  "priceSeriesExists": true,
+  "evolutions": "apps/market/engine/data/prices/fc27/evolutions/latest.json",
+  "evolutionsExists": true,
+  "marketJson": "automation/runs/2026-09-21/market/market.json",
+  "marketJsonExists": true
+ },
+ "universe": {
+  "tracked": 1182,
+  "priceValid": 269,
+  "psValid": 268,
+  "pcValid": 226,
+  "withPopularity": 803,
+  "points": 2,
+  "firstHour": "03",
+  "lastHour": "07"
+ },
+ "scoring": {
+  "formula": "关注分 = 0.45×热度分 + 0.40×价格分 + 0.15×变动分（缺项按中性 50 计入并标注 neutralFilled）",
+  "popularityScore": "该卡 FUTBIN 热度计数在全体有热度卡中的分位（0–100）",
+  "priceScore": "50 + 50×(1 − 参考价/同档中位价)，同位置组且总评 ±2、样本 ≥5 才计算；越便宜分越高",
+  "referencePrice": "两个平台中有效价（≥1000 coins）的较大者；两平台都无效则该卡不参与打分",
+  "moveScore": "50 + 挂单价变动百分比×2（+10% → 70，−10% → 30）；**只取两个相邻观测点**（basis=hourly；该字面值是历史命名，语义为「相邻两次观测点对比」）的对比。与当日开盘基线（03:05）的单点对比只作展示、不计入综合分（开服初期挂单稀少且 FUTBIN 会自行修订估值，单点对比可能混入估值修订），并以 moveSuspicious 标注 |变动| ≥ 50% 的跳变。",
+  "changeBasis": "intradayChange[].basis：hourly = 当日相邻两次观测点（字面值为历史命名）；daily-open = 与当日开盘基线（03:05）比较",
+  "caveat": "FC27 平台价为 FUTBIN 滚动更新的挂单/估价口径，不是成交价；本表不计算日环比与累计涨跌，intradayChange 仅表示同一日内两个有效观测点之间的变化。"
+ },
+ "lists": {
+  "watch": [
+   {
+    "rank": 1,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_15/anthony-gordon",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": 93,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 92,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "进化卡：Believe"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 2,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_17_15/anthony-gordon",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": 93,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 92,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "进化卡：Believe"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 3,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_17/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 4,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_18/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 5,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_19/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 6,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 9300,
+      "now": 10500,
+      "pct": 12.9,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9800,
+      "now": 10000,
+      "pct": 2.04,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 88,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": 76,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +12.9%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 7,
+    "cardId": "54",
+    "name": "Lavelle",
+    "nameZh": "罗丝·拉韦尔",
+    "url": "https://www.futbin.com/27/player/54/rose-lavelle",
+    "rating": 87,
+    "pos": "CAM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 73,
+    "popularityDelta": 12,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 7600,
+      "now": 8500,
+      "pct": 11.84,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 11500,
+      "now": 13000,
+      "pct": 13.04,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 83,
+    "scoreParts": {
+     "popularity": 95,
+     "price": 73,
+     "move": 74,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +11.84%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 8,
+    "cardId": "223",
+    "name": "Semenyo",
+    "nameZh": "安托万·塞梅诺",
+    "url": "https://www.futbin.com/27/player/223/antoine-semenyo",
+    "rating": 85,
+    "pos": "RW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 53,
+    "popularityDelta": 2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 12500,
+      "now": 13500,
+      "pct": 8,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7400,
+      "now": 9300,
+      "pct": 25.68,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 34500,
+    "peerCount": 36,
+    "watchScore": 82,
+    "scoreParts": {
+     "popularity": 90,
+     "price": 80,
+     "move": 66,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +8%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 9,
+    "cardId": "1",
+    "name": "Haaland",
+    "nameZh": "埃尔林·哈兰德",
+    "url": "https://www.futbin.com/27/player/1/erling-haaland",
+    "rating": 91,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 47,
+    "popularityDelta": 10,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 227000,
+      "now": 214000,
+      "pct": -5.73,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 205000,
+      "now": 194000,
+      "pct": -5.37,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 1605000,
+    "peerCount": 16,
+    "watchScore": 82,
+    "scoreParts": {
+     "popularity": 87,
+     "price": 93,
+     "move": 39,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -5.73%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 10,
+    "cardId": "787",
+    "name": "João Cancelo",
+    "nameZh": "若昂·坎塞洛",
+    "url": "https://www.futbin.com/27/player/787/joao-pedro-cavaco-cancelo",
+    "rating": 83,
+    "pos": "LB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 43,
+    "popularityDelta": 12,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 1500,
+      "now": 1500,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 82,
+     "price": 92,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 11,
+    "cardId": "91",
+    "name": "Rice",
+    "nameZh": "德克兰·赖斯",
+    "url": "https://www.futbin.com/27/player/91/declan-rice",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 11,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11500,
+      "now": 11250,
+      "pct": -2.17,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9900,
+      "now": 10750,
+      "pct": 8.59,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 85,
+     "move": 46,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -2.17%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 12,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_17/anthony-gordon",
+    "rating": 82,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3100,
+    "peerCount": 25,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 66,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 13,
+    "cardId": "719",
+    "name": "Matheus Nunes",
+    "nameZh": "马特乌斯·努内斯",
+    "url": "https://www.futbin.com/27/player/719/matheus-luiz-nunes",
+    "rating": 83,
+    "pos": "RB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 9,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 2700,
+      "now": 2600,
+      "pct": -3.7,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 1900,
+      "now": 2000,
+      "pct": 5.26,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 86,
+     "move": 43,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -3.7%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 14,
+    "cardId": "456",
+    "name": "Barella",
+    "nameZh": "尼科洛·巴雷拉",
+    "url": "https://www.futbin.com/27/player/456/nicolo-barella",
+    "rating": 87,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 47,
+    "popularityDelta": 20,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8100,
+      "now": 8000,
+      "pct": -1.23,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7200,
+      "now": 7300,
+      "pct": 1.39,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 87,
+     "price": 83,
+     "move": 48,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 15,
+    "cardId": "61",
+    "name": "Ona Batlle",
+    "nameZh": "安娜·巴耶",
+    "url": "https://www.futbin.com/27/player/61/ona-batlle-pascual",
+    "rating": 87,
+    "pos": "RB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 46,
+    "popularityDelta": 0,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8300,
+      "now": 8600,
+      "pct": 3.61,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9700,
+      "now": 11000,
+      "pct": 13.4,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 30625,
+    "peerCount": 30,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 86,
+     "price": 82,
+     "move": 57,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +3.61%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 16,
+    "cardId": "30",
+    "name": "Russo",
+    "nameZh": "阿莱西娅·鲁索",
+    "url": "https://www.futbin.com/27/player/30/alessia-russo",
+    "rating": 88,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 46,
+    "popularityDelta": -2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 29500,
+      "now": 29750,
+      "pct": 0.85,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 39000,
+      "now": 40000,
+      "pct": 2.56,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 125500,
+    "peerCount": 34,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 86,
+     "price": 84,
+     "move": 52,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 17,
+    "cardId": "48",
+    "name": "Banda",
+    "nameZh": "芭芭拉·班达",
+    "url": "https://www.futbin.com/27/player/48/barbra-banda",
+    "rating": 88,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 34,
+    "popularityDelta": -10,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11750,
+      "now": 11750,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 10500,
+      "now": 12000,
+      "pct": 14.29,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 125500,
+    "peerCount": 34,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 76,
+     "price": 95,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 18,
+    "cardId": "66",
+    "name": "Hemp",
+    "nameZh": "劳伦·亨普",
+    "url": "https://www.futbin.com/27/player/66/lauren-hemp",
+    "rating": 87,
+    "pos": "LM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 36,
+    "popularityDelta": 15,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8000,
+      "now": 9300,
+      "pct": 16.25,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9100,
+      "now": 11000,
+      "pct": 20.88,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 79,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 77,
+     "move": 83,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +16.25%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 19,
+    "cardId": "85",
+    "name": "Kimmich",
+    "nameZh": "约书亚·基米希",
+    "url": "https://www.futbin.com/27/player/85/joshua-kimmich",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 37,
+    "popularityDelta": 7,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11000,
+      "now": 11500,
+      "pct": 4.55,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 10500,
+      "now": 11000,
+      "pct": 4.76,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 78,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 84,
+     "move": 59,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +4.55%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 20,
+    "cardId": "651",
+    "name": "Marquinhos",
+    "nameZh": "马尔基尼奥斯",
+    "url": "https://www.futbin.com/27/player/651/marcos-aoas-correa",
+    "rating": 87,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 17250,
+      "now": 18250,
+      "pct": 5.8,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 16500,
+      "now": 17000,
+      "pct": 3.03,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 30625,
+    "peerCount": 30,
+    "watchScore": 77,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 70,
+     "move": 62,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +5.8%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 21,
+    "cardId": "7",
+    "name": "Shaw",
+    "nameZh": "卡蒂嘉·肖",
+    "url": "https://www.futbin.com/27/player/7/khadija-shaw",
+    "rating": 90,
+    "pos": "ST",
+    "cardType": "",
+    "evo": null,
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 17,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 650500,
+    "peerCount": 22,
+    "watchScore": 76,
+    "scoreParts": {
+     "popularity": 56,
+     "price": 98,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 1,
+     "pc": 1,
+     "pop": 1
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 22,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843/anthony-gordon",
+    "rating": 82,
+    "pos": "LW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": -14,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 2200,
+      "now": 2100,
+      "pct": -4.55,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 1500,
+      "now": 1500,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 3100,
+    "peerCount": 25,
+    "watchScore": 75,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 66,
+     "move": 41,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "挂单价回落 -4.55%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 23,
+    "cardId": "478",
+    "name": "Malen",
+    "nameZh": "马伦",
+    "url": "https://www.futbin.com/27/player/478/donyell-malen",
+    "rating": 83,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 47,
+    "popularityDelta": 7,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 7600,
+      "now": 7500,
+      "pct": -1.32,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 3700,
+      "now": 4000,
+      "pct": 8.11,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": 74,
+    "scoreParts": {
+     "popularity": 87,
+     "price": 70,
+     "move": 47,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 24,
+    "cardId": "437",
+    "name": "Foden",
+    "nameZh": "菲尔·福登",
+    "url": "https://www.futbin.com/27/player/437/phil-foden",
+    "rating": 84,
+    "pos": "CAM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 22,
+    "popularityDelta": 9,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 1200,
+      "now": 1300,
+      "pct": 8.33,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 5500,
+    "peerCount": 51,
+    "watchScore": 74,
+    "scoreParts": {
+     "popularity": 63,
+     "price": 88,
+     "move": 67,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价",
+     "挂单价上行 +8.33%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 25,
+    "cardId": "454",
+    "name": "Martínez",
+    "nameZh": "劳塔罗·马丁内斯",
+    "url": "https://www.futbin.com/27/player/454/lautaro-martinez",
+    "rating": 87,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 22,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8600,
+      "now": 8500,
+      "pct": -1.16,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7000,
+      "now": 7400,
+      "pct": 5.71,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 102500,
+    "peerCount": 36,
+    "watchScore": 74,
+    "scoreParts": {
+     "popularity": 63,
+     "price": 96,
+     "move": 48,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 26,
+    "cardId": "738",
+    "name": "Salah",
+    "nameZh": "穆罕默德·萨拉赫",
+    "url": "https://www.futbin.com/27/player/738/mohamed-salah",
+    "rating": 87,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 59,
+    "popularityDelta": -9,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 20500,
+      "now": 23750,
+      "pct": 15.85,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 23000,
+      "now": 24500,
+      "pct": 6.52,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 73,
+    "scoreParts": {
+     "popularity": 92,
+     "price": 49,
+     "move": 82,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "挂单价上行 +15.85%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 27,
+    "cardId": "18",
+    "name": "Pajor",
+    "nameZh": "艾娃·帕约尔",
+    "url": "https://www.futbin.com/27/player/18/ewa-pajor",
+    "rating": 89,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 129,
+    "popularityDelta": -48,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 188000,
+      "now": 189000,
+      "pct": 0.53,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 202000,
+      "now": 202000,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 220000,
+    "peerCount": 29,
+    "watchScore": 73,
+    "scoreParts": {
+     "popularity": 97,
+     "price": 54,
+     "move": 51,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 28,
+    "cardId": "683",
+    "name": "Rüdiger",
+    "nameZh": "安东尼奥·吕迪格",
+    "url": "https://www.futbin.com/27/player/683/antonio-rudiger",
+    "rating": 83,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 32,
+    "popularityDelta": 2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 3900,
+      "now": 3900,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 2000,
+      "now": 2300,
+      "pct": 15,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 73,
+    "scoreParts": {
+     "popularity": 75,
+     "price": 79,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 29,
+    "cardId": "252",
+    "name": "Gyökeres",
+    "nameZh": "维克托·哲凯赖什",
+    "url": "https://www.futbin.com/27/player/252/viktor-gyokeres",
+    "rating": 86,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 24,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 18000,
+      "now": 18500,
+      "pct": 2.78,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 14000,
+      "now": 13500,
+      "pct": -3.57,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 52625,
+    "peerCount": 36,
+    "watchScore": 72,
+    "scoreParts": {
+     "popularity": 69,
+     "price": 82,
+     "move": 56,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价",
+     "挂单价上行 +2.78%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 30,
+    "cardId": "238",
+    "name": "Isak",
+    "nameZh": "亚历山大·伊萨克",
+    "url": "https://www.futbin.com/27/player/238/alexander-isak",
+    "rating": 86,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 36,
+    "popularityDelta": 8,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 29500,
+      "now": 29000,
+      "pct": -1.69,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 25000,
+      "now": 24000,
+      "pct": -4,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 52625,
+    "peerCount": 36,
+    "watchScore": 72,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 72,
+     "move": 47,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   }
+  ],
+  "undervalued": [
+   {
+    "rank": 1,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_15/anthony-gordon",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": 93,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 92,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "进化卡：Believe"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 2,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_17_15/anthony-gordon",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": 93,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 92,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "进化卡：Believe"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 3,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_17/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 4,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_18/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 5,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24_19/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 90,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 6,
+    "cardId": "24",
+    "name": "Hasegawa",
+    "nameZh": "长谷川唯",
+    "url": "https://www.futbin.com/27/player/24/yui-hasegawa",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 61,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 9300,
+      "now": 10500,
+      "pct": 12.9,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9800,
+      "now": 10000,
+      "pct": 2.04,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 88,
+    "scoreParts": {
+     "popularity": 93,
+     "price": 86,
+     "move": 76,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +12.9%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 7,
+    "cardId": "54",
+    "name": "Lavelle",
+    "nameZh": "罗丝·拉韦尔",
+    "url": "https://www.futbin.com/27/player/54/rose-lavelle",
+    "rating": 87,
+    "pos": "CAM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 73,
+    "popularityDelta": 12,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 7600,
+      "now": 8500,
+      "pct": 11.84,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 11500,
+      "now": 13000,
+      "pct": 13.04,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 83,
+    "scoreParts": {
+     "popularity": 95,
+     "price": 73,
+     "move": 74,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +11.84%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 8,
+    "cardId": "223",
+    "name": "Semenyo",
+    "nameZh": "安托万·塞梅诺",
+    "url": "https://www.futbin.com/27/player/223/antoine-semenyo",
+    "rating": 85,
+    "pos": "RW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 53,
+    "popularityDelta": 2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 12500,
+      "now": 13500,
+      "pct": 8,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7400,
+      "now": 9300,
+      "pct": 25.68,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 34500,
+    "peerCount": 36,
+    "watchScore": 82,
+    "scoreParts": {
+     "popularity": 90,
+     "price": 80,
+     "move": 66,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +8%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 9,
+    "cardId": "1",
+    "name": "Haaland",
+    "nameZh": "埃尔林·哈兰德",
+    "url": "https://www.futbin.com/27/player/1/erling-haaland",
+    "rating": 91,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 47,
+    "popularityDelta": 10,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 227000,
+      "now": 214000,
+      "pct": -5.73,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 205000,
+      "now": 194000,
+      "pct": -5.37,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 1605000,
+    "peerCount": 16,
+    "watchScore": 82,
+    "scoreParts": {
+     "popularity": 87,
+     "price": 93,
+     "move": 39,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -5.73%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 10,
+    "cardId": "787",
+    "name": "João Cancelo",
+    "nameZh": "若昂·坎塞洛",
+    "url": "https://www.futbin.com/27/player/787/joao-pedro-cavaco-cancelo",
+    "rating": 83,
+    "pos": "LB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 43,
+    "popularityDelta": 12,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 1500,
+      "now": 1500,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 82,
+     "price": 92,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 11,
+    "cardId": "91",
+    "name": "Rice",
+    "nameZh": "德克兰·赖斯",
+    "url": "https://www.futbin.com/27/player/91/declan-rice",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 11,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11500,
+      "now": 11250,
+      "pct": -2.17,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9900,
+      "now": 10750,
+      "pct": 8.59,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 85,
+     "move": 46,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -2.17%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 12,
+    "cardId": "843",
+    "name": "Gordon",
+    "nameZh": "安东尼·戈登",
+    "url": "https://www.futbin.com/27/player/843_17/anthony-gordon",
+    "rating": 82,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 66,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3100,
+    "peerCount": 25,
+    "watchScore": 81,
+    "scoreParts": {
+     "popularity": 94,
+     "price": 66,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 13,
+    "cardId": "719",
+    "name": "Matheus Nunes",
+    "nameZh": "马特乌斯·努内斯",
+    "url": "https://www.futbin.com/27/player/719/matheus-luiz-nunes",
+    "rating": 83,
+    "pos": "RB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 9,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 2700,
+      "now": 2600,
+      "pct": -3.7,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 1900,
+      "now": 2000,
+      "pct": 5.26,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 86,
+     "move": 43,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价回落 -3.7%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 14,
+    "cardId": "456",
+    "name": "Barella",
+    "nameZh": "尼科洛·巴雷拉",
+    "url": "https://www.futbin.com/27/player/456/nicolo-barella",
+    "rating": 87,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 47,
+    "popularityDelta": 20,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8100,
+      "now": 8000,
+      "pct": -1.23,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7200,
+      "now": 7300,
+      "pct": 1.39,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 87,
+     "price": 83,
+     "move": 48,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 15,
+    "cardId": "61",
+    "name": "Ona Batlle",
+    "nameZh": "安娜·巴耶",
+    "url": "https://www.futbin.com/27/player/61/ona-batlle-pascual",
+    "rating": 87,
+    "pos": "RB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 46,
+    "popularityDelta": 0,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8300,
+      "now": 8600,
+      "pct": 3.61,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9700,
+      "now": 11000,
+      "pct": 13.4,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 30625,
+    "peerCount": 30,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 86,
+     "price": 82,
+     "move": 57,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +3.61%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 16,
+    "cardId": "30",
+    "name": "Russo",
+    "nameZh": "阿莱西娅·鲁索",
+    "url": "https://www.futbin.com/27/player/30/alessia-russo",
+    "rating": 88,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 46,
+    "popularityDelta": -2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 29500,
+      "now": 29750,
+      "pct": 0.85,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 39000,
+      "now": 40000,
+      "pct": 2.56,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 125500,
+    "peerCount": 34,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 86,
+     "price": 84,
+     "move": 52,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 17,
+    "cardId": "48",
+    "name": "Banda",
+    "nameZh": "芭芭拉·班达",
+    "url": "https://www.futbin.com/27/player/48/barbra-banda",
+    "rating": 88,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 34,
+    "popularityDelta": -10,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11750,
+      "now": 11750,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 10500,
+      "now": 12000,
+      "pct": 14.29,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 125500,
+    "peerCount": 34,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 76,
+     "price": 95,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 18,
+    "cardId": "66",
+    "name": "Hemp",
+    "nameZh": "劳伦·亨普",
+    "url": "https://www.futbin.com/27/player/66/lauren-hemp",
+    "rating": 87,
+    "pos": "LM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 36,
+    "popularityDelta": 15,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8000,
+      "now": 9300,
+      "pct": 16.25,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9100,
+      "now": 11000,
+      "pct": 20.88,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 79,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 77,
+     "move": 83,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +16.25%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 19,
+    "cardId": "85",
+    "name": "Kimmich",
+    "nameZh": "约书亚·基米希",
+    "url": "https://www.futbin.com/27/player/85/joshua-kimmich",
+    "rating": 88,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 37,
+    "popularityDelta": 7,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11000,
+      "now": 11500,
+      "pct": 4.55,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 10500,
+      "now": 11000,
+      "pct": 4.76,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 53,
+    "watchScore": 78,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 84,
+     "move": 59,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +4.55%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 20,
+    "cardId": "651",
+    "name": "Marquinhos",
+    "nameZh": "马尔基尼奥斯",
+    "url": "https://www.futbin.com/27/player/651/marcos-aoas-correa",
+    "rating": 87,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 17250,
+      "now": 18250,
+      "pct": 5.8,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 16500,
+      "now": 17000,
+      "pct": 3.03,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 30625,
+    "peerCount": 30,
+    "watchScore": 77,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 70,
+     "move": 62,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +5.8%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   }
+  ],
+  "trending": [
+   {
+    "rank": 1,
+    "cardId": "251",
+    "name": "Caicedo",
+    "nameZh": "摩西斯·卡些度",
+    "url": "https://www.futbin.com/27/player/251/moises-caicedo",
+    "rating": 86,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 33,
+    "popularityDelta": 11,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 18000,
+      "now": 20250,
+      "pct": 12.5,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 16250,
+      "now": 26000,
+      "pct": 60,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 11250,
+    "peerCount": 65,
+    "watchScore": 45,
+    "scoreParts": {
+     "popularity": 75,
+     "price": 0,
+     "move": 75,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档偏贵",
+     "挂单价⚠上行 +12.5%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": true
+   },
+   {
+    "rank": 2,
+    "cardId": "20",
+    "name": "Chawinga",
+    "nameZh": "特姆瓦·查温佳",
+    "url": "https://www.futbin.com/27/player/20/temwa-chawinga",
+    "rating": 89,
+    "pos": "LM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 55,
+    "popularityDelta": -7,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 30750,
+      "now": 33000,
+      "pct": 7.32,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 69500,
+      "now": 37000,
+      "pct": -46.76,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 37000,
+    "peerCount": 37,
+    "watchScore": 71,
+    "scoreParts": {
+     "popularity": 91,
+     "price": 50,
+     "move": 65,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "挂单价上行 +7.32%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 3,
+    "cardId": "50",
+    "name": "Debinha",
+    "nameZh": "德比妮亚",
+    "url": "https://www.futbin.com/27/player/50/debora-c-de-oliveira",
+    "rating": 87,
+    "pos": "CAM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 50,
+    "popularityDelta": 12,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 16000,
+      "now": 20000,
+      "pct": 25,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 27250,
+      "now": 36000,
+      "pct": 32.11,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 65,
+    "scoreParts": {
+     "popularity": 89,
+     "price": 25,
+     "move": 100,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "挂单价上行 +25%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 4,
+    "cardId": "223",
+    "name": "Semenyo",
+    "nameZh": "安托万·塞梅诺",
+    "url": "https://www.futbin.com/27/player/223/antoine-semenyo",
+    "rating": 85,
+    "pos": "RW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 53,
+    "popularityDelta": 2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 12500,
+      "now": 13500,
+      "pct": 8,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 7400,
+      "now": 9300,
+      "pct": 25.68,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 34500,
+    "peerCount": 36,
+    "watchScore": 82,
+    "scoreParts": {
+     "popularity": 90,
+     "price": 80,
+     "move": 66,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +8%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 5,
+    "cardId": "742",
+    "name": "Cascarino",
+    "nameZh": "黛勒芬·卡斯卡里诺",
+    "url": "https://www.futbin.com/27/player/742/delphine-cascarino",
+    "rating": 85,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 15,
+    "popularityDelta": -6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 4600,
+      "now": 4900,
+      "pct": 6.52,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 5000,
+      "now": 6100,
+      "pct": 22,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 8450,
+    "peerCount": 62,
+    "watchScore": 59,
+    "scoreParts": {
+     "popularity": 53,
+     "price": 64,
+     "move": 63,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "挂单价上行 +6.52%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 6,
+    "cardId": "627",
+    "name": "Mateo",
+    "nameZh": "克拉拉·马特奥",
+    "url": "https://www.futbin.com/27/player/627/clara-mateo",
+    "rating": 85,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 19,
+    "popularityDelta": 4,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 10750,
+      "now": 13000,
+      "pct": 20.93,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 16500,
+      "now": 18500,
+      "pct": 12.12,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 34500,
+    "peerCount": 36,
+    "watchScore": 70,
+    "scoreParts": {
+     "popularity": 60,
+     "price": 73,
+     "move": 92,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价",
+     "挂单价上行 +20.93%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 7,
+    "cardId": "66",
+    "name": "Hemp",
+    "nameZh": "劳伦·亨普",
+    "url": "https://www.futbin.com/27/player/66/lauren-hemp",
+    "rating": 87,
+    "pos": "LM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 36,
+    "popularityDelta": 15,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 8000,
+      "now": 9300,
+      "pct": 16.25,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 9100,
+      "now": 11000,
+      "pct": 20.88,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 79,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 77,
+     "move": 83,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档低价",
+     "挂单价上行 +16.25%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 8,
+    "cardId": "559",
+    "name": "Rodrygo",
+    "nameZh": "罗德里戈·格斯",
+    "url": "https://www.futbin.com/27/player/559/rodrygo-silva-de-goes",
+    "rating": 84,
+    "pos": "LW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 60,
+    "popularityDelta": 24,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 44000,
+      "now": 45000,
+      "pct": 2.27,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 40000,
+      "now": 47750,
+      "pct": 19.38,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 19000,
+    "peerCount": 33,
+    "watchScore": 50,
+    "scoreParts": {
+     "popularity": 92,
+     "price": 0,
+     "move": 55,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "挂单价上行 +2.27%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 9,
+    "cardId": "622",
+    "name": "Chawinga",
+    "nameZh": "塔比莎·查温佳",
+    "url": "https://www.futbin.com/27/player/622/tabitha-chawinga",
+    "rating": 87,
+    "pos": "LW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 43,
+    "popularityDelta": 3,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 79000,
+      "now": 85000,
+      "pct": 7.59,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 107000,
+      "now": 86500,
+      "pct": -19.16,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 102500,
+    "peerCount": 36,
+    "watchScore": 70,
+    "scoreParts": {
+     "popularity": 82,
+     "price": 58,
+     "move": 65,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "挂单价上行 +7.59%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 10,
+    "cardId": "218",
+    "name": "Alisson",
+    "nameZh": "阿利松·贝克尔",
+    "url": "https://www.futbin.com/27/player/218/alisson-ramses-becker",
+    "rating": 87,
+    "pos": "GK",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 18,
+    "popularityDelta": -2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 54500,
+      "now": 53000,
+      "pct": -2.75,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 61500,
+      "now": 50000,
+      "pct": -18.7,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 22000,
+    "peerCount": 8,
+    "watchScore": 33,
+    "scoreParts": {
+     "popularity": 58,
+     "price": 0,
+     "move": 45,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档偏贵",
+     "挂单价回落 -2.75%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 11,
+    "cardId": "623",
+    "name": "Bacha",
+    "nameZh": "塞尔玛·巴查",
+    "url": "https://www.futbin.com/27/player/623/selma-bacha",
+    "rating": 86,
+    "pos": "LB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 33,
+    "popularityDelta": 1,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 23000,
+      "now": 25750,
+      "pct": 11.96,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 37750,
+      "now": 31000,
+      "pct": -17.88,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 18500,
+    "peerCount": 31,
+    "watchScore": 51,
+    "scoreParts": {
+     "popularity": 75,
+     "price": 16,
+     "move": 74,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档偏贵",
+     "挂单价上行 +11.96%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 12,
+    "cardId": "115",
+    "name": "Stanway",
+    "nameZh": "乔治亚·斯坦威",
+    "url": "https://www.futbin.com/27/player/115/georgia-stanway",
+    "rating": 86,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 49,
+    "popularityDelta": 18,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 17000,
+      "now": 19000,
+      "pct": 11.76,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 29750,
+      "now": 35000,
+      "pct": 17.65,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 11250,
+    "peerCount": 65,
+    "watchScore": 51,
+    "scoreParts": {
+     "popularity": 88,
+     "price": 0,
+     "move": 74,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "挂单价上行 +11.76%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 13,
+    "cardId": "725",
+    "name": "De Paul",
+    "nameZh": "德保罗",
+    "url": "https://www.futbin.com/27/player/725/rodrigo-de-paul",
+    "rating": 83,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 18,
+    "popularityDelta": 6,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 1200,
+      "now": 1400,
+      "pct": 16.67,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 1000,
+      "now": 1000,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": 71,
+    "scoreParts": {
+     "popularity": 58,
+     "price": 82,
+     "move": 83,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价",
+     "挂单价上行 +16.67%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 14,
+    "cardId": "52",
+    "name": "Diani",
+    "nameZh": "卡迪迪娅图·迪亚尼",
+    "url": "https://www.futbin.com/27/player/52/kadidiatou-diani",
+    "rating": 87,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 143,
+    "popularityDelta": -202,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 96500,
+      "now": 83500,
+      "pct": -13.47,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 123000,
+      "now": 103000,
+      "pct": -16.26,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 48,
+    "scoreParts": {
+     "popularity": 98,
+     "price": 0,
+     "move": 23,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "挂单价回落 -13.47%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 15,
+    "cardId": "738",
+    "name": "Salah",
+    "nameZh": "穆罕默德·萨拉赫",
+    "url": "https://www.futbin.com/27/player/738/mohamed-salah",
+    "rating": 87,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 59,
+    "popularityDelta": -9,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 20500,
+      "now": 23750,
+      "pct": 15.85,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 23000,
+      "now": 24500,
+      "pct": 6.52,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 24000,
+    "peerCount": 61,
+    "watchScore": 73,
+    "scoreParts": {
+     "popularity": 92,
+     "price": 49,
+     "move": 82,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列",
+     "挂单价上行 +15.85%"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 16,
+    "cardId": "683",
+    "name": "Rüdiger",
+    "nameZh": "安东尼奥·吕迪格",
+    "url": "https://www.futbin.com/27/player/683/antonio-rudiger",
+    "rating": 83,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 32,
+    "popularityDelta": 2,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 3900,
+      "now": 3900,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 2000,
+      "now": 2300,
+      "pct": 15,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": 73,
+    "scoreParts": {
+     "popularity": 75,
+     "price": 79,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 17,
+    "cardId": "118",
+    "name": "Thompson",
+    "nameZh": "艾莉莎·汤普森",
+    "url": "https://www.futbin.com/27/player/118/alyssa-thompson",
+    "rating": 85,
+    "pos": "LM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 22,
+    "popularityDelta": 7,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 5000,
+      "now": 5000,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 6000,
+      "now": 6900,
+      "pct": 15,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 8450,
+    "peerCount": 62,
+    "watchScore": 59,
+    "scoreParts": {
+     "popularity": 63,
+     "price": 59,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 18,
+    "cardId": "774",
+    "name": "Zaïre-Emery",
+    "nameZh": "沃伦·扎伊尔-埃梅里",
+    "url": "https://www.futbin.com/27/player/774/warren-zaire-emery",
+    "rating": 83,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 37,
+    "popularityDelta": 0,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 5000,
+      "now": 5000,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 3500,
+      "now": 4000,
+      "pct": 14.29,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": 57,
+    "scoreParts": {
+     "popularity": 80,
+     "price": 34,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "热度前列"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 19,
+    "cardId": "786",
+    "name": "Greenwood",
+    "nameZh": "格林伍德",
+    "url": "https://www.futbin.com/27/player/786/mason-greenwood",
+    "rating": 83,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 15,
+    "popularityDelta": null,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 2100,
+      "now": 2100,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "daily-open"
+     },
+     {
+      "platform": "pc",
+      "prev": 1400,
+      "now": 1600,
+      "pct": 14.29,
+      "fromHour": "03",
+      "basis": "daily-open"
+     }
+    ],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": 62,
+    "scoreParts": {
+     "popularity": 53,
+     "price": 72,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 1,
+     "pc": 1,
+     "pop": 1
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 20,
+    "cardId": "48",
+    "name": "Banda",
+    "nameZh": "芭芭拉·班达",
+    "url": "https://www.futbin.com/27/player/48/barbra-banda",
+    "rating": 88,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 34,
+    "popularityDelta": -10,
+    "intradayChange": [
+     {
+      "platform": "console",
+      "prev": 11750,
+      "now": 11750,
+      "pct": 0,
+      "fromHour": "03",
+      "basis": "hourly"
+     },
+     {
+      "platform": "pc",
+      "prev": 10500,
+      "now": 12000,
+      "pct": 14.29,
+      "fromHour": "03",
+      "basis": "hourly"
+     }
+    ],
+    "peerMedianPrice": 125500,
+    "peerCount": 34,
+    "watchScore": 80,
+    "scoreParts": {
+     "popularity": 76,
+     "price": 95,
+     "move": 50,
+     "neutralFilled": []
+    },
+    "reasons": [
+     "同档低价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": true,
+    "moveSuspicious": false
+   }
+  ],
+  "hotEvo": [
+   {
+    "rank": 1,
+    "cardId": "22466",
+    "name": "Endrick",
+    "nameZh": "恩德里克",
+    "url": "https://www.futbin.com/27/player/22466_15/endrick-felipe-moreira-de-sousa",
+    "rating": 80,
+    "pos": "ST",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 366,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 2100,
+    "peerCount": 13,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 2,
+    "cardId": "846",
+    "name": "Adeyemi",
+    "nameZh": "阿德耶米",
+    "url": "https://www.futbin.com/27/player/846_15/karim-adeyemi",
+    "rating": 83,
+    "pos": "RM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 268,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 3,
+    "cardId": "21475",
+    "name": "Hall",
+    "nameZh": "泰瑞斯·霍尔",
+    "url": "https://www.futbin.com/27/player/21475_2A_18_3_3_20AAB/tyrese-hall",
+    "rating": 81,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 246,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3000,
+    "peerCount": 24,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 4,
+    "cardId": "810",
+    "name": "Rashford",
+    "nameZh": "拉什福德",
+    "url": "https://www.futbin.com/27/player/810_15/marcus-rashford",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 195,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 5,
+    "cardId": "810",
+    "name": "Rashford",
+    "nameZh": "拉什福德",
+    "url": "https://www.futbin.com/27/player/810_18_15/marcus-rashford",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 195,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 6,
+    "cardId": "22",
+    "name": "Messi",
+    "nameZh": "利昂内尔·梅西",
+    "url": "https://www.futbin.com/27/player/22_17/lionel-messi",
+    "rating": 89,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 175,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 37,
+    "watchScore": 52,
+    "scoreParts": {
+     "popularity": 98,
+     "price": 0,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 7,
+    "cardId": "22",
+    "name": "Messi",
+    "nameZh": "利昂内尔·梅西",
+    "url": "https://www.futbin.com/27/player/22_19_18_17/lionel-messi",
+    "rating": 89,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 175,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 37,
+    "watchScore": 52,
+    "scoreParts": {
+     "popularity": 98,
+     "price": 0,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 8,
+    "cardId": "22",
+    "name": "Messi",
+    "nameZh": "利昂内尔·梅西",
+    "url": "https://www.futbin.com/27/player/22_18/lionel-messi",
+    "rating": 89,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Ones to Watch Retro 18",
+    "priceValid": true,
+    "popularity": 175,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 37,
+    "watchScore": 52,
+    "scoreParts": {
+     "popularity": 98,
+     "price": 0,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "进化卡：Ones to Watch Retro 18"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 9,
+    "cardId": "1411",
+    "name": "Diogo Dalot",
+    "nameZh": "迪奥戈·达洛特",
+    "url": "https://www.futbin.com/27/player/1411_16/jose-diogo-dalot-teixeira",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 164,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 98,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 10,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_5/sacha-boey",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 141,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 97,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 11,
+    "cardId": "233",
+    "name": "Szoboszlai",
+    "nameZh": "多米尼克·索博斯洛伊",
+    "url": "https://www.futbin.com/27/player/233_18/dominik-szoboszlai",
+    "rating": 86,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": null,
+    "priceValid": true,
+    "popularity": 131,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 11250,
+    "peerCount": 65,
+    "watchScore": 51,
+    "scoreParts": {
+     "popularity": 97,
+     "price": 0,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 12,
+    "cardId": "233",
+    "name": "Szoboszlai",
+    "nameZh": "多米尼克·索博斯洛伊",
+    "url": "https://www.futbin.com/27/player/233_19/dominik-szoboszlai",
+    "rating": 86,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Ones to Watch Retro 20",
+    "priceValid": true,
+    "popularity": 131,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 11250,
+    "peerCount": 65,
+    "watchScore": 51,
+    "scoreParts": {
+     "popularity": 97,
+     "price": 0,
+     "move": null,
+     "neutralFilled": [
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "同档偏贵",
+     "进化卡：Ones to Watch Retro 20"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 13,
+    "cardId": "4508",
+    "name": "Costinha",
+    "nameZh": "若昂·佩德罗·洛雷罗·达科斯塔",
+    "url": "https://www.futbin.com/27/player/4508_5/joao-pedro-loureiro-da-costa",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 129,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 97,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 14,
+    "cardId": "3955",
+    "name": "Savona",
+    "nameZh": "尼科洛·萨沃纳",
+    "url": "https://www.futbin.com/27/player/3955_5/nicolo-savona",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 107,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 15,
+    "cardId": "14144",
+    "name": "Smith",
+    "nameZh": "亚当·史密斯",
+    "url": "https://www.futbin.com/27/player/14144_5/adam-smith",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 106,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 16,
+    "cardId": "4807",
+    "name": "Lala",
+    "nameZh": "肯尼·拉拉",
+    "url": "https://www.futbin.com/27/player/4807_5/kenny-lala",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 101,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 17,
+    "cardId": "4024",
+    "name": "Castagne",
+    "nameZh": "蒂莫西·卡斯塔涅",
+    "url": "https://www.futbin.com/27/player/4024_5/timothy-castagne",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 100,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 18,
+    "cardId": "21755",
+    "name": "Lacroix",
+    "nameZh": "马克桑斯·拉克鲁瓦",
+    "url": "https://www.futbin.com/27/player/21755_17/maxence-lacroix",
+    "rating": 83,
+    "pos": "CB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Ones to Watch Retro 19",
+    "priceValid": false,
+    "popularity": 92,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Ones to Watch Retro 19",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 19,
+    "cardId": "16410",
+    "name": "Aarons",
+    "nameZh": "马克斯·阿龙斯",
+    "url": "https://www.futbin.com/27/player/16410_16AAA_9_5_4/max-aarons",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Training Camp EVOs",
+    "priceValid": false,
+    "popularity": 79,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 95,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Training Camp EVOs",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 20,
+    "cardId": "1585",
+    "name": "Bergwijn",
+    "nameZh": "贝尔赫韦恩",
+    "url": "https://www.futbin.com/27/player/1585_20/steven-bergwijn",
+    "rating": 81,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 68,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3000,
+    "peerCount": 24,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 94,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   }
+  ],
+  "pendingPrice": [
+   {
+    "rank": 1,
+    "cardId": "22466",
+    "name": "Endrick",
+    "nameZh": "恩德里克",
+    "url": "https://www.futbin.com/27/player/22466_15/endrick-felipe-moreira-de-sousa",
+    "rating": 80,
+    "pos": "ST",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 366,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 2100,
+    "peerCount": 13,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 2,
+    "cardId": "17",
+    "name": "Mariona",
+    "nameZh": "马里奥娜·卡尔登泰",
+    "url": "https://www.futbin.com/27/player/17/maria-francesca-caldentey-oliver",
+    "rating": 89,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 290,
+    "popularityDelta": -139,
+    "intradayChange": [],
+    "peerMedianPrice": 37000,
+    "peerCount": 37,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 3,
+    "cardId": "846",
+    "name": "Adeyemi",
+    "nameZh": "阿德耶米",
+    "url": "https://www.futbin.com/27/player/846/karim-adeyemi",
+    "rating": 82,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 268,
+    "popularityDelta": -26,
+    "intradayChange": [],
+    "peerMedianPrice": 3000,
+    "peerCount": 31,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 4,
+    "cardId": "846",
+    "name": "Adeyemi",
+    "nameZh": "阿德耶米",
+    "url": "https://www.futbin.com/27/player/846_15/karim-adeyemi",
+    "rating": 83,
+    "pos": "RM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 268,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 100,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 5,
+    "cardId": "21475",
+    "name": "Hall",
+    "nameZh": "泰瑞斯·霍尔",
+    "url": "https://www.futbin.com/27/player/21475_2A_18_3_3_20AAB/tyrese-hall",
+    "rating": 81,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 246,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3000,
+    "peerCount": 24,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 6,
+    "cardId": "506",
+    "name": "Kika Nazareth",
+    "nameZh": "基卡·纳萨雷特",
+    "url": "https://www.futbin.com/27/player/506/francisca-ramos-nazareth-sousa",
+    "rating": 83,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 212,
+    "popularityDelta": 33,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 7,
+    "cardId": "514",
+    "name": "Vicky López",
+    "nameZh": "维琪·洛佩斯",
+    "url": "https://www.futbin.com/27/player/514/victoria-lopez-serrano-felix",
+    "rating": 84,
+    "pos": "RW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 200,
+    "popularityDelta": -16,
+    "intradayChange": [],
+    "peerMedianPrice": 19000,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 8,
+    "cardId": "810",
+    "name": "Rashford",
+    "nameZh": "拉什福德",
+    "url": "https://www.futbin.com/27/player/810/marcus-rashford",
+    "rating": 82,
+    "pos": "LW",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 195,
+    "popularityDelta": -52,
+    "intradayChange": [],
+    "peerMedianPrice": 3100,
+    "peerCount": 25,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 9,
+    "cardId": "810",
+    "name": "Rashford",
+    "nameZh": "拉什福德",
+    "url": "https://www.futbin.com/27/player/810_15/marcus-rashford",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 195,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 10,
+    "cardId": "810",
+    "name": "Rashford",
+    "nameZh": "拉什福德",
+    "url": "https://www.futbin.com/27/player/810_18_15/marcus-rashford",
+    "rating": 83,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 195,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 99,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 11,
+    "cardId": "1411",
+    "name": "Diogo Dalot",
+    "nameZh": "迪奥戈·达洛特",
+    "url": "https://www.futbin.com/27/player/1411_16/jose-diogo-dalot-teixeira",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 164,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 98,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 12,
+    "cardId": "778",
+    "name": "Lookman",
+    "nameZh": "卢克曼",
+    "url": "https://www.futbin.com/27/player/778/ademola-lookman",
+    "rating": 83,
+    "pos": "ST",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 145,
+    "popularityDelta": 10,
+    "intradayChange": [],
+    "peerMedianPrice": 12500,
+    "peerCount": 26,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 98,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 13,
+    "cardId": "562",
+    "name": "Konaté",
+    "nameZh": "伊布拉西马·科纳特",
+    "url": "https://www.futbin.com/27/player/562/ibrahima-konate",
+    "rating": 84,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 142,
+    "popularityDelta": -22,
+    "intradayChange": [],
+    "peerMedianPrice": 11500,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 97,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 14,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_5/sacha-boey",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 141,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 97,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 15,
+    "cardId": "4508",
+    "name": "Costinha",
+    "nameZh": "若昂·佩德罗·洛雷罗·达科斯塔",
+    "url": "https://www.futbin.com/27/player/4508_5/joao-pedro-loureiro-da-costa",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 129,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 97,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 16,
+    "cardId": "3955",
+    "name": "Savona",
+    "nameZh": "尼科洛·萨沃纳",
+    "url": "https://www.futbin.com/27/player/3955_5/nicolo-savona",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 107,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 17,
+    "cardId": "14144",
+    "name": "Smith",
+    "nameZh": "亚当·史密斯",
+    "url": "https://www.futbin.com/27/player/14144_5/adam-smith",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 106,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 18,
+    "cardId": "4807",
+    "name": "Lala",
+    "nameZh": "肯尼·拉拉",
+    "url": "https://www.futbin.com/27/player/4807_5/kenny-lala",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 101,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 19,
+    "cardId": "4024",
+    "name": "Castagne",
+    "nameZh": "蒂莫西·卡斯塔涅",
+    "url": "https://www.futbin.com/27/player/4024_5/timothy-castagne",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 100,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 20,
+    "cardId": "21755",
+    "name": "Lacroix",
+    "nameZh": "马克桑斯·拉克鲁瓦",
+    "url": "https://www.futbin.com/27/player/21755/maxence-lacroix",
+    "rating": 83,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 92,
+    "popularityDelta": 21,
+    "intradayChange": [],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 21,
+    "cardId": "21755",
+    "name": "Lacroix",
+    "nameZh": "马克桑斯·拉克鲁瓦",
+    "url": "https://www.futbin.com/27/player/21755_17/maxence-lacroix",
+    "rating": 83,
+    "pos": "CB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Ones to Watch Retro 19",
+    "priceValid": false,
+    "popularity": 92,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 9150,
+    "peerCount": 30,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 96,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Ones to Watch Retro 19",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 22,
+    "cardId": "16410",
+    "name": "Aarons",
+    "nameZh": "马克斯·阿龙斯",
+    "url": "https://www.futbin.com/27/player/16410_16AAA_9_5_4/max-aarons",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Training Camp EVOs",
+    "priceValid": false,
+    "popularity": 79,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 95,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Training Camp EVOs",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 23,
+    "cardId": "5",
+    "name": "Alexia Putellas",
+    "nameZh": "阿莱克西娅·普特利亚斯",
+    "url": "https://www.futbin.com/27/player/5/alexia-putellas-segura",
+    "rating": 91,
+    "pos": "CM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 76,
+    "popularityDelta": 36,
+    "intradayChange": [],
+    "peerMedianPrice": 94000,
+    "peerCount": 13,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 95,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 24,
+    "cardId": "1585",
+    "name": "Bergwijn",
+    "nameZh": "贝尔赫韦恩",
+    "url": "https://www.futbin.com/27/player/1585_20/steven-bergwijn",
+    "rating": 81,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 68,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3000,
+    "peerCount": 24,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 94,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 25,
+    "cardId": "554",
+    "name": "Eric García",
+    "nameZh": "埃里克·加西亚",
+    "url": "https://www.futbin.com/27/player/554/eric-garcia-martret",
+    "rating": 85,
+    "pos": "CB",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 63,
+    "popularityDelta": -15,
+    "intradayChange": [],
+    "peerMedianPrice": 11500,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 94,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 26,
+    "cardId": "22923",
+    "name": "Bouaddi",
+    "nameZh": "布阿迪",
+    "url": "https://www.futbin.com/27/player/22923/ayyoub-bouaddi",
+    "rating": 83,
+    "pos": "CDM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 62,
+    "popularityDelta": 17,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 93,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 27,
+    "cardId": "22923",
+    "name": "Bouaddi",
+    "nameZh": "布阿迪",
+    "url": "https://www.futbin.com/27/player/22923_18/ayyoub-bouaddi",
+    "rating": 83,
+    "pos": "CDM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Ones to Watch Retro 18",
+    "priceValid": false,
+    "popularity": 62,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 93,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Ones to Watch Retro 18",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 28,
+    "cardId": "6412",
+    "name": "Derry",
+    "nameZh": "杰西·德里",
+    "url": "https://www.futbin.com/27/player/6412_2_11/jesse-derry",
+    "rating": 78,
+    "pos": "LM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Winger Glow Up",
+    "priceValid": false,
+    "popularity": 60,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 14,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 92,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Winger Glow Up",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 29,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_5_16AAB/sacha-boey",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 53,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 90,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 30,
+    "cardId": "17560",
+    "name": "Rosalía Domínguez",
+    "nameZh": "罗萨莉娅·多明格斯",
+    "url": "https://www.futbin.com/27/player/17560_20AAA/rosalia-dominguez-navarro",
+    "rating": 68,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 53,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 0,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 90,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 31,
+    "cardId": "6923",
+    "name": "Delos",
+    "nameZh": "沙奎尔·德洛斯",
+    "url": "https://www.futbin.com/27/player/6923_2/shaquil-delos",
+    "rating": 69,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Pathway Evolutions",
+    "priceValid": false,
+    "popularity": 50,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 0,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 89,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Pathway Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 32,
+    "cardId": "7060",
+    "name": "Rodrigo Nestor",
+    "nameZh": "罗德里戈·内斯托尔·贝塔利亚",
+    "url": "https://www.futbin.com/27/player/7060_20AAB_11/rodrigo-nestor-bertalia",
+    "rating": 83,
+    "pos": "CM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Winger Glow Up",
+    "priceValid": false,
+    "popularity": 50,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 89,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Winger Glow Up",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 33,
+    "cardId": "11749",
+    "name": "Cepeda",
+    "nameZh": "卢卡斯·塞佩达",
+    "url": "https://www.futbin.com/27/player/11749_3_20AAB/lucas-cepeda",
+    "rating": 81,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 49,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 2200,
+    "peerCount": 17,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 88,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 34,
+    "cardId": "10865",
+    "name": "Alajbegović",
+    "nameZh": "凯里姆·阿拉伊贝戈维奇",
+    "url": "https://www.futbin.com/27/player/10865_3/kerim-alajbegovic",
+    "rating": 78,
+    "pos": "CAM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Repeat Delivery",
+    "priceValid": false,
+    "popularity": 48,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 14,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 88,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Repeat Delivery",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 35,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_5_16/sacha-boey",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 48,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 88,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 36,
+    "cardId": "551",
+    "name": "Joan García",
+    "nameZh": "霍安·加西亚",
+    "url": "https://www.futbin.com/27/player/551/joan-garcia-pons",
+    "rating": 86,
+    "pos": "GK",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 46,
+    "popularityDelta": 7,
+    "intradayChange": [],
+    "peerMedianPrice": 22000,
+    "peerCount": 8,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 37,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_2_5_16/sacha-boey",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 46,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 38,
+    "cardId": "1423",
+    "name": "Maeda",
+    "nameZh": "前田大然",
+    "url": "https://www.futbin.com/27/player/1423_15/daizen-maeda",
+    "rating": 79,
+    "pos": "LM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 46,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1350,
+    "peerCount": 20,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 39,
+    "cardId": "16064",
+    "name": "Bárbara López",
+    "nameZh": "芭芭拉·洛佩斯",
+    "url": "https://www.futbin.com/27/player/16064_3_6_6/barbara-lopez-gorrado",
+    "rating": 78,
+    "pos": "ST",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Repeatable Evolutions",
+    "priceValid": false,
+    "popularity": 46,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1600,
+    "peerCount": 8,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Repeatable Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 40,
+    "cardId": "15263",
+    "name": "Ramsay",
+    "nameZh": "拉姆齐",
+    "url": "https://www.futbin.com/27/player/15263_5/calvin-ramsay",
+    "rating": 79,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Evolutions",
+    "priceValid": false,
+    "popularity": 45,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 27,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 41,
+    "cardId": "21758",
+    "name": "Adeyemi",
+    "nameZh": "阿德耶米",
+    "url": "https://www.futbin.com/27/player/21758/karim-adeyemi",
+    "rating": 83,
+    "pos": "RM",
+    "cardType": "",
+    "evo": "非进化池",
+    "evoName": null,
+    "priceValid": false,
+    "popularity": 44,
+    "popularityDelta": 11,
+    "intradayChange": [],
+    "peerMedianPrice": 3800,
+    "peerCount": 41,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 86,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 2,
+     "pc": 2,
+     "pop": 2
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 42,
+    "cardId": "20215",
+    "name": "McGree",
+    "nameZh": "赖利·麦格里",
+    "url": "https://www.futbin.com/27/player/20215_20AAA/riley-mcgree",
+    "rating": 77,
+    "pos": "LM",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1300,
+    "peerCount": 10,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 43,
+    "cardId": "3955",
+    "name": "Savona",
+    "nameZh": "尼科洛·萨沃纳",
+    "url": "https://www.futbin.com/27/player/3955_5_16/nicolo-savona",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 44,
+    "cardId": "4955",
+    "name": "Boey",
+    "nameZh": "萨沙·博伊",
+    "url": "https://www.futbin.com/27/player/4955_2/sacha-boey",
+    "rating": 75,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Pathway Evolutions",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 0,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Pathway Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 45,
+    "cardId": "7243",
+    "name": "Okou",
+    "nameZh": "泰迪·奥库",
+    "url": "https://www.futbin.com/27/player/7243_15/teddy-okou",
+    "rating": 69,
+    "pos": "RW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Believe",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 0,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Believe",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 46,
+    "cardId": "8729",
+    "name": "Nedeljković",
+    "nameZh": "科斯塔·内德尔科维奇",
+    "url": "https://www.futbin.com/27/player/8729_5_16/kosta-nedeljkovic",
+    "rating": 80,
+    "pos": "RB",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Fullback Fork",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1900,
+    "peerCount": 33,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Fullback Fork",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 47,
+    "cardId": "991",
+    "name": "Feller",
+    "nameZh": "费勒",
+    "url": "https://www.futbin.com/27/player/991_2/naomie-feller",
+    "rating": 80,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Intro to Pathway Evolutions",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 2100,
+    "peerCount": 13,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Intro to Pathway Evolutions",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 48,
+    "cardId": "10373",
+    "name": "Curtis",
+    "nameZh": "芬德利·柯蒂斯",
+    "url": "https://www.futbin.com/27/player/10373_11/findlay-curtis",
+    "rating": 79,
+    "pos": "LW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Winger Glow Up",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": 1000,
+    "peerCount": 9,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Winger Glow Up",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 49,
+    "cardId": "10622",
+    "name": "Vickers",
+    "nameZh": "凯兰·维克斯",
+    "url": "https://www.futbin.com/27/player/10622_6_15_6_3/caylan-vickers",
+    "rating": 73,
+    "pos": "ST",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Repeat Delivery",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 0,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Repeat Delivery",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   },
+   {
+    "rank": 50,
+    "cardId": "10862",
+    "name": "Yokota",
+    "nameZh": "横田大祐",
+    "url": "https://www.futbin.com/27/player/10862_20/daisuke-yokota",
+    "rating": 76,
+    "pos": "RW",
+    "cardType": "Evolution",
+    "evo": "在进化池",
+    "evoName": "Creative Crossroads",
+    "priceValid": false,
+    "popularity": 43,
+    "popularityDelta": null,
+    "intradayChange": [],
+    "peerMedianPrice": null,
+    "peerCount": 2,
+    "watchScore": null,
+    "scoreParts": {
+     "popularity": 82,
+     "price": null,
+     "move": null,
+     "neutralFilled": [
+      "price",
+      "move"
+     ]
+    },
+    "reasons": [
+     "热度前列",
+     "进化卡：Creative Crossroads",
+     "暂无有效平台价"
+    ],
+    "points": {
+     "ps": 0,
+     "pc": 0,
+     "pop": 0
+    },
+    "moveConfirmed": false,
+    "moveSuspicious": false
+   }
+  ]
+ },
+ "counts": {
+  "watch": 269,
+  "undervalued": 61,
+  "trending": 171,
+  "hotEvo": 521,
+  "pendingPrice": 913
+ },
+ "disclaimer": "本表由 FUTBIN 公开挂单/热度数据机械计算得出，仅供游戏内研究，不构成投资或交易建议。"
+}

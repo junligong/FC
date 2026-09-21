@@ -439,13 +439,13 @@ if (preferred.state === 'empty') {
         ? [
             `独立调试 profile（端口 ${DEBUG_PROFILE_PORT}）已监听但通道不可用（check-deps exit ${checkDeps.exitCode}），自动自愈无效。`,
             '尝试 `node automation/start-debug-profile.mjs --restart` 后复跑；',
-            '完成后下一整点任务自动恢复；本轮按契约立即 failed 留证，不采集、不填充。',
+            '恢复后不必等特定时刻：两条高频任务均为每 4 小时一轮，通道可用时下一轮即会正常采集；也可手动复跑本任务。本轮按契约立即 failed 留证，不采集、不填充。',
           ]
         : [
             `:9222 已监听但通道不可用（check-deps exit ${checkDeps.exitCode}），自动自愈（激活 Chrome）无效。`,
             CONSENT_HINT,
             ...HUMAN_THREE_STEPS,
-            '完成后下一整点任务自动恢复；本轮按契约立即 failed 留证，不采集、不填充。',
+            '恢复后不必等特定时刻：两条高频任务均为每 4 小时一轮，通道可用时下一轮即会正常采集；也可手动复跑本任务。本轮按契约立即 failed 留证，不采集、不填充。',
           ];
       forbidden = NEVER_DO;
     }

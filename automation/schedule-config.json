@@ -2,16 +2,16 @@
   "timezone": "Asia/Shanghai",
   "time": "03:00",
   "dailySchedule": {
-    "note": "2026-09-18 起日任务按 5 分钟错开发起，权威定义见 shared/config/project.json 的 dailySchedule。",
+    "note": "2026-09-18 起日任务按 5 分钟错开发起；2026-09-20 起足球日报移到 06:00、汇总发布顺延到 06:15。权威定义见 shared/config/project.json 的 dailySchedule。",
     "news": "03:00",
     "market": "03:05",
-    "football": "03:10",
+    "football": "06:00",
     "evolution": "03:15",
     "icons-heroes": "03:20",
-    "portal": "03:35"
+    "portal": "06:15"
   },
-  "verifiedAt": "2026-09-18T03:40:00.000Z",
-  "verification": "WorkBuddy 定时任务已读回并核对下次触发时刻；日任务错开序列（资讯 03:00 / 市场 03:05 / 足球 03:10 / 进化 03:15 / 传奇英雄 03:20 / 汇总发布 03:35）与 shared/config/project.json 的 dailySchedule 一致；采集任务已绑定 Web Access 浏览器技能并禁止旧 DuMate 探针。注意：两条每小时任务的分钟相位不可控——WorkBuddy 的 HOURLY 规则不支持指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定。",
+  "verifiedAt": "2026-09-20T22:10:00.000Z",
+  "verification": "WorkBuddy 定时任务已读回并核对下次触发时刻；日任务时刻序列（资讯 03:00 / 市场 03:05 / 足球 06:00 / 进化 03:15 / 传奇英雄 03:20 / 汇总发布 06:15，足球与汇总自 2026-09-20 起移到早上，用户要求）与 shared/config/project.json 的 dailySchedule 一致；采集任务已绑定 Web Access 浏览器技能并禁止旧 DuMate 探针。注意：两条高频行情任务（市场价格关注列表、传奇价格区间，均每 4 小时）的分钟相位不可控——WorkBuddy 的 HOURLY 规则不支持指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定；且两条任务共用同一 sourceKey，同时最多 1 个在跑，相遇时后者记 skip same-source 并保持 due（属正常串行）。",
   "tasks": [
     {
       "name": "FC·足球日报",
@@ -41,12 +41,12 @@
       "promptFile": "automation/prompts/daily.md"
     },
     {
-      "name": "FC·市场价格关注列表（每小时）",
+      "name": "FC·市场价格关注列表（每4小时）",
       "role": "market-hourly",
       "promptFile": "automation/prompts/market-hourly.md",
-      "schedule": "hourly",
+      "schedule": "every-4-hours",
       "contentExecution": "enabled",
-      "note": "不发布站点、不写 run-state：运行记录以 popular/hourly/<D>T<HH>.json 逐小时快照为准"
+      "note": "不发布站点、不写 run-state：运行记录以 series/popular.json 的 points[] 为准"
     }
   ],
   "publicUrl": "https://fc27-site.app.workbuddy.host/",

@@ -1,0 +1,110 @@
+{
+  "date": "2026-09-19",
+  "runId": "782473f7-0254-4899-bd03-92eb4fef22e2",
+  "status": "partial",
+  "task": "icons-heroes（FC27 基础传奇卡 Icon 与英雄卡 Hero 监控）",
+  "startedAt": "2026-09-18T20:27:52.410Z",
+  "finishedAt": "2026-09-18T20:37:00Z",
+  "browser": {
+    "channel": "Web Access（CDP Proxy :3456 → 独立调试 profile Chrome，端口 9333）",
+    "triage": "node automation/browser-triage.mjs → OK（check-deps exit=0、proxy: ready、chrome :9333 listener=true），exit 0 后开始采集",
+    "note": "未使用任何禁止通道；采集器为页内同源 fetch + DOMParser，每 3 批重建宿主页"
+  },
+  "sources": [
+    {
+      "name": "futbin 同源宿主页（建会话）",
+      "url": "https://www.futbin.com/robots.txt",
+      "openedAt": "2026-09-18T20:28:05Z",
+      "result": "ok",
+      "detail": "轻量宿主页提供 futbin.com origin（hostBuilds 3 次重建），采集走页内 fetch('/27/players?page=N') + DOMParser"
+    },
+    {
+      "name": "FC27 球员列表页 第 1-10 页",
+      "url": "https://www.futbin.com/27/players?page=1..10",
+      "openedAt": "2026-09-18T20:28:10Z",
+      "result": "ok",
+      "detail": "每页 HTTP 200 / 30 行，共 300 行；每行同时含 td.table-price.platform-ps-only（Console）与 platform-pc-only（PC），一次读取两平台价"
+    },
+    {
+      "name": "列表页第 11-26 页",
+      "url": "https://www.futbin.com/27/players?page=11..26",
+      "openedAt": "2026-09-18T20:28:20Z",
+      "result": "blocked",
+      "detail": "全部 HTTP 403（来源侧滚动限流，非通道故障）；通道 triage 同时报 OK，首页与 1-10 页可读"
+    },
+    {
+      "name": "退避重试 第 1 次（150s 退避）",
+      "url": "https://www.futbin.com/27/players?page=11..26",
+      "openedAt": "2026-09-18T20:30:50Z",
+      "result": "blocked",
+      "detail": "分钟级退避约 150s 后单次重试，11+ 页仍全部 403，新增 0 行；未做秒级密集重试"
+    },
+    {
+      "name": "退避重试 第 2 次（200s 退避，契约上限）",
+      "url": "https://www.futbin.com/27/players?page=11..26",
+      "openedAt": "2026-09-18T20:32:50Z",
+      "result": "blocked",
+      "detail": "再退避约 200s 单次重试，11+ 页仍全部 403，新增 0 行；达「最多再试 2 次」上限后停止，未继续轰炸"
+    },
+    {
+      "name": "头像补全接口（渲染前）",
+      "url": "https://www.futbin.com/27/playerhover/<cardId>",
+      "openedAt": "2026-09-18T20:35:50Z",
+      "result": "ok",
+      "detail": "backfill-avatar-keys.mjs 2026-09-19：榜单 919 个 cardId，仅 3 个仍不可解析（12690/13989/20886，noface），新增映射 0 条、需下载 0 张（单并发 + 450ms 间隔）"
+    },
+    {
+      "name": "头像补全接口（渲染后复检）",
+      "url": "https://www.futbin.com/27/playerhover/<cardId>",
+      "openedAt": "2026-09-18T20:36:15Z",
+      "result": "ok",
+      "detail": "渲染后复跑结果一致：3 个不可解析（noface），新增 0 条，无新增缺图"
+    }
+  ],
+  "deliverables": [
+    "apps/market/engine/icons/data/prices/fc27/base-icons.json（131 张台账，其中 102 张带当日列表价，29 张空价保留）",
+    "apps/market/engine/heroes/data/prices/fc27/base-heroes.json（50 张，双平台字段齐全，50/50 含中文名）",
+    "apps/market/engine/icons/data/prices/fc27/daily/2026-09-19.json（131 张，价格区间 131/131，卡级 scope=card）",
+    "reports/daily/2026-09-19/icons-heroes.html",
+    "automation/runs/2026-09-19/icons-heroes/work/list-raw.json（原始抓取：每页状态 + 300 行明细）",
+    "apps/market/engine/scripts/collect-icons-list.mjs（台账补全修复，本日新增）"
+  ],
+  "counts": {
+    "listPagesOk": 10,
+    "listPagesRequested": 26,
+    "rowsRaw": 300,
+    "iconsLedger": 131,
+    "iconsWithTodayListPrice": 102,
+    "iconsMissingTodayPrice": 29,
+    "iconsLabeledRowTotal": 199,
+    "iconsNotInLedger": 97,
+    "heroes": 50,
+    "iconsWithZhName": 131,
+    "heroesWithZhName": 50,
+    "snapshotTotal": 131,
+    "snapshotValidPrice": 106,
+    "snapshotPlatformValidConsole": 104,
+    "snapshotPlatformValidPc": 65,
+    "snapshotPriceRange": "131/131",
+    "currentJsonCardIds": 1892,
+    "snapshotCardsMatchedInCurrentJson": "131/131",
+    "avatarIcons": "131/131",
+    "avatarHeroes": "48/50"
+  },
+  "missingItems": [
+    "列表页第 11 页及以后被来源 403 拦截（两轮分钟级退避重试均未通过）：131 张基础传奇卡中 29 张未取得「当日列表页价」（21887 cech、21888 hurst、21889 campbell、21890 crespo、21892 wright、21893 ribéry、21896 pirès、21897 schweinsteiger、21898 vieira、21899 cha、21901 bale、21902 douglas sisenando、21903 rush、21908 owen、21911 hagi、21914 mario alberto kempes、21915 laudrup、21916 barnes、21917 zambrotta、21918 hierro ruiz、21919 vidic、21920 gattuso、21924 bledorn verri、21925 riquelme、21932 chiellini、21935 alonso olano、21938 cole、21941 essien、21945 van der sar）。价按 0 / valid=false 如实留空，未用旧日期或 FC26 数据填充；这 29 张的当前价与区间仍来自每小时任务写入的 current.json（快照内 priceRange 131/131、current.json 命中 131/131）。",
+    "英雄卡 2 张（Márquez，cardId 21587 / 21600，同一球员两名目）头像键不可解析，如实不显示图片；未用他人图片或占位图顶替。",
+    "base-heroes.json 仅覆盖列表页 1-10 页，未能验证第 11 页以下是否还有 Base Heroes 条目（本日抓到的 50 张与既有台账 50 张数量一致，评分区间 88-89）。",
+    "因 403 拦截，未能对 131 张台账做「全量列表页名单复核」；本次以卡库台账 fc27-icons-playstyles.json（131 张）判定归属：列表页带 Icon 标签的 199 行中有 97 行不在台账内，已排除并记入 list-raw.json 的 counts.iconNotInLedger。",
+    "backfill-avatar-keys 有 3 个 cardId（12690 / 13989 / 20886）在 playerhover 返回 noface，无头像键可解析；属来源无图，不补不顶替。"
+  ],
+  "notes": [
+    "口径：launchDate=2026-09-25 未开服，priceBasis=listing-estimate；未计算日环比与累计涨跌，缺失一律如实空状态。",
+    "平台：一次打开列表页同时读取 Console（platform-ps-only）与 PC（platform-pc-only）；顶层 platform=console+pc；未依赖 ps_price/pc_price URL 参数，未为切平台重复导航；未按平台拆分价格区间（区间为卡级字段）。",
+    "去重红线：未为取当前价再次打开详情页；页面按 cardId 读 apps/market/engine/data/prices/fc27/current.json，未把快照末值当作当前价重复分析。",
+    "台账完整性修复（本日新增）：collect-icons-list.mjs 此前只写「采到的行」，被 403 截断时会把当日台账从 131 静默缩到 102（与 09-17/09-18 不可比）。已改为「采到的行 + 未采到的台账卡以空价保留」，名单基准只取卡库台账，价格不得用旧日期/FC26 填充。修复后本轮快照 131 张。",
+    "FC26 英雄历史数据仅作跨代参考对比（渲染器单列折叠区，不配头像），未混入 FC27 台账、未用于填充当日缺失。",
+    "未渲染、未提交 market.html / market-scan.html；未发布站点；未新增定时任务。",
+    "证据写入后由 run-state.mjs finish 快照校验并保存 SHA-256。"
+  ]
+}

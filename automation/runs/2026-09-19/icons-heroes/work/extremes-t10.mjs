@@ -1,0 +1,46 @@
+// 一次性脚本（临时）：icons-pricerange-hourly 2026-09-19 T10 轮区间极值并列张数 + 自洽性核对。
+// 全部按 cardId 关联（禁 slug/name）。输入：hourly T10 快照 + research JSON。
+import fs from 'node:fs';
+import path from 'node:path';
+
+const ROOT = '/Users/wuyanzu/Desktop/FC';
+const D = '2026-09-19';
+const HH = '10';
+const j = (p) => JSON.parse(fs.readFileSync(path.join(ROOT, p), 'utf8'));
+const P = (...a) => console.log(a.join(' '));
+
+const h = j(`apps/market/engine/icons/data/prices/fc27/pricerange/hourly/${D}T${HH}.json`);
+const res = j(`apps/market/engine/icons/data/research/fc26-vs-fc27-${D}.json`);
+const nameOf = (id) => {
+  const r = res.rows.find((x) => String(x.id) === String(id));
+  return r ? `${r.nameZh || r.name}(${id})` : `?(${id})`;
+};
+const cards = h.cards || [];
+
+const minV = Math.min(...cards.map((c) => c.priceRange.min));
+const maxV = Math.max(...cards.map((c) => c.priceRange.max));
+const atMin = cards.filter((c) => c.priceRange.min === minV);
+const atMax = cards.filter((c) => c.priceRange.max === maxV);
+P(`[极值并列] 下沿最低 ${minV.toLocaleString('en-US')} 共 ${atMin.length} 张：${atMin.map((c) => nameOf(c.id)).join(' / ')}`);
+P(`[极值并列] 上沿最高 ${maxV.toLocaleString('en-US')} 共 ${atMax.length} 张（首 8 张）：${atMax.slice(0, 8).map((c) => nameOf(c.id)).join(' / ')} ...`);
+
+// 区间自洽：有效平台价必须落在 [min,max]（FUTBIN 封顶值 15,000,000 允许等于上沿）
+let outOfRange = 0, effMin = 0, effMax = 0, invalidTie = 0;
+const validTieList = [];
+for (const c of cards) {
+  for (const k of ['console', 'pc']) {
+    const v = c.current?.[k];
+    const ok = c.currentValid?.[k] === true;
+    if (!ok) continue;
+    effMin++; if (k === 'pc') effMax++;
+    if (v < c.priceRange.min || v > c.priceRange.max) {
+      outOfRange++;
+      validTieList.push(`${nameOf(c.id)} ${k}=${v} 区间${c.priceRange.min}-${c.priceRange.max}`);
+    }
+    if (v === maxV) invalidTie++;
+  }
+}
+P(`[自洽] 有效平台价越界（<min 或 >max）= ${outOfRange} 张 ${validTieList.join(' | ') || ''}`);
+P(`[自洽] 有平台价恰等于上沿 ${maxV.toLocaleString('en-US')} 的卡 ${invalidTie} 张（上沿为 FUTBIN 顶格值，非异常）`);
+P(`[计数] 有效平台价 Console=${effMin} PC=${effMax} 任一平台有效=${cards.filter((c) => c.currentValid?.console || c.currentValid?.pc).length}`);
+P(`[区间] 区间宽度=0（min==max）的卡 ${cards.filter((c) => c.priceRange.min === c.priceRange.max).length} 张`);

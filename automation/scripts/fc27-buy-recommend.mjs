@@ -2,7 +2,7 @@
 /**
  * FC27 球员价格 × FC26 历史价格对照 与 购买推荐分级分析
  *
- * 用途：把 FC27 当前行情（current.json，开服前 partial-live / listing-estimate 口径）与
+ * 用途：把 FC27 当前行情（current.json，当日实测 listing-estimate / partial-live 口径）与
  *       FC26 历史行情（金卡 fc26-first-month、传奇 base-icons、英雄 base-heroes）逐卡对照，
  *       按「有效价 + FC26 开服价 + FC26 首月末价」计算折价比与走势，输出购买推荐分级名单。
  *
@@ -17,7 +17,7 @@
  *   - automation/runs/<DATE>/analysis/fc27-buy-recommend.json   结构化推荐结果（可复核）
  *
  * 口径说明：
- *   - FC27 未开服（launchDate=2026-09-25），FUTBIN 当前价为估值/部分实况滚动价，价格 < minValidPrice(1000)
+ *   - FC27 开服日为 2026-09-18（2026-09-25 是正式全球发售日，勿改回）；开服初期 FUTBIN 当前价为估值/部分实况滚动价，价格 < minValidPrice(1000)
  *     视为占位值（valid=false），不参与推荐判定；本任务不计算 FC27 日环比与累计涨跌。
  *   - FC26 开服价为该卡 FC26 开服日（2025-09-18）Console（PS/Xbox 合并）均价（prices.cross 首日值）；
  *     FC26 首月末价为 2025-10-17（首月第 30 天）cross 价。
@@ -36,7 +36,7 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(here, '../..');
 
 const MIN_VALID_PRICE = 1000;
-const FC27_LAUNCH_DATE = '2026-09-25';
+const FC27_LAUNCH_DATE = '2026-09-18'; // FC27 开服日（2026-09-20 定案；2026-09-25 是正式发售日，勿改回）
 const FC26_LAUNCH_DATE = '2025-09-18';
 const FC26_MONTH_END_DATE = '2025-10-17';
 
@@ -221,7 +221,7 @@ const result = {
   fc27LaunchDate: FC27_LAUNCH_DATE,
   fc26LaunchDate: FC26_LAUNCH_DATE,
   minValidPrice: MIN_VALID_PRICE,
-  priceBasis: 'listing-estimate / partial-live（FC27 未开服，不计算日环比与累计涨跌）',
+  priceBasis: 'listing-estimate / partial-live（按当日实测有效价判定；本报告不计算 FC27 日环比与累计涨跌）',
   disclaimer: '本报告仅作跨代价格与市场研究参考，FC26 历史价格不代表 FC27 会重演，不构成任何投资或交易建议。',
   counts,
   recommendedCount: recommended.length,

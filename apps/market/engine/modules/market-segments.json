@@ -21,7 +21,7 @@
       "note": "FUTBIN platform 表单按钮 value=pc，文案 PC。"
     }
   ],
-  "platformNote": "FUTBIN 仅提供 Console / PC 两个平台。列表页每一行同时渲染 td.table-price.platform-ps-only 与 td.table-price.platform-pc-only 两个价格单元格，由站点 CSS 按当前所选平台显隐；采集时必须两个单元格都取，页面顶部提供平台切换按钮。开服前（launchDate=2026-09-25 之前）两个平台价均为 0，此时展示的是列表页 IS 列（table-item-score）的开服前估值，必须与平台价分开标注。",
+  "platformNote": "FUTBIN 仅提供 Console / PC 两个平台。列表页每一行同时渲染 td.table-price.platform-ps-only 与 td.table-price.platform-pc-only 两个价格单元格，由站点 CSS 按当前所选平台显隐；采集时必须两个单元格都取，页面顶部提供平台切换按钮。两个平台价均无有效值时，展示的是列表页 IS 列（table-item-score）的估值，必须与平台价分开标注。",
   "topN": 50,
   "outputs": [
     {

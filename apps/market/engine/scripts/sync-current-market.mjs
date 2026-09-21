@@ -15,6 +15,11 @@ const dateStr = process.argv[2] || new Date(Date.now() + 8 * 3600e3).toISOString
 const marketPath = path.join(PROJECT_ROOT, 'automation', 'runs', dateStr, 'market', 'market.json');
 const popularPath = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'data', 'prices', 'fc27', 'popular', 'latest.json');
 const iconPath = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'icons', 'data', 'prices', 'fc27', 'pricerange', 'latest.json');
+// 五类台账（2026-09-20 重构新增）：周黑 / 活动卡 / 英雄卡 / 83+ 池
+const totwPath = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'totw', 'data', 'players', 'fc27', 'totw-current.json');
+const activityPath = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'promo', 'data', 'players', 'fc27', 'activity-current.json');
+const heroesPath = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'heroes', 'data', 'prices', 'fc27', 'base-heroes.json');
+const r83Path = path.join(PROJECT_ROOT, 'apps', 'market', 'engine', 'promo', 'data', 'players', 'fc27', 'rating83plus.json');
 const readJSON = file => existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : null;
 
 let mergedSources = 0;
@@ -85,6 +90,50 @@ if (Array.isArray(icons?.cards) && icons.cards.length) {
   });
   mergedSources++;
   console.log(`传奇详情已合并：${records.length} 张`);
+}
+
+// 五类台账价格合并（2026-09-20 重构新增）：周黑 / 活动卡 / 英雄卡 都逐卡 merge 进统一行情。
+// 83+ 池是名单分组（价格复用市场监控/热门榜已采集的价），不单独开采集源，避免重复抓取。
+const mergeLedger = async (doc, source, cardType, observedAtField = 'generatedAt') => {
+  const players = Array.isArray(doc) ? doc : (doc?.players || []);
+  if (!players.length) return 0;
+  const records = players.filter(p => p && (p.id || p.cardId)).map(p => ({
+    cardId: String(p.cardId ?? p.id),
+    slug: p.slug,
+    url: p.marketUrl || p.url || `https://www.futbin.com/27/player/${p.cardId ?? p.id}/${p.slug || ''}`,
+    name: p.name,
+    nameZh: p.nameZh,
+    rating: p.rating,
+    cardType: cardType || p.version || '',
+    platforms: {
+      console: { price: p.prices?.console?.price },
+      pc: { price: p.prices?.pc?.price },
+    },
+  }));
+  await mergeCurrentMarket(records, {
+    source,
+    observedAt: doc?.[observedAtField] || doc?.collectedAt || new Date().toISOString(),
+    date: dateStr,
+  });
+  return records.length;
+};
+
+const totw = readJSON(totwPath);
+if (totw) {
+  const n = await mergeLedger(totw, 'futbin-totw', 'totw');
+  if (n) { mergedSources++; console.log(`周黑已合并：${n} 张`); }
+}
+
+const activity = readJSON(activityPath);
+if (activity) {
+  const n = await mergeLedger(activity, 'futbin-latest', 'activity');
+  if (n) { mergedSources++; console.log(`活动卡已合并：${n} 张`); }
+}
+
+const heroes = readJSON(heroesPath);
+if (heroes) {
+  const n = await mergeLedger(heroes, 'futbin-heroes', 'hero');
+  if (n) { mergedSources++; console.log(`英雄卡已合并：${n} 张`); }
 }
 
 if (!mergedSources) throw new Error('没有可合并的本地最新行情快照');

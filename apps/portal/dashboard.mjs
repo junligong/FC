@@ -23,7 +23,7 @@ const ICONS = {
 const TABS = [
   { id: 'football-daily', view: 'football', label: '足球动态', en: 'FOOTBALL', icon: 'football', desc: '七大联赛 + 欧冠 · 积分榜 / 射手榜 / 助攻榜三榜齐备' },
   { id: 'fc27-news', view: 'news', label: 'FC27 资讯', en: 'FC27 NEWS', icon: 'news', desc: 'X.com 信息源自动采集 · 智能过滤与中文翻译' },
-  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '三个视图可切换：市场概览（本周活动卡/周黑 · 价格分层每档 Top50 · 热门进化卡）+ 市场扫描（索引 + 球员数据库）+ 关注列表（按热度 / 价格 / 本日挂单价变动打分，每小时刷新），全部支持 PC / Console 双平台切换' },
+  { id: 'market-analysis', view: 'market', label: 'FC27 市场', en: 'THE MARKET', icon: 'market', desc: '三个视图可切换：市场概览（本周活动卡/周黑 · 价格分层每档 Top50 · 热门进化卡）+ 市场扫描（索引 + 球员数据库）+ 关注列表（按热度 / 价格 / 本日挂单价变动打分，每 4 小时刷新），全部支持 PC / Console 双平台切换' },
 ];
 
 const EVOLUTION_TAB = { id: 'evolution-column', view: 'evolution', label: '进化专栏', en: 'EVOLUTION', icon: 'evolution' };

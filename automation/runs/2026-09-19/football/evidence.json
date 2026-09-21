@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-19",
+  "module": "football",
+  "runId": "9cbe7afc-4e52-491d-ac67-e0d091d30553",
+  "collectedAt": "2026-09-19T04:16:00+08:00",
+  "dataCutoff": "2026-09-19T04:10:00+08:00",
+  "browserTriage": "OK (exit 0, 独立调试 profile 9333, 无自愈)",
+  "method": "run-state begin 03:55:05 → 4 个并行子代理（web-access CDP）分治采集 → 落盘合并 → build-football.mjs → verify-football-boards.mjs exit 0",
+  "sources": [
+    {"name": "worldfootball.net 英超积分/射手/助攻（子代理 fb-epl-laliga）", "url": "https://www.worldfootball.net/competition/co91/england-premier-league/results-and-standings/", "openedAt": "2026-09-19T03:58:00+08:00", "asOf": "第5轮进行中"},
+    {"name": "worldfootball.net 西甲积分/射手/助攻（子代理 fb-epl-laliga）", "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/results-and-standings/", "openedAt": "2026-09-19T03:59:00+08:00", "asOf": "第6轮"},
+    {"name": "ESPN 欧冠积分榜 API（子代理 fb-ucl-mls-saudi）", "url": "https://site.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings", "openedAt": "2026-09-18T19:57:01Z", "asOf": "联赛阶段第1轮后"},
+    {"name": "ESPN 欧冠射手/助攻榜（子代理 fb-ucl-mls-saudi）", "url": "https://www.espn.com/soccer/stats/_/league/uefa.champions", "openedAt": "2026-09-18T20:00:00Z", "asOf": "2026-27 联赛阶段第1轮"},
+    {"name": "ESPN 美职联积分榜 API 东西分区（子代理 fb-ucl-mls-saudi）", "url": "https://site.api.espn.com/apis/v2/sports/soccer/usa.1/standings", "openedAt": "2026-09-18T19:57:01Z", "asOf": "常规赛约第25轮后"},
+    {"name": "ESPN 美职联射手/助攻总榜（子代理 fb-ucl-mls-saudi）", "url": "https://www.espn.com/soccer/stats/_/league/usa.1", "openedAt": "2026-09-18T20:00:00Z", "asOf": "2026 赛季联盟总榜"},
+    {"name": "FoxSports/Tribuna/statarea 沙特联积分/射手/助攻三源交叉（子代理 fb-ucl-mls-saudi）", "url": "https://www.foxsports.com/soccer/al-kholood-team-standings", "openedAt": "2026-09-18T20:10:00Z", "asOf": "第7轮后（海湾杯休赛期）"},
+    {"name": "worldfootball.net 意甲积分/射手/助攻（子代理 fb-ita-ger-fra，JSON 回报留档 work/）", "url": "https://www.worldfootball.net/competition/co22/ita-serie-a/", "openedAt": "2026-09-19T04:07:30+08:00", "asOf": "第4轮完赛、第5轮进行中"},
+    {"name": "worldfootball.net 德甲积分/射手/助攻（子代理 fb-ita-ger-fra）", "url": "https://www.worldfootball.net/competition/co93/germany-bundesliga/", "openedAt": "2026-09-19T04:07:30+08:00", "asOf": "第3轮完赛，拜仁/柏林联合已赛4轮"},
+    {"name": "worldfootball.net 法甲积分/射手/助攻（子代理 fb-ita-ger-fra）", "url": "https://www.worldfootball.net/competition/co25/fra-ligue-1/", "openedAt": "2026-09-19T04:07:30+08:00", "asOf": "第4轮完赛，摩纳哥/朗斯已赛5轮"},
+    {"name": "ESPN/BBC 新闻原文 ×12（子代理 fb-news 逐条打开核实；子代理回报 openedAt 时间戳早于本轮 startedAt 属其时钟误差，主流程于 04:12 收文复核并入卡）", "url": "https://www.espn.com/soccer/story/_/id/49974180/france-coach-zinedine-zidane-1st-squad-benzema-kante-jacquet", "openedAt": "2026-09-19T04:12:30+08:00", "asOf": "过去24小时"},
+    {"name": "BBC/新浪/腾讯/中国日报香港/MLS官网 新闻原文 ×6（同上，逐条打开核实）", "url": "https://www.bbc.com/sport/football/articles/c6158x85pv19o", "openedAt": "2026-09-19T04:12:30+08:00", "asOf": "过去24小时"}
+  ],
+  "missing": [
+    "MLS 射手/助攻榜无东西分区独立榜单（ESPN 仅提供联盟总榜，已按总榜落库至 mls 键，页内 MLS 射助 tab 展示联盟总榜）",
+    "意甲/德甲/法甲分联赛新闻：子代理 fb-ita-ger-fra 已回传 leagueNews，但为避免主流程转述引入误差未入卡；本轮头条 6 条 + 转会/战报/伤停/分联赛新闻共 18 条已覆盖",
+    "沙特联第7轮后处海湾杯休赛期，第8轮 2026-10-09 重启（如实标注，非缺失）"
+  ],
+  "verify": {"command": "node automation/verify-football-boards.mjs 2026-09-19", "exitCode": 0},
+  "outputs": ["reports/daily/2026-09-19/football.html"],
+  "lateSubmission": {
+    "hardDeadline": "2026-09-19T04:15:05+08:00 (startedAt+20min)",
+    "actualSubmit": "2026-09-19T04:18+08:00",
+    "firstAttempt": "finish partial 于 04:17 被拒（超过提交期限，不接受迟到版本）",
+    "disposition": "数据完整且 verify-football-boards exit 0，但按契约迟到版本不得以 success/partial 提交；以 failed 终结本轮运行状态，产物保留在 reports/daily/2026-09-19/football.html 供参考（快照未写入 run-state）",
+    "rootCause": "构建脚本以 work 目录为 cwd 执行，产物写偏至 work/reports/，移动复验耗尽最后窗口；已在本轮修复（build 脚本改为绝对路径锚定项目根，后续轮次不受影响）"
+  },
+  "notes": "上游后果提示：03:35 汇总合并时 football.html 尚未生成，今日线上站点足球栏未收录本产物，待次日 03:10 轮次自然恢复。"
+}

@@ -1,0 +1,99 @@
+{
+  "date": "2026-09-21",
+  "module": "icons-heroes",
+  "runId": "fd734deb-9080-4191-a8b9-61801271c8fc",
+  "status": "partial",
+  "startedAt": "2026-09-20T19:31:35.422Z",
+  "submittedAt": "2026-09-20T19:39:56.757Z",
+  "channel": {
+    "precheck": "node automation/browser-triage.mjs",
+    "verdict": "OK",
+    "exitCode": 0,
+    "selfHealed": false,
+    "note": "独立调试 profile 9333；来源页 403 属来源侧限时拦截，非通道故障（triage OK 即通道健康）"
+  },
+  "sources": [
+    {
+      "url": "https://www.futbin.com/robots.txt",
+      "openedAt": "2026-09-20T19:31:59Z",
+      "status": 200,
+      "note": "宿主页（页内同源 fetch 的 origin 载体），每 3 批重建一次，共 1 次重建；未导航到榜单页（Cloudflare 挑战页会打死导航式采集）"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=1..15",
+      "openedAt": "2026-09-20T19:32:05Z",
+      "dataCutoff": "2026-09-20T19:33:10Z",
+      "status": 200,
+      "rows": 450,
+      "note": "页内 fetch + DOMParser，每页 30 行；一次读取即同时取 td.table-price.platform-ps-only（Console）与 platform-pc-only（PC），未为切平台重复导航；版本以行内尾标签 Icon / Base Heroes 判定，Debut Icon 计 0 张"
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=16..26",
+      "openedAt": "2026-09-20T19:32:05Z",
+      "status": 403,
+      "attempts": [
+        "2026-09-20T19:32:05Z 首轮（页 16–26 403）",
+        "2026-09-20T19:34:31Z 退避 75s 重试（第 1 次，仍 403、0 行）",
+        "2026-09-20T19:37:25Z 退避 150s 重试（第 2 次，契约上限，仍 403、0 行）"
+      ],
+      "note": "第 16–26 页全 403，具时限性拦截；已按契约分钟级退避重试 2 次后停手，未秒级密集重试、未换参数变形重试"
+    }
+  ],
+  "counts": {
+    "iconsTotal": 131,
+    "iconsCollected": 131,
+    "iconMissingFromSource": 0,
+    "iconNotInLedger": 141,
+    "debutIconExcluded": 0,
+    "heroesCollected": 99,
+    "heroesFc26Ref": 93,
+    "otherVersionRows": 79,
+    "consoleValid": 209,
+    "pcValid": 162,
+    "snapshotPlayers": 131,
+    "snapshotPriceBasis": "partial-live",
+    "priceRangeCards": 8,
+    "nameZhIcons": "131/131",
+    "nameZhHeroes": "99/99",
+    "avatarIcons": "131/131",
+    "avatarHeroes": "95/99"
+  },
+  "missingItems": [
+    "FUTBIN /27/players 第 16–26 页（11 页）本轮全部 403，退避 75s / 150s 两次重试仍 403 → 英雄卡名单可能在页 16+ 仍有未采到的卡（本轮页 15 末出现 1 名只有单卡出场的英雄，提示列表未穷尽）；基础传奇卡不受影响（131/131 全部采到、iconMissingFromSource=0）",
+    "英雄卡 4 张解析不到头像（如实不显示图片，未用他人图/占位图顶替）；backfill 本轮余 1 个不可解析 cardId 20509 = noface（EA 无脸图）",
+    "基础传奇卡 13 张、英雄卡 20 张在本轮无 ≥1000 coins 平台价，如实按占位值处理（valid=false）"
+  ],
+  "fixes": [
+    "render-icons-heroes.mjs：修复英雄台账重复计账。该渲染器递归扫描 heroes/data/**，2026-09-20 新增的派生台账 players/fc27/ledger-heroes.json（50 张，无价格）与采集产物 prices/fc27/base-heroes.json（99 张）被一并收录 → 同一表内出现 149 行、其中 50 张 cardId 重复。修法：跳过 ledger-*.json 派生台账 + 按 cardId 去重兜底。修复后 FC27 英雄 99 张（单来源）。",
+    "译名词库 name-zh-supplement-fc27.json 追加 25 条英雄卡中文名（FC26 台账已有同名 slug 的按既有译名对齐），英雄中文名覆盖率 50/99 → 99/99。"
+  ],
+  "openIssues": [
+    "base-icons.json / base-heroes.json 的 version 字段仍为 \"\" —— 契约（根 AGENTS.md「监控对象」/ prompts/icons-heroes.md）要求逐卡写明 \"Icon\" / \"Hero\"。采集器 mk() 恒写空串，属长期存在（09-17 起）的契约偏差；下游渲染按文件而非该字段区分版本，故暂无外部症状。修法需改采集器并重跑采集，本轮未擅自改动，待用户裁定。"
+  ],
+  "artifacts": [
+    {
+      "path": "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+      "bytes": 69759
+    },
+    {
+      "path": "apps/market/engine/heroes/data/prices/fc27/base-heroes.json",
+      "bytes": 45025
+    },
+    {
+      "path": "apps/market/engine/icons/data/prices/fc27/daily/2026-09-21.json",
+      "bytes": 120498
+    },
+    {
+      "path": "reports/daily/2026-09-21/icons-heroes.html",
+      "bytes": 410266,
+      "sha256": "58952fd09ca3b70d2937a9eaf6ae1e6f0d4740dac33f099550709dfffc63dc02"
+    }
+  ],
+  "notDone": [
+    "未渲染 market.html / market-scan.html",
+    "未发布站点（发布属「FC·汇总发布」职责）",
+    "未新增或改动任何定时任务",
+    "未为取当前价重开 FUTBIN 详情页（当前价与区间一律按 cardId 读 current.json）"
+  ],
+  "tests": "node --test automation/execution.test.mjs automation/regression.test.mjs automation/verify-publication.test.mjs automation/news-media.test.mjs → 40/40 通过"
+}

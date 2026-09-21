@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-09-19T04:28:36.208Z",
+  "verdict": "OK",
+  "exitCode": 0,
+  "actions": [],
+  "checkDeps": {
+    "ran": true,
+    "exitCode": 0,
+    "tail": "proxy: ready (Chrome (独立调试 profile)) |  | site-patterns: futbin.com, worldfootball.net"
+  },
+  "chrome": {
+    "port": 9333,
+    "listener": true,
+    "wsPath": null,
+    "activePortFilePresent": false,
+    "localStateUserEnabled": true
+  },
+  "probes": {
+    "jsonVersion": {
+      "code": 200,
+      "contentLength": 419,
+      "body": "{\n   \"Browser\": \"Chrome/153.0.8010.52\",\n   \"Protocol-Version\": \"1.3\",\n   \"User-Agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/5"
+    },
+    "jsonList": {
+      "code": 200,
+      "contentLength": 5,
+      "body": "[  ]\n"
+    },
+    "root": {
+      "code": 200,
+      "contentLength": 0,
+      "body": ""
+    },
+    "wsUpgrade": {
+      "code": 0,
+      "contentLength": -1,
+      "body": "",
+      "note": "debug-profile"
+    }
+  },
+  "proxy": {
+    "port": 3456,
+    "health": {
+      "status": "ok",
+      "connected": true,
+      "browser": {
+        "id": "chrome-debug-profile",
+        "label": "Chrome (独立调试 profile)",
+        "source": "debug-port-override"
+      },
+      "sessions": 1,
+      "managedTabs": 0,
+      "chromePort": 9333
+    },
+    "targetCount": 0
+  },
+  "config": {
+    "value": "chrome",
+    "state": "set"
+  },
+  "logFile": "/var/folders/d0/4_z8t9_j7sbbv3h5f10ws14c0000gn/T/cdp-proxy.log",
+  "remedy": [
+    "通道可用，按契约继续采集。"
+  ],
+  "forbidden": [],
+  "caveats": [
+    "裸 404（Content-Length: 0）出现在 /json/version、/json/list、/ 上属**正常**，不得据此判定故障；WS 直探同样可能非 101。唯一可用性判据是 check-deps 退出码。",
+    "Local State 的 user-enabled=true **不足以保证**本实例可用（2026-09-18 实测），不得据此判定通道可用。"
+  ]
+}

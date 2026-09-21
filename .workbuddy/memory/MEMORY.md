@@ -9,6 +9,10 @@
 - 页面里任何「时间」一律做成客户端实时读取（`render-market-watch.mjs` 的「行情更新于」与逐行「更新于」列即此模式：读 `current.json` 的 `generatedAt`/`updatedAt`/逐平台 `observedAt`），构建期固化值只作兜底，保证合并失败时时间也不会骗人。
 
 ## 踩坑（高价值）
+- **FUTBIN `td.table-price` 单元格 innerText 自 2026-09-20 起为多行串「币价\n…\n涨跌徽标(如 14.29%)」**：解析价格必须**只取首个非空行**并丢弃 `price-diff` 徽标行；任何整串锚定正则（如 `^([\d.]+)\s*([KM]?)$`）会**静默失配**——实测 300 行只有 50 行解析出价，产物里的 `consoleValid/pcValid` 会呈现为「失真低值」而非报错。同源问题 `collect-icons-list.mjs`（已修）与 market 的 `fetch-players-pages.mjs`（2026-09-20 修）都踩过，新增任何从该列表页取价的脚本都要按此口径。
+- **开服日口径存在未裁定的分裂（2026-09-20 发现）**：根 `AGENTS.md`、`prompts/icons-heroes.md`、本文件均写 `2026-09-25`，且 09-17/18/19 三份 daily 快照都是 2026-09-25 / `listing-estimate`；但 `collect-icon-priceranges.mjs`、`record-icons-daily.mjs`、`build-icon-research.mjs`、`build-same-period-advice.mjs` 的常量被改成 `2026-09-18`（注释称「2026-09-19 用户明确口径」，但无任何记忆佐证）。**后果不是报错而是静默改口径**：`date < launchDate` 一旦翻转，`priceBasis` 由 `listing-estimate` 变 `market`，触碰「开服前不计算日环比与累计涨跌」红线（2026-09-20 首次提交时实测发生）。`collect-icons-list.mjs` 已改回 2026-09-25；**其余 4 个待用户一次性裁定后全局同步**，勿单方面来回改。
+- **采集器写出必须做「台账补全」**（2026-09-19 修复）：`collect-icons-list.mjs` 原先只写「采到的行」，`/27/players` 11+ 页被 403 截断时会把当日台账从 **131 静默缩到 102**（与 09-17/09-18 不可比、无任何报错）。现改为「采到的行 + 未采到的台账卡以空价保留」（名单基准只取 `fc27-icons-playstyles.json`；价一律 0/valid=false，**不得**用旧日期或 FC26 填充）。已修复后单页低负载重跑即可回填：`--from-page 26 --max-page 26 --merge`（约 15 秒、1 次导航），无需重翻全量。**任何「只写成功项」的采集器都有同类静默缩减风险，新增写出路径时先核对卡数是否等于台账。**
+- **三份价格产物的字段结构各不相同，跨文件校验前必须先探明**（混用会产生「131 张全部不一致」这类假告警）：hourly 快照逐卡键 = `id` + `current{console,pc}` + `currentValid{console,pc}` + `priceRange{min,max,updatedText}`；daily 快照逐卡数组键 = `players`，平台价在 `platforms.console/pc={price,valid}`；`current.json` 的卡表是按 cardId 的映射对象 `cards`（键为字符串 cardId），平台价在 `platforms.console/pc={price,valid,observedAt,source}`。
 - coordinate stage 只复制白名单目录，新增跨日期底稿必须同步加 `cpSync`，否则栏目静默空白。
 - `apply-market-name-zh.mjs --file` 须传实际日期目录 `automation/runs/<YYYY-MM-DD>/...`，传 `D` 字面路径读不到。
 - 台账非 ASCII 名防 latin-1 乱码：`Buffer.from(s,'latin1').toString('utf8')` 反解。
@@ -20,6 +24,7 @@
 ## 口径
 - FUTBIN 只有 Console/PC 两档（一行 DOM 同时含两平台价）；`ps_price/pc_price/rarity/version` 参数无效，`page` 翻页在会话建立后有效（30 行/页）；名单判定靠 `td.table-name` 版本标签；`td.table-item-score` 是估值列非成交价。落库 `psPrice`/`pcPrice`（<1000 占位）、`platform='console+pc'`；开服（2026-09-25）前不算日环比/累计涨跌，priceBasis 以当日实测为准。
 - 传奇区间是**卡级**字段（`scope:"card"`），Console 与 PC 同值，禁按平台拆；投资建议 condA（FC26 开服价 > FC27 当前价）**仅在当前价有效（≥1000）时参与**，condB 用区间上沿。命中集随实时价滚动**增减**，回报须附触发变化的价格证据，否则易被误读为脚本回归。
+- **FUTBIN `slug` 不是唯一键**（2026-09-18 T23 实测）：同轮传奇快照内 `EUSÉBIO`(21548) 与 `LÚCIO`(21815) 共用 slug `da-silva-ferreira`（131 张按 cardId 唯一，slug 有重复）。**跨文件关联（研究/校验/去重/头像）一律按 `cardId`**，禁用 slug 或 name 做键，否则静默错配、产生假阳性差异。研究文件 `rows[].id` = cardId；另 `rows[].maxRatio` 口径是 `fc26Launch/fc27Max`（区间上沿），condA 余量须自算 `fc26Launch/representative`。
 - 译名：词库 `name-zh-supplement-fc27.json` 只增不改、禁空字符串；注入顺序 URL slug → 姓名 slug；当日未命中清单译完重跑至 0。资讯译文写 `apps/news/data/translations-D.json`（旧千帆代理已废弃）。
 - 头像：键 = EA resourceId，唯一入口 `shared/lib/player-avatar.mjs`；姓氏兜底有双向一致性守卫，宁缺勿错配；FC26 数据一律不配头像。
 - 市场每小时评分：0.45 热度 + 0.40 同档相对价 + 0.15 变动分；变动分只取两个真实整点观测（basis=hourly）。顺序红线：build → inject 译名 → render。

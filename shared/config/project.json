@@ -3,18 +3,18 @@
   "timezone": "Asia/Shanghai",
   "dailyTime": "03:00",
   "dailySchedule": {
-    "note": "日任务按 5 分钟错开发起，避免同一分钟并发触发进入排队；汇总发布排在全部上游之后，并在 coordinate.mjs 内等待三个必需 run-state 快照（football / news / market），evolution 与 icons-heroes 为可选模块。",
+    "note": "日任务按 5 分钟错开发起，避免同一分钟并发触发进入排队；汇总发布排在全部上游之后，并在 coordinate.mjs 内等待三个必需 run-state 快照（football / news / market），evolution 与 icons-heroes 为可选模块。2026-09-20 起足球日报移到早上 06:00（用户要求），汇总发布顺延到 06:15 以保持「汇总在上游之后」的时序。",
     "news": "03:00",
     "market": "03:05",
-    "football": "03:10",
+    "football": "06:00",
     "evolution": "03:15",
     "icons-heroes": "03:20",
-    "portal": "03:35"
+    "portal": "06:15"
   },
-  "hourlySchedule": {
-    "note": "两条每小时任务只声明「每小时」，不声明分钟相位：WorkBuddy 定时规则不支持在 HOURLY 下指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定，可能落在任何分钟。两条任务都要写同一个 current.json，并发写冲突的防护应做在脚本层（锁文件或原子写），不要依赖调度相位。",
-    "market-hourly": "hourly",
-    "icons-pricerange-hourly": "hourly"
+  "highFrequencySchedule": {
+    "note": "两条高频行情任务（市场价格关注列表、传奇价格区间）均为每 4 小时（传奇 2026-09-19 起、市场 2026-09-20 起，用户要求由每小时改为每 4 小时），只声明间隔、不声明分钟相位：WorkBuddy 定时规则不支持在 HOURLY 下指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定，可能落在任何分钟。两条任务共用同一 sourceKey，同时最多 1 个在跑，相遇时后者记 skip same-source 并保持 due（属正常串行）。两条任务都要写同一个 current.json，并发写冲突的防护应做在脚本层（锁文件或原子写），不要依赖调度相位。",
+    "market-hourly": "every-4-hours",
+    "icons-pricerange-hourly": "every-4-hours"
   },
   "sharedRoot": "shared",
   "runStatePattern": "automation/runs/{DATE}",
@@ -55,7 +55,7 @@
       "name": "足球日报",
       "enabled": true,
       "scheduleType": "daily",
-      "scheduleTime": "03:10",
+      "scheduleTime": "06:00",
       "output": "football.html"
     },
     {
@@ -100,23 +100,23 @@
       "name": "汇总链接",
       "enabled": true,
       "scheduleType": "daily",
-      "scheduleTime": "03:35",
+      "scheduleTime": "06:15",
       "output": "summary.html"
     },
     {
       "order": 7,
       "id": "icons-pricerange-hourly",
-      "name": "FC27传奇价格区间(每小时)",
+      "name": "FC27传奇价格区间(每4小时)",
       "enabled": true,
-      "schedule": "hourly",
+      "schedule": "every-4-hours",
       "output": "market-icons-research.html"
     },
     {
       "order": 8,
       "id": "market-hourly",
-      "name": "FC27市场价格(每小时)",
+      "name": "FC27市场价格(每4小时)",
       "enabled": true,
-      "schedule": "hourly",
+      "schedule": "every-4-hours",
       "output": "market-watch.html"
     }
   ]

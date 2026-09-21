@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-19",
+  "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
+  "publicUrl": "https://fc27-site.app.workbuddy.host/",
+  "published": true,
+  "reason": "本轮经 WorkBuddy 站点发布能力（workbuddy_sites_deploy，updateExistingApp + entryHtml=index.html + domainPrefix=fc27-daily-intel）发布 daily-merged/，链接不变 https://fc27-site.app.workbuddy.host/；verify-publication.mjs 复核 exit 0，本地=线上 SHA 70bde78f… 逐字节一致。football 模块本轮迟到提交被 run-state 拒收（failed），产物保留在 reports/daily/2026-09-19/football.html 但未入快照，站点足球栏如实空状态，待次日自然恢复。",
+  "publicVerification": {
+    "verified": true,
+    "checks": {
+      "matchesLocal": true,
+      "hasArchiveLink": true,
+      "hasDateAnchor": true,
+      "completeHtml": true
+    },
+    "localSha256": "70bde78f95a01cdc86e38cda4530cb0b02c85c07c56832b59c030f909514bab4",
+    "remoteSha256": "70bde78f95a01cdc86e38cda4530cb0b02c85c07c56832b59c030f909514bab4",
+    "bytes": 25913633,
+    "checkedAt": "2026-09-18T20:38:36.747Z"
+  },
+  "unattendedPublishingVerified": false,
+  "mergeResult": "success",
+  "publishResult": "delegated",
+  "modules": {
+    "football": "failed",
+    "news": "success",
+    "market": "partial",
+    "evolution": "partial",
+    "icons-heroes": "partial"
+  },
+  "runIds": {
+    "football": "9cbe7afc-4e52-491d-ac67-e0d091d30553",
+    "news": "8d64d5c5-15c6-41d7-8ccf-289956934ab2",
+    "market": "ee1b9a02-b119-4699-a553-8a49bde68084",
+    "evolution": "ad30482d-af41-463d-bbb0-ee6d60e14457",
+    "icons-heroes": "782473f7-0254-4899-bd03-92eb4fef22e2"
+  }
+}

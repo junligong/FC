@@ -9,7 +9,7 @@
  *      两个价格盒渲染出**完全相同**的区间值（2026-09-17 对 20 张卡批量比对，差异数为 0）。
  *      因此本脚本只落一份 min/max，绝不伪造「每平台各一套区间」。
  *   3. 平台级的「当前价」取自各平台价格盒内的 lowest-price 单元格（.lowest-price-1）；
- *      未开服前普遍为 0，属占位值，需由调用侧按 <1000 判无效，不得当作成交价。
+ *      无有效价时普遍为 0，属占位值，需由调用侧按 <1000 判无效，不得当作成交价。
  *   4. FUTBIN 会限流：同页并发 5 时出现 HTTP 429。因此这里用**串行 + 间隔**，并对 429/5xx 退避重试。
  *
  * 用法：由 collect-icon-priceranges.mjs 经 Web Access 的 CDP Proxy（:3456/eval）注入执行；
@@ -112,12 +112,12 @@ export function buildPriceRangeScript(batch, opts = {}) {
       const rawName = h1 ? h1.textContent.replace(/\\s+/g, ' ').trim() : row.title;
       row.name = rawName ? rawName.split(' - ')[0].trim().slice(0, 60) : null;
 
-      // 双平台当前价（未开服前多为 0，属占位）
+      // 双平台当前价（无有效价时多为 0，属占位）
       row.current = {
         console: parseCoins(currentOf(doc, 'platform-ps-only')),
         pc: parseCoins(currentOf(doc, 'platform-pc-only')),
       };
-      // 开服前估值列（IS），单独记录，绝不与平台成交价混同
+      // 估值列（IS），单独记录，绝不与平台成交价混同
       const isEl = doc.querySelector('div.platform-price-wrapper-medium.player-card-item-score');
       row.estimate = isEl ? parseCoins(isEl.textContent.replace(/K$/i, '')) : null;
       // K 后缀（如 "60K"）需要单独放大

@@ -1,0 +1,112 @@
+{
+  "task": "icons-pricerange-hourly",
+  "scheduledHour": "15",
+  "checkedAt": "2026-09-19T07:52:00.000Z",
+  "localHour": "2026-09-19T15:44+08:00",
+  "result": "failed",
+  "stage": "collect",
+  "consecutiveCollectFailures": 2,
+  "previousFailure": "automation/runs/2026-09-19/icons-heroes/hourly-14-failed.json",
+  "reason": "FUTBIN 详情页 https://www.futbin.com/27/player/<id>/<slug> 全量返回 HTTP 403（站点级拦截），131/131 未取到价格区间；非浏览器通道故障。与 T14（14:39）为同一失败形态，连续第 2 轮。",
+  "triage": {
+    "command": "node automation/browser-triage.mjs --json",
+    "generatedAt": "2026-09-19T07:44:01.755Z",
+    "verdict": "OK",
+    "exitCode": 0,
+    "actions": [],
+    "selfHealed": false,
+    "checkDepsExit": 0,
+    "checkDepsTail": "proxy: ready (Chrome (独立调试 profile)) |  | site-patterns: futbin.com, worldfootball.net",
+    "chrome": {
+      "port": 9333,
+      "listener": true,
+      "wsPath": null,
+      "activePortFilePresent": false
+    },
+    "probes": {
+      "jsonVersion": 200,
+      "jsonVersionBrowser": "Chrome/153.0.8010.52",
+      "jsonList": 200,
+      "jsonListBody": "[  ]"
+    },
+    "proxyHealth": {
+      "status": "ok",
+      "connected": true,
+      "sessions": 1,
+      "managedTabs": 0,
+      "chromePort": 9333
+    },
+    "config": "chrome",
+    "note": "通道健康（triage OK / exit 0），问题在来源页侧，按 AGENTS.md「来源页取数失败 ≠ 通道故障」处置：不动代理、不动 Chrome、不动 profile。"
+  },
+  "collect": {
+    "script": "apps/market/engine/scripts/collect-icon-priceranges.mjs",
+    "attempts": [
+      {
+        "mode": "full",
+        "startedAtLocal": "2026-09-19T15:44:12+08:00",
+        "finishedAt": "2026-09-19T07:46:38.248Z",
+        "durationSec": 146,
+        "targets": 131,
+        "ok": 0,
+        "batches": 17,
+        "hostRecycles": 5,
+        "progressConsistentWithSuccess": true,
+        "cdpTimeouts": 0,
+        "retryRoundTriggered": false,
+        "retryRoundSkippedBecause": "脚本内置策略：403 属站点级拦截，重试无益（collect-icon-priceranges.mjs 补采轮显式排除 status===403）",
+        "errorSamples": ["21488:HTTP 403", "21487:HTTP 403", "21492:HTTP 403"]
+      },
+      {
+        "mode": "probe-dryrun",
+        "command": "node apps/market/engine/scripts/collect-icon-priceranges.mjs --limit 8",
+        "targets": 8,
+        "ok": 0,
+        "durationSec": 9,
+        "errorSamples": ["21488:HTTP 403", "21487:HTTP 403", "21492:HTTP 403"],
+        "purpose": "以全新宿主页验证是否为宿主页劣化所致",
+        "conclusion": "全新宿主页同样全 403 ⇒ 判定为来源页侧持久拦截，非宿主页劣化；不属值得重跑的形态"
+      }
+    ],
+    "exitCode": 1,
+    "wroteAnyArtifact": false,
+    "hourlySnapshotWritten": false,
+    "note": "脚本在 0 张成功时不写入 latest.json / hourly 快照 / current.json，符合契约；pricerange/hourly/ 未被本轮污染（无 2026-09-19T15.json）。"
+  },
+  "notAttemptedAndWhy": {
+    "build-icon-research": "第 2 步 0 张成功，current.json 未产生新观测（sources['futbin-icon-detail'].observedAt 仍为 T13 的 2026-09-19T05:38:05.693Z）；按契约「执行步骤顺序固定，前一步失败不进入后一步的推断」，不重算研究，保留 T13 有效结论。",
+    "record-icons-daily": "同上，不把 0 新观测的一轮固化为当日快照。",
+    "render-icons-heroes": "同上，不重渲染；页面运行时按 cardId 读 current.json，无需以陈旧数据重生成。"
+  },
+  "lastValidResultKept": {
+    "source": "apps/market/engine/icons/data/prices/fc27/pricerange/latest.json（= hourly/2026-09-19T13.json）",
+    "collectedAt": "2026-09-19T05:38:05.693Z",
+    "counts": {
+      "total": 131,
+      "ok": 131,
+      "missing": 0,
+      "minFloor": 69000,
+      "maxCeiling": 15000000
+    },
+    "priceBasis": "listing-estimate",
+    "currentJsonIconSourceObservedAt": "2026-09-19T05:38:05.693Z",
+    "currentJsonIconCards": 131,
+    "currentJsonGeneratedAt": "2026-09-19T05:45:29.765Z",
+    "currentJsonTotalCards": 1911,
+    "unaffectedByThisRound": true
+  },
+  "artifactsUntouched": {
+    "pricerange/latest.json": "2026-09-19 13:38:05（未变）",
+    "current.json": "2026-09-19 13:45:29（market-hourly T13 所写，未受本轮影响）",
+    "icons/data/prices/fc27/daily/2026-09-19.json": "2026-09-19 13:38:10（未变）",
+    "reports/daily/2026-09-19/icons-heroes.html": "2026-09-19 13:38（未变）",
+    "reports/daily/2026-09-19/market-icons-research.html": "2026-09-19 13:38（未变）"
+  },
+  "notDone": {
+    "runState": "未调用 run-state.mjs（契约明令禁止：owner.json 每日排他锁）",
+    "publish": "未发布站点（本任务自身不发布）",
+    "marketHtml": "未渲染 market.html",
+    "coordinate": "未跑 coordinate.mjs / verify-publication.mjs"
+  },
+  "manualActionNeeded": "无。通道无需修复，浏览器无需重启、无需重新登录独立 profile。FUTBIN 详情页 403 具时限性，等下一轮（16 时）自动重试。"
+}

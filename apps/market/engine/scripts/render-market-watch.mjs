@@ -3,7 +3,7 @@
  * FC27 市场「关注列表」子页渲染器
  * 用途：把 build-market-watchlist.mjs 产出的关注列表渲染为 reports/daily/D/market-watch.html，
  *       作为 FC27 市场栏目的第三个子标签（市场概览 / 市场扫描 / 关注列表）。
- * 结构：摘要 → 一、重点推荐（关注分 Top 30）→ 二、同档低价（被低估）→ 三、逐小时挂单价异动
+ * 结构：摘要 → 一、重点推荐（关注分 Top 30）→ 二、同档低价（被低估）→ 三、本日挂单价异动（相邻观测点）
  *       → 四、进化卡热度榜 → 五、暂无有效平台价 → 口径与评分公式 → 免责声明
  * 平台：页顶提供 Console（PS / Xbox 合并）与 PC 切换，价格列随平台显隐；价格 <1000 视为占位值不参与打分。
  * 输入：automation/runs/D/market/watchlist.json（可用 FC_MARKET_WATCHLIST 覆盖）
@@ -98,10 +98,11 @@ export function renderWatch(dateStr, data) {
 
   const priceBasis = d.priceBasis || '';
   const priceNow = typeof u.priceValid === 'number' && u.priceValid > 0;
-  const points = u.hourlyPoints || 0;
+  // `points` 为观测点数；`hourlyPoints` 是 2026-09-20 前的旧键名，保留回退只为能重渲染历史日期。
+  const points = u.points ?? u.hourlyPoints ?? 0;
   const platformHint = !priceNow
     ? '本轮没有任何卡取得有效平台价（<1000 coins 视为占位值），关注列表为空状态。'
-    : `FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径；本页价格为 FUTBIN 当前挂单/估价口径（${esc(priceBasis)}），<b>不是成交价</b>。「本日挂单价变动」列仅在同一平台的两个有效观测点之间计算（两个真实整点，或与当日开盘基线的单点对比并标注「待整点确认」）；本表不计算日环比与累计涨跌。`;
+    : `FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径；本页价格为 FUTBIN 当前挂单/估价口径（${esc(priceBasis)}），<b>不是成交价</b>。「本日挂单价变动」列仅在同一平台的两个相邻有效观测点之间计算（或与当日开盘基线的单点对比并标注「待下一观测点确认」）；本表不计算日环比与累计涨跌。`;
 
   const stat = (label, value, hint) => `<div class="stat"><span class="stat-label">${esc(label)}</span><b>${esc(value)}</b>${hint ? `<span class="stat-hint">${esc(hint)}</span>` : ''}</div>`;
 
@@ -162,7 +163,7 @@ body[data-platform="console"] .pv-console,body[data-platform="pc"] .pv-pc{displa
   const sections = [
     { key: 'watch', title: '一、重点推荐（关注分 Top 30）', empty: '本轮没有取得有效平台价的卡，关注列表为空状态；采集成功后的下一轮即会产出。' },
     { key: 'undervalued', title: '二、同档低价（热度不低但价格低于同档中位）', empty: '本轮无满足「热度分位 ≥50 且价格分 ≥60」的卡，如实空状态。' },
-    { key: 'trending', title: '三、本日挂单价异动（相邻有效观测 |变动| ≥ 1%）', empty: '本日尚无可比的两个有效观测点，暂无异动可列（首个整点后开始累积）。' },
+    { key: 'trending', title: '三、本日挂单价异动（相邻有效观测 |变动| ≥ 1%）', empty: '本日尚无可比的两个有效观测点，暂无异动可列（本日第二个观测点后开始累积）。' },
     { key: 'hotEvo', title: '四、进化卡热度榜', empty: '本轮无进化卡热度数据，如实空状态。' },
     { key: 'pendingPrice', title: '五、暂无有效平台价（FUTBIN 尚未更新，按占位处理）', empty: '本轮所有追踪卡均已取得有效平台价。' },
   ];
@@ -197,7 +198,7 @@ body[data-platform="console"] .pv-console,body[data-platform="pc"] .pv-pc{displa
 <title>FC27 市场关注列表 ${esc(dateStr)}</title>
 <style>${css}</style></head><body data-platform="${esc(DEFAULT_PLATFORM)}">
 <h1>FC27 市场关注列表 <span class="badge">${esc((d.priceBasis || 'partial').toString().toUpperCase())}</span></h1>
-<div class="sub">数据日期 ${esc(dateStr)} · 行情更新于 <b id="live-updated" title="按 cardId 从 assets/data/current.json 读取；页面每次加载/刷新都会重新获取">读取中…</b> · 名单生成于 ${esc(d.generatedAt || '未标注')} · 热度与价格来源 FUTBIN /27/popular + /27/popular/evolutions · 逐小时快照 ${esc(points)} 个观测点${u.firstHour ? `（${esc(u.firstHour)}–${esc(u.lastHour)} 时）` : ''}${all.length ? ` · 球员头像 ${avatarCount}/${all.length}` : ''}</div>
+<div class="sub">数据日期 ${esc(dateStr)} · 行情更新于 <b id="live-updated" title="按 cardId 从 assets/data/current.json 读取；页面每次加载/刷新都会重新获取">读取中…</b> · 名单生成于 ${esc(d.generatedAt || '未标注')} · 热度与价格来源 FUTBIN /27/popular + /27/popular/evolutions · 观测序列 ${esc(points)} 个观测点${u.firstHour ? `（${esc(u.firstHour)}–${esc(u.lastHour)} 时）` : ''}${all.length ? ` · 球员头像 ${avatarCount}/${all.length}` : ''}</div>
 
 <div class="plat-bar" role="group" aria-label="平台切换">
   <span class="plat-label">平台</span>
@@ -210,7 +211,7 @@ body[data-platform="console"] .pv-console,body[data-platform="pc"] .pv-pc{displa
   ${stat('有有效平台价', num(u.priceValid ?? 0), '两个平台中至少一个 ≥1000 coins')}
   ${stat('Console 有价 / PC 有价', `${num(u.psValid ?? 0)} / ${num(u.pcValid ?? 0)}`)}
   ${stat('有热度数据', num(u.withPopularity ?? 0))}
-  ${stat('逐小时观测点', num(points), u.lastHour ? `最新 ${u.lastHour} 时` : '')}
+  ${stat('本日观测点', num(points), u.lastHour ? `最新 ${u.lastHour} 时` : '')}
 </div>
 
 ${body}
@@ -222,13 +223,13 @@ ${body}
   <li>参考价 = 两个平台中有效价（≥1000 coins）的<b>较大者</b>；两个平台都无效的卡不参与打分，只列在「暂无有效平台价」。</li>
   <li>热度分 = 该卡 FUTBIN 热度计数在全体有热度卡中的分位（0–100）。</li>
   <li>价格分 = <code>50 + 50×(1 − 参考价 / 同档中位价)</code>，同档 = 同位置组且总评 ±2、样本 ≥5 才计算；越便宜分越高。</li>
-  <li>变动分 = <code>50 + 逐小时挂单价变动百分比×2</code>（+10% → 70，−10% → 30）；仅在同一平台的两个有效观测点之间计算。</li>
+  <li>变动分 = <code>50 + 相邻观测挂单价变动百分比×2</code>（+10% → 70，−10% → 30）；仅在同一平台的两个有效观测点之间计算。</li>
   <li>关注分 = <code>0.45×热度分 + 0.40×价格分 + 0.15×变动分</code>；缺项按中性 50 计入（产物内 <code>neutralFilled</code> 标注）。</li>
-  <li>${esc((d.scoring && d.scoring.caveat) || 'FC27 未正式开服前，平台价为滚动更新的挂单/估价口径，不是成交价。')}</li>
+  <li>${esc((d.scoring && d.scoring.caveat) || 'FC27 平台价为 FUTBIN 滚动更新的挂单/估价口径，不是成交价。')}</li>
 </ul>
 </div>
 
-<div class="footer">FC27 市场关注列表 · ${esc(dateStr)} · 由 render-market-watch.mjs 渲染 · 数据由每小时任务（collect-market-prices.mjs + build-market-watchlist.mjs）刷新 · 仅供游戏内研究，不构成投资或交易建议</div>
+<div class="footer">FC27 市场关注列表 · ${esc(dateStr)} · 由 render-market-watch.mjs 渲染 · 数据由「FC·市场价格关注列表（每4小时）」任务（collect-market-prices.mjs + build-market-watchlist.mjs）刷新 · 仅供游戏内研究，不构成投资或交易建议</div>
 </body></html>
 `;
 }

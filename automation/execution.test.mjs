@@ -51,7 +51,7 @@ test('news child process is actually stopped at its hard deadline',()=>{
  try{const started=Date.now();const result=spawnSync(process.execPath,[path.join(here,'collect-news.mjs'),'2026-09-11'],{env:{...process.env,FC_PROJECT_ROOT:root,FC_NEWS_MAX_MS:'100'},encoding:'utf8',timeout:7000});assert.equal(result.status,124,result.stderr);assert.ok(Date.now()-started<6500);assert.match(result.stderr,/上限/);}finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 
-test('coordinator copies today assets into the isolated stage so images inline',()=>{
+test('coordinator puts today assets into the shared site directory instead of inlining',()=>{
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'fc-coordinate-assets-'));const date='2026-09-11';const env={...process.env,FC_PROJECT_ROOT:root};const run=(...args)=>spawnSync(process.execPath,[path.join(here,'run-state.mjs'),...args],{env,encoding:'utf8'});
  try{
   const reportDir=path.join(root,`reports/daily/${date}`);const assetsDir=path.join(reportDir,'assets/news');fs.mkdirSync(assetsDir,{recursive:true});
@@ -63,8 +63,16 @@ test('coordinator copies today assets into the isolated stage so images inline',
   const news=JSON.parse(run('begin','news',date).stdout);assert.equal(run('finish','news',date,news.runId,'failed').status,0);
   const market=JSON.parse(run('begin','market',date).stdout);assert.equal(run('finish','market',date,market.runId,'failed').status,0);
   const coordinated=spawnSync(process.execPath,[path.join(here,'coordinate.mjs'),date],{env,encoding:'utf8',timeout:5000});assert.equal(coordinated.status,0,coordinated.stderr);
+  // 共享资源目录必须真的拿到当日图片，否则页面会断图
+  assert.ok(fs.existsSync(path.join(root,'daily-merged/assets/news/pic.jpg')),'当日图片应进入 daily-merged/assets');
   const summary=fs.readFileSync(path.join(reportDir,'summary.html'),'utf8');
-  assert.ok(summary.includes('data:image/jpeg;base64'),'summary 应内嵌今日 assets 图片');
+  assert.ok(!summary.includes('data:image/'),'summary 不应再内联图片（重复副本的根因）');
+  assert.ok(summary.includes('../../../daily-merged/assets/news/pic.jpg'),'summary 面板应回指共享资源目录');
+  const index=fs.readFileSync(path.join(root,'daily-merged/index.html'),'utf8');
+  assert.ok(!index.includes('data:image/'),'index 不应再内联图片');
+  assert.ok(index.includes('assets/news/pic.jpg'),'index 面板应按站点根相对路径引用资源');
+  const archive=fs.readFileSync(path.join(root,`daily-merged/archive/${date}.html`),'utf8');
+  assert.ok(archive.includes('../assets/news/pic.jpg'),'archive 面板应带 ../ 前缀');
  }finally{fs.rmSync(root,{recursive:true,force:true});}
 });
 

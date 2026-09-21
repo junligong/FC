@@ -1,0 +1,76 @@
+{
+  "task": "icons-pricerange-hourly",
+  "scheduledHour": "14",
+  "checkedAt": "2026-09-19T06:42:40.000Z",
+  "localHour": "2026-09-19T14:39+08:00",
+  "result": "failed",
+  "stage": "collect",
+  "reason": "FUTBIN 详情页 https://www.futbin.com/27/player/<id>/<slug> 全量返回 HTTP 403（站点级拦截），131/131 未取到价格区间；非浏览器通道故障。",
+  "triage": {
+    "verdict": "OK",
+    "checkDepsExit": 0,
+    "chrome": {
+      "port": 9333,
+      "listener": true,
+      "wsPath": null
+    },
+    "actions": [],
+    "checkDepsTail": "proxy: ready (Chrome (独立调试 profile)) |  | site-patterns: futbin.com, worldfootball.net",
+    "proxyHealth": {
+      "connected": true,
+      "sessions": 1,
+      "managedTabs": 0
+    },
+    "jsonVersion": 200,
+    "config": "chrome",
+    "note": "通道健康（triage OK），来源页侧拦截，按 AGENTS.md「来源页取数失败 ≠ 通道故障」处置。"
+  },
+  "collect": {
+    "script": "apps/market/engine/scripts/collect-icon-priceranges.mjs",
+    "attempts": [
+      {
+        "mode": "full",
+        "targets": 131,
+        "ok": 0,
+        "batches": 17,
+        "hostRecycles": 5,
+        "retryRoundTriggered": false,
+        "retryRoundSkippedBecause": "脚本内置策略：403 属站点级拦截，重试无益（collect-icon-priceranges.mjs:204-205）",
+        "errorSamples": ["21488:HTTP 403", "21487:HTTP 403", "21492:HTTP 403"]
+      },
+      {
+        "mode": "probe-dryrun",
+        "command": "node apps/market/engine/scripts/collect-icon-priceranges.mjs --limit 8",
+        "targets": 8,
+        "ok": 0,
+        "durationSec": 9.3,
+        "errorSamples": ["21488:HTTP 403", "21487:HTTP 403", "21492:HTTP 403"],
+        "purpose": "以全新宿主页验证是否为宿主页劣化所致（结论：非，仍 403）"
+      }
+    ],
+    "exitCode": 1,
+    "wroteAnyArtifact": false,
+    "hourlySnapshotWritten": false,
+    "note": "脚本在 0 张成功时不写入 latest.json / hourly 快照 / current.json，符合契约；pricerange/hourly/ 未被本轮污染。"
+  },
+  "notAttemptedAndWhy": {
+    "build-icon-research": "第 2 步 0 张成功，current.json 未产生新观测；按契约「顺序固定，前一步失败不进入后一步的推断」，不重算研究，保留上一轮有效结论。",
+    "record-icons-daily": "同上，不固化无新观测的快照。",
+    "render-icons-heroes": "同上，不重渲染；页面运行时按 cardId 读 current.json，无需以陈旧数据重生成。"
+  },
+  "lastValidResultKept": {
+    "source": "apps/market/engine/icons/data/prices/fc27/pricerange/latest.json（= hourly/2026-09-19T13.json）",
+    "collectedAt": "2026-09-19T05:38:05.693Z",
+    "counts": {
+      "total": 131,
+      "ok": 131,
+      "missing": 0,
+      "minFloor": 69000,
+      "maxCeiling": 15000000
+    },
+    "currentJsonIconSourceObservedAt": "2026-09-19T05:38:05.693Z",
+    "currentJsonIconCards": 131,
+    "priceBasis": "listing-estimate"
+  },
+  "manualActionNeeded": "无。通道无需修复，浏览器无需重启；等下一轮整点自动重试（FUTBIN 403 具时限性）。"
+}

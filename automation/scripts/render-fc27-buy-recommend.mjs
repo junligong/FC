@@ -12,7 +12,7 @@
  * 输出：
  *   - reports/analysis/fc27-buy-recommend-<DATE>.html
  *
- * 口径提示：报告不含 FC27 日环比/累计涨跌（开服前 listing-estimate/partial-live 口径）；
+ * 口径提示：报告不含 FC27 日环比/累计涨跌（口径按当日实测有效价判定：listing-estimate / partial-live）；
  *   FC26 开服价 = 2025-09-18 Console 均价；FC26 首月末 = 2025-10-17 Console 均价。
  *   本报告为分析研究用途，不构成任何投资或交易建议。
  *
@@ -148,7 +148,7 @@ const html = `<!DOCTYPE html>
 <div class="wrap">
   <div class="hero">
     <h1>FC27 球员价格 × FC26 历史价格 · 购买推荐报告</h1>
-    <div class="sub">数据日期 ${DATE} · FC27 当前价（开服前 listing-estimate / partial-live 口径）对照 FC26 历史价（开服日 2025-09-18 与首月末 2025-10-17，Console 均价）</div>
+    <div class="sub">数据日期 ${DATE} · FC27 当前价（当日实测 listing-estimate / partial-live 口径）对照 FC26 历史价（开服日 2025-09-18 与首月末 2025-10-17，Console 均价）</div>
     <div class="grid4">
       <div class="gcell"><div class="k">有有效价的 FC27 卡</div><div class="v">${counts.totalCardsWithValidPrice ?? rows.length}</div></div>
       <div class="gcell"><div class="k">关联到 FC26 价格</div><div class="v">${counts.matchedFC26 ?? 0}</div></div>
@@ -159,7 +159,7 @@ const html = `<!DOCTYPE html>
   </div>
 
   <div class="notice">
-    <b>口径与免责声明</b>：① FC27 未开服（launchDate ${data.fc27LaunchDate}），当前价为估值/部分实况滚动价，<b>不计算日环比与累计涨跌</b>；参考价取 Console / PC 两平台有效价（≥${data.minValidPrice.toLocaleString()}）较大者。② FC26 开服价为该卡 2025-09-18 Console 均价，首月末价为 2025-10-17 Console 均价，两代按 FUTBIN slug 关联。③ 折价比 = FC27 参考价 ÷ FC26 开服价；走势比 = FC26 首月末价 ÷ FC26 开服价。④ FC26 历史价格不代表 FC27 会重演，本报告仅作跨代市场研究参考，<b>不构成任何投资或交易建议</b>。
+    <b>口径与免责声明</b>：① FC27 开服日 ${data.fc27LaunchDate}，当前价为 FUTBIN 滚动价（口径按当日实测有效价判定：listing-estimate / partial-live），<b>不计算日环比与累计涨跌</b>；参考价取 Console / PC 两平台有效价（≥${data.minValidPrice.toLocaleString()}）较大者。② FC26 开服价为该卡 2025-09-18 Console 均价，首月末价为 2025-10-17 Console 均价，两代按 FUTBIN slug 关联。③ 折价比 = FC27 参考价 ÷ FC26 开服价；走势比 = FC26 首月末价 ÷ FC26 开服价。④ FC26 历史价格不代表 FC27 会重演，本报告仅作跨代市场研究参考，<b>不构成任何投资或交易建议</b>。
   </div>
 
   <div class="filters">

@@ -1,0 +1,123 @@
+===== A. current.json 完整性 =====
+current.generatedAt=2026-09-20T23:50:30.283Z · cards=2827
+✓ 名单计数 131 — base-icons 131 张
+✓ current 命中 131/131 — 命中 131/131
+✓ cardType=icon 违例 0 — 0 张
+✓ priceRange.scope=card 违例 0 — 0 张
+✓ 双平台键缺失 0 — 0 张
+✓ updatedAt=采集时(2026-09-20T23:50:30.219Z) 违例 0 — 0 张
+✓ 平台 observedAt/source + valid↔≥1000 违例 0 — 0+0
+  current 有效价：Console 107 / PC 78 / 任一 110
+
+===== B. current ↔ latest.json（本轮采集） =====
+latest.collectedAt=2026-09-20T23:50:30.219Z · priceBasis=partial-live · counts={"total":131,"ok":131,"missing":0,"minFloor":69000,"maxCeiling":15000000}
+✓ latest.collectedAt = 本轮采集时 — 2026-09-20T23:50:30.219Z
+✓ current ↔ latest 平台价不一致 0 — 0 张
+✓ current ↔ latest 有效性不一致 0 — 0 张
+✓ current ↔ latest 区间不一致/缺卡 0 — 0 张
+
+===== C. current ↔ 当日快照 =====
+daily players=131 · counts={"total":131,"valid":110,"missing":21,"platformValid":{"console":107,"pc":78}} · launchDate=2026-09-18 · priceBasis=partial-live
+✓ daily players 131 — 131
+✓ current ↔ daily 平台价不一致/缺卡 0 — 0 张
+✓ current ↔ daily 区间不一致 0 — 0 张
+  daily 顶层 priceRange：{"scope":"card","scopeNote":"FUTBIN 详情页「Price Range」为卡级字段（同一张卡的 Console / PC 价格盒渲染同值），不按平台拆分。","withRange":131,"missing":0,"minFloor":69000,"maxCeiling":15000000,"collectedAt":"2026-09-20T23:50:30.219Z","sourceFile":"apps/market/engine/icons/data/prices/fc27/pricerange/latest.json"}
+  daily 有效价：Console 107 / PC 78 / 任一 110
+✓ 当日快照内无涨跌字段
+
+===== D. current ↔ series 本轮观测行 =====
+series.points=62 · 末点 hour=2026-09-21T07 at=2026-09-20T23:50:30.219Z counts={"total":131,"ok":131,"missing":0,"minFloor":69000,"maxCeiling":15000000}
+✓ series 末点 hour=2026-09-21T07 — 2026-09-21T07
+✓ series 末点 at = 本轮采集时 — 2026-09-20T23:50:30.219Z
+✓ current ↔ series 平台价不一致 0 — 0 张
+✓ current ↔ series 区间(rmin/rmax)不一致 0 — 0 张
+✓ series 本轮行缺失 0 — 0 张
+
+===== E. 三副本 sha256 =====
+  80058e6cf9fd956a  apps/market/engine/data/prices/fc27/current.json
+  80058e6cf9fd956a  reports/daily/2026-09-21/assets/data/current.json
+  80058e6cf9fd956a  daily-merged/assets/data/current.json
+✓ 三副本 sha256 全等 — 80058e6cf9fd956a / 80058e6cf9fd956a / 80058e6cf9fd956a
+  主文件 2354543 B
+
+===== F. 区间极值 =====
+  下沿最低 69,000（21 张并列）· 上沿最高 15,000,000（71 张并列）
+✓ 区间缺失 0 — 0 张
+✓ 区间宽度 0 违例 0 — 0 张
+✓ 有效平台价越界 0 — 0 处
+✓ latest.counts.minFloor/maxCeiling 与实算一致 — latest 69000/15000000 vs 实算 69000/15000000
+  恰等于上沿 15,000,000 者 5 处 · 有效平台价合计 185
+
+===== G. 研究文件复算（按 cardId 独立重算） =====
+✓ rows 131 — 131
+✓ rows id 去重 131 — 131
+  脚本自判 {"compared":131,"advice":41,"condA":40,"condB":1,"both":0,"noFc26":26,"noRange":0}
+  独立重算 {"condA":40,"condB":1,"both":0,"advice":41,"noFc26":26,"noRange":0}
+✓ 复算 = 脚本自判
+  前轮基线(research-prev-t03) 自判 advice=41 · 我的复算 advice=41
+✓ 前轮基线自判与复算一致 — 41 vs 41
+  前轮 rows=131 / 本轮 rows=131
+  命中集：前轮 41 → 本轮 41（进 5 / 出 5）
+  进: 21499,21538,21556,21826,21880
+  出: 21558,21784,21816,21897,21882
+✓ 命中集双向差集自洽（= 数量差）
+  condA=null(不适用) 38 张 · priceBasis=partial-live · rangeCollectedAt=2026-09-20T23:50:30.219Z
+
+===== H. FC26 换名缺陷（14 张对照，按 cardId） =====
+✓ 换名对照表 14/14 与台账 slug 全等 — 14/14
+  可桥回 13/14（无 FC26 旧键者 1 张）· 其中修正后命中 5
+    无需桥回 21526 旧键「torres」在 FC26 无匹配（新 slug「carlos-alberto-torres」直连命中=true）
+    命中 21488(贝利) ratio=1.2905
+    命中 21495(弗朗茨·贝肯鲍尔) ratio=1.7308
+    命中 21501(罗纳尔迪尼奥) ratio=1.3992
+    命中 21560(儒尼尼奥) ratio=1.5473
+    命中 21567(里瓦尔多) ratio=1.2216
+    未命中 21492(罗纳尔多) rep=0 vs 14974788 ratio=n/a
+    未命中 21531(尤西比奥) rep=7420000 vs 6831947 ratio=0.9207
+    未命中 21779(里瓦尔多) rep=15000000 vs 1791671 ratio=0.1194
+    未命中 21807(加林查) rep=0 vs 7294617 ratio=n/a
+    未命中 21815(卢西奥) rep=0 vs 8037155 ratio=n/a
+    未命中 21829(儒尼尼奥) rep=1050000 vs 909887 ratio=0.8666
+    未命中 21839(维埃拉) rep=2095000 vs 1291787 ratio=0.6166
+    未命中 21877(加林查) rep=630000 vs 289071 ratio=0.4588
+✓ 可桥回全部成功 — 13/13
+  noFc26=26 · 修正值 = 26 − 13 = 13
+  修正后建议集 = 41 + 5 = 46
+
+===== I. 同时段建议 =====
+  dayOffset=3 dayN=4 fc27=2026-09-18 fc26=2025-09-18 fc26SameDay=2025-09-21 minValid=1000
+✓ dayOffset=3 · dayN=4 · FC26 同日=2025-09-21
+  传奇 131 张：{"观望等待":75,"分批买入":11,"数据不足":32,"谨慎":13}
+  英雄 99 张：{"分批买入":20,"数据不足":30,"观望等待":46,"谨慎":3}
+✓ 传奇 131 张 — 131
+✓ same-period nameZh 缺失 0 — 0
+✓ 当日页与常驻底稿逐字节一致 — 当日 241267 B / 底稿 241267 B
+✓ 免责声明在页（不构成）
+✓ 免责声明在页（不重演）
+✓ 单文件无外链（src= 外链 0） — 0 处
+✓ 五档标签齐备
+
+===== J. 监控页 / 研究页 HTML =====
+  icons-heroes.html 373201 B · sha fe1216afcc7e5e18
+✓ 表头含「当前价」
+✓ 表头五列齐备（最低价/最高价/当前价/…）
+✓ data-key=min/max 各 1
+✓ 运行时读 assets/data/current.json
+  头像 img=226 · data-card-id=786 · %=363
+  FC26 参考区（锚点「七、FC26」=337341，段长 35860 B）pimg=0
+✓ 跨代 FC26 参考区不配头像（红线） — 0 张
+  （导航处另有「FC26」文字位置 8390,337343,337448,337524,337645,337794）
+  market-icons-research.html 62355 B · sha 0e74eb04d7f044f6
+✓ 研究页与常驻底稿逐字节一致
+✓ 研究页含 partial-live
+✓ 研究页无 2026-09-25（开服日口径统一）
+✓ 研究页含免责「不构成投资」
+✓ 研究页无外链 — 0 处
+✓ 建议卡 nameZh 齐备 41/41 — 缺 0
+
+===== K. 前轮区间对照（连续持平判定） =====
+  前轮 point: hour=2026-09-21T03 at=2026-09-20T19:43:41.093Z counts={"total":131,"ok":131,"missing":0,"minFloor":69000,"maxCeiling":15000000}
+  区间变动 0 张 · 代表价变动 109 张 · 新转有效 3 · 有效转无效 6
+  前轮任一平台有效 113 → 本轮 110
+
+===== 汇总：失败项 0 =====

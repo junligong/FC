@@ -1,0 +1,128 @@
+{
+  "module": "news",
+  "date": "2026-09-19",
+  "runId": "8d64d5c5-15c6-41d7-8ccf-289956934ab2",
+  "status": "success",
+  "startedAt": "2026-09-18T19:23:34.426Z",
+  "deadlineAt": "2026-09-18T19:38:34.426Z",
+  "reportPath": "reports/daily/2026-09-19/news.html",
+  "previousAttempt": "automation/runs/2026-09-19/news/attempts/55d42f4c-e8d5-4d2a-bcb9-6d8e60724f7f",
+  "completedAt": "2026-09-18T19:34:22.797Z",
+  "evidence": {
+    "date": "2026-09-19",
+    "runId": "8d64d5c5-15c6-41d7-8ccf-289956934ab2",
+    "status": "success",
+    "sources": [
+      {
+        "handle": "EASFCDirect",
+        "url": "https://x.com/EASFCDirect",
+        "openedAt": "2026-09-18T19:24:05.208Z",
+        "count": 5
+      },
+      {
+        "handle": "easportsfc",
+        "url": "https://x.com/easportsfc",
+        "openedAt": "2026-09-18T19:24:24.275Z",
+        "count": 1
+      },
+      {
+        "handle": "fifa_romania",
+        "url": "https://x.com/fifa_romania",
+        "openedAt": "2026-09-18T19:24:42.084Z",
+        "count": 8
+      },
+      {
+        "handle": "AsyFutTrader",
+        "url": "https://x.com/AsyFutTrader",
+        "openedAt": "2026-09-18T19:24:59.897Z",
+        "count": 6
+      },
+      {
+        "handle": "FIFA22_INFO",
+        "url": "https://x.com/FIFA22_INFO",
+        "openedAt": "2026-09-18T19:25:17.664Z",
+        "count": 6
+      },
+      {
+        "handle": "FutSheriff",
+        "url": "https://x.com/FutSheriff",
+        "openedAt": "2026-09-18T19:25:35.553Z",
+        "count": 5
+      },
+      {
+        "handle": "FutPoliceLeaks",
+        "url": "https://x.com/FutPoliceLeaks",
+        "openedAt": "2026-09-18T19:25:53.339Z",
+        "count": 6
+      },
+      {
+        "handle": "FUTBIN",
+        "url": "https://x.com/FUTBIN",
+        "openedAt": "2026-09-18T19:26:11.130Z",
+        "count": 4
+      },
+      {
+        "handle": "easysbc",
+        "url": "https://x.com/easysbc",
+        "openedAt": "2026-09-18T19:26:29.044Z",
+        "count": 5
+      },
+      {
+        "handle": "Razzerstrading",
+        "url": "https://x.com/Razzerstrading",
+        "openedAt": "2026-09-18T19:26:46.904Z",
+        "count": 5
+      },
+      {
+        "handle": "EAFCassist",
+        "url": "https://x.com/EAFCassist",
+        "openedAt": "2026-09-18T19:27:04.729Z",
+        "count": 6
+      },
+      {
+        "handle": "Fut_scoreboard",
+        "url": "https://x.com/Fut_scoreboard",
+        "openedAt": "2026-09-18T19:27:22.600Z",
+        "count": 0
+      },
+      {
+        "handle": "DetectiveFUT",
+        "url": "https://x.com/DetectiveFUT",
+        "openedAt": "2026-09-18T19:27:40.491Z",
+        "count": 7
+      },
+      {
+        "handle": "FGZNews",
+        "url": "https://x.com/FGZNews",
+        "openedAt": "2026-09-18T19:27:58.322Z",
+        "count": 5
+      },
+      {
+        "handle": "futagentt",
+        "url": "https://x.com/futagentt",
+        "openedAt": "2026-09-18T19:28:16.182Z",
+        "count": 7
+      },
+      {
+        "handle": "Futdonk",
+        "url": "https://x.com/Futdonk",
+        "openedAt": "2026-09-18T19:28:34.095Z",
+        "count": 5
+      }
+    ],
+    "dataCutoff": "2026-09-18T19:29:00Z",
+    "browserTriage": "OK (check-deps exit=0, 独立调试 profile 9333)",
+    "notes": [
+      "本日同日重跑（第一次提交 partial 后在 20 分钟硬限内走 --rerun 补齐译文）。运行 2。",
+      "X 前端移除全部 data-testid 与 <time> 元素：旧抽取器 0 命中；已重写 v2 抽取器（正文=div.font-chirp、ID=status 链接、时间戳经 syndication created_at 权威回填），24h 窗口过滤保留 65/77。",
+      "媒体解析 77/77 成功（配图 80 张/8 视频/21 被引用带图）；报告图片落盘 73/73，0 远程热链，媒体未解析 0。",
+      "译文文件 translations-2026-09-19.json 65 条全部写入；报告中「待翻译」=0，抽查为完整中文译文。",
+      "@Fut_scoreboard 当日窗口内 0 条，如实记录。",
+      "纯表情推文（2101013083028115616/2100972289256796257/2101012820108128439）的译文按生成器 CJK 判定规则补了说明文字，内容如实。"
+    ],
+    "missingItems": []
+  },
+  "sha256": "998abdd24ae443b3eb3e69b1a176be42cc469451ae09d2d23070295c642b8e76",
+  "bytes": 126564,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-19/news/report.html"
+}

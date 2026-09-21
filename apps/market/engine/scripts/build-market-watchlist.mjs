@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /**
- * FC27 市场「可关注球员列表」构建器 —— 每小时任务的分析步骤
+ * FC27 市场「可关注球员列表」构建器 —— 「FC·市场价格关注列表」（每 4 小时）任务的分析步骤
  *
- * 用途：读取逐小时价格序列与 FUTBIN 热度，按「热度 + 价格（同档相对便宜度）+ 逐小时挂单价变动」三维打分，
+ * 用途：读取价格观测序列与 FUTBIN 热度，按「热度 + 价格（同档相对便宜度）+ 相邻观测挂单价变动」三维打分，
  *       产出结构化关注列表（watchlist.json）。当前价不复制进衍生文件，页面统一从 current.json 读取。
  *
  * 输入：
  *   - 唯一当前行情：    apps/market/engine/data/prices/fc27/current.json（当前价与当前热度）
- *   - 逐小时价格序列：apps/market/engine/data/prices/fc27/popular/daily/<D>.json
+ *   - 价格观测序列：    apps/market/engine/data/prices/fc27/series/popular.json（单文件累积，2026-09-20 起；
+ *                       经 src/price-series.mjs 的 `dailyFrom()` 还原成当日 ps/pc/pop 三序列视图）
  *   - 进化卡热度：    apps/market/engine/data/prices/fc27/evolutions/latest.json（缺失则该维度留空）
  *   - 当日市场数据：  automation/runs/<D>/market/market.json（球员名单、中文译名、进化池标记）
  *   - 环境变量：FC_PROJECT_ROOT 可覆盖项目根
@@ -28,10 +29,11 @@
  *
  * 用法：node apps/market/engine/scripts/build-market-watchlist.mjs [D]
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, renameSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CURRENT_MARKET_PATH, readCurrentMarket } from '../src/current-market.mjs';
+import { dailyFrom, readSeries, seriesPathFor } from '../src/price-series.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = process.env.FC_PROJECT_ROOT || path.resolve(here, '../../../..');
@@ -50,11 +52,12 @@ function atomicWrite(target, content) {
 
 const dateStr = /^\d{4}-\d{2}-\d{2}$/.test(process.argv[2] || '') ? process.argv[2] : shanghaiDate();
 const runDir = path.join(ROOT, 'automation', 'runs', dateStr, 'market');
-const dailyPath = path.join(PRICE_ROOT, 'popular', 'daily', `${dateStr}.json`);
+const seriesPath = seriesPathFor(PRICE_ROOT, 'popular');
 const evoPath = path.join(PRICE_ROOT, 'evolutions', 'latest.json');
 const marketPath = path.join(runDir, 'market.json');
 
-const daily = readJSON(dailyPath);
+// 价格观测序列：从单文件累积序列还原成「当日 ps/pc/pop 三序列」视图（等价旧 popular/daily/<D>.json）
+const daily = dailyFrom(readSeries(seriesPath), dateStr);
 const evoLatest = readJSON(evoPath);
 const market = readJSON(marketPath);
 const currentMarket = readCurrentMarket(CURRENT_MARKET_PATH);
@@ -84,7 +87,7 @@ const shanghaiDateOf = value => {
 };
 
 // ---------- 0. 当日开盘基线：market.json 里 03:05 市场任务采集到的有效平台价 ----------
-// 用于「本日只有一个整点观测」时给出变动基准；两条观测都无则变动维度留空（不猜测）。
+// 用于「本日只有一个观测点」时给出变动基准；两条观测都无则变动维度留空（不猜测）。
 const roster = new Map();
 const baseline = new Map(); // url -> { ps, pc, hour }
 if (market && Array.isArray(market.players)) {
@@ -97,7 +100,7 @@ if (market && Array.isArray(market.players)) {
   }
 }
 
-// ---------- 1. 组装卡片集合：逐小时序列为主，market.json 补名单/译名/进化池标记 ----------
+// ---------- 1. 组装卡片集合：观测序列为主，market.json 补名单/译名/进化池标记 ----------
 const cards = new Map(); // key = url
 const seriesOf = entry => {
   const last = arr => (Array.isArray(arr) && arr.length ? arr[arr.length - 1] : null);
@@ -113,7 +116,9 @@ if (daily && daily.cards) {
     const psPrevValid = s.psPrev && s.psPrev.v >= MIN_VALID_PRICE ? s.psPrev.v : 0;
     const pcPrevValid = s.pcPrev && s.pcPrev.v >= MIN_VALID_PRICE ? s.pcPrev.v : 0;
     // 变动只在「同一平台的两次有效观测」之间计算，跨平台或与占位值比较一律不做。
-    // 优先用当日**相邻整点**观测；本日只有一个整点时，退回当日开盘基线，并以 basis 标注来源。
+    // 优先用当日**相邻观测点**；本日只有一个观测点时，退回当日开盘基线，并以 basis 标注来源。
+    // 注：basis 的字面值 `hourly` 是历史命名（当时确为每小时一轮），语义是「相邻两次观测点对比」，
+    // 不随高频任务改为每 4 小时而改名——改名会让历史 watchlist.json 无法直接比对。
     const intraday = [];
     const base = baseline.get(url) || null;
     const pushMove = (platform, prevVal, nowVal, fromHour, basis) => {
@@ -169,7 +174,7 @@ if (evoLatest && Array.isArray(evoLatest.cards)) {
   }
 }
 
-// 当前状态只认 current.json；逐小时序列上方只负责提供前一观测点与变化依据。
+// 当前状态只认 current.json；观测序列只负责提供前一观测点与变化依据。
 for (const c of cards.values()) {
   const live = c.cardId ? currentMarket.cards?.[c.cardId] : null;
   const priceOf = pid => {
@@ -216,7 +221,7 @@ for (const c of list) {
   c.priceScore = c.priceValid && c.peerMedianPrice
     ? clamp(Math.round(50 + 50 * (1 - c.refPrice / c.peerMedianPrice)), 0, 100)
     : null;
-  // 变动分只取**两个真实整点观测**（basis=hourly）的对比：开服前 FUTBIN 的平台价字段本身会大幅跳动，
+  // 变动分只取**两个相邻观测点**（basis=hourly）的对比：开服前 FUTBIN 的平台价字段本身会大幅跳动，
   // 与当日开盘基线（03:05）的单点对比可能混入 FUTBIN 自身的估值修订，故只作展示、不计入综合分。
   const confirmed = c.intradayChange.find(m => m.basis === 'hourly') || null;
   c.moveConfirmed = !!confirmed;
@@ -245,7 +250,7 @@ for (const c of list) {
   const shown = c.intradayChange[0];
   if (shown && Math.abs(shown.pct) >= 2) {
     const dir = shown.pct > 0 ? '上行' : '回落';
-    const tail = c.moveConfirmed ? '' : '（较开盘，待整点确认）';
+    const tail = c.moveConfirmed ? '' : '（较开盘，待下一观测点确认）';
     const warn = c.moveSuspicious ? '⚠' : '';
     reasons.push(`挂单价${warn}${dir} ${shown.pct > 0 ? '+' : ''}${shown.pct}%${tail}`);
   }
@@ -285,7 +290,7 @@ const payload = {
   source: {
     currentMarket: path.relative(ROOT, CURRENT_MARKET_PATH),
     currentMarketGeneratedAt: currentMarket.generatedAt || null,
-    priceSeries: path.relative(ROOT, dailyPath),
+    priceSeries: path.relative(ROOT, seriesPath),
     priceSeriesExists: !!daily,
     evolutions: path.relative(ROOT, evoPath),
     evolutionsExists: !!evoLatest,
@@ -298,7 +303,7 @@ const payload = {
     psValid: list.filter(c => c.psPrice >= MIN_VALID_PRICE).length,
     pcValid: list.filter(c => c.pcPrice >= MIN_VALID_PRICE).length,
     withPopularity: list.filter(c => typeof c.popularity === 'number').length,
-    hourlyPoints: daily?.points?.length ?? 0,
+    points: daily?.points?.length ?? 0,
     firstHour: daily?.points?.[0]?.hour ?? null,
     lastHour: daily?.points?.[daily.points.length - 1]?.hour ?? null,
   },
@@ -307,9 +312,9 @@ const payload = {
     popularityScore: '该卡 FUTBIN 热度计数在全体有热度卡中的分位（0–100）',
     priceScore: '50 + 50×(1 − 参考价/同档中位价)，同位置组且总评 ±2、样本 ≥5 才计算；越便宜分越高',
     referencePrice: '两个平台中有效价（≥1000 coins）的较大者；两平台都无效则该卡不参与打分',
-    moveScore: '50 + 挂单价变动百分比×2（+10% → 70，−10% → 30）；**只取两个真实整点观测**（basis=hourly）的对比。与当日开盘基线（03:05）的单点对比只作展示、不计入综合分（开服前 FUTBIN 平台价字段波动大，单点对比可能混入其自身估值修订），并以 moveSuspicious 标注 |变动| ≥ 50% 的跳变。',
-    changeBasis: 'intradayChange[].basis：hourly = 当日相邻整点观测；daily-open = 与当日开盘基线（03:05）比较',
-    caveat: 'FC27 未正式开服（launchDate=2026-09-25），平台价为 FUTBIN 滚动更新的挂单/估价口径，不是成交价；本表不计算日环比与累计涨跌，intradayChange 仅表示同一日内两个有效观测点之间的变化。',
+    moveScore: '50 + 挂单价变动百分比×2（+10% → 70，−10% → 30）；**只取两个相邻观测点**（basis=hourly；该字面值是历史命名，语义为「相邻两次观测点对比」）的对比。与当日开盘基线（03:05）的单点对比只作展示、不计入综合分（开服初期挂单稀少且 FUTBIN 会自行修订估值，单点对比可能混入估值修订），并以 moveSuspicious 标注 |变动| ≥ 50% 的跳变。',
+    changeBasis: 'intradayChange[].basis：hourly = 当日相邻两次观测点（字面值为历史命名）；daily-open = 与当日开盘基线（03:05）比较',
+    caveat: 'FC27 平台价为 FUTBIN 滚动更新的挂单/估价口径，不是成交价；本表不计算日环比与累计涨跌，intradayChange 仅表示同一日内两个有效观测点之间的变化。',
   },
   lists: {
     watch: withRank(watch.slice(0, 30)),
@@ -327,7 +332,7 @@ const payload = {
 
 if (!daily) {
   payload.missing = [
-    `逐小时价格序列缺失（${path.relative(ROOT, dailyPath)} 不存在）：本轮无价格观测，关注列表为空状态。`,
+    `价格观测序列缺失（${path.relative(ROOT, seriesPath)} 中无 ${dateStr} 的观测点）：本轮无价格观测，关注列表为空状态。`,
     '首次运行或本轮采集失败时属正常现象；采集成功后的下一轮即会产出列表，不使用历史日期数据填充。',
   ];
 }

@@ -15,7 +15,7 @@
 
 `daily-merged/assets/data/current.json` 必须随站点一起发布；它是各市场页面刷新时按 cardId 读取的唯一当前行情。发布任务不得重新分析或复制价格，只核对该资源存在并随目录部署。
 
-**职责分工（2026-09-17 起）**：本任务（每日 03:35）负责**全量合并 + 发布**——`index.html` 与 `archive/D.html` 的更新只由本任务完成，`automation/publish-status-D.json` 是它的权威记录。每小时行情资源的热更新由「FC·市场价格关注列表（每小时）」在采集后重发布同一应用完成（只上传已存在的合并目录 + 最新 `assets/data/current.json`，不重跑 `coordinate.mjs`、不运行 `verify-publication.mjs`）。因此本任务**不要**以「线上 `current.json` 的 `generatedAt` 是今天更晚的时间」判定异常——那是小时任务在正常工作。
+**职责分工（2026-09-17 起 / 2026-09-20 修订）**：本任务（每日 **06:15**，2026-09-20 起由 03:35 顺延）负责**全量合并 + 发布**——`index.html` 与 `archive/D.html` 的更新只由本任务完成，`automation/publish-status-D.json` 是它的权威记录。每 4 小时的行情资源热更新由「FC·市场价格关注列表（每4小时）」在每轮采集后重发布同一应用完成（只上传已存在的合并目录 + 最新 `assets/data/current.json`，不重跑 `coordinate.mjs`、不运行 `verify-publication.mjs`）。因此本任务**不要**以「线上 `current.json` 的 `generatedAt` 是今天更晚的时间」判定异常——那是高频任务在正常工作。
 
 发布清单：
 1. `daily-merged/index.html` → 固定入口（只含当日内容 + 历史日报链接列表，控制在 50M 以内）。

@@ -13,7 +13,7 @@
  *   （可用 FC_PROJECT_ROOT 指定项目根，FC_ICON_DAILY_DIR / FC_ICON_LEDGER 指定数据位置）
  * 输出：合并进 reports/daily/D/icons-heroes.html（直接运行时另写 reports/daily/D/market-icons.html）
  * 口径：
- *   开服日（2026-09-25）前 FUTBIN 只有列表页占位价，非市场成交价 —— 此时页面如实标注
+ *   开服初期 FUTBIN 可能只有列表页占位价，非市场成交价 —— 此时页面如实标注
  *   listing-estimate 口径，涨跌列不计算（占位价的日变化没有行情含义），只做台账与记录进度；
  *   开服后自动切换为 market 口径，逐日计算日环比与累计涨跌。
  *   平台口径：Console（PS/Xbox 合并）与 PC 两档都必须采集与展示，缺一不可。
@@ -163,15 +163,18 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   const history = snapshots.filter(s => !isDate(dateStr) || s.date <= dateStr);
   const prev = history.length >= 2 ? history[history.length - 2] : null;
   const basis = today?.priceBasis || 'listing-estimate';
-  const isMarket = basis === 'market';
-  const launchDate = today?.launchDate || '2026-09-25';
+  // 「是否已有真实价」按**当日实测有效价**判定（2026-09-20 用户口径），不按日期比较。
+  // 词表与采集侧统一：listing-estimate（全无有效价，全为占位/估值）| partial-live | market（已有有效价）。
+  const isMarket = basis !== 'listing-estimate';
+  // 开服日（日历锚点，用于「开服第 N 天」）：2026-09-18。2026-09-25 是**正式全球发售日**，勿改回。
+  const launchDate = today?.launchDate || '2026-09-18';
   const activePlatform = ICON_DEFAULT_PLATFORM;
-  // 平台有效价计数：用于页面顶部的口径说明（开服前两平台均为 0，属预期）
+  // 平台有效价计数：用于页面顶部的口径说明（无有效价时两平台均为 0，属预期）
   const platformValid = Object.fromEntries(ICON_PLATFORMS.map(pl => [
     pl.id, (today?.players || []).filter(p => platformCell(p, pl.id)?.valid).length,
   ]));
 
-  // 价格区间（最低价 / 最高价）覆盖统计：由逐小时任务采集，卡级口径
+  // 价格区间（最低价 / 最高价）覆盖统计：由每 4 小时的传奇价格区间任务采集，卡级口径
   const rangeMeta = today?.priceRange || null;
   const rangePlayers = (today?.players || []).filter(p => p.priceRange && typeof p.priceRange.min === 'number' && typeof p.priceRange.max === 'number');
   const rangeCoverage = rangePlayers.length;
@@ -192,7 +195,7 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
       golds: (meta.playstyles || []).filter(s => s?.gold).map(s => s.name),
       skills: meta.skills ?? null,
       weakFoot: meta.weakFoot ?? null,
-      // 价格区间（最低价 / 最高价）：由逐小时任务采集、record-icons-daily.mjs 合并进当日快照；
+      // 价格区间（最低价 / 最高价）：由每 4 小时的传奇价格区间任务采集、record-icons-daily.mjs 合并进当日快照；
       // 卡级字段（FUTBIN 同一卡的 Console / PC 渲染同值），缺失为 null
       range: (snap && snap.priceRange) || null,
       snap,
@@ -200,7 +203,7 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   }).sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0) || String(a.nameZh).localeCompare(String(b.nameZh), 'zh'));
 
   // 头像：先按 cardId 解析 resourceId 并批量缩放落盘到 reports/daily/D/assets/players/，
-  // HTML 只写相对路径，合并成单文件站点时由 inlineLocalReportImages 内联为 data URL。
+  // HTML 只写相对路径，合并成站点时由 rewriteLocalReportAssets 改写为指向 daily-merged/assets/ 的相对路径。
   const avatarIdx = avatarIndex();
   const avatarResolved = roster.map(p => avatarIdx.resolve({ id: p.id })?.resourceId || null);
   const avatarReady = materializeAvatars(path.join(ROOT, 'reports', 'daily', dateStr),
@@ -301,7 +304,7 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
 <td class="c-date">${esc(s.date)} <span class="hint">${esc(weekday(s.date))}</span></td>
 <td class="c-num">${s.counts?.total ?? (s.players || []).length}</td>
 <td class="c-num">${s.counts?.valid ?? valid.length}</td>
-<td class="c-basis">${s.priceBasis === 'market' ? '<span class="tag ok">成交价</span>' : '<span class="tag warn">列表页占位价</span>'}</td>
+<td class="c-basis">${s.priceBasis !== 'listing-estimate' ? '<span class="tag ok">成交价</span>' : '<span class="tag warn">列表页占位价</span>'}</td>
 <td class="c-price">${price(median)}</td>
 <td class="c-time" title="${esc(capText ? `${fmtMinuteFull(capIso)}（Asia/Shanghai）` : '')}">${esc(capText || s.capturedAt || '')}</td>
 </tr>`;
@@ -314,8 +317,15 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
     return { date: s.date, median: v.length ? v[Math.floor((v.length - 1) / 2)] : null };
   });
 
+  // 天数差 = 开服日 − 当日；开服第 N 天为 1-based（开服当天=第 1 天）：09-18→1、09-19→2、09-20→3。
+  // 与 build-same-period-advice.mjs / 根 AGENTS.md「同时段（开服第 N 天）对比口径」同源。
   const countdown = isDate(launchDate) ? daysBetween(dateStr, launchDate) : null;
-  // 当日数据更新时刻（精确到分钟，Asia/Shanghai）：优先取逐小时任务的详情页采集时刻
+  const launchDayNo = countdown === null ? null : 1 - countdown;
+  // 顶部状态卡：开服前显示倒计时（D-N），开服当天起显示「开服第 N 天」
+  const launching = countdown !== null && countdown > 0;
+  const launchStatLabel = launching ? `D-${countdown}` : (launchDayNo !== null ? `开服第 ${launchDayNo} 天` : '—');
+  const launchStatSub = launching ? `距 FC27 开服（${launchDate}）` : `口径 ${basis}`;
+  // 当日数据更新时刻（精确到分钟，Asia/Shanghai）：优先取传奇价格区间任务的详情页采集时刻
   // （priceRange.collectedAt），退回当日快照采集时刻；无快照时如实留空。
   const dataUpdatedIso = latestIso(rangeMeta?.collectedAt, today?.capturedAt);
   const dataUpdatedText = fmtMinute(dataUpdatedIso);
@@ -330,9 +340,9 @@ export function renderIcons(dateStr, { snapshots = [], ledger = [] } = {}) {
   const missing = [];
   if (!today) missing.push(`未找到 ${dateStr} 的传奇卡快照，本期无当日价格可展示。`);
   if (today && !todayIsCurrent) missing.push(`本日（${dateStr}）无新采集快照，下方价格列展示的是最近一次快照（${today.date}）的数据，不代表 ${dateStr} 采集结果；当日采集失败与本日无数据严格区分，未用历史数据冒充当日。`);
-  if (today && !isMarket) missing.push(`FC27 尚未开服（开服日 ${launchDate}），FUTBIN 列表页价不是市场成交价，因此本期不计算日环比与累计涨跌。`);
+  if (today && !isMarket) missing.push(`本日（${dateStr}）${today.counts?.total ?? ''} 张传奇卡全部无平台级有效价（均 <1000 coins），FUTBIN 返回的是列表页占位/估值，不是市场成交价，因此本期不计算日环比与累计涨跌。`);
   if (today && (today.counts?.missing || 0) > 0) missing.push(`当日 ${today.counts.missing} 张传奇卡无有效平台价（FUTBIN 返回占位值），已在表中如实标注为占位。`);
-  if (today && rangeCoverage === 0) missing.push('本期未采集到任何卡的低价/高价区间（逐小时价格区间任务未运行，或 FUTBIN 详情页不可用），「最低价」「最高价」两列如实留空，未用估值或其他卡数据顶替。');
+  if (today && rangeCoverage === 0) missing.push('本期未采集到任何卡的低价/高价区间（每 4 小时的传奇价格区间任务未运行，或 FUTBIN 详情页不可用），「最低价」「最高价」两列如实留空，未用估值或其他卡数据顶替。');
   else if (today && rangeCoverage < roster.length) missing.push(`本期 ${roster.length - rangeCoverage} 张传奇卡未采集到低价/高价区间（FUTBIN 详情页请求失败或超时），对应行如实留空。`);
   if (history.length < 2) missing.push('历史快照不足两天，逐日变化与走势需开服后连续累积才有意义。');
 
@@ -416,7 +426,7 @@ code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
 <div class="plat-bar" role="group" aria-label="平台切换">
   <span class="plat-label">平台</span>
   ${ICON_PLATFORMS.map(pl => `<button type="button" class="plat-btn${pl.id === activePlatform ? ' active' : ''}" data-platform="${pl.id}" aria-pressed="${pl.id === activePlatform}">${esc(pl.label)}<small>${esc(pl.short)}</small></button>`).join('')}
-  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径。当前 Console 有效价 ${platformValid.console} 张 / PC 有效价 ${platformValid.pc} 张；开服前两平台均为 0，此时显示列表页估值并以「占位」标注。</span>
+  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径。当前 Console 有效价 ${platformValid.console} 张 / PC 有效价 ${platformValid.pc} 张；若两平台均无有效价，则显示列表页估值并以「占位」标注。</span>
 </div>
 
 <div class="stat-grid">
@@ -425,7 +435,7 @@ ${statCard(today ? `${today.counts?.valid ?? validPrices.length}<em>/${roster.le
 ${statCard(recordingDays, '已记录快照天数')}
 ${statCard(`${rangeCoverage}<em>/${roster.length}</em>`, '已采集最低/最高价卡数')}
 <div class="stat"${dataUpdatedTitle ? ` title="${esc(dataUpdatedTitle)}"` : ''}><b>${esc(dataUpdatedText ? dataUpdatedText.slice(0, 5) : '—')}<em>${esc(dataUpdatedText ? dataUpdatedText.slice(6) : '')}</em></b><small>数据更新时刻（Asia/Shanghai）</small></div>
-${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${countdown}` : '—'), isMarket ? `口径 ${basis}` : `距 FC27 开服（${launchDate}）`)}
+${statCard(launchStatLabel, launchStatSub)}
 </div>
 
 <h2>一、本期监控口径</h2>
@@ -435,8 +445,8 @@ ${statCard(isMarket ? '已开服' : (countdown !== null && countdown > 0 ? `D-${
 <li>平台口径：FUTBIN 只提供 <b>Console（PS / Xbox 合并）</b> 与 <b>PC</b> 两个市场，页面顶部按钮可切换；每张卡的「今日价 / 日环比 / 累计涨跌 / 走势」均按所选平台分别计算，不混用。当前有效价 Console ${platformValid.console} 张 / PC ${platformValid.pc} 张。</li>
 <li>当前口径：<code>${esc(basis)}</code> —— ${esc(today?.priceBasisNote || '暂无当日快照，口径待定。')}</li>
 <li>快照位置：<code>apps/market/engine/icons/data/prices/fc27/daily/&lt;DATE&gt;.json</code>，一天一份、同日重跑只覆盖当天，历史不被清空。</li>
-<li>${isMarket ? '已开服：下方「今日价 / 日环比 / 累计涨跌 / 走势」按真实成交价逐日计算。' : '未开服：列表页占位价的日变化没有行情含义，因此本期不计算日环比与累计涨跌，仅做台账与记录进度；开服后自动切换为成交价监控。'}</li>
-<li>价格区间（<b>最低价 / 最高价</b>）：取自 FUTBIN 球员详情页的 <code>Price Range</code>，由独立子任务每小时采集一次。该字段是<b>卡级</b>的 —— 同一张卡的 Console 与 PC 价格盒渲染出完全相同的区间值（2026-09-17 对 20 张卡批量核验，差异数为 0），因此不作为「每平台各一套」展示，切换平台时区间列不变；平台差异只体现在<b>当前价</b>列。<b>区间不是成交价</b>，开服前属挂单/估值区间，不参与涨跌计算。该区间与列表页 <code>IS</code>（开服前估值列）是两套不同口径，切勿混用。</li>
+<li>${isMarket ? `已有真实价（口径 <code>${esc(basis)}</code>）：下方「今日价 / 日环比 / 累计涨跌 / 走势」按有效平台价逐日计算，无有效价的卡如实留空。` : '本日全部卡无平台级有效价（FUTBIN 仅返回占位/估值）：该口径下日变化没有行情含义，因此本期不计算日环比与累计涨跌，仅做台账与记录进度；出现有效价后自动切换为成交价监控。'}</li>
+<li>价格区间（<b>最低价 / 最高价</b>）：取自 FUTBIN 球员详情页的 <code>Price Range</code>，由独立子任务每 4 小时采集一次。该字段是<b>卡级</b>的 —— 同一张卡的 Console 与 PC 价格盒渲染出完全相同的区间值（2026-09-17 对 20 张卡批量核验，差异数为 0），因此不作为「每平台各一套」展示，切换平台时区间列不变；平台差异只体现在<b>当前价</b>列。<b>区间不是成交价</b>，开服前属挂单/估值区间，不参与涨跌计算。该区间与列表页 <code>IS</code>（开服前估值列）是两套不同口径，切勿混用。</li>
 <li>价格区间覆盖：<b>${rangeCoverage}/${roster.length}</b> 张${rangeMeta?.collectedAt ? ` · 最近采集于 ${esc(rangeMeta.collectedAt)}` : ''}${rangeMeta?.minFloor || rangeMeta?.maxCeiling ? ` · 全区间下沿最低 ${num(rangeMeta.minFloor)} / 上沿最高 ${num(rangeMeta.maxCeiling)}（coins）` : ''}${rangeCoverage < roster.length ? ` · 其余 ${roster.length - rangeCoverage} 张未采集到，如实留空` : ''}。</li>
 <li>数据更新时刻：本期数据更新至 <b>${dataUpdatedText || '—'}</b>（Asia/Shanghai，精确到分钟${dataUpdatedTitle ? `，即 ${esc(dataUpdatedTitle)}` : ''}）。台账「<b>数据更新</b>」列为<b>逐卡</b>观测时刻 —— 取该卡本次 FUTBIN 详情页采集时刻（<code>priceRange.fetchedAt</code>），未采到区间的卡退回当日快照采集时刻，两者都没有时如实留空；悬停该列可见到秒时刻与 FUTBIN 站点标注的相对更新时间（<code>updatedText</code>）。页面刷新时会按 <code>cardId</code> 从 <code>current.json</code> 重新取价，并把该列同步为该卡价格/区间的最新观测时刻。</li>
 <li>FC26↔FC27 跨代价格对照与投资建议见本栏目「<b>传奇卡研究</b>」子标签。</li>

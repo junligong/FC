@@ -1,0 +1,85 @@
+{
+  "module": "market",
+  "date": "2026-09-20",
+  "runId": "042921bb-cb82-48d1-9d31-9051ce1bea07",
+  "status": "partial",
+  "startedAt": "2026-09-19T19:10:48.997Z",
+  "deadlineAt": "2026-09-19T19:25:48.997Z",
+  "reportPath": "reports/daily/2026-09-20/market.html",
+  "completedAt": "2026-09-19T19:25:32.150Z",
+  "evidence": {
+    "date": "2026-09-20",
+    "module": "market",
+    "runId": "042921bb-cb82-48d1-9d31-9051ce1bea07",
+    "generatedAt": "2026-09-20T03:24:58+08:00",
+    "status": "partial",
+    "browserChannel": {
+      "triage": "OK",
+      "detail": "browser-triage exit 0（独立调试 profile Chrome :9333，零弹框，CDP Proxy ready）",
+      "checkedAt": "2026-09-20T03:10:45+08:00"
+    },
+    "sources": [
+      {
+        "url": "https://www.futbin.com/",
+        "openedAt": "2026-09-20T03:11:44+08:00",
+        "dataCutoff": "2026-09-20T03:12:11+08:00",
+        "note": "实测打开正常（CDP 宿主页），建立同源会话"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular",
+        "openedAt": "2026-09-20T03:11:50+08:00",
+        "dataCutoff": "2026-09-20T03:12:11+08:00",
+        "note": "实测 200，提取 250 张唯一卡（双平台价 + 热度计数）；Console 有效价 204、PC 有效价 186"
+      },
+      {
+        "url": "https://www.futbin.com/27/popular/evolutions",
+        "openedAt": "2026-09-20T03:12:00+08:00",
+        "dataCutoff": "2026-09-20T03:12:11+08:00",
+        "note": "实测 200，提取 500 张唯一进化卡（含进化名与热度计数，页面无价格单元格）"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1..4",
+        "openedAt": "2026-09-20T03:14:30+08:00",
+        "dataCutoff": "2026-09-20T03:16:40+08:00",
+        "note": "实测 200 可访问，页内 fetch 页 1-4 各 30 行共 120 行（Console 有效价 99、PC 有效价 77），价格分层据此分档；今日价格单元格新增 .price/.price-diff 结构（FUTBIN 自带涨跌徽标，仅采集价格不采集涨跌），姓名行结构同步修正后重抓"
+      },
+      {
+        "url": "https://www.futbin.com/27/totw, /27/promos",
+        "openedAt": "2026-09-20T03:12:20+08:00",
+        "dataCutoff": "2026-09-20T03:12:30+08:00",
+        "note": "候选路由实测打开后无名单内容（empty），如实空状态"
+      }
+    ],
+    "steps": [
+      "run-state begin 2026-09-20（runId 042921bb）",
+      "collect-daily.mjs：/27/popular 250 + /27/popular/evolutions 500 + /27/players 探测 + 周黑/活动卡探测",
+      "fetch-players-pages.mjs：/27/players 页 1-4 修正版抓取 120 行（今日页面结构变化：价格单元格 .price + .price-diff、姓名行首行为评分）",
+      "assemble.mjs：market.json 组装（players 750 URL 去重、价格分层 4 档 50/25/8/4）",
+      "apply-market-name-zh.mjs：扫描 1837 名，命中 1837、未命中 0（本轮新增 96 条译名，含彭逸翔/塞尔吉尼奥经检索核实）",
+      "sync-current-market.mjs：750 张双平台当前价按 cardId 合并进 current.json（唯一一次写入）",
+      "backfill-avatar-keys.mjs：渲染前新增 97 键 / 91 图，渲染后复核 0 新增缺口",
+      "render-market.mjs：一次生成 market.html + market-scan.html"
+    ],
+    "outputs": [
+      "reports/daily/2026-09-20/market.html",
+      "reports/daily/2026-09-20/market-scan.html"
+    ],
+    "validation": {
+      "uniqueCards": 750,
+      "platformIsolation": "psPrice/pcPrice 分别落库，未混用",
+      "avatarCoverage": "概览 582/587、扫描 745/750；缺口 5 处为守卫拒绝或 noface 源卡（17961 Delgado、11675 Kerr×2、9579 Ethan Mbappé、20886 Luo Zixiang/noface），如实空状态",
+      "nameZh": "未命中 0",
+      "priceTiers": "≥100万 50 / 30-100万 25 / 10-30万 8 / 1-10万 4"
+    },
+    "missing": [
+      "本周活动卡（Promo）与本周周黑（TOTW）：候选路由 /27/totw、/27/promos 实测无名单内容（FC27 未开服无首期周黑），如实空状态，不以旧日期或 FC26 名单填充",
+      "进化卡平台价：/27/popular/evolutions 页面未渲染价格单元格，进化卡平台价如实为空",
+      "部分卡牌平台价仍为 0（FUTBIN 尚未滚动更新），按占位值处理；开服（2026-09-25）前不计算日环比与累计涨跌",
+      "价格分层覆盖范围：开服前价格筛选参数失效，分档基于评分降序前 120 行实测双平台价（每档 Top 50），非全量卡池",
+      "球员头像 5 处缺口（守卫拒绝/无脸源卡），如实空状态"
+    ]
+  },
+  "sha256": "038e419720fce748c1c11a446b0cc13c2f240aeafdf6887680a09ca8e13af787",
+  "bytes": 286197,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-20/market/report.html"
+}

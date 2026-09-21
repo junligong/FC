@@ -43,9 +43,9 @@ FUTBIN 只有 **Console（PS/Xbox 合并）** 与 **PC** 两个平台。列表�
 
 - **一次打开列表页即可同时读到两个平台价**，直接分别读两个单元格即可。**不要**依赖 `ps_price` / `pc_price` URL 参数（开服前该筛选失效），也**不要**为切换平台重复导航。
 - **两个平台的价格都必须逐卡采集**，分别写入 `prices.console` 与 `prices.pc`；经 `record-icons-daily.mjs` 固化为 `platforms.console` / `platforms.pc`（`{price, valid}`）。不得只取其中一个平台，也不得用一个平台价顶替另一个；某平台确无数据时如实留空。
-- 开服日 `launchDate=2026-09-25` 之前，两个平台价均为 0（球员页显示 `PRICE UPDATED: NEVER`）。此时列表页 `td.table-item-score`（IS 列）是**开服前估值**，必须单独记为 `estimate`，**不得当作平台成交价**，也不得据此计算日环比与累计涨跌。
+- 开服日 `launchDate=2026-09-18`（2026-09-20 定案；`2026-09-25` 是正式发售日，勿改回）。**开服初期（含开服当天）**两个平台价可能仍为 0（球员页显示 `PRICE UPDATED: NEVER`）；此时列表页 `td.table-item-score`（IS 列）是**占位/估值**，必须单独记为 `estimate`，**不得当作平台成交价**。**「是否已开价」不看日期、看当日实测**：`priceBasis` 按当日有效价（≥1000 coins）数量判定，全无有效价则为 `listing-estimate`，该口径下不得据此计算日环比与累计涨跌。
 - 价格 < 1000 视为占位值，`priceValid=false`。
-- 开服后自动切换为 `market` 口径，按平台逐日计算日环比与累计涨跌（产物页已有 Console / PC 切换按钮，两个平台的指标分别计算）。
+- 当日已有有效平台价时口径为 `partial-live`，按平台逐日计算日环比与累计涨跌（产物页已有 Console / PC 切换按钮，两个平台的指标分别计算）。**词表只有 `listing-estimate` / `partial-live` 两个值，不得再引入 `market`**。
 
 ## 产出流程
 
@@ -53,16 +53,16 @@ FUTBIN 只有 **Console（PS/Xbox 合并）** 与 **PC** 两个平台。列表�
    - `apps/market/engine/icons/data/prices/fc27/base-icons.json`（沿用现有格式：`id` / `slug` / `nameZh` / `rating` / `currentPrice` / `prices` / `marketUrl` / `launchDate`）
    - `apps/market/engine/heroes/data/prices/fc27/base-heroes.json`（同一格式，新增；`version: "Hero"`）
 2. 运行 `node apps/market/engine/scripts/record-icons-daily.mjs D` 固化当日传奇卡快照到 `icons/data/prices/fc27/daily/D.json`（一天一份，同日重跑只覆盖当天，原子写入，禁止删改历史日期；抓取失败必须非 0 退出且不写快照）。
-   - 该脚本会**顺带合并**逐小时任务产出的价格区间 `icons/data/prices/fc27/pricerange/latest.json`（逐卡 `priceRange{min,max}`，卡级字段）。**区间文件缺失不构成失败**：区间列如实留空即可，不得因此跳过快照写入，也不得用估值或别的卡顶替。
+   - 该脚本会**顺带合并**「FC·传奇价格区间（每4小时）」任务产出的价格区间 `icons/data/prices/fc27/pricerange/latest.json`（逐卡 `priceRange{min,max}`，卡级字段）。**区间文件缺失不构成失败**：区间列如实留空即可，不得因此跳过快照写入，也不得用估值或别的卡顶替。
 3. 运行 `node apps/market/engine/scripts/render-icons-heroes.mjs D`，生成 `reports/daily/D/icons-heroes.html`（传奇/英雄专栏主视图）。台账含「当前价 / 最低价 / 最高价」三列，姓名单元格带头像（渲染器自动缩放到 `reports/daily/D/assets/players/`）。
    - 逐日快照只保存历史台账；页面当前价与最低/最高区间统一按 cardId 从 `current.json` 读取。不得把 `base-icons.json`、`pricerange/latest.json` 或逐日快照的末值再次当作另一份当前行情进行分析。
    - 传奇卡（Icon，cardId 21400+）在 canonical 里，头像天然 131/131 命中；**英雄卡（Base Heroes）不在 canonical 中，必须靠补全脚本**：渲染前后各跑一次 `node apps/market/engine/scripts/backfill-avatar-keys.mjs D`（浏览器通道已由任务开头的 `browser-triage.mjs` 预检验证，如需复检用 `node automation/browser-triage.mjs`，exit 0 才可用）。补全走 FUTBIN `playerhover` 接口，**单并发 + 450ms 间隔**，不要调高并发，也不要为了补头像逐页打开球员详情页。
    - 渲染器对缺失数据一律输出如实空状态；英雄卡数据缺失时如实标注「英雄卡数据源待建立」，不得用传奇卡顶替。解析不到头像的条目如实不显示图片，**严禁**用其他球员的图或占位图顶替。
    - 价格区间是**卡级**字段（FUTBIN 同一卡的 Console / PC 渲染同值），切换平台时区间列不变；平台差异只体现在「当前价」列，不得把区间拆成每平台一套。
-   - 本任务只负责 FC27 传奇/英雄名单与日历史记录；实时价和区间已由每小时传奇任务写入统一行情，不得再次逐卡打开详情页重复采集。
+   - 本任务只负责 FC27 传奇/英雄名单与日历史记录；实时价和区间已由「传奇价格区间」任务（每 4 小时）写入统一行情，不得再次逐卡打开详情页重复采集。
 4. 校验：卡牌 ID 去重、Icon/Hero 版本字段齐全、平台字段齐全、时间戳、价格有效性与数量一致性，并核对页头「球员头像 X/Y」计数已收敛。失败保留原始数据和上次有效报告。
 
-> 价格区间（最低价-最高价）与「传奇卡研究」由独立的**每小时**任务 `icons-pricerange-hourly` 采集与刷新（见 `automation/prompts/icons-pricerange-hourly.md`）。本任务只消费它的产物，不自行采集区间，也不要改它的数据文件。
+> 价格区间（最低价-最高价）与「传奇卡研究」由独立的**每 4 小时**任务 `icons-pricerange-hourly` 采集与刷新（见 `automation/prompts/icons-pricerange-hourly.md`）。本任务只消费它的产物，不自行采集区间，也不要改它的数据文件。
 
 ## 浏览器强制规则
 

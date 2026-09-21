@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>足球日报 - 2026年9月20日</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; background:#f5f5f5; color:#333; line-height:1.6; font-size:14px; }
+.header { background:linear-gradient(135deg,#c41e3a 0%,#8b1a2b 100%); color:#fff; padding:20px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+.header h1 { font-size:28px; color:#fff; font-weight:900; margin-bottom:8px; text-shadow:0 2px 6px rgba(0,0,0,0.6); }
+.header .subtitle { font-size:14px; color:#fff; opacity:0.95; text-shadow:0 1px 3px rgba(0,0,0,0.5); }
+.header .update-time { font-size:12px; color:#fff; opacity:0.9; margin-top:6px; text-shadow:0 1px 3px rgba(0,0,0,0.4); }
+.standings-section { background:#fff; margin:12px; border-radius:12px; border:1px solid #e8e8e8; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.standings-header { padding:12px 16px 0; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.standings-header .section-label { font-size:15px; font-weight:700; color:#222; }
+.type-tabs { display:flex; gap:4px; background:#f8f8f8; border-radius:8px; padding:3px; }
+.type-tab { padding:5px 14px; border-radius:6px; font-size:13px; font-weight:500; cursor:pointer; color:#666; transition:all .2s; border:none; background:transparent; }
+.type-tab.active { background:#c41e3a; color:#fff; }
+.league-tabs { display:flex; gap:4px; padding:8px 16px; overflow-x:auto; flex-wrap:wrap; }
+.league-tab { padding:4px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:#666; border:1px solid #e8e8e8; background:#fafafa; transition:all .2s; white-space:nowrap; }
+.league-tab.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+.league-tab:hover { border-color:#c41e3a; color:#c41e3a; }
+.table-wrapper { padding:0 16px 16px; }
+.standings-table { width:100%; border-collapse:collapse; font-size:12px; color:#555; }
+.standings-table th { background:#f8f8f8; padding:8px 4px; text-align:center; font-weight:500; color:#666; border-bottom:1px solid #e8e8e8; }
+.standings-table td { padding:7px 4px; text-align:center; border-bottom:1px solid #f5f5f5; }
+.standings-table td:first-child { font-weight:700; color:#c41e3a; }
+.standings-table td:nth-child(2) { text-align:left; font-weight:500; color:#333; }
+.standings-table tr:hover td { background:#fff8e1; }
+.standings-table .top3 td:first-child { color:#ffd700; }
+.standings-table .top4 td:first-child { color:#00d2ff; }
+.standings-table .relegation td:first-child { color:#ff6b6b; }
+.standings-table .highlight td { background:#fff8e1; }
+.section-header { background:linear-gradient(135deg,#f8f8f8 0%,#fff 100%); padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e8e8e8; }
+.section-header .title { font-size:16px; font-weight:700; color:#222; display:flex; align-items:center; gap:8px; }
+.section-header .title .dot { width:6px; height:6px; background:#c41e3a; border-radius:50%; display:inline-block; }
+.section-header .info { font-size:12px; color:#999; }
+.news-section { background:#fff; margin:12px; border-radius:12px; border:1px solid #e8e8e8; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.news-header { padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e8e8e8; }
+.news-header-left { display:flex; align-items:center; gap:8px; }
+.news-header-left .dot { width:6px; height:6px; background:#c41e3a; border-radius:50%; }
+.news-header-left .title { font-size:16px; font-weight:700; color:#222; }
+.news-header-right { display:flex; align-items:center; gap:12px; }
+.news-count { font-size:12px; padding:2px 8px; background:#f8f8f8; border-radius:4px; color:#666; }
+.news-update-time { font-size:12px; color:#999; }
+.news-filter-tabs { display:flex; gap:4px; padding:8px 16px; overflow-x:auto; flex-wrap:wrap; border-bottom:1px solid #e8e8e8; }
+.filter-tab { padding:4px 12px; border-radius:6px; font-size:12px; cursor:pointer; color:#666; border:1px solid #e8e8e8; background:#fafafa; transition:all .2s; white-space:nowrap; }
+.filter-tab.active { background:#c41e3a; color:#fff; border-color:#c41e3a; }
+.filter-tab:hover { border-color:#c41e3a; color:#c41e3a; }
+.news-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px; padding:16px; }
+.news-card { background:#fafafa; border-radius:10px; border:1px solid #e8e8e8; overflow:hidden; transition:transform .2s,border-color .2s; }
+.news-card:hover { transform:translateY(-2px); border-color:#ccc; }
+.card-top { padding:10px 12px; display:flex; align-items:center; gap:8px; border-bottom:1px solid #e8e8e8; }
+.card-team { font-size:13px; font-weight:700; color:#c41e3a; }
+.card-league { font-size:11px; padding:2px 6px; border-radius:4px; font-weight:500; }
+.tag-epl { background:#37003c; color:#00ff85; }
+.tag-laliga { background:#1a2b4a; color:#ffd700; }
+.tag-seriea { background:#0066aa; color:#fff; }
+.tag-bundesliga { background:#d3010c; color:#fff; }
+.tag-ligue1 { background:#091c3e; color:#dae025; }
+.tag-mls { background:#e31837; color:#fff; }
+.tag-saudi { background:#165d31; color:#fff; }
+.tag-ucl { background:#0f367c; color:#fff; }
+.tag-toutiao { background:#ff6b35; color:#fff; font-weight:700; }
+.news-card[data-league="toutiao"] { border:2px solid #ff6b35; background:linear-gradient(135deg,#fff 0%,#fff8f0 100%); }
+.news-card[data-league="toutiao"] .card-title { color:#c41e3a; }
+.card-body { padding:10px 12px; }
+.card-title { font-size:15px; font-weight:700; color:#000; margin-bottom:8px; line-height:1.4; }
+.card-summary { font-size:12px; color:#666; line-height:1.6; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
+.card-footer { padding:8px 12px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e8e8e8; font-size:11px; }
+.card-source a { color:#c41e3a; text-decoration:none; font-weight:500; }
+.card-source a:hover { text-decoration:underline; }
+.card-time { color:#999; font-style:italic; }
+.hidden { display:none !important; }
+.footer { text-align:center; padding:24px; color:#999; font-size:11px; line-height:1.8; }
+@media (max-width:768px) { .news-grid { grid-template-columns:1fr; } .standings-header { flex-direction:column; align-items:flex-start; } }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>⚽ 足球日报</h1>
+  <div class="subtitle">欧洲冠军联赛 · 七大联赛每日资讯聚合</div>
+  <div class="update-time">数据截止时间：2026年9月20日 03:36（北京时间）</div>
+</div>
+
+<!-- ===== STANDINGS ===== -->
+<div class="standings-section">
+  <div class="standings-header">
+    <div class="section-label">📊 数据排行</div>
+    <div class="type-tabs">
+      <div class="type-tab active" data-type="standings" onclick="switchType('standings')">积分榜</div>
+      <div class="type-tab" data-type="scorers" onclick="switchType('scorers')">射手榜</div>
+      <div class="type-tab" data-type="assists" onclick="switchType('assists')">助攻榜</div>
+    </div>
+  </div>
+  <div class="league-tabs">
+    <div class="league-tab active" data-league="epl" onclick="switchLeague('epl')">英超</div>
+    <div class="league-tab" data-league="laliga" onclick="switchLeague('laliga')">西甲</div>
+    <div class="league-tab" data-league="seriea" onclick="switchLeague('seriea')">意甲</div>
+    <div class="league-tab" data-league="bundesliga" onclick="switchLeague('bundesliga')">德甲</div>
+    <div class="league-tab" data-league="ligue1" onclick="switchLeague('ligue1')">法甲</div>
+    <div class="league-tab" data-league="mls" onclick="switchLeague('mls')">美职联</div>
+    <div class="league-tab" data-league="saudi" onclick="switchLeague('saudi')">沙特联</div>
+    <div class="league-tab" data-league="ucl" onclick="switchLeague('ucl')">欧冠</div>
+  </div>
+  <div class="table-wrapper">
+    <div id="table-content"></div>
+  </div>
+</div>
+
+<!-- ===== NEWS ===== -->
+<div class="news-section">
+  <div class="news-header">
+    <div class="news-header-left">
+      <div class="dot"></div>
+      <div class="title">最新资讯</div>
+    </div>
+    <div class="news-header-right">
+      <span class="news-count" id="news-count">全部 14 条</span>
+      <span class="news-update-time">更新 2026-09-20</span>
+    </div>
+  </div>
+  <div class="news-filter-tabs">
+    <div class="filter-tab active" data-filter="all" onclick="filterNews('all')">全部 14</div>
+    <div class="filter-tab" data-filter="toutiao" onclick="filterNews('toutiao')">🔥 今日头条 6</div>
+    <div class="filter-tab" data-filter="epl" onclick="filterNews('epl')">英超 3</div>
+    <div class="filter-tab" data-filter="laliga" onclick="filterNews('laliga')">西甲 3</div>
+    <div class="filter-tab" data-filter="seriea" onclick="filterNews('seriea')">意甲 1</div>
+    <div class="filter-tab" data-filter="bundesliga" onclick="filterNews('bundesliga')">德甲 1</div>
+    <div class="filter-tab" data-filter="ligue1" onclick="filterNews('ligue1')">法甲 0</div>
+    <div class="filter-tab" data-filter="mls" onclick="filterNews('mls')">美职联 0</div>
+    <div class="filter-tab" data-filter="saudi" onclick="filterNews('saudi')">沙特联 0</div>
+    <div class="filter-tab" data-filter="ucl" onclick="filterNews('ucl')">欧冠 0</div>
+  </div>
+  <div class="news-grid" id="news-grid">
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">托特纳姆热刺</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">热刺主场2比3负于阿斯顿维拉，5轮不胜创2008年以来最差开局</div>
+    <div class="card-summary">英超第5轮，热刺主场2比3不敌维拉，3亿英镑重建阵容5轮仅积2分，深陷降级区，创2008年以来最差联赛开局。维拉由曼赞比、杰克逊和布恩迪亚连入三球，热刺末段由加拉格尔与范赫克扳回两球，库迪斯进球被VAR取消。主帅德泽尔比赛后直言失望，维拉则收获赛季联赛首胜。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.thestar.com.my/sport/football/2026/09/20/soccer-villa-expose-familiar-flaws-as-tottenham-slump-continues" target="_blank">The Star（路透社）</a></span>
+    <span class="card-time">09-20 01:41</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">阿森纳</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">布莱顿主场3比0横扫阿森纳，格罗斯一射两传</div>
+    <div class="card-summary">英超第5轮爆出冷门，布莱顿主场3比0完胜阿森纳：格罗斯第31分钟首开记录并两度助攻，科斯托拉斯第45分钟破门，切玛第57分钟头球锁定胜局。阿森纳全场控球占优但仅2次射正，遭遇赛季惨败。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.qiumiwu.com/news/2006966673945" target="_blank">球迷屋</a></span>
+    <span class="card-time">09-20 00:31</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">巴塞罗那</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">巴萨7比2狂胜桑坦德竞技，拉菲尼亚帽子戏法领跑西甲</div>
+    <div class="card-summary">西甲第6轮，巴萨主场7比2血洗桑坦德竞技，拉菲尼亚两度点球命中完成帽子戏法，6轮全胜积18分领跑。同轮皇马客场3比2险胜埃尔切，靠补时第90分钟进球绝杀，积15分居次，但进球数落后巴萨11个，净胜球差距令追赶形势严峻。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.sohu.com/a/1078323022_121144482" target="_blank">搜狐体育</a></span>
+    <span class="card-time">09-20 00:20</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">国际米兰</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">意甲榜首大战：国米两球落后2比2逼平罗马，继续并驾领跑</div>
+    <div class="card-summary">意甲焦点战，罗马两球领先被国米扳平：科内梅开二度，劳塔罗·马丁内斯第46和79分钟两度建功，两队继续并列榜首。赛前国米为俱乐部传奇马佐拉默哀并佩戴黑纱，这位83岁的名宿于当地时间昨晚去世。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.sportslive.wine/sports-news/serie-a-roma-2-2-inter-another-epic-comeback-for-scudetto-battle-E8UxOIgIqo2" target="_blank">OneFootball（sportslive.wine）</a></span>
+    <span class="card-time">09-19 20:50</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">多特蒙德</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">多特蒙德1比0客胜斯图加特，四战全胜登顶德甲</div>
+    <div class="card-summary">德甲第4轮，拜尔打入全场唯一进球，多特蒙德客场1比0力克斯图加特，以4战全胜积12分的完美战绩进入国际比赛日，领先拜仁和弗赖堡2分。替补登场的乔布·贝林厄姆送出助攻，斯图加特遭遇4轮第3败。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.thestar.com.my/sport/football/2026/09/20/soccer-dortmund-beat-stuttgart-1-0-to-go-top-of-bundesliga" target="_blank">The Star（路透社）</a></span>
+    <span class="card-time">09-20 02:51</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="toutiao">
+  <div class="card-top">
+    <span class="card-team">皇家马德里</span>
+    <span class="card-league tag-toutiao">今日头条</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">皇马客场补时绝杀3比2埃尔切，落后巴萨3分</div>
+    <div class="card-summary">西甲第6轮，皇马客场2比0领先被埃尔切连追两球，最终靠第90分钟的进球3比2险胜，穆里尼奥的球队延续硬仗末段定胜负的模式。6轮过后皇马积15分落后巴萨3分，且净胜球差距悬殊，第10轮国家德比将成为追赶的关键节点。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.sohu.com/a/1078323022_121144482" target="_blank">搜狐体育</a></span>
+    <span class="card-time">09-20 00:20</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="laliga">
+  <div class="card-top">
+    <span class="card-team">巴塞罗那</span>
+    <span class="card-league tag-laliga">西甲</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">罗马诺Here we go：巴萨敲定葡萄牙16岁天才中场弗雷雷</div>
+    <div class="card-summary">名记罗马诺在播客中确认，巴萨已敲定签下16岁攻击型中场丹尼·弗雷雷，合同至2029年。弗雷雷出生于葡萄牙、成长于卢森堡，已代表葡萄牙U15/U17出场，曾在试训期间给巴萨留下深刻印象，夏季友谊赛两度当选MVP。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://news.qq.com/rain/a/20260920A001IA00" target="_blank">虎扑（罗马诺播客）</a></span>
+    <span class="card-time">09-20 00:04</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="laliga">
+  <div class="card-top">
+    <span class="card-team">巴塞罗那</span>
+    <span class="card-league tag-laliga">西甲</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">罗马诺：拉菲尼亚与巴萨续约至2030年，拒绝沙特报价</div>
+    <div class="card-summary">据罗马诺，拉菲尼亚与巴萨完成续约，新合同为期四年至2030年，薪资提升。此前总监德科口径的2029年为口误。拉菲尼亚今夏拒绝了沙特联赛的邀约，明确表示希望留在巴萨争夺欧冠。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://news.qq.com/rain/a/20260920A001IA00" target="_blank">虎扑（罗马诺播客）</a></span>
+    <span class="card-time">09-20 00:04</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="epl">
+  <div class="card-top">
+    <span class="card-team">纽卡斯尔联</span>
+    <span class="card-league tag-epl">英超</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">纽卡斯尔2比1力克赫尔城，摆脱利兹联惨败阴影</div>
+    <div class="card-summary">英超第5轮，纽卡斯尔主场2比1战胜升班马赫尔城，刘易斯·霍尔和威洛克进球。主帅亚伊塞尔称赞球队在利兹1比4惨败后迅速反弹，但透露球队仍有9名伤员。赫尔城遭遇赛季英超首败，主帅亚基罗维奇为球队下半场表现感到自豪。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.skysports.com/football/live-blog/11095/13025496/newcastle-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts" target="_blank">Sky Sports</a></span>
+    <span class="card-time">09-20 01:10</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="bundesliga">
+  <div class="card-top">
+    <span class="card-team">门兴格拉德巴赫</span>
+    <span class="card-league tag-bundesliga">德甲</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">门兴换帅仍无起色，主场3比4负于美因茨四连败</div>
+    <div class="card-summary">德甲第4轮，解雇波兰斯基、由利希特临时接手的门兴主场3比4不敌美因茨，吞下赛季第4败，4轮失球达16个。纽豪斯第11分钟为主队先拔头筹，但蒂茨迅速扳平，美因茨此后连入三球。同轮不来梅3比2逆转奥格斯堡，汉堡2比1科隆，法兰克福2比2弗赖堡。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.thestar.com.my/sport/football/2026/09/20/soccer-dortmund-beat-stuttgart-1-0-to-go-top-of-bundesliga" target="_blank">The Star（路透社）</a></span>
+    <span class="card-time">09-20 02:51</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="epl">
+  <div class="card-top">
+    <span class="card-team">纽卡斯尔联</span>
+    <span class="card-league tag-epl">英超</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">纽卡斯尔：埃兰加腿筋伤势恢复顺利，有望国际比赛日后复出</div>
+    <div class="card-summary">据天空体育记者唐尼报道，埃兰加腿筋伤势恢复良好，本周完成第二次扫描，有望在国际比赛日后回归。他将缺席对赫尔城的比赛，也无缘瑞典队的4场欧国联比赛。纽卡目前伤员多达9人，包括边卫阿马尔·德迪奇。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.skysports.com/football/live-blog/11095/13025496/newcastle-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts" target="_blank">Sky Sports</a></span>
+    <span class="card-time">09-20 01:10</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="epl">
+  <div class="card-top">
+    <span class="card-team">托特纳姆热刺</span>
+    <span class="card-league tag-epl">英超</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">热刺右后卫波罗复出首战再度伤退，球队雪上加霜</div>
+    <div class="card-summary">热刺对维拉一役，刚伤愈复出的主力右后卫波罗第19分钟再度受伤，被阿奇·格雷换下。波罗离场后热刺右路攻防失据，维拉随后连入三球。5轮不胜、深陷降级区的热刺再损核心，右路体系面临重建，保级压力陡增。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://sports.sina.cn/2026-09-20/detail-inismeri1923663.d.html" target="_blank">新浪体育</a></span>
+    <span class="card-time">09-20 03:23</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="laliga">
+  <div class="card-top">
+    <span class="card-team">巴塞罗那</span>
+    <span class="card-league tag-laliga">西甲</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">巴萨门将加西亚受伤半场被换下，利瓦科维奇有望迎来首发机会</div>
+    <div class="card-summary">巴萨7比2大胜一役中，门将加西亚扑球后滑倒受伤，半场被什琴斯尼换下，替补登场的什琴斯尼表现不佳。媒体确认利瓦科维奇将在下一轮客场对塞维利亚的皮斯胡安之战迎来首发，巴萨门将位置面临轮换考验。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.sohu.com/a/1078347762_122354593" target="_blank">搜狐体育</a></span>
+    <span class="card-time">09-20 02:09</span>
+  </div>
+</div>
+
+<div class="news-card" data-league="seriea">
+  <div class="card-top">
+    <span class="card-team">国际米兰</span>
+    <span class="card-league tag-seriea">意甲</span>
+    
+  </div>
+  <div class="card-body">
+    <div class="card-title" style="color:#000;font-weight:700">国米传奇马佐拉去世，享年83岁，球队佩戴黑纱出战</div>
+    <div class="card-summary">国际米兰俱乐部传奇桑德罗·马佐拉于当地时间9月18日夜间去世，享年83岁。在罗马对阵国米的意甲榜首大战赛前，全场默哀一分钟，国米球员佩戴黑纱出战，向这位俱乐部史上最伟大球员之一致敬。</div>
+  </div>
+  <div class="card-footer">
+    <span class="card-source"><a href="https://www.sportslive.wine/sports-news/serie-a-roma-2-2-inter-another-epic-comeback-for-scudetto-battle-E8UxOIgIqo2" target="_blank">OneFootball（sportslive.wine）</a></span>
+    <span class="card-time">09-19 20:50</span>
+  </div>
+</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>足球日报 · 每日足球资讯聚合</p>
+  <p>数据来源：BBC Sport、ESPN、worldfootball.net、Sky Sports、OneFootball、新浪体育、直播吧等</p>
+  <p>数据截止时间：2026年9月20日 03:36（北京时间） | 仅供参考，请以官方最新信息为准</p>
+</div>
+
+<script>
+// ===== DATA =====
+const standingsData = {"epl":[[1,"曼城",4,4,0,0,8,2,"+6",12],[2,"阿森纳",5,4,0,1,8,4,"+4",12],[3,"布莱顿",5,3,1,1,16,5,"+11",10],[4,"布伦特福德",5,2,3,0,10,4,"+6",9],[5,"埃弗顿",5,2,3,0,6,3,"+3",9],[6,"利兹联",4,2,2,0,7,3,"+4",8],[7,"赫尔城",5,2,2,1,6,4,"+2",8],[8,"纽卡斯尔联",5,2,2,1,9,9,"0",8],[9,"切尔西",5,2,1,2,10,12,"-2",7],[10,"利物浦",4,1,3,0,6,4,"+2",6],[11,"伊普斯维奇",5,2,0,3,7,11,"-4",6],[12,"诺丁汉森林",5,1,2,2,4,5,"-1",5],[13,"曼联",4,1,1,2,7,7,"0",4],[14,"桑德兰",4,1,1,2,3,5,"-2",4],[15,"阿斯顿维拉",5,1,1,3,4,9,"-5",4],[16,"伯恩茅斯",4,0,3,1,6,7,"-1",3],[17,"水晶宫",4,1,0,3,6,11,"-5",3],[18,"考文垂",5,1,0,4,1,10,"-9",3],[19,"热刺",5,0,2,3,2,8,"-6",2],[20,"富勒姆",4,0,1,3,4,7,"-3",1]],"laliga":[[1,"巴塞罗那",7,6,1,0,29,7,"+22",19],[2,"皇家马德里",6,5,0,1,17,6,"+11",15],[3,"皇家贝蒂斯",6,5,0,1,8,6,"+2",15],[4,"塞维利亚",7,4,2,1,10,7,"+3",14],[5,"马德里竞技",6,4,1,1,14,6,"+8",13],[6,"阿拉维斯",7,3,2,2,11,6,"+5",11],[7,"拉科鲁尼亚",6,2,3,1,9,7,"+2",9],[8,"毕尔巴鄂竞技",6,2,2,2,7,6,"+1",8],[9,"巴列卡诺",7,2,2,3,11,16,"-5",8],[10,"奥萨苏纳",7,2,2,3,6,13,"-7",8],[11,"塞尔塔",7,1,4,2,8,6,"+2",7],[12,"西班牙人",7,2,1,4,10,10,"0",7],[13,"皇家社会",6,2,1,3,6,11,"-5",7],[14,"桑坦德竞技",7,2,1,4,11,21,"-10",7],[15,"比利亚雷亚尔",6,1,2,3,10,11,"-1",5],[16,"莱万特",5,1,2,2,7,9,"-2",5],[17,"赫塔费",6,1,2,3,3,7,"-4",5],[18,"埃尔切",7,1,2,4,11,17,"-6",5],[19,"瓦伦西亚",6,1,1,4,2,10,"-8",4],[20,"马拉加",6,0,3,3,3,11,"-8",3]],"seriea":[[1,"罗马",5,4,1,0,14,3,"+11",13],[2,"国际米兰",5,4,1,0,15,8,"+7",13],[3,"卡利亚里",5,4,0,1,5,2,"+3",12],[4,"拉齐奥",5,3,2,0,6,3,"+3",11],[5,"科莫",4,3,1,0,9,4,"+5",10],[6,"AC米兰",4,2,2,0,7,4,"+3",8],[7,"弗罗西诺内",4,2,1,1,7,4,"+3",7],[8,"尤文图斯",4,2,1,1,6,4,"+2",7],[9,"萨索洛",5,2,1,2,9,9,"0",7],[10,"那不勒斯",4,2,0,2,6,5,"+1",6],[11,"亚特兰大",4,2,0,2,5,5,"0",6],[12,"莱切",4,2,0,2,5,7,"-2",6],[13,"乌迪内斯",5,1,1,3,8,11,"-3",4],[14,"都灵",5,1,1,3,5,8,"-3",4],[15,"蒙扎",5,1,1,3,8,12,"-4",4],[16,"佛罗伦萨",4,1,0,3,5,11,"-6",3],[17,"博洛尼亚",5,0,2,3,3,6,"-3",2],[18,"帕尔马",4,0,1,3,2,6,"-4",1],[19,"热那亚",4,0,1,3,2,8,"-6",1],[20,"威尼斯",5,0,1,4,4,11,"-7",1]],"bundesliga":[[1,"多特蒙德",4,4,0,0,9,2,"+7",12],[2,"拜仁慕尼黑",4,3,1,0,14,2,"+12",10],[3,"弗赖堡",4,3,1,0,12,3,"+9",10],[4,"奥格斯堡",4,2,1,1,11,6,"+5",7],[5,"美因茨05",4,2,1,1,10,6,"+4",7],[6,"云达不来梅",4,2,1,1,8,8,"0",7],[7,"RB莱比锡",3,2,0,1,9,3,"+6",6],[8,"埃尔沃斯堡",3,2,0,1,8,7,"+1",6],[9,"法兰克福",4,1,2,1,9,10,"-1",5],[10,"勒沃库森",3,1,1,1,8,5,"+3",4],[11,"沙尔克04",3,1,1,1,3,4,"-1",4],[12,"科隆",4,1,1,2,6,9,"-3",4],[13,"霍芬海姆",3,1,0,2,6,7,"-1",3],[14,"斯图加特",4,1,0,3,6,9,"-3",3],[15,"汉堡",4,1,0,3,2,13,"-11",3],[16,"帕德博恩",3,0,1,2,0,4,"-4",1],[17,"柏林联合",4,0,1,3,4,17,"-13",1],[18,"门兴格拉德巴赫",4,0,0,4,6,16,"-10",0]],"ligue1":[[1,"摩纳哥",5,4,1,0,8,3,"+5",13],[2,"里昂",5,3,2,0,8,2,"+6",11],[3,"巴黎FC",5,3,2,0,8,3,"+5",11],[4,"里尔",4,3,1,0,7,2,"+5",10],[5,"雷恩",5,3,1,1,8,7,"+1",10],[6,"斯特拉斯堡",5,2,1,2,10,10,"0",7],[7,"昂热",5,2,1,2,5,5,"0",7],[8,"勒芒",5,1,3,1,8,8,"0",6],[9,"巴黎圣日耳曼",4,1,2,1,6,6,"0",5],[9,"布雷斯特",4,1,2,1,6,6,"0",5],[11,"洛里昂",5,1,2,2,4,5,"-1",5],[12,"朗斯",5,1,1,3,9,9,"0",4],[13,"特鲁瓦",5,1,1,3,4,10,"-6",4],[14,"马赛",4,1,0,3,6,6,"0",3],[15,"勒阿弗尔",5,0,3,2,2,4,"-2",3],[16,"图卢兹",5,0,3,2,4,7,"-3",3],[17,"欧塞尔",4,1,0,3,5,11,"-6",3],[18,"尼斯",4,0,2,2,1,5,"-4",2]],"saudi":[[1,"利雅得新月",7,6,0,1,23,5,"+18",18],[2,"吉达联合",7,5,2,0,12,6,"+6",17],[3,"利雅得胜利",7,5,1,1,16,7,"+9",16],[4,"胡拜尔库迪西亚",7,5,1,1,16,8,"+8",16],[5,"新未来城SC",7,5,0,2,13,6,"+7",15],[6,"吉达国民",7,4,0,3,16,10,"+6",12],[7,"胡卢德",7,3,3,1,12,10,"+2",12],[8,"德里耶",7,3,2,2,7,5,"+2",11],[9,"达曼协作",7,3,2,2,11,11,"0",11],[10,"哈泽姆",7,2,2,3,7,9,"-2",8],[11,"利雅得",7,2,2,3,8,16,"-8",8],[12,"费哈",7,1,3,3,7,11,"-4",6],[13,"哈里杰",7,0,5,2,3,10,"-7",5],[14,"利雅得青年",7,0,4,3,6,11,"-5",4],[15,"费特",7,0,3,4,4,11,"-7",3],[16,"费萨里",7,0,3,4,5,13,"-8",3],[17,"塔亚文",7,0,3,4,3,12,"-9",3],[18,"艾卜哈",7,0,2,5,5,13,"-8",2]],"ucl":[[1,"巴黎圣日耳曼",1,1,0,0,6,1,"+5",3],[2,"拜仁慕尼黑",1,1,0,0,5,0,"+5",3],[3,"巴塞罗那",1,1,0,0,5,1,"+4",3],[4,"曼联",1,1,0,0,4,0,"+4",3],[5,"科莫",1,1,0,0,4,1,"+3",3],[6,"葡萄牙体育",1,1,0,0,3,1,"+2",3],[7,"斯图加特",1,1,0,0,3,1,"+2",3],[8,"曼城",1,1,0,0,2,0,"+2",3],[9,"阿斯顿维拉",1,1,0,0,3,2,"+1",3],[10,"朗斯",1,1,0,0,3,2,"+1",3],[11,"皇家贝蒂斯",1,1,0,0,3,2,"+1",3],[12,"多特蒙德",1,1,0,0,3,2,"+1",3],[13,"利物浦",1,1,0,0,2,1,"+1",3],[14,"皇家马德里",1,1,0,0,2,1,"+1",3],[15,"阿森纳",1,1,0,0,1,0,"+1",3],[16,"雅典AEK",1,1,0,0,1,0,"+1",3],[17,"罗马",1,0,1,0,1,1,"0",1],[18,"顿涅茨克矿工",1,0,1,0,1,1,"0",1],[19,"费内巴切",1,0,1,0,1,1,"0",1],[20,"PSV埃因霍温",1,0,1,0,1,1,"0",1],[21,"比利亚雷亚尔",1,0,0,1,2,3,"-1",0],[22,"布鲁日",1,0,0,1,2,3,"-1",0],[23,"里尔",1,0,0,1,2,3,"-1",0],[24,"布拉格斯拉维亚",1,0,0,1,2,3,"-1",0],[25,"马德里竞技",1,0,0,1,1,2,"-1",0],[26,"国际米兰",1,0,0,1,1,2,"-1",0],[27,"林茨LASK",1,0,0,1,0,1,"-1",0],[28,"那不勒斯",1,0,0,1,0,1,"-1",0],[29,"加拉塔萨雷",1,0,0,1,1,3,"-2",0],[30,"维京",1,0,0,1,1,3,"-2",0],[31,"波尔图",1,0,0,1,0,2,"-2",0],[32,"RB莱比锡",1,0,0,1,1,4,"-3",0],[33,"费耶诺德",1,0,0,1,1,5,"-4",0],[34,"萨巴赫FK",1,0,0,1,0,4,"-4",0],[35,"布拉迪斯拉发斯洛万",1,0,0,1,1,6,"-5",0],[36,"博多格林特",1,0,0,1,0,5,"-5",0]],"mls_east":[[1,"纳什维尔SC",25,16,6,3,50,21,"+29",54],[2,"迈阿密国际",25,12,9,4,61,46,"+15",45],[3,"新英格兰革命",25,13,4,8,41,31,"+10",43],[4,"夏洛特FC",25,11,7,7,45,36,"+9",40],[5,"芝加哥火焰",24,11,6,7,45,35,"+10",39],[6,"奥兰多城",25,10,4,11,44,56,"-12",34],[7,"费城联合",25,9,6,10,46,39,"+7",33],[8,"纽约红牛",26,9,6,11,34,48,"-14",33],[9,"纽约城FC",26,8,8,10,39,34,"+5",32],[10,"辛辛那提FC",24,8,8,8,52,59,"-7",32],[11,"华盛顿联",24,6,11,7,30,37,"-7",29],[12,"多伦多FC",25,6,11,8,38,46,"-8",29],[13,"哥伦布机员",25,6,5,14,35,42,"-7",23],[14,"亚特兰大联",25,6,5,14,29,43,"-14",23],[15,"蒙特利尔CF",25,5,6,14,31,51,"-20",21]],"mls_west":[[1,"温哥华白浪",24,14,4,6,53,23,"+30",46],[2,"休斯敦迪纳摩",25,13,4,8,32,28,"+4",43],[3,"达拉斯FC",25,12,7,6,49,42,"+7",43],[4,"圣何塞地震",25,12,5,8,44,36,"+8",41],[5,"圣路易斯城",25,11,8,6,42,35,"+7",41],[6,"洛杉矶FC",26,11,7,8,41,27,"+14",40],[7,"科罗拉多急流",25,11,2,12,33,32,"+1",35],[8,"波特兰伐木者",25,9,5,11,47,47,"0",32],[9,"圣迭戈FC",25,8,6,11,42,42,"0",30],[10,"洛杉矶银河",26,7,9,10,31,40,"-9",30],[11,"皇家盐湖城",24,8,5,11,37,39,"-2",29],[12,"明尼苏达联",25,7,8,10,37,43,"-6",29],[13,"奥斯汀FC",25,7,8,10,32,44,"-12",29],[14,"西雅图海湾人",23,7,7,9,25,30,"-5",28],[15,"堪萨斯城竞技",24,5,3,16,26,59,"-33",18]]};
+const scorersData = {"epl":[[1,"哈兰德 Erling Haaland","曼城",4],[2,"B·费尔南德斯 Bruno Fernandes","曼联",3],[2,"卡尔弗特-勒温 Dominic Calvert-Lewin","利兹联",3],[2,"格罗斯 Pascal Groß","布莱顿",3],[2,"伊萨克 Alexander Isak","利物浦",3],[2,"若昂·佩德罗 João Pedro","切尔西",3],[2,"罗杰斯 Morgan Rogers","切尔西",3],[2,"萨卡 Bukayo Saka","阿森纳",3],[2,"沙德 Kevin Schade","布伦特福德",3],[2,"塔弗尼尔 Marcus Tavernier","伯恩茅斯",3]],"laliga":[[1,"拉菲尼亚 Raphinha","巴塞罗那",10],[2,"拉明·亚马尔 Lamine Yamal","巴塞罗那",7],[2,"姆巴佩 Kylian Mbappé","皇家马德里",7],[2,"塞尔希奥·卡梅洛 Sergio Camello","巴列卡诺",7],[5,"罗伯托·费尔南德斯 Roberto Fernández","西班牙人",6],[5,"亚西尔·扎比里 Yassir Zabiri","桑坦德竞技",6],[7,"奥巴梅扬 Pierre-Emerick Aubameyang","拉科鲁尼亚",5],[7,"布迪米尔 Ante Budimir","奥萨苏纳",5],[7,"费尔·尼尼奥 Fer Niño","埃尔切",5],[10,"巴埃纳 Álex Baena","马德里竞技",4]],"seriea":[[1,"多尼埃尔·马伦 Donyell Malen","罗马",6],[2,"古斯塔沃·瓦雷拉 Gustavo Varela","蒙扎",4],[2,"劳塔罗·马丁内斯 Lautaro Martínez","国际米兰",4],[2,"安东尼奥·拉伊蒙多 Antonio Raimondo","弗罗西诺内",4],[5,"瓦西利耶·阿季奇 Vasilije Adžić","萨索洛",3],[5,"达维德·弗拉泰西 Davide Frattesi","拉齐奥",3],[5,"丹尼尔·马尔蒂尼 Daniel Maldini","卡利亚里",3],[5,"弗兰科·马斯图托诺 Franco Mastantuono","佛罗伦萨",3],[9,"切·亚当斯 Ché Adams","都灵",2],[9,"阿萨内·迪奥 Assane Diao","科莫",2]],"bundesliga":[[1,"尤内斯·埃布努塔利布 Younes Ebnoutalib","法兰克福",4],[1,"迈克尔·奥利塞 Michael Olise","拜仁慕尼黑",4],[1,"铃木唯人 Yuito Suzuki","弗赖堡",4],[1,"菲利普·蒂茨 Phillip Tietz","美因茨05",4],[5,"约纳坦·布尔卡特 Jonathan Burkardt","法兰克福",3],[5,"尼克拉斯·菲尔克鲁格 Niclas Füllkrug","云达不来梅",3],[5,"米夏埃尔·格雷戈里奇 Michael Gregoritsch","奥格斯堡",3],[5,"哈里·凯恩 Harry Kane","拜仁慕尼黑",3],[5,"莫里斯·克拉滕马赫 Maurice Krattenmacher","埃尔沃斯堡",3],[5,"伊戈尔·马塔诺维奇 Igor Matanović","弗赖堡",3]],"ligue1":[[1,"帕里斯·布伦纳 Paris Brunner","摩纳哥",4],[1,"卡莫里·杜姆比亚 Kamory Doumbia","布雷斯特",4],[1,"阿米内·古伊里 Amine Gouiri","马赛",4],[1,"拉西内·西纳约科 Lassine Sinayoko","巴黎FC",4],[5,"阿迪勒·布拉巴 Adil Bourabaa","勒芒",3],[5,"费兰·托雷斯 Ferran Torres","巴黎圣日耳曼",3],[5,"埃斯特班·勒波 Esteban Lepaul","雷恩",3],[5,"路易·马富塔 Louis Mafouta","勒芒",3],[5,"埃内斯特·努阿马 Ernest Nuamah","里昂",3],[5,"弗洛里安·托万 Florian Thauvin","朗斯",3]],"saudi":[[1,"伊万·托尼 Ivan Toney","吉达国民",10],[2,"亚历山大·拉卡泽特 Alexandre Lacazette","新未来城SC",5],[3,"阿马杜·科内 Amadou Koné","新未来城SC",4],[4,"塞尔吉·米林科维奇-萨维奇 Sergej Milinkovic-Savic","利雅得新月",4],[5,"史蒂文·贝尔温 Steven Bergwijn","吉达联合",4],[6,"伊克尔·科尔塔哈雷纳 Iker Kortajarena","胡卢德",4],[7,"马特奥·雷特吉 Mateo Retegui","胡拜尔库迪西亚",4],[8,"优素福·恩内斯里 Youssef En-Nesyri","吉达联合",4],[9,"乔治·伊列尼赫纳 George Ilenikhena","吉达联合",4],[10,"鲁本·内维斯 Rúben Neves","利雅得新月",3]],"ucl":[[1,"费兰·托雷斯 Ferran Torres","巴黎圣日耳曼",3],[2,"埃尔梅丁·德米罗维奇 Ermedin Demirovic","斯图加特",3],[3,"达尼杰尔·斯图尔姆 Danijel Sturm","布拉格斯拉维亚",2],[4,"迈克尔·奥利塞 Michael Olise","拜仁慕尼黑",2],[5,"哈兰德 Erling Haaland","曼城",2],[6,"塞尔胡·吉拉西 Serhou Guirassy","多特蒙德",2],[7,"马克·巴特拉 Marc Bartra","皇家贝蒂斯",2],[8,"拉菲尼亚 Raphinha","巴塞罗那",2],[9,"奥斯曼·登贝莱 Ousmane Dembélé","巴黎圣日耳曼",2],[10,"拉明·亚马尔 Lamine Yamal","巴塞罗那",1]],"mls":[[1,"梅西 Lionel Messi","迈阿密国际",19],[2,"彼得·穆萨 Petar Musa","达拉斯FC",18],[3,"尼古拉斯·费尔南德斯 Nicolás Fernández","纽约城FC",15],[4,"布莱恩·怀特 Brian White","温哥华白浪",15],[5,"萨姆·瑟里奇 Sam Surridge","纳什维尔SC",15],[6,"泰·巴里博 Tai Baribo","华盛顿联",14],[7,"丹尼斯·布昂加 Denis Bouanga","洛杉矶FC",13],[8,"吉列尔梅·奥古斯托 Guilherme Augusto","休斯敦迪纳摩",13],[9,"普林斯·奥乌苏 Prince Owusu","蒙特利尔CF",13],[10,"凯文·登凯 Kévin Denkey","辛辛那提FC",13]]};
+const assistsData = {"epl":[[1,"格罗斯 Pascal Groß","布莱顿",3],[2,"镰田大地 Daichi Kamada","水晶宫",3],[2,"加克波 Cody Gakpo","利物浦",3],[2,"若昂·佩德罗 João Pedro","切尔西",3],[2,"埃万尼尔森 Evanilson","伯恩茅斯",3],[6,"麦金 John McGinn","阿斯顿维拉",2],[6,"赖斯 Declan Rice","阿森纳",2],[6,"巴恩斯 Harvey Barnes","纽卡斯尔联",2],[6,"吉布斯-怀特 Morgan Gibbs-White","诺丁汉森林",2],[6,"福登 Phil Foden","曼城",2]],"laliga":[[1,"达尼·奥尔莫 Dani Olmo","巴塞罗那",4],[1,"安东尼·戈登 Anthony Gordon","巴塞罗那",4],[1,"哈维尔·埃尔南德斯 Javier Hernández","西班牙人",4],[4,"乌奈·洛佩斯 Unai López","巴列卡诺",3],[4,"马里亚诺·迪亚斯 Mariano Díaz","阿拉维斯",3],[4,"泰特·莫伦特 Tete Morente","埃尔切",3],[4,"拉菲尼亚 Raphinha","巴塞罗那",3],[4,"维尼修斯 Vinícius Júnior","皇家马德里",3],[4,"安赫尔·佩雷斯 Ángel Pérez","阿拉维斯",3],[10,"奥巴梅扬 Pierre-Emerick Aubameyang","拉科鲁尼亚",2]],"seriea":[[1,"保罗·迪巴拉 Paulo Dybala","罗马",4],[2,"安迪·迪乌夫 Andy Diouf","国际米兰",3],[3,"阿德里安·拉比奥 Adrien Rabiot","AC米兰",2],[3,"马蒂亚·扎卡尼 Mattia Zaccagni","拉齐奥",2],[3,"詹卢卡·曼奇尼 Gianluca Mancini","罗马",2],[3,"里卡多·芒加斯 Ricardo Mangas","蒙扎",2],[3,"马库斯·图拉姆 Marcus Thuram","国际米兰",2],[3,"萨穆埃尔·丘克乌泽 Samuel Chukwueze","AC米兰",2],[3,"基南·戴维斯 Keinan Davis","乌迪内斯",2],[3,"萨穆埃莱·比林代利 Samuele Birindelli","蒙扎",2]],"bundesliga":[[1,"马蒂亚斯·金特 Matthias Ginter","弗赖堡",3],[1,"谢拉尔多·贝克尔 Sheraldo Becker","美因茨05",3],[1,"马尔科·格吕尔 Marco Grüll","云达不来梅",3],[1,"法比安·里德 Fabian Rieder","奥格斯堡",3],[1,"德里·舍尔汉特 Derry Scherhant","弗赖堡",3],[1,"伊斯梅尔·赛巴里 Ismael Saibari","拜仁慕尼黑",3],[7,"约书亚·基米希 Joshua Kimmich","拜仁慕尼黑",2],[7,"弗拉迪米尔·措法尔 Vladimír Coufal","霍芬海姆",2],[7,"塞尔胡·吉拉西 Serhou Guirassy","多特蒙德",2],[7,"弗兰克·奥诺拉 Franck Honorat","门兴格拉德巴赫",2]],"ligue1":[[1,"弗洛里安·托万 Florian Thauvin","朗斯",3],[1,"克里斯蒂安·卡塞雷斯 Cristian Cásseres Jr.","图卢兹",3],[1,"帕维尔·舒尔茨 Pavel Šulc","里昂",3],[1,"帕诺斯·卡采里斯 Panos Katseris","洛里昂",3],[5,"奥利维耶·吉鲁 Olivier Giroud","里尔",2],[5,"阿德里安·托马松 Adrien Thomasson","雷恩",2],[5,"科朗坦·托利索 Corentin Tolisso","里昂",2],[5,"亚历山大·戈洛温 Aleksandr Golovin","摩纳哥",2],[5,"法比安·鲁伊斯 Fabián Ruiz","巴黎圣日耳曼",2],[5,"塞巴斯蒂安·纳纳西 Sebastian Nanasi","斯特拉斯堡",2]],"saudi":[[1,"克里森西奥·萨默维尔 Crysencio Summerville","利雅得新月",3],[2,"鲁本·内维斯 Rúben Neves","利雅得新月",3],[3,"阿尔瓦罗·梅德兰 Álvaro Medrán","达曼协作",3],[4,"奥斯卡·罗德里格斯 Óscar Rodríguez","德里耶",3],[5,"乔什·布朗希尔 Josh Brownhill","利雅得青年",2],[6,"科巴·达科斯塔 Coba da Costa","胡卢德",2],[7,"萨迪奥·马内 Sadio Mané","利雅得胜利",2],[8,"爱德华·斯佩尔齐扬 Eduard Spertsyan","吉达国民",2],[9,"弗朗西斯科·特林康 Francisco Trincão","吉达国民",2],[10,"朱利安·多明格斯 Julien Domingues","胡卢德",2]],"ucl":[[1,"拉明·亚马尔 Lamine Yamal","巴塞罗那",2],[2,"尼科·帕斯 Nico Paz","科莫",2],[3,"德尼兹·翁达夫 Deniz Undav","斯图加特",2],[4,"保·托雷斯 Pau Torres","阿斯顿维拉",2],[5,"奥斯曼·登贝莱 Ousmane Dembélé","巴黎圣日耳曼",2],[6,"马格内斯·阿克利乌什 Maghnes Akliouche","巴黎圣日耳曼",1],[7,"若昂·戈麦斯 João Gomes","阿斯顿维拉",1],[8,"乔治斯·米考塔泽 Georges Mikautadze","比利亚雷亚尔",1],[9,"安杰洛·斯蒂勒 Angelo Stiller","斯图加特",1],[10,"迈克尔·奥利塞 Michael Olise","拜仁慕尼黑",1]],"mls":[[1,"若阿金·佩雷拉 Joaquín Pereyra","明尼苏达联",13],[2,"梅西 Lionel Messi","迈阿密国际",13],[3,"安德斯·德雷尔 Anders Dreyer","圣迭戈FC",12],[4,"孙兴慜 Son Heung-Min","洛杉矶FC",11],[5,"埃万德尔 Evander","辛辛那提FC",11],[6,"若阿金·瓦连特 Joaquín Valiente","达拉斯FC",11],[7,"克里斯蒂安·埃斯皮诺萨 Cristian Espinoza","纳什维尔SC",11],[8,"罗德里戈·德保罗 Rodrigo De Paul","迈阿密国际",11],[9,"尼科·察基里斯 Niko Tsakiris","圣何塞地震",10],[10,"贾斯汀·埃利斯 Justin Ellis","奥兰多城",10]]};
+const metaNotes = {"epl":"英超2026-27赛季进行中，部分球队已赛4-5场（约第5-6轮）；并列名次按同排名展开。数据来源 worldfootball.net，已与 ESPN 接口逐队核对一致。","laliga":"西甲2026-27赛季进行中，部分球队已赛5-7场（约第7-8轮）；并列名次按同排名展开。数据来源 worldfootball.net；ESPN 接口核对时巴萨/塞维利亚等场次略滞后（少1场），以 worldfootball 为准。","seriea":"意甲2026-27赛季第5轮进行中（部分球队已赛4场），数据来自 worldfootball.net 实测","bundesliga":"德甲2026-27赛季第4轮进行中（部分球队已赛3场），数据来自 worldfootball.net 实测","ligue1":"法甲2026-27赛季第5轮进行中（部分球队已赛4场），数据来自 worldfootball.net 实测；布雷斯特与巴黎圣日耳曼同分并列第9","saudi":"沙特职业联赛2026-27赛季进行中，已赛第7轮（各队7场，个别球队6场），非休赛状态。","ucl":"欧冠2026-27联赛阶段第1轮赛后（36队均已赛1场），前8直进16强、9-24打淘汰赛附加赛、25-36出局；数据为联赛阶段1轮后的官方口径。","mls":"美职联2026常规赛进行中（各队已赛23-26场），东区15队。；美职联2026常规赛进行中（各队已赛23-26场），西区15队。；射助榜为联盟总榜"};
+
+let currentType = 'standings';
+let currentLeague = 'epl';
+
+function switchType(type) {
+  currentType = type;
+  document.querySelectorAll('.type-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.type-tab[data-type="' + type + '"]').classList.add('active');
+  renderTable();
+}
+
+function switchLeague(league) {
+  currentLeague = league;
+  document.querySelectorAll('.league-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.league-tab[data-league="' + league + '"]').classList.add('active');
+  renderTable();
+}
+
+function buildStandingsTable(data, headers) {
+  let html = '<table class="standings-table"><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach((row, idx) => {
+    let cls = '';
+    if (idx < 3) cls = 'top3';
+    else if (idx < 4) cls = 'top4';
+    else if (idx >= data.length - 3 && data.length >= 18) cls = 'relegation';
+    if (parseInt(row[0], 10) <= 4) cls += ' highlight';
+    html += '<tr class="' + cls + '">';
+    row.forEach(cell => { html += '<td>' + cell + '</td>'; });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function buildSimpleTable(data, headers, emptyNote) {
+  if (!data || !data.length) {
+    return '<p style="color:#999;font-size:13px;padding:12px 0">' + (emptyNote || '本轮未逐条核验到该榜单数据') + '</p>';
+  }
+  let html = '<table class="standings-table"><tr>';
+  headers.forEach(h => html += '<th>' + h + '</th>');
+  html += '</tr>';
+  data.forEach(row => {
+    html += '<tr>';
+    row.forEach((cell, cidx) => {
+      if (cidx === 0) html += '<td style="font-weight:700;color:#c41e3a">' + cell + '</td>';
+      else html += '<td>' + cell + '</td>';
+    });
+    html += '</tr>';
+  });
+  html += '</table>';
+  return html;
+}
+
+function renderTable() {
+  const container = document.getElementById('table-content');
+  let html = '';
+  if (currentType === 'standings') {
+    html += '<div class="section-header" style="margin:0 -16px"><div class="title"><span class="dot"></span>积分榜</div><div class="info">' + metaNotes[currentLeague] + '</div></div>';
+    if (currentLeague === 'mls') {
+      html += '<h4 style="color:#666;font-size:13px;margin:8px 0 4px">东区</h4>';
+      html += buildStandingsTable(standingsData.mls_east, ['排名','球队','赛','胜','平','负','进','失','净胜球','积分']);
+      html += '<h4 style="color:#666;font-size:13px;margin:12px 0 4px">西区</h4>';
+      html += buildStandingsTable(standingsData.mls_west, ['排名','球队','赛','胜','平','负','进','失','净胜球','积分']);
+    } else {
+      html += buildStandingsTable(standingsData[currentLeague], ['排名','球队','赛','胜','平','负','进','失','净胜球','积分']);
+    }
+  } else if (currentType === 'scorers') {
+    html += '<div class="section-header" style="margin:0 -16px"><div class="title"><span class="dot"></span>射手榜</div><div class="info">' + metaNotes[currentLeague] + '</div></div>';
+    html += buildSimpleTable(scorersData[currentLeague], ['排名','球员','球队','进球']);
+  } else if (currentType === 'assists') {
+    html += '<div class="section-header" style="margin:0 -16px"><div class="title"><span class="dot"></span>助攻榜</div><div class="info">' + metaNotes[currentLeague] + '</div></div>';
+    html += buildSimpleTable(assistsData[currentLeague], ['排名','球员','球队','助攻']);
+  }
+  container.innerHTML = html;
+}
+
+function filterNews(filter) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelector('.filter-tab[data-filter="' + filter + '"]').classList.add('active');
+  const cards = document.querySelectorAll('.news-card');
+  let visibleCount = 0;
+  cards.forEach(card => {
+    if (filter === 'all' || card.dataset.league === filter) {
+      card.classList.remove('hidden');
+      visibleCount++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+  const labelMap = { 'all':'全部 ', 'toutiao':'今日头条 ', 'epl':'英超 ', 'laliga':'西甲 ', 'seriea':'意甲 ', 'bundesliga':'德甲 ', 'ligue1':'法甲 ', 'mls':'美职联 ', 'saudi':'沙特联 ', 'ucl':'欧冠 ' };
+  document.getElementById('news-count').textContent = (labelMap[filter] || '') + visibleCount + ' 条';
+}
+
+renderTable();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC27 进化专栏 2026-09-19</title>
+<style>
+:root{color-scheme:dark;--bg:#101713;--surface:#161e18;--line:#30392f;
+--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--red:#ff6259;--gold:#e3b341;--teal:#8fd6bb}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px 28px 40px;line-height:1.6}
+h1{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(233,200,74,.14);border:1px solid rgba(227,179,65,.4);color:var(--gold)}
+.sub{color:var(--quiet);font-size:12.5px;margin:8px 0 18px}
+h2{font-size:17px;font-weight:750;margin:28px 0 14px;display:flex;align-items:center;gap:9px}
+h2:before{content:"";width:3px;height:17px;background:var(--gold);border-radius:2px}
+h2 .cnt{color:var(--quiet);font-size:12px;font-weight:500}
+h3{font-size:14.5px;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:6px}
+.kpi{background:linear-gradient(180deg,var(--surface),#141c15);border:1px solid var(--line);border-radius:11px;padding:11px 13px}
+.kv{font-size:22px;font-weight:800;color:var(--gold);line-height:1.25}
+.kl{font-size:12px;color:var(--muted);margin-top:1px}
+.kh{font-size:10.5px;color:var(--quiet);margin-top:2px}
+.card{background:linear-gradient(180deg,var(--surface),#141c15);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.tier-head{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.tier-range{font-size:12px;color:var(--gold);background:rgba(227,179,65,.14);border:1px solid rgba(227,179,65,.35);padding:2px 9px;border-radius:999px}
+.tier-range.alt{color:var(--teal);background:rgba(143,214,187,.12);border-color:rgba(143,214,187,.3)}
+.tier-src{font-size:11.5px;color:var(--quiet);margin-top:8px}
+.req{font-size:11.5px;color:var(--quiet);margin:-2px 0 9px}
+.desc{color:var(--muted);font-size:13px}
+.steps{padding-left:20px;margin-top:8px}.steps li{font-size:12.5px;color:var(--muted);margin:4px 0}
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;color:var(--quiet);font-weight:600;padding:8px 9px;border-bottom:1px solid var(--line);font-size:11.5px;white-space:nowrap}
+td{padding:7px 9px;border-bottom:1px solid #242d25}
+tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#1a211b}
+.c-rank{color:var(--gold);font-weight:700;width:34px}
+.c-name{min-width:190px}
+.c-name a{color:var(--teal);text-decoration:none;font-weight:600}.c-name a:hover{text-decoration:underline}
+.c-name .zh{color:#9aa79a;font-size:11px;margin-left:6px}
+.c-name .pimg{width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a;border:1px solid #30392f}
+.c-rating{font-weight:700;width:46px}
+.c-pos,.c-fbr{color:var(--muted)}
+.c-hot{width:64px}
+.hot{color:var(--red);font-weight:700}
+.c-price{white-space:nowrap;width:120px}
+.px{color:var(--text);font-weight:600}
+.px .pm{display:inline-block;font-size:9.5px;font-weight:800;color:var(--quiet);background:#26302a;border-radius:3px;padding:0 4px;margin:0 3px 0 0;vertical-align:1px}
+.px.off{color:var(--quiet);font-weight:400;font-size:11.5px}
+.c-ovr{color:var(--muted);width:74px}
+.empty{color:var(--quiet);font-size:12.5px;padding:14px;border:1px dashed var(--line);border-radius:9px;background:#161d17}
+.note{background:rgba(233,200,74,.07);border:1px solid rgba(227,179,65,.3);border-radius:10px;padding:13px 15px;font-size:12.5px;color:#aeb5aa;margin:16px 0}
+ul{padding-left:18px}li{margin:5px 0;font-size:12.5px;color:var(--muted)}
+code{background:#2a3329;padding:1px 5px;border-radius:4px;font-size:11.5px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<h1>FC27 进化专栏 <span class="badge">PARTIAL</span></h1>
+<div class="sub">数据日期 2026-09-19 · 数据截止 2026-09-19 04:22 +08:00 · 来源 FUTBIN Popular Evolutions · 本页球员头像 64/64</div>
+
+<div class="note"><b>本轮说明：</b>本轮为 2026-09-19 每日调度运行（runId ad30482d-af41-463d-bbb0-ee6d60e14457）。浏览器通道（Web Access CDP，独立调试 profile 9333，browser-triage.mjs exit 0）正常，三个来源页均在本轮内打开并实采成功。<br>本页状态为 partial：采集与渲染均成功，但存在如实标注的缺失项（进化卡自身无挂牌价、FUTBIN Rating 有 19 张卡在来源页缺失、到期时间只有相对口径、逐级挑战步骤未收录等）。evidence.missing 非空时 run-state 会把 success 自动降级为 partial，故此处与权威状态保持一致。<br>进化路径 15 条（2026-09-18 为 14 条，新增 Fullback Fork 且标注 NEW，无下线）。分布：共 500 张进化卡，按进化名称计数 Fullback Fork 202 张；Intro to Evolutions 96 张；Intro to Pathway Evolutions 55 张；Intro to Training Camp EVOs 26 张；Intro to Repeatable Evolutions 20 张；Repeat Delivery 18 张；Winger Glow Up 18 张；Striker Glow Up 16 张；Believe 14 张；Midfield Polish 11 张；Tactical Ascent 10 张；Shooting Practice 10 张；Pinged Pass 3 张；Creative or Composed 1 张。<br>本轮站点结构变化（已核验，非采集缺陷）：/27/evolutions 卡片第 2 行的来源标识由单一类型标签变为多值，7 条路径改为赛季等级行（如 Shooting Practice「SEASON 1 LEVEL: 28」），3 条改为 REWARDS，并给出「Found at Level N of the Premium/Free Season Pass」或「Found in the ... Objective」的解锁来源。渲染前已把这些来源如实写入 evolutionType 与路线描述，未默认套用 Evolutions。<br>评分口径：榜单 Rating 列显示的是「进化后」OVR，不是基础卡评分。例如榜单首条 Boey 显示 79，而其基础卡评分低于该值。阅读表格时请勿把该 Rating 当作基础卡评分。<br>FUTBIN Rating（页面 div.playercard-27-futbin-rating）在本轮 500 张卡中有 19 张在来源页不存在（DOM 实测 481/500 命中该元素，与提取结果一致）；这 19 条的 futbinRating 如实留空，不用 Rating 列或其他数值顶替。<br>费用口径：本日 15 个进化在 FUTBIN 上均标注 FREE（免费），费用列即来源于此；其中赛季通行证路径需在通行证达到对应等级后领取，等级已如实记录。榜单卡片上的数字（如 Boey 665）是热度/使用计数，已单独记为 popularityCount，不参与费用判断。<br>到期口径：FUTBIN 只给相对时长（UNLOCK / EXPIRES），未提供绝对到期日期，故 expires 字段按页面原文的相对时长记录，不换算具体日期。本日入门系列为 12 MONTHS，Believe 为 1 YEARS，Fullback Fork 为 1 WEEKS / 2 WEEKS，多数为 1 MONTHS。<br>FUTBIN 对进化卡不公布挂牌价（榜单卡片内价格元素命中数为 0，本轮再次复核），故本页不展示进化卡自身价格；页面中的「参考价（基础卡）」按 baseCardId 在运行时从统一行情 current.json 读取，不是该进化卡的成交价。本任务未为进化卡再次采集或分析任何市场价格，也未写 priceRef 或任何当前价副本。<br>本节只写「可证实的卡面事实」与来源页明示的路线整理，不输出无依据的精确收益预测。FC27 launchDate 为 2026-09-25，开服前价格属估算口径，不作为投资依据。</div>
+<div class="note"><b>价格口径：</b>进化候选只保存基础卡 cardId；页面每次加载时从统一 current.json 读取该基础卡的双平台最新价。该价格不是进化后卡版本的价格。关联结果：77/500，其中当前有效报价 35 张。页面刷新时重新请求统一行情；未命中如实留空。</div>
+
+<h2>本日速览</h2>
+<div class="kpis">
+<div class="kpi"><div class="kv">14</div><div class="kl">进化路径</div><div class="kh">来源 /27/evolutions</div></div>
+<div class="kpi"><div class="kv">500</div><div class="kl">候选卡总数</div><div class="kh">全量保存在 evolution.json</div></div>
+<div class="kpi"><div class="kv">64</div><div class="kl">本页精选</div><div class="kh">每条进化热度 Top5</div></div>
+<div class="kpi"><div class="kv">9</div><div class="kl">有报价</div><div class="kh">精选池 64 人中；全量 35/500</div></div>
+</div>
+
+<h2>一、按进化精选 <span class="cnt">每条进化只出热度 Top5，组内按参考价升序</span></h2>
+<div class="card">
+<div class="tier-head">
+<h3>Intro to Evolutions</h3>
+<span class="tier-range">候选 96 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 1,797</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 75、Pace Max 80、Total Positions Max 2、PlayStyle Max 7、Position RB、Not Position CB</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="4955">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_5/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">665</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">442</td>
+<td class="c-fbr">78.3</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">390</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">77.3</td>
+</tr><tr data-card-id="16410">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/240060.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/16410_5/max-aarons" target="_blank" rel="noopener">Aarons</a><span class="zh">马克斯·阿龙斯</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">283</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="16410"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">419</td>
+<td class="c-fbr">76.2</td>
+</tr><tr data-card-id="3133">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/75572.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3133_9_10AA_5/jesus-fortea-tejedo" target="_blank" rel="noopener">Fortea</a><span class="zh">赫苏斯·福尔特亚·特赫多</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">233</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3133"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">406</td>
+<td class="c-fbr">77.0</td>
+</tr><tr data-card-id="14148">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/223877.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14148_5/darnell-furlong" target="_blank" rel="noopener">Furlong</a><span class="zh">达内尔·弗朗</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">226</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="14148"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">430</td>
+<td class="c-fbr">77.2</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Fullback Fork</h3>
+<span class="tier-range">候选 202 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 795</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、Pace Max 83、PlayStyle Max 7、Position LB or RB、Not Position CB, CM</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1411">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/234574.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1411_16AAB/jose-diogo-dalot-teixeira" target="_blank" rel="noopener">Diogo Dalot</a><span class="zh">迪奥戈·达洛特</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">375</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1411"><b class="pm">C</b><span data-p="console">1.8K</span><b class="pm">P</b><span data-p="pc">2.2K</span></span></td>
+<td class="c-ovr">451</td>
+<td class="c-fbr">77.7</td>
+</tr><tr data-card-id="1212">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/254088.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1212_16AAA/amad-diallo" target="_blank" rel="noopener">Amad</a><span class="zh">阿马德·迪亚洛</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">199</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1212"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">80.9</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5_16AAB/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">81</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">444</td>
+<td class="c-fbr">79.3</td>
+</tr><tr data-card-id="2083">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/188377.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2083_16AAA/kyle-walker" target="_blank" rel="noopener">Walker</a><span class="zh">凯尔·沃克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">81</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2083"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">447</td>
+<td class="c-fbr">75.3</td>
+</tr><tr data-card-id="2756">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/262668.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2756_16/jordy-makengo" target="_blank" rel="noopener">Makengo</a><span class="zh">乔迪·马肯戈</span></td>
+<td class="c-rating">77</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">59</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2756"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">401</td>
+<td class="c-fbr">71.3</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Believe</h3>
+<span class="tier-range">候选 14 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 483</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 82、Position ST</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="22466">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/272505.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22466_15/endrick-felipe-moreira-de-sousa" target="_blank" rel="noopener">Endrick</a><span class="zh">恩德里克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">249</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22466"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">419</td>
+<td class="c-fbr">80.7</td>
+</tr><tr data-card-id="810">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">135</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="810"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">437</td>
+<td class="c-fbr">82.8</td>
+</tr><tr data-card-id="846">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/251852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/846_15/karim-adeyemi" target="_blank" rel="noopener">Adeyemi</a><span class="zh">阿德耶米</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">38</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="846"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">437</td>
+<td class="c-fbr">83.1</td>
+</tr><tr data-card-id="21987">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/256675.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21987_15/omar-marmoush" target="_blank" rel="noopener">Marmoush</a><span class="zh">马尔穆什</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">32</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="21987"><b class="pm">C</b><span data-p="console">8.8K</span><b class="pm">P</b><span data-p="pc">8.7K</span></span></td>
+<td class="c-ovr">433</td>
+<td class="c-fbr">81.6</td>
+</tr><tr data-card-id="3581">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/277448.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3581_15/eguinaldo-de-sousa-lemos" target="_blank" rel="noopener">Eguinaldo</a><span class="zh">埃吉纳尔多</span></td>
+<td class="c-rating">71</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3581"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">369</td>
+<td class="c-fbr">69.0</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Intro to Training Camp EVOs</h3>
+<span class="tier-range">候选 26 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 300</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 80、Position RB</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1442">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/278339.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1442_4/marco-palestra" target="_blank" rel="noopener">Palestra</a><span class="zh">帕莱斯特拉</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">206</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1442"><b class="pm">C</b><span data-p="console">1.7K</span><b class="pm">P</b><span data-p="pc">1.7K</span></span></td>
+<td class="c-ovr">455</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="5759">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/260574.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5759_4/lorenz-assignon" target="_blank" rel="noopener">Assignon</a><span class="zh">阿西尼翁</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">36</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5759"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">71.6</td>
+</tr><tr data-card-id="446">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/240709.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/446_4/ridle-baku" target="_blank" rel="noopener">Baku</a><span class="zh">里德勒·巴库</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="446"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">461</td>
+<td class="c-fbr">79.9</td>
+</tr><tr data-card-id="13521">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/232477.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/13521_16AAB_4/sultan-al-ghannam" target="_blank" rel="noopener">Al Ghannam</a><span class="zh">苏丹·阿尔-甘纳姆</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="13521"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">427</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="4955">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_10AA_5_16AAB_4/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">18</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">447</td>
+<td class="c-fbr">81.4</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Intro to Pathway Evolutions</h3>
+<span class="tier-range">候选 55 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 177</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 80、PlayStyle Max 3</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="15494">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/81863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15494_2/xavi-espart-font" target="_blank" rel="noopener">Xavi Espart</a><span class="zh">哈维·埃斯帕特·方特</span></td>
+<td class="c-rating">67</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">66</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15494"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">373</td>
+<td class="c-fbr">66.6</td>
+</tr><tr data-card-id="111">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/80376.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/111_2/rio-ngumoha" target="_blank" rel="noopener">Ngumoha</a><span class="zh">恩古莫哈</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">40</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="111"><b class="pm">C</b><span data-p="console">1.5K</span><b class="pm">P</b><span data-p="pc">2K</span></span></td>
+<td class="c-ovr">394</td>
+<td class="c-fbr">78.6</td>
+</tr><tr data-card-id="1143">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/271739.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1143_2/honoka-hayashi" target="_blank" rel="noopener">Hayashi</a><span class="zh">林穗乃香</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">CM</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1143"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">425</td>
+<td class="c-fbr">76.0</td>
+</tr><tr data-card-id="1078">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/232756.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1078_2/fikayo-tomori" target="_blank" rel="noopener">Tomori</a><span class="zh">托莫里</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">22</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1078"><b class="pm">C</b><span data-p="console">3.2K</span><b class="pm">P</b><span data-p="pc">3.4K</span></span></td>
+<td class="c-ovr">416</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="693">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/251810.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/693_2/brian-brobbey" target="_blank" rel="noopener">Brobbey</a><span class="zh">布莱恩·布罗贝</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="693"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">407</td>
+<td class="c-fbr">82.5</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Repeat Delivery</h3>
+<span class="tier-range">候选 18 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 134</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 74、Pace Max 83、PlayStyle Max 7、Position LM or RM、Not Position LB, RB</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="21475">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/266127.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21475_2_3/tyrese-hall" target="_blank" rel="noopener">Hall</a><span class="zh">泰瑞斯·霍尔</span></td>
+<td class="c-rating">72</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">33</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21475"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">402</td>
+<td class="c-fbr">72.5</td>
+</tr><tr data-card-id="5526">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/80873.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5526_3_3/mathis-albert" target="_blank" rel="noopener">Albert</a><span class="zh">阿尔伯特</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5526"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">364</td>
+<td class="c-fbr">76.5</td>
+</tr><tr data-card-id="5521">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/213991.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5521_3_3/justin-lerma" target="_blank" rel="noopener">Lerma</a><span class="zh">贾斯汀·莱尔马</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5521"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">75.7</td>
+</tr><tr data-card-id="22538">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/252526.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22538_3/darian-males" target="_blank" rel="noopener">Males</a><span class="zh">达里安·马莱斯</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">23</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22538"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">401</td>
+<td class="c-fbr">75.7</td>
+</tr><tr data-card-id="15272">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/278124.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15272_3_3/shea-lacey" target="_blank" rel="noopener">Lacey</a><span class="zh">谢伊·莱西</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">22</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15272"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">377</td>
+<td class="c-fbr">76.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Striker Glow Up</h3>
+<span class="tier-range">候选 16 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 121</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、Pace Max 84、Total Positions Max 3、PlayStyle Max 7、Position ST、Not Position CM or CAM</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="14501">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/263101.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14501_3_6_3_6_8/kelvin-ehibhatiomhan" target="_blank" rel="noopener">Ehibhatiomhan</a><span class="zh">凯尔文·埃希巴蒂奥姆汉</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="14501"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="1719">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/250961.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1719_8/joshua-zirkzee" target="_blank" rel="noopener">Zirkzee</a><span class="zh">约书亚·齐尔克泽</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1719"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">430</td>
+<td class="c-fbr">78.6</td>
+</tr><tr data-card-id="12519">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/199151.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12519_3_6_8/juan-iturbe" target="_blank" rel="noopener">Iturbe</a><span class="zh">胡安·伊图尔贝</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RW</td>
+<td class="c-hot"><span class="hot">24</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="12519"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">418</td>
+<td class="c-fbr">79.4</td>
+</tr><tr data-card-id="3951">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/258911.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3951_6_6_15_8/tolu-arokodare" target="_blank" rel="noopener">Arokodare</a><span class="zh">托卢·阿罗科达雷</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3951"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">79.4</td>
+</tr><tr data-card-id="1719">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/250961.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1719_6_8/joshua-zirkzee" target="_blank" rel="noopener">Zirkzee</a><span class="zh">约书亚·齐尔克泽</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1719"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">431</td>
+<td class="c-fbr">78.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Intro to Repeatable Evolutions</h3>
+<span class="tier-range">候选 20 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 97</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、Pace Max 81、Position ST</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="22014">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/230666.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22014_6/gabriel-fernando-de-jesus" target="_blank" rel="noopener">Gabriel Jesus</a><span class="zh">热苏斯</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">31</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22014"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">79.7</td>
+</tr><tr data-card-id="22014">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/230666.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22014_2B_6/gabriel-fernando-de-jesus" target="_blank" rel="noopener">Gabriel Jesus</a><span class="zh">热苏斯</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22014"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">80.0</td>
+</tr><tr data-card-id="1764">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/253004.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1764_6/anssumane-fati" target="_blank" rel="noopener">Ansu Fati</a><span class="zh">法蒂</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1764"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">395</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="12547">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/241921.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12547_6_6/sebastian-bergier" target="_blank" rel="noopener">Bergier</a><span class="zh">塞巴斯蒂安·贝尔吉耶</span></td>
+<td class="c-rating">73</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="12547"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">385</td>
+<td class="c-fbr">70.1</td>
+</tr><tr data-card-id="4377">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/83531.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4377_2_6/antonio-verinac" target="_blank" rel="noopener">Verinac</a><span class="zh">安东尼奥·韦里纳茨</span></td>
+<td class="c-rating">59</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4377"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">294</td>
+<td class="c-fbr">55.8</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Winger Glow Up</h3>
+<span class="tier-range">候选 18 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 96</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 81、Pace Max 85、Total Positions Max 3、PlayStyle Max 7、PlayStyle+ Max 0、Position LW、Not Position LB or ST</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="2072">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/246791.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2072_2_11/manor-solomon" target="_blank" rel="noopener">Solomon</a><span class="zh">马诺·所罗门</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">24</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2072"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">80.8</td>
+</tr><tr data-card-id="1396">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/258378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1396_11/mika-godts" target="_blank" rel="noopener">Godts</a><span class="zh">戈茨</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1396"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="21291">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/267245.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21291_2_11/meredith-speck" target="_blank" rel="noopener">Speck</a><span class="zh">梅雷迪思·斯佩克</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">18</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21291"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">446</td>
+<td class="c-fbr">79.2</td>
+</tr><tr data-card-id="1396">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/258378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1396_2_11/mika-godts" target="_blank" rel="noopener">Godts</a><span class="zh">戈茨</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1396"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="1122">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/260952.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1122_11/andreas-schjelderup" target="_blank" rel="noopener">Schjelderup</a><span class="zh">谢尔德鲁普</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1122"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">426</td>
+<td class="c-fbr">82.1</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Midfield Polish</h3>
+<span class="tier-range">候选 11 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 80</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、Position CM or CDM、Not Position CAM</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="5178">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/243080.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5178_5_10BA_7/carlos-isaac-munoz-obejero" target="_blank" rel="noopener">Carlos Isaac</a><span class="zh">卡洛斯·伊萨克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5178"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">434</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="609">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/272978.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/609_7/jorrel-hato" target="_blank" rel="noopener">Hato</a><span class="zh">哈托</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="609"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">78.3</td>
+</tr><tr data-card-id="4954">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/246885.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4954_4_10BA_7/nicolas-capaldo" target="_blank" rel="noopener">Capaldo</a><span class="zh">尼古拉斯·卡帕尔多</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">16</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4954"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">445</td>
+<td class="c-fbr">78.9</td>
+</tr><tr data-card-id="1217">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/259307.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1217_7/malo-gusto" target="_blank" rel="noopener">Gusto</a><span class="zh">古斯托</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">14</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1217"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">441</td>
+<td class="c-fbr">78.2</td>
+</tr><tr data-card-id="3390">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/81776.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3390_7/ville-koski" target="_blank" rel="noopener">Koski</a><span class="zh">维莱·科斯基</span></td>
+<td class="c-rating">69</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3390"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">324</td>
+<td class="c-fbr">65.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Shooting Practice</h3>
+<span class="tier-range">候选 10 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 52</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 81、PlayStyle Max 3、PlayStyle+ Max 0、Position LW or ST or RW</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="18918">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/86106.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/18918_6_6_15_2B_8_13AA/hamza-abdelkarim" target="_blank" rel="noopener">Abdelkarim</a><span class="zh">哈姆扎·阿卜杜勒卡里姆</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="18918"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">384</td>
+<td class="c-fbr">74.0</td>
+</tr><tr data-card-id="423">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/238616.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/423_13AA/pedro-lomba-neto" target="_blank" rel="noopener">Pedro Neto</a><span class="zh">佩德罗·内托</span></td>
+<td class="c-rating">81</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="423"><b class="pm">C</b><span data-p="console">3.1K</span><b class="pm">P</b><span data-p="pc">3.8K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">85.0</td>
+</tr><tr data-card-id="15275">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/229348.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15275_15_2A_14_12AA_6_6_3_13AB/jay-robinson" target="_blank" rel="noopener">Robinson</a><span class="zh">罗宾逊</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">8</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15275"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">382</td>
+<td class="c-fbr">74.6</td>
+</tr><tr data-card-id="9296">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/247331.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/9296_2A_15_6_6_13AA/rafa-adamski" target="_blank" rel="noopener">Adamski</a><span class="zh">拉法乌·亚当斯基</span></td>
+<td class="c-rating">69</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">8</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="9296"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">356</td>
+<td class="c-fbr">66.3</td>
+</tr><tr data-card-id="1212">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/254088.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1212_2A_4_12BA_16AAA_13AA/amad-diallo" target="_blank" rel="noopener">Amad</a><span class="zh">阿马德·迪亚洛</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">3</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1212"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.8</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Tactical Ascent</h3>
+<span class="tier-range">候选 10 张</span>
+<span class="tier-range alt">精选 Top5 热度合计 48</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、PlayStyle Max 2</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="4955">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_10BA/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">416</td>
+<td class="c-fbr">73.1</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_10BA/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">10</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">404</td>
+<td class="c-fbr">70.2</td>
+</tr><tr data-card-id="15494">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/81863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15494_10BA/xavi-espart-font" target="_blank" rel="noopener">Xavi Espart</a><span class="zh">哈维·埃斯帕特·方特</span></td>
+<td class="c-rating">67</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">6</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15494"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">373</td>
+<td class="c-fbr">68.5</td>
+</tr><tr data-card-id="6223">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/83401.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/6223_5_10BA/daniel-armando-banjaqui" target="_blank" rel="noopener">Daniel Banjaqui</a><span class="zh">丹尼尔·阿曼多·班亚基</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="6223"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">414</td>
+<td class="c-fbr">75.9</td>
+</tr><tr data-card-id="1218">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/259583.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1218_10AA/destiny-udogie" target="_blank" rel="noopener">Udogie</a><span class="zh">乌多吉</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1218"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">452</td>
+<td class="c-fbr">77.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Pinged Pass</h3>
+<span class="tier-range">候选 3 张</span>
+<span class="tier-range alt">精选 Top3 热度合计 22</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、PlayStyle Max 2</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="4858">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/74871.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4858_10BA_14/arthur-largura-chaves" target="_blank" rel="noopener">Arthur Chaves</a><span class="zh">阿图尔·沙维斯</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">16</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4858"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">376</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="1496">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/236499.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1496_14/douglas-luiz-soares-de-paulo" target="_blank" rel="noopener">Douglas Luiz</a><span class="zh">道格拉斯·路易斯</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">CDM</td>
+<td class="c-hot"><span class="hot">4</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1496"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">440</td>
+<td class="c-fbr">75.1</td>
+</tr><tr data-card-id="1203">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/236920.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1203_14/justin-kluivert" target="_blank" rel="noopener">Kluivert</a><span class="zh">贾斯廷·克鲁伊维特</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1203"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">424</td>
+<td class="c-fbr">80.3</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head">
+<h3>Creative or Composed</h3>
+<span class="tier-range">候选 1 张</span>
+<span class="tier-range alt">精选 Top1 热度合计 10</span>
+<span class="tier-range">费用 Free</span>
+</div>
+<div class="req">入选前提：Overall Max 79、PlayStyle Max 2</div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="21026">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/226078.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21026_12A/mahmoud-hassan" target="_blank" rel="noopener">Trezeguet</a><span class="zh">特雷泽盖</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">10</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21026"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">405</td>
+<td class="c-fbr">75.1</td>
+</tr></tbody></table></div>
+</div>
+
+<h2>二、按位置精选 <span class="cnt">同一精选池按位置分组，组内按参考价升序</span></h2>
+<div class="card">
+<div class="tier-head"><h3>LB</h3><span class="tier-range">3 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="2756">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/262668.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2756_16/jordy-makengo" target="_blank" rel="noopener">Makengo</a><span class="zh">乔迪·马肯戈</span></td>
+<td class="c-rating">77</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">59</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2756"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">401</td>
+<td class="c-fbr">71.3</td>
+</tr><tr data-card-id="609">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/272978.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/609_7/jorrel-hato" target="_blank" rel="noopener">Hato</a><span class="zh">哈托</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="609"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">78.3</td>
+</tr><tr data-card-id="1218">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/259583.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1218_10AA/destiny-udogie" target="_blank" rel="noopener">Udogie</a><span class="zh">乌多吉</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">LB</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1218"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">452</td>
+<td class="c-fbr">77.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>CB</h3><span class="tier-range">4 人</span>
+<span class="tier-range alt">最低参考价 3.4K</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1078">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/232756.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1078_2/fikayo-tomori" target="_blank" rel="noopener">Tomori</a><span class="zh">托莫里</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">22</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1078"><b class="pm">C</b><span data-p="console">3.2K</span><b class="pm">P</b><span data-p="pc">3.4K</span></span></td>
+<td class="c-ovr">416</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="4954">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/246885.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4954_4_10BA_7/nicolas-capaldo" target="_blank" rel="noopener">Capaldo</a><span class="zh">尼古拉斯·卡帕尔多</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">16</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4954"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">445</td>
+<td class="c-fbr">78.9</td>
+</tr><tr data-card-id="4858">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/74871.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4858_10BA_14/arthur-largura-chaves" target="_blank" rel="noopener">Arthur Chaves</a><span class="zh">阿图尔·沙维斯</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">16</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4858"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">376</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="3390">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/81776.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3390_7/ville-koski" target="_blank" rel="noopener">Koski</a><span class="zh">维莱·科斯基</span></td>
+<td class="c-rating">69</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3390"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">324</td>
+<td class="c-fbr">65.7</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>RB</h3><span class="tier-range">20 人</span>
+<span class="tier-range alt">最低参考价 1.7K</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1442">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/278339.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1442_4/marco-palestra" target="_blank" rel="noopener">Palestra</a><span class="zh">帕莱斯特拉</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">206</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1442"><b class="pm">C</b><span data-p="console">1.7K</span><b class="pm">P</b><span data-p="pc">1.7K</span></span></td>
+<td class="c-ovr">455</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="1411">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/234574.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1411_16AAB/jose-diogo-dalot-teixeira" target="_blank" rel="noopener">Diogo Dalot</a><span class="zh">迪奥戈·达洛特</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">375</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1411"><b class="pm">C</b><span data-p="console">1.8K</span><b class="pm">P</b><span data-p="pc">2.2K</span></span></td>
+<td class="c-ovr">451</td>
+<td class="c-fbr">77.7</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">390</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">77.3</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5_16AAB/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">81</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">444</td>
+<td class="c-fbr">79.3</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_10BA/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">10</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">404</td>
+<td class="c-fbr">70.2</td>
+</tr><tr data-card-id="4955">
+<td class="c-rank">6</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_5/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">665</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">442</td>
+<td class="c-fbr">78.3</td>
+</tr><tr data-card-id="16410">
+<td class="c-rank">7</td>
+<td class="c-name"><img class="pimg" src="assets/players/240060.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/16410_5/max-aarons" target="_blank" rel="noopener">Aarons</a><span class="zh">马克斯·阿龙斯</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">283</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="16410"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">419</td>
+<td class="c-fbr">76.2</td>
+</tr><tr data-card-id="3133">
+<td class="c-rank">8</td>
+<td class="c-name"><img class="pimg" src="assets/players/75572.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3133_9_10AA_5/jesus-fortea-tejedo" target="_blank" rel="noopener">Fortea</a><span class="zh">赫苏斯·福尔特亚·特赫多</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">233</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3133"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">406</td>
+<td class="c-fbr">77.0</td>
+</tr><tr data-card-id="14148">
+<td class="c-rank">9</td>
+<td class="c-name"><img class="pimg" src="assets/players/223877.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14148_5/darnell-furlong" target="_blank" rel="noopener">Furlong</a><span class="zh">达内尔·弗朗</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">226</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="14148"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">430</td>
+<td class="c-fbr">77.2</td>
+</tr><tr data-card-id="2083">
+<td class="c-rank">10</td>
+<td class="c-name"><img class="pimg" src="assets/players/188377.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2083_16AAA/kyle-walker" target="_blank" rel="noopener">Walker</a><span class="zh">凯尔·沃克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">81</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2083"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">447</td>
+<td class="c-fbr">75.3</td>
+</tr><tr data-card-id="15494">
+<td class="c-rank">11</td>
+<td class="c-name"><img class="pimg" src="assets/players/81863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15494_2/xavi-espart-font" target="_blank" rel="noopener">Xavi Espart</a><span class="zh">哈维·埃斯帕特·方特</span></td>
+<td class="c-rating">67</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">66</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15494"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">373</td>
+<td class="c-fbr">66.6</td>
+</tr><tr data-card-id="5759">
+<td class="c-rank">12</td>
+<td class="c-name"><img class="pimg" src="assets/players/260574.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5759_4/lorenz-assignon" target="_blank" rel="noopener">Assignon</a><span class="zh">阿西尼翁</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">36</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5759"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">71.6</td>
+</tr><tr data-card-id="4955">
+<td class="c-rank">13</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_10BA/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">416</td>
+<td class="c-fbr">73.1</td>
+</tr><tr data-card-id="446">
+<td class="c-rank">14</td>
+<td class="c-name"><img class="pimg" src="assets/players/240709.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/446_4/ridle-baku" target="_blank" rel="noopener">Baku</a><span class="zh">里德勒·巴库</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="446"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">461</td>
+<td class="c-fbr">79.9</td>
+</tr><tr data-card-id="13521">
+<td class="c-rank">15</td>
+<td class="c-name"><img class="pimg" src="assets/players/232477.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/13521_16AAB_4/sultan-al-ghannam" target="_blank" rel="noopener">Al Ghannam</a><span class="zh">苏丹·阿尔-甘纳姆</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="13521"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">427</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="5178">
+<td class="c-rank">16</td>
+<td class="c-name"><img class="pimg" src="assets/players/243080.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5178_5_10BA_7/carlos-isaac-munoz-obejero" target="_blank" rel="noopener">Carlos Isaac</a><span class="zh">卡洛斯·伊萨克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5178"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">434</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="4955">
+<td class="c-rank">17</td>
+<td class="c-name"><img class="pimg" src="assets/players/248266.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4955_10AA_5_16AAB_4/sacha-boey" target="_blank" rel="noopener">Boey</a><span class="zh">萨沙·博伊</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">18</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">447</td>
+<td class="c-fbr">81.4</td>
+</tr><tr data-card-id="1217">
+<td class="c-rank">18</td>
+<td class="c-name"><img class="pimg" src="assets/players/259307.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1217_7/malo-gusto" target="_blank" rel="noopener">Gusto</a><span class="zh">古斯托</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">14</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1217"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">441</td>
+<td class="c-fbr">78.2</td>
+</tr><tr data-card-id="15494">
+<td class="c-rank">19</td>
+<td class="c-name"><img class="pimg" src="assets/players/81863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15494_10BA/xavi-espart-font" target="_blank" rel="noopener">Xavi Espart</a><span class="zh">哈维·埃斯帕特·方特</span></td>
+<td class="c-rating">67</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">6</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15494"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">373</td>
+<td class="c-fbr">68.5</td>
+</tr><tr data-card-id="6223">
+<td class="c-rank">20</td>
+<td class="c-name"><img class="pimg" src="assets/players/83401.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/6223_5_10BA/daniel-armando-banjaqui" target="_blank" rel="noopener">Daniel Banjaqui</a><span class="zh">丹尼尔·阿曼多·班亚基</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="6223"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">414</td>
+<td class="c-fbr">75.9</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>CDM</h3><span class="tier-range">1 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1496">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/236499.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1496_14/douglas-luiz-soares-de-paulo" target="_blank" rel="noopener">Douglas Luiz</a><span class="zh">道格拉斯·路易斯</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">CDM</td>
+<td class="c-hot"><span class="hot">4</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1496"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">440</td>
+<td class="c-fbr">75.1</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>CM</h3><span class="tier-range">1 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1143">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/271739.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1143_2/honoka-hayashi" target="_blank" rel="noopener">Hayashi</a><span class="zh">林穗乃香</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">CM</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1143"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">425</td>
+<td class="c-fbr">76.0</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>CAM</h3><span class="tier-range">4 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="21475">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/266127.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21475_2_3/tyrese-hall" target="_blank" rel="noopener">Hall</a><span class="zh">泰瑞斯·霍尔</span></td>
+<td class="c-rating">72</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">33</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21475"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">402</td>
+<td class="c-fbr">72.5</td>
+</tr><tr data-card-id="5521">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/213991.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5521_3_3/justin-lerma" target="_blank" rel="noopener">Lerma</a><span class="zh">贾斯汀·莱尔马</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5521"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">75.7</td>
+</tr><tr data-card-id="15275">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/229348.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15275_15_2A_14_12AA_6_6_3_13AB/jay-robinson" target="_blank" rel="noopener">Robinson</a><span class="zh">罗宾逊</span></td>
+<td class="c-rating">76</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">8</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15275"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">382</td>
+<td class="c-fbr">74.6</td>
+</tr><tr data-card-id="1203">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/236920.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1203_14/justin-kluivert" target="_blank" rel="noopener">Kluivert</a><span class="zh">贾斯廷·克鲁伊维特</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">CAM</td>
+<td class="c-hot"><span class="hot">2</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1203"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">424</td>
+<td class="c-fbr">80.3</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>LM</h3><span class="tier-range">7 人</span>
+<span class="tier-range alt">最低参考价 2K</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="111">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/80376.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/111_2/rio-ngumoha" target="_blank" rel="noopener">Ngumoha</a><span class="zh">恩古莫哈</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">40</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="111"><b class="pm">C</b><span data-p="console">1.5K</span><b class="pm">P</b><span data-p="pc">2K</span></span></td>
+<td class="c-ovr">394</td>
+<td class="c-fbr">78.6</td>
+</tr><tr data-card-id="3581">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/277448.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3581_15/eguinaldo-de-sousa-lemos" target="_blank" rel="noopener">Eguinaldo</a><span class="zh">埃吉纳尔多</span></td>
+<td class="c-rating">71</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3581"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">369</td>
+<td class="c-fbr">69.0</td>
+</tr><tr data-card-id="5526">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/80873.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5526_3_3/mathis-albert" target="_blank" rel="noopener">Albert</a><span class="zh">阿尔伯特</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="5526"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">364</td>
+<td class="c-fbr">76.5</td>
+</tr><tr data-card-id="2072">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/246791.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2072_2_11/manor-solomon" target="_blank" rel="noopener">Solomon</a><span class="zh">马诺·所罗门</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">24</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="2072"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">80.8</td>
+</tr><tr data-card-id="1764">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/253004.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1764_6/anssumane-fati" target="_blank" rel="noopener">Ansu Fati</a><span class="zh">法蒂</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1764"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">395</td>
+<td class="c-fbr">77.1</td>
+</tr><tr data-card-id="21291">
+<td class="c-rank">6</td>
+<td class="c-name"><img class="pimg" src="assets/players/267245.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21291_2_11/meredith-speck" target="_blank" rel="noopener">Speck</a><span class="zh">梅雷迪思·斯佩克</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">18</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21291"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">446</td>
+<td class="c-fbr">79.2</td>
+</tr><tr data-card-id="21026">
+<td class="c-rank">7</td>
+<td class="c-name"><img class="pimg" src="assets/players/226078.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21026_12A/mahmoud-hassan" target="_blank" rel="noopener">Trezeguet</a><span class="zh">特雷泽盖</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">10</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="21026"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">405</td>
+<td class="c-fbr">75.1</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>RM</h3><span class="tier-range">6 人</span>
+<span class="tier-range alt">最低参考价 3.8K</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="423">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/238616.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/423_13AA/pedro-lomba-neto" target="_blank" rel="noopener">Pedro Neto</a><span class="zh">佩德罗·内托</span></td>
+<td class="c-rating">81</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="423"><b class="pm">C</b><span data-p="console">3.1K</span><b class="pm">P</b><span data-p="pc">3.8K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">85.0</td>
+</tr><tr data-card-id="1212">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/254088.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1212_16AAA/amad-diallo" target="_blank" rel="noopener">Amad</a><span class="zh">阿马德·迪亚洛</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">199</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1212"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">80.9</td>
+</tr><tr data-card-id="846">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/251852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/846_15/karim-adeyemi" target="_blank" rel="noopener">Adeyemi</a><span class="zh">阿德耶米</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">38</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="846"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">437</td>
+<td class="c-fbr">83.1</td>
+</tr><tr data-card-id="22538">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/252526.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22538_3/darian-males" target="_blank" rel="noopener">Males</a><span class="zh">达里安·马莱斯</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">23</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22538"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">401</td>
+<td class="c-fbr">75.7</td>
+</tr><tr data-card-id="15272">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/278124.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/15272_3_3/shea-lacey" target="_blank" rel="noopener">Lacey</a><span class="zh">谢伊·莱西</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">22</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="15272"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">377</td>
+<td class="c-fbr">76.7</td>
+</tr><tr data-card-id="1212">
+<td class="c-rank">6</td>
+<td class="c-name"><img class="pimg" src="assets/players/254088.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1212_2A_4_12BA_16AAA_13AA/amad-diallo" target="_blank" rel="noopener">Amad</a><span class="zh">阿马德·迪亚洛</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">3</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1212"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.8</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>LW</h3><span class="tier-range">5 人</span>
+<span class="tier-range alt">最低参考价 8.7K</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="21987">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/256675.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21987_15/omar-marmoush" target="_blank" rel="noopener">Marmoush</a><span class="zh">马尔穆什</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">32</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="21987"><b class="pm">C</b><span data-p="console">8.8K</span><b class="pm">P</b><span data-p="pc">8.7K</span></span></td>
+<td class="c-ovr">433</td>
+<td class="c-fbr">81.6</td>
+</tr><tr data-card-id="810">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">135</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="810"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">437</td>
+<td class="c-fbr">82.8</td>
+</tr><tr data-card-id="1396">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/258378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1396_11/mika-godts" target="_blank" rel="noopener">Godts</a><span class="zh">戈茨</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1396"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="1396">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/258378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1396_2_11/mika-godts" target="_blank" rel="noopener">Godts</a><span class="zh">戈茨</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1396"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">432</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="1122">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/260952.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1122_11/andreas-schjelderup" target="_blank" rel="noopener">Schjelderup</a><span class="zh">谢尔德鲁普</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">17</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1122"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">426</td>
+<td class="c-fbr">82.1</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>RW</h3><span class="tier-range">1 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="12519">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/199151.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12519_3_6_8/juan-iturbe" target="_blank" rel="noopener">Iturbe</a><span class="zh">胡安·伊图尔贝</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RW</td>
+<td class="c-hot"><span class="hot">24</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="12519"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">418</td>
+<td class="c-fbr">79.4</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>ST</h3><span class="tier-range">12 人</span>
+<span class="tier-range alt">本组暂无报价</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="22466">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/272505.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22466_15/endrick-felipe-moreira-de-sousa" target="_blank" rel="noopener">Endrick</a><span class="zh">恩德里克</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">249</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22466"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">419</td>
+<td class="c-fbr">80.7</td>
+</tr><tr data-card-id="22014">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/230666.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22014_6/gabriel-fernando-de-jesus" target="_blank" rel="noopener">Gabriel Jesus</a><span class="zh">热苏斯</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">31</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22014"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">79.7</td>
+</tr><tr data-card-id="14501">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/263101.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14501_3_6_3_6_8/kelvin-ehibhatiomhan" target="_blank" rel="noopener">Ehibhatiomhan</a><span class="zh">凯尔文·埃希巴蒂奥姆汉</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">29</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="14501"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="1719">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/250961.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1719_8/joshua-zirkzee" target="_blank" rel="noopener">Zirkzee</a><span class="zh">约书亚·齐尔克泽</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">28</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1719"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">430</td>
+<td class="c-fbr">78.6</td>
+</tr><tr data-card-id="693">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/251810.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/693_2/brian-brobbey" target="_blank" rel="noopener">Brobbey</a><span class="zh">布莱恩·布罗贝</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="693"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">407</td>
+<td class="c-fbr">82.5</td>
+</tr><tr data-card-id="3951">
+<td class="c-rank">6</td>
+<td class="c-name"><img class="pimg" src="assets/players/258911.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3951_6_6_15_8/tolu-arokodare" target="_blank" rel="noopener">Arokodare</a><span class="zh">托卢·阿罗科达雷</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="3951"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">411</td>
+<td class="c-fbr">79.4</td>
+</tr><tr data-card-id="1719">
+<td class="c-rank">7</td>
+<td class="c-name"><img class="pimg" src="assets/players/250961.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1719_6_8/joshua-zirkzee" target="_blank" rel="noopener">Zirkzee</a><span class="zh">约书亚·齐尔克泽</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="1719"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">431</td>
+<td class="c-fbr">78.7</td>
+</tr><tr data-card-id="22014">
+<td class="c-rank">8</td>
+<td class="c-name"><img class="pimg" src="assets/players/230666.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22014_2B_6/gabriel-fernando-de-jesus" target="_blank" rel="noopener">Gabriel Jesus</a><span class="zh">热苏斯</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="22014"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">423</td>
+<td class="c-fbr">80.0</td>
+</tr><tr data-card-id="18918">
+<td class="c-rank">9</td>
+<td class="c-name"><img class="pimg" src="assets/players/86106.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/18918_6_6_15_2B_8_13AA/hamza-abdelkarim" target="_blank" rel="noopener">Abdelkarim</a><span class="zh">哈姆扎·阿卜杜勒卡里姆</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">20</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="18918"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">384</td>
+<td class="c-fbr">74.0</td>
+</tr><tr data-card-id="12547">
+<td class="c-rank">10</td>
+<td class="c-name"><img class="pimg" src="assets/players/241921.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12547_6_6/sebastian-bergier" target="_blank" rel="noopener">Bergier</a><span class="zh">塞巴斯蒂安·贝尔吉耶</span></td>
+<td class="c-rating">73</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="12547"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">385</td>
+<td class="c-fbr">70.1</td>
+</tr><tr data-card-id="4377">
+<td class="c-rank">11</td>
+<td class="c-name"><img class="pimg" src="assets/players/83531.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/4377_2_6/antonio-verinac" target="_blank" rel="noopener">Verinac</a><span class="zh">安东尼奥·韦里纳茨</span></td>
+<td class="c-rating">59</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="4377"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">294</td>
+<td class="c-fbr">55.8</td>
+</tr><tr data-card-id="9296">
+<td class="c-rank">12</td>
+<td class="c-name"><img class="pimg" src="assets/players/247331.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/9296_2A_15_6_6_13AA/rafa-adamski" target="_blank" rel="noopener">Adamski</a><span class="zh">拉法乌·亚当斯基</span></td>
+<td class="c-rating">69</td>
+<td class="c-pos">ST</td>
+<td class="c-hot"><span class="hot">8</span></td>
+<td class="c-price"><span class="px evo-live-price off" data-card-id="9296"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">—</span></span></td>
+<td class="c-ovr">356</td>
+<td class="c-fbr">66.3</td>
+</tr></tbody></table></div>
+</div>
+
+<h2>三、按价格档精选 <span class="cnt">同一精选池按参考价档位分组</span></h2>
+<div class="card">
+<div class="tier-head"><h3>1K–5K</h3><span class="tier-range">8 人</span><span class="tier-range alt">低档位，适合批量投入</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="1442">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/278339.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1442_4/marco-palestra" target="_blank" rel="noopener">Palestra</a><span class="zh">帕莱斯特拉</span></td>
+<td class="c-rating">78</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">206</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1442"><b class="pm">C</b><span data-p="console">1.7K</span><b class="pm">P</b><span data-p="pc">1.7K</span></span></td>
+<td class="c-ovr">455</td>
+<td class="c-fbr">78.1</td>
+</tr><tr data-card-id="111">
+<td class="c-rank">2</td>
+<td class="c-name"><img class="pimg" src="assets/players/80376.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/111_2/rio-ngumoha" target="_blank" rel="noopener">Ngumoha</a><span class="zh">恩古莫哈</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">LM</td>
+<td class="c-hot"><span class="hot">40</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="111"><b class="pm">C</b><span data-p="console">1.5K</span><b class="pm">P</b><span data-p="pc">2K</span></span></td>
+<td class="c-ovr">394</td>
+<td class="c-fbr">78.6</td>
+</tr><tr data-card-id="1411">
+<td class="c-rank">3</td>
+<td class="c-name"><img class="pimg" src="assets/players/234574.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1411_16AAB/jose-diogo-dalot-teixeira" target="_blank" rel="noopener">Diogo Dalot</a><span class="zh">迪奥戈·达洛特</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">375</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1411"><b class="pm">C</b><span data-p="console">1.8K</span><b class="pm">P</b><span data-p="pc">2.2K</span></span></td>
+<td class="c-ovr">451</td>
+<td class="c-fbr">77.7</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">4</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">79</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">390</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">77.3</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">5</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_5_16AAB/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">81</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">444</td>
+<td class="c-fbr">79.3</td>
+</tr><tr data-card-id="3955">
+<td class="c-rank">6</td>
+<td class="c-name"><img class="pimg" src="assets/players/74310.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/3955_10BA/nicolo-savona" target="_blank" rel="noopener">Savona</a><span class="zh">尼科洛·萨沃纳</span></td>
+<td class="c-rating">75</td>
+<td class="c-pos">RB</td>
+<td class="c-hot"><span class="hot">10</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="3955"><b class="pm">C</b><span data-p="console">—</span><b class="pm">P</b><span data-p="pc">3.3K</span></span></td>
+<td class="c-ovr">404</td>
+<td class="c-fbr">70.2</td>
+</tr><tr data-card-id="1078">
+<td class="c-rank">7</td>
+<td class="c-name"><img class="pimg" src="assets/players/232756.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1078_2/fikayo-tomori" target="_blank" rel="noopener">Tomori</a><span class="zh">托莫里</span></td>
+<td class="c-rating">80</td>
+<td class="c-pos">CB</td>
+<td class="c-hot"><span class="hot">22</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="1078"><b class="pm">C</b><span data-p="console">3.2K</span><b class="pm">P</b><span data-p="pc">3.4K</span></span></td>
+<td class="c-ovr">416</td>
+<td class="c-fbr">81.0</td>
+</tr><tr data-card-id="423">
+<td class="c-rank">8</td>
+<td class="c-name"><img class="pimg" src="assets/players/238616.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/423_13AA/pedro-lomba-neto" target="_blank" rel="noopener">Pedro Neto</a><span class="zh">佩德罗·内托</span></td>
+<td class="c-rating">81</td>
+<td class="c-pos">RM</td>
+<td class="c-hot"><span class="hot">13</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="423"><b class="pm">C</b><span data-p="console">3.1K</span><b class="pm">P</b><span data-p="pc">3.8K</span></span></td>
+<td class="c-ovr">436</td>
+<td class="c-fbr">85.0</td>
+</tr></tbody></table></div>
+</div><div class="card">
+<div class="tier-head"><h3>5K–20K</h3><span class="tier-range">1 人</span><span class="tier-range alt">中档位，需权衡进化收益</span></div>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>#</th><th>球员</th><th>RAT</th><th>位置</th><th>热度</th><th>参考价 C/P</th><th>六维合计</th><th>FB评分</th></tr></thead><tbody><tr data-card-id="21987">
+<td class="c-rank">1</td>
+<td class="c-name"><img class="pimg" src="assets/players/256675.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21987_15/omar-marmoush" target="_blank" rel="noopener">Marmoush</a><span class="zh">马尔穆什</span></td>
+<td class="c-rating">83</td>
+<td class="c-pos">LW</td>
+<td class="c-hot"><span class="hot">32</span></td>
+<td class="c-price"><span class="px evo-live-price" data-card-id="21987"><b class="pm">C</b><span data-p="console">8.8K</span><b class="pm">P</b><span data-p="pc">8.7K</span></span></td>
+<td class="c-ovr">433</td>
+<td class="c-fbr">81.6</td>
+</tr></tbody></table></div>
+</div><div class="empty">另有 55 人在精选池内，但市场数据集未覆盖其基础卡价格，本视图如实不计入；这些卡片仍见上方的「按进化」「按位置」视图。</div>
+
+<h2>四、进化路线与前置条件核验</h2>
+<div class="card"><div class="tier-head"><h3>Fullback Fork（Evolutions）</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 EVOLUTIONS（Evolutions）；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 WEEKS / EXPIRES 2 WEEKS。前置条件：Overall Max 79、Pace Max 83、PlayStyle Max 7、Position LB or RB、Not Position CB, CM。合计升级：PATH A → A → A：Overall +5（封顶 80）；PATH A → A → A：Acceleration +5（封顶 82）；PATH A → A → A：Crossing +5（封顶 82）；PATH A → A → A：Finishing +5（封顶 78）；PATH A → A → A：Interceptions +5（封顶 78）；PATH A → A → A：Def. Aware +5（封顶 79）；PATH A → A → A：Short Passing +5（封顶 79）；PATH A → A → A：Shot Power +5（封顶 76）；PATH A → A → A：Slide Tackle +5（封顶 80）；PATH A → A → A：Sprint Speed +5（封顶 82）；PATH A → A → A：Stand Tackle +5（封顶 80）；PATH A → A → A：Stamina +5（封顶 76）；PATH A → A → A：PlayStyle「Pinged Pass」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、Pace Max 83、PlayStyle Max 7、Position LB or RB、Not Position CB, CM</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/16/fullback-fork（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Believe（Rewards（任务奖励））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 REWARDS（Rewards（任务奖励））；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 YEARS / EXPIRES 1 YEARS。前置条件：Overall Max 82、Position ST。Group Reward for the Ted Lasso&#39;s Masterclass Objective。合计升级：Overall +1（封顶 83）；Short Passing +4（封顶 83）；Composure +3（封顶 84）。</p><ol class="steps"><li>入选前提：Overall Max 82、Position ST</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/15/believe（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Pinged Pass（Rewards（任务奖励））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 REWARDS（Rewards（任务奖励））；解锁来源：Found in the Pep&#39;s Domination Objective；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、PlayStyle Max 2。合计升级：PlayStyle「Pinged Pass」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、PlayStyle Max 2</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/14/pinged-pass（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Shooting Practice（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 28（Season Pass（赛季通行证））；解锁来源：Found at Level 28 of the Premium Season Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 81、PlayStyle Max 3、PlayStyle+ Max 0、Position LW or ST or RW。合计升级：PATH A → A：PlayStyle「Finesse Shot」（成本 4）；PATH A → A：PlayStyle「Power Shot」（成本 4）。</p><ol class="steps"><li>入选前提：Overall Max 81、PlayStyle Max 3、PlayStyle+ Max 0、Position LW or ST or RW</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/13/shooting-practice（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Creative or Composed（Rewards（任务奖励））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 REWARDS（Rewards（任务奖励））；解锁来源：Found at Level 27 of the Free Season Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、PlayStyle Max 2。合计升级：PATH A → A：PlayStyle「Incisive Pass」（成本 3）；PATH A → A：PlayStyle「Press Proven」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、PlayStyle Max 2</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/12/creative-or-composed（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Winger Glow Up（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 26（Season Pass（赛季通行证））；解锁来源：Found at Level 26 of the Premium Season Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 81、Pace Max 85、Total Positions Max 3、PlayStyle Max 7、PlayStyle+ Max 0、Position LW、Not Position LB or ST。合计升级：Overall +10（封顶 83）；Acceleration +15（封顶 85）；Agility +15（封顶 86）；Balance +15（封顶 85）；Ball control +15（封顶 85）；Crossing +10（封顶 82）；Curve +10（封顶 78）；Dribbling +15（封顶 84）；Finishing +10（封顶 78）；Long Passing +10（封顶 80）；Long Shots +10（封顶 80）；Penalties +10（封顶 74）；Positioning +10（封顶 80）；Reactions +15（封顶 78）；Short Passing +10（封顶 76）；Free Kick +10（封顶 73）；Shot Power +10（封顶 77）；Sprint Speed +15（封顶 85）；Stamina +10（封顶 72）；Vision +10（封顶 81）；Volleys +10（封顶 74）；Composure +15（封顶 80）；Skills +1（封顶 3）；PlayStyle「Rapid」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 81、Pace Max 85、Total Positions Max 3、PlayStyle Max 7、PlayStyle+ Max 0、Position LW、Not Position LB or ST</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/11/winger-glow-up（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Tactical Ascent（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 14（Season Pass（赛季通行证））；解锁来源：Found at Level 14 of the Premium Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、PlayStyle Max 2。合计升级：PATH A → A：PlayStyle「Anticipate」（成本 3）；PATH A → A：PlayStyle「Quick Step」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、PlayStyle Max 2</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/10/tactical-ascent（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Relentless（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 11（Season Pass（赛季通行证））；解锁来源：Found at Level 11 of the Free Season Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、PlayStyle Max 2。合计升级：PlayStyle「Relentless」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、PlayStyle Max 2</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/9/relentless（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Striker Glow Up（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 7（Season Pass（赛季通行证））；解锁来源：Found at Level 7 of the Free Season Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、Pace Max 84、Total Positions Max 3、PlayStyle Max 7、Position ST、Not Position CM or CAM。合计升级：Overall +10（封顶 80）；Acceleration +10（封顶 80）；Agility +15（封顶 78）；Balance +15（封顶 77）；Ball control +10（封顶 76）；Curve +15（封顶 77）；Dribbling +10（封顶 76）；Finishing +15（封顶 83）；Jumping +10（封顶 78）；Long Passing +8（封顶 62）；Long Shots +15（封顶 78）；Penalties +10（封顶 75）；Positioning +15（封顶 82）；Reactions +10（封顶 76）；Short Passing +8（封顶 72）；Sprint Speed +10（封顶 78）；Stamina +10（封顶 67）；Vision +8（封顶 70）；Volleys +15（封顶 78）；Composure +8（封顶 80）；PlayStyle「Gamechanger」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 79、Pace Max 84、Total Positions Max 3、PlayStyle Max 7、Position ST、Not Position CM or CAM</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/8/striker-glow-up（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Midfield Polish（Season Pass（赛季通行证））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 SEASON 1 LEVEL: 1（Season Pass（赛季通行证））；解锁来源：Found at Level 1 of the Premium Pass；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 79、Position CM or CDM、Not Position CAM。合计升级：Overall +1（封顶 80）；Passing +1（封顶 79）；Defending +1（封顶 79）。</p><ol class="steps"><li>入选前提：Overall Max 79、Position CM or CDM、Not Position CAM</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/7/midfield-polish（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Intro to Repeatable Evolutions（Evolutions）</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 EVOLUTIONS（Evolutions）；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 12 MONTHS / EXPIRES 12 MONTHS。前置条件：Overall Max 79、Pace Max 81、Position ST。合计升级：Overall +1（封顶 80）；Dribbling +4（封顶 80）；Long Passing +4（封顶 77）；Long Shots +4（封顶 77）；Reactions +4（封顶 80）；Short Passing +3（封顶 78）；Free Kick +4（封顶 80）；Shot Power +3（封顶 78）；Vision +3（封顶 79）；Volleys +3（封顶 78）。</p><ol class="steps"><li>入选前提：Overall Max 79、Pace Max 81、Position ST</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/6/intro-to-repeatable-evolutions（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Intro to Evolutions（Evolutions）</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 EVOLUTIONS（Evolutions）；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 12 MONTHS / EXPIRES 12 MONTHS。前置条件：Overall Max 75、Pace Max 80、Total Positions Max 2、PlayStyle Max 7、Position RB、Not Position CB。合计升级：Overall +34（封顶 79）；Acceleration +40（封顶 80）；Agility +40（封顶 78）；Balance +40（封顶 77）；Ball control +40（封顶 80）；Crossing +40（封顶 78）；Curve +40（封顶 80）；Dribbling +40（封顶 80）；Interceptions +40（封顶 76）；Def. Aware +40（封顶 77）；Short Passing +40（封顶 76）；Slide Tackle +40（封顶 75）；Sprint Speed +40（封顶 80）；Stand Tackle +40（封顶 78）；Stamina +40（封顶 80）；Vision +40（封顶 75）；PlayStyle「Slide Tackle」（成本 3）；Role「Wingback++」。</p><ol class="steps"><li>入选前提：Overall Max 75、Pace Max 80、Total Positions Max 2、PlayStyle Max 7、Position RB、Not Position CB</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/5/intro-to-evolutions（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Intro to Training Camp EVOs（Training Camp（训练营））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 TRAINING CAMP（Training Camp（训练营））；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 12 MONTHS / EXPIRES 12 MONTHS。前置条件：Overall Max 80、Position RB。合计升级：Role「Fullback++」。</p><ol class="steps"><li>入选前提：Overall Max 80、Position RB</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/4/intro-to-training-camp-evos（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Repeat Delivery（Training Camp（训练营））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 TRAINING CAMP（Training Camp（训练营））；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 1 MONTHS / EXPIRES 1 MONTHS。前置条件：Overall Max 74、Pace Max 83、PlayStyle Max 7、Position LM or RM、Not Position LB, RB。合计升级：Overall +8（封顶 78）；Acceleration +5（封顶 80）；Agility +8（封顶 78）；Balance +12（封顶 75）；Ball control +8（封顶 74）；Crossing +10（封顶 78）；Curve +12（封顶 78）；Dribbling +8（封顶 74）；Long Passing +12（封顶 76）；Reactions +12（封顶 73）；Short Passing +15（封顶 76）；Free Kick +4（封顶 80）；Sprint Speed +5（封顶 80）；Stamina +15（封顶 78）；Vision +15（封顶 84）；Composure +10（封顶 75）；Weak Foot +2（封顶 3）；Skills +2（封顶 2）；PlayStyle「Pinged Pass」（成本 3）；PlayStyle「First Touch」（成本 3）。</p><ol class="steps"><li>入选前提：Overall Max 74、Pace Max 83、PlayStyle Max 7、Position LM or RM、Not Position LB, RB</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/3/repeat-delivery（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div><div class="card"><div class="tier-head"><h3>Intro to Pathway Evolutions（Pathway Evolutions（路径自选））</h3><span class="tier-range">费用 Free</span></div><p class="desc">来源类型 PATHWAY EVOLUTIONS（Pathway Evolutions（路径自选））；费用 免费（FREE）；可重复（REPEATABLE）；有效期 UNLOCK 12 MONTHS / EXPIRES 12 MONTHS。前置条件：Overall Max 80、PlayStyle Max 3。合计升级：PATH A：PlayStyle「Gamechanger」（成本 4）。</p><ol class="steps"><li>入选前提：Overall Max 80、PlayStyle Max 3</li><li>在游戏内完成该进化路径的挑战后领取上述升级</li></ol><div class="tier-src">核验来源：https://www.futbin.com/27/evolutions/2/intro-to-pathway-evolutions（FUTBIN /27/evolutions 总览卡，2026-09-19 实采）。前提与失效情形以 Player Requirements 为准：不满足上述上限/位置条件的球员不可入选。</div></div>
+
+<h2>五、数据来源与核验</h2>
+<div class="card"><ul><li><code>https://www.futbin.com/27/popular/evolutions</code> · 打开 2026-09-19T04:20:59+08:00 · 热门进化卡主来源。实采页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper &gt; div.column 共 500 个卡片节点；滚动到底部后节点数不变、无分页与「加载更多」控件。按 url + 进化名称去重后 500 张进化卡（唯一 url 500 个，同一球员的不同卡版本为独立条目）；未出现 No evolutions found。卡片内价格元素（.popular-price-wrapper 等）命中数为 0，与「FUTBIN 对进化卡不公布挂牌价」的既有结论一致。</li><li><code>https://www.futbin.com/27/evolutions</code> · 打开 2026-09-19T04:21:10+08:00 · FC27 进化总览。div.evolutions-overview-wrapper 共 15 条（较 2026-09-18 的 14 条新增 1 条 Fullback Fork，标注 NEW）。逐条取得费用（全部 FREE）、UNLOCK / EXPIRES 有效期、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles、PATH 分支）。**本日站点改版**：来源标签由类型标签改为多值——EVOLUTIONS 3 条、TRAINING CAMP 2 条、PATHWAY EVOLUTIONS 1 条、REWARDS 3 条、赛季等级行（SEASON 1 LEVEL: N）6 条，并新增「Found at Level N of the ... Season Pass」解锁来源说明。</li><li><code>https://www.futbin.com/27/evolutions/expired</code> · 打开 2026-09-19T04:21:10+08:00 · 已过期进化核验：页面 div.evolutions-overview-wrapper 节点数为 0，即本轮 15 个进化全部处于有效期内，无过期路径。</li></ul></div>
+
+<h2>缺失项记录</h2>
+<div class="card"><ul><li>进化卡自身价格缺失（来源侧事实）：FUTBIN 对进化卡不公布 Console/PC 挂牌价，页面「参考价（基础卡）」是按 baseCardId 关接到的**基础卡**市价（持仓成本参考），不是该进化卡的成交价；两者均无有效价时显示「无报价」，未写成价格为 0。</li><li>FUTBIN Rating 缺失 19/500：来源页 500 张进化卡中仅 481 张存在 div.playercard-27-futbin-rating（DOM 实测），其余 19 张该字段如实留空，不用 Rating 列、六维合计或其它数值顶替。</li><li>到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长（入门系列 12 MONTHS，Believe 1 YEARS，Fullback Fork 1 WEEKS / 2 WEEKS，多数为 1 MONTHS），FUTBIN 未提供绝对到期日期，无法换算成具体日期。</li><li>逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 的具体挑战内容；本轮未逐条打开 15 个详情页（预算与反爬风险），故 steps 字段按页面可得事实归纳，未收录逐级挑战原文。</li><li>Intro to Training Camp EVOs 与部分 Pathway 卡未给出逐项数值升级表：Training Camp 只给 Role「Fullback++」；Pinged Pass / Relentless / Creative or Composed 等只给 PlayStyle 项。上述路径的具体属性收益页面未列出。</li><li>赛季通行证路径的领取条件不完整：页面只给「Found at Level N of the Premium/Free Season Pass」，未列出通行证是否需要付费、赛季结束时间与等级获取成本，故无法评估实际获取代价。</li><li>候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单本身为准。</li><li>榜单条数上限未知：/27/popular/evolutions 渲染 500 个卡片节点且页面未给出「共 N 条」计数或分页控件，无法排除服务端截断，故以页面实际渲染的 500 条为准。</li><li>价格上涨/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为估算口径，本轮不输出任何涨跌或精确收益预测。</li></ul></div>
+
+<script>(function(){
+  function currentUrl(){
+    try { var host=window.parent&&window.parent!==window?window.parent.location:window.location; var prefix=host.pathname.indexOf('/archive/')!==-1?'../':''; return new URL(prefix+'assets/data/current.json',host.href).toString(); }
+    catch(e){ return 'assets/data/current.json'; }
+  }
+  function fmt(v){ if(v>=10000)return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000)return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
+  fetch(currentUrl(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(String(r.status));return r.json();}).then(function(doc){
+    var cards=doc.cards||{}; document.querySelectorAll('.evo-live-price').forEach(function(el){ var c=cards[el.dataset.cardId], any=false; ['console','pc'].forEach(function(pid){var cell=c&&c.platforms&&c.platforms[pid], target=el.querySelector('[data-p="'+pid+'"]');if(target)target.textContent=cell&&cell.valid?fmt(cell.price):'—';if(cell&&cell.valid)any=true;});el.classList.toggle('off',!any); });
+  }).catch(function(){ document.querySelectorAll('.evo-live-price').forEach(function(el){el.classList.add('off');}); });
+})();</script>
+
+<div class="footer">FC27 进化专栏 · 2026-09-19 · 由 render-evolution.mjs 渲染 · 全量 500 张候选卡数据保存在 evolution.json，本页为精选视图 · 仅作游戏内研究，不构成交易建议</div>
+</body></html>

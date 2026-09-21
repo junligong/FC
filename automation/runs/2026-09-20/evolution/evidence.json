@@ -1,0 +1,76 @@
+{
+  "date": "2026-09-20",
+  "runId": "b20f6a74-30d5-4835-989a-8ca4b8d92125",
+  "status": "partial",
+  "generatedAt": "2026-09-20T03:44:00+08:00",
+  "dataCutoff": "2026-09-20 03:39 +08:00（三个来源页本轮实采）· 译名注入 03:41 · 头像补全 03:42（首轮）· 派生指标补全 03:42 · 渲染 03:42 · 头像复核 03:43 +08:00",
+  "browserChannel": {
+    "skill": "web-access",
+    "precheck": "node automation/browser-triage.mjs → exit 0（check-deps exit=0 | proxy: ready (Chrome 独立调试 profile) | chrome :9333 listener=true | WEB_ACCESS_BROWSER=chrome）",
+    "profile": "CDP Proxy :3456 直连独立调试 profile（Chrome-FC-Debug / 9333，零授权弹框），未回退开关模式；未新建其它 profile、未使用 IAB / 临时浏览器 / extension 模式；未调用 dumate-browser-cli、DUMATE_*、browser-env.sh、fc-browser-channel-check、agent-browser",
+    "recovered": false
+  },
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-20T03:39:05+08:00",
+      "dataCutoff": "2026-09-20 03:39 +08:00",
+      "note": "热门进化卡主来源，本轮内实际打开并提取。页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper > div.column = 500 个卡片节点；滚动到底部节点数不变，无分页与「加载更多」控件（load-more / pagination-next 命中 0），页面无「共 N 条」计数。按「球员 URL + 进化名称」去重后 500 张（unique(url)=500、unique(url+进化名)=500 全唯一），未出现 No evolutions found。卡片内价格元素（.popular-price-wrapper / .platform-price-wrapper-* / .price-segment / .item-score-segment）命中数为 0，再次复核「FUTBIN 对进化卡不公布挂牌价」。DOM 实测 div.playercard-27-futbin-rating 命中 469/500。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions",
+      "openedAt": "2026-09-20T03:39:08+08:00",
+      "dataCutoff": "2026-09-20 03:40 +08:00",
+      "note": "FC27 进化总览，本轮内实际打开。div.evolutions-overview-wrapper = 18 条（较 2026-09-19 的 15 条新增 Ones to Watch Retro 18 / 19 / 20，均标注 NEW，无路径下线）。来源类型分布：EVOLUTIONS 3、TRAINING CAMP 2、PATHWAY EVOLUTIONS 1、REWARDS 3、赛季等级行（SEASON 1 LEVEL: N）6、COSMETICS 3（本日新增）。逐条取得费用、UNLOCK / EXPIRES 相对时长、Player Requirements 与 Total Upgrades（含 PlayStyle / Roles / PATH 分支）。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions/expired",
+      "openedAt": "2026-09-20T03:39:08+08:00",
+      "dataCutoff": "2026-09-20 03:39 +08:00",
+      "note": "已过期进化核验，本轮内实际打开：div.evolutions-overview-wrapper 节点数为 0（页面标题同为 EA FC 27 Player Evolutions），即 18 个进化全部处于有效期内，无过期路径。"
+    }
+  ],
+  "counts": {
+    "evolutionPaths": 18,
+    "cardNodes": 500,
+    "candidates": 500,
+    "uniquePlayerUrls": 500,
+    "poolSize": 84,
+    "marketJoinMatched": 110,
+    "marketJoinWithPrice": 53,
+    "nameZhCovered": 500,
+    "avatarCoveragePool": "83/84",
+    "futbinRatingMissing": 31,
+    "unresolvableAvatarCardIds": 2
+  },
+  "verification": {
+    "dedupe": "按「球员 URL + 进化名称」去重：500 条 → 500 条（unique(url+evolutionName)=500，unique(url)=500）。未按球员名去重（同名不同卡版本为独立条目，按名去重会误删真实条目）。",
+    "chineseNames": "apply-market-name-zh.mjs 首轮扫描 500 名、命中 469、未命中 29（29 个唯一 slug，均为低评分/女足/小联赛球员）；逐条取官方中文名或通行音译后追加到 name-zh-supplement-fc27.json（新增 29 条，词库 1545 → 1574 条，只增不改、无空字符串占位、冲突 0），重跑后「扫描 500 · 命中 500 · 未命中 0」。无中文汉字依据者一律保留英文（本轮无此类残留）。",
+    "avatars": "backfill-avatar-keys.mjs 执行 2 次（渲染前 / 渲染后），前置 browser-triage exit 0。第 1 次：榜单球员 829 个 cardId 中 24 个不可解析 → playerhover 分两批抓取，新增 cardId→头像键 22 条（索引累计 812 条）、下载头像 22 张（22/22 成功）。第 2 次：仅剩 2 个（20886 / 21437，FUTBIN 返回 noface，来源侧无人脸图）→ 新增 0 条。页头「球员头像 83/84」已收敛：唯一缺图者 = Dastan Satpaev（cardId 21437，即 noface 之一），在页面出现 2 行，如实不显示图片；未用他人头像或占位图顶替，未删行凑数。",
+    "priceScope": "本任务未为进化卡采集或分析任何市场价格；evolution.json 逐卡字段为 rank/name/rating/pos/altPos/evolutionName/evolutionType/cost/expires/requirements/popularityCount/futbinListValue/stats/url/evoUrl/nameZh/futbinRating/totalStats/baseCardId，无 priceRef、无任何当前价副本（逐卡仅存 baseCardId），键名中亦无任何 price 字段。已用 current.json（generatedAt 2026-09-19T19:19:46Z，2309 张卡）独立复核：baseCardId 命中 110、两平台至少一档有效价（≥1000）53，与 marketJoin（110 / 53）完全一致。价格由页面运行时按 data-card-id 从唯一行情 apps/market/engine/data/prices/fc27/current.json 读取（PC 有效价优先、PC 无有效价取 Console），未命中或两平台均无有效价时显示「无报价」，未写成价格为 0。",
+    "fixedThisRun": "本轮内修正两处来源侧结构变化（在本轮重采重装配，非事后补丁）：① 新增来源类型 COSMETICS（Ones to Watch Retro 18/19/20），旧标签正则不认该值会把 3 条纯外观路径静默默认成普通 Evolutions；已把 COSMETICS 纳入识别并新增 typeZh 映射与「纯外观/稀有度」文案（该类路径 Player Requirements 与 Total Upgrades 均为空，upgrades 原文只剩投票百分比）。② 费用单元格结构分化：OTV Retro 费用为两行「200 + 25,000」（首行带 fc-points 图标 = FC 点数，次行为金币），Training Camp 类在 EXPIRES 与费用之间多一个「TRAINING 时长」格；旧正则 `[A-Z0-9 ]{0,24}` 不含逗号会把 OTV 费用静默读成空，而「取第一个非 UNLOCK/EXPIRES 的格子」会把训练时长误当费用（两种误读均在本轮实测复现）。改为按内容识别（FREE / 纯数字 / 千分位多行），并单独记录 trainingCost 与 repeatCount。同时给 fmtUpgrades 增加百分比噪声 token 过滤，避免 OTV 路径输出「11% undefined」。",
+    "checks": "产物 reports/daily/2026-09-20/evolution.html（173,281 B）：class=\"zh\" 183 处、img.pimg 181 处（差额 2 = 同一个无头像球员的 2 行）、页头「球员头像 83/84」、徽标 PARTIAL、文案含「参考价（基础卡）」2 处、「无报价」5 处；18 条路线全部标注来源 URL；费用字段取值集合为 ['Free', '200 FC Points + 25,000 金币']；expires 全部为「解锁 … · 到期 …（页面原文 …）」格式；含 2 处 assets/data/current.json 运行时读取入口。SHA-256 0e8793b240e096765255c8cb8a9925569e30bc2efc536bade006457fcf80d6db。"
+  },
+  "outputs": {
+    "json": "automation/runs/2026-09-20/evolution/evolution.json",
+    "html": "reports/daily/2026-09-20/evolution.html",
+    "wordbank": "apps/market/engine/data/players/name-zh-supplement-fc27.json（+29 条）",
+    "avatarIndex": "shared/data/fc27/avatar-index.json（+22 条 cardId→头像键）",
+    "work": "automation/runs/2026-09-20/evolution/work/（extract-cards.js / extract-evolutions.js / build-json.mjs / append-name-zh.mjs / cards-raw.json / evolutions-raw.json / expired-raw.json / backfill-1.log）"
+  },
+  "missing": [
+    "进化卡自身价格缺失（来源侧事实）：FUTBIN 对进化卡不公布 Console/PC 挂牌价（本轮价格元素命中数再次为 0），本页「参考价（基础卡）」是按 baseCardId 关接到的基础卡市价（持仓成本参考），不是该进化卡的成交价。",
+    "FUTBIN Rating 缺失 31/500：来源页 500 张进化卡中仅 469 张存在 div.playercard-27-futbin-rating（本轮 DOM 实测 469/500，与提取结果一致），其余 31 条 futbinRating 如实留空，未用 Rating 列、六维合计或其它数值顶替。",
+    "Ones to Watch Retro 18 / 19 / 20 的属性与前置条件缺失（来源侧事实）：页面只说明为外观/稀有度变更（页面原文 Turn back the clock and apply the exclusive Ones to Watch Retro rarity to any qualified player），Player Requirements 与 Total Upgrades 均为空，故无法给出属性增益与入选门槛；费用为 200 FC Points + 25,000 金币，FUTBIN 标注 REPEATABLE 但未给次数上限。",
+    "榜单覆盖缺口：总览页 18 条路径中 Relentless 在本轮 /27/popular/evolutions 榜单没有任何卡片入选，故 evolution.json 的 evolutions 数组不含该路径（属榜单热度口径，不是采集遗漏）。",
+    "头像 1 名不可解析：cardId 21437（Dastan Satpaev）与 20886 的 playerhover 返回 noface（来源侧无头像图），如实不显示图片；其中 21437 在精选池内，故页头为 83/84 而非 84/84。",
+    "价格覆盖率低：500 名候选中仅 110 名关接到统一行情、53 名有有效报价（2026-09-19 为 77/500、35 有价）。覆盖率取决于市场模块采集范围与 FUTBIN 开服后的价格投放，每次以当日 marketJoin 为准。",
+    "到期时间只有相对口径：FUTBIN 只给 UNLOCK / EXPIRES 时长（入门系列 12 MONTHS、Believe 1 YEARS、Fullback Fork 1 WEEKS / 2 WEEKS、其余多为 1 MONTHS），未提供绝对到期日期，无法换算成具体日期。",
+    "赛季通行证路径的领取条件不完整：6 条路径只给出「Found at Level N of the Premium/Free Season Pass」，页面未列出通行证是否需付费、赛季结束时间与等级获取成本，故无法评估实际获取代价。",
+    "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 具体内容；本轮未逐条打开 18 个详情页（预算与反爬风险）。",
+    "部分路径未给出逐项属性数值升级表：Intro to Training Camp EVOs 仅给 Role「Fullback++」；Pinged Pass / Relentless / Creative or Composed 等仅给 PlayStyle 项。",
+    "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单本身为准。",
+    "榜单条数上限未知：/27/popular/evolutions 渲染 500 个节点且无「共 N 条」计数或分页控件，无法排除服务端截断，故以页面实际渲染的 500 条为准。",
+    "价格/收益预测缺失：FC27 launchDate 为 2026-09-25，开服前价格为估算口径，本轮不输出任何涨跌或精确收益预测。"
+  ]
+}

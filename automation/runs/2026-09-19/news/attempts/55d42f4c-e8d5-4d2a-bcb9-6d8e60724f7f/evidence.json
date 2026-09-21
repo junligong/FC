@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-19",
+  "runId": "55d42f4c-e8d5-4d2a-bcb9-6d8e60724f7f",
+  "status": "partial",
+  "sources": [
+    {"handle": "EASFCDirect", "url": "https://x.com/EASFCDirect", "openedAt": "2026-09-18T19:14:44Z", "count": 5},
+    {"handle": "easportsfc", "url": "https://x.com/easportsfc", "openedAt": "2026-09-18T19:15:00Z", "count": 1},
+    {"handle": "fifa_romania", "url": "https://x.com/fifa_romania", "openedAt": "2026-09-18T19:15:15Z", "count": 8},
+    {"handle": "AsyFutTrader", "url": "https://x.com/AsyFutTrader", "openedAt": "2026-09-18T19:15:31Z", "count": 6},
+    {"handle": "FIFA22_INFO", "url": "https://x.com/FIFA22_INFO", "openedAt": "2026-09-18T19:15:46Z", "count": 6},
+    {"handle": "FutSheriff", "url": "https://x.com/FutSheriff", "openedAt": "2026-09-18T19:16:02Z", "count": 6},
+    {"handle": "FutPoliceLeaks", "url": "https://x.com/FutPoliceLeaks", "openedAt": "2026-09-18T19:16:17Z", "count": 6},
+    {"handle": "FUTBIN", "url": "https://x.com/FUTBIN", "openedAt": "2026-09-18T19:16:33Z", "count": 4},
+    {"handle": "easysbc", "url": "https://x.com/easysbc", "openedAt": "2026-09-18T19:16:48Z", "count": 5},
+    {"handle": "Razzerstrading", "url": "https://x.com/Razzerstrading", "openedAt": "2026-09-18T19:17:04Z", "count": 4},
+    {"handle": "EAFCassist", "url": "https://x.com/EAFCassist", "openedAt": "2026-09-18T19:17:19Z", "count": 6},
+    {"handle": "Fut_scoreboard", "url": "https://x.com/Fut_scoreboard", "openedAt": "2026-09-18T19:17:35Z", "count": 0},
+    {"handle": "DetectiveFUT", "url": "https://x.com/DetectiveFUT", "openedAt": "2026-09-18T19:17:50Z", "count": 7},
+    {"handle": "FGZNews", "url": "https://x.com/FGZNews", "openedAt": "2026-09-18T19:18:06Z", "count": 5},
+    {"handle": "futagentt", "url": "https://x.com/futagentt", "openedAt": "2026-09-18T19:18:21Z", "count": 7},
+    {"handle": "Futdonk", "url": "https://x.com/Futdonk", "openedAt": "2026-09-18T19:18:37Z", "count": 5}
+  ],
+  "dataCutoff": "2026-09-18T19:19:00Z",
+  "browserTriage": "OK (check-deps exit=0, 独立调试 profile 9333)",
+  "notes": [
+    "X 前端本日移除全部 data-testid 与 <time> 元素，旧抽取器 0 命中；已重写 v2 抽取器（正文=div.font-chirp，ID=status 链接），时间戳经 syndication created_at 权威回填，24h 窗口过滤保留 65/76。",
+    "媒体解析 76/76 成功（配图 79 张/8 视频/21 被引用带图），报告图片落盘 73/73，0 远程热链，媒体未解析 0。",
+    "@Fut_scoreboard 当日窗口内 0 条，如实记录。",
+    "missingItems：中文译文文件未能在 20 分钟硬期限内完成，65 条卡片渲染「待翻译」，提交 partial。"
+  ],
+  "missingItems": ["中文译文未完成（65 条待翻译），因 X DOM 结构变更重写抽取器消耗了采集预算"]
+}

@@ -1,0 +1,34 @@
+[名单] base-icons.json 传奇卡 131 张，launchDate=2026-09-18
+[current.json] 总条目 2384（icon 131 / 非传奇 2253）· generatedAt 2026-09-20T15:32:06.386Z · minValidPrice 1000
+[current.json] 传奇命中 131/131 · 缺失 0 
+[current.json] 违例：scope≠card 0 · 双平台键缺失 0 · updatedAt≠observedAt 0 · source≠futbin-icon-detail 0
+[current.json] sources={"futbin-popular":"?@2026-09-20T08:15:28.437Z","futbin-icon-detail":"?@2026-09-20T15:32:06.331Z","daily-market":"?@2026-09-19T19:17:46.770Z","futbin-players":"?@2026-09-20T10:05:07.181Z","futbin-totw":"?@2026-09-20T09:37:11.334Z","futbin-heroes":"?@2026-09-19T19:51:37.416Z"}
+[series] points 60 · 本轮 2026-09-20T23 @2026-09-20T15:32:06.331Z basis=partial-live counts={"total":131,"ok":131,"missing":0,"minFloor":69000,"maxCeiling":15000000} errors=0
+[series] 上一实际轮 2026-09-20T19 @2026-09-20T11:25:01.064Z basis=partial-live（与 T19 记录 2026-09-20T11:25:01.064Z 一致 ✔）
+[current↔序列] 逐卡核对 131 张，不一致 0 张
+[current↔daily] 逐卡核对 131 张 · 平台价不一致 0 · 区间不一致 0
+[daily] 顶层 priceRange={"scope":"card","scopeNote":"FUTBIN 详情页「Price Range」为卡级字段（同一张卡的 Console / PC 价格盒渲染同值），不按平台拆分。","withRange":131,"missing":0,"minFloor":69000,"maxCeiling":15000000,"collectedAt":"2026-09-20T15:32:06.331Z","sourceFile":"apps/market/engine/icons/data/prices/fc27/pricerange/latest.json"} · counts={"total":131,"valid":116,"missing":15,"platformValid":{"console":112,"pc":79}} · launchDate=2026-09-18 · priceBasis=partial-live
+[极值] 下沿最低 69,000（21 张并列）: 永里优季(21876) / 加林查(21877) / 亚亚·图雷(21885) / 坎贝尔(21889) / 里贝里(21893) / 维埃拉(21898) / 贝尔(21901) / 道格拉斯(21902) / 拉什(21903) / 哈吉(21911) / 肯佩斯(21914) / 劳德鲁普(21915) / 巴恩斯(21916) / 赞布罗塔(21917) / 加图索(21920) / 卡福(21924) / 基耶利尼(21932) / 阿什利·科尔(21938) / 埃辛(21941) / 范德萨(21945) / 拉斐尔·瓦拉内(21875)
+[极值] 上沿最高 15,000,000（71 张并列）
+[极值] 有效平台价越界 [min,max] 0 处 · 恰等于上沿 1 处 · 区间宽度 0 0 张 · 区间缺失 0 张
+[极值] latest.json minFloor=69000 maxCeiling=15000000 与实算 69000/15000000 一致 ✔
+[研究] 脚本自判 advice=40 condA=39 condB=1 noFc26=26 noRange=0
+[研究] verify 独立重算 advice=0 condA=0 condB=0 noFc26=131 condA不适用(null)=0
+[研究] 差异：advice 40 · condA 39 · condB 1 · noFc26 -105
+[研究] FC26 映射并发漂移 0 张 · counts={"compared":131,"advice":40,"condA":39,"condB":1,"both":0,"noFc26":26,"noRange":0} · rangeCollectedAt=2026-09-20T15:32:06.331Z · priceBasis=partial-live
+[研究] rows 命中数 40 · nameZh 缺失 0 · rows 行数 131
+[同时段] meta dayOffset=2 dayN=3 fc27=2026-09-18 fc26=2025-09-18 sameDay=2025-09-20 minValid=1000
+[同时段] icons 共 131 张（可对照 103）· {"观望等待":69,"数据不足":28,"谨慎":19,"分批买入":15}
+[同时段] icons nameZh 缺失 0/131
+[同时段] heroes 共 50 张（可对照 9）· {"数据不足":41,"分批买入":1,"观望等待":7,"谨慎":1}
+[同时段] heroes nameZh 缺失 0/50
+[副本] apps/market/engine/data/prices/fc27/current.json d2f76f1b334b1ffe 1984501B | reports/daily/2026-09-20/assets/data/current.json d2f76f1b334b1ffe 1984501B | daily-merged/assets/data/current.json d2f76f1b334b1ffe 1984501B
+[副本] 三副本 sha256 全等 ✔
+[产物] reports/daily/2026-09-20/market-icons-research.html 66616B sha=afcbef6c83852250
+[产物] reports/daily/2026-09-20/icons-heroes.html 402306B sha=9d067e144329ac7d
+[产物] reports/daily/2026-09-20/same-period-advice.html 202220B sha=4dd89897ccf0ca4e
+[产物] apps/market/engine/icons/reports/fc27-icon-live-research.html 66616B sha=afcbef6c83852250
+[产物] apps/market/engine/icons/reports/fc27-same-period-advice.html 202220B sha=4dd89897ccf0ca4e
+[产物] 研究当日页 ↔ 常驻底稿 逐字节一致 ✔
+[产物] 同时段当日页 ↔ 常驻底稿 逐字节一致 ✔
+[产物] latest.json ↔ 序列本轮行数一致性（latest 131）

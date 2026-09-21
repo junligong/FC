@@ -1,0 +1,13 @@
+{
+  "task": "market-hourly",
+  "scheduledHour": "18",
+  "checkedAt": "2026-09-20T10:24:31.018Z",
+  "result": "failed",
+  "stage": "collect",
+  "reason": "triage OK_RECOVERED（自愈拉起独立 profile）后通道健康，但 FUTBIN 对新建标签页持续下发 Cloudflare 挑战页（Just a moment），挑战页上 Runtime.evaluate 持续抛 Uncaught（CDP exceptionDetails.text），采集器 waitForCards 首次探测即中断；3 轮全量采集（每轮 2 页 × 2 尝试）共 12 次建页全部失败。手动验证：经 example.com 中转后导航至 /27/popular 可正常渲染 250 张卡（10:33Z），判定为 CF 对密集新建连接的临时拦截而非通道故障或站点整体 403。超出契约「最多重试一次」预算，停止采集。",
+  "triage": { "verdict": "OK_RECOVERED", "checkDepsExit": 0, "chrome": { "listener": true, "wsPath": "9333" }, "actions": ["start-debug-profile.mjs rc=0"] },
+  "notAttemptedAndWhy": "build-market-watchlist / apply-market-name-zh / render / merge / publish 均未执行：本轮无新观测数据，current.json 保持 T16（08:15:29Z）不变，页面客户端实时读取时间不会失真",
+  "lastValidResultKept": "apps/market/engine/data/prices/fc27/popular/hourly/2026-09-20T16.json（Console 205 / PC 182 有效价）+ current.json generatedAt 2026-09-20T08:15:29.458Z",
+  "manualActionNeeded": "无需人工介入；T19 轮按契约自动重试。若 T19 起连续多轮仍被 CF 挑战拦截，需人工在独立 profile Chrome（Chrome-FC-Debug，9333）中打开 futbin.com 通过一次挑战以刷新 cf_clearance",
+  "evidence": { "lastAttempt": "apps/market/engine/data/prices/fc27/last-attempt.json", "collectorRuns": 3, "tabCreations": 12 }
+}

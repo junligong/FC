@@ -14,7 +14,7 @@
  * 平台：FUTBIN 只有 Console(PS/Xbox) 与 PC 两个平台。列表页每行同时渲染
  *       td.table-price.platform-ps-only 与 td.table-price.platform-pc-only 两个价格单元格。
  *       本页顶部提供平台切换按钮，切换后只显示对应平台的价格列。
- *       开服前两个平台价均为 0，此时列表页 IS 列（table-item-score）是开服前估值，单独以「估值」标注，不当作平台成交价。
+ *       开服前两个平台价均为 0，此时列表页 IS 列（table-item-score）是估值，单独以「估值」标注，不当作平台成交价。
  *
  * 采集缺失时渲染为如实空状态，绝不伪造、不用 FC26 数据冒充 FC27。
  *
@@ -66,13 +66,13 @@ function loadData(dateStr) {
 const cardIdOf = it => String(it?.url || it?.marketUrl || '').match(/\/player\/([^/?#]+)/)?.[1]?.split('_')[0] || '';
 
 // 价格单元格：同时渲染两个平台的价格，由页面顶部的平台切换按钮决定显示哪一个。
-// 开服前平台价全为 0，此时退回显示列表页 IS 列的开服前估值，并明确标注「估值」。
+// 平台价全为 0 时，退回显示列表页 IS 列的估值，并明确标注「估值」。
 function priceCell(it) {
   const id = cardIdOf(it);
   const parts = PLATFORMS.map(p => `<span class="pv pv-${p.id} live-market-price" data-card-id="${esc(id)}" data-market-platform="${p.id}">读取中</span>`).join('');
   const estimate = it.estimate ?? it.price;
   const est = typeof estimate === 'number' && estimate > 0
-    ? `<span class="est" title="开服前 FUTBIN 估值（列表页 IS 列），不是任何平台的成交价">估值 ${num(estimate)}</span>`
+    ? `<span class="est" title="FUTBIN 列表页估值（IS 列），不是任何平台的成交价">估值 ${num(estimate)}</span>`
     : '';
   return `<td class="c-price">${parts}${est}</td>`;
 }
@@ -115,8 +115,8 @@ export function renderOverview(dateStr, data) {
 
   // ── 球员头像 ────────────────────────────────────────────────────────────────
   // 先解析出本页所有条目的 resourceId 并批量缩放落盘到 reports/daily/D/assets/players/，
-  // HTML 里只写相对路径 assets/players/<rid>.png；合并成单文件站点时由
-  // inlineLocalReportImages 内联为 data URL（头像无法解析的条目如实不显示，不伪造）。
+  // HTML 里只写相对路径 assets/players/<rid>.png；合并成站点时由
+  // rewriteLocalReportAssets 改写为指向 daily-merged/assets/ 的相对路径（头像无法解析的条目如实不显示，不伪造）。
   const idx = avatarIndex();
   const avatarItems = [
     ...promo, ...totw, ...evolutions,

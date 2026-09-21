@@ -28,6 +28,7 @@ node automation/run-state.mjs finish <module> D <RUN_ID> <success|partial|failed
   - **级联规则（重要）**：`available` 只统计 `['football','news','market']` 中**有 `snapshotPath` 且文件存在**的模块（`evolution` 是可选模块，不参与该计数）。三者全都没有快照时 `merge='no_current_snapshot'`、`publish='skipped'` —— 这是**有意设计**，拒绝用空状态页覆盖线上站点。因此「采集全体失败」时汇总发布任务必然 `failed`，它通常**不是独立故障**，排查时先查采集任务的浏览器通道。
   - `coordinator-state.json` 的 `unattendedPublishingVerified` 字段**恒为 `false`**（`coordinate.mjs` 只在初始化时写死该值，之后不再更新），**不代表发布失败**，不要误判。发布的权威记录在 `automation/publish-status-D.json`（由 `verify-publication.mjs` 写入）。
   - 合并脚本在系统临时目录做隔离 stage，并把 `apps/portal/assets/`、`apps/market/engine/icons/reports/` 一并拷入；改动这些常驻内容源时无需额外接线。
+  - **报告图片不再内联**（2026-09-20 起）：合并期把各日 `reports/daily/<D>/assets/`（除 `data/`）增量归并进 `daily-merged/assets/`，并把页面里的图片路径改写成指向该目录（`shared/lib/report-assets.mjs#rewriteLocalReportAssets`，两遍改写：`<img src>` 与 JSON 数据块里的 `"assets/…"` 字符串）。因此合并会同时重建 `index.html`、**全部** `reports/daily/<D>/summary.html` 与历史归档；该脚本**无锁**，下游高频任务每轮可安全重跑。
 - 启用任务失败用 `failed`，有真实部分数据用 `partial`；只有共享配置明确关闭才能用 `skipped`（`finish` 会拒绝启用中的任务提交 `skipped`）。
 - 修改生成器或路径后运行 `node --test execution.test.mjs regression.test.mjs verify-publication.test.mjs news-media.test.mjs`。
 - 不在此目录复制 `shared/` 中的路径、主题和通用函数。

@@ -1,0 +1,785 @@
+{
+  "date": "2026-09-21",
+  "startedAt": "2026-09-20T22:17:45.309Z",
+  "modules": {
+    "football": {
+      "module": "football",
+      "date": "2026-09-21",
+      "runId": "21698108-083e-46e9-9795-40f4fbfe1494",
+      "status": "partial",
+      "startedAt": "2026-09-20T22:01:10.093Z",
+      "deadlineAt": "2026-09-20T22:16:10.093Z",
+      "reportPath": "reports/daily/2026-09-21/football.html",
+      "completedAt": "2026-09-20T22:16:01.823Z",
+      "evidence": {
+        "date": "2026-09-21",
+        "module": "football",
+        "runId": "21698108-083e-46e9-9795-40f4fbfe1494",
+        "generatedAt": "2026-09-20T22:16:01.795Z",
+        "sources": [
+          {
+            "module": "fb-epl-laliga",
+            "league": "epl",
+            "url": "https://www.worldfootball.net/competition/co91/england-premier-league/results-and-standings/",
+            "openedAt": "2026-09-20T22:04:30Z",
+            "note": "英超2026/2027积分榜（20队全量）"
+          },
+          {
+            "module": "fb-epl-laliga",
+            "league": "epl",
+            "url": "https://www.worldfootball.net/competition/co91/england-premier-league/statistics-goals/",
+            "openedAt": "2026-09-20T22:05:30Z",
+            "note": "英超射手榜"
+          },
+          {
+            "module": "fb-epl-laliga",
+            "league": "epl",
+            "url": "https://www.worldfootball.net/competition/co91/england-premier-league/statistics-assists/",
+            "openedAt": "2026-09-20T22:06:10Z",
+            "note": "英超助攻榜"
+          },
+          {
+            "module": "fb-epl-laliga",
+            "league": "laliga",
+            "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/results-and-standings/",
+            "openedAt": "2026-09-20T22:06:40Z",
+            "note": "西甲2026/2027积分榜（20队全量）"
+          },
+          {
+            "module": "fb-epl-laliga",
+            "league": "laliga",
+            "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/statistics-goals/",
+            "openedAt": "2026-09-20T22:07:00Z",
+            "note": "西甲射手榜"
+          },
+          {
+            "module": "fb-epl-laliga",
+            "league": "laliga",
+            "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/statistics-assists/",
+            "openedAt": "2026-09-20T22:07:15Z",
+            "note": "西甲助攻榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "seriea",
+            "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/results-and-standings/",
+            "openedAt": "2026-09-21T06:05:30+08:00",
+            "note": "意甲积分榜（CDP 浏览器渲染，通过 Cloudflare）"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "seriea",
+            "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/statistics-goals/",
+            "openedAt": "2026-09-21T06:06:40+08:00",
+            "note": "意甲射手榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "seriea",
+            "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/statistics-assists/",
+            "openedAt": "2026-09-21T06:07:45+08:00",
+            "note": "意甲助攻榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "bundesliga",
+            "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/results-and-standings/",
+            "openedAt": "2026-09-21T06:06:20+08:00",
+            "note": "德甲积分榜（页面标题确认为 2026/2027 赛季）"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "bundesliga",
+            "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/statistics-goals/",
+            "openedAt": "2026-09-21T06:07:30+08:00",
+            "note": "德甲射手榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "bundesliga",
+            "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/statistics-assists/",
+            "openedAt": "2026-09-21T06:08:35+08:00",
+            "note": "德甲助攻榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "ligue1",
+            "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/results-and-standings/",
+            "openedAt": "2026-09-21T06:06:20+08:00",
+            "note": "法甲积分榜（页面标题确认为 2026/2027 赛季）"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "ligue1",
+            "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/statistics-goals/",
+            "openedAt": "2026-09-21T06:07:30+08:00",
+            "note": "法甲射手榜"
+          },
+          {
+            "module": "fb-ita-ger-fra",
+            "league": "ligue1",
+            "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/statistics-assists/",
+            "openedAt": "2026-09-21T06:08:50+08:00",
+            "note": "法甲助攻榜"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "ucl",
+            "url": "https://site.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings?region=us&lang=en&contentorigin=espn",
+            "openedAt": "2026-09-21T06:07:00+08:00",
+            "note": "欧冠联赛阶段 36 队积分榜（ESPN 官方 API）"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "ucl",
+            "url": "https://www.espn.com/soccer/stats/_/league/UEFA.CHAMPIONS",
+            "openedAt": "2026-09-21T06:10:00+08:00",
+            "note": "欧冠射手榜/助攻榜（ESPN 统计页）"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "mls_east",
+            "url": "https://www.worldfootball.net/competition/co73/usa-major-league-soccer/se112297/2026/results-and-standings",
+            "openedAt": "2026-09-21T06:09:00+08:00",
+            "note": "美职联东区/西区积分榜（worldfootball.net，2026 赛季）"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "mls_west",
+            "url": "https://www.worldfootball.net/competition/co73/usa-major-league-soccer/se112297/2026/results-and-standings",
+            "openedAt": "2026-09-21T06:09:00+08:00",
+            "note": "美职联东区/西区积分榜（worldfootball.net，2026 赛季）"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "saudi",
+            "url": "https://site.api.espn.com/apis/v2/sports/soccer/ksa.1/standings?region=us&lang=en&contentorigin=espn",
+            "openedAt": "2026-09-21T06:08:00+08:00",
+            "note": "沙特职业联赛 18 队积分榜（ESPN 官方 API）"
+          },
+          {
+            "module": "fb-ucl-mls-saudi",
+            "league": "saudi",
+            "url": "https://www.espn.com/soccer/stats/_/league/ksa.1",
+            "openedAt": "2026-09-21T06:11:00+08:00",
+            "note": "沙特联射手榜/助攻榜（ESPN 统计页）"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://www.goal.com/en/lists/too-many-goals-enzo-maresca-fumes-despite-man-city-s-5-3-win-as-premier-league-leaders-survive-sunderland-scare/blt597508d749da79c5",
+            "source": "Goal.com",
+            "publishedAt": "2026-09-20T16:11:38Z",
+            "openedAt": "2026-09-20T22:15:17.024Z",
+            "pageTitle": "{\"value\":\"'Too many goals!' - Enzo Maresca fumes despite Man City’s 5-3 win as Premier League leader"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://www.toutiao.com/article/7687660920176149007",
+            "source": "今日头条/体坛周报",
+            "publishedAt": "2026-09-21 00:50",
+            "openedAt": "2026-09-20T22:15:19.311Z",
+            "pageTitle": "{\"value\":\"【西甲】10人皇马客场1比2负马竞，怀森红点套餐 - 今日头条\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://k.sina.com.cn/article_7879776651_1d5abd98b06802r9m6.html",
+            "source": "新浪新闻",
+            "publishedAt": "2026-09-21 00:09",
+            "openedAt": "2026-09-20T22:15:21.018Z",
+            "pageTitle": "{\"value\":\"赖斯报复动作仅吃黄牌，阿森纳客场完败布莱顿|英超|报复性|红牌|赛季|曼城_新浪新闻\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://www.perthnow.com.au/sport/soccer/atletico-fend-off-10-man-real-madrid-in-laliga-battle-c-22899397",
+            "source": "AP/PerthNow",
+            "publishedAt": "2026-09-21T04:03+0800",
+            "openedAt": "2026-09-20T22:15:24.260Z",
+            "pageTitle": "{\"value\":\"Atletico fend off 10-man Real Madrid in LaLiga battle | PerthNow\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://www.sohu.com/a/1078797556_121611645",
+            "source": "搜狐体育",
+            "publishedAt": "2026-09-21 05:39",
+            "openedAt": "2026-09-20T22:15:25.885Z",
+            "pageTitle": "{\"value\":\"9月21日：意甲榜首战零比二到二比二！劳塔罗梅开二度率五替补扳平罗马，加斯佩里尼承认板凳撑不住九十分钟_国米那_比赛_欧冠\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "toutiao",
+            "url": "https://news.qq.com/rain/a/20260921A0019L00",
+            "source": "腾讯新闻/懂球帝",
+            "publishedAt": "2026-09-21 00:06",
+            "openedAt": "2026-09-20T22:15:27.591Z",
+            "pageTitle": "{\"value\":\"科瓦奇：拜尔没进国家队但打进制胜球，这表明我们有好阵容_腾讯新闻\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "transfers",
+            "url": "https://www.sohu.com/a/1078731559_122595736",
+            "source": "搜狐体育",
+            "publishedAt": "2026-09-21 00:19",
+            "openedAt": "2026-09-20T22:15:29.241Z",
+            "pageTitle": "{\"value\":\"足坛最新动态：哲凯赖什不满板凳、巴萨与拉菲尼亚续约至2030年！_欧冠_阿森纳_葡萄牙体育\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "transfers",
+            "url": "https://www.sohu.com/a/1078731559_122595736",
+            "source": "搜狐体育",
+            "publishedAt": "2026-09-21 00:19",
+            "openedAt": "2026-09-20T22:15:29.241Z",
+            "pageTitle": ""
+          },
+          {
+            "module": "fb-news",
+            "category": "matchReports",
+            "url": "https://www.163.com/dy/article/L7AKCBFP05561FZB.html",
+            "source": "网易/赛场速报局",
+            "publishedAt": "2026-09-21 02:06",
+            "openedAt": "2026-09-20T22:15:31.389Z",
+            "pageTitle": "{\"value\":\"5比3！对手戴帽他仍赢球，曼城登顶英超|曼联|欧战|利物浦|桑德兰队|富勒姆队|伯恩茅斯队_网易订阅\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "injuries",
+            "url": "https://www.managingmadrid.com/113230/fede-valverde-injury-report-2026-madrid-derbi",
+            "source": "Managing Madrid",
+            "publishedAt": "2026-09-20T18:20:07Z",
+            "openedAt": "2026-09-20T22:15:33.889Z",
+            "pageTitle": "{\"value\":\"OFFICIAL: Fede Valverde injury report | Managing Madrid\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "injuries",
+            "url": "https://www.163.com/dy/article/L7AHIU380549BAP0.html",
+            "source": "网易/懂球帝",
+            "publishedAt": "2026-09-21T01:18:09+08:00",
+            "openedAt": "2026-09-20T22:15:35.608Z",
+            "pageTitle": "{\"value\":\"德媒：莱比锡球员格鲁达髋部受伤，德国队首秀存疑|勒沃库森队_网易订阅\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "injuries",
+            "url": "https://news.7msport.com/news/newsdata/20260921/268994.shtml",
+            "source": "7M Sports",
+            "publishedAt": "2026-09-21",
+            "openedAt": "2026-09-20T22:15:40.180Z",
+            "pageTitle": "{\"value\":\"Broken: Barcelona star suffers serious injury - 7msport\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "misc",
+            "url": "https://news.qq.com/rain/a/20260921A01OAR00",
+            "source": "腾讯新闻/虎扑",
+            "publishedAt": "2026-09-21 04:34",
+            "openedAt": "2026-09-20T22:15:41.832Z",
+            "pageTitle": "{\"value\":\"GFFN：里瑟身体原因退出本期法国队，科莫门将布泰兹入替_腾讯新闻\"}"
+          },
+          {
+            "module": "fb-news",
+            "category": "misc",
+            "url": "https://www.aol.co.uk/articles/arsenal-chelsea-double-injury-ecuador-190857000.html",
+            "source": "AOL/The Standard",
+            "publishedAt": "2026-09-20T19:08:57Z",
+            "openedAt": "2026-09-20T22:15:44.891Z",
+            "pageTitle": "{\"value\":\"Arsenal and Chelsea get double injury update as Ecuador boss explains squad decision - AOL"
+          }
+        ],
+        "missing": [
+          "mls_east/mls_west 射手/助攻榜无分区独立榜单，按契约使用联盟总榜（mls 键）",
+          "美职联、沙特联、欧冠窗口内无满足核实要求的独立新闻（fb-news notes 已记录）"
+        ],
+        "coverage": {
+          "standings": {
+            "epl": 20,
+            "laliga": 20,
+            "seriea": 20,
+            "bundesliga": 18,
+            "ligue1": 18,
+            "saudi": 18,
+            "ucl": 36,
+            "mls_east": 15,
+            "mls_west": 15
+          },
+          "scorers": {
+            "epl": 12,
+            "laliga": 12,
+            "seriea": 10,
+            "bundesliga": 10,
+            "ligue1": 10,
+            "saudi": 10,
+            "ucl": 10,
+            "mls": 10
+          },
+          "assists": {
+            "epl": 13,
+            "laliga": 12,
+            "seriea": 10,
+            "bundesliga": 10,
+            "ligue1": 10,
+            "saudi": 10,
+            "ucl": 10,
+            "mls": 10
+          },
+          "news": 14
+        },
+        "verify": {
+          "command": "node automation/verify-football-boards.mjs 2026-09-21",
+          "exitCode": 0,
+          "warnings": [
+            "射手榜未覆盖联赛：mls_east、mls_west（预期，用联盟总榜）"
+          ]
+        },
+        "notes": [
+          "并行 4 子代理落盘交付；worldfootball.net + ESPN(API/stats 页)；新闻 14 条原文于主流程本轮逐条重开复核（openedAt 为重开实测时间）"
+        ]
+      },
+      "sha256": "a96ef4950dcf553f9310ff772cd5603fc50eb7b402267522774aca4b875480e8",
+      "bytes": 46680,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/football/report.html"
+    },
+    "news": {
+      "module": "news",
+      "date": "2026-09-21",
+      "runId": "9c368481-49eb-463b-818e-4a48a3845888",
+      "status": "partial",
+      "startedAt": "2026-09-20T19:00:56.978Z",
+      "deadlineAt": "2026-09-20T19:15:56.978Z",
+      "reportPath": "reports/daily/2026-09-21/news.html",
+      "completedAt": "2026-09-20T19:11:16.017Z",
+      "evidence": {
+        "date": "2026-09-21",
+        "runId": "9c368481-49eb-463b-818e-4a48a3845888",
+        "sources": [
+          {
+            "name": "ASY FUT",
+            "url": "https://x.com/AsyFutTrader",
+            "handle": "AsyFutTrader",
+            "openedAt": "2026-09-20T19:02:24.090Z",
+            "tweetsRaw": 3,
+            "openError": null
+          },
+          {
+            "name": "DetectiveFUT",
+            "url": "https://x.com/DetectiveFUT",
+            "handle": "DetectiveFUT",
+            "openedAt": "2026-09-20T19:05:04.389Z",
+            "tweetsRaw": 7,
+            "openError": null
+          },
+          {
+            "name": "FC 26 NEWS & TIPS",
+            "url": "https://x.com/EAFCassist",
+            "handle": "EAFCassist",
+            "openedAt": "2026-09-20T19:04:29.325Z",
+            "tweetsRaw": 4,
+            "openError": null
+          },
+          {
+            "name": "EA SPORTS FC Direct Communication",
+            "url": "https://x.com/EASFCDirect",
+            "handle": "EASFCDirect",
+            "openedAt": "2026-09-20T19:01:29.827Z",
+            "tweetsRaw": 5,
+            "openError": null
+          },
+          {
+            "name": "FGZ",
+            "url": "https://x.com/FGZNews",
+            "handle": "FGZNews",
+            "openedAt": "2026-09-20T19:05:22.260Z",
+            "tweetsRaw": 5,
+            "openError": null
+          },
+          {
+            "name": "EAFC 27 News",
+            "url": "https://x.com/FIFA22_INFO",
+            "handle": "FIFA22_INFO",
+            "openedAt": "2026-09-20T19:02:42.474Z",
+            "tweetsRaw": 5,
+            "openError": null
+          },
+          {
+            "name": "FUTBIN",
+            "url": "https://x.com/FUTBIN",
+            "handle": "FUTBIN",
+            "openedAt": "2026-09-20T19:03:35.709Z",
+            "tweetsRaw": 4,
+            "openError": null
+          },
+          {
+            "name": "FUT POLICE LEAKS",
+            "url": "https://x.com/FutPoliceLeaks",
+            "handle": "FutPoliceLeaks",
+            "openedAt": "2026-09-20T19:03:18.122Z",
+            "tweetsRaw": 5,
+            "openError": null
+          },
+          {
+            "name": "Fut Sheriff",
+            "url": "https://x.com/FutSheriff",
+            "handle": "FutSheriff",
+            "openedAt": "2026-09-20T19:03:00.267Z",
+            "tweetsRaw": 6,
+            "openError": null
+          },
+          {
+            "name": "Fut Scoreboard",
+            "url": "https://x.com/Fut_scoreboard",
+            "handle": "Fut_scoreboard",
+            "openedAt": "2026-09-20T19:04:47.158Z",
+            "tweetsRaw": 2,
+            "openError": null
+          },
+          {
+            "name": "Donk",
+            "url": "https://x.com/Futdonk",
+            "handle": "Futdonk",
+            "openedAt": "2026-09-20T19:05:57.921Z",
+            "tweetsRaw": 2,
+            "openError": null
+          },
+          {
+            "name": "Razzer FC27",
+            "url": "https://x.com/Razzerstrading",
+            "handle": "Razzerstrading",
+            "openedAt": "2026-09-20T19:04:11.473Z",
+            "tweetsRaw": 4,
+            "openError": null
+          },
+          {
+            "name": "EA SPORTS FC",
+            "url": "https://x.com/easportsfc",
+            "handle": "easportsfc",
+            "openedAt": "2026-09-20T19:01:48.347Z",
+            "tweetsRaw": 0,
+            "openError": null
+          },
+          {
+            "name": "EasySBC",
+            "url": "https://x.com/easysbc",
+            "handle": "easysbc",
+            "openedAt": "2026-09-20T19:03:53.597Z",
+            "tweetsRaw": 5,
+            "openError": null
+          },
+          {
+            "name": "FifaTradingRomania",
+            "url": "https://x.com/fifa_romania",
+            "handle": "fifa_romania",
+            "openedAt": "2026-09-20T19:02:06.255Z",
+            "tweetsRaw": 7,
+            "openError": null
+          },
+          {
+            "name": "FUT Agent",
+            "url": "https://x.com/futagentt",
+            "handle": "futagentt",
+            "openedAt": "2026-09-20T19:05:40.093Z",
+            "tweetsRaw": 6,
+            "openError": null
+          }
+        ],
+        "coverage": {
+          "accountsTotal": 16,
+          "accountsOpened": 16,
+          "rawExtracted": 67,
+          "keptIn24h": 48,
+          "droppedOutside24h": 19,
+          "droppedNoTimestamp": 0
+        },
+        "media": {
+          "enriched": 67,
+          "enrichFailed": 0,
+          "imagesCached": "49/49 via browser fallback (curl direct failures expected)",
+          "videos": 4,
+          "unresolved": 0
+        },
+        "translation": {
+          "file": "apps/news/data/translations-2026-09-21.json",
+          "entries": 48,
+          "preTranslated": "48/48",
+          "pendingInReport": 0
+        },
+        "selfCheck": {
+          "pendingTranslationCount": 0,
+          "remoteHotlinks": 0,
+          "reportDate": "2026-09-21"
+        },
+        "missingItems": [
+          "账号无当日推文(如实记录): easportsfc",
+          "账号推文均在24h窗口外被过滤: EASFCDirect"
+        ]
+      },
+      "sha256": "b0fa29ffaa8ee7eab9d63a6a1aa8eaa5c9fe801bc10603e2979acbcf420cfae9",
+      "bytes": 89594,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/news/report.html"
+    },
+    "market": {
+      "module": "market",
+      "date": "2026-09-21",
+      "runId": "37a347ba-8eac-4463-9e51-8c7c171760ba",
+      "status": "partial",
+      "startedAt": "2026-09-20T19:13:32.291Z",
+      "deadlineAt": "2026-09-20T19:28:32.291Z",
+      "reportPath": "reports/daily/2026-09-21/market.html",
+      "completedAt": "2026-09-20T19:24:43.933Z",
+      "evidence": {
+        "date": "2026-09-21",
+        "module": "market",
+        "runId": "37a347ba-8eac-4463-9e51-8c7c171760ba",
+        "status": "success",
+        "finishedAt": "2026-09-21T03:24:10+08:00",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/popular",
+            "openedAt": "2026-09-21T03:13:40+08:00",
+            "method": "宿主页(robots.txt) + 页内同源 fetch",
+            "result": "250 卡，Console 有效价 198 / PC 有效价 177"
+          },
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-21T03:13:55+08:00",
+            "method": "宿主页(robots.txt) + 页内同源 fetch",
+            "result": "500 进化卡，热度 500"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=1..4",
+            "openedAt": "2026-09-21T03:14:05+08:00",
+            "method": "宿主页 + 页内同源 fetch（渲染后 DOM 抽取）",
+            "result": "4 页 × 30 行 = 120 行，validPS 105 / validPC 78"
+          }
+        ],
+        "dataCutoff": "2026-09-21T03:13:00+08:00",
+        "priceBasis": "partial-live",
+        "products": [
+          "reports/daily/2026-09-21/market.html",
+          "reports/daily/2026-09-21/market-scan.html",
+          "reports/daily/2026-09-21/database-columns.html",
+          "reports/daily/2026-09-21/market-watch.html"
+        ],
+        "checks": {
+          "nameZh": "1833/1833 命中，未命中 0（新增 158 条译名）",
+          "scanDedupe": "574 行唯一基础 cardId，无重复；排除家族版本命中 0",
+          "scanExclusions": "已排除英雄/传奇/活动卡 10 张（今日池：Hall of FUT 10 张，含新增 Doumbia/Guarin；09-20 的 5 张 Icon/Hero 卡不在今日榜单）",
+          "avatars": "补全 115 键/113 图；概览 581/583、扫描 572/574，缺口 2 张（Franco 12014 / Banda 19000）为源站无人头像卡（CDN 404），如实空状态",
+          "priceBuckets": "6 档（含 100w+），无旧档名残留",
+          "statsKeys": "PAC/SHO/PAS/DRI/DEF/PHY 英文大写，GK 18 行",
+          "currentJson": "2827 卡，本轮 750 张合并一次（sync-current-market），未产生其他当前价副本"
+        },
+        "missing": [
+          "本周周黑（TOTW）名单尚未发布（TOTW 于周三滚动更新），概览对应区如实空状态",
+          "本周活动卡（Promo）台账本轮为 0 张（活动卡池轮换空档），如实空状态",
+          "周黑/活动卡候选路由未单独导航（/27/totw、/27/promos 历史实测无内容）；assemble 可选 work/totw-probe.json 本轮未提供",
+          "概览/扫描各 2 行球员无源站头像（如实空状态，未以占位图顶替）"
+        ],
+        "notes": [
+          "priceBasis=partial-live：当日已有 ≥1000 有效价，涨跌基线只取有效价",
+          "83+ 补采（collect-r83-prices.mjs）本轮未执行（时间预算收口），83+ 台账卡价由 current.json 既有观测兜底",
+          "未发布站点（发布归「FC·汇总发布」）"
+        ]
+      },
+      "sha256": "c5c737ea604b401a6ea4ef067c86be4d189ccee3b3ae364873a86f42cd24e285",
+      "bytes": 283544,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/market/report.html"
+    },
+    "evolution": {
+      "module": "evolution",
+      "date": "2026-09-21",
+      "runId": "97c127ed-8f79-4e1c-aaf8-0961baa7e086",
+      "status": "partial",
+      "startedAt": "2026-09-20T19:25:57.225Z",
+      "deadlineAt": "2026-09-20T19:40:57.225Z",
+      "reportPath": "reports/daily/2026-09-21/evolution.html",
+      "completedAt": "2026-09-20T19:30:09.158Z",
+      "evidence": {
+        "date": "2026-09-21",
+        "module": "evolution",
+        "runId": "97c127ed-8f79-4e1c-aaf8-0961baa7e086",
+        "generatedAt": "2026-09-21T03:28:34.403+08:00",
+        "dataCutoff": "2026-09-21 03:28 +08:00",
+        "status": "partial",
+        "sources": [
+          {
+            "url": "https://www.futbin.com/27/popular/evolutions",
+            "openedAt": "2026-09-21T03:27:30+08:00",
+            "note": "热门进化卡主来源。实采页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper > div.column 共 500 个卡片节点；滚动到底部后节点数不变、无分页与「加载更多」控件。按 url + 进化名称去重后 500 张进化卡（唯一 url 500 个，二者相等；同一球员的不同卡版本为独立条目）；页面未出现 No evolutions found。卡片内价格元素（.popular-price-wrapper / .platform-price-wrapper-* / .price-segment / .item-score-segment）命中数为 0，与「FUTBIN 对进化卡不公布挂牌价」的既有结论一致。DOM 实测 div.playercard-27-futbin-rating 命中 480/500 张（提取结果 480/500，两者一致）。取数方式：宿主页（robots.txt）+ 页内同源 fetch + DOMParser，未导航到榜单页（HTTP 200，5443800 B）。"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions",
+            "openedAt": "2026-09-21T03:27:32+08:00",
+            "note": "FC27 进化总览。div.evolutions-overview-wrapper 共 19 条（2026-09-20 为 18 条，本日新增 Creative Crossroads，无路径下线）。来源标签分布：Evolutions 4、Training Camp 2、Pathway Evolutions 1、Rewards 3、赛季等级行（Season 1 Level: N）6、Cosmetics 3。逐条取得费用、UNLOCK / EXPIRES 有效期、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles）。费用形态：付费 4 条（Creative Crossroads 150 FC Points + 15,000 金币、Ones to Watch Retro 20 200 FC Points + 25,000 金币、Ones to Watch Retro 18 200 FC Points + 25,000 金币、Ones to Watch Retro 19 200 FC Points + 25,000 金币），其余为 Free；Training Camp 类在 EXPIRES 与费用之间另有一个「TRAINING 时长」格（已单独记录为 trainingCost，未与费用混淆）。**本日站点总览页 DOM 结构发生变更（由扁平换行改为深度缩进嵌套、标签改首字母大写、逐项升级由 4 token 合并为 2 token），解析口径已同步更新并逐条复核**，HTTP 200，581351 B。"
+          },
+          {
+            "url": "https://www.futbin.com/27/evolutions/expired",
+            "openedAt": "2026-09-21T03:27:34+08:00",
+            "note": "已过期进化核验：页面 div.evolutions-overview-wrapper 节点数为 0（标题「EA FC 27 Player Evolutions | FUTBIN」），即本轮 19 个进化全部处于有效期内，无过期路径。HTTP 200，122499 B。"
+          }
+        ],
+        "missing": [
+          "进化卡自身价格缺失（来源侧事实）：FUTBIN 对进化卡不公布 Console/PC 挂牌价，页面「参考价（基础卡）」是按 baseCardId 关接到的**基础卡**市价（持仓成本参考），不是该进化卡的成交价；两者均无有效价时显示「无报价」，未写成价格为 0。",
+          "FUTBIN Rating 缺失 20/500：来源页 500 张进化卡中仅 480 张存在 div.playercard-27-futbin-rating（DOM 实测 480/500），其余 20 张该字段如实留空，不用 Rating 列、六维合计或其它数值顶替。",
+          "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长，FUTBIN 未提供绝对到期日期，无法换算成具体日期。",
+          "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 的具体挑战内容；本轮未逐条打开 19 个详情页（预算与反爬风险），故 steps 字段按页面可得事实归纳，未收录逐级挑战原文。",
+          "Intro to Training Camp EVOs 与部分 Pathway / Rewards 卡未给出逐项数值升级表：Training Camp 只给 Role「Fullback++」；Pinged Pass / Relentless / Creative or Composed 等只给 PlayStyle 项。上述路径的具体属性收益页面未列出。",
+          "Ones to Watch Retro 18 / 19 / 20 的属性与前置条件缺失（来源侧事实）：页面只说明为外观/稀有度变更，Player Requirements 与 Total Upgrades 均为空，故无法给出属性增益与入选门槛；费用为 200 FC Points + 25,000 金币（FUTBIN 标注 Repeatable）。",
+          "赛季通行证路径的领取条件不完整：页面只给「Found at Level N of the Premium/Free Season Pass」，未列出通行证是否需要付费、赛季结束时间与等级获取成本，故无法评估实际获取代价。",
+          "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单本身为准。",
+          "榜单条数上限未知：/27/popular/evolutions 渲染 500 个卡片节点且页面未给出「共 N 条」计数或分页控件，无法排除服务端截断，故以页面实际渲染的 500 条为准。",
+          "价格上涨/收益预测缺失：本轮不输出任何涨跌或精确收益预测；页面参考价只作持仓成本参考，不构成投资建议。"
+        ],
+        "notes": [
+          "本轮为 2026-09-21 每日调度运行（runId 97c127ed-8f79-4e1c-aaf8-0961baa7e086）。浏览器通道（Web Access CDP，独立调试 profile 9333，browser-triage.mjs exit 0）正常，三个来源页均在本轮内打开并实采成功；取数走「宿主页 + 页内同源 fetch」，未导航到榜单页。",
+          "本页状态为 partial：采集与渲染均成功，但存在如实标注的缺失项（进化卡自身无挂牌价、FUTBIN Rating 有卡在来源页缺失、到期时间只有相对口径、逐级挑战步骤未收录等）。evidence.missing 非空时 run-state 会把 success 自动降级为 partial，故此处与权威状态保持一致。",
+          "进化路径 19 条（2026-09-20 为 18 条，本日新增 Creative Crossroads，全部处于有效期内）。分布：共 500 张进化卡，按进化名称计数 Creative Crossroads 174 张；Fullback Fork 78 张；Intro to Pathway Evolutions 65 张；Repeat Delivery 27 张；Intro to Repeatable Evolutions 25 张；Believe 23 张；Winger Glow Up 19 张；Shooting Practice 18 张；Intro to Evolutions 16 张；Intro to Training Camp EVOs 10 张；Striker Glow Up 9 张；Midfield Polish 8 张；Ones to Watch Retro 20 7 张；Ones to Watch Retro 18 7 张；Ones to Watch Retro 19 6 张；Tactical Ascent 3 张；Creative or Composed 3 张；Pinged Pass 2 张。",
+          "站点结构变化（已核验，非采集缺陷）：/27/evolutions 总览卡的 DOM 由「扁平换行文本」改为「深度缩进嵌套」，类型标签与费用/可重复性文案由全大写改为首字母大写（Evolutions / Training Camp / Cosmetics / Rewards / Season 1 Level: N / Free / Repeatable），且 Total Upgrades 的逐项由 4 个 token（Overall / +34 / | / 79）合并为 2 个（Overall / “+34 | 79”）。旧解析（空白敏感 + 全大写锚定）在本轮会**静默失配**：实测首次采集即出现 Player Requirements 全空、upgrades 吞掉投票块、类型标签全空、FREE 读不到。采集侧已改为「空白归一化 + 大小写不敏感」并逐条复核通过。",
+          "外观类路径：Cosmetics 3 条（Ones to Watch Retro 18 / 19 / 20），只把球员卡换成 Ones to Watch Retro 稀有度外观，页面 Player Requirements 与 Total Upgrades 均为空（upgrades 原文只剩投票百分比），**不提供任何属性升级**，已在页面上如实标注为「纯外观/稀有度」。",
+          "付费进化路径 4 条：Creative Crossroads 为 150 FC Points + 15,000 金币、Ones to Watch Retro 20 为 200 FC Points + 25,000 金币、Ones to Watch Retro 18 为 200 FC Points + 25,000 金币、Ones to Watch Retro 19 为 200 FC Points + 25,000 金币（费用格为两行，首行数字带 fc-points 图标 = FC 点数，次行为金币）。其余 15 条均为 Free。",
+          "榜单覆盖缺口：总览页的 19 条路径中，Relentless 在本轮 /27/popular/evolutions 榜单中**没有**任何卡片入选（热度不足），故 evolution.json 的 evolutions 数组不含这些路径；这属榜单口径，不是采集遗漏。",
+          "评分口径：榜单 Rating 列显示的是「进化后」OVR，不是基础卡评分。阅读表格时请勿把该 Rating 当作基础卡评分。",
+          "FUTBIN Rating（页面 div.playercard-27-futbin-rating）在本轮 500 张卡中有 20 张在来源页不存在（DOM 实测 480/500 命中该元素，与提取结果一致）；这 20 条的 futbinRating 如实留空，不用 Rating 列或其他数值顶替。",
+          "到期口径：FUTBIN 只给相对时长（UNLOCK / EXPIRES），未提供绝对到期日期，故 expires 字段按页面原文的相对时长记录，不换算具体日期。本日入门系列为 12 Months，Fullback Fork 为 1 Weeks / 2 Weeks，Cosmetics 类为 1 Months。",
+          "FUTBIN 对进化卡不公布挂牌价（榜单卡片内价格元素命中数为 0，本轮再次复核），故本页不展示进化卡自身价格；页面中的「参考价（基础卡）」按 baseCardId 在运行时从统一行情 current.json 读取，不是该进化卡的成交价。本任务未为进化卡再次采集或分析任何市场价格，也未写 priceRef 或任何当前价副本。",
+          "本节只写「可证实的卡面事实」与来源页明示的路线整理，不输出无依据的精确收益预测。开服日 launchDate 为 2026-09-18，页面价格口径以当日实测（priceBasis）为准，本页不作涨跌预测。"
+        ],
+        "outputs": [
+          "reports/daily/2026-09-21/evolution.html",
+          "automation/runs/2026-09-21/evolution/evolution.json"
+        ]
+      },
+      "sha256": "b472e65f745bbe123afd95396a7a3dc4fe11be248ee992f462c2501780647a7d",
+      "bytes": 175654,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/evolution/report.html"
+    },
+    "icons-heroes": {
+      "module": "icons-heroes",
+      "date": "2026-09-21",
+      "runId": "fd734deb-9080-4191-a8b9-61801271c8fc",
+      "status": "partial",
+      "startedAt": "2026-09-20T19:31:35.422Z",
+      "deadlineAt": "2026-09-20T19:46:35.422Z",
+      "reportPath": "reports/daily/2026-09-21/icons-heroes.html",
+      "completedAt": "2026-09-20T19:39:59.439Z",
+      "evidence": {
+        "date": "2026-09-21",
+        "module": "icons-heroes",
+        "runId": "fd734deb-9080-4191-a8b9-61801271c8fc",
+        "status": "partial",
+        "startedAt": "2026-09-20T19:31:35.422Z",
+        "submittedAt": "2026-09-20T19:39:56.757Z",
+        "channel": {
+          "precheck": "node automation/browser-triage.mjs",
+          "verdict": "OK",
+          "exitCode": 0,
+          "selfHealed": false,
+          "note": "独立调试 profile 9333；来源页 403 属来源侧限时拦截，非通道故障（triage OK 即通道健康）"
+        },
+        "sources": [
+          {
+            "url": "https://www.futbin.com/robots.txt",
+            "openedAt": "2026-09-20T19:31:59Z",
+            "status": 200,
+            "note": "宿主页（页内同源 fetch 的 origin 载体），每 3 批重建一次，共 1 次重建；未导航到榜单页（Cloudflare 挑战页会打死导航式采集）"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=1..15",
+            "openedAt": "2026-09-20T19:32:05Z",
+            "dataCutoff": "2026-09-20T19:33:10Z",
+            "status": 200,
+            "rows": 450,
+            "note": "页内 fetch + DOMParser，每页 30 行；一次读取即同时取 td.table-price.platform-ps-only（Console）与 platform-pc-only（PC），未为切平台重复导航；版本以行内尾标签 Icon / Base Heroes 判定，Debut Icon 计 0 张"
+          },
+          {
+            "url": "https://www.futbin.com/27/players?page=16..26",
+            "openedAt": "2026-09-20T19:32:05Z",
+            "status": 403,
+            "attempts": [
+              "2026-09-20T19:32:05Z 首轮（页 16–26 403）",
+              "2026-09-20T19:34:31Z 退避 75s 重试（第 1 次，仍 403、0 行）",
+              "2026-09-20T19:37:25Z 退避 150s 重试（第 2 次，契约上限，仍 403、0 行）"
+            ],
+            "note": "第 16–26 页全 403，具时限性拦截；已按契约分钟级退避重试 2 次后停手，未秒级密集重试、未换参数变形重试"
+          }
+        ],
+        "counts": {
+          "iconsTotal": 131,
+          "iconsCollected": 131,
+          "iconMissingFromSource": 0,
+          "iconNotInLedger": 141,
+          "debutIconExcluded": 0,
+          "heroesCollected": 99,
+          "heroesFc26Ref": 93,
+          "otherVersionRows": 79,
+          "consoleValid": 209,
+          "pcValid": 162,
+          "snapshotPlayers": 131,
+          "snapshotPriceBasis": "partial-live",
+          "priceRangeCards": 8,
+          "nameZhIcons": "131/131",
+          "nameZhHeroes": "99/99",
+          "avatarIcons": "131/131",
+          "avatarHeroes": "95/99"
+        },
+        "missingItems": [
+          "FUTBIN /27/players 第 16–26 页（11 页）本轮全部 403，退避 75s / 150s 两次重试仍 403 → 英雄卡名单可能在页 16+ 仍有未采到的卡（本轮页 15 末出现 1 名只有单卡出场的英雄，提示列表未穷尽）；基础传奇卡不受影响（131/131 全部采到、iconMissingFromSource=0）",
+          "英雄卡 4 张解析不到头像（如实不显示图片，未用他人图/占位图顶替）；backfill 本轮余 1 个不可解析 cardId 20509 = noface（EA 无脸图）",
+          "基础传奇卡 13 张、英雄卡 20 张在本轮无 ≥1000 coins 平台价，如实按占位值处理（valid=false）"
+        ],
+        "fixes": [
+          "render-icons-heroes.mjs：修复英雄台账重复计账。该渲染器递归扫描 heroes/data/**，2026-09-20 新增的派生台账 players/fc27/ledger-heroes.json（50 张，无价格）与采集产物 prices/fc27/base-heroes.json（99 张）被一并收录 → 同一表内出现 149 行、其中 50 张 cardId 重复。修法：跳过 ledger-*.json 派生台账 + 按 cardId 去重兜底。修复后 FC27 英雄 99 张（单来源）。",
+          "译名词库 name-zh-supplement-fc27.json 追加 25 条英雄卡中文名（FC26 台账已有同名 slug 的按既有译名对齐），英雄中文名覆盖率 50/99 → 99/99。"
+        ],
+        "openIssues": [
+          "base-icons.json / base-heroes.json 的 version 字段仍为 \"\" —— 契约（根 AGENTS.md「监控对象」/ prompts/icons-heroes.md）要求逐卡写明 \"Icon\" / \"Hero\"。采集器 mk() 恒写空串，属长期存在（09-17 起）的契约偏差；下游渲染按文件而非该字段区分版本，故暂无外部症状。修法需改采集器并重跑采集，本轮未擅自改动，待用户裁定。"
+        ],
+        "artifacts": [
+          {
+            "path": "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+            "bytes": 69759
+          },
+          {
+            "path": "apps/market/engine/heroes/data/prices/fc27/base-heroes.json",
+            "bytes": 45025
+          },
+          {
+            "path": "apps/market/engine/icons/data/prices/fc27/daily/2026-09-21.json",
+            "bytes": 120498
+          },
+          {
+            "path": "reports/daily/2026-09-21/icons-heroes.html",
+            "bytes": 410266,
+            "sha256": "58952fd09ca3b70d2937a9eaf6ae1e6f0d4740dac33f099550709dfffc63dc02"
+          }
+        ],
+        "notDone": [
+          "未渲染 market.html / market-scan.html",
+          "未发布站点（发布属「FC·汇总发布」职责）",
+          "未新增或改动任何定时任务",
+          "未为取当前价重开 FUTBIN 详情页（当前价与区间一律按 cardId 读 current.json）"
+        ],
+        "tests": "node --test automation/execution.test.mjs automation/regression.test.mjs automation/verify-publication.test.mjs automation/news-media.test.mjs → 40/40 通过"
+      },
+      "sha256": "58952fd09ca3b70d2937a9eaf6ae1e6f0d4740dac33f099550709dfffc63dc02",
+      "bytes": 410266,
+      "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/icons-heroes/report.html"
+    }
+  },
+  "publish": "delegated",
+  "unattendedPublishingVerified": false,
+  "merge": "success",
+  "indexSha256": "6f7154fabeddfe7656def55e6025dc063f628d1263b1fc56fa5b5b776469aaa6",
+  "failedPanels": 0,
+  "publishTarget": {
+    "kind": "workbuddy-sites",
+    "directory": "/Users/wuyanzu/Desktop/FC/daily-merged",
+    "entry": "index.html"
+  },
+  "reason": "本地已合并；发布交由 WorkBuddy 站点发布能力执行（每日任务在 coordinate 成功后调用 sites 发布 daily-merged/）。",
+  "completedAt": "2026-09-20T22:17:47.920Z"
+}

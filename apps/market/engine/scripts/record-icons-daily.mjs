@@ -7,7 +7,7 @@
  * 输入：
  *   apps/market/engine/icons/data/prices/fc27/base-icons.json     当日抓取原始结果（默认）
  *   apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json  卡库台账（位置/六维/特技）
- *   apps/market/engine/icons/data/prices/fc27/pricerange/latest.json  逐小时任务采集的价格区间
+ *   apps/market/engine/icons/data/prices/fc27/pricerange/latest.json  传奇价格区间任务（每 4 小时）采集的价格区间
  *       （最低价 / 最高价 + 双平台实时价；缺失时回退当日列表页平台价）
  *   （可用 FC_ICON_RAW / FC_ICON_LEDGER / FC_ICON_PRICERANGE 指定其他路径；FC_PROJECT_ROOT 指定项目根）
  * 输出：
@@ -19,9 +19,12 @@
  * 区间口径（2026-09-17 新增）：
  *   FUTBIN 详情页的「Price Range」是**卡级**字段（同一张卡的 Console 与 PC 价格盒渲染同值），
  *   故逐卡写入单个 priceRange{min,max}，不按平台拆分；缺失一律 null，不用估值或其他卡顶替。
- * 口径：
- *   date < launchDate（2026-09-25）时 FUTBIN 只有列表页占位/估算价，priceBasis 记为 listing-estimate；
- *   开服后记为 market。价格 < 1000 视为占位值而非有效市场价，priceValid=false。
+ * 口径（2026-09-20 定稿）：
+ *   FC27 开服日 launchDate = 2026-09-18（2026-09-25 是**正式全球发售日**，不是开服日，勿改回）。
+ *   priceBasis **按当日实测有效价判定，不按日期比较**：当日存在平台级有效价（≥1000 coins）记为 market，
+ *   一张都没有记为 listing-estimate。理由：09-18 当天两平台价多为 0/占位值，若按日期一刀切成 market，
+ *   会让「日环比」把占位价当成基线。
+ *   价格 < 1000 视为占位值而非有效市场价，priceValid=false。
  * 用法：node apps/market/engine/scripts/record-icons-daily.mjs [YYYY-MM-DD]
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync, renameSync, readdirSync } from 'node:fs';
@@ -38,7 +41,7 @@ const PRICERANGE_PATH = process.env.FC_ICON_PRICERANGE || path.join(ICON_DIR, 'd
 const DAILY_DIR = path.join(ICON_DIR, 'data', 'prices', 'fc27', 'daily');
 
 
-const FALLBACK_LAUNCH_DATE = '2026-09-25';
+const FALLBACK_LAUNCH_DATE = '2026-09-18'; // FC27 开服日（2026-09-19 用户明确口径）
 // 有效市场价格下限：列表页占位值集中在 88~95，明显不是金币成交价
 const MIN_VALID_PRICE = 1000;
 
@@ -69,7 +72,7 @@ const ledger = readJSON(LEDGER_PATH);
 const ledgerById = new Map();
 if (Array.isArray(ledger)) for (const item of ledger) if (item && item.id) ledgerById.set(String(item.id), item);
 
-// 价格区间（逐小时任务采集）：卡级字段 min/max，缺失一律 null
+// 价格区间（传奇价格区间任务采集）：卡级字段 min/max，缺失一律 null
 const pricerange = readJSON(PRICERANGE_PATH);
 const rangeById = new Map();
 if (pricerange && Array.isArray(pricerange.cards)) {
@@ -122,7 +125,7 @@ function platformPricesOf(player) {
   return out;
 }
 
-// 逐小时详情页采集同时包含双平台实时价；只有快照日期与目标日期相同才可覆盖列表页价。
+// 详情页（每 4 小时一轮）采集同时包含双平台实时价；只有快照日期与目标日期相同才可覆盖列表页价。
 function latestPlatformPricesOf(rng, fallback) {
   if (!rangeIsCurrentDate || !rng || !rng.current) return fallback;
   const out = { ...fallback };
@@ -167,7 +170,9 @@ const players = raw.players.map(p => {
 
 const validCount = players.filter(p => p.priceValid).length;
 const platformValidCount = Object.fromEntries(Object.keys(PLATFORM_KEYS).map(pid => [pid, players.filter(p => p.platforms[pid]?.valid).length]));
-const priceBasis = dateStr < launchDate ? 'listing-estimate' : 'market';
+// priceBasis 按**当日实测有效价**判定（2026-09-20 用户口径），不再按「日期 < launchDate」一刀切。
+// 词表与市场侧统一：listing-estimate（全无有效价，全是占位/估值）| partial-live（已有部分有效价）。
+const priceBasis = validCount > 0 ? 'partial-live' : 'listing-estimate';
 
 // 区间覆盖统计：用于监控页如实说明「有多少张卡拿到了最低价/最高价」
 const withRange = players.filter(p => p.priceRange && typeof p.priceRange.min === 'number' && typeof p.priceRange.max === 'number');
@@ -187,8 +192,8 @@ const snapshot = {
   recordedAt: new Date().toISOString(),
   priceBasis,
   priceBasisNote: priceBasis === 'listing-estimate'
-    ? `FC27 未开服（开服日 ${launchDate}），FUTBIN 仅提供列表页占位/估算价，不是市场成交价，不能当作行情信号。`
-    : 'FC27 已开服，价格为 FUTBIN 当日成交价。',
+    ? `本日（${dateStr}）${players.length} 张传奇卡全部无平台级有效价（均 <1000 coins），FUTBIN 仅有列表页占位/估算值，不是市场成交价，不得据此计算日环比与累计涨跌。`
+    : `本日（${dateStr}）${validCount}/${players.length} 张拿到平台级有效价（≥1000 coins），属 FUTBIN 当日挂单/估价口径。`,
   counts: { total: players.length, valid: validCount, missing: players.length - validCount, platformValid: platformValidCount },
   priceRange: {
     scope: 'card',
@@ -206,7 +211,7 @@ const snapshot = {
     rawFile: path.relative(ROOT, RAW_PATH),
     capturedAt: rangeIsCurrentDate && rangeCollectedAt ? rangeCollectedAt : (raw.generatedAt || null),
     note: rangeIsCurrentDate && rangeCollectedAt
-      ? `双平台当前价与价格区间来自逐小时详情页采集；名单与静态字段来自 ${path.relative(ROOT, RAW_PATH)}。`
+      ? `双平台当前价与价格区间来自详情页采集（每 4 小时一轮）；名单与静态字段来自 ${path.relative(ROOT, RAW_PATH)}。`
       : (raw.source ? `原始抓取来源：${raw.source}` : ''),
   },
   players,
@@ -218,11 +223,11 @@ atomicWrite(target, JSON.stringify(snapshot, null, 2) + '\n');
 
 console.log(`传奇卡快照已写入: ${path.relative(ROOT, target)}${existed ? '（同日重跑，已覆盖当日快照）' : ''}`);
 console.log(`  卡数 ${players.length} · 有效价格 ${validCount} · 口径 ${priceBasis} · 开服日 ${launchDate}`);
-// 平台有效价提示必须按当日实测走，不能写死「均为 0」：FUTBIN 会在正式开服前滚动放出部分平台价
+// 平台有效价提示必须按当日实测走，不能写死「均为 0」：FUTBIN 会在开服初期滚动放出部分平台价
 const anyPlatformValid = platformValidCount.console > 0 || platformValidCount.pc > 0;
 console.log(`  平台有效价：Console ${platformValidCount.console} / PC ${platformValidCount.pc}（${anyPlatformValid
   ? 'FUTBIN 已开始滚动放出部分平台价，其余为 0 按占位值处理'
-  : '开服前两平台均为 0，属预期'}）`);
-console.log(`  价格区间（最低价-最高价，卡级）：${withRange.length}/${players.length} 张${rangeCollectedAt ? ` · 采集于 ${rangeCollectedAt}` : ' · 未找到逐小时采集结果'}`);
+  : '两平台均无有效价（全为 0 占位），属预期'}）`);
+console.log(`  价格区间（最低价-最高价，卡级）：${withRange.length}/${players.length} 张${rangeCollectedAt ? ` · 采集于 ${rangeCollectedAt}` : ' · 未找到价格区间任务采集结果'}`);
 const days = existsSync(DAILY_DIR) ? readdirSync(DAILY_DIR).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).length : 0;
 console.log(`  历史快照累计天数: ${days}`);

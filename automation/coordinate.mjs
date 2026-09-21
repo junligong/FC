@@ -1,7 +1,7 @@
 // 作用：等待三个内容任务的不可变快照，在隔离目录合并日报并刷新固定汇总入口。
 import {fileURLToPath} from 'node:url';
 import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import {spawnSync} from 'node:child_process';
-import {root,reportDate,atomicWrite,readJSON} from '../shared/lib/runtime.mjs';import {outputs,digest} from './run-state.mjs';
+import {root,reportDate,atomicWrite,readJSON} from '../shared/lib/runtime.mjs';import {outputs,digest} from './run-state.mjs';import {pruneReportAssets} from '../shared/lib/prune-report-assets.mjs';
 const codeRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const date=reportDate(process.argv[2]);const dir=path.join(root,'automation/runs',date);fs.mkdirSync(dir,{recursive:true});
 const rerun=process.argv.includes('--rerun');
@@ -49,12 +49,21 @@ try{
  if(!available){status.merge='no_current_snapshot';status.publish='skipped';}
  else{
  const merge=spawnSync(process.execPath,[path.join(codeRoot,'apps/portal/merge_daily_report.mjs'),date],{env:{...process.env,FC_PROJECT_ROOT:stage},encoding:'utf8',timeout:60000});if(merge.status!==0)throw Error('merge failed: '+merge.stderr);
- atomicWrite(path.join(root,`reports/daily/${date}/summary.html`),fs.readFileSync(path.join(stage,`reports/daily/${date}/summary.html`),'utf8'));
+ // 回写日报快照：当日 + 全部历史日（合并脚本会统一刷新 archive/<D>.html 与本地归档副本
+ // reports/daily/<D>/summary.html 的版式，两者必须一起回写，否则本地副本会与站点不一致）
+ const stageReports=path.join(stage,'reports/daily');
+ if(fs.existsSync(stageReports))for(const d of fs.readdirSync(stageReports)){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(d))continue;
+  const src=path.join(stageReports,d,'summary.html');if(!fs.existsSync(src))continue;
+  atomicWrite(path.join(root,`reports/daily/${d}/summary.html`),fs.readFileSync(src,'utf8'));
+ }
  atomicWrite(path.join(root,'daily-merged/index.html'),fs.readFileSync(path.join(stage,'daily-merged/index.html'),'utf8'));
  // 同步历史日报独立归档目录（stage 里合并脚本已生成/补齐 archive/*.html）
  const stageArchive=path.join(stage,'daily-merged','archive');if(fs.existsSync(stageArchive)){fs.mkdirSync(path.join(root,'daily-merged','archive'),{recursive:true});for(const f of fs.readdirSync(stageArchive)){if(f.endsWith('.html'))fs.copyFileSync(path.join(stageArchive,f),path.join(root,'daily-merged','archive',f));}}
  // 同步共享静态资源（海报等），保证线上多文件站点相对路径可用
  const stageAssets=path.join(stage,'daily-merged','assets');if(fs.existsSync(stageAssets))fs.cpSync(stageAssets,path.join(root,'daily-merged','assets'),{recursive:true});
+ // 共享资源已回写，报告目录里的那份就是纯副本了（隔离目录内的清理不会碰真实根，故此处再清一次）
+ try{const pr=pruneReportAssets({reportRoot:historyRoot,assetsDir:path.join(root,'daily-merged','assets')});if(pr.pruned)status.prunedAssets={files:pr.pruned,mb:+(pr.bytes/1048576).toFixed(2),days:pr.days};}catch(e){status.pruneError=e.message;}
  status.merge=valid?'success':'status_only';status.indexSha256=digest(fs.readFileSync(path.join(root,'daily-merged/index.html')));status.failedPanels=failedPanels;
  // 发布交由 WorkBuddy 站点发布能力完成：agent 在同一会话内对 daily-merged/ 调用 sites 发布。
  // 不再使用 DuMate 单文件 artifact 通道，也不再于此处猜测发布接口。

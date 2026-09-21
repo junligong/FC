@@ -74,5 +74,5 @@ X 在后台标签页（`document.visibilityState === 'hidden'`，`requestAnimati
 
 ## 相关文件
 
-- 共享路径与日期逻辑只从 `../../shared/lib/runtime.mjs` 导入；图片命名与内联从 `../../shared/lib/report-assets.mjs` 导入。
+- 共享路径与日期逻辑只从 `../../shared/lib/runtime.mjs` 导入；图片的缓存判定、命名与路径改写从 `../../shared/lib/report-assets.mjs` 导入（图片本身不内联，由合并期改写为指向 `daily-merged/assets/`）。
 - 媒体解析的回归测试在 `../../automation/news-media.test.mjs`（随全套测试一起跑）。

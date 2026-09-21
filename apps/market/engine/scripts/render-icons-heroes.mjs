@@ -50,6 +50,11 @@ function collectHeroes(dir, out = []) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) { collectHeroes(full, out); continue; }
     if (!/\.json$/i.test(entry.name)) continue;
+    // 2026-09-21 修复：`players/fc27/ledger-*.json` 是 build-player-ledger.mjs 由采集结果**派生**的台账
+    // （只有名单与卡值字段、不含价格），不是采集输出。本模块递归扫描 heroes/data 时会把它与
+    // `prices/fc27/base-heroes.json` 一起收进来，同一批卡被重复计入（首轮实测 149 = 99 + 50，
+    // 其中 50 张 cardId 重复出现在同一张表里）。派生台账一律跳过：英雄监控只认采集产物。
+    if (/^ledger-.*\.json$/i.test(entry.name)) continue;
     try {
       const data = JSON.parse(readFileSync(full, 'utf8'));
       const list = Array.isArray(data) ? data : (data.cards || data.players || []);
@@ -65,8 +70,20 @@ function collectHeroes(dir, out = []) {
 }
 const heroDir = path.join(ROOT, 'apps', 'market', 'engine', 'heroes', 'data');
 const allHeroItems = collectHeroes(heroDir);
-const heroes = allHeroItems.filter(h => h.__game === 'fc27' || (h.__game === 'unknown' && !/fc26/.test(h.__file)));
-const heroesFc26Ref = allHeroItems.filter(h => h.__game === 'fc26');
+// 按 cardId 去重（首见优先）：同名球员在 FUTBIN 列表页会以两个不同 cardId 出现，那是两张不同的卡，
+// 必须都保留；这里只去掉**同一个 cardId** 被多个文件重复收录的情况（来源重叠时的兜底）。
+const dedupeByCardId = list => {
+  const seen = new Set();
+  return list.filter(h => {
+    const k = String(h.id ?? h.cardId ?? '');
+    if (!k) return false;
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+};
+const heroes = dedupeByCardId(allHeroItems.filter(h => h.__game === 'fc27' || (h.__game === 'unknown' && !/fc26/.test(h.__file))));
+const heroesFc26Ref = dedupeByCardId(allHeroItems.filter(h => h.__game === 'fc26'));
 if (!heroes.length) console.error(`未找到 FC27 英雄卡（Hero）数据（${path.relative(ROOT, heroDir)} 下 fc27 代际），英雄台账渲染为如实空状态；FC26 数据仅作参考对比。`);
 
 let html = renderIcons(dateStr, { snapshots, ledger });

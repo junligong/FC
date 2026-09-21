@@ -7,7 +7,7 @@
  *       「传奇/英雄专栏 → 传奇卡研究」子标签的内容（跨日期常驻研究报告）。
  *
  * 输入：
- *   - FC27 价格区间：apps/market/engine/icons/data/prices/fc27/pricerange/latest.json（逐小时任务采集）
+ *   - FC27 价格区间：apps/market/engine/icons/data/prices/fc27/pricerange/latest.json（每 4 小时的传奇价格区间任务采集）
  *   - FC27 当日快照：apps/market/engine/icons/data/prices/fc27/daily/<DATE>.json（当前价，按平台）
  *   - FC26 历史价格：apps/market/engine/icons/data/prices/fc26/base-icons.json（开服日与首月逐日均价）
  *   - 卡库台账：apps/market/engine/icons/data/players/fc27/fc27-icons-playstyles.json（中文名/位置）
@@ -21,12 +21,12 @@
  *   条件 B：FC26 开服价 > FC27 最高价
  *   满足任一即摘出作为投资建议。
  *
- *   **重要口径约束（否则规则会退化成噪声）**：FC27 未开服（launchDate=2026-09-25）前，
+ *   **重要口径约束（否则规则会退化成噪声）**：FC27 开服初期（含 2026-09-18 开服当天），
  *   FUTBIN 的平台当前价普遍为 0，0 是「尚无挂单」的占位值而非价格。若不加判据，
  *   「FC26 开服价 > 0」对每一张卡都成立，会把全部卡都判成投资建议 —— 那是错误结论。
  *   因此条件 A 只在**当前价为有效价（≥ minValidPrice，默认 1000）**时参与判定；
  *   无效价的卡 A 条件记为「不适用（无有效当前价）」，并如实展示。
- *   条件 B 使用价格区间最高价，该字段开服前即持续更新，是当前唯一可用的有效对照。
+ *   条件 B 使用价格区间最高价，该字段开服初期即持续更新，是当前唯一可用的有效对照。
  *
  * 口径说明：FC26 开服价取该卡在 FC26 开服日（2025-09-18）的 Console（PS/Xbox 合并）均价，
  *   即原始文件 prices.cross 的首日值；FC26 与 FC27 的卡按 FUTBIN slug 关联。
@@ -50,7 +50,9 @@ const DAILY_DIR = path.join(ICON_DIR, 'data', 'prices', 'fc27', 'daily');
 const RESEARCH_DIR = path.join(ICON_DIR, 'data', 'research');
 
 const MIN_VALID_PRICE = 1000; // 与采集侧一致：低于此值视为占位值
-const FALLBACK_LAUNCH_DATE = '2026-09-25';
+// FC27 开服日（用户 2026-09-19 明确口径）：2026-09-18；FC26 开服日 2025-09-18，两代开服日同月同日，
+// 便于做「同时段（开服第 N 天）」逐卡对照。历史上曾按 2026-09-25（正式发售）口径，现已修正。
+const FALLBACK_LAUNCH_DATE = '2026-09-18';
 
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const coins = v => (typeof v === 'number' && Number.isFinite(v) && v > 0 ? v.toLocaleString('en-US') : '—');
@@ -253,8 +255,8 @@ summary{cursor:pointer;color:var(--muted);font-size:12.5px}
 <ul>
 <li><b>条件 A</b>：FC26 开服价 &gt; FC27 当前价 —— 命中 ${condAOnly + bothConds} 张（其中与条件 B 同时命中 ${bothConds} 张）。</li>
 <li><b>条件 B</b>：FC26 开服价 &gt; FC27 最高价 —— 命中 ${condBOnly + bothConds} 张。满足 A 或 B 任一即计入下方「投资建议」。</li>
-<li><b>为什么不加判据会让规则失效</b>：FC27 未开服前，FUTBIN 的平台当前价普遍是 <code>0</code>（尚无挂单的占位值，不是价格）。若直接比较，<code>FC26 开服价 &gt; 0</code> 对每一张卡都成立，会得出「全部卡都值得投资」的错误结论。因此条件 A <b>只在当前价为有效价（≥ ${MIN_VALID_PRICE} coins）时参与判定</b>，无有效价的卡记为「不适用」，不当作命中。</li>
-<li>当前处于 <code>${esc(priceBasis)}</code> 口径：FC27 尚无成交价，条件 B 使用的「最高价」是 FUTBIN 详情页 Price Range 的高值（开服前即持续更新），是目前唯一可用的有效对照；该字段是<b>卡级</b>口径（Console 与 PC 渲染同值）。</li>
+<li><b>为什么不加判据会让规则失效</b>：FC27 开服初期（含开服当天），FUTBIN 的平台当前价普遍是 <code>0</code>（尚无挂单的占位值，不是价格）。若直接比较，<code>FC26 开服价 &gt; 0</code> 对每一张卡都成立，会得出「全部卡都值得投资」的错误结论。因此条件 A <b>只在当前价为有效价（≥ ${MIN_VALID_PRICE} coins）时参与判定</b>，无有效价的卡记为「不适用」，不当作命中。</li>
+<li>当前处于 <code>${esc(priceBasis)}</code> 口径：FC27 平台价是 FUTBIN 滚动挂单/估价，不等于成交价；条件 B 使用的「最高价」是 FUTBIN 详情页 Price Range 的高值（开服初期即持续更新），是目前唯一可用的有效对照；该字段是<b>卡级</b>口径（Console 与 PC 渲染同值）。</li>
 <li>对照口径：FC26 开服价取该卡在 FC26 开服日（2025-09-18）的 Console（PS/Xbox 合并）均价，即原始文件 <code>prices.cross</code> 首日值；FC27「当前价」取当日快照的平台价（C = Console，PC = PC），取两平台最高有效价作为代表值参与判定（判定更保守）。两代卡按 FUTBIN slug 关联。</li>
 <li>倍数列 = FC26 开服价 ÷ FC27 最高价。<b>＞1 表示 FC27 的区间上沿仍低于 FC26 开服价</b>，是本次投资建议的主要排序依据。</li>
 <li><b>信号强度</b>：条件 B（对照区间上沿）比条件 A（对照单一刊例价）更稳健 —— 当前价只是一个挂单价，可能因个别低价挂单而偏低，容易放大差额；条件 A 命中项建议结合区间上沿一并复核，不要单看倍数。</li>
@@ -278,12 +280,12 @@ ${advice.length
 <h2>四、数据来源与缺失项</h2>
 <div class="card">
 <ul>
-<li>来源：<code>https://www.futbin.com/27/player/&lt;id&gt;/&lt;slug&gt;</code>（FC27 价格区间，逐小时采集）· <code>https://www.futbin.com/27/players</code>（FC27 当前价）· FC26 历史价格文件 <code>apps/market/engine/icons/data/prices/fc26/base-icons.json</code>。</li>
+<li>来源：<code>https://www.futbin.com/27/player/&lt;id&gt;/&lt;slug&gt;</code>（FC27 价格区间，每 4 小时采集）· <code>https://www.futbin.com/27/players</code>（FC27 当前价）· FC26 历史价格文件 <code>apps/market/engine/icons/data/prices/fc26/base-icons.json</code>。</li>
 <li>价格区间采集时间：<code>${esc(pricerange?.collectedAt || '—')}</code>；区间覆盖 ${(pricerange?.counts?.ok ?? 0)}/${(pricerange?.counts?.total ?? 0)} 张。</li>
 ${noFc26.length ? `<li>${noFc26.length} 张卡在 FC26 无同名对照（新增传奇卡），无法做跨代比较，已如实标注为「无 FC26 对照」：${esc(noFc26.slice(0, 12).map(r => r.nameZh).join('、'))}${noFc26.length > 12 ? ' 等' : ''}。</li>` : ''}
 ${noRange.length ? `<li>${noRange.length} 张卡本期未采集到价格区间（FUTBIN 详情页请求失败或超时），未参与条件 B 判定。</li>` : ''}
-<li>未开服期间不计算日环比与累计涨跌：当前无成交价，任何环比都无行情含义。</li>
-<li>本报告是<b>实时行情驱动</b>的投资建议，每小时刷新一次；另有<b>静态预测底稿</b>《FC27 vs FC26 传奇卡对比与 FC27 价格预测报告》（<code>apps/market/engine/icons/reports/fc27-icon-analysis.html</code>），含双版本阵容对照、属性与金特技变化、131 张首月价格预测与投资分档，两者口径不同、互为补充，本报告不覆盖该底稿。</li>
+<li>不计算日环比与累计涨跌：FC27 当前无成交价（平台价是 FUTBIN 滚动挂单/估价），任何环比都无行情含义。</li>
+<li>本报告是<b>实时行情驱动</b>的投资建议，每 4 小时刷新一次；另有<b>静态预测底稿</b>《FC27 vs FC26 传奇卡对比与 FC27 价格预测报告》（<code>apps/market/engine/icons/reports/fc27-icon-analysis.html</code>），含双版本阵容对照、属性与金特技变化、131 张首月价格预测与投资分档，两者口径不同、互为补充，本报告不覆盖该底稿。</li>
 </ul>
 </div>
 

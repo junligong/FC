@@ -6,8 +6,10 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { root, reportDate } from '../shared/lib/runtime.mjs';
-import { inlineLocalReportImages, originalXImageUrl, reportImageAssetName } from '../shared/lib/report-assets.mjs';
+import { rewriteLocalReportAssets, originalXImageUrl, reportImageAssetName } from '../shared/lib/report-assets.mjs';
+import { pruneReportAssets } from '../shared/lib/prune-report-assets.mjs';
 import { themeReport } from '../shared/presentation/report-theme.mjs';
+import { appendSeries, seriesPathFor } from '../apps/market/engine/src/price-series.mjs';
 
 test('拒绝不存在的日历日期', () => {
   assert.throws(() => reportDate('2026-02-30'));
@@ -24,17 +26,78 @@ test('统一深色主题不生成白底浅色字', () => {
   assert.ok(!themed.includes('background:#ffffff'));
 });
 
-test('X 原图保存为稳定资产并可内嵌到单文件报告', () => {
-  const dir = mkdtempSync(path.join(tmpdir(), 'fc-image-'));
-  const assets = path.join(dir, 'assets/news');
-  mkdirSync(assets, { recursive: true });
+test('X 图片按尺寸归一化并以内容寻址方式命名', () => {
   const remote = 'https://pbs.twimg.com/media/example?format=jpg&name=small';
-  const name = reportImageAssetName(remote);
-  writeFileSync(path.join(assets, name), Buffer.from([0xff, 0xd8, 0xff, 0xd9]));
   assert.ok(originalXImageUrl(remote).endsWith('format=jpg&name=orig'));
-  const html = inlineLocalReportImages(`<img src="assets/news/${name}">`, dir);
-  assert.ok(html.includes('src="data:image/jpeg;base64,/9j/2Q=="'));
-  rmSync(dir, { recursive: true, force: true });
+  assert.ok(originalXImageUrl(remote, 'medium').endsWith('format=jpg&name=medium'));
+  assert.match(reportImageAssetName(remote), /^[0-9a-f]{20}\.jpg$/);
+  // 非 twimg 主机不改写
+  assert.equal(originalXImageUrl('https://example.com/a.jpg'), 'https://example.com/a.jpg');
+});
+
+test('日报本地图片改写为共享资源目录路径，不再按文档重复内联', () => {
+  // 同一张图在 index / archive / summary 三份文档里各内联一次 base64，是此前体积膨胀的根因
+  // （实测 daily-merged 191 MB / 9,336 处 data:image）。改为统一指向 daily-merged/assets/。
+  const archiveCase = rewriteLocalReportAssets('<img src="assets/news/a.jpg"><img src="./assets/players/1.png">', '../');
+  assert.ok(archiveCase.includes('src="../assets/news/a.jpg"'), 'archive 页应加 ../ 前缀');
+  assert.ok(archiveCase.includes('src="../assets/players/1.png"'), '应同时去掉 ./ 并加前缀');
+  assert.ok(!archiveCase.includes('data:image'), '不应再产生内联 data URL');
+
+  // index / archive 页在 daily-merged 根目录时前缀为空
+  assert.ok(rewriteLocalReportAssets('<img src="assets/news/a.jpg">', '').includes('src="assets/news/a.jpg"'));
+
+  // 市场扫描页把头像路径放在 db-data JSON 数据块里（由前端 JS 拼成 <img>），必须一并改写
+  const dbData = rewriteLocalReportAssets('<script id="db-data">{"img":"assets/players/2.png"}</script>', '../');
+  assert.ok(dbData.includes('"../assets/players/2.png"'));
+  assert.equal((dbData.match(/\.\.\/assets\//g) || []).length, 1, '两遍改写不得对同一路径重复加前缀');
+
+  // 远程图与非 assets 引用保持原样
+  const remote = '<img src="https://example.com/a.jpg">';
+  assert.equal(rewriteLocalReportAssets(remote, '../'), remote);
+});
+
+test('归并后清理报告目录里的资源副本，但保留唯一副本与 data/', () => {
+  // 报告目录 assets/ 与 daily-merged/assets/ 各存一份是 100 MB 重复的根因；归并完成后只留共享目录一份。
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-prune-assets-'));
+  try {
+    const day = '2026-09-11';
+    const dayPlayers = path.join(dir, 'reports/daily', day, 'assets/players');
+    const dayNews = path.join(dir, 'reports/daily', day, 'assets/news');
+    const dayData = path.join(dir, 'reports/daily', day, 'assets/data');
+    const shared = path.join(dir, 'daily-merged/assets');
+    for (const p of [dayPlayers, dayNews, dayData, path.join(shared, 'players'), path.join(shared, 'news')]) mkdirSync(p, { recursive: true });
+
+    // ① 已归并（同名同大小）→ 应删
+    writeFileSync(path.join(dayPlayers, '100.png'), 'png-bytes');
+    writeFileSync(path.join(shared, 'players/100.png'), 'png-bytes');
+    // ② 共享目录没有 → 是唯一副本，必须保留
+    writeFileSync(path.join(dayNews, 'only-here.jpg'), 'unique');
+    // ③ 同名但大小不同 → 字节不同，必须保留（不得误删）
+    writeFileSync(path.join(dayNews, 'differs.jpg'), 'short');
+    writeFileSync(path.join(shared, 'news/differs.jpg'), 'much-longer-content');
+    // ④ data/ 永不清理，即使共享目录有同名同大小文件
+    writeFileSync(path.join(dayData, 'current.json'), '{"a":1}');
+    mkdirSync(path.join(shared, 'data'), { recursive: true });
+    writeFileSync(path.join(shared, 'data/current.json'), '{"a":1}');
+
+    const reportRoot = path.join(dir, 'reports/daily');
+    const result = pruneReportAssets({ reportRoot, assetsDir: shared });
+
+    assert.equal(result.pruned, 1, '只应清理已归并的 1 个文件');
+    assert.equal(result.days, 1);
+    assert.ok(!existsSync(path.join(dayPlayers, '100.png')), '已归并的头像应从报告目录删除');
+    assert.ok(existsSync(path.join(shared, 'players/100.png')), '共享目录必须不受影响');
+    assert.ok(existsSync(path.join(dayNews, 'only-here.jpg')), '共享目录没有的文件不得删除');
+    assert.ok(existsSync(path.join(dayNews, 'differs.jpg')), '同名但大小不同不得删除');
+    assert.ok(existsSync(path.join(dayData, 'current.json')), 'data/ 下的运行时资源永不清理');
+    // 清空后的子目录应被回收，避免留下空壳
+    assert.ok(!existsSync(dayPlayers), '清空后的 players 目录应被移除');
+
+    // 幂等：再跑一次不再有可清理项
+    assert.equal(pruneReportAssets({ reportRoot, assetsDir: shared }).pruned, 0);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
 
 test('新闻重跑保留当天卡片，损坏去重文件不被重置；合并正确区分缺失板块', () => {
@@ -190,7 +253,7 @@ test('传奇卡研究常驻底稿跨日期并入传奇/英雄专栏', () => {
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨跌', () => {
+test('传奇监控逐日快照同日幂等，priceBasis 按实测有效价判定（不按日期）', () => {
   const here = path.dirname(new URL(import.meta.url).pathname);
   const dir = mkdtempSync(path.join(tmpdir(), 'fc-icons-record-'));
   const date = '2026-09-16';
@@ -201,7 +264,7 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
   mkdirSync(path.join(iconsRoot, 'data', 'players', 'fc27'), { recursive: true });
   // 原始抓取：一张有有效价、一张只有占位值、一张完全无价
   writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'base-icons.json'), JSON.stringify({
-    generatedAt: '2026-09-16T02:59:17.669Z', source: 'futbin', launchDate: '2026-09-25',
+    generatedAt: '2026-09-16T02:59:17.669Z', source: 'futbin', launchDate: '2026-09-18',
     players: [
       { id: '1', slug: 'jia', name: 'jia', nameZh: '甲', rating: 95, currentPrice: 60000, marketUrl: 'https://example.com/1' },
       { id: '2', slug: 'yi', name: 'yi', nameZh: '乙', rating: 88, currentPrice: 88, marketUrl: 'https://example.com/2' },
@@ -229,7 +292,10 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
     const snap = JSON.parse(readFileSync(snapPath, 'utf8'));
     assert.equal(snap.counts.total, 3);
     assert.equal(snap.counts.valid, 2, '逐小时详情里的 PC 有效价必须传播进当日快照');
-    assert.equal(snap.priceBasis, 'listing-estimate');
+    // priceBasis 按**本轮实测有效价**判定（2026-09-20 用户口径），不再按「日期 < launchDate」比较：
+    // 本 fixture 有 71000 / 72000 / 1500 三处 ≥1000 的平台有效价，故应判 partial-live（旧口径会误判成 listing-estimate）
+    assert.equal(snap.priceBasis, 'partial-live');
+    assert.equal(snap.launchDate, '2026-09-18', '开服日应为 2026-09-18（2026-09-25 是正式发售日）');
     assert.equal(snap.players.find(p => p.id === '1').pos, 'CAM', '位置应来自卡库台账');
     assert.equal(snap.players.find(p => p.id === '1').platforms.console.price, 71000, '传奇 Console 实时价必须覆盖旧 base-icons 值');
     assert.equal(snap.players.find(p => p.id === '1').platforms.pc.price, 72000, '传奇 PC 实时价必须传播');
@@ -245,10 +311,36 @@ test('传奇监控逐日快照同日幂等，未开服只做台账不计算涨�
     const html = readFileSync(path.join(dir, 'reports', 'daily', date, 'market-icons.html'), 'utf8');
     assert.ok(html.includes(date), '渲染结果必须带当日日期');
     for (const n of ['甲', '乙', '丙']) assert.ok(html.includes(n), `台账应含 ${n}`);
-    assert.ok(html.includes('D-9'), '应显示距开服的倒计时');
-    assert.ok(html.includes('未开服'), '开服前应如实说明口径');
+    assert.ok(html.includes('D-2'), '开服前应显示距开服倒计时（09-16 距 09-18 为 D-2）');
+    assert.ok(html.includes('距 FC27 开服（2026-09-18）'), '开服前应显示开服日锚点');
     assert.ok(html.includes('93/94/91/94/58/74'), '台账应展示六维');
-    assert.ok(!html.includes('class="up"') && !html.includes('class="dn"'), '占位价口径下不得计算日环比与累计涨跌');
+    assert.ok(html.includes('class="up"') || html.includes('class="dn"'), '已有平台有效价时应计算涨跌列');
+
+    // 分支：全部卡无平台有效价（FUTBIN 只返回占位值）→ 必须记 listing-estimate，且不得计算涨跌
+    writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'pricerange', 'latest.json'), JSON.stringify({
+      date: '2026-09-15', collectedAt: '2026-09-15T10:00:00.000Z', cards: [
+        { id: '1', current: { console: 0, pc: 0 }, priceRange: { min: 1000, max: 100000 }, ok: true },
+        { id: '2', current: { console: 88, pc: 95 }, priceRange: { min: 1000, max: 10000 }, ok: true },
+        { id: '3', current: { console: 0, pc: 0 }, priceRange: { min: 1000, max: 20000 }, ok: true },
+      ],
+    }));
+    writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'base-icons.json'), JSON.stringify({
+      generatedAt: '2026-09-15T02:59:17.669Z', source: 'futbin', launchDate: '2026-09-18',
+      players: [
+        { id: '1', slug: 'jia', name: 'jia', nameZh: '甲', rating: 95, currentPrice: null, marketUrl: 'https://example.com/1' },
+        { id: '2', slug: 'yi', name: 'yi', nameZh: '乙', rating: 88, currentPrice: 88, marketUrl: 'https://example.com/2' },
+        { id: '3', slug: 'bing', name: 'bing', nameZh: '丙', rating: 89, currentPrice: null, marketUrl: 'https://example.com/3' },
+      ],
+    }));
+    r = spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/record-icons-daily.mjs'), '2026-09-15'], { env, encoding: 'utf8', timeout: 30000 });
+    assert.equal(r.status, 0, r.stderr + r.stdout);
+    const snap0 = JSON.parse(readFileSync(path.join(dailyDir, '2026-09-15.json'), 'utf8'));
+    assert.equal(snap0.priceBasis, 'listing-estimate', '全部卡无 ≥1000 平台价时必须记 listing-estimate');
+    const r0 = spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/render-market-icons.mjs'), '2026-09-15'], { env, encoding: 'utf8', timeout: 30000 });
+    assert.equal(r0.status, 0, r0.stderr);
+    const html0 = readFileSync(path.join(dir, 'reports', 'daily', '2026-09-15', 'market-icons.html'), 'utf8');
+    assert.ok(html0.includes('PRE-LAUNCH'), '全占位价时应标 PRE-LAUNCH');
+    assert.ok(!html0.includes('class="up"') && !html0.includes('class="dn"'), '占位价口径下不得计算日环比与累计涨跌');
 
     // 抓取结果缺失时不得写入快照
     writeFileSync(path.join(iconsRoot, 'data', 'prices', 'fc27', 'base-icons.json'), '{broken');
@@ -266,7 +358,7 @@ test('传奇监控开服后逐日计算日环比、累计涨跌与走势', () =>
   mkdirSync(dailyDir, { recursive: true });
   const stub = (date, prices) => ({
     schemaVersion: 1, date, game: 'fc27', cardType: 'icon', cardLabel: '基础传奇',
-    platform: 'cross', launchDate: '2026-09-25', capturedAt: `${date}T03:00:00+08:00`,
+    platform: 'cross', launchDate: '2026-09-18', capturedAt: `${date}T03:00:00+08:00`,
     priceBasis: 'market', counts: { total: prices.length, valid: prices.length, missing: 0 },
     source: { name: 'FUTBIN', listUrl: 'https://www.futbin.com/27/players', rawFile: 'x.json' },
     players: prices.map(([id, nameZh, price]) => ({ id, slug: id, nameZh, name: id, rating: 90, pos: 'ST', price, priceValid: true })),
@@ -337,23 +429,34 @@ test('统一 current.json 按 cardId 合并多来源且旧观测不能覆盖新�
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
-test('关注列表只用 current.json 作为当前值，逐小时序列只提供历史比较点', () => {
+test('关注列表只用 current.json 作为当前值，观测序列只提供历史比较点', () => {
   const here = path.dirname(new URL(import.meta.url).pathname);
   const dir = mkdtempSync(path.join(tmpdir(), 'fc-watch-current-'));
   const date = '2026-09-17';
   const runDir = path.join(dir, 'automation', 'runs', date, 'market');
   const priceRoot = path.join(dir, 'apps', 'market', 'engine', 'data', 'prices', 'fc27');
   mkdirSync(runDir, { recursive: true });
-  mkdirSync(path.join(priceRoot, 'popular', 'daily'), { recursive: true });
   mkdirSync(path.join(priceRoot, 'evolutions'), { recursive: true });
   const url = 'https://www.futbin.com/27/player/1/jia';
   writeFileSync(path.join(runDir, 'market.json'), JSON.stringify({
     date, players: [{ url, name: '甲', nameZh: '甲', rating: 80, pos: 'ST', psPrice: 99999, pcPrice: 99999 }],
   }));
-  writeFileSync(path.join(priceRoot, 'popular', 'daily', `${date}.json`), JSON.stringify({
-    date, points: [{ hour: '18' }, { hour: '19' }],
-    cards: { [url]: { name: '甲', rating: 80, pos: 'ST', ps: [{ h: '18', v: 2000 }, { h: '19', v: 1000 }], pc: [{ h: '18', v: 3000 }, { h: '19', v: 1000 }], pop: [{ h: '18', v: 5 }, { h: '19', v: 6 }] } },
-  }));
+  // 价格观测序列夹具：用真实写入器落 series/popular.json，避免夹具与序列 schema 漂移
+  const seriesFile = seriesPathFor(priceRoot, 'popular');
+  const entries = (h, ps, pc, pop) => [{
+    key: url,
+    static: { url, name: '甲', rating: 80, pos: 'ST' },
+    price: { h: `${date}T${h}`, ps, pc, pop, min: Math.min(ps, pc), max: Math.max(ps, pc) },
+  }];
+  appendSeries(seriesFile, {
+    meta: { scope: 'popular', game: 'fc27', platform: 'console+pc', minValidPrice: 1000 },
+    point: { hour: `${date}T18`, date, at: `${date}T10:00:00.000Z`, counts: { total: 1 } },
+    entries: entries('18', 2000, 3000, 5),
+  });
+  appendSeries(seriesFile, {
+    point: { hour: `${date}T19`, date, at: `${date}T11:00:00.000Z`, counts: { total: 1 } },
+    entries: entries('19', 1000, 1000, 6),
+  });
   writeFileSync(path.join(priceRoot, 'current.json'), JSON.stringify({
     schemaVersion: 1, game: 'fc27', generatedAt: '2026-09-17T11:00:00Z', cards: {
       '1': { cardId: '1', popularity: 9, popularityObservedAt: '2026-09-17T11:00:00Z', platforms: {
@@ -490,5 +593,60 @@ test('市场扫描页只嵌入静态球员字段，双平台价按 cardId 读取
     assert.equal(db[0].cPrice, 0, '不得把 market.json 的 Console 价格副本嵌入页面');
     assert.equal(db[0].pPrice, 0, '不得把 market.json 的 PC 价格副本嵌入页面');
     assert.ok(html.includes("fetch(currentUrl(), {cache:'no-store'})"), '页面必须运行时读取 current.json');
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
+test('市场扫描排除英雄/传奇/活动卡，价格分 6 档且无价卡按最高价（2026-09-20 用户口径）', () => {
+  const here = path.dirname(new URL(import.meta.url).pathname);
+  const dir = mkdtempSync(path.join(tmpdir(), 'fc-market-scan-exclusions-'));
+  const date = '2026-09-12';
+  const runDir = path.join(dir, 'automation', 'runs', date, 'market');
+  const exclusionDir = path.join(dir, 'apps', 'market', 'engine', 'data', 'players', 'fc27');
+  mkdirSync(runDir, { recursive: true });
+  mkdirSync(exclusionDir, { recursive: true });
+  // 清单判据：隔离目录里的 scan-exclusions.json 必须被读到
+  writeFileSync(path.join(exclusionDir, 'scan-exclusions.json'), JSON.stringify({
+    schemaVersion: 1,
+    excludedVersionPatterns: ['base_hero', 'hall_of_fut'],
+    cards: [{ cardId: '789', name: 'Hall of FUT 卡', rating: 85, series: 'Hall of FUT' }],
+  }));
+  const data = {
+    date, status: 'partial', priceBasis: 'partial-live',
+    players: [
+      { name: '普通卡', rating: 88, pos: 'ST', price: 60000, priceValid: true, psPrice: 75000, pcPrice: 68000, popularity: 5, evo: '非进化池', url: 'https://www.futbin.com/27/player/123/plain' },
+      { name: '英雄卡', rating: 87, pos: 'CAM', price: 0, priceValid: false, psPrice: 0, pcPrice: 0, popularity: 4, evo: '非进化池', cardVersion: '72_base_hero', url: 'https://www.futbin.com/27/player/21632/nakata' },
+      { name: '清单里的活动卡', rating: 85, pos: 'CB', price: 0, priceValid: false, psPrice: 0, pcPrice: 0, popularity: 3, evo: '非进化池', url: 'https://www.futbin.com/27/player/789/legacy' },
+      { name: '无价普通卡', rating: 80, pos: 'GK', price: 0, priceValid: false, psPrice: 0, pcPrice: 0, popularity: 2, evo: '非进化池', url: 'https://www.futbin.com/27/player/456/noquote' },
+    ],
+    sources: [{ url: 'https://www.futbin.com/27/popular', openedAt: '2026-09-12T10:00:00+08:00' }],
+    missing: [],
+  };
+  writeFileSync(path.join(runDir, 'market.json'), JSON.stringify(data, null, 2));
+  try {
+    const r = spawnSync(process.execPath, [path.join(here, '..', 'apps/market/engine/scripts/render-market-report.mjs'), date], {
+      env: { ...process.env, FC_PROJECT_ROOT: dir }, encoding: 'utf8', timeout: 30000,
+    });
+    assert.equal(r.status, 0, r.stderr);
+    const html = readFileSync(path.join(dir, 'reports', 'daily', date, 'market-scan.html'), 'utf8');
+    const db = JSON.parse(html.match(/id="db-data">([\s\S]*?)<\/script>/)[1].replace(/\\u003c/g, '<'));
+    // ① 排除：版本判据（base_hero）与清单判据（cardId 789）都必须生效，普通卡不受牵连
+    assert.equal(db.length, 2, '英雄卡与清单内活动卡都必须被排除，只留两张普通卡');
+    assert.deepEqual(db.map(x => x.cardId).sort(), ['123', '456'], '排除后应只剩普通卡 123 与 456');
+    assert.ok(html.includes('已排除英雄/传奇/活动卡 2 张'), '页头必须如实标出排除张数');
+    // ② 六档：档位名齐备且旧档位名不得残留
+    for (const label of ['1 万以下', '1 ~ 5 万', '5 ~ 10 万', '10 ~ 50 万', '50 ~ 100 万', '100 万以上']) {
+      assert.ok(html.includes(label), `缺少价格档位「${label}」`);
+    }
+    for (const stale of ['1万以上', '5000-1万', '5000以下']) {
+      assert.ok(!html.includes(stale), `不得残留旧价格档位名「${stale}」`);
+    }
+    assert.ok(html.includes('data-set-price="100w+"'), '索引 chip 必须以档位 id 为键');
+    assert.ok(html.includes('<option value="100w+">'), '价格筛选下拉必须以档位 id 为键');
+    // ③ 无价卡按最高价：价格列以「≥」呈现并带「无价」标注，数值为标注过的占位值
+    assert.ok(db.every(x => x.cPrice === 0 && x.pPrice === 0), '不得把 market.json 的价格副本嵌入页面');
+    assert.ok(html.includes('无价·按最高价'), '无价卡必须有明确标注');
+    assert.ok(html.includes("PRICE_CEIL_FLOOR = 1000000"), '前端必须持有最高价兜底下限常量');
+    // ④ 价格索引首屏留空，由页面运行时重算
+    assert.ok(html.includes('<b class="pv pv-console">—</b>'), '首屏价格计数必须留空，不得用估值兜底');
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });

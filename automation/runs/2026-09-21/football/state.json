@@ -1,0 +1,342 @@
+{
+  "module": "football",
+  "date": "2026-09-21",
+  "runId": "21698108-083e-46e9-9795-40f4fbfe1494",
+  "status": "partial",
+  "startedAt": "2026-09-20T22:01:10.093Z",
+  "deadlineAt": "2026-09-20T22:16:10.093Z",
+  "reportPath": "reports/daily/2026-09-21/football.html",
+  "completedAt": "2026-09-20T22:16:01.823Z",
+  "evidence": {
+    "date": "2026-09-21",
+    "module": "football",
+    "runId": "21698108-083e-46e9-9795-40f4fbfe1494",
+    "generatedAt": "2026-09-20T22:16:01.795Z",
+    "sources": [
+      {
+        "module": "fb-epl-laliga",
+        "league": "epl",
+        "url": "https://www.worldfootball.net/competition/co91/england-premier-league/results-and-standings/",
+        "openedAt": "2026-09-20T22:04:30Z",
+        "note": "英超2026/2027积分榜（20队全量）"
+      },
+      {
+        "module": "fb-epl-laliga",
+        "league": "epl",
+        "url": "https://www.worldfootball.net/competition/co91/england-premier-league/statistics-goals/",
+        "openedAt": "2026-09-20T22:05:30Z",
+        "note": "英超射手榜"
+      },
+      {
+        "module": "fb-epl-laliga",
+        "league": "epl",
+        "url": "https://www.worldfootball.net/competition/co91/england-premier-league/statistics-assists/",
+        "openedAt": "2026-09-20T22:06:10Z",
+        "note": "英超助攻榜"
+      },
+      {
+        "module": "fb-epl-laliga",
+        "league": "laliga",
+        "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/results-and-standings/",
+        "openedAt": "2026-09-20T22:06:40Z",
+        "note": "西甲2026/2027积分榜（20队全量）"
+      },
+      {
+        "module": "fb-epl-laliga",
+        "league": "laliga",
+        "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/statistics-goals/",
+        "openedAt": "2026-09-20T22:07:00Z",
+        "note": "西甲射手榜"
+      },
+      {
+        "module": "fb-epl-laliga",
+        "league": "laliga",
+        "url": "https://www.worldfootball.net/competition/co97/esp-primera-division/statistics-assists/",
+        "openedAt": "2026-09-20T22:07:15Z",
+        "note": "西甲助攻榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "seriea",
+        "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/results-and-standings/",
+        "openedAt": "2026-09-21T06:05:30+08:00",
+        "note": "意甲积分榜（CDP 浏览器渲染，通过 Cloudflare）"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "seriea",
+        "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/statistics-goals/",
+        "openedAt": "2026-09-21T06:06:40+08:00",
+        "note": "意甲射手榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "seriea",
+        "url": "https://www.worldfootball.net/competition/co111/italy-serie-a/se122406/2026-2027/statistics-assists/",
+        "openedAt": "2026-09-21T06:07:45+08:00",
+        "note": "意甲助攻榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "bundesliga",
+        "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/results-and-standings/",
+        "openedAt": "2026-09-21T06:06:20+08:00",
+        "note": "德甲积分榜（页面标题确认为 2026/2027 赛季）"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "bundesliga",
+        "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/statistics-goals/",
+        "openedAt": "2026-09-21T06:07:30+08:00",
+        "note": "德甲射手榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "bundesliga",
+        "url": "https://www.worldfootball.net/competition/co12/germany-bundesliga/statistics-assists/",
+        "openedAt": "2026-09-21T06:08:35+08:00",
+        "note": "德甲助攻榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "ligue1",
+        "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/results-and-standings/",
+        "openedAt": "2026-09-21T06:06:20+08:00",
+        "note": "法甲积分榜（页面标题确认为 2026/2027 赛季）"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "ligue1",
+        "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/statistics-goals/",
+        "openedAt": "2026-09-21T06:07:30+08:00",
+        "note": "法甲射手榜"
+      },
+      {
+        "module": "fb-ita-ger-fra",
+        "league": "ligue1",
+        "url": "https://www.worldfootball.net/competition/co71/france-ligue-1/statistics-assists/",
+        "openedAt": "2026-09-21T06:08:50+08:00",
+        "note": "法甲助攻榜"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "ucl",
+        "url": "https://site.api.espn.com/apis/v2/sports/soccer/uefa.champions/standings?region=us&lang=en&contentorigin=espn",
+        "openedAt": "2026-09-21T06:07:00+08:00",
+        "note": "欧冠联赛阶段 36 队积分榜（ESPN 官方 API）"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "ucl",
+        "url": "https://www.espn.com/soccer/stats/_/league/UEFA.CHAMPIONS",
+        "openedAt": "2026-09-21T06:10:00+08:00",
+        "note": "欧冠射手榜/助攻榜（ESPN 统计页）"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "mls_east",
+        "url": "https://www.worldfootball.net/competition/co73/usa-major-league-soccer/se112297/2026/results-and-standings",
+        "openedAt": "2026-09-21T06:09:00+08:00",
+        "note": "美职联东区/西区积分榜（worldfootball.net，2026 赛季）"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "mls_west",
+        "url": "https://www.worldfootball.net/competition/co73/usa-major-league-soccer/se112297/2026/results-and-standings",
+        "openedAt": "2026-09-21T06:09:00+08:00",
+        "note": "美职联东区/西区积分榜（worldfootball.net，2026 赛季）"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "saudi",
+        "url": "https://site.api.espn.com/apis/v2/sports/soccer/ksa.1/standings?region=us&lang=en&contentorigin=espn",
+        "openedAt": "2026-09-21T06:08:00+08:00",
+        "note": "沙特职业联赛 18 队积分榜（ESPN 官方 API）"
+      },
+      {
+        "module": "fb-ucl-mls-saudi",
+        "league": "saudi",
+        "url": "https://www.espn.com/soccer/stats/_/league/ksa.1",
+        "openedAt": "2026-09-21T06:11:00+08:00",
+        "note": "沙特联射手榜/助攻榜（ESPN 统计页）"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://www.goal.com/en/lists/too-many-goals-enzo-maresca-fumes-despite-man-city-s-5-3-win-as-premier-league-leaders-survive-sunderland-scare/blt597508d749da79c5",
+        "source": "Goal.com",
+        "publishedAt": "2026-09-20T16:11:38Z",
+        "openedAt": "2026-09-20T22:15:17.024Z",
+        "pageTitle": "{\"value\":\"'Too many goals!' - Enzo Maresca fumes despite Man City’s 5-3 win as Premier League leader"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://www.toutiao.com/article/7687660920176149007",
+        "source": "今日头条/体坛周报",
+        "publishedAt": "2026-09-21 00:50",
+        "openedAt": "2026-09-20T22:15:19.311Z",
+        "pageTitle": "{\"value\":\"【西甲】10人皇马客场1比2负马竞，怀森红点套餐 - 今日头条\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://k.sina.com.cn/article_7879776651_1d5abd98b06802r9m6.html",
+        "source": "新浪新闻",
+        "publishedAt": "2026-09-21 00:09",
+        "openedAt": "2026-09-20T22:15:21.018Z",
+        "pageTitle": "{\"value\":\"赖斯报复动作仅吃黄牌，阿森纳客场完败布莱顿|英超|报复性|红牌|赛季|曼城_新浪新闻\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://www.perthnow.com.au/sport/soccer/atletico-fend-off-10-man-real-madrid-in-laliga-battle-c-22899397",
+        "source": "AP/PerthNow",
+        "publishedAt": "2026-09-21T04:03+0800",
+        "openedAt": "2026-09-20T22:15:24.260Z",
+        "pageTitle": "{\"value\":\"Atletico fend off 10-man Real Madrid in LaLiga battle | PerthNow\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://www.sohu.com/a/1078797556_121611645",
+        "source": "搜狐体育",
+        "publishedAt": "2026-09-21 05:39",
+        "openedAt": "2026-09-20T22:15:25.885Z",
+        "pageTitle": "{\"value\":\"9月21日：意甲榜首战零比二到二比二！劳塔罗梅开二度率五替补扳平罗马，加斯佩里尼承认板凳撑不住九十分钟_国米那_比赛_欧冠\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "toutiao",
+        "url": "https://news.qq.com/rain/a/20260921A0019L00",
+        "source": "腾讯新闻/懂球帝",
+        "publishedAt": "2026-09-21 00:06",
+        "openedAt": "2026-09-20T22:15:27.591Z",
+        "pageTitle": "{\"value\":\"科瓦奇：拜尔没进国家队但打进制胜球，这表明我们有好阵容_腾讯新闻\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "transfers",
+        "url": "https://www.sohu.com/a/1078731559_122595736",
+        "source": "搜狐体育",
+        "publishedAt": "2026-09-21 00:19",
+        "openedAt": "2026-09-20T22:15:29.241Z",
+        "pageTitle": "{\"value\":\"足坛最新动态：哲凯赖什不满板凳、巴萨与拉菲尼亚续约至2030年！_欧冠_阿森纳_葡萄牙体育\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "transfers",
+        "url": "https://www.sohu.com/a/1078731559_122595736",
+        "source": "搜狐体育",
+        "publishedAt": "2026-09-21 00:19",
+        "openedAt": "2026-09-20T22:15:29.241Z",
+        "pageTitle": ""
+      },
+      {
+        "module": "fb-news",
+        "category": "matchReports",
+        "url": "https://www.163.com/dy/article/L7AKCBFP05561FZB.html",
+        "source": "网易/赛场速报局",
+        "publishedAt": "2026-09-21 02:06",
+        "openedAt": "2026-09-20T22:15:31.389Z",
+        "pageTitle": "{\"value\":\"5比3！对手戴帽他仍赢球，曼城登顶英超|曼联|欧战|利物浦|桑德兰队|富勒姆队|伯恩茅斯队_网易订阅\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "injuries",
+        "url": "https://www.managingmadrid.com/113230/fede-valverde-injury-report-2026-madrid-derbi",
+        "source": "Managing Madrid",
+        "publishedAt": "2026-09-20T18:20:07Z",
+        "openedAt": "2026-09-20T22:15:33.889Z",
+        "pageTitle": "{\"value\":\"OFFICIAL: Fede Valverde injury report | Managing Madrid\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "injuries",
+        "url": "https://www.163.com/dy/article/L7AHIU380549BAP0.html",
+        "source": "网易/懂球帝",
+        "publishedAt": "2026-09-21T01:18:09+08:00",
+        "openedAt": "2026-09-20T22:15:35.608Z",
+        "pageTitle": "{\"value\":\"德媒：莱比锡球员格鲁达髋部受伤，德国队首秀存疑|勒沃库森队_网易订阅\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "injuries",
+        "url": "https://news.7msport.com/news/newsdata/20260921/268994.shtml",
+        "source": "7M Sports",
+        "publishedAt": "2026-09-21",
+        "openedAt": "2026-09-20T22:15:40.180Z",
+        "pageTitle": "{\"value\":\"Broken: Barcelona star suffers serious injury - 7msport\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "misc",
+        "url": "https://news.qq.com/rain/a/20260921A01OAR00",
+        "source": "腾讯新闻/虎扑",
+        "publishedAt": "2026-09-21 04:34",
+        "openedAt": "2026-09-20T22:15:41.832Z",
+        "pageTitle": "{\"value\":\"GFFN：里瑟身体原因退出本期法国队，科莫门将布泰兹入替_腾讯新闻\"}"
+      },
+      {
+        "module": "fb-news",
+        "category": "misc",
+        "url": "https://www.aol.co.uk/articles/arsenal-chelsea-double-injury-ecuador-190857000.html",
+        "source": "AOL/The Standard",
+        "publishedAt": "2026-09-20T19:08:57Z",
+        "openedAt": "2026-09-20T22:15:44.891Z",
+        "pageTitle": "{\"value\":\"Arsenal and Chelsea get double injury update as Ecuador boss explains squad decision - AOL"
+      }
+    ],
+    "missing": [
+      "mls_east/mls_west 射手/助攻榜无分区独立榜单，按契约使用联盟总榜（mls 键）",
+      "美职联、沙特联、欧冠窗口内无满足核实要求的独立新闻（fb-news notes 已记录）"
+    ],
+    "coverage": {
+      "standings": {
+        "epl": 20,
+        "laliga": 20,
+        "seriea": 20,
+        "bundesliga": 18,
+        "ligue1": 18,
+        "saudi": 18,
+        "ucl": 36,
+        "mls_east": 15,
+        "mls_west": 15
+      },
+      "scorers": {
+        "epl": 12,
+        "laliga": 12,
+        "seriea": 10,
+        "bundesliga": 10,
+        "ligue1": 10,
+        "saudi": 10,
+        "ucl": 10,
+        "mls": 10
+      },
+      "assists": {
+        "epl": 13,
+        "laliga": 12,
+        "seriea": 10,
+        "bundesliga": 10,
+        "ligue1": 10,
+        "saudi": 10,
+        "ucl": 10,
+        "mls": 10
+      },
+      "news": 14
+    },
+    "verify": {
+      "command": "node automation/verify-football-boards.mjs 2026-09-21",
+      "exitCode": 0,
+      "warnings": [
+        "射手榜未覆盖联赛：mls_east、mls_west（预期，用联盟总榜）"
+      ]
+    },
+    "notes": [
+      "并行 4 子代理落盘交付；worldfootball.net + ESPN(API/stats 页)；新闻 14 条原文于主流程本轮逐条重开复核（openedAt 为重开实测时间）"
+    ]
+  },
+  "sha256": "a96ef4950dcf553f9310ff772cd5603fc50eb7b402267522774aca4b875480e8",
+  "bytes": 46680,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/football/report.html"
+}

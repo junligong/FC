@@ -83,3 +83,21 @@
 - 模块状态：五模块全有真实快照——football partial / news success / market partial / evolution partial / icons-heroes partial。market 的 `/27/players?page=1..4` 与 icons-heroes 的 `?page=11..26` 本轮仍被 FUTBIN 403 拦截（分路径/会话级反爬），均按契约如实空状态/留空、未用旧数据填充；译名 1750/1750、头像补全 +179 键。
 - `assets/data/current.json`（1,183,440 B）已随目录生成并随站点部署；本轮只复制未做任何价格二次分析。
 - 收尾：`automation/publish-status-2026-09-18.json` 的 `reason` 由脚本默认「发布触发方式未确认」改为明确记录本轮实际经 workbuddy_sites_deploy 发布并复核。
+
+## 2026-09-19（常规每日执行，成功）
+- 日期 D=2026-09-19（Asia/Shanghai）。流程：`verify-football-boards.mjs` exit 0 → `coordinate.mjs 2026-09-19` `merge=success`、`failedPanels=0`、index sha `70bde78f…`、25,913,633 B → `workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html + domainPrefix=fc27-daily-intel）→ `verify-publication.mjs` exit 0 四检全过，本地=线上逐字节一致，链接不变 https://fc27-site.app.workbuddy.host/。**本次无边缘缓存滞后，立即收敛（verified:true）。**
+- 模块状态：news success / market partial / evolution partial / icons-heroes partial；**football failed**——构建脚本以 work 目录为 cwd 执行致产物写偏，移动复验耗尽 20 分钟硬窗口，`finish partial 于 04:17 被拒`（迟到提交），以 failed 终结、快照未写入 run-state。产物仍保留在 `reports/daily/2026-09-19/football.html`，站点足球栏如实空状态，待次日自然恢复。**根因已在 football 轮内修复（build 脚本改绝对路径锚定项目根）。**
+- 采集侧：market `/27/players?page=1..4` 本轮 200 可访问（非昨日 403 窗口）、750 玩家；icons-heroes `?page=11..26` 仍 403（131 台账中 29 张空价保留，台账补全修复已生效）。
+- `assets/data/current.json`（1,583,401 B）随目录生成并部署，本轮仅复制未做价格二次分析。
+- 收尾：`publish-status-2026-09-19.json` 的 reason 已明确记录实际发布路径与 football 失败原因。
+
+## 2026-09-20（常规每日执行，成功）
+- 日期 D=2026-09-20（Asia/Shanghai）。流程：`verify-football-boards.mjs 2026-09-20` exit 0（mls_east/mls_west 分区键提醒属预期）→ `coordinate.mjs 2026-09-20` `merge=success`、`failedPanels=0`、index sha `7e147091…`、22,835,097 B、`publish=delegated` → `workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html + domainPrefix=fc27-daily-intel + language=static，verified:true）→ `verify-publication.mjs 2026-09-20` exit 0 四检全过，本地=线上 sha 双方 `7e147091…`，链接不变 https://fc27-site.app.workbuddy.host/。**本次无边缘缓存滞后，立即收敛。**
+- 模块状态：五模块全有真实快照——football success / news success / market partial / evolution partial / icons-heroes partial。
+- `assets/data/current.json`（1,928,827 B，2309 张卡，generatedAt 今日凌晨）随目录生成并部署；本轮仅复制、未做任何价格二次分析（遵守「统一当前行情与禁止重复分析」口径）。
+- 收尾：`publish-status-2026-09-20.json` 的 reason 已由脚本默认「发布触发方式未确认」改为明确记录本轮实际发布路径。
+
+## 2026-09-21（常规每日执行，成功）
+- 日期 D=2026-09-21（Asia/Shanghai）。流程：`verify-football-boards.mjs 2026-09-21` exit 0（mls_east/mls_west 分区键提醒属预期）→ `coordinate.mjs 2026-09-21` `merge=success`、`failedPanels=0`、五模块全 partial（football/news/market/evolution/icons-heroes 均有真实快照）、`publish=delegated` → `workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html + language=static + domainPrefix=fc27-site，verified:true）→ `verify-publication.mjs 2026-09-21` exit 0 四检全过，本地=线上 sha 双方 `6f7154fa…`、2,974,894 B，链接不变 https://fc27-site.app.workbuddy.host/。**本次无边缘缓存滞后，立即收敛。**
+- `assets/data/current.json`（2,354,558 B，2827 张卡，generatedAt 今日凌晨 03:48）随目录生成并部署；本轮仅复制、未做任何价格二次分析（遵守「统一当前行情与禁止重复分析」口径）。
+- 收尾：`publish-status-2026-09-21.json` 的 reason 已由脚本默认「发布触发方式未确认」改为明确记录本轮实际发布路径。

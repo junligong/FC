@@ -1,0 +1,23 @@
+{
+  "task": "FC·市场价格关注列表（每小时）",
+  "scheduledHour": 15,
+  "checkedAt": "2026-09-19T16:03:16+08:00",
+  "result": "failed",
+  "stage": "collect",
+  "browserPrecheck": {
+    "verdict": "OK",
+    "exitCode": 0,
+    "detail": "check-deps exit=0 | proxy: ready (Chrome 独立调试 profile) | :9333 listener=true | site-patterns: futbin.com, worldfootball.net"
+  },
+  "reason": "来源页取数失败（非通道故障）：/27/popular 与 /27/popular/evolutions 各 2 次导航（首次 + 首页重建会话后 45 秒退避重试）均「等待 45 秒后仍无卡片元素」，0 卡采到，采集器退出码 1。triage OK 判定通道健康，属 FUTBIN 侧临时拦截/渲染延迟（同 2026-09-18 13 点与 2026-09-19 14 点形态），非 403 明示。",
+  "attempts": [
+    { "page": "popular", "attempt": 1, "note": "首次导航", "error": "等待 45 秒后仍无卡片元素" },
+    { "page": "popular", "attempt": 2, "note": "45 秒退避后重试（先经首页重建会话）", "error": "等待 45 秒后仍无卡片元素" },
+    { "page": "evolutions", "attempt": 1, "note": "首次导航", "error": "等待 45 秒后仍无卡片元素" },
+    { "page": "evolutions", "attempt": 2, "note": "45 秒退避后重试（先经首页重建会话）", "error": "等待 45 秒后仍无卡片元素" }
+  ],
+  "notAttemptedAndWhy": "按契约未执行 watchlist 计算、译名注入、渲染、重合并与重发布：热门榜（价格源）0 卡，无新观测可合并；重发布无新版本可上线，且 current.json 未被本轮触碰。",
+  "lastValidResultKept": "current.json 保留 T13（generatedAt 2026-09-19T05:45:29.765Z，北京 13:45:29，1911 张卡）；popular/evolutions 逐小时快照保留至 2026-09-19T13.json；线上站点保留 T13 版本。注意：T14、T15 两轮连续失败，当日 14/15 两个整点无有效观测。",
+  "manualActionNeeded": "无。分钟级滚动拦截属临时形态，按历史经验下一整点（16 点）重跑通常自动恢复；不为「修复」动代理、Chrome、profile 或禁止入口，不密集重试。",
+  "disposal": "保留上次有效结果，等待下一整点自动恢复；本次不更新关注列表所需的逐小时序列，不填充、不回退。"
+}

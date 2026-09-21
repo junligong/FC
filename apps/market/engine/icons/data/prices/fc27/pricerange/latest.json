@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "date": "2026-09-18",
+  "date": "2026-09-21",
   "game": "fc27",
   "cardType": "icon",
   "cardLabel": "基础传奇",
   "platform": "console+pc",
   "scope": "card",
   "scopeNote": "FUTBIN 详情页「Price Range」在同一张卡的 Console 与 PC 价格盒中渲染为相同数值，属卡级字段，不按平台拆分。",
-  "launchDate": "2026-09-25",
-  "collectedAt": "2026-09-18T10:03:49.596Z",
-  "priceBasis": "listing-estimate",
-  "priceBasisNote": "FC27 未开服（开服日 2026-09-25），该区间是 FUTBIN 的挂单/估值区间，不是成交价，不能据此计算涨跌。",
+  "launchDate": "2026-09-18",
+  "collectedAt": "2026-09-20T23:50:30.219Z",
+  "priceBasis": "partial-live",
+  "priceBasisNote": "本轮 110/131 张卡拿到 ≥1000 coins 的平台当前价，区间为 FUTBIN 当日挂单区间（开服日 2026-09-18）。",
   "minValidPrice": 1000,
   "source": {
     "name": "FUTBIN",
@@ -26,41 +26,14 @@
     "minFloor": 69000,
     "maxCeiling": 15000000
   },
-  "missingItems": [
-    "FC27 未开服，双平台当前价多为 0（占位值），已按 <1000 判为无效，未参与任何涨跌计算。"
-  ],
+  "missingItems": [],
   "errors": [],
   "cards": [
-    {
-      "id": "21488",
-      "slug": "arantes-nascimento",
-      "nameZh": "贝利",
-      "name": "PELÉ",
-      "rating": 95,
-      "marketUrl": "https://www.futbin.com/27/player/21488/arantes-nascimento",
-      "ok": true,
-      "priceRange": {
-        "min": 75000,
-        "max": 15000000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 12000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 60000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
     {
       "id": "21487",
       "slug": "maradona",
       "nameZh": "马拉多纳",
-      "name": "MARADONA",
+      "name": "Maradona",
       "rating": 95,
       "marketUrl": "https://www.futbin.com/27/player/21487/maradona",
       "ok": true,
@@ -70,29 +43,54 @@
         "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 13251000,
-        "pc": 0
+        "console": 5949000,
+        "pc": 8999000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 60000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21488",
+      "slug": "pele",
+      "nameZh": "贝利",
+      "name": "Pele",
+      "rating": 95,
+      "marketUrl": "https://www.futbin.com/27/player/21488/pele",
+      "ok": true,
+      "priceRange": {
+        "min": 75000,
+        "max": 15000000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
+        "console": 7000000,
+        "pc": 8999000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 60000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21492",
-      "slug": "nazario-de-lima",
+      "slug": "ronaldo",
       "nameZh": "罗纳尔多",
-      "name": "RONALDO",
+      "name": "Ronaldo",
       "rating": 94,
-      "marketUrl": "https://www.futbin.com/27/player/21492/nazario-de-lima",
+      "marketUrl": "https://www.futbin.com/27/player/21492/ronaldo",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "7 mins ago"
       },
       "current": {
         "console": 0,
@@ -103,95 +101,45 @@
         "pc": false
       },
       "estimate": 67000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21491",
       "slug": "zidane",
       "nameZh": "齐达内",
-      "name": "ZIDANE",
+      "name": "Zidane",
       "rating": 94,
       "marketUrl": "https://www.futbin.com/27/player/21491/zidane",
       "ok": true,
       "priceRange": {
         "min": 74000,
         "max": 9800000,
-        "updatedText": "1 mins ago"
+        "updatedText": "14 secs ago"
       },
       "current": {
-        "console": 7999000,
-        "pc": 9800000
+        "console": 2969000,
+        "pc": 0
       },
       "currentValid": {
         "console": true,
-        "pc": true
+        "pc": false
       },
       "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21497",
       "slug": "cruyff",
       "nameZh": "克鲁伊夫",
-      "name": "CRUYFF",
+      "name": "Cruyff",
       "rating": 93,
       "marketUrl": "https://www.futbin.com/27/player/21497/cruyff",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "7 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 56000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21501",
-      "slug": "de-assis-moreira",
-      "nameZh": "罗纳尔迪尼奥",
-      "name": "RONALDINHO",
-      "rating": 93,
-      "marketUrl": "https://www.futbin.com/27/player/21501/de-assis-moreira",
-      "ok": true,
-      "priceRange": {
-        "min": 73000,
-        "max": 15000000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 14000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 37000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21495",
-      "slug": "franc-dos-santos",
-      "nameZh": "弗朗茨·贝肯鲍尔",
-      "name": "GARRINCHA",
-      "rating": 93,
-      "marketUrl": "https://www.futbin.com/27/player/21495/franc-dos-santos",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
         "updatedText": "5 mins ago"
       },
       "current": {
@@ -203,14 +151,14 @@
         "pc": false
       },
       "estimate": 56000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21503",
       "slug": "franz-beckenbauer",
       "nameZh": "贝肯鲍尔",
-      "name": "BECKENBAUER",
+      "name": "Franz Beckenbauer",
       "rating": 93,
       "marketUrl": "https://www.futbin.com/27/player/21503/franz-beckenbauer",
       "ok": true,
@@ -220,29 +168,54 @@
         "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 2222000,
-        "pc": 3100000
+        "console": 1950000,
+        "pc": 1850000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 37000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21495",
+      "slug": "garrincha",
+      "nameZh": "弗朗茨·贝肯鲍尔",
+      "name": "Garrincha",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21495/garrincha",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "57 secs ago"
+      },
+      "current": {
+        "console": 2399000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 56000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21498",
       "slug": "hamm",
       "nameZh": "米娅·哈姆",
-      "name": "HAMM",
+      "name": "Hamm",
       "rating": 93,
       "marketUrl": "https://www.futbin.com/27/player/21498/hamm",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "3 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
         "console": 0,
@@ -253,74 +226,174 @@
         "pc": false
       },
       "estimate": 56000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21499",
       "slug": "maldini",
       "nameZh": "马尔蒂尼",
-      "name": "MALDINI",
+      "name": "Maldini",
       "rating": 93,
       "marketUrl": "https://www.futbin.com/27/player/21499/maldini",
       "ok": true,
       "priceRange": {
         "min": 73000,
         "max": 8400000,
-        "updatedText": "3 mins ago"
+        "updatedText": "7 mins ago"
       },
       "current": {
-        "console": 2899000,
-        "pc": 0
+        "console": 2890000,
+        "pc": 4499000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 37000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21501",
+      "slug": "ronaldinho",
+      "nameZh": "罗纳尔迪尼奥",
+      "name": "Ronaldinho",
+      "rating": 93,
+      "marketUrl": "https://www.futbin.com/27/player/21501/ronaldinho",
+      "ok": true,
+      "priceRange": {
+        "min": 73000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 4800000,
+        "pc": 8850000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 37000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21507",
       "slug": "angerer",
       "nameZh": "安格勒",
-      "name": "ANGERER",
+      "name": "Angerer",
       "rating": 92,
       "marketUrl": "https://www.futbin.com/27/player/21507/angerer",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 0,
-        "pc": 0
+        "console": 795000,
+        "pc": 1050000
       },
       "currentValid": {
-        "console": false,
-        "pc": false
+        "console": true,
+        "pc": true
       },
       "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21519",
       "slug": "buffon",
       "nameZh": "布冯",
-      "name": "BUFFON",
+      "name": "Buffon",
       "rating": 92,
       "marketUrl": "https://www.futbin.com/27/player/21519/buffon",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "32 secs ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 4000000,
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 45000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21514",
+      "slug": "charlton",
+      "nameZh": "博比·查尔顿",
+      "name": "Charlton",
+      "rating": 92,
+      "marketUrl": "https://www.futbin.com/27/player/21514/charlton",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 6300000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 2450000,
+        "pc": 2940000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 30000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21509",
+      "slug": "iniesta-lujan",
+      "nameZh": "伊涅斯塔",
+      "name": "Iniesta Luján",
+      "rating": 92,
+      "marketUrl": "https://www.futbin.com/27/player/21509/iniesta-lujan",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 5100000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 1600000,
+        "pc": 2499000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 30000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21508",
+      "slug": "muller",
+      "nameZh": "穆勒",
+      "name": "Müller",
+      "rating": 92,
+      "marketUrl": "https://www.futbin.com/27/player/21508/muller",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 1400000,
         "pc": 0
       },
       "currentValid": {
@@ -328,66 +401,41 @@
         "pc": false
       },
       "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21514",
-      "slug": "charlton",
-      "nameZh": "博比·查尔顿",
-      "name": "CHARLTON",
+      "id": "21511",
+      "slug": "prinz",
+      "nameZh": "普林茨",
+      "name": "Prinz",
       "rating": 92,
-      "marketUrl": "https://www.futbin.com/27/player/21514/charlton",
+      "marketUrl": "https://www.futbin.com/27/player/21511/prinz",
       "ok": true,
       "priceRange": {
-        "min": 72000,
-        "max": 6300000,
-        "updatedText": "1 mins ago"
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago"
       },
       "current": {
-        "console": 6300000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 30000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21509",
-      "slug": "iniesta-lujan",
-      "nameZh": "伊涅斯塔",
-      "name": "INIESTA",
-      "rating": 92,
-      "marketUrl": "https://www.futbin.com/27/player/21509/iniesta-lujan",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 5100000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 1390000,
-        "pc": 3000000
+        "console": 1094000,
+        "pc": 1315000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
-      "estimate": 30000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "estimate": 45000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21508",
-      "slug": "muller",
-      "nameZh": "穆勒",
-      "name": "MÜLLER",
+      "id": "21513",
+      "slug": "puskas",
+      "nameZh": "普斯卡什",
+      "name": "Puskás",
       "rating": 92,
-      "marketUrl": "https://www.futbin.com/27/player/21508/muller",
+      "marketUrl": "https://www.futbin.com/27/player/21513/puskas",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -395,32 +443,7 @@
         "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21511",
-      "slug": "prinz",
-      "nameZh": "普林茨",
-      "name": "PRINZ",
-      "rating": 92,
-      "marketUrl": "https://www.futbin.com/27/player/21511/prinz",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 444000,
+        "console": 2700000,
         "pc": 0
       },
       "currentValid": {
@@ -428,46 +451,21 @@
         "pc": false
       },
       "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21513",
-      "slug": "puskas",
-      "nameZh": "普斯卡什",
-      "name": "PUSKÁS",
-      "rating": 92,
-      "marketUrl": "https://www.futbin.com/27/player/21513/puskas",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21510",
       "slug": "sinclair",
       "nameZh": "克里斯汀·辛克莱",
-      "name": "SINCLAIR",
+      "name": "Sinclair",
       "rating": 92,
       "marketUrl": "https://www.futbin.com/27/player/21510/sinclair",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "6 mins ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
         "console": 0,
@@ -478,39 +476,14 @@
         "pc": false
       },
       "estimate": 45000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21531",
-      "slug": "antunes-coimbra",
-      "nameZh": "尤西比奥",
-      "name": "ZICO",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21531/antunes-coimbra",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 11000000,
-        "updatedText": "2 mins ago"
-      },
-      "current": {
-        "console": 4993000,
-        "pc": 9980000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21530",
       "slug": "baggio",
       "nameZh": "巴乔",
-      "name": "BAGGIO",
+      "name": "Baggio",
       "rating": 91,
       "marketUrl": "https://www.futbin.com/27/player/21530/baggio",
       "ok": true,
@@ -520,72 +493,97 @@
         "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 0,
-        "pc": 0
+        "console": 1299000,
+        "pc": 1200000
       },
       "currentValid": {
-        "console": false,
-        "pc": false
+        "console": true,
+        "pc": true
       },
       "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21524",
       "slug": "baresi",
       "nameZh": "巴雷西",
-      "name": "BARESI",
+      "name": "Baresi",
       "rating": 91,
       "marketUrl": "https://www.futbin.com/27/player/21524/baresi",
       "ok": true,
       "priceRange": {
         "min": 72000,
         "max": 600000,
-        "updatedText": "3 mins ago"
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 310000,
-        "pc": 330000
+        "console": 350000,
+        "pc": 318000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21527",
       "slug": "cafu",
       "nameZh": "卡福",
-      "name": "CAFU",
+      "name": "Cafu",
       "rating": 91,
       "marketUrl": "https://www.futbin.com/27/player/21527/cafu",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "3 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 0,
-        "pc": 15000000
+        "console": 1285000,
+        "pc": 1200000
       },
       "currentValid": {
-        "console": false,
+        "console": true,
         "pc": true
       },
       "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21526",
+      "slug": "carlos-alberto-torres",
+      "nameZh": "卡洛斯·阿尔贝托·托雷斯",
+      "name": "Carlos Alberto Torres",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21526/carlos-alberto-torres",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 1520000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 42000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21548",
       "slug": "da-silva-ferreira",
       "nameZh": "尤西比奥",
-      "name": "EUSÉBIO",
+      "name": "da Silva Ferreira",
       "rating": 91,
       "marketUrl": "https://www.futbin.com/27/player/21548/da-silva-ferreira",
       "ok": true,
@@ -595,104 +593,29 @@
         "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 12999000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21533",
-      "slug": "gullit",
-      "nameZh": "古利特",
-      "name": "GULLIT",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21533/gullit",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21525",
-      "slug": "henry",
-      "nameZh": "亨利",
-      "name": "HENRY",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21525/henry",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 9700000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 3760000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21523",
-      "slug": "hernandez-creus",
-      "nameZh": "哈维",
-      "name": "XAVI",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21523/hernandez-creus",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 2300000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 680000,
-        "pc": 670000
+        "console": 13100000,
+        "pc": 9400000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21538",
-      "slug": "ibrahimovic",
-      "nameZh": "伊布拉希莫维奇",
-      "name": "IBRAHIMOVIC",
+      "id": "21533",
+      "slug": "gullit",
+      "nameZh": "古利特",
+      "name": "Gullit",
       "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21538/ibrahimovic",
+      "marketUrl": "https://www.futbin.com/27/player/21533/gullit",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
         "console": 0,
@@ -703,16 +626,216 @@
         "pc": false
       },
       "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21525",
+      "slug": "henry",
+      "nameZh": "亨利",
+      "name": "Henry",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21525/henry",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 9700000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 3450000,
+        "pc": 4650000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 28000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21523",
+      "slug": "hernandez-creus",
+      "nameZh": "哈维",
+      "name": "Hernández Creus",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21523/hernandez-creus",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 2300000,
+        "updatedText": "36 secs ago"
+      },
+      "current": {
+        "console": 794000,
+        "pc": 750000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 28000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21538",
+      "slug": "ibrahimovic",
+      "nameZh": "伊布拉希莫维奇",
+      "name": "Ibrahimovic",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21538/ibrahimovic",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 5399000
+      },
+      "currentValid": {
+        "console": false,
+        "pc": true
+      },
+      "estimate": 42000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21528",
       "slug": "kahn",
       "nameZh": "卡恩",
-      "name": "KAHN",
+      "name": "Kahn",
       "rating": 91,
       "marketUrl": "https://www.futbin.com/27/player/21528/kahn",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "13 secs ago"
+      },
+      "current": {
+        "console": 1060000,
+        "pc": 1500000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 42000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21540",
+      "slug": "morgan",
+      "nameZh": "亚历克斯·摩根",
+      "name": "Morgan",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21540/morgan",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 12800000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
+        "console": 3198000,
+        "pc": 5700000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 28000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21534",
+      "slug": "sawa",
+      "nameZh": "泽穗希",
+      "name": "Sawa",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21534/sawa",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 1582000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 42000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21539",
+      "slug": "van-basten",
+      "nameZh": "范巴斯滕",
+      "name": "van Basten",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21539/van-basten",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 1300000,
+        "updatedText": "49 secs ago"
+      },
+      "current": {
+        "console": 450000,
+        "pc": 439000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 28000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21531",
+      "slug": "zico",
+      "nameZh": "尤西比奥",
+      "name": "Zico",
+      "rating": 91,
+      "marketUrl": "https://www.futbin.com/27/player/21531/zico",
+      "ok": true,
+      "priceRange": {
+        "min": 72000,
+        "max": 11000000,
+        "updatedText": "7 mins ago"
+      },
+      "current": {
+        "console": 3800000,
+        "pc": 7420000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 28000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21558",
+      "slug": "abily",
+      "nameZh": "阿比利",
+      "name": "Abily",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21558/abily",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -720,222 +843,72 @@
         "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 1502000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21540",
-      "slug": "morgan",
-      "nameZh": "亚历克斯·摩根",
-      "name": "MORGAN",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21540/morgan",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 12800000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 4150000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21534",
-      "slug": "sawa",
-      "nameZh": "泽穗希",
-      "name": "SAWA",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21534/sawa",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
         "console": 0,
         "pc": 0
       },
       "currentValid": {
         "console": false,
-        "pc": false
-      },
-      "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21526",
-      "slug": "torres",
-      "nameZh": "卡洛斯·阿尔贝托·托雷斯",
-      "name": "CARLOS ALBERTO",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21526/torres",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 42000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21539",
-      "slug": "van-basten",
-      "nameZh": "范巴斯滕",
-      "name": "VAN BASTEN",
-      "rating": 91,
-      "marketUrl": "https://www.futbin.com/27/player/21539/van-basten",
-      "ok": true,
-      "priceRange": {
-        "min": 72000,
-        "max": 1300000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 600000,
-        "pc": 490000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 28000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21558",
-      "slug": "abily",
-      "nameZh": "阿比利",
-      "name": "ABILY",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21558/abily",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 1499000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
         "pc": false
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21556",
       "slug": "bergkamp",
       "nameZh": "博格坎普",
-      "name": "BERGKAMP",
+      "name": "Bergkamp",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21556/bergkamp",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 1500000,
-        "updatedText": "29 secs ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 433000,
-        "pc": 0
+        "console": 496000,
+        "pc": 465000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21568",
       "slug": "best",
       "nameZh": "乔治·贝斯特",
-      "name": "BEST",
+      "name": "Best",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21568/best",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 4400000,
-        "updatedText": "5 mins ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 2200000,
-        "pc": 2875000
+        "console": 1950000,
+        "pc": 1650000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21567",
-      "slug": "borba-ferreira",
-      "nameZh": "里瓦尔多",
-      "name": "RIVALDO",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21567/borba-ferreira",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 1900000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 548000,
-        "pc": 655000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21557",
       "slug": "casillas-fernandez",
       "nameZh": "卡西利亚斯",
-      "name": "CASILLAS",
+      "name": "Casillas Fernández",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21557/casillas-fernandez",
       "ok": true,
@@ -945,149 +918,199 @@
         "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 610000,
-        "pc": 800000
+        "console": 769000,
+        "pc": 806000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21560",
-      "slug": "da-silva-rocha",
-      "nameZh": "儒尼尼奥",
-      "name": "ROBERTO CARLOS",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21560/da-silva-rocha",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 4500000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 975000,
-        "pc": 1401000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21787",
       "slug": "dalglish",
       "nameZh": "达格利什",
-      "name": "DALGLISH",
+      "name": "Dalglish",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21787/dalglish",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 6300000,
-        "updatedText": "50 secs ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 1990000,
-        "pc": 6300000
+        "console": 2089000,
+        "pc": 5000000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21565",
       "slug": "del-piero",
       "nameZh": "德尔·皮耶罗",
-      "name": "DEL PIERO",
+      "name": "Del Piero",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21565/del-piero",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 2900000,
-        "updatedText": "41 secs ago"
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 849000,
-        "pc": 2100000
+        "console": 1095000,
+        "pc": 1500000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21779",
-      "slug": "dos-santos-leite",
-      "nameZh": "里瓦尔多",
-      "name": "KAKÁ",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21779/dos-santos-leite",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "2 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 15000000
-      },
-      "currentValid": {
-        "console": false,
-        "pc": true
-      },
-      "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21562",
       "slug": "foudy",
       "nameZh": "福迪",
-      "name": "FOUDY",
+      "name": "Foudy",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21562/foudy",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 1400000,
-        "updatedText": "6 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 350000,
-        "pc": 1250000
+        "console": 401000,
+        "pc": 900000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21784",
       "slug": "gonzalez-blanco",
       "nameZh": "劳尔",
-      "name": "RAÚL",
+      "name": "González Blanco",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21784/gonzalez-blanco",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 31000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21779",
+      "slug": "kaka",
+      "nameZh": "里瓦尔多",
+      "name": "Kaká",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21779/kaka",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "59 secs ago"
+      },
+      "current": {
+        "console": 15000000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 31000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21551",
+      "slug": "kroos",
+      "nameZh": "克罗斯",
+      "name": "Kroos",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21551/kroos",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 2100000,
+        "updatedText": "7 mins ago"
+      },
+      "current": {
+        "console": 559000,
+        "pc": 499000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 21000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21555",
+      "slug": "madeira-caeiro-figo",
+      "nameZh": "菲戈",
+      "name": "Madeira Caeiro Figo",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21555/madeira-caeiro-figo",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 2000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 580000,
+        "pc": 780000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 21000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21563",
+      "slug": "matthaus",
+      "nameZh": "马特乌斯",
+      "name": "Matthäus",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21563/matthaus",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -1095,147 +1118,72 @@
         "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 0,
+        "console": 5000000,
         "pc": 0
       },
       "currentValid": {
-        "console": false,
+        "console": true,
         "pc": false
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21551",
-      "slug": "kroos",
-      "nameZh": "克罗斯",
-      "name": "KROOS",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21551/kroos",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 2100000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 640000,
-        "pc": 650000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21555",
-      "slug": "madeira-caeiro-figo",
-      "nameZh": "菲戈",
-      "name": "LUÍS FIGO",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21555/madeira-caeiro-figo",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 2000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 550000,
-        "pc": 1363000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21563",
-      "slug": "matthaus",
-      "nameZh": "马特乌斯",
-      "name": "MATTHÄUS",
-      "rating": 90,
-      "marketUrl": "https://www.futbin.com/27/player/21563/matthaus",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21778",
       "slug": "miyama",
       "nameZh": "宫间绫",
-      "name": "MIYAMA",
+      "name": "Miyama",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21778/miyama",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 1200000,
-        "updatedText": "4 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 392000,
-        "pc": 440000
+        "console": 480000,
+        "pc": 615000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21780",
       "slug": "moore",
       "nameZh": "博比·摩尔",
-      "name": "MOORE",
+      "name": "Moore",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21780/moore",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "3 mins ago"
+        "updatedText": "47 secs ago"
       },
       "current": {
-        "console": 950000,
-        "pc": 0
+        "console": 858000,
+        "pc": 1020000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21552",
       "slug": "pirlo",
       "nameZh": "皮尔洛",
-      "name": "PIRLO",
+      "name": "Pirlo",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21552/pirlo",
       "ok": true,
@@ -1245,7 +1193,7 @@
         "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 1121000,
+        "console": 829000,
         "pc": 0
       },
       "currentValid": {
@@ -1253,121 +1201,171 @@
         "pc": false
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21567",
+      "slug": "rivaldo",
+      "nameZh": "里瓦尔多",
+      "name": "Rivaldo",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21567/rivaldo",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 1900000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 610000,
+        "pc": 690000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 21000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21781",
       "slug": "rivellino",
       "nameZh": "里维利诺",
-      "name": "RIVELLINO",
+      "name": "Rivellino",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21781/rivellino",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "5 mins ago"
+        "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 1242000,
+        "console": 0,
         "pc": 0
       },
       "currentValid": {
-        "console": true,
+        "console": false,
         "pc": false
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21560",
+      "slug": "roberto-carlos-da-silva-rocha",
+      "nameZh": "儒尼尼奥",
+      "name": "Roberto Carlos da Silva Rocha",
+      "rating": 90,
+      "marketUrl": "https://www.futbin.com/27/player/21560/roberto-carlos-da-silva-rocha",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 4500000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 1092000,
+        "pc": 1086000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 21000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21554",
       "slug": "rooney",
       "nameZh": "鲁尼",
-      "name": "ROONEY",
+      "name": "Rooney",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21554/rooney",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 3000000,
-        "updatedText": "9 secs ago"
+        "updatedText": "7 mins ago"
       },
       "current": {
-        "console": 1235000,
-        "pc": 1850000
+        "console": 1455000,
+        "pc": 1250000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21785",
       "slug": "schelin",
       "nameZh": "舍林",
-      "name": "SCHELIN",
+      "name": "Schelin",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21785/schelin",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 4200000,
-        "updatedText": "7 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 1650000,
-        "pc": 1751000
+        "console": 1240000,
+        "pc": 1656000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 21000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21559",
       "slug": "seger",
       "nameZh": "塞格",
-      "name": "SEGER",
+      "name": "Seger",
       "rating": 90,
       "marketUrl": "https://www.futbin.com/27/player/21559/seger",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "1 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 888000,
-        "pc": 0
+        "console": 3000000,
+        "pc": 1200000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 31000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21803",
       "slug": "aguero",
       "nameZh": "塞尔吉奥·阿圭罗",
-      "name": "AGÜERO",
+      "name": "Agüero",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21803/aguero",
       "ok": true,
       "priceRange": {
         "min": 70000,
         "max": 2000000,
-        "updatedText": "5 mins ago"
+        "updatedText": "5 secs ago"
       },
       "current": {
         "console": 0,
@@ -1378,39 +1376,39 @@
         "pc": false
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21834",
       "slug": "batistuta",
       "nameZh": "巴蒂斯图塔",
-      "name": "BATISTUTA",
+      "name": "Batistuta",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21834/batistuta",
       "ok": true,
       "priceRange": {
         "min": 70000,
         "max": 300000,
-        "updatedText": "4 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 300000,
+        "console": 0,
         "pc": 0
       },
       "currentValid": {
-        "console": true,
+        "console": false,
         "pc": false
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21841",
       "slug": "butragueno-santos",
       "nameZh": "布特拉格诺",
-      "name": "EMILIO BUTRAGUEÑO",
+      "name": "Butragueño Santos",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21841/butragueno-santos",
       "ok": true,
@@ -1420,199 +1418,24 @@
         "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 2740000,
-        "pc": 5900000
+        "console": 1900000,
+        "pc": 1799000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21852",
       "slug": "cannavaro",
       "nameZh": "卡纳瓦罗",
-      "name": "CANNAVARO",
+      "name": "Cannavaro",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21852/cannavaro",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21804",
-      "slug": "cantona",
-      "nameZh": "坎通纳",
-      "name": "CANTONA",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21804/cantona",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 1933000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21815",
-      "slug": "da-silva-ferreira",
-      "nameZh": "卢西奥",
-      "name": "LÚCIO",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21815/da-silva-ferreira",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21816",
-      "slug": "desailly",
-      "nameZh": "德塞利",
-      "name": "DESAILLY",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21816/desailly",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 1000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21869",
-      "slug": "drogba",
-      "nameZh": "德罗巴",
-      "name": "DROGBA",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21869/drogba",
-      "ok": true,
-      "priceRange": {
-        "min": 70000,
-        "max": 3900000,
-        "updatedText": "8 secs ago"
-      },
-      "current": {
-        "console": 780000,
-        "pc": 3900000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21805",
-      "slug": "eto-o",
-      "nameZh": "埃托奥",
-      "name": "ETO'O",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21805/eto-o",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "58 secs ago"
-      },
-      "current": {
-        "console": 15000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21854",
-      "slug": "ferdinand",
-      "nameZh": "费迪南德",
-      "name": "FERDINAND",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21854/ferdinand",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "7 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21821",
-      "slug": "gerrard",
-      "nameZh": "杰拉德",
-      "name": "GERRARD",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21821/gerrard",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -1620,7 +1443,7 @@
         "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 4582000,
+        "console": 835000,
         "pc": 0
       },
       "currentValid": {
@@ -1628,41 +1451,41 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21826",
-      "slug": "jones",
-      "nameZh": "琼斯",
-      "name": "JONES",
+      "id": "21804",
+      "slug": "cantona",
+      "nameZh": "坎通纳",
+      "name": "Cantona",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21826/jones",
+      "marketUrl": "https://www.futbin.com/27/player/21804/cantona",
       "ok": true,
       "priceRange": {
-        "min": 70000,
-        "max": 1100000,
-        "updatedText": "2 mins ago"
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 304000,
+        "console": 0,
         "pc": 0
       },
       "currentValid": {
-        "console": true,
+        "console": false,
         "pc": false
       },
-      "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21811",
-      "slug": "keane",
-      "nameZh": "罗比·基恩",
-      "name": "KEANE",
+      "id": "21816",
+      "slug": "desailly",
+      "nameZh": "德塞利",
+      "name": "Desailly",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21811/keane",
+      "marketUrl": "https://www.futbin.com/27/player/21816/desailly",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -1670,7 +1493,57 @@
         "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 800000,
+        "console": 1150000,
+        "pc": 1300000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21869",
+      "slug": "drogba",
+      "nameZh": "德罗巴",
+      "name": "Drogba",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21869/drogba",
+      "ok": true,
+      "priceRange": {
+        "min": 70000,
+        "max": 3900000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 1053000,
+        "pc": 989000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 16000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21805",
+      "slug": "etoo",
+      "nameZh": "埃托奥",
+      "name": "Eto'o",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21805/etoo",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 2685000,
         "pc": 0
       },
       "currentValid": {
@@ -1678,14 +1551,139 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21854",
+      "slug": "ferdinand",
+      "nameZh": "费迪南德",
+      "name": "Ferdinand",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21854/ferdinand",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21821",
+      "slug": "gerrard",
+      "nameZh": "杰拉德",
+      "name": "Gerrard",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21821/gerrard",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 838000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21807",
+      "slug": "jairzinho",
+      "nameZh": "加林查",
+      "name": "Jairzinho",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21807/jairzinho",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21826",
+      "slug": "jones",
+      "nameZh": "琼斯",
+      "name": "Jones",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21826/jones",
+      "ok": true,
+      "priceRange": {
+        "min": 70000,
+        "max": 1100000,
+        "updatedText": "19 secs ago"
+      },
+      "current": {
+        "console": 305000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 16000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21811",
+      "slug": "keane",
+      "nameZh": "罗比·基恩",
+      "name": "Keane",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21811/keane",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 675000,
+        "pc": 580000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21809",
       "slug": "koeman",
       "nameZh": "科曼",
-      "name": "KOEMAN",
+      "name": "Koeman",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21809/koeman",
       "ok": true,
@@ -1695,22 +1693,22 @@
         "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 0,
+        "console": 665000,
         "pc": 0
       },
       "currentValid": {
-        "console": false,
+        "console": true,
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21823",
       "slug": "lahm",
       "nameZh": "拉姆",
-      "name": "LAHM",
+      "name": "Lahm",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21823/lahm",
       "ok": true,
@@ -1720,22 +1718,22 @@
         "updatedText": "7 mins ago"
       },
       "current": {
-        "console": 0,
+        "console": 814000,
         "pc": 0
       },
       "currentValid": {
-        "console": false,
+        "console": true,
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21844",
       "slug": "lampard",
       "nameZh": "兰帕德",
-      "name": "LAMPARD",
+      "name": "Lampard",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21844/lampard",
       "ok": true,
@@ -1745,6 +1743,81 @@
         "updatedText": "5 mins ago"
       },
       "current": {
+        "console": 895000,
+        "pc": 750000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21822",
+      "slug": "lima-ferreira",
+      "nameZh": "佩佩",
+      "name": "Lima Ferreira",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21822/lima-ferreira",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "13 secs ago"
+      },
+      "current": {
+        "console": 1450000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21843",
+      "slug": "lineker",
+      "nameZh": "莱因克尔",
+      "name": "Lineker",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21843/lineker",
+      "ok": true,
+      "priceRange": {
+        "min": 70000,
+        "max": 500000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 259000,
+        "pc": 229000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 16000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21815",
+      "slug": "lucio",
+      "nameZh": "卢西奥",
+      "name": "Lúcio",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21815/lucio",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
         "console": 0,
         "pc": 0
       },
@@ -1753,74 +1826,49 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21822",
-      "slug": "lima-ferreira",
-      "nameZh": "佩佩",
-      "name": "PEPE",
+      "id": "21839",
+      "slug": "marcelo",
+      "nameZh": "维埃拉",
+      "name": "Marcelo",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21822/lima-ferreira",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 1100000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21843",
-      "slug": "lineker",
-      "nameZh": "莱因克尔",
-      "name": "LINEKER",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21843/lineker",
+      "marketUrl": "https://www.futbin.com/27/player/21839/marcelo",
       "ok": true,
       "priceRange": {
         "min": 70000,
-        "max": 500000,
-        "updatedText": "6 mins ago"
+        "max": 3400000,
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 290000,
-        "pc": 285000
+        "console": 781000,
+        "pc": 2095000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21812",
       "slug": "nedved",
       "nameZh": "内德维德",
-      "name": "NEDVED",
+      "name": "Nedved",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21812/nedved",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "2 mins ago"
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 420000,
+        "console": 570000,
         "pc": 0
       },
       "currentValid": {
@@ -1828,41 +1876,16 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21833",
       "slug": "nesta",
       "nameZh": "内斯塔",
-      "name": "NESTA",
+      "name": "Nesta",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21833/nesta",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 15000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21824",
-      "slug": "papin",
-      "nameZh": "让-皮埃尔·帕潘",
-      "name": "PAPIN",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21824/papin",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -1870,7 +1893,32 @@
         "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 499000,
+        "console": 550000,
+        "pc": 650000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21824",
+      "slug": "papin",
+      "nameZh": "让-皮埃尔·帕潘",
+      "name": "Papin",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21824/papin",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
+        "console": 512000,
         "pc": 0
       },
       "currentValid": {
@@ -1878,39 +1926,39 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21831",
       "slug": "puyol-saforcada",
       "nameZh": "普约尔",
-      "name": "CARLES PUYOL",
+      "name": "Puyol Saforcada",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21831/puyol-saforcada",
       "ok": true,
       "priceRange": {
         "min": 70000,
         "max": 800000,
-        "updatedText": "4 mins ago"
+        "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 238000,
-        "pc": 240000
+        "console": 274000,
+        "pc": 260000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21828",
       "slug": "sanchez",
       "nameZh": "桑切斯",
-      "name": "SÁNCHEZ",
+      "name": "Sánchez",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21828/sanchez",
       "ok": true,
@@ -1920,107 +1968,7 @@
         "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 409000,
-        "pc": 515000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21813",
-      "slug": "schmeichel",
-      "nameZh": "舒梅切尔",
-      "name": "SCHMEICHEL",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21813/schmeichel",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "41 secs ago"
-      },
-      "current": {
-        "console": 599000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21864",
-      "slug": "scholes",
-      "nameZh": "斯科尔斯",
-      "name": "SCHOLES",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21864/scholes",
-      "ok": true,
-      "priceRange": {
-        "min": 70000,
-        "max": 200000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21810",
-      "slug": "shearer",
-      "nameZh": "阿兰·希勒",
-      "name": "SHEARER",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21810/shearer",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 550000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21846",
-      "slug": "shevchenko",
-      "nameZh": "舍甫琴科",
-      "name": "SHEVCHENKO",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21846/shevchenko",
-      "ok": true,
-      "priceRange": {
-        "min": 70000,
-        "max": 900000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 310000,
+        "console": 499000,
         "pc": 600000
       },
       "currentValid": {
@@ -2028,24 +1976,24 @@
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21806",
-      "slug": "smith",
-      "nameZh": "凯莉·史密斯",
-      "name": "SMITH",
+      "id": "21813",
+      "slug": "schmeichel",
+      "nameZh": "舒梅切尔",
+      "name": "Schmeichel",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21806/smith",
+      "marketUrl": "https://www.futbin.com/27/player/21813/schmeichel",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 599000,
+        "console": 560000,
         "pc": 0
       },
       "currentValid": {
@@ -2053,116 +2001,141 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21817",
-      "slug": "stoichkov",
-      "nameZh": "斯托伊奇科夫",
-      "name": "STOICHKOV",
+      "id": "21864",
+      "slug": "scholes",
+      "nameZh": "斯科尔斯",
+      "name": "Scholes",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21817/stoichkov",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21819",
-      "slug": "thuram",
-      "nameZh": "图拉姆",
-      "name": "THURAM",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21819/thuram",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21814",
-      "slug": "totti",
-      "nameZh": "托蒂",
-      "name": "TOTTI",
-      "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21814/totti",
+      "marketUrl": "https://www.futbin.com/27/player/21864/scholes",
       "ok": true,
       "priceRange": {
         "min": 70000,
-        "max": 5600000,
-        "updatedText": "4 mins ago"
+        "max": 200000,
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 1280000,
-        "pc": 5600000
+        "console": 0,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": false,
+        "pc": false
+      },
+      "estimate": 16000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21810",
+      "slug": "shearer",
+      "nameZh": "阿兰·希勒",
+      "name": "Shearer",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21810/shearer",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 663000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21846",
+      "slug": "shevchenko",
+      "nameZh": "舍甫琴科",
+      "name": "Shevchenko",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21846/shevchenko",
+      "ok": true,
+      "priceRange": {
+        "min": 70000,
+        "max": 900000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 379000,
+        "pc": 530000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21802",
-      "slug": "van-nistelrooy",
-      "nameZh": "范尼斯特鲁伊",
-      "name": "VAN NISTELROOY",
+      "id": "21806",
+      "slug": "smith",
+      "nameZh": "凯莉·史密斯",
+      "name": "Smith",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21802/van-nistelrooy",
+      "marketUrl": "https://www.futbin.com/27/player/21806/smith",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "3 mins ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 872000,
-        "pc": 15000000
+        "console": 0,
+        "pc": 1000000
+      },
+      "currentValid": {
+        "console": false,
+        "pc": true
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21829",
+      "slug": "socrates",
+      "nameZh": "儒尼尼奥",
+      "name": "Sócrates",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21829/socrates",
+      "ok": true,
+      "priceRange": {
+        "min": 70000,
+        "max": 2500000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 770000,
+        "pc": 1050000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
-      "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "estimate": 16000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21807",
-      "slug": "ventura-filho",
-      "nameZh": "加林查",
-      "name": "JAIRZINHO",
+      "id": "21817",
+      "slug": "stoichkov",
+      "nameZh": "斯托伊奇科夫",
+      "name": "Stoichkov",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21807/ventura-filho",
+      "marketUrl": "https://www.futbin.com/27/player/21817/stoichkov",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -2170,6 +2143,31 @@
         "updatedText": "5 mins ago"
       },
       "current": {
+        "console": 1495000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21819",
+      "slug": "thuram",
+      "nameZh": "图拉姆",
+      "name": "Thuram",
+      "rating": 89,
+      "marketUrl": "https://www.futbin.com/27/player/21819/thuram",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "6 mins ago"
+      },
+      "current": {
         "console": 0,
         "pc": 0
       },
@@ -2178,74 +2176,74 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21839",
-      "slug": "vieira-da-silva",
-      "nameZh": "维埃拉",
-      "name": "MARCELO",
+      "id": "21814",
+      "slug": "totti",
+      "nameZh": "托蒂",
+      "name": "Totti",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21839/vieira-da-silva",
+      "marketUrl": "https://www.futbin.com/27/player/21814/totti",
       "ok": true,
       "priceRange": {
         "min": 70000,
-        "max": 3400000,
-        "updatedText": "39 secs ago"
+        "max": 5600000,
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 789000,
-        "pc": 2250000
+        "console": 1475000,
+        "pc": 2000000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21829",
-      "slug": "vieira-de-oliveira",
-      "nameZh": "儒尼尼奥",
-      "name": "SÓCRATES",
+      "id": "21802",
+      "slug": "van-nistelrooy",
+      "nameZh": "范尼斯特鲁伊",
+      "name": "van Nistelrooy",
       "rating": 89,
-      "marketUrl": "https://www.futbin.com/27/player/21829/vieira-de-oliveira",
+      "marketUrl": "https://www.futbin.com/27/player/21802/van-nistelrooy",
       "ok": true,
       "priceRange": {
-        "min": 70000,
-        "max": 2500000,
-        "updatedText": "4 mins ago"
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 660000,
-        "pc": 1140000
+        "console": 599000,
+        "pc": 689000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
-      "estimate": 16000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "estimate": 24000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21835",
       "slug": "zanetti",
       "nameZh": "萨内蒂",
-      "name": "ZANETTI",
+      "name": "Zanetti",
       "rating": 89,
       "marketUrl": "https://www.futbin.com/27/player/21835/zanetti",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "1 mins ago"
       },
       "current": {
-        "console": 489000,
+        "console": 570000,
         "pc": 0
       },
       "currentValid": {
@@ -2253,14 +2251,14 @@
         "pc": false
       },
       "estimate": 24000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21935",
       "slug": "alonso-olano",
       "nameZh": "阿隆索",
-      "name": "XABI ALONSO",
+      "name": "Alonso Olano",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21935/alonso-olano",
       "ok": true,
@@ -2270,82 +2268,82 @@
         "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 0,
-        "pc": 0
+        "console": 550000,
+        "pc": 15000000
       },
       "currentValid": {
-        "console": false,
-        "pc": false
+        "console": true,
+        "pc": true
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21901",
       "slug": "bale",
       "nameZh": "贝尔",
-      "name": "BALE",
+      "name": "Bale",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21901/bale",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 8100000,
-        "updatedText": "1 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 2950000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21916",
-      "slug": "barnes",
-      "nameZh": "巴恩斯",
-      "name": "BARNES",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21916/barnes",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 1400000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 346000,
-        "pc": 650000
+        "console": 2850000,
+        "pc": 2800000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21916",
+      "slug": "barnes",
+      "nameZh": "巴恩斯",
+      "name": "Barnes",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21916/barnes",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1400000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 499000,
+        "pc": 344000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21878",
       "slug": "beckham",
       "nameZh": "贝克汉姆",
-      "name": "BECKHAM",
+      "name": "Beckham",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21878/beckham",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "6 mins ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 601000,
+        "console": 1200000,
         "pc": 0
       },
       "currentValid": {
@@ -2353,21 +2351,96 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21880",
       "slug": "blanc",
       "nameZh": "布兰科",
-      "name": "BLANC",
+      "name": "Blanc",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21880/blanc",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "24 secs ago"
+        "updatedText": "56 secs ago"
+      },
+      "current": {
+        "console": 825000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21889",
+      "slug": "campbell",
+      "nameZh": "坎贝尔",
+      "name": "Campbell",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21889/campbell",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1300000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 560000,
+        "pc": 633000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21887",
+      "slug": "cech",
+      "nameZh": "切赫",
+      "name": "Cech",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21887/cech",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 700000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21899",
+      "slug": "cha",
+      "nameZh": "车范根",
+      "name": "Cha",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21899/cha",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "17 secs ago"
       },
       "current": {
         "console": 0,
@@ -2378,16 +2451,91 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21932",
+      "slug": "chiellini",
+      "nameZh": "基耶利尼",
+      "name": "Chiellini",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21932/chiellini",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 2700000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 630000,
+        "pc": 750000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21938",
+      "slug": "cole",
+      "nameZh": "阿什利·科尔",
+      "name": "Cole",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21938/cole",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1200000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 470000,
+        "pc": 600000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21890",
+      "slug": "crespo",
+      "nameZh": "克雷斯波",
+      "name": "Crespo",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21890/crespo",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 553000,
+        "pc": 625000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21924",
-      "slug": "bledorn-verri",
+      "slug": "dunga",
       "nameZh": "卡福",
-      "name": "DUNGA",
+      "name": "Dunga",
       "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21924/bledorn-verri",
+      "marketUrl": "https://www.futbin.com/27/player/21924/dunga",
       "ok": true,
       "priceRange": {
         "min": 69000,
@@ -2403,214 +2551,39 @@
         "pc": false
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21889",
-      "slug": "campbell",
-      "nameZh": "坎贝尔",
-      "name": "CAMPBELL",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21889/campbell",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 1300000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 660000,
-        "pc": 750000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21887",
-      "slug": "cech",
-      "nameZh": "切赫",
-      "name": "CECH",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21887/cech",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "1 mins ago"
-      },
-      "current": {
-        "console": 582000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21899",
-      "slug": "cha",
-      "nameZh": "车范根",
-      "name": "CHA BUM KUN",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21899/cha",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 2000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21932",
-      "slug": "chiellini",
-      "nameZh": "基耶利尼",
-      "name": "CHIELLINI",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21932/chiellini",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 2700000,
-        "updatedText": "2 mins ago"
-      },
-      "current": {
-        "console": 860000,
-        "pc": 900000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21938",
-      "slug": "cole",
-      "nameZh": "阿什利·科尔",
-      "name": "COLE",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21938/cole",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 1200000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 399000,
-        "pc": 970000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21890",
-      "slug": "crespo",
-      "nameZh": "克雷斯波",
-      "name": "CRESPO",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21890/crespo",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "5 mins ago"
-      },
-      "current": {
-        "console": 400000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21902",
-      "slug": "douglas-sisenando",
-      "nameZh": "道格拉斯",
-      "name": "MAICON",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21902/douglas-sisenando",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 1400000,
-        "updatedText": "37 secs ago"
-      },
-      "current": {
-        "console": 750000,
-        "pc": 830000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21941",
       "slug": "essien",
       "nameZh": "埃辛",
-      "name": "ESSIEN",
+      "name": "Essien",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21941/essien",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 2100000,
-        "updatedText": "6 mins ago"
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 751000,
-        "pc": 1901000
+        "console": 855000,
+        "pc": 845000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21920",
       "slug": "gattuso",
       "nameZh": "加图索",
-      "name": "GATTUSO",
+      "name": "Gattuso",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21920/gattuso",
       "ok": true,
@@ -2620,82 +2593,82 @@
         "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 225000,
-        "pc": 180000
+        "console": 265000,
+        "pc": 220000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21911",
       "slug": "hagi",
       "nameZh": "哈吉",
-      "name": "HAGI",
+      "name": "Hagi",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21911/hagi",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 1000000,
-        "updatedText": "7 mins ago"
+        "updatedText": "4 mins ago"
       },
       "current": {
-        "console": 327000,
-        "pc": 550000
+        "console": 329000,
+        "pc": 302000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21918",
       "slug": "hierro-ruiz",
       "nameZh": "耶罗",
-      "name": "FERNANDO HIERRO",
+      "name": "Hierro Ruiz",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21918/hierro-ruiz",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "2 mins ago"
+        "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 15000000,
-        "pc": 0
+        "console": 450000,
+        "pc": 550000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21888",
       "slug": "hurst",
       "nameZh": "杰夫·赫斯特",
-      "name": "HURST",
+      "name": "Hurst",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21888/hurst",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "22 secs ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 900000,
+        "console": 525000,
         "pc": 0
       },
       "currentValid": {
@@ -2703,16 +2676,91 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21884",
       "slug": "klose",
       "nameZh": "克洛泽",
-      "name": "KLOSE",
+      "name": "Klose",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21884/klose",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "4 mins ago"
+      },
+      "current": {
+        "console": 590000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21915",
+      "slug": "laudrup",
+      "nameZh": "劳德鲁普",
+      "name": "Laudrup",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21915/laudrup",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 800000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 345000,
+        "pc": 333000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21902",
+      "slug": "maicon",
+      "nameZh": "道格拉斯",
+      "name": "Maicon",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21902/maicon",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1400000,
+        "updatedText": "3 mins ago"
+      },
+      "current": {
+        "console": 560000,
+        "pc": 511000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21874",
+      "slug": "makelele",
+      "nameZh": "马克莱莱",
+      "name": "Makélélé",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21874/makelele",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -2720,182 +2768,107 @@
         "updatedText": "7 mins ago"
       },
       "current": {
-        "console": 453000,
-        "pc": 800000
+        "console": 1050000,
+        "pc": 1160000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21915",
-      "slug": "laudrup",
-      "nameZh": "劳德鲁普",
-      "name": "LAUDRUP",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21915/laudrup",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 800000,
-        "updatedText": "2 mins ago"
-      },
-      "current": {
-        "console": 330000,
-        "pc": 390000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21877",
-      "slug": "lima-do-amor",
-      "nameZh": "加林查",
-      "name": "SISSI",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21877/lima-do-amor",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 1300000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 450000,
-        "pc": 1150000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21874",
-      "slug": "makelele",
-      "nameZh": "马克莱莱",
-      "name": "MAKÉLÉLÉ",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21874/makelele",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 1200000,
-        "pc": 1250000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21914",
       "slug": "mario-alberto-kempes",
       "nameZh": "肯佩斯",
-      "name": "KEMPES",
+      "name": "Mario Alberto Kempes",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21914/mario-alberto-kempes",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 800000,
-        "updatedText": "52 secs ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 500000,
-        "pc": 500000
+        "console": 617000,
+        "pc": 575000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21876",
       "slug": "nagasato",
       "nameZh": "永里优季",
-      "name": "NAGASATO",
+      "name": "Nagasato",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21876/nagasato",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 500000,
-        "updatedText": "3 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 488000,
-        "pc": 500000
+        "console": 0,
+        "pc": 0
       },
       "currentValid": {
-        "console": true,
-        "pc": true
+        "console": false,
+        "pc": false
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21908",
       "slug": "owen",
       "nameZh": "迈克尔·欧文",
-      "name": "OWEN",
+      "name": "Owen",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21908/owen",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "5 mins ago"
+        "updatedText": "6 mins ago"
       },
       "current": {
-        "console": 650000,
-        "pc": 0
+        "console": 0,
+        "pc": 1500000
       },
       "currentValid": {
-        "console": true,
-        "pc": false
+        "console": false,
+        "pc": true
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21886",
       "slug": "petit",
       "nameZh": "佩蒂特",
-      "name": "PETIT",
+      "name": "Petit",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21886/petit",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "52 secs ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 750000,
+        "console": 980000,
         "pc": 0
       },
       "currentValid": {
@@ -2903,191 +2876,16 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21879",
       "slug": "pichon",
       "nameZh": "皮琼",
-      "name": "PICHON",
+      "name": "Pichon",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21879/pichon",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 699000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21896",
-      "slug": "pires",
-      "nameZh": "皮雷",
-      "name": "PIRÈS",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21896/pires",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "17 secs ago"
-      },
-      "current": {
-        "console": 800000,
-        "pc": 1000000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21893",
-      "slug": "ribery",
-      "nameZh": "里贝里",
-      "name": "RIBÉRY",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21893/ribery",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 3900000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 1180000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21883",
-      "slug": "rijkaard",
-      "nameZh": "里杰卡尔德",
-      "name": "RIJKAARD",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21883/rijkaard",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 14000000,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": true,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21925",
-      "slug": "riquelme",
-      "nameZh": "里克尔梅",
-      "name": "RIQUELME",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21925/riquelme",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "6 mins ago"
-      },
-      "current": {
-        "console": 340000,
-        "pc": 399000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21903",
-      "slug": "rush",
-      "nameZh": "拉什",
-      "name": "RUSH",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21903/rush",
-      "ok": true,
-      "priceRange": {
-        "min": 69000,
-        "max": 400000,
-        "updatedText": "4 mins ago"
-      },
-      "current": {
-        "console": 160000,
-        "pc": 200000
-      },
-      "currentValid": {
-        "console": true,
-        "pc": true
-      },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21897",
-      "slug": "schweinsteiger",
-      "nameZh": "施魏因斯泰格",
-      "name": "SCHWEINSTEIGER",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21897/schweinsteiger",
-      "ok": true,
-      "priceRange": {
-        "min": 71000,
-        "max": 15000000,
-        "updatedText": "3 mins ago"
-      },
-      "current": {
-        "console": 0,
-        "pc": 0
-      },
-      "currentValid": {
-        "console": false,
-        "pc": false
-      },
-      "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
-      "error": null
-    },
-    {
-      "id": "21881",
-      "slug": "torres-sanz",
-      "nameZh": "托雷斯",
-      "name": "FERNANDO TORRES",
-      "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21881/torres-sanz",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -3095,7 +2893,82 @@
         "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 1500000,
+        "console": 483000,
+        "pc": 545000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21896",
+      "slug": "pires",
+      "nameZh": "皮雷",
+      "name": "Pirès",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21896/pires",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "7 mins ago"
+      },
+      "current": {
+        "console": 475000,
+        "pc": 15000000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21893",
+      "slug": "ribery",
+      "nameZh": "里贝里",
+      "name": "Ribéry",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21893/ribery",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 3900000,
+        "updatedText": "7 mins ago"
+      },
+      "current": {
+        "console": 1100000,
+        "pc": 1220000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21883",
+      "slug": "rijkaard",
+      "nameZh": "里杰卡尔德",
+      "name": "Rijkaard",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21883/rijkaard",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago"
+      },
+      "current": {
+        "console": 700000,
         "pc": 0
       },
       "currentValid": {
@@ -3103,66 +2976,116 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21885",
-      "slug": "toure",
-      "nameZh": "亚亚·图雷",
-      "name": "TOURÉ",
+      "id": "21925",
+      "slug": "riquelme",
+      "nameZh": "里克尔梅",
+      "name": "Riquelme",
       "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21885/toure",
+      "marketUrl": "https://www.futbin.com/27/player/21925/riquelme",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 444000,
+        "pc": 549000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21903",
+      "slug": "rush",
+      "nameZh": "拉什",
+      "name": "Rush",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21903/rush",
       "ok": true,
       "priceRange": {
         "min": 69000,
-        "max": 4500000,
-        "updatedText": "1 mins ago"
+        "max": 400000,
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 2360000,
-        "pc": 4496000
+        "console": 225000,
+        "pc": 199000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21945",
-      "slug": "van-der-sar",
-      "nameZh": "范德萨",
-      "name": "VAN DER SAR",
+      "id": "21897",
+      "slug": "schweinsteiger",
+      "nameZh": "施魏因斯泰格",
+      "name": "Schweinsteiger",
       "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21945/van-der-sar",
+      "marketUrl": "https://www.futbin.com/27/player/21897/schweinsteiger",
       "ok": true,
       "priceRange": {
-        "min": 69000,
-        "max": 1700000,
-        "updatedText": "2 mins ago"
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 493000,
+        "console": 1649000,
         "pc": 720000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
-      "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
-      "id": "21882",
-      "slug": "van-persie",
-      "nameZh": "范佩西",
-      "name": "VAN PERSIE",
+      "id": "21877",
+      "slug": "sissi",
+      "nameZh": "加林查",
+      "name": "Sissi",
       "rating": 88,
-      "marketUrl": "https://www.futbin.com/27/player/21882/van-persie",
+      "marketUrl": "https://www.futbin.com/27/player/21877/sissi",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1300000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 630000,
+        "pc": 629000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21881",
+      "slug": "torres-sanz",
+      "nameZh": "托雷斯",
+      "name": "Torres Sanz",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21881/torres-sanz",
       "ok": true,
       "priceRange": {
         "min": 71000,
@@ -3178,21 +3101,96 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21885",
+      "slug": "toure",
+      "nameZh": "亚亚·图雷",
+      "name": "Touré",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21885/toure",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 4500000,
+        "updatedText": "15 secs ago"
+      },
+      "current": {
+        "console": 2005000,
+        "pc": 2380000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21945",
+      "slug": "van-der-sar",
+      "nameZh": "范德萨",
+      "name": "van der Sar",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21945/van-der-sar",
+      "ok": true,
+      "priceRange": {
+        "min": 69000,
+        "max": 1700000,
+        "updatedText": "1 mins ago"
+      },
+      "current": {
+        "console": 515000,
+        "pc": 690000
+      },
+      "currentValid": {
+        "console": true,
+        "pc": true
+      },
+      "estimate": 12000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
+      "error": null
+    },
+    {
+      "id": "21882",
+      "slug": "van-persie",
+      "nameZh": "范佩西",
+      "name": "van Persie",
+      "rating": 88,
+      "marketUrl": "https://www.futbin.com/27/player/21882/van-persie",
+      "ok": true,
+      "priceRange": {
+        "min": 71000,
+        "max": 15000000,
+        "updatedText": "2 mins ago"
+      },
+      "current": {
+        "console": 830000,
+        "pc": 0
+      },
+      "currentValid": {
+        "console": true,
+        "pc": false
+      },
+      "estimate": 18000,
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21875",
       "slug": "varane",
       "nameZh": "拉斐尔·瓦拉内",
-      "name": "VARANE",
+      "name": "Varane",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21875/varane",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 2000000,
-        "updatedText": "24 secs ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
         "console": 2000000,
@@ -3203,74 +3201,74 @@
         "pc": false
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21919",
       "slug": "vidic",
       "nameZh": "维迪奇",
-      "name": "VIDIC",
+      "name": "Vidic",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21919/vidic",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "1 mins ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 2000000,
-        "pc": 0
+        "console": 899000,
+        "pc": 1194000
       },
       "currentValid": {
         "console": true,
-        "pc": false
+        "pc": true
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21898",
       "slug": "vieira",
       "nameZh": "维埃拉",
-      "name": "VIEIRA",
+      "name": "Vieira",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21898/vieira",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 7200000,
-        "updatedText": "3 mins ago"
+        "updatedText": "5 mins ago"
       },
       "current": {
-        "console": 6000000,
-        "pc": 7200000
+        "console": 1999000,
+        "pc": 2999000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21892",
       "slug": "wright",
       "nameZh": "伊恩·赖特",
-      "name": "WRIGHT",
+      "name": "Wright",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21892/wright",
       "ok": true,
       "priceRange": {
         "min": 71000,
         "max": 15000000,
-        "updatedText": "4 mins ago"
+        "updatedText": "2 mins ago"
       },
       "current": {
-        "console": 15000000,
+        "console": 545000,
         "pc": 0
       },
       "currentValid": {
@@ -3278,32 +3276,32 @@
         "pc": false
       },
       "estimate": 18000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     },
     {
       "id": "21917",
       "slug": "zambrotta",
       "nameZh": "赞布罗塔",
-      "name": "ZAMBROTTA",
+      "name": "Zambrotta",
       "rating": 88,
       "marketUrl": "https://www.futbin.com/27/player/21917/zambrotta",
       "ok": true,
       "priceRange": {
         "min": 69000,
         "max": 1600000,
-        "updatedText": "2 mins ago"
+        "updatedText": "3 mins ago"
       },
       "current": {
-        "console": 395000,
-        "pc": 890000
+        "console": 453000,
+        "pc": 605000
       },
       "currentValid": {
         "console": true,
         "pc": true
       },
       "estimate": 12000,
-      "fetchedAt": "2026-09-18T10:03:49.596Z",
+      "fetchedAt": "2026-09-20T23:50:30.219Z",
       "error": null
     }
   ]

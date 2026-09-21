@@ -1,0 +1,50 @@
+===== 进（新命中） =====
+  马尔蒂尼 21499 | con 2,890,000 pc 4,499,000 rep 4,499,000 | fc26Launch 4,865,792 | 余量比 1.0815 | 前轮 rep 5149000 余量比 0.9450 | condA=true condB=false
+  伊布拉希莫维奇 21538 | con 0 pc 5,399,000 rep 5,399,000 | fc26Launch 5,907,119 | 余量比 1.0941 | 前轮 rep null 余量比 Infinity | condA=true condB=false
+  博格坎普 21556 | con 496,000 pc 465,000 rep 496,000 | fc26Launch 505,048 | 余量比 1.0182 | 前轮 rep 735000 余量比 0.6871 | condA=true condB=false
+  琼斯 21826 | con 305,000 pc 0 rep 305,000 | fc26Launch 327,656 | 余量比 1.0743 | 前轮 rep 350000 余量比 0.9362 | condA=true condB=false
+  布兰科 21880 | con 825,000 pc 0 rep 825,000 | fc26Launch 1,388,817 | 余量比 1.6834 | 前轮 rep 15000000 余量比 0.0926 | condA=true condB=false
+
+===== 出（掉出） =====
+  阿比利 21558 | 前轮 con 900,000 pc 0 → 本轮 con 0 pc 0 | rep 0 | fc26Launch 2,261,359 | 余量比 2.5126 → null(双平台失效) | condA=null
+  劳尔 21784 | 前轮 con 1,292,000 pc 0 → 本轮 con 0 pc 0 | rep 0 | fc26Launch 1,772,889 | 余量比 1.3722 → null(双平台失效) | condA=null
+  德塞利 21816 | 前轮 con 995,000 pc 0 → 本轮 con 1,150,000 pc 1,300,000 | rep 1,300,000 | fc26Launch 1,033,565 | 余量比 1.0388 → 0.7951 | condA=false
+  施魏因斯泰格 21897 | 前轮 con 700,000 pc 750,000 → 本轮 con 1,649,000 pc 720,000 | rep 1,649,000 | fc26Launch 766,778 | 余量比 1.0224 → 0.4650 | condA=false
+  范佩西 21882 | 前轮 con 700,000 pc 0 → 本轮 con 830,000 pc 0 | rep 830,000 | fc26Launch 782,651 | 余量比 1.1181 → 0.9430 | condA=false
+
+===== condB 命中（全场） =====
+  斯科尔斯 21864 | fc27Max 200,000 < fc26Launch 231,598 | rep null
+
+condA=null 不适用 38 张（多为双平台无有效价）
+
+===== 保留卡余量最窄 Top12（fc26Launch ÷ representative 升序） =====
+  1. 巴雷西 21524 1.0029（fc26 351,000 ÷ rep 350,000）
+  2. 博格坎普 21556 1.0182（fc26 505,048 ÷ rep 496,000）
+  3. 埃托奥 21805 1.0208（fc26 2,740,906 ÷ rep 2,685,000）
+  4. 哈维 21523 1.0232（fc26 812,407 ÷ rep 794,000）
+  5. 琼斯 21826 1.0743（fc26 327,656 ÷ rep 305,000）
+  6. 马尔蒂尼 21499 1.0815（fc26 4,865,792 ÷ rep 4,499,000）
+  7. 哈吉 21911 1.0845（fc26 356,797 ÷ rep 329,000）
+  8. 伊布拉希莫维奇 21538 1.0941（fc26 5,907,119 ÷ rep 5,399,000）
+  9. 范巴斯滕 21539 1.0997（fc26 494,873 ÷ rep 450,000）
+  10. 福迪 21562 1.1042（fc26 993,762 ÷ rep 900,000）
+  11. 德尔·皮耶罗 21565 1.1086（fc26 1,662,844 ÷ rep 1,500,000）
+  12. 坎贝尔 21889 1.1198（fc26 708,810 ÷ rep 633,000）
+
+===== 区间极值并列集 =====
+  下沿 69,000 并列 21 张: 贝尔 21901 / 巴恩斯 21916 / 坎贝尔 21889 / 基耶利尼 21932 / 阿什利·科尔 21938 / 卡福 21924 / 埃辛 21941 / 加图索 21920 / 哈吉 21911 / 劳德鲁普 21915 / 道格拉斯 21902 / 肯佩斯 21914 / 永里优季 21876 / 里贝里 21893 / 拉什 21903 / 加林查 21877 / 亚亚·图雷 21885 / 范德萨 21945 / 拉斐尔·瓦拉内 21875 / 维埃拉 21898 / 赞布罗塔 21917
+  上沿 15,000,000 并列 71 张（仅计数）
+
+===== 改动面（绝对时刻 2026-09-21 07:47:00 之后，排除 work/ .git .workbuddy） =====
+file:///Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/icons-heroes/work/detail-t07.mjs:67
+  const r = require('node:child_process').execSync(cmd, { cwd: ROOT, encoding: 'utf8' });
+            ^
+
+ReferenceError: require is not defined in ES module scope, you can use import instead
+    at exec (file:///Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/icons-heroes/work/detail-t07.mjs:67:13)
+    at file:///Users/wuyanzu/Desktop/FC/automation/runs/2026-09-21/icons-heroes/work/detail-t07.mjs:70:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v22.22.2

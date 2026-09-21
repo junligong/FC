@@ -9,11 +9,12 @@
 //      （2961 张卡），市场热门榜 / 进化榜里的大量「同人不同版本卡」不在其中。
 //      本模块因此按「精确优先、歧义即放弃」的顺序做多源解析，并在 resolve 结果里
 //      回带命中方式，便于渲染器如实统计覆盖率。
-//   3) 头像一律落盘到报告目录下的 assets/players/，这样合并成单文件站点时
-//      shared/lib/report-assets.mjs#inlineLocalReportImages 才会把它内联成 data URL。
+//   3) 头像一律落盘到报告目录下的 assets/players/，合并日报时由
+//      shared/lib/report-assets.mjs#rewriteLocalReportAssets 改写为指向 daily-merged/assets/ 的相对路径。
 //      **不要**把头像写成 shared/ 或绝对路径——合并后会断链。
 //   4) 缩放只用系统自带 sips（本机没有 pngquant / cwebp / sharp）。48×48 约 3.9KB，
-//      160×160 原图约 10.8KB；单文件站点里内联 800+ 张头像的增量约 4MB，是可接受的上限。
+//      160×160 原图约 10.8KB。头像按 resourceId 命名（内容寻址），同名必同图，
+//      因此 800+ 张头像在站点里只存一份、被所有页面共用。
 //
 // 用法（渲染器内）：
 //   const index = loadAvatarIndex();
