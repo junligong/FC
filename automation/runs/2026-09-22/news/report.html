@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FC27 资讯日报 - 2026-09-22</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Helvetica Neue', sans-serif; background: #0a0a0a; color: #e7e9ea; line-height: 1.6; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 20px 16px 60px; }
+  .header { text-align: center; padding: 32px 0 24px; border-bottom: 1px solid #2f3336; margin-bottom: 28px; }
+  .header h1 { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, #1d9bf0, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .header .subtitle { color: #71767b; font-size: 14px; }
+  .header .meta { margin-top: 12px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .header .meta span { background: #16181c; border: 1px solid #2f3336; border-radius: 20px; padding: 4px 14px; font-size: 12px; color: #71767b; }
+  .section-title { font-size: 18px; font-weight: 600; margin: 28px 0 16px; padding-left: 12px; border-left: 3px solid #1d9bf0; color: #e7e9ea; grid-column: 1 / -1; }
+  .tweets-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .tweet-card { background: #16181c; border: 1px solid #2f3336; border-radius: 16px; padding: 16px; margin-bottom: 16px; transition: border-color 0.2s; }
+  .tweet-card:hover { border-color: #3d4144; }
+  .tweet-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1d9bf0, #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: white; flex-shrink: 0; }
+  .author-info { flex: 1; display: flex; flex-direction: column; }
+  .author-name { font-weight: 600; font-size: 15px; }
+  .author-handle { color: #71767b; font-size: 13px; }
+  .tweet-time { color: #71767b; font-size: 13px; white-space: nowrap; }
+  .tweet-body-zh { font-size: 15px; line-height: 1.75; margin-bottom: 8px; white-space: pre-wrap; word-wrap: break-word; color: #e7e9ea; }
+  .tweet-body-zh .no-text { color: #71767b; font-style: italic; }
+  .tweet-original { margin-bottom: 12px; }
+  .tweet-original summary { color: #71767b; font-size: 13px; cursor: pointer; user-select: none; padding: 4px 0; }
+  .tweet-original summary:hover { color: #1d9bf0; }
+  .tweet-original .orig-text { color: #71767b; font-size: 14px; margin-top: 8px; padding: 10px 12px; background: #0a0a0a; border-radius: 8px; white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; }
+  .tweet-images { display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 12px; }
+  .tweet-images img { width: 100%; border-radius: 12px; border: 1px solid #2f3336; display: block; }
+  .video-poster { position: relative; display: block; }
+  .video-poster .media-badge { position: absolute; top: 10px; left: 10px; z-index: 2; background: rgba(0,0,0,0.72); color: #fff; font-size: 12px; padding: 3px 9px; border-radius: 999px; letter-spacing: 0.02em; }
+  .media-meta { color: #71767b; font-size: 13px; padding: 2px 4px 4px; }
+  .media-meta a { color: #1d9bf0; }
+  .link-card { display: block; border: 1px solid #2f3336; border-radius: 12px; overflow: hidden; text-decoration: none; background: #0a0a0a; }
+  .link-card img { width: 100%; display: block; aspect-ratio: 16 / 9; object-fit: cover; }
+  .link-card-text { padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
+  .link-card-text strong { color: #e7e9ea; font-size: 14px; font-weight: 600; }
+  .link-card-text span { color: #71767b; font-size: 13px; }
+  .tweet-media-unknown { margin-bottom: 12px; padding: 10px 14px; background: #0a0a0a; border: 1px dashed #6b7280; border-radius: 8px; color: #9aa0a6; font-size: 13px; }
+  .tweet-media-unknown a { color: #1d9bf0; }
+  .quoted-tweet { margin-bottom: 12px; padding: 10px 12px; border: 1px solid #2f3336; border-radius: 12px; background: #0a0a0a; }
+  .quoted-label { display: block; color: #71767b; font-size: 12px; margin-bottom: 6px; }
+  .quoted-text { color: #c9ccd1; font-size: 13px; line-height: 1.55; margin-bottom: 6px; white-space: pre-wrap; }
+  .quoted-tweet a { color: #1d9bf0; font-size: 13px; }
+  .tweet-no-image { margin-bottom: 12px; padding: 10px 14px; background: #0a0a0a; border: 1px dashed #2f3336; border-radius: 8px; text-align: center; }
+  .tweet-no-image span { color: #71767b; font-size: 13px; }
+  .tweet-footer { display: flex; justify-content: flex-start; padding-top: 8px; border-top: 1px solid #2f3336; }
+  .source-link { display: inline-flex; align-items: center; gap: 6px; color: #1d9bf0; text-decoration: none; font-size: 13px; transition: opacity 0.2s; }
+  .source-link:hover { opacity: 0.8; text-decoration: underline; }
+  .empty-notice { text-align: center; padding: 48px 20px; color: #71767b; font-size: 15px; background: #16181c; border: 1px solid #2f3336; border-radius: 16px; }
+  .footer { text-align: center; padding: 32px 0; color: #71767b; font-size: 13px; border-top: 1px solid #2f3336; margin-top: 32px; }
+  .footer a { color: #1d9bf0; text-decoration: none; }
+  @media (max-width: 480px) { .header h1 { font-size: 22px; } .tweet-body-zh { font-size: 14px; } .tweet-images img { border-radius: 8px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>FC27 资讯日报</h1>
+    <p class="subtitle">数据来源：X (Twitter) 多博主采集 | 自动采集 · 内容去重 · 中文翻译</p>
+    <div class="meta">
+      <span>生成时间：2026-09-22 03:10 CST</span>
+      <span>本期资讯：57 条</span>
+      <span>来源：X.com</span>
+    </div>
+  </div>
+  <div class="tweets-grid"><div class="section-title">今日资讯</div>
+    <article class="tweet-card" id="tweet-0">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EAFC 27 News @FIFA22_INFO</span>
+          <span class="author-handle">@FIFA22_INFO</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:55 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 大量价格区间更新 ⏎ • 🇵🇹 Kika（基卡）= 50k ⏎ • 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Rashford（拉什福德）= 50k ⏎ • 🇪🇸 Vicky Lopez = 50k ⏎ • 🇪🇸 Mariona = 300k ⏎ • 🇪🇸 Putellas（普特利亚斯）= 200 万 ⏎ • 🇩🇪 Adeyemi（阿德耶米）= 100k ⏎ • 🇫🇷 Konate（科纳特）= 25k ⏎ • 🇳🇬 Lookman（卢克曼）= 25k ⏎ • 🇪🇸 Garcia（加西亚）= 50k ⏎ • ➕ 更多 ⏎ 你手上有没有这些卡？🤔</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 Lots of price range updates<br><br>• 🇵🇹 Kika = 50k<br>• 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Rashford = 50k<br>• 🇪🇸 Vicky Lopez = 50k<br>• 🇪🇸 Mariona = 300k<br>• 🇪🇸 Putellas = 2m<br>• 🇩🇪 Adeyemi = 100k<br>• 🇫🇷 Konate = 25k<br>• 🇳🇬 Lookman = 25k<br>• 🇪🇸 Garcia = 50k<br>• ➕ More<br><br>Do you own any of these? 🤔</div></details>
+      <div class="tweet-images"><a href="https://x.com/FIFA22_INFO/status/2102109382007791783" target="_blank" rel="noopener noreferrer"><img src="assets/news/895cef51c70b38c693af.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/FIFA22_INFO/status/2102109382007791783" target="_blank" rel="noopener noreferrer"><img src="assets/news/9b4c828a8a1844c2aa1e.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FIFA22_INFO/status/2102109382007791783" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-1">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUTBIN @FUTBIN</span>
+          <span class="author-handle">@FUTBIN</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:48 UTC</span>
+      </div>
+      <div class="tweet-body-zh">📈 价格区间更新：⏎ 🇵🇹 Kika（基卡）（10k &gt; 50k）⏎ 🏴󠁧󠁢󠁥󠁮󠁧󠁿 Rashford（拉什福德）（30k &gt; 50k）⏎ 🇪🇸 Vicky Lopez（20k &gt; 50k）⏎ 🇪🇸 Alexia（阿莱克西亚）（110 万 &gt; 200 万）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">📈 Price Range Updates:<br><br>🇵🇹 Kika (10k &gt; 50k)<br>🏴󠁧󠁢󠁥󠁮󠁧󠁿 Rashford (30k &gt; 50k)<br>🇪🇸 Vicky Lopez (20k &gt; 50k)<br>🇪🇸 Alexia (1.1m &gt; 2m)</div></details>
+      <div class="tweet-images"><a href="https://x.com/FUTBIN/status/2102107602419159177" target="_blank" rel="noopener noreferrer"><img src="assets/news/0d0b5b18de21b8b76b3b.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FUTBIN/status/2102107602419159177" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-2">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Sheriff @FutSheriff</span>
+          <span class="author-handle">@FutSheriff</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:45 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🇪🇸 Vicky Lopez 价格区间更新：⏎ 🆕 新 🟰 50k</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🇪🇸 Vicky Lopez PRICE RANGE UPDATE :<br><br>🆕 NEW 🟰 50k</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutSheriff/status/2102107017867395129" target="_blank" rel="noopener noreferrer"><img src="assets/news/57a8f89d7a5ac7ab6fcb.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutSheriff/status/2102107017867395129" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-3">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Sheriff @FutSheriff</span>
+          <span class="author-handle">@FutSheriff</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:40 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 Kika Nazareth（基卡·纳萨雷特）🇵🇹 价格区间更新：⏎ • 💰 旧 🟰 10k ⏎ • 💰 新 🟰 50k ⏎ Pina（皮娜）呢？👀</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨Kika Nazareth 🇵🇹 PRICE RANGE UPDATE:<br><br>• 💰 OLD 🟰 10k <br>• 💰 NEW 🟰 50k<br><br>Pina? 👀</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutSheriff/status/2102105607373254968" target="_blank" rel="noopener noreferrer"><img src="assets/news/3d0e2dc7488ddea5a6d7.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutSheriff/status/2102105607373254968" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-4">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUT POLICE LEAKS @FutPoliceLeaks</span>
+          <span class="author-handle">@FutPoliceLeaks</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:22 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 FC27 射门技巧 📌📍 ⏎ ❌ 不要像 FC26 那样滥用弧线搓射（Finesse）⏎ ✅ 学会精准射门 ⏎ ✅ 近角射门很 OP（外脚背 Trivela、低平抽射、普通射门）⏎ ✅ 1v1 局面下吊射很好用 ⏎ ✅ 远角的 Trivela、低平抽射和普通射门都可用 ⏎ ✅ 弧线搓射……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 FC27 SHOOTING TIPS 📌📍<br><br>❌ Don’t abuse Finesse shots like in FC26<br>✅ Learn precision shooting<br>✅ Near-post shots are OP (Trivela, Low Driven, Normal Shots)<br>✅ Chip shots in 1v1 situations are good<br>✅ Far-post Trivela, Low Driven, and Normal shots are fine<br>✅ Finesse shots are Show more</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/FutPoliceLeaks/status/2102101247226425792" target="_blank" rel="noopener noreferrer"><span class="media-badge">视频</span><img src="assets/news/e1f4ad76271e4fb2a62b.jpg" loading="lazy" referrerpolicy="no-referrer" alt="视频封面" /></a><div class="media-meta">视频・24 秒　<a href="https://x.com/FutPoliceLeaks/status/2102101247226425792" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutPoliceLeaks/status/2102101247226425792" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-5">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FGZ ⚽️🎮 @FGZNews</span>
+          <span class="author-handle">@FGZNews</span>
+        </div>
+        <span class="tweet-time">2026-09-21 18:06 UTC</span>
+      </div>
+      <div class="tweet-body-zh">看样子 EA 今年在 FC 27 里真的打算走一条非常缓慢的能力曲线 🔥</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">EA are actually doing a very slow power curve this year in FC 27 by the looks of things 🔥</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/FGZNews/status/2102097231297851676" target="_blank" rel="noopener noreferrer"><span class="media-badge">视频</span><img src="assets/news/b076248b0f5a80f8a42b.jpg" loading="lazy" referrerpolicy="no-referrer" alt="视频封面" /></a><div class="media-meta">视频・11 秒　<a href="https://x.com/FGZNews/status/2102097231297851676" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @KalshiSports　被引用推文含 2 张配图</span><div class="quoted-text">Champions League Power Rankings ahead of International Break, via Kalshi:<br><br>1. Barcelona (24%)<br>2. Arsenal (14%)<br>3. Bayern Munich (14%)<br>4. PSG (13%)<br>5. Real Madrid (13%)<br>6. Manchester City (10%)<br>7. Inte</div><a href="https://x.com/KalshiSports/status/2102062360357679195" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/FGZNews/status/2102097231297851676" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FGZNews
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-6">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Sheriff @FutSheriff</span>
+          <span class="author-handle">@FutSheriff</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:46 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 荷甲 Squad Foundations（阵容基石）即将上线！⏎ 你想看到谁？#FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨EREDIVISIE SQUAD FOUNDATIONS COMING SOON! <br><br>Who do you want to see? #FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutSheriff/status/2102092077613944986" target="_blank" rel="noopener noreferrer"><img src="assets/news/5126fdb29ab0449b86f2.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutSheriff/status/2102092077613944986" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-7">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿 @Razzerstrading</span>
+          <span class="author-handle">@Razzerstrading</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:41 UTC</span>
+      </div>
+      <div class="tweet-body-zh">坐等这些价格区间更新 #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Waiting For These PR Updates #FC27</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/Razzerstrading/status/2102090863845187924" target="_blank" rel="noopener noreferrer"><span class="media-badge">动图 GIF</span><img src="assets/news/6a9941f6431916f1442e.jpg" loading="lazy" referrerpolicy="no-referrer" alt="动图 GIF封面" /></a><div class="media-meta">动图 GIF　<a href="https://x.com/Razzerstrading/status/2102090863845187924" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Razzerstrading/status/2102090863845187924" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-8">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @fifa_romania</span>
+          <span class="author-handle">@fifa_romania</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:40 UTC</span>
+      </div>
+      <div class="tweet-body-zh">荷甲 Squad Foundations（阵容基石）今年又回归啦 🥳 ⏎ 你想看到哪些球员？😅</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Eredivisie Squad Foundations is back again this year 🥳<br><br>who&#x27;d you like to see?😅</div></details>
+      <div class="tweet-images"><a href="https://x.com/fifa_romania/status/2102090692130476195" target="_blank" rel="noopener noreferrer"><img src="assets/news/31b4c422fbfdcadff12e.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/fifa_romania/status/2102090692130476195" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @fifa_romania
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-9">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">DetectiveFUT @DetectiveFUT</span>
+          <span class="author-handle">@DetectiveFUT</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:15 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 赛季通行证 15 级现在有人已经达成 🚨 ⏎ 我自己都还没到 7 级 💀💀 ⏎ 你现在多少级了？</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨LEVEL 15 SEASON PASS IS NOW POSSIBLE 🚨<br><br>I am not even at level 7 💀💀<br><br>What is your current level?</div></details>
+      <div class="tweet-images"><a href="https://x.com/DetectiveFUT/status/2102084305291792631" target="_blank" rel="noopener noreferrer"><img src="assets/news/e30358439a79c6692c89.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/DetectiveFUT/status/2102084305291792631" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-10">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FGZ ⚽️🎮 @FGZNews</span>
+          <span class="author-handle">@FGZNews</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:14 UTC</span>
+      </div>
+      <div class="tweet-body-zh">晚 6 点内容 ⏎ • 79x2 升级 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">6pm Content <br><br>• 79x2 Upgrades <br><br>#FC27</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/FGZNews/status/2102084005092823134" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FGZNews/status/2102084005092823134" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FGZNews
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-11">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUT Agent @futagentt</span>
+          <span class="author-handle">@futagentt</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:12 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🔥 「Destined for Glory」金币 ⏎ 使用优惠码 AGENT 订单立减 10% ⏎ bit.ly/fcs-agent</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🔥 DESTINED FOR GLORY COINS<br><br>USE CODE AGENT FOR 10% OFF<br><br>bit.ly/fcs-agent</div></details>
+      <div class="tweet-images"><a href="https://x.com/futagentt/status/2102083481819914280" target="_blank" rel="noopener noreferrer"><img src="assets/news/82b55ce0b3346e6f9da4.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @FutCoinSpot　被引用推文含 1 张配图</span><div class="quoted-text">🚨 WE’RE BACK! 🚨<br><br>FutCoinSpot is officially LIVE for FC 27! ⚡<br><br>💰 Cheapest coins<br>⚡ Fast delivery<br>🔥 Same FCS you know<br>Stock up and get ahead of the game 👇<br><br>https://t.co/qWvLdZk0uQ https://t.co/lRzEnUBL65</div><a href="https://x.com/FutCoinSpot/status/2101010796331549052" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/futagentt/status/2102083481819914280" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @futagentt
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-12">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">DetectiveFUT @DetectiveFUT</span>
+          <span class="author-handle">@DetectiveFUT</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:01 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 FC 27 金币已上架 🚨 ⏎ 💰 现已在 @FutCoinSpot 提供金币 ⏎ ⚡ 24/7 自动发货 ⏎ 🔥 低价 ⏎ 🎁 返现奖励 ⏎ ⭐ 800+ Trustpilot 评价，4.9/5 ⏎ 使用优惠码 DETECTIVE 订单立减 10% 👇 ⏎ 🔗 bit.ly/fcs-detective</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 FC 27 COINS ARE LIVE 🚨<br><br>💰 Coins available now on @FutCoinSpot<br> <br>⚡ 24/7 Automated Delivery<br>🔥 Cheap Rates<br>🎁 Cashback Rewards<br>⭐ 4.9/5 out of 800+ Trustpilot Reviews<br><br>Use code DETECTIVE for 10% OFF your order 👇<br>🔗 bit.ly/fcs-detective</div></details>
+      <div class="tweet-images"><a href="https://x.com/DetectiveFUT/status/2102080832353550560" target="_blank" rel="noopener noreferrer"><img src="assets/news/2ec82f504ce5aed67eaf.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/DetectiveFUT/status/2102080832353550560" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-13">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUTBIN @FUTBIN</span>
+          <span class="author-handle">@FUTBIN</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:01 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 晚 6 点内容：⏎ - 👀 79+ 升级（金卡阵容）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 6pm Content:<br><br>- 👀 79+ Upgrade (Gold Squad)</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/FUTBIN/status/2102080690837729436" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FUTBIN/status/2102080690837729436" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-14">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EAFC 27 News @FIFA22_INFO</span>
+          <span class="author-handle">@FIFA22_INFO</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">晚 6 点内容 ⏎ • 79x2 升级 SBC ⏎ 仅可重复 3 次 😭</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">6pm Content <br><br>• 79x2 Upgrades <br><br>Only 3 times repeatable 😭</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/FIFA22_INFO/status/2102080653953008116" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FIFA22_INFO/status/2102080653953008116" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-15">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Sheriff @FutSheriff</span>
+          <span class="author-handle">@FutSheriff</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">晚 6 点内容 ⏎ • 🧩 79x2 升级 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">6 PM Content<br><br>• 🧩 79x2 Upgrade<br><br>#FC27</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/FutSheriff/status/2102080654171123894" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutSheriff/status/2102080654171123894" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-16">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EA SPORTS FC @EASPORTSFC</span>
+          <span class="author-handle">@EASPORTSFC</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">#FC27 的球星们已经进入游戏。⏎ 现在就通过抢先体验开玩：x.ea.com/92407</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">The stars of #FC27 are in the game.<br><br>Play now with Early Access: x.ea.com/92407</div></details>
+      <div class="tweet-images"><a href="https://x.com/EASPORTSFC/status/2102080594913956311" target="_blank" rel="noopener noreferrer"><img src="assets/news/d2595967ce448f70a261.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/EASPORTSFC/status/2102080594913956311" target="_blank" rel="noopener noreferrer"><img src="assets/news/090f6efcdb6caf1200a7.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/EASPORTSFC/status/2102080594913956311" target="_blank" rel="noopener noreferrer"><img src="assets/news/32850b47c8c143e83b6f.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/EASPORTSFC/status/2102080594913956311" target="_blank" rel="noopener noreferrer"><img src="assets/news/b4c8c2c7a46ced707257.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EASPORTSFC/status/2102080594913956311" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EASPORTSFC
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-17">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Donk @Futdonk</span>
+          <span class="author-handle">@Futdonk</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">晚 6 点内容 ⏎ • 79x2 升级 ⏎ 今天没有球员 SBC ❌</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">6pm Content<br><br>• 79x2 Upgrade<br><br>No player SBC today ❌</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/Futdonk/status/2102080581970354556" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Futdonk/status/2102080581970354556" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Futdonk
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-18">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Scoreboard @Fut_scoreboard</span>
+          <span class="author-handle">@Fut_scoreboard</span>
+        </div>
+        <span class="tweet-time">2026-09-21 17:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🧩 新增 1 个 SBC 🧩</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🧩 1 NEW SBC ADDED 🧩</div></details>
+      <div class="tweet-images"><a href="https://x.com/Fut_scoreboard/status/2102080452941008899" target="_blank" rel="noopener noreferrer"><img src="assets/news/397d5a62defc444a033e.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Fut_scoreboard/status/2102080452941008899" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Fut_scoreboard
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-19">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Fut Sheriff @FutSheriff</span>
+          <span class="author-handle">@FutSheriff</span>
+        </div>
+        <span class="tweet-time">2026-09-21 16:25 UTC</span>
+      </div>
+      <div class="tweet-body-zh">📈 我们继续大赚金币 😊 ⏎ 全部都在这里提前预判 👇🏻😉 ⏎ 🔗 patreon.com/Duck_MitchyDuck</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">📈 We keep making huge coins 😊<br><br>All called here 👇🏻😉<br><br>🔗 patreon.com/Duck_MitchyDuck</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutSheriff/status/2102071635301798054" target="_blank" rel="noopener noreferrer"><img src="assets/news/aae728f276d75ad5c3ea.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutSheriff/status/2102071635301798054" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutSheriff
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-20">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @fifa_romania</span>
+          <span class="author-handle">@fifa_romania</span>
+        </div>
+        <span class="tweet-time">2026-09-21 16:22 UTC</span>
+      </div>
+      <div class="tweet-body-zh">如何在 1 分钟内拿到 1000 SP👇 ⏎ 喝红牛 🤝</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">How to get 1000 SP in 1 min👇<br><br>Drink Redbull 🤝</div></details>
+      <div class="tweet-images"><a href="https://x.com/fifa_romania/status/2102071051400233168" target="_blank" rel="noopener noreferrer"><img src="assets/news/c43ebf5eb3988c4704a4.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/fifa_romania/status/2102071051400233168" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @fifa_romania
+        </a>
+      </div>
+    </article></div>
+  <div class="tweets-grid"><div class="section-title">近期资讯</div>
+    <article class="tweet-card" id="tweet-21">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FC 27 NEWS &amp; TIPS @EAFCassist</span>
+          <span class="author-handle">@EAFCassist</span>
+        </div>
+        <span class="tweet-time">2026-09-21 15:49 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 昨夜最新倒卡收益 💰💰 ⏎ 🇸🇪 Isak（伊萨克）23K &gt; 29K ⏎ 🇨🇲 Mbeumo（姆贝乌莫）33K &gt; 39K ⏎ 🇫🇷 Maignan（迈尼昂）20K &gt; 25K ⏎ 🇩🇪 Adeyemi（阿德耶米）52K &gt; 已绝版 ⏎ ➕ 还有很多 🎯 ⏎ 最佳阵地 - Patreon.com/roryxrobos</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 Recent overnight flips 💰💰<br><br>🇸🇪 Isak 23K &gt; 29K <br>🇨🇲 Mbeumo 33K &gt; 39K <br>🇫🇷 Maignan 20K &gt; 25K <br>🇩🇪 Adeyemi 52K &gt; extinct <br>➕ LOTS more 🎯<br><br>Best place - Patreon.com/roryxrobos</div></details>
+      <div class="tweet-images"><a href="https://x.com/EAFCassist/status/2102062695369318749" target="_blank" rel="noopener noreferrer"><img src="assets/news/18197e8d735b608e9fd3.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EAFCassist/status/2102062695369318749" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EAFCassist
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-22">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">@KalshiSports</span>
+          <span class="author-handle">@KalshiSports</span>
+        </div>
+        <span class="tweet-time">2026-09-21 15:48 UTC</span>
+      </div>
+      <div class="tweet-body-zh">国际比赛周前的欧冠实力榜，来自 Kalshi：⏎ 1. 巴塞罗那（24%）⏎ 2. 阿森纳（14%）⏎ 3. 拜仁慕尼黑（14%）⏎ 4. 巴黎圣日耳曼（13%）⏎ 5. 皇家马德里（13%）⏎ 6. 曼城（10%）⏎ 7. 国际米兰（3%）⏎ 8. 利物浦（3%）⏎ 9. 马德里竞技（2%）⏎ 10. 阿斯顿维拉（2%）⏎ 11. 科莫（2%）⏎ 12. ……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Champions League Power Rankings ahead of International Break, via Kalshi:<br><br>1. Barcelona (24%)<br>2. Arsenal (14%)<br>3. Bayern Munich (14%)<br>4. PSG (13%)<br>5. Real Madrid (13%)<br>6. Manchester City (10%)<br>7. Inter (3%)<br>8. Liverpool (3%)<br>9. Atletico (2%)<br>10. Aston Villa (2%)<br>11. Como (2%)<br>12. Show more</div></details>
+      <div class="tweet-images"><a href="https://x.com/KalshiSports/status/2102062360357679195" target="_blank" rel="noopener noreferrer"><img src="assets/news/c104e5c850311bef23a8.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/KalshiSports/status/2102062360357679195" target="_blank" rel="noopener noreferrer"><img src="assets/news/9f5a3bb909b74306b0c8.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/KalshiSports/status/2102062360357679195" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @KalshiSports
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-23">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUT Agent @futagentt</span>
+          <span class="author-handle">@futagentt</span>
+        </div>
+        <span class="tweet-time">2026-09-21 15:13 UTC</span>
+      </div>
+      <div class="tweet-body-zh">你选「Destined to Glory」官方属性卡，还是「Destined to Glory」进化？</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">DESTINED TO GLORY OFFICIAL STATS OR DESTINED TO GLORY EVOLUTIONS?</div></details>
+      <div class="tweet-media-unknown">原推含媒体（视频/图片/链接卡片），本轮未取到媒体地址。<a href="https://x.com/futagentt/status/2102053641922208012" target="_blank" rel="noopener noreferrer">查看原推</a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @FutPoliceLeaks　被引用推文含 1 张配图</span><div class="quoted-text">🚨💣 BREAKING: DESTINED TO GLORY FULL TEAM 🔥🔥🔥<br><br>Good or mid? 👀<br><br>Stats are a prediciton 🖊️ https://t.co/NvGFqw6PVD</div><a href="https://x.com/FutPoliceLeaks/status/2102036681733910619" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/futagentt/status/2102053641922208012" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @futagentt
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-24">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EA SPORTS FC @EASPORTSFC</span>
+          <span class="author-handle">@EASPORTSFC</span>
+        </div>
+        <span class="tweet-time">2026-09-21 15:01 UTC</span>
+      </div>
+      <div class="tweet-body-zh">/// x The Grounds。⏎ @adidasfootball 联名系列现已登陆 #FC27，抢先体验即可获得：x.ea.com/92441</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">/// x The Grounds.<br><br>Introducing the @adidasfootball collection in #FC27, available now with Early Access: x.ea.com/92441</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/EASPORTSFC/status/2102050527106175447" target="_blank" rel="noopener noreferrer"><span class="media-badge">视频</span><img src="assets/news/49ea5cbf5fa90fef48cd.jpg" loading="lazy" referrerpolicy="no-referrer" alt="视频封面" /></a><div class="media-meta">视频・13 秒　<a href="https://x.com/EASPORTSFC/status/2102050527106175447" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EASPORTSFC/status/2102050527106175447" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EASPORTSFC
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-25">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUTBIN @FUTBIN</span>
+          <span class="author-handle">@FUTBIN</span>
+        </div>
+        <span class="tweet-time">2026-09-21 15:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">✍️ 我们很高兴宣布 @TomLeese 成为 FUTBIN 电竞战队 FC 27 项目的第三位签约选手！⏎ 欢迎加入 FUTBIN，Tom 🤝</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">✍️ We&#x27;re delighted to announce @TomLeese as the third signing for FUTBIN esports for FC 27!<br><br>Welcome to FUTBIN Tom 🤝</div></details>
+      <div class="tweet-images"><a href="https://x.com/FUTBIN/status/2102050221111079307" target="_blank" rel="noopener noreferrer"><img src="assets/news/0f5c4d0497f3bf67513c.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FUTBIN/status/2102050221111079307" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-26">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EasySBC @easysbc</span>
+          <span class="author-handle">@easysbc</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:55 UTC</span>
+      </div>
+      <div class="tweet-body-zh">Claudia Pina（克劳迪娅·皮娜）本周末打进 3 球——她可能很快就会迎来自己第一张 TOTW 卡 💀</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">3 Goals from Claudia Pina this weekend - she could be getting her first TOTW card soon 💀</div></details>
+      <div class="tweet-images"><a href="https://x.com/easysbc/status/2102049064594317822" target="_blank" rel="noopener noreferrer"><img src="assets/news/0a674c38239ff37e5bab.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/easysbc/status/2102049064594317822" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-27">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUTBIN @FUTBIN</span>
+          <span class="author-handle">@FUTBIN</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:45 UTC</span>
+      </div>
+      <div class="tweet-body-zh">👀 ✍️（原推仅含表情符号，无文字内容）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">👀 ✍️</div></details>
+      <div class="tweet-images"><a href="https://x.com/FUTBIN/status/2102046441355260167" target="_blank" rel="noopener noreferrer"><img src="assets/news/7483e275804808adf083.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FUTBIN/status/2102046441355260167" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-28">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @fifa_romania</span>
+          <span class="author-handle">@fifa_romania</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:11 UTC</span>
+      </div>
+      <div class="tweet-body-zh">Mbeumo（姆贝乌莫）和 Mateus Fernandes 应该以 T2（二级卡）身份加入✨</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Mbeumo &amp; Mateus Fernandes should come in T2✨</div></details>
+      <div class="tweet-images"><a href="https://x.com/fifa_romania/status/2102037931284128144" target="_blank" rel="noopener noreferrer"><img src="assets/news/0910fe0f1554f51b19ca.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/fifa_romania/status/2102037931284128144" target="_blank" rel="noopener noreferrer"><img src="assets/news/9765f4bcee63afd9813b.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @FutPoliceLeaks　被引用推文含 1 张配图</span><div class="quoted-text">🚨💣 BREAKING: DESTINED TO GLORY FULL TEAM 🔥🔥🔥<br><br>Good or mid? 👀<br><br>Stats are a prediciton 🖊️ https://t.co/NvGFqw6PVD</div><a href="https://x.com/FutPoliceLeaks/status/2102036681733910619" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/fifa_romania/status/2102037931284128144" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @fifa_romania
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-29">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">ASY FUT @AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:09 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 「Destined for Glory」第一波阵容已确认 ✅ ⏎ ✅ 15 名球员 ⏎ ✅ 最低总评 85 ⏎ 🌟 为期两周的活动 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 DESTINED FOR GLORY TEAM 1 CONFIRMED ✅<br><br>✅️15 PLAYERS TEAM<br>✅️MIN 85 OVR<br>🌟2 WEEKS PROMO<br>#FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2102037622398857425" target="_blank" rel="noopener noreferrer"><img src="assets/news/0946744f899a0bc9cec8.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2102037622398857425" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-30">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">@FutPoliceLeaks</span>
+          <span class="author-handle">@FutPoliceLeaks</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:06 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨💣 爆料：「Destined to Glory（命中注定荣耀）」完整阵容 🔥🔥🔥 ⏎ 是强还是平庸？👀 ⏎ 属性为预测值 🖊️</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨💣 BREAKING: DESTINED TO GLORY FULL TEAM 🔥🔥🔥<br><br>Good or mid? 👀<br><br>Stats are a prediciton 🖊️</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutPoliceLeaks/status/2102036681733910619" target="_blank" rel="noopener noreferrer"><img src="assets/news/70e89d3cadd2b95adee5.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutPoliceLeaks/status/2102036681733910619" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-31">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FC 27 NEWS &amp; TIPS @EAFCassist</span>
+          <span class="author-handle">@EAFCassist</span>
+        </div>
+        <span class="tweet-time">2026-09-21 14:02 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨💣 如果你预算不足 20 万，快点赞这条 ⏎ 专属于你的狙击过滤器 🎯 ⏎ 我会私信发给你 🥳</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨💣 LIKE THIS FAST if you have &lt;200K <br><br>Sniping filters for YOU 🎯<br><br>I will DM 🥳</div></details>
+      <div class="tweet-images"><a href="https://x.com/EAFCassist/status/2102035825579921769" target="_blank" rel="noopener noreferrer"><img src="assets/news/5cc55965dddcc404e0c3.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EAFCassist/status/2102035825579921769" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EAFCassist
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-32">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FGZ ⚽️🎮 @FGZNews</span>
+          <span class="author-handle">@FGZNews</span>
+        </div>
+        <span class="tweet-time">2026-09-21 13:48 UTC</span>
+      </div>
+      <div class="tweet-body-zh">人生巅峰。#FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Peak life. #FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/FGZNews/status/2102032312489656516" target="_blank" rel="noopener noreferrer"><img src="assets/news/7507e18dbc14562dfcbd.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FGZNews/status/2102032312489656516" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FGZNews
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-33">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @fifa_romania</span>
+          <span class="author-handle">@fifa_romania</span>
+        </div>
+        <span class="tweet-time">2026-09-21 13:43 UTC</span>
+      </div>
+      <div class="tweet-body-zh">我们知道 FUT Gallery（图鉴）一开始确实不太好理解 👀 ⏎ 正因如此，我们为会员发布了 13 份 CLUBSTOCK 清单——帮大家一边完成 FUT 图鉴、一边顺便赚币 📈 ⏎ 我们在 Squad Battles 奖励发放后和昨晚（活动更新）后第一时间就发布了它们……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">We know FUT Gallery isn’t the easiest thing to understand at first 👀<br><br>That’s exactly why we posted 13 CLUBSTOCK lists for our members - helping them complete FUT Gallery while also making profit along the way 📈<br><br>We posted them right after Squad Battles rewards and last night’s Show more</div></details>
+      <div class="tweet-images"><a href="https://x.com/fifa_romania/status/2102030872685764964" target="_blank" rel="noopener noreferrer"><img src="assets/news/2300ebfe7991e374ffb3.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/fifa_romania/status/2102030872685764964" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @fifa_romania
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-34">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @EASFCDirect</span>
+          <span class="author-handle">@EASFCDirect</span>
+        </div>
+        <span class="tweet-time">2026-09-21 13:11 UTC</span>
+      </div>
+      <div class="tweet-body-zh">我们听到了俱乐部（Clubs）社区关于体力（Stamina）及其对俱乐部体验影响的反馈。⏎ 基于这些反馈，我们将在全球正式发售前的未来版本更新中，于俱乐部模式重新引入长期疲劳机制。⏎ 我们会在稍后分享更多细节……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">We’ve heard the feedback from the Clubs community around Stamina and how it’s impacting the Clubs experience.<br><br>Based on the feedback, we’ll be re-introducing long-term fatigue in Clubs in a future title update ahead of worldwide launch.<br><br>We’ll look to share further details in the Show more</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/EASFCDirect/status/2102023020680278347" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EASFCDirect/status/2102023020680278347" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EASFCDirect
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-35">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">ASY FUT @AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-21 12:59 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨💰 在 FC 27 里印币 ⏎ Lavelle（拉维尔）：⏎ 买入价：8k ⏎ 卖出价：28k ⏎ 持有时间：12 小时 ⏎ 加入我的交易 Discord 👀 ⏎ 📩 私信获取更便宜的会员资格，或访问：⏎ patreon.com/ASYFUT</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨💰 PRINTING COINS IN FC 27<br><br>Lavelle:<br>Buy price: 8k<br>Sell price: 28k<br>Hold time: 12h<br><br>Join my Trading Discord 👀<br><br>📩 DM for cheaper access or:<br>patreon.com/ASYFUT</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2102019833504096741" target="_blank" rel="noopener noreferrer"><img src="assets/news/0a6dc041ae93fb8e1ded.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @AsyFutTrader　被引用推文含 2 张配图</span><div class="quoted-text">🚨💰 PRINTING COINS IN FC 27<br><br>All Budgets ✅️<br><br>🇫🇷 Managers bought for 1k<br>NOW: 3.2k+<br>🇧🇷 Managers bought for 1k<br>NOW: 3k+<br><br>Join my Trading Discord 👀<br><br>📩 DM for cheaper access or:<br>https://t.co/UNLQMNt2I0 http</div><a href="https://x.com/AsyFutTrader/status/2101769854495887531" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2102019833504096741" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-36">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EasySBC @easysbc</span>
+          <span class="author-handle">@easysbc</span>
+        </div>
+        <span class="tweet-time">2026-09-21 12:45 UTC</span>
+      </div>
+      <div class="tweet-body-zh">这套 4-4-1-1 战术由 FC 职业选手 Cameron Rock 创作，在 EasySBC 上已拿下 9.8 的热度分 🔥 ⏎ ✅ 完整球员角色 ⏎ ✅ 战术代码 ⏎ ✅ 四名球员参与进攻 ⏎ ✅ 攻守平衡 ⏎ 👇 完整战术见下方攻略</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">This 4-4-1-1 tactic was created by FC Pro Cameron Rock and already has a 9.8 popularity score on EasySBC 🔥<br><br>✅ Full player roles<br>✅ Tactic code<br>✅ Four players joining the attack<br>✅ Balanced in attack and defence<br><br>👇Find the full tactic in the full guide below</div></details>
+      <div class="tweet-images"><a href="https://x.com/easysbc/status/2102016279011803330" target="_blank" rel="noopener noreferrer"><img src="assets/news/86e33996b538a757cc38.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/easysbc/status/2102016279011803330" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-37">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FC 27 NEWS &amp; TIPS @EAFCassist</span>
+          <span class="author-handle">@EAFCassist</span>
+        </div>
+        <span class="tweet-time">2026-09-21 12:28 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 FC 27 短期内不会被打补丁 ❌ ⏎ • ✅ 盘带 🟰 无改动 ⏎ • ✅ 射门 🟰 无改动 ⏎ • ✅ 传球 🟰 无改动 ⏎ 第一次重大玩法调整预计要等到 11 月！🥳</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 FC 27 will NOT be patched anytime soon ❌<br><br>• ✅ Dribbling 🟰 No changes  <br>• ✅ Shooting🟰 No changes <br>• ✅ Passing 🟰 No changes <br><br>The first MAJOR gameplay expected to be in November! 🥳</div></details>
+      <div class="tweet-images"><a href="https://x.com/EAFCassist/status/2102012127766618292" target="_blank" rel="noopener noreferrer"><img src="assets/news/c330cae620d860255857.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EAFCassist/status/2102012127766618292" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EAFCassist
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-38">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EAFC 27 News @FIFA22_INFO</span>
+          <span class="author-handle">@FIFA22_INFO</span>
+        </div>
+        <span class="tweet-time">2026-09-21 12:21 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 如何轻松击败传奇难度 ⏎ • ✅ 选旧世代（Old Gen）= AI 更简单 ⏎ • ✅ 使用球员锁定（Player Lock）= 跑位更好 ⏎ 这个模式里有不少好卡包 🔥</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 How to beat legendary easy<br><br>• ✅ Play Old Gen = Easier AI<br>• ✅ Use Player Locks = Make Better Runs<br><br>This mode has some good packs 🔥</div></details>
+      <div class="tweet-images"><a href="https://x.com/FIFA22_INFO/status/2102010312618602878" target="_blank" rel="noopener noreferrer"><img src="assets/news/d444e8bf2daf744a77e2.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FIFA22_INFO/status/2102010312618602878" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-39">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUTBIN @FUTBIN</span>
+          <span class="author-handle">@FUTBIN</span>
+        </div>
+        <span class="tweet-time">2026-09-21 12:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🖼️ FC 27 中最快刷取图鉴代币（Gallery Tokens）的方法！</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🖼️ Quickest Way to Earn Gallery Tokens in FC 27!</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/FUTBIN/status/2102004928508203216" target="_blank" rel="noopener noreferrer"><span class="media-badge">视频</span><img src="assets/news/dbc1fae61af463073cd3.jpg" loading="lazy" referrerpolicy="no-referrer" alt="视频封面" /></a><div class="media-meta">视频・42 秒　<a href="https://x.com/FUTBIN/status/2102004928508203216" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @FUTBIN</span><div class="quoted-text">The easiest way to track and plan your FUT Gallery Sets!👀<br><br>✅ Find which players take you to the next Tier Reward<br>✅ Plan out S Tier Sets before buying <br>✅ First Owner Toggle to track % Bonus<br><br>The only p</div><a href="https://x.com/FUTBIN/status/2100940453734432832" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/FUTBIN/status/2102004928508203216" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FUTBIN
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-40">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Donk @Futdonk</span>
+          <span class="author-handle">@Futdonk</span>
+        </div>
+        <span class="tweet-time">2026-09-21 11:22 UTC</span>
+      </div>
+      <div class="tweet-body-zh">昨天达成了 100 万金币里程碑 ✈️ ⏎ 图鉴是今年非常棒的更新，围绕它交易很有意思 💰 ⏎ 下一步操作，一如既往地全部记录在我的小组和 @WeaverFUT 那里 🐐 👀 🔗 patreon.com/futdonk</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Hit the 1m milestone yesterday ✈️<br><br>Gallery is a very good addition this year and trading around it has been fun 💰<br><br>Now in my next move, as always everything I’ve done is in my group w/ @WeaverFUT ofc 🐐 👀 🔗 patreon.com/futdonk</div></details>
+      <div class="tweet-images"><a href="https://x.com/Futdonk/status/2101995596856918270" target="_blank" rel="noopener noreferrer"><img src="assets/news/89f31388a42fa7b8ab7e.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Futdonk/status/2101995596856918270" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Futdonk
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-41">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">ASY FUT @AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-21 11:12 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 FC 27 首批 SBC 与 FC 26 同期对比 ⏎ 对这条能力曲线（Powercurve）怎么看？👀 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 First FC 27 SBCs vs FC 26<br><br>Thoughts on the Powercurve? 👀<br>#FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2101993008426029322" target="_blank" rel="noopener noreferrer"><img src="assets/news/55b26117e822ef7423b4.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2101993008426029322" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-42">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EAFC 27 News @FIFA22_INFO</span>
+          <span class="author-handle">@FIFA22_INFO</span>
+        </div>
+        <span class="tweet-time">2026-09-21 11:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">图鉴（Gallery）是个有意思的肝活 ⏎ 新 SBC 系统强得不真实 ⏎ 内容开局就很棒 ⏎ 玩法机制奖励更强的玩家 ⏎ 开局非常不错 🔥🔥🔥</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Gallery is a fun grind<br>New SBC system is unreal <br>Content has started off great <br>The gameplay rewards better player<br><br>It’s been a great start 🔥🔥🔥</div></details>
+      <div class="tweet-images"><a href="https://x.com/FIFA22_INFO/status/2101989877109731364" target="_blank" rel="noopener noreferrer"><img src="assets/news/78f2c39565ac70b6e093.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FIFA22_INFO/status/2101989877109731364" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-43">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Donk @Futdonk</span>
+          <span class="author-handle">@Futdonk</span>
+        </div>
+        <span class="tweet-time">2026-09-21 10:53 UTC</span>
+      </div>
+      <div class="tweet-body-zh">在 FC 27 里保持零封时的感觉</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">How it feels keeping a clean sheet on FC 27</div></details>
+      <div class="tweet-images"><a href="https://x.com/Futdonk/status/2101988157054951875" target="_blank" rel="noopener noreferrer"><img src="assets/news/d13a27c33515abf07fa5.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Futdonk/status/2101988157054951875" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Futdonk
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-44">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FGZ ⚽️🎮 @FGZNews</span>
+          <span class="author-handle">@FGZNews</span>
+        </div>
+        <span class="tweet-time">2026-09-21 10:47 UTC</span>
+      </div>
+      <div class="tweet-body-zh">FC 27 的传球并不差，只是非常手动，传球时必须全神贯注。会让人抓狂吗？会。但这是一个学习曲线。⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Passing isn’t bad on FC 27, it’s just very manual and you have to be concentrated when you do it. Is it frustrating yes? But it’s a learning curve. <br><br>#FC27</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/FGZNews/status/2101986622032024037" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FGZNews/status/2101986622032024037" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FGZNews
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-45">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUT POLICE LEAKS @FutPoliceLeaks</span>
+          <span class="author-handle">@FutPoliceLeaks</span>
+        </div>
+        <span class="tweet-time">2026-09-21 10:10 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 FC27 的传球系统太好用了 😍😍 ⏎ ✅ 直塞球更加手动 ⏎ ✅ 你可以传出过去根本做不到的传球 ⏎ ✅ 这创造了巨大的技术差距 ⏎ 如果你掌握了它们，你的进球会比 FC26 更多；如果你不学，你连 5% 的球都进不了……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 PASSING IS SO GOOD IN FC27 😍😍<br><br>✅ Through balls are more manual<br>✅ You can unlock passes that were impossible in the past<br>✅ It creates a HUGE SKILL GAP<br><br>If you master them, you’ll score more than in FC26. If you don’t learn them, you won’t score even 5% of the goals you Show more</div></details>
+      <div class="tweet-images"><a class="video-poster" href="https://x.com/FutPoliceLeaks/status/2101977293132374364" target="_blank" rel="noopener noreferrer"><span class="media-badge">视频</span><img src="assets/news/40cd593633477e2c3d1c.jpg" loading="lazy" referrerpolicy="no-referrer" alt="视频封面" /></a><div class="media-meta">视频・56 秒　<a href="https://x.com/FutPoliceLeaks/status/2101977293132374364" target="_blank" rel="noopener noreferrer">在原推中观看</a></div></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutPoliceLeaks/status/2101977293132374364" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-46">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">(function (id, args) { @EASFCDirect</span>
+          <span class="author-handle">@EASFCDirect</span>
+        </div>
+        <span class="tweet-time">2026-09-21 09:54 UTC</span>
+      </div>
+      <div class="tweet-body-zh">我们已对铜卡/银卡重随 SBC 做出调整：合格球员要求已从「最高总评 79」更新为「最高总评 74」。</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">We’ve made a change to the Bronze and Silver Re-roll SBC. Eligible Players requirements have been updated from Max OVR 79 to Max OVR 74.</div></details>
+      <div class="tweet-no-image"><a href="https://x.com/EASFCDirect/status/2101973351597998559" target="_blank" rel="noopener noreferrer">原推为纯文本，无配图；查看原推</a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/EASFCDirect/status/2101973351597998559" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @EASFCDirect
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-47">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EasySBC @easysbc</span>
+          <span class="author-handle">@easysbc</span>
+        </div>
+        <span class="tweet-time">2026-09-21 09:31 UTC</span>
+      </div>
+      <div class="tweet-body-zh">如果你从赛季通行证解锁了 OTW Lacroix（拉克鲁瓦），Emi Martinez（埃米·马丁内斯）和 Caicedo（凯塞多）是最顺理成章的搭配人选 👀 ⏎ 这个三人组在游戏里会强到离谱 🥶</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">If you unlock OTW Lacroix from the Season Pass, Emi Martinez and Caicedo are the most obvious ways to fit him in 👀 <br><br>This Trio would be unreal in game 🥶</div></details>
+      <div class="tweet-images"><a href="https://x.com/easysbc/status/2101967426581627355" target="_blank" rel="noopener noreferrer"><img src="assets/news/743139de86d2725dcaec.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/easysbc/status/2101967426581627355" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-48">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">ASY FUT @AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-21 08:10 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 Renato Veiga（雷纳托·韦加）🇵🇹 也将通过 SBC/OBJ「Destined for Glory」推出 ⏎ SBC 🟰 总评 84 ⏎ 卡包中 🟰 最低总评 85 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 Renato Veiga 🇵🇹 is also coming via SBC/OBJ Destined for Glory<br><br>SBCs 🟰 84 OVR<br>IN PACKS 🟰 MIN 85 OVR<br>#FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2101947188481819039" target="_blank" rel="noopener noreferrer"><img src="assets/news/b9ca668174ffc86c6d34.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @AsyFutTrader　被引用推文含 2 张配图</span><div class="quoted-text">🚨 NEW: Frattesi 🇮🇹 + Nusa 🇳🇴 are both coming via SBC/OBJ ✅️<br><br>LIVE PROMO ✅️<br><br>Thoughts? 👀🔥<br>#FC27 https://t.co/dEDSdbMru8</div><a href="https://x.com/AsyFutTrader/status/2101943311158125014" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2101947188481819039" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-49">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">@AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-21 07:55 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 新消息：Frattesi（弗拉泰西）🇮🇹 + Nusa（努萨）🇳🇴 都将通过 SBC/OBJ 推出 ✅ ⏎ 实时更新的活动 ✅ ⏎ 怎么看？👀🔥 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 NEW: Frattesi 🇮🇹 + Nusa 🇳🇴 are both coming via SBC/OBJ ✅️<br><br>LIVE PROMO ✅️<br><br>Thoughts? 👀🔥<br>#FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2101943311158125014" target="_blank" rel="noopener noreferrer"><img src="assets/news/2d086aa83a1a6b66c7dd.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/AsyFutTrader/status/2101943311158125014" target="_blank" rel="noopener noreferrer"><img src="assets/news/a950d8bc8506d8e06acd.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2101943311158125014" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-50">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">DetectiveFUT @DetectiveFUT</span>
+          <span class="author-handle">@DetectiveFUT</span>
+        </div>
+        <span class="tweet-time">2026-09-21 07:00 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 第 2 期 TOTW（本周最佳阵容）预测 🚨 ⏎ 不少好名字 🔥🔥🔥🔥 ⏎ 我漏了谁吗？👀</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨TEAM OF THE WEEK 02 PREDICTION 🚨<br><br>There&#x27;s some good names 🔥🔥🔥🔥<br><br>Did I miss someone? 👀</div></details>
+      <div class="tweet-images"><a href="https://x.com/DetectiveFUT/status/2101929422307611016" target="_blank" rel="noopener noreferrer"><img src="assets/news/68d8804424322837dec0.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/DetectiveFUT/status/2101929422307611016" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @DetectiveFUT
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-51">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿 @Razzerstrading</span>
+          <span class="author-handle">@Razzerstrading</span>
+        </div>
+        <span class="tweet-time">2026-09-20 23:17 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 缺失的英雄卡与传奇卡 ❌ ⏎ • Defoe（迪福）🏴󠁧󠁢󠁥󠁮󠁧󠁿 ⏎ • Villa（比利亚）🇪🇸 ⏎ • Jota（若塔）🇵🇹 ⏎ • Sturridge（斯图里奇）🏴󠁧󠁢󠁥󠁮󠁧󠁿 ⏎ • Ben Arfa（本阿尔法）🇫🇷 ⏎ • Manolas（马诺拉斯）🇬🇷 ⏎ • Carrick（卡里克）🏴󠁧󠁢󠁥󠁮󠁧󠁿 ⏎ • Schurrle（许尔勒）🇩🇪 ⏎ • Robben（罗本）🇳🇱（据说晚些时候推出）⏎ • Nasri（纳斯里）🇫🇷 ⏎ • Van Der Vaart（范德法特）🇳🇱 ⏎ • Rossi（罗西）🇮🇹 ⏎ 也许我们会在后续活动中见到他们 🕊️……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 Missing Heroes &amp; Icons ❌ <br><br>• Defoe 🏴󠁧󠁢󠁥󠁮󠁧󠁿 <br>• Villa 🇪🇸 <br>• Jota 🇵🇹 <br>• Sturridge 🏴󠁧󠁢󠁥󠁮󠁧󠁿 <br>• Ben Arfa 🇫🇷 <br>• manolas 🇬🇷 <br>• Carrick 🏴󠁧󠁢󠁥󠁮󠁧󠁿 <br>• Schurrle 🇩🇪 <br>• Robben 🇳🇱 (Apparently Coming Later)<br>• Nasri 🇫🇷 <br>• Van Der Vaart 🇳🇱 <br>• Rossi 🇮🇹 <br><br>Maybe We&#x27;ll See Them in Upcoming Promos 🕊️ Show more</div></details>
+      <div class="tweet-images"><a href="https://x.com/Razzerstrading/status/2101813042728022043" target="_blank" rel="noopener noreferrer"><img src="assets/news/2943f266e6bc33633e02.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/Razzerstrading/status/2101813042728022043" target="_blank" rel="noopener noreferrer"><img src="assets/news/b8f73241b36ded2b66f9.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Razzerstrading/status/2101813042728022043" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-52">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">FUT POLICE LEAKS @FutPoliceLeaks</span>
+          <span class="author-handle">@FutPoliceLeaks</span>
+        </div>
+        <span class="tweet-time">2026-09-20 22:18 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨 很高兴看到大多数人都不想要补丁 😍😍 ⏎ ✅ 左摇杆盘带将保持不变 ⏎ ✅ 手动防守将保持不变 ⏎ ✅ AI 防守将保持不变 ⏎ ✅ 手动传球将保持不变 ⏎ ✅ 射门将保持不变 ⏎ 我给所有人的建议是……（原文截断）</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨 So happy to see that the majority don’t want a patch 😍😍<br><br>✅ Left stick will remain the same<br>✅ Manual defending will remain the same<br>✅ AI defending will remain the same<br>✅ Manual passing will remain the same<br>✅ Shooting will remain the same<br><br>My suggestion to everyone is to Show more</div></details>
+      <div class="tweet-images"><a href="https://x.com/FutPoliceLeaks/status/2101798148339368222" target="_blank" rel="noopener noreferrer"><img src="assets/news/2117e153a49a1d613606.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/FutPoliceLeaks/status/2101798148339368222" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FutPoliceLeaks
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-53">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">Razzer FC27 🏴󠁧󠁢󠁥󠁮󠁧󠁿 @Razzerstrading</span>
+          <span class="author-handle">@Razzerstrading</span>
+        </div>
+        <span class="tweet-time">2026-09-20 21:01 UTC</span>
+      </div>
+      <div class="tweet-body-zh">EA 拜托把阵容界面改得有点生气一点吧 🙏 😭 ⏎ #FC27</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">EA Please Change The Squad Screen to Something With a Bit of Life 🙏 😭<br><br>#FC27</div></details>
+      <div class="tweet-images"><a href="https://x.com/Razzerstrading/status/2101778744285245465" target="_blank" rel="noopener noreferrer"><img src="assets/news/394bd6a9e02ed98157e2.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/Razzerstrading/status/2101778744285245465" target="_blank" rel="noopener noreferrer"><img src="assets/news/2fe5f7894b255d3758fc.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/Razzerstrading/status/2101778744285245465" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @Razzerstrading
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-54">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EasySBC @easysbc</span>
+          <span class="author-handle">@easysbc</span>
+        </div>
+        <span class="tweet-time">2026-09-20 20:52 UTC</span>
+      </div>
+      <div class="tweet-body-zh">FC27 最 Meta 的平民前锋 ✅ ⏎ 可以说是 2.5 万预算内最难补强的位置，但这几个选择看起来都非常出色 🔥</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">The most Meta Budget Strikers on FC27 ✅ <br><br>Arguably the hardest position to fill for under 25k, but these options all look fantastic 🔥</div></details>
+      <div class="tweet-images"><a href="https://x.com/easysbc/status/2101776644448935944" target="_blank" rel="noopener noreferrer"><img src="assets/news/55b180de752c74aa732c.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      
+      <div class="tweet-footer">
+        <a href="https://x.com/easysbc/status/2101776644448935944" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @easysbc
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-55">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">@AsyFutTrader</span>
+          <span class="author-handle">@AsyFutTrader</span>
+        </div>
+        <span class="tweet-time">2026-09-20 20:25 UTC</span>
+      </div>
+      <div class="tweet-body-zh">🚨💰 在 FC 27 里印币 ⏎ 所有预算都适用 ✅ ⏎ 🇫🇷 教练卡 1k 买入 ⏎ 现价：3.2k+ ⏎ 🇧🇷 教练卡 1k 买入 ⏎ 现价：3k+ ⏎ 加入我的交易 Discord 👀 ⏎ 📩 私信获取更便宜的会员资格 ⏎ patreon.com/ASYFUT</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">🚨💰 PRINTING COINS IN FC 27<br><br>All Budgets ✅️<br><br>🇫🇷 Managers bought for 1k<br>NOW: 3.2k+<br>🇧🇷 Managers bought for 1k<br>NOW: 3k+<br><br>Join my Trading Discord 👀<br><br>📩 DM for cheaper access or:<br>patreon.com/ASYFUT</div></details>
+      <div class="tweet-images"><a href="https://x.com/AsyFutTrader/status/2101769854495887531" target="_blank" rel="noopener noreferrer"><img src="assets/news/00414076776d7869a05a.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a><a href="https://x.com/AsyFutTrader/status/2101769854495887531" target="_blank" rel="noopener noreferrer"><img src="assets/news/32cdd6db203db8bfb93b.jpg" loading="lazy" referrerpolicy="no-referrer" alt="FC27 推文配图" /></a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @AsyFutTrader　被引用推文含 2 张配图</span><div class="quoted-text">🚨💰 PRINTING COINS IN FC 27<br><br>Doubled our coins again 🤣<br><br>Join my Trading Discord 👀<br><br>📩 DM for cheaper access<br>https://t.co/UNLQMNsuSs https://t.co/LF4Y4j2EkI</div><a href="https://x.com/AsyFutTrader/status/2100737466688811073" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/AsyFutTrader/status/2101769854495887531" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @AsyFutTrader
+        </a>
+      </div>
+    </article>
+    <article class="tweet-card" id="tweet-56">
+      <div class="tweet-header">
+        <div class="avatar">@</div>
+        <div class="author-info">
+          <span class="author-name">EAFC 27 News @FIFA22_INFO</span>
+          <span class="author-handle">@FIFA22_INFO</span>
+        </div>
+        <span class="tweet-time">2026-09-20 19:12 UTC</span>
+      </div>
+      <div class="tweet-body-zh">已经开始疯狂赚币了 🤯 ⏎ • ✅ 买什么、何时卖 ⏎ • ✅ 新的投资清单已备好 ⏎ • ✅ 会员首周已赚到 100 万+ ⏎ 趁还能上车赶紧占个位 👇</div>
+      <details class="tweet-original"><summary>查看原文</summary><div class="orig-text">Making insane coins already 🤯<br><br>• ✅ Who to buy &amp; when to sell<br>• ✅ New Investment lists ready<br>• ✅ Members hitting 1m+ in first week<br><br>Get a spot whilst you can 👇</div></details>
+      <div class="tweet-media-unknown">原推含媒体（视频/图片/链接卡片），本轮未取到媒体地址。<a href="https://x.com/FIFA22_INFO/status/2101751404708724780" target="_blank" rel="noopener noreferrer">查看原推</a></div>
+      <div class="quoted-tweet"><span class="quoted-label">引用推文 @WeaverFUT　被引用推文含 1 张配图</span><div class="quoted-text">@Futdonk Our members are busy flipping and making coins 👀 #FC27<br><br>We know every part of the market and give the right advice for any budget ✅<br><br>Join now: https://t.co/yWz9RQlU5E https://t.co/3m7dYT7SPD</div><a href="https://x.com/WeaverFUT/status/2101641828835471519" target="_blank" rel="noopener noreferrer">查看被引用推文</a></div>
+      <div class="tweet-footer">
+        <a href="https://x.com/FIFA22_INFO/status/2101751404708724780" target="_blank" rel="noopener noreferrer" class="source-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          来源：X / @FIFA22_INFO
+        </a>
+      </div>
+    </article></div>
+  <div class="footer">
+    <p>本报告由自动化系统采集生成，所有内容均标注来源。</p>
+    <p>数据源：16个FC27资讯博主 · X.com</p>
+    <p style="margin-top:8px;">已过滤预测类内容 · 已按内容去重 · 跨次执行积累数据 · 中文翻译保留原文对照</p>
+  </div>
+</div>
+</body>
+</html>

@@ -47,6 +47,14 @@
       "schedule": "every-4-hours",
       "contentExecution": "enabled",
       "note": "不发布站点、不写 run-state：运行记录以 series/popular.json 的 points[] 为准"
+    },
+    {
+      "name": "FC·项目重构续跑检查（每6小时）",
+      "role": "project-maintenance-6h",
+      "promptFile": "automation/prompts/project-maintenance-6h.md",
+      "schedule": "every-6-hours",
+      "contentExecution": "enabled",
+      "note": "读取 maintenance-state.json；仅在未完成时续跑，完成后只做静默健康检查"
     }
   ],
   "publicUrl": "https://fc27-site.app.workbuddy.host/",

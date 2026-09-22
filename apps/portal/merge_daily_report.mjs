@@ -29,6 +29,106 @@ import { root, reportDate, atomicWrite } from '../../shared/lib/runtime.mjs';
 import { rewriteLocalReportAssets } from '../../shared/lib/report-assets.mjs';
 import { pruneReportAssets } from '../../shared/lib/prune-report-assets.mjs';
 
+// ========== 行情速览条与市场速览右侧栏 ==========
+// 从 watchlist.json 读取今日市场数据，生成首页展示 HTML。
+// 数据缺失时返回空字符串，模板侧静默跳过。
+const WATCHLIST_PATH = (dateStr) => path.join(root, 'automation', 'runs', dateStr, 'market', 'watchlist.json');
+const CURRENT_MARKET_PATH = path.join(root, 'apps', 'market', 'engine', 'data', 'prices', 'fc27', 'current.json');
+
+const escHTML = value => String(value ?? '').replace(/[&<>"']/g, c => ({
+  '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+}[c]));
+
+function readWatchlist(dateStr) {
+  const p = WATCHLIST_PATH(dateStr);
+  if (!existsSync(p)) return null;
+  try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return null; }
+}
+
+function readCurrentMarket() {
+  if (!existsSync(CURRENT_MARKET_PATH)) return null;
+  try { return JSON.parse(readFileSync(CURRENT_MARKET_PATH, 'utf8')); } catch { return null; }
+}
+
+/** 生成顶栏行情速览条 HTML */
+function buildMarketBarHTML(w) {
+  if (!w || !w.universe) return '';
+  const u = w.universe;
+  const points = u.points || 0;
+  const firstHour = u.firstHour || '?';
+  const lastHour = u.lastHour || '?';
+  const basis = w.priceBasis || 'unknown';
+  const lastUpdate = w.generatedAt ? new Date(w.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) : '--:--';
+  return `
+<div class="market-bar">
+  <span class="live-dot"></span>
+  <span>FC27 市场速览</span>
+  <span class="chip">追踪 <b>${u.tracked}</b> 张</span>
+  <span class="chip">有效价 <b>${u.priceValid}</b>（Console ${u.psValid} / PC ${u.pcValid}）</span>
+  <span class="chip">热度 <b>${u.withPopularity}</b></span>
+  <span class="chip">观测点 <b>${points}</b>（${firstHour}–${lastHour}时）</span>
+  <span class="chip">口径 <b>${basis}</b></span>
+  <span style="margin-left:auto;color:var(--quiet);font-size:11px">最近更新 ${lastUpdate}</span>
+</div>`;
+}
+
+/** 生成首屏市场决策面板 HTML：评分来自 watchlist，当前价只读 current.json。 */
+function buildMarketRailHTML(w, currentMarket) {
+  if (!w || !w.lists) return '';
+  const u = w.universe;
+  const seen = new Set();
+  const topCards = (w.lists.watch || []).filter(c => {
+    const id = String(c.cardId || '');
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  }).slice(0, 8);
+  if (topCards.length === 0) return '';
+
+  const coins = value => typeof value === 'number' && value >= 1000
+    ? value.toLocaleString('en-US')
+    : '—';
+  const cards = topCards.map((c, i) => {
+    const live = currentMarket?.cards?.[String(c.cardId)] || {};
+    const consolePrice = live.platforms?.console?.price;
+    const pcPrice = live.platforms?.pc?.price;
+    const name = c.nameZh || c.name || `#${c.cardId}`;
+    const english = c.nameZh && c.name && c.nameZh !== c.name ? `<small>${escHTML(c.name)}</small>` : '';
+    const reasons = (c.reasons || []).slice(0, 2).join(' · ');
+    const moves = (c.intradayChange || []).filter(x => typeof x.pct === 'number');
+    const move = moves.length ? moves.reduce((best, x) => Math.abs(x.pct) > Math.abs(best.pct) ? x : best) : null;
+    const moveText = move ? `${move.pct > 0 ? '+' : ''}${move.pct}%` : '—';
+    const moveClass = move ? (move.pct > 0 ? 'up' : move.pct < 0 ? 'down' : 'flat') : 'flat';
+    return `
+<tr>
+  <td class="rank">${i + 1}</td>
+  <td class="card-name"><b>${escHTML(name)}</b>${english}<span>${escHTML(reasons || '等待更多观测')}</span></td>
+  <td><b>${c.rating || '—'}</b><small>${escHTML(c.pos || '')}</small></td>
+  <td class="num">${coins(consolePrice)}</td>
+  <td class="num">${coins(pcPrice)}</td>
+  <td class="num">${c.popularity ?? '—'}</td>
+  <td class="num delta ${moveClass}">${moveText}</td>
+  <td class="score">${c.watchScore ?? '—'}</td>
+</tr>`;
+  }).join('');
+
+  return `
+<article class="panel market-board">
+  <div class="panel-head">
+    <div><span class="eyebrow">Decision Board</span><h2>今日关注</h2></div>
+    <button type="button" class="btn sm" data-view="market">打开完整市场 ${'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.4M13 6.2l5.8 5.8-5.8 5.8"/></svg>'}</button>
+  </div>
+  <div class="market-kpis">
+    <span><b>${u.tracked}</b><small>追踪卡</small></span>
+    <span><b>${u.priceValid}</b><small>有效价</small></span>
+    <span><b>${u.withPopularity}</b><small>有热度</small></span>
+    <span><b>${u.points}</b><small>观测点</small></span>
+  </div>
+  <div class="market-table-wrap"><table class="market-table"><thead><tr><th>#</th><th>球员 / 关注理由</th><th>OVR</th><th>Console</th><th>PC</th><th>热度</th><th>变动</th><th>关注分</th></tr></thead><tbody>${cards}</tbody></table></div>
+</article>`;
+}
+
+
 // ========== 配置 ==========
 const BASE_DIR = root;
 const SOURCES = [
@@ -285,13 +385,20 @@ function generateDaily(dateStr, { linkBase, assetBase }) {
   if (fc26Panel) { panels[FC26_SOURCE.id] = fc26Panel; panelStates[FC26_SOURCE.id] = 'ok'; }
 
   const archiveLinks = buildArchiveLinks(dateStr, linkBase);
-  return dailyReport({ date: dateStr, panels, panelStates, archiveLinks, assetBase, subPanels });
+
+  // 行情速览条 + 市场速览右侧栏（可选，数据缺失时静默返回空）
+  const watchlist = readWatchlist(dateStr);
+  const marketBarHTML = buildMarketBarHTML(watchlist);
+  const marketRailHTML = buildMarketRailHTML(watchlist, readCurrentMarket());
+
+  return dailyReport({ date: dateStr, panels, panelStates, archiveLinks, assetBase, subPanels, marketBarHTML, marketRailHTML });
 }
 
 // ========== 主流程 ==========
 const dateStr = getDate(process.argv[2]);
 console.log(`=== 每日综合报告合并（dashboard 单日日报）===`);
 console.log(`日期: ${dateStr}`);
+if (readWatchlist(dateStr)) console.log('市场速览已嵌入: 行情速览条 + 市场速览面板（来源 automation/runs/D/market/watchlist.json）');
 
 mkdirSync(ARCHIVE_DIR, { recursive: true });
 const copiedAssets = ensureAssets(dateStr);
@@ -352,5 +459,4 @@ console.log(`固定入口大小: ${sizeMb} MB`);
 // 若仍显著偏大，说明有产物把图片内联回了页面（例如某渲染器自行 base64），应去该渲染器排查，
 // 而不是靠压缩图片掩盖。
 if (Number(sizeMb) > 5) console.warn(`⚠ 固定入口 ${sizeMb} MB 明显超过预期（共享资源模式应在 1 MB 量级）：请检查是否有产物自行内联了图片。`);
-console.log(`历史日报链接数: ${listReportDates(dateStr).length}`);
 console.log(`历史日报链接数: ${listReportDates(dateStr).length}`);

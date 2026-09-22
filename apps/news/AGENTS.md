@@ -3,7 +3,7 @@
 本目录负责从 `sources.txt` 列出的 X（推特）账号采集近 24 小时的 FC27 资讯，过滤、聚类去重、翻译，并生成 `../../reports/daily/D/news.html`。
 
 - 执行前必须完整读取根 `../../AGENTS.md` 与 `../../automation/prompts/news.md`；后者是唯一完整业务契约，本文件补充模块内的实现约束。
-- 每次执行先回读根 `../../AGENTS.md` 的「浏览器强制规则」：通过 `web-access`（浏览器自动化）技能以 CDP 直连用户日常 Chrome，复用其 X 登录态。**不使用 Chrome 插件 / `extension` 模式**；`auto_news.sh`、`automation/collect-news.mjs` 是旧入口，不得调用。
+- 每次执行先回读根 `../../AGENTS.md` 的「浏览器强制规则」：先运行 `node automation/browser-triage.mjs`，再通过 `web-access` 的 CDP Proxy 直连独立调试 profile `Chrome-FC-Debug` :9333。X 需在该 profile 中单独登录一次。**日常 Chrome 和 extension 模式均不使用**；`auto_news.sh`、`automation/collect-news.mjs` 是旧入口，不得调用。
 - X 是强反爬且依赖登录态的站点，**不得**用 WebSearch / WebFetch / curl 代替浏览器采集。
 
 ## 数据流水线（固定四步，不要自创步骤）

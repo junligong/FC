@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-22",
+  "runId": "461d0d9f-a705-4dfb-8e22-64cbbb92e573",
+  "module": "market",
+  "status": "partial",
+  "startedAt": "2026-09-22T03:12:55+08:00",
+  "finishedAt": "2026-09-22T03:24:20+08:00",
+  "browserChannel": {
+    "triage": "OK",
+    "profile": "Chrome-FC-Debug (9333)",
+    "checkedAt": "2026-09-22T03:12:40+08:00"
+  },
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/popular",
+      "openedAt": "2026-09-22T03:16:03+08:00",
+      "method": "宿主页 robots.txt + 页内同源 fetch",
+      "dataCutoff": "2026-09-22T03:16+08:00",
+      "result": "250 卡（含卡面版本前缀与热度）；首轮 03:13 页内 fetch 403，45 秒退避重试一次后成功，非密集重试",
+      "validPS": 205,
+      "validPC": 200,
+      "bothValid": 196
+    },
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-22T03:16:03+08:00",
+      "method": "宿主页 robots.txt + 页内同源 fetch",
+      "dataCutoff": "2026-09-22T03:16+08:00",
+      "result": "500 卡（热度 + 进化名，该页无价格单元格）；与热门榜同轮重试后成功",
+      "withPopularity": 500
+    },
+    {
+      "url": "https://www.futbin.com/27/players?page=1..4",
+      "openedAt": "2026-09-22T03:15:10+08:00",
+      "method": "宿主页 + 页内 fetch 渲染后 DOM 抽取（fetch 返回 SPA 壳，必须等渲染）",
+      "dataCutoff": "2026-09-22T03:15+08:00",
+      "result": "4 页 120 行；validPS 103 / validPC 78；价格分层 ≥100万:50 / 30-100万:21 / 10-30万:7 / 1-10万:4"
+    }
+  ],
+  "pipeline": {
+    "assemble": "market.json players 750 条（unique URL 750），priceBasis=partial-live，platform=console+pc，launchDate=2026-09-18",
+    "nameZh": "apply-market-name-zh 两轮：首轮未命中 294（唯一 slug 98）→ 补 98 条到 name-zh-supplement-fc27.json → 命中 1832/1832 未命中 0",
+    "syncCurrent": "sync-current-market 合并 750 张进 current.json（本轮唯一一次当前价写入；同轮含周黑 30 / 英雄 99 / 传奇详情 131 既有逻辑）",
+    "avatar": "渲染前 backfill +86 键 / 82 图；渲染后复核 837 cardId 不可解析 0",
+    "render": "render-market.mjs 一次生成 market.html + market-scan.html"
+  },
+  "verification": {
+    "dateMeta": "两份产物均含 2026-09-22",
+    "nameZhSpans": "overview 582 / scan 内嵌 nameZh",
+    "priceBuckets": "6 档（lt1w…100w+），无旧档名残留",
+    "platformRender": "双平台 data-platform=console/pc 均存在",
+    "exclusions": "扫描已排除英雄/传奇/Hall of FUT 17 张（9_hall_of_fut 9 / 72_base_hero 7 / 12_base_icon 1），与版本前缀判据一致；已生成人工可审计清单 apps/market/engine/data/players/fc27/scan-exclusions.json（17 张，含 cardId/series/url）",
+    "avatarCounts": "overview 578/582、scan 562/565"
+  },
+  "missing": [
+    "头像缺口 overview 4 张 / scan 3 张：backfill 复核 837 cardId 均已解析（不可解析 0），缺口为渲染侧守卫拒绝或 noface 源卡，如实空状态呈现，未用占位图顶替",
+    "本周活动卡（Promo）与周黑（TOTW）：FUTBIN /27/totw、/27/promos 无当日内容，概览两表如实空状态（沿用既有台账周黑 30 张已入 current.json 供三专栏/扫描用）",
+    "83+ 补采（collect-r83-prices.mjs）本轮未执行（预算内让位于排除清单固化与收口），已由「无价·按最高价」兜底展示",
+    "关注列表刷新（build-market-watchlist + render-market-watch）本轮跳过（非阻塞项，预算不足），market-watch.html 由每 4 小时任务持续刷新"
+  ],
+  "notes": [
+    "去重红线遵守：当前值只经 sync-current-market 写入 current.json 一次；market.json 仅存名单/静态字段/证据；未生成 players.json 等副本；未触碰 market-icons.html 与任何传奇/英雄内容",
+    "热门榜首轮 403 为来源页分钟级拦截（triage OK，通道健康），按退避策略单次重试成功，未重启代理/浏览器",
+    "collection scripts 全部走宿主页 + 页内同源 fetch，未导航榜单页"
+  ]
+}

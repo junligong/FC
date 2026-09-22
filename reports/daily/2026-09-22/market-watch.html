@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FC27 市场关注列表 2026-09-22</title>
+<style>:root{color-scheme:dark;--bg:#101713;--panel:#161e18;--line:#30392f;--text:#f5f4eb;--muted:#aeb5aa;--quiet:#859080;--lime:#c8f646;--coral:#ff6259;--amber:#e3b341;--green:#4fb583;--teal:#8fd6bb;--up:#ff6259;--dn:#4ec08a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;padding:22px 24px 40px;line-height:1.55}
+h1{font-size:21px;font-weight:800;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(200,246,70,.14);border:1px solid rgba(200,246,70,.4);color:var(--lime)}
+.sub{color:var(--quiet);font-size:12.5px;margin:8px 0 18px}
+h2{font-size:16px;font-weight:750;margin:26px 0 12px;display:flex;align-items:center;gap:9px}
+h2:before{content:"";width:3px;height:16px;background:var(--lime);border-radius:2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.stat-label{font-size:11px;color:var(--quiet);letter-spacing:.06em}
+.stat b{font-size:19px;color:var(--lime);font-weight:800}
+.stat-hint{font-size:10.5px;color:var(--quiet)}
+.plat-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin:0 0 18px}
+.plat-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--quiet);font-weight:700}
+.plat-btn{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:6px 14px;border-radius:9px;border:1px solid var(--line);background:#1d271b;color:var(--muted);font-size:13px;font-weight:650;cursor:pointer;transition:.15s}
+.plat-btn small{font-size:10px;color:var(--quiet);font-weight:500}
+.plat-btn:hover{border-color:var(--lime);color:var(--text)}
+.plat-btn.active{background:rgba(200,246,70,.12);border-color:rgba(200,246,70,.5);color:var(--lime)}
+.plat-hint{font-size:11px;color:var(--quiet);margin-left:auto;max-width:60ch}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:center;color:var(--quiet);font-weight:600;padding:9px 8px;border-bottom:1px solid var(--line);font-size:11px;white-space:nowrap;position:sticky;top:0;background:#1d271b}
+td{padding:7px 8px;border-bottom:1px solid #202b1a;text-align:center;white-space:nowrap}
+tbody tr:hover{background:#1d271b}
+.c-rank{color:var(--quiet);width:34px;font-size:11px}
+.c-name{text-align:left;min-width:180px}
+.c-name .pimg{width:26px;height:26px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:7px;background:#202b1a;border:1px solid #30392f}
+.c-name a{color:var(--text);text-decoration:none;font-weight:600}
+.c-name a:hover{color:var(--lime)}
+.c-name .zh{color:var(--quiet);font-size:10.5px;margin-left:5px;font-weight:400}
+.c-rating{font-weight:800;color:var(--lime);font-size:14px}
+.c-pos{color:var(--muted)}
+.c-price{color:var(--amber);font-weight:600;min-width:96px}
+.c-price .ph{color:var(--quiet);font-style:normal;font-size:10.5px;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.pv{display:none}
+body[data-platform="console"] .pv-console,body[data-platform="pc"] .pv-pc{display:inline}
+.c-pop{color:var(--teal);font-weight:600}
+.c-updated{color:var(--quiet);font-size:11px;min-width:62px;font-variant-numeric:tabular-nums}
+.c-updated .live-time{display:inline-block;border-bottom:1px dotted #3d4a3a;cursor:help}
+.c-move{min-width:96px}
+.mv{display:inline-block;margin:0 2px;font-weight:700;font-size:12px}
+.mv.up{color:var(--up)}.mv.dn{color:var(--dn)}.mv.flat{color:var(--muted)}
+.mv i{font-style:normal;font-size:9px;color:var(--quiet);margin-left:2px}
+.mv-na{color:var(--quiet)}
+.c-score b{color:var(--lime);font-size:15px}
+.c-note{text-align:left;color:var(--muted);font-size:11.5px;white-space:normal;min-width:200px}
+.empty{color:var(--quiet);font-size:12.5px;padding:16px;border:1px dashed var(--line);border-radius:9px}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--muted)}
+.note li{margin-left:18px;margin-bottom:5px}
+.note code{background:#1d271b;border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--lime);font-size:11.5px}
+.footer{color:var(--quiet);font-size:11.5px;margin-top:24px;border-top:1px solid var(--line);padding-top:12px}
+.warn{color:var(--amber)}</style></head><body data-platform="console">
+<h1>FC27 市场关注列表 <span class="badge">PARTIAL-LIVE</span></h1>
+<div class="sub">数据日期 2026-09-22 · 行情更新于 <b id="live-updated" title="按 cardId 从 assets/data/current.json 读取；页面每次加载/刷新都会重新获取">读取中…</b> · 名单生成于 2026-09-22T08:57:26.324Z · 热度与价格来源 FUTBIN /27/popular + /27/popular/evolutions · 观测序列 5 个观测点（03–16 时） · 球员头像 128/140</div>
+
+<div class="plat-bar" role="group" aria-label="平台切换">
+  <span class="plat-label">平台</span>
+  <button type="button" class="plat-btn active" data-platform="console" aria-pressed="true">Console<small>PS / Xbox</small></button><button type="button" class="plat-btn" data-platform="pc" aria-pressed="false">PC<small>PC</small></button>
+  <span class="plat-hint">FUTBIN 仅提供 Console（PS / Xbox 合并）与 PC 两个市场口径；本页价格为 FUTBIN 当前挂单/估价口径（partial-live），<b>不是成交价</b>。「本日挂单价变动」列仅在同一平台的两个相邻有效观测点之间计算（或与当日开盘基线的单点对比并标注「待下一观测点确认」）；本表不计算日环比与累计涨跌。</span>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="stat-label">追踪卡数</span><b>1,241</b></div>
+  <div class="stat"><span class="stat-label">有有效平台价</span><b>286</b><span class="stat-hint">两个平台中至少一个 ≥1000 coins</span></div>
+  <div class="stat"><span class="stat-label">Console 有价 / PC 有价</span><b>283 / 260</b></div>
+  <div class="stat"><span class="stat-label">有热度数据</span><b>830</b></div>
+  <div class="stat"><span class="stat-label">本日观测点</span><b>5</b><span class="stat-hint">最新 16 时</span></div>
+</div>
+
+<h2>一、重点推荐（关注分 Top 30）</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th>#</th><th>球员</th><th>总评</th><th>位置</th><th>价格（coins）</th><th>更新于</th><th>热度</th><th>本日挂单价变动</th><th>关注分</th><th>依据</th>
+</tr></thead><tbody><tr>
+  <td class="c-rank">1</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_15/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">2</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_17_15/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">3</td>
+  <td class="c-name"><img class="pimg" src="assets/players/245830.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/24_19/yui-hasegawa" target="_blank" rel="noopener">Hasegawa</a><span class="zh">长谷川唯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="24" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="24" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="24" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Ones to Watch Retro 20</td>
+</tr><tr>
+  <td class="c-rank">4</td>
+  <td class="c-name"><img class="pimg" src="assets/players/245830.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/24/yui-hasegawa" target="_blank" rel="noopener">Hasegawa</a><span class="zh">长谷川唯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="24" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="24" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="24" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv up">+5%<i>C</i></span><span class="mv up">+2.38%<i>PC</i></span></td>
+  <td class="c-score"><b>87</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +5%</td>
+</tr><tr>
+  <td class="c-rank">5</td>
+  <td class="c-name"><img class="pimg" src="assets/players/256675.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21987_15/omar-marmoush" target="_blank" rel="noopener">Marmoush</a><span class="zh">马尔穆什</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21987" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21987" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21987" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">57</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>87</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">6</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_17/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>86</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">7</td>
+  <td class="c-name"><img class="pimg" src="assets/players/253124.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/719/matheus-luiz-nunes" target="_blank" rel="noopener">Matheus Nunes</a><span class="zh">马特乌斯·努内斯</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="719" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="719" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="719" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">46</td>
+  <td class="c-move"><span class="mv up">+12%<i>C</i></span><span class="mv up">+8.33%<i>PC</i></span></td>
+  <td class="c-score"><b>83</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +12%</td>
+</tr><tr>
+  <td class="c-rank">8</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv up">+5%<i>C</i></span><span class="mv up">+23.08%<i>PC</i></span></td>
+  <td class="c-score"><b>82</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +5%</td>
+</tr><tr>
+  <td class="c-rank">9</td>
+  <td class="c-name"><img class="pimg" src="assets/players/234378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/91/declan-rice" target="_blank" rel="noopener">Rice</a><span class="zh">德克兰·赖斯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="91" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="91" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="91" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">39</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv up">+11.11%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">10</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241236.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/223/antoine-semenyo" target="_blank" rel="noopener">Semenyo</a><span class="zh">安托万·塞梅诺</span></td>
+  <td class="c-rating">85</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="223" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="223" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="223" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">49</td>
+  <td class="c-move"><span class="mv up">+7.69%<i>C</i></span><span class="mv up">+22.45%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +7.69%</td>
+</tr><tr>
+  <td class="c-rank">11</td>
+  <td class="c-name"><img class="pimg" src="assets/players/258980.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/30/alessia-russo" target="_blank" rel="noopener">Russo</a><span class="zh">阿莱西娅·鲁索</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="30" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="30" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="30" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">46</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-9.46%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">12</td>
+  <td class="c-name"><img class="pimg" src="assets/players/224232.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/456/nicolo-barella" target="_blank" rel="noopener">Barella</a><span class="zh">尼科洛·巴雷拉</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="456" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="456" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="456" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">40</td>
+  <td class="c-move"><span class="mv up">+1.28%<i>C</i></span><span class="mv up">+5.63%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">13</td>
+  <td class="c-name"><img class="pimg" src="assets/players/232075.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/54/rose-lavelle" target="_blank" rel="noopener">Lavelle</a><span class="zh">罗丝·拉韦尔</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="54" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="54" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="54" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">164</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-9.86%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">14</td>
+  <td class="c-name"><img class="pimg" src="assets/players/276359.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/48/barbra-banda" target="_blank" rel="noopener">Banda</a><span class="zh">芭芭拉·班达</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="48" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="48" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="48" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">27</td>
+  <td class="c-move"><span class="mv up">+4.76%<i>C</i></span><span class="mv flat">0%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +4.76%</td>
+</tr><tr>
+  <td class="c-rank">15</td>
+  <td class="c-name"><img class="pimg" src="assets/players/210514.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/787/joao-pedro-cavaco-cancelo" target="_blank" rel="noopener">João Cancelo</a><span class="zh">若昂·坎塞洛</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="787" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="787" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="787" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">27</td>
+  <td class="c-move"><span class="mv up">+7.14%<i>C</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +7.14%</td>
+</tr><tr>
+  <td class="c-rank">16</td>
+  <td class="c-name"><img class="pimg" src="assets/players/212198.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/53/bruno-miguel-borges-fernandes" target="_blank" rel="noopener">Bruno Fernandes</a><span class="zh">布鲁诺·费尔南德斯</span></td>
+  <td class="c-rating">89</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="53" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="53" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="53" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">52</td>
+  <td class="c-move"><span class="mv up">+2.04%<i>C</i></span><span class="mv dn">-2.78%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +2.04%</td>
+</tr><tr>
+  <td class="c-rank">17</td>
+  <td class="c-name"><img class="pimg" src="assets/players/212622.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/85/joshua-kimmich" target="_blank" rel="noopener">Kimmich</a><span class="zh">约书亚·基米希</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="85" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="85" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="85" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">28</td>
+  <td class="c-move"><span class="mv up">+4.55%<i>C</i></span><span class="mv dn">-2.27%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +4.55%</td>
+</tr><tr>
+  <td class="c-rank">18</td>
+  <td class="c-name"><img class="pimg" src="assets/players/233731.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/238/alexander-isak" target="_blank" rel="noopener">Isak</a><span class="zh">亚历山大·伊萨克</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="238" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="238" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="238" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">47</td>
+  <td class="c-move"><span class="mv up">+7.27%<i>C</i></span><span class="mv dn">-1.05%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +7.27%</td>
+</tr><tr>
+  <td class="c-rank">19</td>
+  <td class="c-name"><img class="pimg" src="assets/players/239085.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1/erling-haaland" target="_blank" rel="noopener">Haaland</a><span class="zh">埃尔林·哈兰德</span></td>
+  <td class="c-rating">91</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">37</td>
+  <td class="c-move"><span class="mv dn">-0.51%<i>C</i></span><span class="mv up">+4.06%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">20</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21983/moussa-diaby" target="_blank" rel="noopener">Diaby</a><span class="zh">迪亚比</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21983" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21983" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21983" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+30%<i>C</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +30%</td>
+</tr><tr>
+  <td class="c-rank">21</td>
+  <td class="c-name"><img class="pimg" src="assets/players/246669.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/228/bukayo-saka" target="_blank" rel="noopener">Saka</a><span class="zh">布卡约·萨卡</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="228" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="228" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="228" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">20</td>
+  <td class="c-move"><span class="mv up">+5.63%<i>C</i></span><span class="mv up">+9.38%<i>PC</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +5.63%</td>
+</tr><tr>
+  <td class="c-rank">22</td>
+  <td class="c-name"><img class="pimg" src="assets/players/247090.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21975/enzo-fernandez" target="_blank" rel="noopener">Fernández</a><span class="zh">恩佐·费尔南德斯</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21975" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21975" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21975" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+9.52%<i>C</i></span><span class="mv up">+12.5%<i>PC</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +9.52%</td>
+</tr><tr>
+  <td class="c-rank">23</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241651.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/252/viktor-gyokeres" target="_blank" rel="noopener">Gyökeres</a><span class="zh">维克托·哲凯赖什</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="252" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="252" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="252" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">25</td>
+  <td class="c-move"><span class="mv up">+9.68%<i>C</i></span><span class="mv up">+10.42%<i>PC</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +9.68%</td>
+</tr><tr>
+  <td class="c-rank">24</td>
+  <td class="c-name"><img class="pimg" src="assets/players/222665.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/243/martin-odegaard" target="_blank" rel="noopener">Ødegaard</a><span class="zh">马丁·厄德高</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="243" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="243" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="243" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+9.8%<i>C</i></span><span class="mv up">+9.09%<i>PC</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +9.8%</td>
+</tr><tr>
+  <td class="c-rank">25</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231478.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/454/lautaro-martinez" target="_blank" rel="noopener">Martínez</a><span class="zh">劳塔罗·马丁内斯</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="454" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="454" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="454" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+2.35%<i>C</i></span><span class="mv up">+13.04%<i>PC</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +2.35%</td>
+</tr><tr>
+  <td class="c-rank">26</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241084.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/74/luis-diaz" target="_blank" rel="noopener">Díaz</a><span class="zh">路易斯·迪亚斯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="74" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="74" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="74" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">27</td>
+  <td class="c-move"><span class="mv up">+4.48%<i>C</i></span><span class="mv dn">-1.72%<i>PC</i></span></td>
+  <td class="c-score"><b>77</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +4.48%</td>
+</tr><tr>
+  <td class="c-rank">27</td>
+  <td class="c-name"><img class="pimg" src="assets/players/209331.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/738_18/mohamed-salah" target="_blank" rel="noopener">Salah</a><span class="zh">穆罕默德·萨拉赫</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="738" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="738" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="738" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">74</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>77</b></td>
+  <td class="c-note">热度前列</td>
+</tr><tr>
+  <td class="c-rank">28</td>
+  <td class="c-name"><img class="pimg" src="assets/players/279799.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/20/temwa-chawinga" target="_blank" rel="noopener">Chawinga</a><span class="zh">特姆瓦·查温佳</span></td>
+  <td class="c-rating">89</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="20" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="20" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="20" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">43</td>
+  <td class="c-move"><span class="mv dn">-4.84%<i>C</i></span><span class="mv dn">-8.86%<i>PC</i></span></td>
+  <td class="c-score"><b>76</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价回落 -4.84%</td>
+</tr><tr>
+  <td class="c-rank">29</td>
+  <td class="c-name"><img class="pimg" src="assets/players/20801.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/565/c-ronaldo-dos-santos-aveiro" target="_blank" rel="noopener">Cristiano Ronaldo</a><span class="zh">克里斯蒂亚诺·罗纳尔多</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="565" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="565" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="565" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">15</td>
+  <td class="c-move"><span class="mv up">+15.38%<i>C</i></span><span class="mv up">+16.67%<i>PC</i></span></td>
+  <td class="c-score"><b>76</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +15.38%</td>
+</tr><tr>
+  <td class="c-rank">30</td>
+  <td class="c-name"><img class="pimg" src="assets/players/262621.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/280/giorgi-mamardashvili" target="_blank" rel="noopener">Mamardashvili</a><span class="zh">马马尔达什维利</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">GK</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="280" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="280" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="280" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">24</td>
+  <td class="c-move"><span class="mv up">+2.17%<i>C</i></span><span class="mv up">+2.78%<i>PC</i></span></td>
+  <td class="c-score"><b>76</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +2.17%</td>
+</tr></tbody></table></div>
+<h2>二、同档低价（热度不低但价格低于同档中位）</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th>#</th><th>球员</th><th>总评</th><th>位置</th><th>价格（coins）</th><th>更新于</th><th>热度</th><th>本日挂单价变动</th><th>关注分</th><th>依据</th>
+</tr></thead><tbody><tr>
+  <td class="c-rank">1</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_15/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">2</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_17_15/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">3</td>
+  <td class="c-name"><img class="pimg" src="assets/players/245830.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/24_19/yui-hasegawa" target="_blank" rel="noopener">Hasegawa</a><span class="zh">长谷川唯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="24" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="24" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="24" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>91</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Ones to Watch Retro 20</td>
+</tr><tr>
+  <td class="c-rank">4</td>
+  <td class="c-name"><img class="pimg" src="assets/players/245830.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/24/yui-hasegawa" target="_blank" rel="noopener">Hasegawa</a><span class="zh">长谷川唯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="24" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="24" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="24" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv up">+5%<i>C</i></span><span class="mv up">+2.38%<i>PC</i></span></td>
+  <td class="c-score"><b>87</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +5%</td>
+</tr><tr>
+  <td class="c-rank">5</td>
+  <td class="c-name"><img class="pimg" src="assets/players/256675.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21987_15/omar-marmoush" target="_blank" rel="noopener">Marmoush</a><span class="zh">马尔穆什</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21987" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21987" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21987" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">57</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>87</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">6</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843_17/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>86</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">7</td>
+  <td class="c-name"><img class="pimg" src="assets/players/253124.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/719/matheus-luiz-nunes" target="_blank" rel="noopener">Matheus Nunes</a><span class="zh">马特乌斯·努内斯</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="719" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="719" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="719" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">46</td>
+  <td class="c-move"><span class="mv up">+12%<i>C</i></span><span class="mv up">+8.33%<i>PC</i></span></td>
+  <td class="c-score"><b>83</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +12%</td>
+</tr><tr>
+  <td class="c-rank">8</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv up">+5%<i>C</i></span><span class="mv up">+23.08%<i>PC</i></span></td>
+  <td class="c-score"><b>82</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +5%</td>
+</tr><tr>
+  <td class="c-rank">9</td>
+  <td class="c-name"><img class="pimg" src="assets/players/234378.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/91/declan-rice" target="_blank" rel="noopener">Rice</a><span class="zh">德克兰·赖斯</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="91" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="91" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="91" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">39</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv up">+11.11%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">10</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241236.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/223/antoine-semenyo" target="_blank" rel="noopener">Semenyo</a><span class="zh">安托万·塞梅诺</span></td>
+  <td class="c-rating">85</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="223" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="223" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="223" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">49</td>
+  <td class="c-move"><span class="mv up">+7.69%<i>C</i></span><span class="mv up">+22.45%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +7.69%</td>
+</tr><tr>
+  <td class="c-rank">11</td>
+  <td class="c-name"><img class="pimg" src="assets/players/258980.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/30/alessia-russo" target="_blank" rel="noopener">Russo</a><span class="zh">阿莱西娅·鲁索</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="30" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="30" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="30" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">46</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-9.46%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">12</td>
+  <td class="c-name"><img class="pimg" src="assets/players/224232.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/456/nicolo-barella" target="_blank" rel="noopener">Barella</a><span class="zh">尼科洛·巴雷拉</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="456" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="456" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="456" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">40</td>
+  <td class="c-move"><span class="mv up">+1.28%<i>C</i></span><span class="mv up">+5.63%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">13</td>
+  <td class="c-name"><img class="pimg" src="assets/players/232075.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/54/rose-lavelle" target="_blank" rel="noopener">Lavelle</a><span class="zh">罗丝·拉韦尔</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="54" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="54" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="54" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">164</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-9.86%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">14</td>
+  <td class="c-name"><img class="pimg" src="assets/players/276359.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/48/barbra-banda" target="_blank" rel="noopener">Banda</a><span class="zh">芭芭拉·班达</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="48" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="48" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="48" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">27</td>
+  <td class="c-move"><span class="mv up">+4.76%<i>C</i></span><span class="mv flat">0%<i>PC</i></span></td>
+  <td class="c-score"><b>80</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +4.76%</td>
+</tr><tr>
+  <td class="c-rank">15</td>
+  <td class="c-name"><img class="pimg" src="assets/players/210514.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/787/joao-pedro-cavaco-cancelo" target="_blank" rel="noopener">João Cancelo</a><span class="zh">若昂·坎塞洛</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="787" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="787" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="787" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">27</td>
+  <td class="c-move"><span class="mv up">+7.14%<i>C</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +7.14%</td>
+</tr><tr>
+  <td class="c-rank">16</td>
+  <td class="c-name"><img class="pimg" src="assets/players/212198.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/53/bruno-miguel-borges-fernandes" target="_blank" rel="noopener">Bruno Fernandes</a><span class="zh">布鲁诺·费尔南德斯</span></td>
+  <td class="c-rating">89</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="53" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="53" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="53" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">52</td>
+  <td class="c-move"><span class="mv up">+2.04%<i>C</i></span><span class="mv dn">-2.78%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +2.04%</td>
+</tr><tr>
+  <td class="c-rank">17</td>
+  <td class="c-name"><img class="pimg" src="assets/players/212622.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/85/joshua-kimmich" target="_blank" rel="noopener">Kimmich</a><span class="zh">约书亚·基米希</span></td>
+  <td class="c-rating">88</td>
+  <td class="c-pos">CDM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="85" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="85" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="85" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">28</td>
+  <td class="c-move"><span class="mv up">+4.55%<i>C</i></span><span class="mv dn">-2.27%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +4.55%</td>
+</tr><tr>
+  <td class="c-rank">18</td>
+  <td class="c-name"><img class="pimg" src="assets/players/233731.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/238/alexander-isak" target="_blank" rel="noopener">Isak</a><span class="zh">亚历山大·伊萨克</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="238" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="238" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="238" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">47</td>
+  <td class="c-move"><span class="mv up">+7.27%<i>C</i></span><span class="mv dn">-1.05%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +7.27%</td>
+</tr><tr>
+  <td class="c-rank">19</td>
+  <td class="c-name"><img class="pimg" src="assets/players/239085.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1/erling-haaland" target="_blank" rel="noopener">Haaland</a><span class="zh">埃尔林·哈兰德</span></td>
+  <td class="c-rating">91</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">37</td>
+  <td class="c-move"><span class="mv dn">-0.51%<i>C</i></span><span class="mv up">+4.06%<i>PC</i></span></td>
+  <td class="c-score"><b>79</b></td>
+  <td class="c-note">热度前列 · 同档低价</td>
+</tr><tr>
+  <td class="c-rank">20</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21983/moussa-diaby" target="_blank" rel="noopener">Diaby</a><span class="zh">迪亚比</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21983" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21983" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21983" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+30%<i>C</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +30%</td>
+</tr></tbody></table></div>
+<h2>三、本日挂单价异动（相邻有效观测 |变动| ≥ 1%）</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th>#</th><th>球员</th><th>总评</th><th>位置</th><th>价格（coins）</th><th>更新于</th><th>热度</th><th>本日挂单价变动</th><th>关注分</th><th>依据</th>
+</tr></thead><tbody><tr>
+  <td class="c-rank">1</td>
+  <td class="c-name"><img class="pimg" src="assets/players/235805.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1037/federico-chiesa" target="_blank" rel="noopener">Chiesa</a><span class="zh">基耶萨</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1037" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1037" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1037" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">12</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-38.89%<i>PC</i></span></td>
+  <td class="c-score"><b>49</b></td>
+  <td class="c-note"></td>
+</tr><tr>
+  <td class="c-rank">2</td>
+  <td class="c-name"><img class="pimg" src="assets/players/p67386507.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22759/lamine-yamal-nasraoui-ebana" target="_blank" rel="noopener">Lamine Yamal</a><span class="zh">拉明·亚马尔</span></td>
+  <td class="c-rating">91</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22759" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22759" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22759" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">14</td>
+  <td class="c-move"><span class="mv dn">-1%<i>C</i></span><span class="mv up">+31.67%<i>PC</i></span></td>
+  <td class="c-score"><b>31</b></td>
+  <td class="c-note">同档偏贵</td>
+</tr><tr>
+  <td class="c-rank">3</td>
+  <td class="c-name"><img class="pimg" src="assets/players/232756.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1078/fikayo-tomori" target="_blank" rel="noopener">Tomori</a><span class="zh">托莫里</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1078" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1078" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1078" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">28</td>
+  <td class="c-move"><span class="mv up">+4.55%<i>C</i></span><span class="mv up">+30%<i>PC</i></span></td>
+  <td class="c-score"><b>62</b></td>
+  <td class="c-note">挂单价上行 +4.55%</td>
+</tr><tr>
+  <td class="c-rank">4</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21983/moussa-diaby" target="_blank" rel="noopener">Diaby</a><span class="zh">迪亚比</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21983" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21983" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21983" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">23</td>
+  <td class="c-move"><span class="mv up">+30%<i>C</i></span></td>
+  <td class="c-score"><b>78</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +30%</td>
+</tr><tr>
+  <td class="c-rank">5</td>
+  <td class="c-name"><img class="pimg" src="assets/players/1025.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21652/cesar-costa" target="_blank" rel="noopener">Rui Costa</a><span class="zh">塞萨尔</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21652" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21652" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21652" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">19</td>
+  <td class="c-move"><span class="mv up">+2.22%<i>C</i></span><span class="mv up">+28.21%<i>PC</i></span></td>
+  <td class="c-score"><b>37</b></td>
+  <td class="c-note">同档偏贵 · 挂单价上行 +2.22%</td>
+</tr><tr>
+  <td class="c-rank">6</td>
+  <td class="c-name"><img class="pimg" src="assets/players/237678.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/562/ibrahima-konate" target="_blank" rel="noopener">Konaté</a><span class="zh">伊布拉西马·科纳特</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="562" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="562" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="562" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">358</td>
+  <td class="c-move"><span class="mv dn">-26.87%<i>C</i></span><span class="mv dn">-20.97%<i>PC</i></span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价回落 -26.87%</td>
+</tr><tr>
+  <td class="c-rank">7</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231747.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/8/kylian-mbappe" target="_blank" rel="noopener">Mbappé</a><span class="zh">基利安·姆巴佩</span></td>
+  <td class="c-rating">91</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="8" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="8" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="8" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">22</td>
+  <td class="c-move"><span class="mv up">+2.02%<i>C</i></span><span class="mv up">+26%<i>PC</i></span></td>
+  <td class="c-score"><b>39</b></td>
+  <td class="c-note">同档偏贵 · 挂单价上行 +2.02%</td>
+</tr><tr>
+  <td class="c-rank">8</td>
+  <td class="c-name"><img class="pimg" src="assets/players/264936.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/753/geraldine-reuteler" target="_blank" rel="noopener">Reuteler</a><span class="zh">格拉尔迪娜·罗伊特勒</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="753" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="753" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="753" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">16</td>
+  <td class="c-move"><span class="mv dn">-25%<i>C</i></span><span class="mv dn">-9.09%<i>PC</i></span></td>
+  <td class="c-score"><b>57</b></td>
+  <td class="c-note">同档低价 · 挂单价回落 -25%</td>
+</tr><tr>
+  <td class="c-rank">9</td>
+  <td class="c-name"><img class="pimg" src="assets/players/242964.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/843/anthony-gordon" target="_blank" rel="noopener">Gordon</a><span class="zh">安东尼·戈登</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="843" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="843" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="843" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv up">+5%<i>C</i></span><span class="mv up">+23.08%<i>PC</i></span></td>
+  <td class="c-score"><b>82</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +5%</td>
+</tr><tr>
+  <td class="c-rank">10</td>
+  <td class="c-name"><img class="pimg" src="assets/players/241236.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/223/antoine-semenyo" target="_blank" rel="noopener">Semenyo</a><span class="zh">安托万·塞梅诺</span></td>
+  <td class="c-rating">85</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="223" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="223" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="223" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">49</td>
+  <td class="c-move"><span class="mv up">+7.69%<i>C</i></span><span class="mv up">+22.45%<i>PC</i></span></td>
+  <td class="c-score"><b>81</b></td>
+  <td class="c-note">热度前列 · 同档低价 · 挂单价上行 +7.69%</td>
+</tr><tr>
+  <td class="c-rank">11</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/10942/roger-brugue-ayguade" target="_blank" rel="noopener">Brugui</a><span class="zh">布鲁古</span></td>
+  <td class="c-rating">74</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="10942" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="10942" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="10942" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">172</td>
+  <td class="c-move"><span class="mv dn">-21.05%<i>C</i></span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 挂单价回落 -21.05%</td>
+</tr><tr>
+  <td class="c-rank">12</td>
+  <td class="c-name"><img class="pimg" src="assets/players/270531.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/411/ousmane-diomande" target="_blank" rel="noopener">Diomande</a><span class="zh">迪奥曼德</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="411" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="411" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="411" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">19</td>
+  <td class="c-move"><span class="mv flat">0%<i>C</i></span><span class="mv dn">-20%<i>PC</i></span></td>
+  <td class="c-score"><b>55</b></td>
+  <td class="c-note"></td>
+</tr><tr>
+  <td class="c-rank">13</td>
+  <td class="c-name"><img class="pimg" src="assets/players/205452.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/683/antonio-rudiger" target="_blank" rel="noopener">Rüdiger</a><span class="zh">安东尼奥·吕迪格</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="683" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="683" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="683" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">20</td>
+  <td class="c-move"><span class="mv up">+3.33%<i>C</i></span><span class="mv up">+20%<i>PC</i></span></td>
+  <td class="c-score"><b>71</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +3.33%</td>
+</tr><tr>
+  <td class="c-rank">14</td>
+  <td class="c-name"><img class="pimg" src="assets/players/238074.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/420/reece-james" target="_blank" rel="noopener">James</a><span class="zh">里斯·詹姆斯</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="420" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="420" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="420" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">17</td>
+  <td class="c-move"><span class="mv up">+8.33%<i>C</i></span><span class="mv up">+20%<i>PC</i></span></td>
+  <td class="c-score"><b>72</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +8.33%</td>
+</tr><tr>
+  <td class="c-rank">15</td>
+  <td class="c-name"><img class="pimg" src="assets/players/1845.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21698/solskjaer" target="_blank" rel="noopener">Solskjær</a><span class="zh">索尔斯克亚</span></td>
+  <td class="c-rating">86</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21698" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21698" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21698" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">11</td>
+  <td class="c-move"><span class="mv dn">-0.72%<i>C</i></span><span class="mv up">+20%<i>PC</i></span></td>
+  <td class="c-score"><b>26</b></td>
+  <td class="c-note">同档偏贵</td>
+</tr><tr>
+  <td class="c-rank">16</td>
+  <td class="c-name"><img class="pimg" src="assets/players/8348.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21664/michel-salgado" target="_blank" rel="noopener">Salgado</a><span class="zh">萨尔加多</span></td>
+  <td class="c-rating">87</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21664" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21664" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21664" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">20</td>
+  <td class="c-move"><span class="mv up">+19.61%<i>C</i></span><span class="mv dn">-2.17%<i>PC</i></span></td>
+  <td class="c-score"><b>43</b></td>
+  <td class="c-note">同档偏贵 · 挂单价上行 +19.61%</td>
+</tr><tr>
+  <td class="c-rank">17</td>
+  <td class="c-name"><img class="pimg" src="assets/players/230869.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/555/unai-simon-mendibil" target="_blank" rel="noopener">Unai Simón</a><span class="zh">乌奈·西蒙</span></td>
+  <td class="c-rating">85</td>
+  <td class="c-pos">GK</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="555" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="555" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="555" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">20</td>
+  <td class="c-move"><span class="mv dn">-19.12%<i>C</i></span><span class="mv dn">-8.57%<i>PC</i></span></td>
+  <td class="c-score"><b>60</b></td>
+  <td class="c-note">同档低价 · 挂单价回落 -19.12%</td>
+</tr><tr>
+  <td class="c-rank">18</td>
+  <td class="c-name"><img class="pimg" src="assets/players/244260.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/764/daniel-olmo-carvajal" target="_blank" rel="noopener">Dani Olmo</a><span class="zh">达尼·奥尔莫</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="764" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="764" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="764" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">11</td>
+  <td class="c-move"><span class="mv up">+18.18%<i>C</i></span></td>
+  <td class="c-score"><b>67</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +18.18%</td>
+</tr><tr>
+  <td class="c-rank">19</td>
+  <td class="c-name"><img class="pimg" src="assets/players/235794.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/757/eberechi-eze" target="_blank" rel="noopener">Eze</a><span class="zh">埃泽</span></td>
+  <td class="c-rating">84</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="757" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="757" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="757" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">13</td>
+  <td class="c-move"><span class="mv up">+18.18%<i>C</i></span></td>
+  <td class="c-score"><b>71</b></td>
+  <td class="c-note">同档低价 · 挂单价上行 +18.18%</td>
+</tr><tr>
+  <td class="c-rank">20</td>
+  <td class="c-name"><img class="pimg" src="assets/players/243580.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1058/lois-openda" target="_blank" rel="noopener">Openda</a><span class="zh">奥彭达</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1058" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1058" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1058" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">20</td>
+  <td class="c-move"><span class="mv up">+8.11%<i>C</i></span><span class="mv up">+18.18%<i>PC</i></span></td>
+  <td class="c-score"><b>53</b></td>
+  <td class="c-note">挂单价上行 +8.11%</td>
+</tr></tbody></table></div>
+<h2>四、进化卡热度榜</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th>#</th><th>球员</th><th>总评</th><th>位置</th><th>价格（coins）</th><th>更新于</th><th>热度</th><th>本日挂单价变动</th><th>关注分</th><th>依据</th>
+</tr></thead><tbody><tr>
+  <td class="c-rank">1</td>
+  <td class="c-name"><img class="pimg" src="assets/players/84100.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/20902_3_3_6_6_8_15/vivek-s" target="_blank" rel="noopener">S</a><span class="zh">维韦克</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="20902" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="20902" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="20902" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">649</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Believe · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">2</td>
+  <td class="c-name"><img class="pimg" src="assets/players/251810.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/693_8/brian-brobbey" target="_blank" rel="noopener">Brobbey</a><span class="zh">布莱恩·布罗贝</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="693" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="693" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="693" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">334</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Striker Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">3</td>
+  <td class="c-name"><img class="pimg" src="assets/players/251852.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/846_15/karim-adeyemi" target="_blank" rel="noopener">Adeyemi</a><span class="zh">阿德耶米</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="846" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="846" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="846" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">278</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>52</b></td>
+  <td class="c-note">热度前列 · 同档偏贵 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">4</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Believe · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">5</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_19/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">6</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_19/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">7</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_17/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">8</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_18/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Ones to Watch Retro 18 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">9</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/10001_16/clara-jepsen" target="_blank" rel="noopener">Jepsen</a><span class="zh">克拉拉·杰普森</span></td>
+  <td class="c-rating">72</td>
+  <td class="c-pos">LB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="10001" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="10001" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="10001" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">224</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Fullback Fork · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">10</td>
+  <td class="c-name"><img class="pimg" src="assets/players/198635.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12531_2/wellington-alves-da-silva" target="_blank" rel="noopener">Wellington Silva</a><span class="zh">威灵顿·席尔瓦</span></td>
+  <td class="c-rating">74</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12531" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12531" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12531" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">200</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Pathway Evolutions</td>
+</tr><tr>
+  <td class="c-rank">11</td>
+  <td class="c-name"><img class="pimg" src="assets/players/198635.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12531_12AA_13BA_15/wellington-alves-da-silva" target="_blank" rel="noopener">Wellington Silva</a><span class="zh">威灵顿·席尔瓦</span></td>
+  <td class="c-rating">75</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12531" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12531" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12531" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">200</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">12</td>
+  <td class="c-name"><img class="pimg" src="assets/players/198635.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12531_13AA_15/wellington-alves-da-silva" target="_blank" rel="noopener">Wellington Silva</a><span class="zh">威灵顿·席尔瓦</span></td>
+  <td class="c-rating">75</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12531" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12531" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12531" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">200</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">13</td>
+  <td class="c-name"><img class="pimg" src="assets/players/198635.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12531_14_13AB_15/wellington-alves-da-silva" target="_blank" rel="noopener">Wellington Silva</a><span class="zh">威灵顿·席尔瓦</span></td>
+  <td class="c-rating">75</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12531" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12531" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12531" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">200</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 进化卡：Believe</td>
+</tr><tr>
+  <td class="c-rank">14</td>
+  <td class="c-name"><img class="pimg" src="assets/players/198635.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/12531_13AA/wellington-alves-da-silva" target="_blank" rel="noopener">Wellington Silva</a><span class="zh">威灵顿·席尔瓦</span></td>
+  <td class="c-rating">74</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12531" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12531" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12531" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">200</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score"><b>75</b></td>
+  <td class="c-note">热度前列 · 进化卡：Shooting Practice</td>
+</tr><tr>
+  <td class="c-rank">15</td>
+  <td class="c-name"><img class="pimg" src="assets/players/262863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/444_20/antonio-nusa" target="_blank" rel="noopener">Nusa</a><span class="zh">努萨</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="444" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="444" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="444" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">193</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">16</td>
+  <td class="c-name"><img class="pimg" src="assets/players/80873.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5526_20AAB/mathis-albert" target="_blank" rel="noopener">Albert</a><span class="zh">阿尔伯特</span></td>
+  <td class="c-rating">71</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="5526" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="5526" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="5526" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">175</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">17</td>
+  <td class="c-name"><img class="pimg" src="assets/players/87630.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14674_2_3/yacqub-finey" target="_blank" rel="noopener">Finey</a><span class="zh">亚库布·法伊内</span></td>
+  <td class="c-rating">73</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="14674" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="14674" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="14674" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">175</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">18</td>
+  <td class="c-name"><img class="pimg" src="assets/players/225085.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/19928_3/abdoul-kader-bamba" target="_blank" rel="noopener">Bamba</a><span class="zh">阿卜杜勒·卡德尔·班巴</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="19928" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="19928" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="19928" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">168</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">19</td>
+  <td class="c-name"><img class="pimg" src="assets/players/260145.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22481_2B_20AAA/omari-hutchinson" target="_blank" rel="noopener">Hutchinson</a><span class="zh">哈钦森</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22481" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22481" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22481" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">153</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">20</td>
+  <td class="c-name"><img class="pimg" src="assets/players/266127.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21475_20AAA_3/tyrese-hall" target="_blank" rel="noopener">Hall</a><span class="zh">泰瑞斯·霍尔</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21475" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21475" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21475" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">136</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr></tbody></table></div>
+<h2>五、暂无有效平台价（FUTBIN 尚未更新，按占位处理）</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr>
+  <th>#</th><th>球员</th><th>总评</th><th>位置</th><th>价格（coins）</th><th>更新于</th><th>热度</th><th>本日挂单价变动</th><th>关注分</th><th>依据</th>
+</tr></thead><tbody><tr>
+  <td class="c-rank">1</td>
+  <td class="c-name"><img class="pimg" src="assets/players/84100.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/20902_3_3_6_6_8_15/vivek-s" target="_blank" rel="noopener">S</a><span class="zh">维韦克</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="20902" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="20902" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="20902" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">649</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Believe · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">2</td>
+  <td class="c-name"><img class="pimg" src="assets/players/261855.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/506/francisca-ramos-nazareth-sousa" target="_blank" rel="noopener">Kika Nazareth</a><span class="zh">基卡·纳萨雷特</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="506" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="506" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="506" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">453</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">3</td>
+  <td class="c-name"><img class="pimg" src="assets/players/251810.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/693_8/brian-brobbey" target="_blank" rel="noopener">Brobbey</a><span class="zh">布莱恩·布罗贝</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="693" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="693" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="693" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">334</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Striker Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">4</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">5</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Believe · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">6</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_19/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">82</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">7</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_19/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">8</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_17/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">9</td>
+  <td class="c-name"><img class="pimg" src="assets/players/231677.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/810_15_18/marcus-rashford" target="_blank" rel="noopener">Rashford</a><span class="zh">拉什福德</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="810" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="810" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="810" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">264</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Ones to Watch Retro 18 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">10</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/10001_16/clara-jepsen" target="_blank" rel="noopener">Jepsen</a><span class="zh">克拉拉·杰普森</span></td>
+  <td class="c-rating">72</td>
+  <td class="c-pos">LB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="10001" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="10001" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="10001" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">224</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Fullback Fork · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">11</td>
+  <td class="c-name"><img class="pimg" src="assets/players/262863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/444_20/antonio-nusa" target="_blank" rel="noopener">Nusa</a><span class="zh">努萨</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="444" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="444" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="444" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">193</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">12</td>
+  <td class="c-name"><img class="pimg" src="assets/players/80873.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5526_20AAB/mathis-albert" target="_blank" rel="noopener">Albert</a><span class="zh">阿尔伯特</span></td>
+  <td class="c-rating">71</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="5526" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="5526" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="5526" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">175</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">13</td>
+  <td class="c-name"><img class="pimg" src="assets/players/87630.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/14674_2_3/yacqub-finey" target="_blank" rel="noopener">Finey</a><span class="zh">亚库布·法伊内</span></td>
+  <td class="c-rating">73</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="14674" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="14674" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="14674" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">175</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">14</td>
+  <td class="c-name"><img class="pimg" src="assets/players/225085.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/19928_3/abdoul-kader-bamba" target="_blank" rel="noopener">Bamba</a><span class="zh">阿卜杜勒·卡德尔·班巴</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="19928" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="19928" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="19928" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">168</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">15</td>
+  <td class="c-name"><img class="pimg" src="assets/players/260145.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22481_2B_20AAA/omari-hutchinson" target="_blank" rel="noopener">Hutchinson</a><span class="zh">哈钦森</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22481" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22481" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22481" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">153</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">16</td>
+  <td class="c-name"><img class="pimg" src="assets/players/266127.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21475_20AAA_3/tyrese-hall" target="_blank" rel="noopener">Hall</a><span class="zh">泰瑞斯·霍尔</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21475" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21475" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21475" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">136</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">17</td>
+  <td class="c-name"><img class="pimg" src="assets/players/244067.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21755/maxence-lacroix" target="_blank" rel="noopener">Lacroix</a><span class="zh">马克桑斯·拉克鲁瓦</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21755" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21755" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21755" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">115</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">18</td>
+  <td class="c-name"><img class="pimg" src="assets/players/244067.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21755_19/maxence-lacroix" target="_blank" rel="noopener">Lacroix</a><span class="zh">马克桑斯·拉克鲁瓦</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">CB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21755" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21755" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21755" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">115</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Ones to Watch Retro 20 · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">19</td>
+  <td class="c-name"><img class="pimg" src="assets/players/188567.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1272_8/pierre-emerick-aubameyang" target="_blank" rel="noopener">Aubameyang</a><span class="zh">奥巴梅扬</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1272" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1272" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1272" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">94</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Striker Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">20</td>
+  <td class="c-name"><img class="pimg" src="assets/players/261210.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/5565_2A_3/damir-redzic" target="_blank" rel="noopener">Redzic</a><span class="zh">雷济奇</span></td>
+  <td class="c-rating">76</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="5565" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="5565" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="5565" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">92</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">21</td>
+  <td class="c-name"><img class="pimg" src="assets/players/263522.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/17326_2_20_11/jeremy-sarmiento" target="_blank" rel="noopener">Sarmiento</a><span class="zh">杰里米·萨缅托</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="17326" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="17326" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="17326" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">82</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Winger Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">22</td>
+  <td class="c-name"><img class="pimg" src="assets/players/259307.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1217_4/malo-gusto" target="_blank" rel="noopener">Gusto</a><span class="zh">古斯托</span></td>
+  <td class="c-rating">79</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1217" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1217" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1217" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">73</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Training Camp EVOs · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">23</td>
+  <td class="c-name"><img class="pimg" src="assets/players/265600.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/11392_3/roony-bardghji" target="_blank" rel="noopener">Bardghji</a><span class="zh">罗尼·巴尔吉吉</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">RW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="11392" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="11392" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="11392" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">71</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">24</td>
+  <td class="c-name"><img class="pimg" src="assets/players/274559.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22819_3/kendry-paez" target="_blank" rel="noopener">Páez</a><span class="zh">帕埃斯</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22819" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22819" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22819" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">25</td>
+  <td class="c-name"><img class="pimg" src="assets/players/252448.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1480_20AAB/jamie-leweling" target="_blank" rel="noopener">Leweling</a><span class="zh">杰米·莱韦林</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1480" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1480" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1480" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">26</td>
+  <td class="c-name"><img class="pimg" src="assets/players/269579.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2614_5_16AAB/zhuoyi-lu" target="_blank" rel="noopener">Lü Zhuoyi</a><span class="zh">吕焯毅</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">RB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="2614" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="2614" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="2614" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Fullback Fork · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">27</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/12736_8_13AB/abdoulie-ceesay" target="_blank" rel="noopener">Ceesay</a><span class="zh">阿卜杜利·塞赛</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12736" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12736" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12736" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Shooting Practice · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">28</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/12770_8/taichi-hara" target="_blank" rel="noopener">Hara</a><span class="zh">原大智</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="12770" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="12770" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="12770" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Striker Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">29</td>
+  <td class="c-name"><img class="pimg" src="assets/players/247572.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1387_11/annamaria-serturini" target="_blank" rel="noopener">Serturini</a><span class="zh">安娜玛丽亚·塞尔图里尼</span></td>
+  <td class="c-rating">83</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1387" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1387" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1387" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Winger Glow Up · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">30</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/14080_3_20AAA/myron-van-brederode" target="_blank" rel="noopener">van Brederode</a><span class="zh">迈伦·范布雷德罗德</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="14080" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="14080" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="14080" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">31</td>
+  <td class="c-name"><img class="pimg" src="assets/players/257504.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1482_2_20/bilal-el-khannouss" target="_blank" rel="noopener">El Khannouss</a><span class="zh">比拉尔·埃尔·哈努斯</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1482" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1482" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1482" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">32</td>
+  <td class="c-name"><img class="pimg" src="assets/players/225953.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1585_20AAB/steven-bergwijn" target="_blank" rel="noopener">Bergwijn</a><span class="zh">贝尔赫韦恩</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1585" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1585" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1585" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">33</td>
+  <td class="c-name"><img class="pimg" src="assets/players/78063.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1773_13BB/lennart-karl" target="_blank" rel="noopener">Karl</a><span class="zh">伦纳特·卡尔</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1773" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1773" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1773" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Shooting Practice · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">34</td>
+  <td class="c-name"><img class="pimg" src="assets/players/268683.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22087_2_6/michael-folorunsho" target="_blank" rel="noopener">Folorunsho</a><span class="zh">迈克尔·福洛伦肖</span></td>
+  <td class="c-rating">75</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22087" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22087" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22087" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Repeatable Evolutions · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">35</td>
+  <td class="c-name"><img class="pimg" src="assets/players/86396.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/7103_3_20AAB/sophie-proost" target="_blank" rel="noopener">Proost</a><span class="zh">索菲·普罗斯特</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="7103" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="7103" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="7103" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">36</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/7695_2/jules-stawiecki" target="_blank" rel="noopener">Stawiecki</a><span class="zh">朱尔斯·斯塔维茨基</span></td>
+  <td class="c-rating">60</td>
+  <td class="c-pos">GK</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="7695" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="7695" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="7695" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Pathway Evolutions · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">37</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/9595_2_20/nikolas-nartey" target="_blank" rel="noopener">Nartey</a><span class="zh">尼古拉斯·纳尔泰</span></td>
+  <td class="c-rating">79</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="9595" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="9595" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="9595" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">69</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">38</td>
+  <td class="c-name"><img class="pimg" src="assets/players/259633.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1300_20/giannis-konstantelias" target="_blank" rel="noopener">Konstantelias</a><span class="zh">扬尼斯·科斯坦特利亚斯</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1300" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1300" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1300" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">66</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">39</td>
+  <td class="c-name"><img class="pimg" src="assets/players/259716.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1245_16AAB/daniel-svensson" target="_blank" rel="noopener">Svensson</a><span class="zh">斯文松</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">LB</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1245" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1245" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1245" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">63</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Fullback Fork · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">40</td>
+  <td class="c-name"><img class="pimg" src="assets/players/p67382428.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/22801_13AA/gift-orban" target="_blank" rel="noopener">Orban</a><span class="zh">奥尔班</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="22801" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="22801" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="22801" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">63</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Shooting Practice · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">41</td>
+  <td class="c-name"><img class="pimg" src="assets/players/75533.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/10865_2A_6_6_3/kerim-alajbegovic" target="_blank" rel="noopener">Alajbegović</a><span class="zh">凯里姆·阿拉伊贝戈维奇</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="10865" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="10865" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="10865" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">59</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">42</td>
+  <td class="c-name"><img class="pimg" src="assets/players/262863.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/444_20AAB/antonio-nusa" target="_blank" rel="noopener">Nusa</a><span class="zh">努萨</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LW</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="444" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="444" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="444" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">43</td>
+  <td class="c-name"><img class="pimg" src="assets/players/216594.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/21215_6/nabil-fekir" target="_blank" rel="noopener">Fekir</a><span class="zh">纳比勒·费基尔</span></td>
+  <td class="c-rating">80</td>
+  <td class="c-pos">CAM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="21215" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="21215" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="21215" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Repeatable Evolutions · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">44</td>
+  <td class="c-name"><img class="pimg" src="assets/players/80376.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/111_2/rio-ngumoha" target="_blank" rel="noopener">Ngumoha</a><span class="zh">恩古莫哈</span></td>
+  <td class="c-rating">75</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="111" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="111" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="111" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Pathway Evolutions · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">45</td>
+  <td class="c-name"><img class="pimg" src="assets/players/271916.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/1800_20/bryan-zaragoza-martinez" target="_blank" rel="noopener">Bryan Zaragoza</a><span class="zh">布莱恩·萨拉戈萨</span></td>
+  <td class="c-rating">81</td>
+  <td class="c-pos">LM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="1800" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="1800" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="1800" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">46</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/16493_12AB_3/erik-ahlstrand" target="_blank" rel="noopener">Ahlstrand</a><span class="zh">埃里克·阿尔斯特兰德</span></td>
+  <td class="c-rating">73</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="16493" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="16493" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="16493" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">47</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/18794_12AB_20AAB/connor-metcalfe" target="_blank" rel="noopener">Metcalfe</a><span class="zh">康纳·梅特卡夫</span></td>
+  <td class="c-rating">73</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="18794" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="18794" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="18794" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Creative Crossroads · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">48</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/18794_12AB_20AAB_3/connor-metcalfe" target="_blank" rel="noopener">Metcalfe</a><span class="zh">康纳·梅特卡夫</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">CM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="18794" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="18794" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="18794" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">49</td>
+  <td class="c-name"><a href="https://www.futbin.com/27/player/19807_3/juan-cruz-diaz-esposito" target="_blank" rel="noopener">Juan Cruz</a><span class="zh">胡安·克鲁斯</span></td>
+  <td class="c-rating">78</td>
+  <td class="c-pos">RM</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="19807" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="19807" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="19807" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Repeat Delivery · 暂无有效平台价</td>
+</tr><tr>
+  <td class="c-rank">50</td>
+  <td class="c-name"><img class="pimg" src="assets/players/270050.png" loading="lazy" alt=""><a href="https://www.futbin.com/27/player/2120_2_6/mika-biereth" target="_blank" rel="noopener">Biereth</a><span class="zh">米卡·比雷斯</span></td>
+  <td class="c-rating">77</td>
+  <td class="c-pos">ST</td>
+  <td class="c-price"><span class="pv pv-console live-price" data-card-id="2120" data-market-platform="console"><i class="ph">读取中</i></span><span class="pv pv-pc live-price" data-card-id="2120" data-market-platform="pc"><i class="ph">读取中</i></span></td>
+  <td class="c-updated"><span class="live-time" data-card-id="2120" title="页面加载后按 cardId 从 assets/data/current.json 读取该卡最近观测时间">—</span></td>
+  <td class="c-pop">55</td>
+  <td class="c-move"><span class="mv-na">—</span></td>
+  <td class="c-score">—</td>
+  <td class="c-note">热度前列 · 进化卡：Intro to Repeatable Evolutions · 暂无有效平台价</td>
+</tr></tbody></table></div>
+<script>(function(){
+  function currentUrl(){
+    try { var host=window.parent&&window.parent!==window?window.parent.location:window.location; var prefix=host.pathname.indexOf('/archive/')!==-1?'../':''; return new URL(prefix+'assets/data/current.json',host.href).toString(); }
+    catch(e){ return 'assets/data/current.json'; }
+  }
+  function fmt(v){ if(v>=10000)return (v/10000).toFixed(v%10000===0?0:1)+'万'; if(v>=1000)return (v/1000).toFixed(v%1000===0?0:1)+'K'; return String(v); }
+  function pad(n){ return (n<10?'0':'')+n; }
+  function bjHM(iso){ var t=Date.parse(iso); if(!isFinite(t))return null; var d=new Date(t+8*3600e3); return pad(d.getUTCHours())+':'+pad(d.getUTCMinutes()); }
+  function bjFull(iso){ var t=Date.parse(iso); if(!isFinite(t))return null; var d=new Date(t+8*3600e3); return d.toISOString().slice(0,10)+' '+d.toISOString().slice(11,19)+' 北京'; }
+  function latestObs(card){ if(!card)return null; var ts=card.updatedAt||null; var ps=card.platforms||{}; ['console','pc'].forEach(function(k){ var c=ps[k]; if(c&&c.observedAt&&(!ts||c.observedAt>ts)) ts=c.observedAt; }); if(card.popularityObservedAt&&(!ts||card.popularityObservedAt>ts)) ts=card.popularityObservedAt; return ts; }
+  document.querySelectorAll('.plat-btn').forEach(function(b){ b.addEventListener('click',function(){ var id=b.dataset.platform; document.body.dataset.platform=id; document.querySelectorAll('.plat-btn').forEach(function(x){var on=x.dataset.platform===id;x.classList.toggle('active',on);x.setAttribute('aria-pressed',on?'true':'false');}); }); });
+  var head=document.getElementById('live-updated');
+  fetch(currentUrl(),{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(String(r.status));return r.json();}).then(function(doc){
+    var cards=doc.cards||{};
+    if(head){ var g=bjFull(doc.generatedAt); head.textContent=g?g:'未标注'; if(doc.generatedAt)head.title='统一行情 current.json 生成于 '+doc.generatedAt; }
+    document.querySelectorAll('.live-price').forEach(function(el){ var card=cards[el.dataset.cardId], cell=card&&card.platforms&&card.platforms[el.dataset.marketPlatform]; if(cell&&cell.valid){ el.innerHTML=fmt(cell.price); el.title=cell.observedAt?'观测于 '+bjFull(cell.observedAt):''; } else el.innerHTML='<i class="ph">未更新</i>'; });
+    document.querySelectorAll('.live-time').forEach(function(el){ var ts=latestObs(cards[el.dataset.cardId]); if(ts){ el.textContent=bjHM(ts); el.title='该卡最近观测：'+bjFull(ts); } else { el.textContent='—'; el.title='该卡在统一行情 current.json 中暂无观测记录'; } });
+  }).catch(function(){
+    if(head)head.textContent='读取失败';
+    document.querySelectorAll('.live-price').forEach(function(el){el.innerHTML='<i class="ph">行情不可用</i>';});
+    document.querySelectorAll('.live-time').forEach(function(el){el.textContent='—';});
+  });
+})();</script>
+
+<h2>口径与评分公式</h2>
+<div class="note">
+<ul>
+  <li>参考价 = 两个平台中有效价（≥1000 coins）的<b>较大者</b>；两个平台都无效的卡不参与打分，只列在「暂无有效平台价」。</li>
+  <li>热度分 = 该卡 FUTBIN 热度计数在全体有热度卡中的分位（0–100）。</li>
+  <li>价格分 = <code>50 + 50×(1 − 参考价 / 同档中位价)</code>，同档 = 同位置组且总评 ±2、样本 ≥5 才计算；越便宜分越高。</li>
+  <li>变动分 = <code>50 + 相邻观测挂单价变动百分比×2</code>（+10% → 70，−10% → 30）；仅在同一平台的两个有效观测点之间计算。</li>
+  <li>关注分 = <code>0.45×热度分 + 0.40×价格分 + 0.15×变动分</code>；缺项按中性 50 计入（产物内 <code>neutralFilled</code> 标注）。</li>
+  <li>FC27 平台价为 FUTBIN 滚动更新的挂单/估价口径，不是成交价；本表不计算日环比与累计涨跌，intradayChange 仅表示同一日内两个有效观测点之间的变化。</li>
+</ul>
+</div>
+
+<div class="footer">FC27 市场关注列表 · 2026-09-22 · 由 render-market-watch.mjs 渲染 · 数据由「FC·市场价格关注列表（每4小时）」任务（collect-market-prices.mjs + build-market-watchlist.mjs）刷新 · 仅供游戏内研究，不构成投资或交易建议</div>
+</body></html>

@@ -68,6 +68,12 @@
       "name": "FC27本周活动卡滚动更新",
       "promptFile": "automation/prompts/activity-rollover.md",
       "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md 和 automation/prompts/activity-rollover.md（唯一业务契约）。浏览器采集遵循 AGENTS.md「浏览器强制规则」。"
+    },
+    {
+      "id": "project-maintenance-6h",
+      "name": "FC项目重构续跑检查(每6小时)",
+      "promptFile": "automation/prompts/project-maintenance-6h.md",
+      "bootstrapPrompt": "在 /Users/wuyanzu/Desktop/FC 执行。先完整读取根 AGENTS.md、automation/AGENTS.md、automation/prompts/project-maintenance-6h.md 和 automation/maintenance-state.json。未完成就从 nextAction 续跑，已完成则静默检查。"
     }
   ]
 }

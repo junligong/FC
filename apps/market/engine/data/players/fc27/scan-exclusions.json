@@ -1,0 +1,117 @@
+{
+  "updatedAt": "2026-09-22",
+  "note": "市场扫描排除清单（英雄/传奇/Hall of FUT 活动卡）。判据①卡面版本前缀为主（见 render-market-report.mjs FALLBACK_VERSION_PATTERNS），本清单为人工可审计兜底；新增活动卡系列必须先补进本文件。",
+  "excludedVersionPatterns": [
+    "base_hero",
+    "base_icon",
+    "debut_icon",
+    "champion_icon",
+    "icon",
+    "hall_of_fut"
+  ],
+  "source": "2026-09-22 当日 /27/popular 实测 cardVersion（基础 cardId 取自 /27/player/<id>_<变体>/ URL）",
+  "cards": [
+    {
+      "cardId": 20942,
+      "name": "Guarin",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20942/fredy-guarin"
+    },
+    {
+      "cardId": 20945,
+      "name": "David Luiz",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20945/david-luiz"
+    },
+    {
+      "cardId": 20948,
+      "name": "Pato",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20948/alexandre-pato"
+    },
+    {
+      "cardId": 20950,
+      "name": "Remy",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20950/loic-remy"
+    },
+    {
+      "cardId": 20953,
+      "name": "Richards",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20953/micah-richards"
+    },
+    {
+      "cardId": 20955,
+      "name": "Dos Santos",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20955/giovani-dos-santos"
+    },
+    {
+      "cardId": 20957,
+      "name": "Balotelli",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20957/mario-balotelli"
+    },
+    {
+      "cardId": 20960,
+      "name": "Valencia",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20960/antonio-valencia"
+    },
+    {
+      "cardId": 20965,
+      "name": "Hulk",
+      "series": "9_hall_of_fut",
+      "url": "https://www.futbin.com/27/player/20965/hulk"
+    },
+    {
+      "cardId": 21579,
+      "name": "Šašic",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21579/sasic"
+    },
+    {
+      "cardId": 21582,
+      "name": "Kohler",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21582/kohler"
+    },
+    {
+      "cardId": 21611,
+      "name": "Milito",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21611/milito"
+    },
+    {
+      "cardId": 21620,
+      "name": "Gilberto Silva",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21620/gilberto-silva"
+    },
+    {
+      "cardId": 21652,
+      "name": "Rui Costa",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21652/cesar-costa"
+    },
+    {
+      "cardId": 21698,
+      "name": "Solskjær",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21698/solskjaer"
+    },
+    {
+      "cardId": 21719,
+      "name": "Donovan",
+      "series": "72_base_hero",
+      "url": "https://www.futbin.com/27/player/21719/donovan"
+    },
+    {
+      "cardId": 21864,
+      "name": "Scholes",
+      "series": "12_base_icon",
+      "url": "https://www.futbin.com/27/player/21864/scholes"
+    }
+  ]
+}

@@ -554,3 +554,64 @@
 - 译名补 6 条（lucas-cepeda=卢卡斯·塞佩达【百科/捷报/球探/纳米一致】；findlay-curtis=芬德利·柯蒂斯【百科/纳米/球探/澳客一致】；shaquil-delos=沙奎尔·德洛斯【纳米两处「夏奎尔/沙奎尔」分歧，取沙奎尔】；daizen-maeda=前田大然【常识级，凯尔特人】；teddy-okou=泰迪·奥库【纳米×2，捷报「特迪·奥科」分歧，利雅得体育】；caylan-vickers=凯兰·维克斯【百科/中文百科一致】）后 140/140 命中 0 未命中；词库 1884→1890（新增 6、无空值）。
 - 渲染 watch/scan 成功（头像落盘 74 张含新处理 7 张）；6a 重合并（index.html 3.1 MB，新增/更新共享资源 1 个文件）+ 6b 发布 verified=true（应用/链接不变，domainPrefix 按 query 用 fc27-daily-intel）；线上 current.json 首查 200 且 generatedAt 一致（retryCount=0），2,830 张；publish-hourly.json 记 T07（T03 保留）。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
 - 备注：昨日 17/18 点两轮连续失败后，今日宿主页路线正常，未复现挑战页问题。
+
+## 2026-09-21 12:0x（T12 轮）— 成功（含重合并 + 重发布）
+- triage OK / exit 0 / actions [] 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 193 / PC 180 有效价，both 177）、进化榜 500 张全有热度；priceBasis partial-live。
+- current.json 2,836 卡、generatedAt 2026-09-21T04:01:16.394Z（北京 12:01:16）；幂等合并复核通过（同相位传奇任务 131 条 priceRange 完整保留，该任务 11:56 刚写过 icon-detail）；daily-merged 镜像一致。注意本轮起始态由传奇任务 11:56 写入（generatedAt 被它推进过），市场价仍是 T07 的 23:54:42Z——两任务共写同一文件属既定设计。
+- watchlist：watch 275 / undervalued 87 / trending 186 / hotEvo 524 / pendingPrice 946；universe.tracked 1,221（psValid 270 / pcValid 234）；当日观测点 3 个（03、07、12）。Top3（按 cardId 去重）：安东尼·戈登(83) 91 ×2（基础+进化 Believe 并列）、长谷川唯(88) 88 ×3、德克兰·赖斯(88) 82。
+- 相对 T07（4.2 小时前，222 卡可比）：Console 可比 173 中位 0.00%（涨 68 / 跌 79 / 平 26）、PC 可比 155 中位 −2.54%（涨 46 / 跌 96 / 平 13）；≥40% 仅 2 处（Hernández PC +63.1% 21,000→34,250、Caicedo Console +43.2% 20,250→29,000）。热度可比 222 中位 0.00%（涨 110 / 跌 108 / 平 4），无 ≥60% 变动，最大 David Luiz +156.5%、Mbappé +147.1%、Bühl +135.7%、Lacroix 92→200。
+- 译名补 2 条（sarah-mattner=莎拉·马特纳【捷报比分网 nowscore，德籍拜仁女足前锋，奥地利 SKN 圣珀尔滕转会】；sara-agrez=萨拉·阿格雷兹【网易体育 + 纳米数据一致，斯洛文尼亚后卫，科隆女足】）后 140/140 命中 0 未命中；词库 1890→1892（新增 2、无空值）。
+- 渲染 watch/scan 成功（头像落盘 78 张全为新处理 / 扫描页 547 张含新处理 477 张）；6a 重合并（index.html 2.90 MB，内联「3 个观测点（03–12 时）」+ 追踪卡数 1,221 + 名单生成于 04:01:22.248Z + 头像 134/140；逐日资源副本清理 692 文件 / 2.56 MB）+ 6b 发布 verified=true（应用/链接不变，domainPrefix 按 query 用 fc27-daily-intel）；线上 current.json 连查 2 次均 200 且 generatedAt 一致（retryCount=0，2,836 卡），并加验线上页面正文构建期字段（2.90 MB 首查即新，含新译名）；publish-hourly.json 记 T12（T03/T07 保留）。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
+
+## 2026-09-21 16:13（T16 轮）— 成功（含重合并 + 重发布）
+- triage OK / exit 0 / 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 197 / PC 181 有效价，both 181）、进化榜 500 张全有热度；priceBasis partial-live。
+- current.json 2,837 卡、generatedAt 2026-09-21T08:13:45.479Z（北京 16:13:45）；幂等合并复核通过（传奇任务 131 条 priceRange 完整保留）；daily-merged 镜像一致。
+- watchlist：watch 285 / undervalued 76 / trending 196 / hotEvo 522 / pendingPrice 942；universe.tracked 1,227；当日观测点 4 个（03、07、12、16）。Top3：安东尼·戈登(83) 92、长谷川唯(88) 90、德克兰·赖斯(88) 85。
+- 相对 T12（333 个可比平台价点）：涨 206 / 跌 92 / 平 35，中位 +2.33%；≥40% 仅 4 处（Márquez PC +108.8%、Milito PC +96.7%、Anyomi PC +79.3%、Chiesa PC +42.9%）。热度可比 222 点中位 −4.95%；≥60% 共 12 处，Zaïre-Emery +233.3% 领涨。
+- 译名补 5 条（埃斯特拉·卡尔波内尔、贝利·卡达马特里、伊萨克·汉森-奥勒恩、佐野航大、斯科特·特温）后 140/140 命中 0 未命中；词库 1892→1897（无空值）。
+- 6a 重合并（index.html 2.90 MB）+ 6b 发布 verified=true（应用/链接不变，domainPrefix=fc27-daily-intel）；线上 current.json 连查 2 次均 200 且 generatedAt 一致（retryCount=0）；publish-hourly.json 记 T16。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
+
+## 2026-09-21 20:2x（T20 轮）— 采集失败（宿主页路线页内 fetch 403 ×4），未合并/未渲染/未发布
+- triage OK / exit 0 / actions [] 无自愈；collect-market-prices.mjs 两页各 2 次尝试（含 45 秒退避重建宿主页）均报「页内 fetch 返回 HTTP 403」，0 卡采到，退出码 1。首次出现宿主页路线被 403 拦截的形态（此前 09-20 T17 为 Uncaught 挑战页形态）。
+- 按契约未执行 ③–⑥，current.json 未被触碰（保留 T16，generatedAt 2026-09-21T08:13:45.479Z，2837 卡）；线上站点保留 T16 版本。留证：automation/runs/2026-09-21/market/hourly-20-failed.json + prices/fc27/last-attempt.json。
+- 未重启代理/Chrome、未密集重试、未用历史或 FC26 填充。今日观测点至 T16（03、07、12、16）。下轮自动重试。
+
+## 2026-09-22 00:29（T00 轮）：采集失败 —— 宿主页 fetch 403 连续第二轮
+- triage OK / exit 0 / actions []，通道健康。collect-market-prices.mjs：两页页内 fetch 均 HTTP 403，每页 2 次（含 45 秒退避重建宿主页）合计 4 次全败，0 卡采到，exit 1。与 09-21 T20 同形态（连续第二轮采集侧 403）。
+- 按契约终止本轮：未执行 ③④⑤⑥，未渲染、未发布；current.json 保留 09-21 T16（generatedAt 08:13:45.479Z，2837 卡）未动。
+- 留证：automation/runs/2026-09-22/market/hourly-00-failed.json + prices/fc27/last-attempt.json。
+- 若下轮再 403 即连续第 3 轮，按契约只追加时间戳与结论；观察是否为整段拦截窗口（参考 09-19 /players 403 时限性先例）。
+
+## 2026-09-22 04:38（T04 轮）— 成功（含重合并 + 重发布），403 连败中断
+- triage OK / exit 0 / 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 212 / PC 200 有效价，both 199）、进化榜 500 张全有热度。09-21 T20 与 09-22 T00 连续两轮 403 后本轮恢复，确认为时段性拦截窗口而非持久封锁。
+- current.json 3,233 卡、generatedAt 2026-09-21T20:35:48.108Z（北京 04:35:48）；幂等合并复核通过（传奇任务 131 条 priceRange 完整保留）；daily-merged 镜像一致。
+- watchlist：watch 253 / undervalued 72 / trending 177 / hotEvo 515 / pendingPrice 840；universe.tracked 1,093；当日观测点 2 个（03、04）。Top3：Brugui(74) 94 ×2（基础+进化 Intro to Pathway 并列）、安东尼·戈登(83) 92。
+- 相对 T03（1 小时前，330 平台价可比）：涨 123 / 跌 207，无 ≥40% 跳变；热度可比 206：涨 151 / 跌 55，低基数翻倍（Güler / Vini Jr. / Nmecha +100%）为主。
+- 译名补 3 条（josimar-alcocer=霍西马尔·阿尔科塞尔【快懂百科官方中文名，球迷屋作祖斯马，分歧点在名不在姓】、jae-hee-jeong=郑在熙【百度百科/纳米/雷速/球迷屋一致，大田韩亚市民】、iker-moreno=伊克尔·莫雷诺【纳米/球探/网易一致，墨西哥普埃布拉】）后 140/140 命中 0 未命中；词库 2012→2015（无空值）。
+
+## 2026-09-22 08:4x（T08 轮）— 成功（含重合并 + 重发布）
+- triage OK / exit 0 / 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 213 / PC 198 有效价，both 198）、进化榜 500 张全有热度。T00 轮 403 拦截窗口确认解除。
+- current.json 3,235 卡、generatedAt 2026-09-22T00:41:38.687Z（北京 08:41:38）；幂等合并复核通过（传奇任务 131 条 priceRange 完整保留）；daily-merged 镜像一致。
+- watchlist：watch 270 / undervalued 75 / trending 199 / hotEvo 515 / pendingPrice 926；universe.tracked 1,196；当日观测点 3 个（03、04、08）。Top3（按 cardId 去重）：安东尼·戈登(83) 91 ×2（基础+进化 Believe 并列）、安东尼·戈登(82) 89、罗丝·拉韦尔(87) 84。
+- 相对 T04（376 平台价可比）：涨 107 / 跌 243；≥40% 仅 1 处（Athenea PC 10,500→17,000 +61.9%）。热度可比 228：≥40% 变动 78 处、以低基数翻倍为主（Rogers +190%、Brugui +177.4%、Ferran Torres +140%）。
+- 译名补 7 条（leandro-antonetti=莱安德罗·安东内蒂【纳米/百科/捷报/球探一致】；jason-ceka=杰森·塞卡【球探+纳米多数；雷速作切卡】；rafik-el-arguioui=拉菲克·埃尔·阿尔古伊【纳米/球迷屋/雷速一致；澳客作阿吉维】；tim-lemperle=蒂姆·伦佩勒【球探/森盛一致；纳米作伦珀勒、百科作伦佩尔】；romain-perraud=罗曼·佩罗【纳米/百科/风暴一致】；maximiliano-salas=马克西米利亚诺·萨拉斯【百科；纳米/球迷屋作马西米里亚诺】；nicky-souren=尼基·苏伦【球迷屋/网易一致；T足球作索伦】）后 140/140 命中 0 未命中；词库 2015→2022（无空值）。
+- 6a 重合并（index.html 2.87 MB，内联「3 个观测点（03–08 时）」+ 追踪卡数 1,196 + 名单生成于 00:41:47Z；逐日资源副本清理 662 文件 / 2.46 MB）。注意：merge_daily_report.mjs 不接受字面量 D（报「无效日报日期: D」），须传实际日期 2026-09-22——与市场脚本族不同，已记入长期记忆。+ 6b 发布 verified=true（应用/链接不变，domainPrefix=fc27-daily-intel）；线上 current.json 首查 200 且 generatedAt 一致（retryCount=0，3,235 卡）；publish-hourly.json 记 T08（T04 保留）。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
+- 渲染 watch/scan 成功（头像落盘 82 张、新处理 10 张）；6a 重合并（index.html 2.8 MB，共享资源 0 更新，逐日副本清理 736 文件 / 3.82 MB）+ 6b 发布 verified=true（应用/链接不变，domainPrefix=fc27-daily-intel）；线上 current.json 首查 200 且 generatedAt 一致（retryCount=0，3,233 卡）；publish-hourly.json 记 T04（当日首条，T00 失败轮无发布记录）。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
+
+## 2026-09-22 12:5x（T12 轮）— 成功（含重合并 + 重发布）
+- triage OK / exit 0 / 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 210 / PC 198 有效价，both 198）、进化榜 500 张全有热度。
+- current.json 3,239 卡、generatedAt 2026-09-22T04:51:30.446Z（北京 12:51:30）；幂等合并复核通过（传奇任务 131 条 priceRange 完整保留）；daily-merged 镜像一致。
+- watchlist：watch 285 / undervalued 109 / trending 214 / hotEvo 517 / pendingPrice 946；universe.tracked 1,231；当日观测点 4 个（03、04、08、12）。Top3（按 cardId 去重）：安东尼·戈登(83) 91 ×2（基础+进化 Believe 并列）、长谷川唯(88) 89、芭芭拉·班达(88) 87（戈登 82 卡 87 并列第四）。
+- 相对 T08（329 平台价可比）：涨 169 / 跌 160，无 ≥40% 跳变；热度可比 203：涨 120 / 跌 83，≥100% 跳变 8 处（Szoboszlai 67→162、James 54→153、Khusanov 36→76 等低基数翻倍）。
+- 译名补 5 条（rasheedat-ajibade=拉什达特·阿吉巴德【百度百科/纳米一致】；lado-akhalaia=拉多·阿卡莱亚【纳米（2002 摩尔多瓦瓦杜兹前锋）；另有同名 1982 格鲁吉亚球员】；sarah-gorden=莎拉赫·戈登【网易/BooScore 一致；懂球帝作萨拉-戈登】；jordyn-huitema=乔丁·海特玛【求闻百科/维基中文一致】；javier-lopez-carballo=哈维·洛佩斯【7M 一致；澳客作贾维】）后 140/140 命中 0 未命中；词库 2022→2027（无空值）。
+- 渲染 watch/scan 成功（头像落盘 617 张、新处理 547 张）；6a 重合并（index.html 2.8 MB，共享资源 0 更新，逐日副本清理 664 文件 / 2.47 MB）+ 6b 发布 verified=true（应用/链接不变，domainPrefix=fc27-daily-intel）；线上 current.json 首查 200 且 generatedAt 一致（retryCount=0，3,239 卡）；publish-hourly.json 记 T12（T04/T08 保留）。未跑 run-state / verify-publication / coordinate，未渲染 market.html。
+- 注意：series/popular.json 的 price[].h 是全时间戳（如 2026-09-22T08），按「小时位」查询会得到 0 可比项（本轮实测踩到，已修正）。
+
+## 2026-09-22 16:57（T16 轮）— 成功（含重合并 + 重发布）
+- triage OK / exit 0 / 无自愈；采集第 1 次尝试成功（宿主页 + 页内 fetch，无 403、无挑战页）：热门榜 250 张（Console 211 / PC 200 有效价，both 198）、进化榜 500 张全有热度。
+- current.json 3,240 卡、generatedAt 2026-09-22T08:57:20.101Z（北京 16:57:20）；幂等合并复核通过（传奇任务 131 条 card-scope priceRange 完整保留）；daily-merged 镜像一致。
+- watchlist：watch 286 / undervalued 80 / trending 219 / hotEvo 517 / pendingPrice 955；universe.tracked 1,241；当日观测点 5 个（03、04、08、12、16）。Top3（按 cardId 去重）：安东尼·戈登(83, Believe) 91、长谷川唯(88, OW Retro 20) 91、马尔穆什(83, Believe) 87。
+- 相对 T12（Console 180 / PC 172 可比平台价）：Console 中位 +0.37%（涨 92/跌 70/平 18）、PC 中位 0.00%（涨 72/跌 80/平 20），无 ≥40% 跳变；热度可比 213 中位 −9.26%，≥40% 变动 45 处（Salah +139%、Nico Williams +118%、Chawinga +107% 领涨，低基数翻倍形态）。
+- 译名补 9 条（clara-jepsen=克拉拉·杰普森、erik-ahlstrand=埃里克·阿尔斯特兰德、abdoulie-ceesay=阿卜杜利·塞赛、taichi-hara=原大智、juan-cruz-diaz-esposito=胡安·克鲁斯、nikolas-nartey=尼古拉斯·纳尔泰、annamaria-serturini=安娜玛丽亚·塞尔图里尼、jules-stawiecki=朱尔斯·斯塔维茨基、myron-van-brederode=迈伦·范布雷德罗德；均多源核验，纳米/百科分歧已择多数）后 140/140 命中 0 未命中；词库 2027→2036（无空值）。
+- 渲染 watch/scan 成功（头像 128/140 与 578/582，新处理 77 + 475 张）；6a 重合并（index.html 2.70 MB，内联「5 个观测点（03–16 时）」+ 名单生成于 08:57:26.324Z）+ 6b 发布 verified=true（应用/链接不变，domainPrefix=fc27-daily-intel）；线上 current.json 连查 2 次均 200 且 generatedAt 一致（retryCount=0），并加验线上页面正文构建期字段首查即新（2.99 MB）；publish-hourly.json 记 T16（T04/T08/T12 保留）。未跑 run-state / verify-publication / coordinate，未渲染 market.html（mtime 仍 03:21）。
+- 契约冲突（未触发处置，仅备案）：自动化提示词正文仍要求「预检失败写 hourly-<HH>-failed.json」，与本地契约 market-hourly.md 第 1 步（禁止该写法、改走 record-attempt.mjs）冲突；按「本地文件优先」以本地契约为准，建议后续同步自动化提示词文本。

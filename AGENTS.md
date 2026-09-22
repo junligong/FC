@@ -166,7 +166,7 @@ node apps/market/engine/scripts/backfill-avatar-keys.mjs D          # 补映射 
 node apps/market/engine/scripts/backfill-avatar-keys.mjs D --dry-run # 只看缺口，不碰浏览器
 ```
 
-- 机制：在用户日常浏览器里打开任一 FUTBIN 页面建立同源会话，对缺口 cardId **同源 `fetch('/27/playerhover/<cardId>')`**，从返回的悬浮卡 HTML 中取 `img/players/<键>.png` 与球员页 slug。**不要**为了补头像逐页打开球员详情页。
+- 机制：在独立调试 profile `Chrome-FC-Debug` 里打开 FUTBIN 轻量宿主页建立同源会话，对缺口 cardId **同源 `fetch('/27/playerhover/<cardId>')`**，从返回的悬浮卡 HTML 中取 `img/players/<键>.png` 与球员页 slug。**不要**为了补头像逐页打开球员详情页。
 - 该接口**有速率限制**：并发 6 时大量 HTTP 429。脚本默认**单并发 + 450ms 间隔**，每批 15 条（必须明显短于 CDP Proxy 的 `Runtime.evaluate` 约 30s 超时），并对 429 退避重试。**不要为了提速调高并发**。
 - 产物：`shared/data/fc27/avatar-index.json`（`cardIds`/`slugs` → 头像键，只增不改、原子写）+ 图片下载到 `shared/data/fc27/images/`；失败清单 `images/.failed-backfill.json`，脚本可反复重跑续做。
 - 校验口径：补全得到的映射必须与 canonical 交叉校验（同 cardId 的键必须完全一致）。2026-09-17 实测 303/303 一致、0 冲突；出现冲突即说明选择器取错了图，必须停下来修，不得带着冲突数据上线。
@@ -174,6 +174,8 @@ node apps/market/engine/scripts/backfill-avatar-keys.mjs D --dry-run # 只看缺
 - 当日实测覆盖率（2026-09-17，修复后）：`market.html` 50/50 · `market-scan.html` 738/750 · `evolution.html` 487/500 · `icons-heroes.html` 传奇 131/131 + FC27 英雄 48/50（FC26 参考区按上条不配图）。
 
 ## 价格观测序列存储强制口径（series/*.json，2026-09-20 重构）
+
+> **数据单一真相源**：当前价只写 `apps/market/engine/data/prices/fc27/current.json`，全站所有模块按 cardId 共用这一份主表。`series/*.json` 只保存“不同时点”的历史观测，每个数据族始终是同一个累积文件，不得再为日期、小时或重跑新建快照。高频任务的运行状态只 upsert `attempts.json`，不再新建 `hourly-<HH>-failed.json`。
 
 **所有高频价格数据的落库格式只有一种：单文件累积序列。** 逐小时一份全量快照的旧写法（`popular/hourly/`、`evolutions/hourly/`、`pricerange/hourly/`、`popular/daily/`）已于 2026-09-20 废弃并删除。**"复用同一份 JSON" 的含义是：静态字段只存一次，时间维度挂在卡下。**
 
@@ -304,7 +306,12 @@ WorkBuddy 读取 `automation/task-definitions.json`：调度器只保存短启�
   4. **价格索引不在服务端计数**：服务端拿不到平台成交价，价格 chip 首屏一律渲染 `—`，由页面载入 `assets/data/current.json` 后 `refreshPriceIndex()` 按当前平台重算。历史踩坑：服务端曾用列表页估值兜底，导致所有价格档都落在同一档（旧三档时期为「5000 以下 559」），与真实行情脱节。
 - **传奇/英雄已从市场任务迁出**（2026-09-16）。`reports/daily/D/icons-heroes.html` 由独立任务「FC27传奇/英雄卡监控」（`automation/prompts/icons-heroes.md`，`automation/task-definitions.json` 的 `icons-heroes`）产出，由 `apps/market/engine/scripts/render-icons-heroes.mjs` 渲染，挂载在「传奇/英雄专栏」的「传奇/英雄监控」子标签。市场任务不再产出 `market-icons.html`，也不再采集/渲染/提交任何传奇、英雄内容。
 - **FC27 市场栏目第三个子标签「关注列表」**（2026-09-17 新增）：`reports/daily/D/market-watch.html`，由「FC·市场价格关注列表（每4小时）」任务产出。当前行情的读取规则见「高频行情任务 → 统一当前行情与禁止重复分析」，此处只记评分口径：参考价取两平台有效价的较大者；热度分＝热度分位、价格分＝与同档中位价比、变动分＝两个**相邻观测点**的挂单价变动（与当日开盘基线的单点对比只作展示、不计分；产物里的 `basis: "hourly"` 是历史字面值，语义即「相邻两次观测点对比」）；关注分＝0.45/0.40/0.15 加权，缺项按中性 50 计入并标注。`market-watch.html` 与 `market-scan.html` 同属「当日附属产物」；`market.html` 才是受 `run-state` 快照校验的产物，高频任务不得重写。
-- 首页与每日日报共用 `apps/portal/dashboard.mjs` 同一模板；左侧导航固定为「今日总览 / 足球动态 / FC27 资讯 / FC27 市场 / 进化专栏 / 传奇/英雄专栏 / FC26 球员回顾 / 历史日报」八个入口，右侧固定保留「进化专栏」卡片，由后续进化任务写入 `reports/daily/D/evolution.html` 后自动收录，未就绪时显示如实空状态。
+- 首页与每日日报共用 `apps/portal/dashboard.mjs` 同一模板；左侧导航固定为「今日总览 / 足球动态 / FC27 资讯 / FC27 市场 / 进化专栏 / 传奇/英雄专栏 / FC26 球员回顾 / 历史日报」八个入口。右侧栏目自上而下依次为：**「市场速览」卡**（可选，2026-09-22 新增）→「进化专栏」卡 →「传奇/英雄专栏」卡 →「FC26 球员回顾」卡 →「本期速览」统计卡；进化卡由后续进化任务写入 `reports/daily/D/evolution.html` 后自动收录，未就绪时显示如实空状态。
+- **首页「行情覆盖条 + 今日关注表」（2026-09-22 数据工作面）**：`merge_daily_report.mjs` 读取 `automation/runs/D/market/watchlist.json` 与唯一行情主表 `apps/market/engine/data/prices/fc27/current.json`，生成两块内容传入 `dashboard.mjs`：
+  - **行情覆盖条**（`.market-bar`）：位于紧凑的当日标题与主数据表之间，展示追踪卡、Console / PC 有效价、热度、观测点、价格口径与更新时间。
+  - **今日关注表**（`.market-board`）：首屏主区域展示去重后 Top 8，列为中英文名与理由 / OVR / Console / PC / 热度 / 相邻观测变动 / 关注分。评分与理由来自 `watchlist.json`，当前价按 cardId 从 `current.json` 读取，不复制价格。
+  - **降级契约**：`watchlist.json` 缺失或 `universe`/`lists` 为空时静默跳过两块数据展示；`current.json` 缺少某卡当前价时该单元格显示 `—`。不得用历史数据、0 值、估值或另一平台价顶替。
+  - **回归契约**：`automation/regression.test.mjs` 覆盖有数据嵌入和无数据静默降级；改首屏顺序或数据来源时必须同步用例。
 - 「传奇/英雄专栏」是左侧导航的独立栏目（`LEGEND_TAB.label = '传奇/英雄专栏'`，面板 id `legend-column`，视图键 `legend`），内含两个子标签：「传奇/英雄监控」（当日产物 `reports/daily/D/icons-heroes.html`，受当日日期校验）与「传奇卡研究」（跨日期常驻底稿，回退链见上方「传奇卡价格区间 → 常驻底稿与逐日台账」）。子标签通过 `subPanels.legend` 挂载；缺稿时显示如实空状态。改版式或调整该栏目时需同步 `apps/portal/dashboard.mjs`、`apps/portal/merge_daily_report.mjs`、`automation/coordinate.mjs`（`optionalPanels` 复制 `icons-heroes.html`）与 `automation/run-state.mjs`（`outputs['icons-heroes']`）。
 - 「FC26 球员回顾」是左侧导航的独立栏目（`FC26_TAB.label = 'FC26 球员回顾'`，面板 id `fc26-review-column`，视图键 `fc26`），**离线复盘栏目：只读项目内本地 FC26 数据集，不采集、不联网、不参与任何定时任务**。链路：`node apps/market/engine/scripts/render-fc26-review.mjs` 读 `gold/data/prices/fc26/fc26-first-month.json`（152 张金卡 × 30 天）、`icons/data/prices/fc26/base-icons.json`、`heroes/data/prices/fc26/base-heroes.json`，按能力值（OVR）分 95+ / 90–94 / 88–89 / 86–87 / 84–85 / ≤83 六档聚合，产出 `apps/market/engine/gold/reports/fc26-season-review.html`（4 张手写内联 SVG：价格指数走势、涨跌幅双向条、OVR × 卡池热力矩阵、峰谷时点；**不用 CDN**，保持单文件离线可用）。**逐卡「点开展示」价格曲线**（2026-09-17 追加）：代表球员表与全量明细的每一行都可点开，展开该卡开服首月 30 天逐日价格曲线（Cross 实线 + PC 虚线 + 峰/谷/末标记 + 统计行），全量明细另带按球员名筛选框。实现为**惰性渲染**——渲染时只把 30 个价格点紧凑编码进行上的 `data-curve`（约 0.6 KB/行），点开时才由页内脚本画 SVG；若预渲染 405 张 SVG 会让底稿涨到 1.8 MB+，惰性版整个底稿约 0.54 MB。**踩坑**：`<script>`/`<style>` 是 raw text，`themedPanel` 的 `&`→`&amp;`、`"`→`&quot;` 只是属性层的一次往返编解码，一旦脚本里出现 `"` 或 `&` 就必须确保往返后与原字面量一致；为稳妥，脚本内**一律用单引号**（引号字符用 `String.fromCharCode(39)` 构造），生成的 SVG 属性也用单引号。该底稿是**跨日期常驻**内容（与「传奇卡研究」同类），不参与当日日期校验，存在即收录；`merge_daily_report.mjs` 的 `buildFc26ReviewPanel()` 读入并走 `themedPanel`，缺稿时显示如实空状态。因底稿不在 `reports/daily/` 下，`automation/coordinate.mjs` 的隔离目录准备阶段必须一并 `cpSync` `apps/market/engine/gold/reports/`，否则隔离合并时读不到底稿。能力值口径：优先取 `apps/market/engine/data/players/database/fc26.json` 的 **FC26 rating**（按 slug / 规范化姓名匹配），库内无记录才回退卡池自带 OVR（gold 用 `fc27Rating`、icon/hero 用 `rating`），页面按 `ratingSource` 注明来源。零价与缺失一律忽略（只统计有值的观测日），价格取 Cross 平台口径。**本栏目一律不配球员头像**：FC26 的 `resourceId` 跨代不可信（实测 5/5 同 id 姓名与 canonical 全不符），遵守上方跨代红线。
 - **FC27 球员数据库五类台账与三专栏（2026-09-20 重构新增）**：

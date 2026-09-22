@@ -1,6 +1,15 @@
 # 自动化 d39303af（FC·足球日报）执行记忆
 
-## 2026-09-21 06:00 执行摘要（最新）
+## 2026-09-22 06:00 执行摘要（最新）
+- 状态：`partial`（missing 非空自动降级，设计行为），runId `6f54fbc4-c446-4bdb-9295-7a08de434131`，06:01:25 启动 → 06:14:16 提交（12 分 51 秒，一次通过，未撞 deadline）。
+- 流程：triage OK（无自愈）→ 4 并行子代理（落盘交付 + prompt 明确 openedAt 要求）约 8 分钟收齐 → 复用 09-21 生成器（sed 换日期 2026-09-21→2026-09-22）merge+build（40809 字节）→ verify exit 0 → **主流程本地预校验 40 条 sources 的 openedAt 全部有效** → evidence 一次过、finish 一次成功。
+- **昨日教训（openedAt 预校验）已生效**：子代理 prompt 直接写死「openedAt=实际打开时刻、禁止空字符串、须晚于 startedAt」，主流程 finish 前再跑一遍本地校验（badOpenedAt=0），首次 finish 即成功，无需补证重开来源页。
+- 三榜全覆盖：epl 20 / laliga 20 / seriea 20 / bundesliga 18 / ligue1 18 / saudi 18 / ucl 36 / mls_east 15 / mls_west 15；射助榜 8 键各 10-12 条（MLS 为联盟总榜置 mls_west）；新闻 15 条（头条 7）。来源 worldfootball.net（英西意德法+欧冠射助+MLS+沙特）+ ESPN API（欧冠/沙特 standings）+ 新闻原文（新浪/搜狐/腾讯/网易/懂球帝/直播吧/Goal/Football Insider）。
+- 缺失项（partial 依据）：MLS 射助榜无东西区分榜；德甲/沙特联战报无可核实原文；MLS 东西区新闻共用懂球帝综述；英超第 5 轮部分旧闻并入综述条目未单列。
+- 产物：`reports/daily/2026-09-22/football.html`（快照 `automation/runs/2026-09-22/football/report.html`，SHA-256 8f135e66…）；证据 `evidence.json`（40 sources）；数据 `work/{agent-*.json,data.json}`；生成器 `work/{merge,build-football}.mjs`。
+- 时间教训：子代理采集耗时比预期长（06:03–06:11），导致 merge 开始时已 06:13、距 deadline 仅 3 分钟——下轮应把子代理预算压到 6 分钟（prompt 里写死），主流程 06:12 前必须进入 merge。
+
+## 2026-09-21 06:00 执行摘要
 - 状态：`partial`（success 因 evidence.missing 非空自动降级，设计行为），runId `21698108-083e-46e9-9795-40f4fbfe1494`，06:01:10 启动 → 06:16:01 提交（14 分 51 秒，踩线但未超 20 分钟硬上限）。
 - 流程：triage OK（无自愈）→ 4 并行子代理（落盘交付）约 5 分钟收齐 → merge+build（46680 字节）→ verify exit 0 → **首次 finish 被拒 → 补证 → 二次 finish 成功**。
 - 三榜全覆盖：epl 20 / laliga 20 / seriea 20 / bundesliga 18 / ligue1 18（法甲 2026-27 起 18 队制）/ saudi 18 / ucl 36 / mls_east 15 / mls_west 15；射助榜 8 键各 10-13 条；新闻 14 条（头条 6）。来源 worldfootball.net（英西意德法+MLS 积分榜）+ ESPN API/stats（欧冠/沙特）+ 新闻原文（Goal/头条/新浪/搜狐/AP/腾讯/网易/ManagingMadrid/7M/AOL）。

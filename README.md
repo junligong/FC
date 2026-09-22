@@ -1,6 +1,6 @@
-# FC 内容与市场情报项目
+# FC27 情报台
 
-本目录保留每日采集任务（足球日报 / 资讯采集 / 市场监控 / 进化专栏 / 传奇英雄监控，对应 6 个 WorkBuddy 定时任务，最后一个是汇总发布）、可复用数据、自动化协调代码和按日期归档的报告。业务契约以根 `AGENTS.md` 与 `automation/prompts/*.md` 为准。
+本项目每日采集足球与 FC27 资讯，持续观测 Console / PC 市场、进化卡、传奇与英雄卡，生成日报并更新同一个固定站点。数据流和文件生命周期见 [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)，强制业务口径以根 `AGENTS.md` 为准。
 
 ## 目录结构
 
@@ -17,14 +17,11 @@ daily-merged/index.html 固定发布源（只含当日内容 + 历史日报链�
 daily-merged/archive/   历史日报独立归档（每日一个 dashboard 风格文件）
 ```
 
-## 日常任务顺序
+## 任务与更新频率
 
-1. `apps/football`：足球日报（积分榜 / 射手榜 / 助攻榜三榜必做）
-2. `apps/news`：FC27 资讯采集
-3. `apps/market/engine`：FC27 市场监控（市场概览 + 市场扫描；**Console（PS/Xbox 合并）与 PC 双平台口径**）
-4. `apps/market/engine`（传奇/英雄）：传奇卡与英雄卡监控，2026-09-16 起从市场任务拆出为独立任务
-5. `apps/market/engine`（进化）：进化专栏
-6. `apps/portal`：合并当日报告并刷新固定汇总入口（汇总发布）
+- 每日：资讯 03:00，市场 03:05，进化 03:15，传奇/英雄 03:20，足球 06:00，汇总发布 06:15。
+- 每 4 小时：市场价格关注列表与传奇价格区间，只更新固定数据文件和固定 HTML。
+- 每 6 小时：项目重构续跑检查；未完成则从 `automation/maintenance-state.json` 继续，完成后静默检查。
 
 六个任务统一使用 Asia/Shanghai 日期 `D`。采集任务分别写入
 `reports/daily/D/` 下的 `football.html`、`news.html`、`market.html` + `market-scan.html`、

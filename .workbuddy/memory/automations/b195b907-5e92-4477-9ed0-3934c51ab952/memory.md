@@ -59,3 +59,12 @@
 - current.json 合并 750 张一次；sync-current-market 同时合并了周黑 30 / 英雄 50 / 传奇 131（既有逻辑）。
 - 附加（非阻塞）：database-columns.html（totw 30 / activity 0 / r83 218）、watchlist 构建 + market-watch.html 渲染均已跑。83+ 补采（collect-r83-prices.mjs）本轮未执行，已记入 notes。
 - run-state begin 注意：`D` 字面值会被拒（「无效日报日期」），必须传实际日期 2026-09-21。
+
+## 2026-09-22 03:12 调度（runId 461d0d9f）
+- 状态：**partial**（03:24:24 提交，快照 SHA-256 fd8abbd9…，硬上限内收口）。
+- 通道：browser-triage OK（独立 profile 9333）。**首轮 /27/popular 与 /27/popular/evolutions 页内 fetch 均 403**（03:13，来源页分钟级拦截、triage OK 通道健康），跑完 1b 间隔后单次重试成功：/27/popular 250 卡（validPS 205 / validPC 200，bothValid 196）、/27/evolutions 500 卡；/27/players 4 页 120 行（validPS 103 / validPC 78），价格分层 50/21/7/4。priceBasis=partial-live。
+- 译名：未命中 294（唯一 slug 98，全来自 overview-evo 区），一次性补 98 条 → 命中 1832/1832、未命中 0。
+- 头像：渲染前 +86 键 / 82 图；渲染后复核 837 cardId 不可解析 0。产物页头 overview 578/582、scan 562/565（缺口为守卫拒绝/noface 源卡，如实空状态）。
+- **新增人工可审计清单**：`apps/market/engine/data/players/fc27/scan-exclusions.json` 此前一直缺失（渲染器走「内置默认」回退），本轮按当日实测 17 张排除卡（9_hall_of_fut 9 / 72_base_hero 7 / 12_base_icon 1）生成。注意 `market.json players[]` **没有 cardId 字段**，基础 cardId 必须从 URL `/27/player/<id>_<变体>/` 提取。
+- missing（如实记录）：83+ 补采未执行；关注列表刷新跳过（预算）；/27/totw、/27/promos 无当日内容。
+- 校验通过：双平台 data-platform=console/pc、6 档无旧档名、中文名、日期 meta、players 无排除卡、无 iconsHeroes 字段。

@@ -17,9 +17,7 @@
 ## 执行步骤（顺序固定）
 
 1. **浏览器前置自检（必须，唯一判据）**：`node automation/browser-triage.mjs`，**exit 0 才继续**。完整规则（自愈链、分诊结论、红线、禁止入口、来源页取数失败 ≠ 通道故障）见根 AGENTS.md「浏览器强制规则」，此处不重复。
-   - **失败留证（固定文件名与字段）**：写 `automation/runs/D/market/hourly-<HH>-failed.json`（`<HH>` = 启动时的上海时刻两位；**`hourly-` 前缀是沿用至今的历史文件名**，语义是「该轮」而非「每小时」，改名会与既有留证断档，故保持不变），字段为
-     `{ task, scheduledHour, checkedAt, result:"failed", stage:"browser-precheck", reason, triage:{ verdict, checkDepsExit, chrome:{listener,wsPath}, actions }, notAttemptedAndWhy, lastValidResultKept, manualActionNeeded }`；
-     内容取自 `node automation/browser-triage.mjs --json`（复用同一份判定，**不要**再自行探测一遍）。连续失败 ≥3 轮时，只追加一行时间戳与结论、复用上一轮诊断正文，不再重写全套诊断。
+   - **失败留证（单文件 upsert）**：运行 `node automation/record-attempt.mjs market D failed browser-precheck "<reason>"`，统一写入 `automation/runs/D/market/attempts.json`。禁止按小时新建 `hourly-<HH>-failed.json`。详细 triage 结果从同一个 `browser-channel-log/D.jsonl` 复核，不再复制整份诊断正文。
 2. **采集价格与热度**：`node apps/market/engine/scripts/collect-market-prices.mjs`
    - 取 `https://www.futbin.com/27/popular`（250 张卡的双平台价 + 热度）与 `https://www.futbin.com/27/popular/evolutions`（500 张进化卡热度 + 进化名）。
    - **取数方式固定为「宿主页 + 页内同源 fetch」（2026-09-20 固化，勿改回导航）**：脚本新建一个停在 `https://www.futbin.com/robots.txt` 的宿主标签页建立 futbin.com origin，再在页内 `fetch('/27/popular'|'/27/popular/evolutions',{credentials:'include'})` 取原始 HTML 交 `DOMParser` 解析。这两个页面**是服务端渲染**（原始 HTML 直接含 250 / 500 个卡片容器），因此**不导航、不轮询等卡片**。原因：频繁新建标签页**直达**榜单页会被 Cloudflare 下发「Just a moment」挑战页，`Runtime.evaluate` 持续抛 `Uncaught`——2026-09-20 的 17 点与 18 点两轮即因此连续失败（12 次建页全败）；宿主页法实测稳定绕开。**「下一整点自动恢复」已证伪，等不到，必须按本步走。** 详见根 AGENTS.md「来源页取数失败 ≠ 通道故障」。
@@ -94,6 +92,7 @@
 | 线上页面（重合并后重发布） | `daily-merged/index.html`（以 `iframe srcdoc` 嵌入当日各栏目，含本任务的关注列表） |
 | 线上共享资源 | `daily-merged/assets/`（图片按内容寻址命名，跨日共用一份，不再内联 base64） |
 | 发布记录 | `automation/runs/D/market/publish-hourly.json` |
+| 运行尝试 | `automation/runs/D/market/attempts.json` |
 
 ## 时间预算
 

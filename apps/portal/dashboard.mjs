@@ -112,11 +112,11 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offse
 .btn.sm{padding:6px 12px;font-size:12.5px}
 
 /* ============ Hero ============ */
-.hero{display:grid;grid-template-columns:1.55fr .95fr;gap:40px;align-items:end;padding:30px 2px 26px}
-.hero h1{font-size:clamp(30px,3.4vw,50px);line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:14px 0 12px}
+.hero{display:grid;grid-template-columns:1.55fr .95fr;gap:40px;align-items:end;padding:22px 2px 18px}
+.hero h1{font-size:clamp(28px,3vw,44px);line-height:1.14;font-weight:800;letter-spacing:-.6px;margin:10px 0 8px}
 .hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--lime),#8fd6bb 68%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .subtitle{font-size:16.5px;color:var(--muted);max-width:52ch}
-.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.hero .subtitle{font-size:14.5px;color:var(--muted);max-width:68ch}
+.hero-meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
 .chip{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--muted);padding:6px 12px;border-radius:999px;
  background:#1e261f;border:1px solid var(--line)}
 .chip b{color:var(--gold);font-weight:750}
@@ -124,8 +124,9 @@ button:focus-visible,a:focus-visible{outline:2px solid var(--lime);outline-offse
 .hero-note:before{content:"";position:absolute;left:-1px;top:0;width:2px;height:46px;background:linear-gradient(var(--red),transparent)}
 
 /* ============ 网格 ============ */
-.home-grid{display:grid;grid-template-columns:minmax(0,1fr) 336px;gap:18px;align-items:start}
+.home-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:18px;align-items:start}
 .col-stack{display:grid;gap:18px;align-content:start}
+.module-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .panel{background:linear-gradient(180deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 20px;border-bottom:1px solid var(--line)}
 .panel-head h2{font-size:17px;font-weight:750;letter-spacing:.01em}
@@ -133,14 +134,14 @@ h2{font-size:20px;font-weight:750;margin:0}
 h3{font-size:15.5px;font-weight:700;margin:0}
 
 /* 报告卡 */
-.report-card{padding:19px 21px;display:flex;flex-direction:column;gap:15px;transition:border-color .18s,transform .18s,background .18s}
+.report-card{padding:16px 18px;display:flex;flex-direction:column;gap:12px;transition:border-color .18s,transform .18s,background .18s}
 .report-card:hover{border-color:var(--line-2);background:linear-gradient(180deg,var(--surface-2),var(--bg-soft))}
 .rc-top{display:flex;align-items:center;gap:14px}
-.rc-icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--red-soft);
+.rc-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--red-soft);
  color:#ff6259;border:1px solid var(--red-line);flex:none}
-.rc-title{font-size:18px;font-weight:760;letter-spacing:-.2px}
+.rc-title{font-size:16px;font-weight:760;letter-spacing:-.2px}
 .rc-en{font-size:10.5px;letter-spacing:.22em;color:var(--quiet);text-transform:uppercase;margin-top:4px;font-weight:600}
-.rc-desc{color:var(--muted);font-size:13.8px;line-height:1.72}
+.rc-desc{color:var(--muted);font-size:12.8px;line-height:1.62;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .rc-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:1px}
 .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;padding:4px 11px;border-radius:999px;white-space:nowrap;font-weight:600}
 .badge.ok{background:rgba(227,179,65,.16);color:var(--gold);border:1px solid var(--gold-line)}
@@ -211,6 +212,20 @@ h3{font-size:15.5px;font-weight:700;margin:0}
 
 .footer{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 2px 6px;margin-top:8px;
  font-size:11.5px;color:var(--quiet);border-top:1px solid var(--line)}
+/* ============ 行情速览条 ============ */
+.market-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 14px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-sm);font-size:12.5px;color:var(--muted)}
+.market-bar .chip{background:#1e261f;border:1px solid var(--line);color:var(--muted);padding:3px 10px;border-radius:999px;font-size:11.5px;white-space:nowrap}
+.market-bar .chip b{color:var(--lime);font-weight:700}
+.market-bar .live-dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(200,246,70,.25);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+/* ============ 市场决策面板 ============ */
+.market-board .panel-head{padding:17px 20px}.market-board .panel-head h2{margin-top:3px;font-size:21px}
+.market-kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);background:var(--line);gap:1px}
+.market-kpis span{display:block;background:var(--bg-soft);padding:12px 16px}.market-kpis b{display:block;font-size:22px;line-height:1.1}.market-kpis small{display:block;color:var(--quiet);font-size:11px;margin-top:4px}
+.market-table-wrap{overflow:auto}.market-table{width:100%;border-collapse:collapse;min-width:720px;font-size:12.5px}
+.market-table th{padding:9px 12px;text-align:right;color:var(--quiet);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);font-weight:650}
+.market-table th:nth-child(2){text-align:left}.market-table td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:middle}.market-table tbody tr:last-child td{border-bottom:0}.market-table tbody tr:hover{background:rgba(200,246,70,.035)}
+.market-table .rank{color:var(--quiet);width:32px}.market-table .card-name{min-width:210px}.market-table .card-name b{display:block;font-size:13.5px}.market-table .card-name small{display:block;color:var(--quiet);font-size:10.5px;font-weight:500}.market-table .card-name span{display:block;color:var(--muted);font-size:10.5px;margin-top:2px}.market-table td small{display:block;color:var(--quiet);font-size:10px}.market-table .num{text-align:right;font-variant-numeric:tabular-nums}.market-table .score{text-align:right;color:var(--lime);font-size:16px;font-weight:800}.market-table .delta.up{color:#ff766e}.market-table .delta.down{color:#63d8a3}.market-table .delta.flat{color:var(--quiet)}
 .footer a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 
 /* 海报弹窗 */
@@ -229,11 +244,12 @@ dialog#poster-modal .pm-bar button{color:var(--gold);font-size:13px;font-weight:
  .sidebar-foot{display:none}
  .app{margin:0;padding:14px 16px}
  .hero h1{font-size:28px}.topbar{flex-wrap:wrap;gap:10px}
+ .module-grid{grid-template-columns:1fr}.market-kpis{grid-template-columns:repeat(2,1fr)}
  .panel-iframe{height:calc(100vh - 260px)}
  .stat-grid{grid-template-columns:1fr}
 }`;
 
-export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks = '', assetBase = '', evolutionLinks = '', subPanels = {} }) {
+export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks = '', assetBase = '', evolutionLinks = '', subPanels = {}, marketBarHTML = '', marketRailHTML = '' }) {
   const navItems = [
     { view: 'home', icon: 'home', label: '今日总览' },
     ...TABS.map(t => ({ view: t.view, icon: t.icon, label: t.label })),
@@ -328,16 +344,17 @@ export function dailyReport({ date, panels = {}, panelStates = {}, archiveLinks 
 
 <section class="view" id="view-home">
 <header class="hero">
- <div><div class="eyebrow">Football Intelligence · Better Decisions</div><h1>先看<em>情报</em>，<br>再做决定。</h1><p class="subtitle">六个板块一站直达：足球动态（三榜齐备）、FC27 资讯、FC27 市场（概览 + 扫描，PC / Console 双平台）、进化专栏、传奇/英雄专栏（逐日价格监控 + FC26↔FC27 对比与投资预测）、FC26 球员回顾（按能力值分档的价格变化复盘，本地数据离线渲染）。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
- <div class="hero-note">比赛从不停止，<br>好决定总有依据。</div>
+ <div><div class="eyebrow">FC27 Daily Intelligence</div><h1>今日情报，<em>先看数据</em>。</h1><p class="subtitle">市场决策、球员进化、传奇英雄、FC27 资讯与足球动态按优先级排列；价格一律以统一行情主表为准。</p><div class="hero-meta"><span class="chip">本期板块 <b>${boardCount}</b></span><span class="chip">历史日报 <b>${archiveCount}</b></span><span class="chip">数据日期 <b>${esc(date.slice(5))}</b></span></div></div>
+ <div class="hero-note">先看可用价与观测覆盖，<br>再看排名和变动。</div>
 </header>
+${marketBarHTML}
 <div class="home-grid">
- <div class="col-stack">${cards}<article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
+ <div class="col-stack">${marketRailHTML}<div class="module-grid">${cards}</div><article class="panel history-strip"><span class="history-title">历史日报</span><span class="history-value">${archiveCount}</span><span class="history-copy">份日报 · 按日期回看<small>历史日报独立归档，点击即可打开当日完整日报。</small></span><button type="button" class="btn" data-view="archive">浏览归档 ${ICONS.arrow}</button></article></div>
  <aside class="col-stack">
+  <article class="panel"><div class="panel-head"><h2>数据状态</h2><span class="eyebrow">Coverage</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>内容板块</small></div><div><b>${marketViews}</b><small>市场视图</small></div><div><b>3</b><small>足球三榜</small></div><div><b>${archiveCount}</b><small>历史日报</small></div></div></article>
   <article class="panel rail-panel"><div class="panel-head"><h2>${ICONS.evolution}进化专栏</h2><span class="eyebrow">Evolution</span></div><div class="stat-grid"><div><b>${evolutionState === 'failed' ? '采集失败' : evolutionState === 'partial' ? '部分完成' : evolutionContent ? '已更新' : '待补充'}</b><small>本期状态</small></div><div><b>每日 03:15</b><small>更新频率</small></div></div>${evolutionBody}${evoLinksBlock}</article>
   <article class="panel rail-panel legend-rail"><div class="panel-head"><h2>${ICONS.legend}传奇/英雄专栏</h2><span class="eyebrow">Icons / Heroes</span></div><div class="stat-grid"><div><b>${legendState === 'none' ? '待补充' : '已收录'}</b><small>本期状态</small></div><div><b>2</b><small>子栏目</small></div></div><ul class="rail-list"><li><span class="dot"></span><span>逐日价格监控台账（PC / Console 双平台）</span></li><li><span class="dot"></span><span>双版本阵容对照与属性 · 金特技变化</span></li><li><span class="dot"></span><span>FC27 全量传奇/英雄卡价格预测与投资分档</span></li></ul><div class="rail-cta"><button type="button" class="btn gold" data-view="${LEGEND_TAB.view}">进入传奇/英雄专栏 ${ICONS.arrow}</button></div></article>
   <article class="panel rail-panel review-rail"><div class="panel-head"><h2>${ICONS.review}FC26 球员回顾</h2><span class="eyebrow">FC26 Review</span></div><div class="stat-grid"><div><b>${fc26State === 'none' ? '待生成' : '已收录'}</b><small>底稿状态</small></div><div><b>本地离线</b><small>数据来源</small></div></div><ul class="rail-list"><li><span class="dot"></span><span>按能力值（OVR）六档聚合首月价格变化</span></li><li><span class="dot"></span><span>价格指数走势 / 涨跌幅 / 峰谷时点 / 热力矩阵</span></li><li><span class="dot"></span><span>取用项目内 FC26 本地数据集，不联网采集</span></li></ul><div class="rail-cta"><button type="button" class="btn gold" data-view="${FC26_TAB.view}">进入 FC26 球员回顾 ${ICONS.arrow}</button></div></article>
-  <article class="panel"><div class="panel-head"><h2>本期速览</h2><span class="eyebrow">Snapshot</span></div><div class="stat-grid"><div><b>${boardCount}</b><small>内容板块</small></div><div><b>${marketViews}</b><small>市场视图</small></div><div><b>3</b><small>足球三榜</small></div><div><b>${archiveCount}</b><small>历史日报</small></div></div></article>
  </aside>
 </div>
 </section>

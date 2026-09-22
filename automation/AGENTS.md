@@ -7,6 +7,8 @@
 - 各采集任务必须在 WorkBuddy 定时任务配置中绑定 `Web Access（浏览器自动化）` 技能。浏览器通道、禁止入口与故障判定一律以根 `../AGENTS.md`「浏览器强制规则」为准（独立调试 profile 9333 是唯一采集通道）。
 - `prompts/*.md` 是完整提示词；调度器只保存 `task-definitions.json` 的短启动提示，不复制业务规则。
 - `runs/D/<module>/` 保存 owner、state、evidence、work 和不可变报告快照。同日重跑必须显式归档旧 attempt，不能静默覆盖。
+- **文件数量预算**：高频任务不得按轮次新建文件。当前价只 upsert `current.json`，历史观测只 upsert 固定累积序列，本轮状态只 upsert `attempts.json`。禁止新建 `hourly-<HH>.json`、`verify-t<HH>.mjs`、`detail-t<HH>.mjs` 等轮次文件。
+- `work/` 只是临时区；日任务 `finish` 成功或 partial 后运行 `node automation/compact-run-work.mjs D <module> --apply`。所有任务收尾时运行 `node automation/audit-file-growth.mjs`，新增文件数量异常时先修复数据链路，不得只靠手工删除。
 
 ### 单次运行生命周期（`run-state.mjs`）
 

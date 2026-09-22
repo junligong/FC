@@ -4,6 +4,16 @@
 # 已停用的 DuMate 本地状态
 .dumate/
 
-# 旧版独立浏览器 Profile；所有浏览器任务必须改用已登录 Chrome 插件
+# 旧版浏览器 Profile；现行采集只用 Chrome-FC-Debug :9333
 apps/market/.futbin-browser-profile/
 apps/market/engine/.futbin-browser-profile/
+
+# 自动化的可丢弃中间件；运行状态、证据、结构化结果与最终 HTML 仍保留
+.tmp/
+automation/runs/*/*/work/
+automation/runs/*/*/hourly-*-failed.json
+reports/daily/*/*.tmp
+
+# 球员头像在 shared/data/fc27/images/ 有唯一源，daily-merged 下仅是可重建发布副本
+daily-merged/assets/players/*.png
+reports/daily/*/assets/players/*.png

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "status": "in_progress",
+  "objective": "统一 FC 项目数据写入，减少自动化文件增长，重做清晰有序的数据首页，并固化自动化与文档。",
+  "updatedAt": "2026-09-22T08:42:00.000Z",
+  "completed": [
+    "当前行情统一读取 current.json，历史行情按卡片追加到固定累积序列",
+    "高频运行结果按小时 upsert 到固定 attempts.json，不再创建逐轮失败文件",
+    "新增 Git 文件增长审计与成功任务临时 work 目录压缩工具",
+    "首页按数据优先原则重构并通过本地浏览器视觉检查",
+    "项目架构、自动化提示词、调度配置与各级 AGENTS.md 已同步",
+    "42 项自动化与发布回归测试全部通过"
+  ],
+  "nextAction": "等待 WorkBuddy 站点发布能力可用后，将 daily-merged/ 更新到既有 fc27-site 应用；随后核对公网与本地 index.html 的 SHA-256 一致，再把状态改为 complete。"
+}

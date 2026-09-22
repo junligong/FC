@@ -14,7 +14,8 @@
   "highFrequencySchedule": {
     "note": "两条高频行情任务（市场价格关注列表、传奇价格区间）均为每 4 小时（传奇 2026-09-19 起、市场 2026-09-20 起，用户要求由每小时改为每 4 小时），只声明间隔、不声明分钟相位：WorkBuddy 定时规则不支持在 HOURLY 下指定 BYMINUTE（会被静默忽略），其触发锚点由该自动化最近一次配置更新时间决定，可能落在任何分钟。两条任务共用同一 sourceKey，同时最多 1 个在跑，相遇时后者记 skip same-source 并保持 due（属正常串行）。两条任务都要写同一个 current.json，并发写冲突的防护应做在脚本层（锁文件或原子写），不要依赖调度相位。",
     "market-hourly": "every-4-hours",
-    "icons-pricerange-hourly": "every-4-hours"
+    "icons-pricerange-hourly": "every-4-hours",
+    "project-maintenance-6h": "every-6-hours"
   },
   "sharedRoot": "shared",
   "runStatePattern": "automation/runs/{DATE}",
@@ -34,15 +35,17 @@
   "browser": {
     "required": "web-access",
     "cliMode": "cdp-proxy",
-    "reuseLoggedInProfile": true,
-    "reuseUserChrome": true,
-    "preflight": "node ~/.workbuddy/skills/web-access/scripts/check-deps.mjs",
-    "note": "唯一通道为 Web Access 技能（CDP Proxy :3456）直连用户日常 Chrome；extension/Chrome 插件模式已废弃。",
+    "debugProfile": "Chrome-FC-Debug",
+    "debugPort": 9333,
+    "reuseLoggedInProfile": false,
+    "reuseUserChrome": false,
+    "preflight": "node automation/browser-triage.mjs",
+    "note": "唯一采集通道为 Web Access 技能（CDP Proxy :3456）直连独立调试 profile Chrome-FC-Debug :9333；日常 Chrome 与 extension 模式均不参与采集。",
     "forbidden": [
       "iab",
       "guest",
       "temporary-profile",
-      "new-profile",
+      "unapproved-profile",
       "chrome-extension",
       "dumate-browser-cli",
       "agent-browser"
@@ -118,6 +121,14 @@
       "enabled": true,
       "schedule": "every-4-hours",
       "output": "market-watch.html"
+    },
+    {
+      "order": 9,
+      "id": "project-maintenance-6h",
+      "name": "FC项目重构续跑检查(每6小时)",
+      "enabled": true,
+      "schedule": "every-6-hours",
+      "output": "automation/maintenance-state.json"
     }
   ]
 }

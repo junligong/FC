@@ -8,6 +8,7 @@ import { spawnSync } from 'node:child_process';
 import { root, reportDate } from '../shared/lib/runtime.mjs';
 import { rewriteLocalReportAssets, originalXImageUrl, reportImageAssetName } from '../shared/lib/report-assets.mjs';
 import { pruneReportAssets } from '../shared/lib/prune-report-assets.mjs';
+import { dailyReport } from '../apps/portal/dashboard.mjs';
 import { themeReport } from '../shared/presentation/report-theme.mjs';
 import { appendSeries, seriesPathFor } from '../apps/market/engine/src/price-series.mjs';
 
@@ -98,6 +99,34 @@ test('归并后清理报告目录里的资源副本，但保留唯一副本与 d
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test('首页行情速览条与市场速览面板：有数据时嵌入，无数据时静默降级', () => {
+  // 2026-09-22 改版：dashboard.mjs 支持 marketBarHTML / marketRailHTML 两个可选参数，
+  // 由 merge_daily_report.mjs 从 automation/runs/D/market/watchlist.json 生成。
+  // 契约：传入即嵌入对应位置（hero 上方 / 右侧栏首卡）；不传（数据缺失）时页面不得出现残留占位。
+
+  // ① 传入完整 HTML：行情条在 hero 上方，速览面板在右侧栏
+  const barHtml = '<div class="market-bar"><span class="live-dot"></span><span>FC27 市场速览</span></div>';
+  const railHtml = '<article class="panel rail-panel market-rail"><h2>市场速览</h2></article>';
+  const html = dailyReport({
+    date: '2026-09-22',
+    marketBarHTML: barHtml,
+    marketRailHTML: railHtml,
+  });
+  const heroIdx = html.indexOf('<header class="hero">');
+  const barIdx = html.indexOf(barHtml);
+  assert.ok(barIdx > -1, '行情速览条必须嵌入');
+  assert.ok(barIdx > heroIdx, '紧凑标题先建立当日语境，行情速览紧随其后');
+  assert.ok(barIdx < html.indexOf('<div class="home-grid">'), '行情速览必须在主内容之前');
+  assert.ok(html.indexOf(railHtml) > -1, '市场速览面板必须嵌入右侧栏');
+  assert.ok(html.indexOf(railHtml) < html.indexOf('rail-panel legend-rail'), '市场速览必须排在传奇/英雄专栏之前');
+
+  // ② 不传（watchlist.json 缺失）：模板默认值为空串，页面不得出现未替换的占位符
+  const degraded = dailyReport({ date: '2026-09-22' });
+  assert.ok(!degraded.includes('${marketBarHTML}'), '不得残留未替换的占位符');
+  assert.ok(!degraded.includes('${marketRailHTML}'), '不得残留未替换的占位符');
+  assert.ok(degraded.includes('<header class="hero">'), '无数据时 hero 区不受影响');
 });
 
 test('新闻重跑保留当天卡片，损坏去重文件不被重置；合并正确区分缺失板块', () => {

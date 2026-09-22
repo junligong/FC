@@ -9,3 +9,4 @@
 - 合并期做两件事：把页面里的本地图片改写成指向 `daily-merged/assets/` 的相对路径（`../../shared/lib/report-assets.mjs#rewriteLocalReportAssets`，**不再内联 base64**），并把各日 `reports/daily/<D>/assets/`（除 `data/`）按内容寻址增量归并进该目录。重复调用接近零成本（按 size 跳过未变文件）。
 - 共享主题位于 `../../shared/presentation/`，固定路径来自 `../../shared/config/project.json`。
 - 历史日期倒序生成；固定入口始终可由日期化报告重建。
+- 首页是数据工作面，不是宣传落地页：首屏顺序固定为“当日语境 → 行情覆盖 → 今日关注表 → 模块入口”。市场评分只读 `watchlist.json`，当前价只读共享 `current.json`，两者缺失时如实降级而不用历史值顶替。

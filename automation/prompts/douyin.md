@@ -49,7 +49,7 @@
 
 ## 浏览器通道
 
-唯一通道是 Web Access 技能（CDP Proxy :3456 直连用户日常 Chrome）。截图前自检（唯一判据，有界：健康约 1 秒、失败最坏约 85 秒；内部含 check-deps 预算 40s → 不带 URL 的 `open -a "Google Chrome"` 一次 → 再复测一次）：
+唯一通道是 Web Access 技能（CDP Proxy :3456 直连独立调试 profile `Chrome-FC-Debug` :9333）。截图前自检（唯一判据，有界：健康约 1 秒、失败最坏约 85 秒）：
 ```bash
 node automation/browser-triage.mjs    # 退出码 0（OK / OK_RECOVERED）才可用
 ```

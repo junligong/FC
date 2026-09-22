@@ -1,0 +1,122 @@
+{
+  "module": "icons-heroes",
+  "date": "2026-09-22",
+  "runId": "740de08a-1627-42f9-a076-327565c89375",
+  "status": "partial",
+  "startedAt": "2026-09-21T19:28:39.871Z",
+  "deadlineAt": "2026-09-21T19:43:39.871Z",
+  "reportPath": "reports/daily/2026-09-22/icons-heroes.html",
+  "completedAt": "2026-09-21T19:33:43.980Z",
+  "evidence": {
+    "date": "2026-09-22",
+    "module": "icons-heroes",
+    "runId": "740de08a-1627-42f9-a076-327565c89375",
+    "status": "partial",
+    "startedAt": "2026-09-21T19:28:39.871Z",
+    "submittedAt": "2026-09-21T19:34:05Z",
+    "channel": {
+      "precheck": "node automation/browser-triage.mjs",
+      "verdict": "OK",
+      "exitCode": 0,
+      "selfHealed": false,
+      "note": "独立调试 profile 9333；来源页 403 属来源侧限时拦截，非通道故障（triage OK 即通道健康）"
+    },
+    "sources": [
+      {
+        "url": "https://www.futbin.com/robots.txt",
+        "openedAt": "2026-09-21T19:28:52Z",
+        "status": 200,
+        "note": "宿主页（页内同源 fetch 的 origin 载体），每 3 批重建一次；三轮共 5 次建页，未导航到榜单页（Cloudflare 挑战页会打死导航式采集）"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=1..10",
+        "openedAt": "2026-09-21T19:28:55Z",
+        "dataCutoff": "2026-09-21T19:29:09Z",
+        "status": 200,
+        "rows": 300,
+        "note": "页内 fetch + DOMParser，每页 30 行；一次读取即同时取 td.table-price.platform-ps-only（Console）与 td.table-price.platform-pc-only（PC），未为切平台重复导航、未用 ps_price/pc_price 参数；版本以行内尾标签 Icon / Base Heroes 判定，Debut Icon 排除 0 张"
+      },
+      {
+        "url": "https://www.futbin.com/27/players?page=11..26",
+        "openedAt": "2026-09-21T19:29:05Z",
+        "status": 403,
+        "attempts": [
+          "2026-09-21T19:29:05Z 首轮（页 11–26 403，0 行）",
+          "2026-09-21T19:30:13Z 退避 60s 重试（第 1 次，仍 403、0 行）",
+          "2026-09-21T19:32:57Z 退避 150s 重试（第 2 次，契约上限，仍 403、0 行）"
+        ],
+        "note": "第 11–26 页全 403，具时限性拦截；已按契约分钟级退避重试 2 次后停手（上限），未秒级密集重试、未换参数变形重试、未重启代理或 Chrome"
+      }
+    ],
+    "counts": {
+      "pagesRead": "10/26",
+      "rows": 300,
+      "iconsTotal": 131,
+      "iconsCollected": 131,
+      "iconMissingFromSource": 28,
+      "iconNotInLedger": 96,
+      "debutIconExcluded": 0,
+      "heroesCollected": 50,
+      "heroesFc26Ref": 93,
+      "otherVersionRows": 51,
+      "consoleValid": 133,
+      "pcValid": 109,
+      "snapshotPlayers": 131,
+      "snapshotPriceBasis": "partial-live",
+      "snapshotConsoleValid": 85,
+      "snapshotPcValid": 65,
+      "priceRangeCards": 131,
+      "nameZhIcons": "131/131",
+      "nameZhHeroes": "50/50",
+      "avatarIcons": "131/131",
+      "avatarHeroes": "48/50"
+    },
+    "outputs": [
+      "apps/market/engine/icons/data/prices/fc27/base-icons.json",
+      "apps/market/engine/heroes/data/prices/fc27/base-heroes.json",
+      "apps/market/engine/icons/data/prices/fc27/daily/2026-09-22.json",
+      "reports/daily/2026-09-22/icons-heroes.html"
+    ],
+    "artifacts": {
+      "dailySnapshot": {
+        "path": "apps/market/engine/icons/data/prices/fc27/daily/2026-09-22.json",
+        "cards": 131,
+        "priceBasis": "partial-live",
+        "launchDate": "2026-09-18",
+        "historyDays": 7,
+        "note": "逐日台账：131 张卡（= 台账数，未因 403 静默缩表），双平台字段 131/131 齐全，卡级区间 131/131 非空（消费 icons-pricerange-hourly 的 pricerange/latest.json，采集于 2026-09-21T08:03:19Z）"
+      },
+      "report": {
+        "path": "reports/daily/2026-09-22/icons-heroes.html",
+        "bytes": 394699,
+        "sha256": "a1af30cb54e98a02aed236a8a7a4a71442a2a6228bcce40c76a9a059b358028e",
+        "note": "传奇 131 张台账 / 快照 7 天，FC27 英雄 50 张（= base-heroes.json 卡数，无派生台账重复计账），FC26 参考 93 张（按契约不配头像）"
+      }
+    },
+    "checks": {
+      "duplicateCardIds": 0,
+      "platformFieldsComplete": "131/131",
+      "ledgerCountMatch": "daily 131 = ledger 131（未静默缩表）",
+      "heroCountMatch": "页面「FC27 英雄卡 50 张」= base-heroes.json 50（无重复计账）",
+      "avatarBackfillPrepRender": "830 个 cardId 头像索引无缺口（本轮为 no-op，未发起 playerhover 请求）",
+      "avatarBackfillPostRender": "830 个 cardId 头像索引无缺口（no-op）",
+      "versionField": "base-icons/base-heroes 的 version 字段仍恒为空串（09-17 起长期偏差，下游按文件而非该字段区分版本，无外部症状，待用户裁定后统一修采集器）"
+    },
+    "notDone": [
+      "未渲染 market.html / market-scan.html（非本任务职责）",
+      "未发布站点（发布属「FC·汇总发布」职责）",
+      "未调用 run-state 之外的任何调度或新增定时任务",
+      "未为取当前价重复打开详情页（当前价一律按 cardId 读 current.json）"
+    ],
+    "missingItems": [
+      "FUTBIN /27/players 第 11–26 页 403（具时限性拦截），退避 60s/150s 各重试 1 次仍被拦，按契约上限停手",
+      "28 张传奇卡在本轮可读页（1–10）中未出现，按台账补全以空价（price=0, valid=false）保留，未用旧日期或 FC26 数据填充",
+      "FC27 英雄卡头像 48/50（2 张本地无图，如实不显示，未用其他球员图或占位图顶替）",
+      "价格区间取自 icons-pricerange-hourly 的 pricerange/latest.json（采集于 2026-09-21T08:03:19Z），本任务不自行采集区间"
+    ],
+    "note": "开服日 launchDate=2026-09-18（根 AGENTS.md「FUTBIN 平台口径强制规则」唯一出处；2026-09-25 为正式全球发售日，非开服日）。priceBasis 按当日实测有效价判定 = partial-live，未按日期一刀切；已按实测口径计算平台逐日指标。"
+  },
+  "sha256": "a1af30cb54e98a02aed236a8a7a4a71442a2a6228bcce40c76a9a059b358028e",
+  "bytes": 394699,
+  "snapshotPath": "/Users/wuyanzu/Desktop/FC/automation/runs/2026-09-22/icons-heroes/report.html"
+}

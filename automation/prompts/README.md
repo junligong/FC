@@ -1,6 +1,6 @@
 # 调度器提示词入口
 
-本目录中的文件是 WorkBuddy 任务的完整提示词，覆盖六个内容任务（含两个高频行情任务）、一个汇总发布任务和一个下游内容生产任务：
+本目录中的文件是 WorkBuddy 任务的完整提示词，覆盖六个内容任务（含两个高频行情任务）、一个汇总发布任务、一个下游内容生产任务和一个项目维护续跑任务：
 
 - `football.md`：足球日报 —— 逐联赛核验积分榜 / 射手榜 / 助攻榜与足球资讯。
 - `news.md`：FC27 资讯采集 —— 从 `apps/news/sources.txt` 的 X 账号采集近 24 小时资讯；**采集固定四步**（DOM 抽取 → syndication 接口补媒体 → 生成报告 → 校验提交），媒体不得从 DOM 抠取，带视频的推文不得整条丢弃。
@@ -11,6 +11,7 @@
 - `evolution.md`：FC27 进化专栏 —— 热门进化卡与前置条件核验。
 - `daily.md`：汇总链接 —— 纯本地等待快照、隔离合并并发布站点。
 - `douyin.md`：抖音素材 —— 日报发布后把线上情报台各栏目**截成分析长图**并写出配套**视频讲解稿**（`apps/douyin/capture-shots.py`），供导入剪映出片；不参与日报合并发布，也不改动 `reports/daily/` 与站点产物。
+- `project-maintenance-6h.md`：项目维护续跑检查（**每 6 小时**）—— 读取固定状态文件 `automation/maintenance-state.json`；未完成时从 `nextAction` 继续，完成后只做静默健康检查，不为每轮创建新的状态文件。
 
 WorkBuddy 定时任务只保存 `../task-definitions.json` 中对应的 `bootstrapPrompt`。启动后先读取根 `AGENTS.md`，再完整读取对应 `promptFile`；不得把业务规则复制回 WorkBuddy 或另一份配置。修改任务要求时只改本目录的完整提示词。
 

@@ -38,7 +38,7 @@ node apps/news/generate_report.mjs 2026-09-16      # 过滤/翻译/落图/渲染
 2. **curl 拉不到图不等于图不存在**：本运行环境出口代理到 `pbs.twimg.com` 不通（`SSL_ERROR_SYSCALL`），
    报告生成器会自动改由浏览器下载（需 CDP Proxy 在线）。仅当两级都失败才记为未落盘。
 
-浏览器通道只使用 `web-access` 技能（CDP 直连用户日常 Chrome）。**不使用 Chrome 插件 /
+浏览器通道只使用 `web-access` 技能（CDP Proxy 直连独立调试 profile `Chrome-FC-Debug` :9333）。**不使用日常 Chrome 或 Chrome 插件 /
 `extension` 模式**——该扩展依赖的 native messaging 宿主在 WorkBuddy 桌面端未实现，永远显示
 「未连接」，已在用户机器上禁用。
 

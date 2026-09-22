@@ -1,5 +1,13 @@
 # FC·资讯采集 自动化执行记忆
 
+## 2026-09-22（success，一次通过）
+- runId：`96730021-7c2b-44e4-9140-1f46aac02c20`；03:01:00 启动，03:11:27 提交 success。复用 09-21 的 v2 驱动（sed 改 DAY 常量），全程无需重跑。
+- browser-triage 首次即 OK（独立 profile 9333），16/16 账号打开成功；原始抽取 75 条，媒体 enrich 75/75（64 配图/6 视频/14 被引用带图），24h 窗口过滤后入库 57 条（丢弃 18，见 work/window-dropped.json）。
+- 图片落盘 57/57（curl 直连全败、CDP 浏览器兜底全补）、远程热链 0、「待翻译」0（translations-2026-09-22.json 57 条全量 AI 译文）。
+- **新发现（非坑，但记口径）**：`generate_report.mjs` 会规范化快照并**剥掉 `droppedOutsideWindow` 字段**——事后从快照统计丢弃数会得 0，权威记录以 `work/window-dropped.json` 为准。本轮证据初版因此算错（rawExtracted=57），已修正为 75 后再 finish。
+- 4 条推文正文 DOM 截断（Show more），按可见内容全译并标注「（原文截断）」，未臆造。
+- X 关键内容：EA 确认将在全球发售前的版本更新中把长期疲劳机制带回 Clubs；铜银重随 SBC 要求降到 max74；Destined for Glory 完整名单泄露确认（15 人、最低 85、Frattesi/Nusa/Veiga 走 SBC/OBJ）；价格区间大更新（Kika 10k→50k、Vicky Lopez→50k、Putellas→200 万、Alexia→200 万）；晚 6 点 = 79x2 升级（仅可重复 3 次）；荷甲 Squad Foundations 预告；漏发英雄/传奇清单（迪福、比利亚、若塔、罗本等）；FUTBIN 签下 Tom Leese（电竞）；传球/射门技巧视频（近角 OP、直塞手动化）；EA 不打补丁传闻再起（11 月才有首次大改）。
+
 ## 2026-09-20（success，一次通过）
 - runId：`179693fb-5d8f-4b17-9634-e503f5f7a905`；03:00:47 启动，03:09:12 提交 success。复用 09-19 的 v2 驱动脚本（sed 改 DAY 常量到当日 work/ 即可），全程无需重跑。
 - browser-triage 首次即 OK（独立 profile 9333），16/16 账号打开成功（@Fut_scoreboard 窗口内 0 条如实记录）；合并 75 条原始抽取，媒体 enrich 75/75 全解析（61 配图/12 视频/15 被引用带图），24h 窗口过滤（syndication created_at 权威回填）后入库 41 条（丢弃 34，见 work/window-dropped.json）。

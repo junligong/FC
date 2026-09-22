@@ -14,7 +14,7 @@
 
 1. **浏览器前置自检（必须，唯一判据）**：`node automation/browser-triage.mjs`，**exit 0 才继续**。完整规则（自愈链、分诊结论、红线、禁止入口、来源页取数失败 ≠ 通道故障）见根 AGENTS.md「浏览器强制规则」，此处不重复。
    - **失败留证（固定文件名与字段，2026-09-18 新增——此前本任务预检失败不写任何文件、失败在本机不可见）**：写
-     `automation/runs/D/icons-heroes/hourly-<HH>-failed.json`（`<HH>` = 本地时刻两位；**`hourly-` 前缀是沿用至今的历史文件名**，语义是「该轮」而非「每小时」，不要改名），字段为
+     `automation/runs/D/icons-heroes/attempts.json`，用 `node automation/record-attempt.mjs icons-heroes D failed browser-precheck "<reason>"` 按小时键 upsert。禁止再创建 `hourly-<HH>-failed.json`。字段为
      `{ task, scheduledHour, checkedAt, result:"failed", stage:"browser-precheck", reason, triage:{ verdict, checkDepsExit, chrome:{listener,wsPath}, actions }, notAttemptedAndWhy, lastValidResultKept, manualActionNeeded }`；
      内容取自 `node automation/browser-triage.mjs --json`（复用同一份判定，**不要**再自行探测一遍）。连续失败 ≥3 轮时，只追加一行时间戳与结论、复用上一轮诊断正文，不再重写全套诊断。
      **预检失败时同样不得写 `series/icons.json`**（该序列只放真实成功观测，避免历史被失败轮次污染——旧 `pricerange/hourly/` 的同一红线沿用）。

@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-22",
+  "localIndexHtml": "/Users/wuyanzu/Desktop/FC/daily-merged/index.html",
+  "publicUrl": "https://fc27-site.app.workbuddy.host/",
+  "published": true,
+  "reason": "本轮经 WorkBuddy 站点发布能力（workbuddy_sites_deploy，updateExistingApp + entryHtml=index.html + language=static + domainPrefix=fc27-site）发布 daily-merged/，verified:true；verify-publication.mjs 四检全过，本地=线上 SHA-256 ab29aed9… 逐字节一致；分享链接保持 https://fc27-site.app.workbuddy.host/ 不变；五模块快照齐全（football/news/market/evolution/icons-heroes），failedPanels=0。current.json（2,688,903 B）随站点部署，仅复制未做二次价格分析。",
+  "publicVerification": {
+    "verified": true,
+    "checks": {
+      "matchesLocal": true,
+      "hasArchiveLink": true,
+      "hasDateAnchor": true,
+      "completeHtml": true
+    },
+    "localSha256": "ab29aed9541134ac73389cf7b62dc7a381dde74871ef1d184fc5faec3c260f49",
+    "remoteSha256": "ab29aed9541134ac73389cf7b62dc7a381dde74871ef1d184fc5faec3c260f49",
+    "bytes": 2987980,
+    "checkedAt": "2026-09-21T22:16:37.706Z"
+  },
+  "unattendedPublishingVerified": false,
+  "mergeResult": "success",
+  "publishResult": "delegated",
+  "modules": {
+    "football": "partial",
+    "news": "success",
+    "market": "partial",
+    "evolution": "partial",
+    "icons-heroes": "partial"
+  },
+  "runIds": {
+    "football": "6f54fbc4-c446-4bdb-9295-7a08de434131",
+    "news": "96730021-7c2b-44e4-9140-1f46aac02c20",
+    "market": "461d0d9f-a705-4dfb-8e22-64cbbb92e573",
+    "evolution": "8894d783-d38e-4bcb-889b-aad05fc89ed7",
+    "icons-heroes": "740de08a-1627-42f9-a076-327565c89375"
+  }
+}

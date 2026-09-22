@@ -101,3 +101,8 @@
 - 日期 D=2026-09-21（Asia/Shanghai）。流程：`verify-football-boards.mjs 2026-09-21` exit 0（mls_east/mls_west 分区键提醒属预期）→ `coordinate.mjs 2026-09-21` `merge=success`、`failedPanels=0`、五模块全 partial（football/news/market/evolution/icons-heroes 均有真实快照）、`publish=delegated` → `workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html + language=static + domainPrefix=fc27-site，verified:true）→ `verify-publication.mjs 2026-09-21` exit 0 四检全过，本地=线上 sha 双方 `6f7154fa…`、2,974,894 B，链接不变 https://fc27-site.app.workbuddy.host/。**本次无边缘缓存滞后，立即收敛。**
 - `assets/data/current.json`（2,354,558 B，2827 张卡，generatedAt 今日凌晨 03:48）随目录生成并部署；本轮仅复制、未做任何价格二次分析（遵守「统一当前行情与禁止重复分析」口径）。
 - 收尾：`publish-status-2026-09-21.json` 的 reason 已由脚本默认「发布触发方式未确认」改为明确记录本轮实际发布路径。
+
+## 2026-09-22（常规每日执行，成功）
+- 日期 D=2026-09-22（Asia/Shanghai）。流程：`verify-football-boards.mjs 2026-09-22` exit 0（mls_east/mls_west 分区键提醒属预期）→ `coordinate.mjs 2026-09-22` `merge=success`、`failedPanels=0`、五模块全有真实快照（football/news/market/evolution/icons-heroes）→ `workbuddy_sites_deploy`（updateExistingApp + entryHtml=index.html + language=static + domainPrefix=fc27-site，verified:true）→ `verify-publication.mjs 2026-09-22` exit 0 四检全过，本地=线上 sha 双方 `ab29aed9…`、2,987,980 B，链接不变 https://fc27-site.app.workbuddy.host/。**本次无边缘缓存滞后，立即收敛。**
+- `assets/data/current.json`（2,688,903 B）随目录生成并部署；本轮仅复制、未做任何价格二次分析（遵守「统一当前行情与禁止重复分析」口径）。
+- 收尾：`publish-status-2026-09-22.json` 的 reason 已由脚本默认「发布触发方式未确认」改为明确记录本轮实际发布路径。

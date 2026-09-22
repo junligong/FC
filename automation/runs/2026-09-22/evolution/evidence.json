@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-22",
+  "module": "evolution",
+  "runId": "8894d783-d38e-4bcb-889b-aad05fc89ed7",
+  "generatedAt": "2026-09-22T03:27:20.199+08:00",
+  "dataCutoff": "2026-09-22 03:26 +08:00",
+  "status": "partial",
+  "sources": [
+    {
+      "url": "https://www.futbin.com/27/popular/evolutions",
+      "openedAt": "2026-09-22T03:25:42+08:00",
+      "note": "热门进化卡主来源。实采页面标题「EA FC 27 Popular Evolution Players | FUTBIN」，区块标题「Hottest UT 27 Evolutions」，div.popular-cards-wrapper > div.column 共 500 个卡片节点；滚动到底部后节点数不变、无分页与「加载更多」控件。按 url + 进化名称去重后 500 张进化卡（唯一 url 500 个，二者相等；同一球员的不同卡版本为独立条目）；页面未出现 No evolutions found。卡片内价格元素（.popular-price-wrapper / .platform-price-wrapper-* / .price-segment / .item-score-segment）命中数为 0，与「FUTBIN 对进化卡不公布挂牌价」的既有结论一致。DOM 实测 div.playercard-27-futbin-rating 命中 495/500 张（提取结果 495/500，两者一致）。取数方式：宿主页（robots.txt）+ 页内同源 fetch + DOMParser，未导航到榜单页（HTTP 200，5469255 B）。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions",
+      "openedAt": "2026-09-22T03:25:44+08:00",
+      "note": "FC27 进化总览。div.evolutions-overview-wrapper 共 19 条（与 2026-09-21 的 19 条完全一致，本日无新增、无路径下线）。来源标签分布：Evolutions 5、Training Camp 2、Pathway Evolutions 0、Rewards 2、赛季等级行（Season 1 Level: N）7、Cosmetics 3。逐条取得费用、UNLOCK / EXPIRES 有效期、Player Requirements 与 Total Upgrades（含 PlayStyle、Roles）。费用形态：付费 4 条（Creative Crossroads 150 FC Points + 15,000 金币、Ones to Watch Retro 20 200 FC Points + 25,000 金币、Ones to Watch Retro 18 200 FC Points + 25,000 金币、Ones to Watch Retro 19 200 FC Points + 25,000 金币），其余为 Free；Training Camp 类在 EXPIRES 与费用之间另有一个「TRAINING 时长」格（已单独记录为 trainingCost，未与费用混淆）。**本轮未再出现结构变更，沿用 2026-09-21 确立的「空白归一化 + 大小写不敏感 + 百分比行截断」解析口径，19 条逐条复核通过**（requirements / upgrades / 类型标签 / 费用均非空且与页面一致），HTTP 200，600558 B。"
+    },
+    {
+      "url": "https://www.futbin.com/27/evolutions/expired",
+      "openedAt": "2026-09-22T03:25:46+08:00",
+      "note": "已过期进化核验：页面 div.evolutions-overview-wrapper 节点数为 0（标题「EA FC 27 Player Evolutions | FUTBIN」），即本轮 19 个进化全部处于有效期内，无过期路径。HTTP 200，122547 B。"
+    }
+  ],
+  "missing": [
+    "进化卡自身价格缺失（来源侧事实）：FUTBIN 对进化卡不公布 Console/PC 挂牌价，页面「参考价（基础卡）」是按 baseCardId 关接到的**基础卡**市价（持仓成本参考），不是该进化卡的成交价；两者均无有效价时显示「无报价」，未写成价格为 0。",
+    "FUTBIN Rating 缺失 5/500：来源页 500 张进化卡中仅 495 张存在 div.playercard-27-futbin-rating（DOM 实测 495/500），其余 5 张该字段如实留空，不用 Rating 列、六维合计或其它数值顶替。",
+    "到期时间只有相对口径：来源页给出的是 UNLOCK / EXPIRES 时长，FUTBIN 未提供绝对到期日期，无法换算成具体日期。",
+    "逐级挑战步骤缺失：总览卡只给出 Player Requirements 与 Total Upgrades，未展开 LEVELS / CHALLENGES 的具体挑战内容；本轮未逐条打开 19 个详情页（预算与反爬风险），故 steps 字段按页面可得事实归纳，未收录逐级挑战原文。",
+    "Intro to Training Camp EVOs 与部分 Pathway / Rewards 卡未给出逐项数值升级表：Training Camp 只给 Role「Fullback++」；Pinged Pass / Relentless / Creative or Composed 等只给 PlayStyle 项。上述路径的具体属性收益页面未列出。",
+    "Ones to Watch Retro 18 / 19 / 20 的属性与前置条件缺失（来源侧事实）：页面只说明为外观/稀有度变更，Player Requirements 与 Total Upgrades 均为空，故无法给出属性增益与入选门槛；费用为 200 FC Points + 25,000 金币（FUTBIN 标注 Repeatable）。",
+    "赛季通行证路径的领取条件不完整：页面只给「Found at Level N of the Premium/Free Season Pass」，未列出通行证是否需要付费、赛季结束时间与等级获取成本，故无法评估实际获取代价。",
+    "候选球员口径：本轮未打开 https://www.futbin.com/27/players 做 Rating/位置筛选（该列表目录对当前 IP/会话返回 403），候选范围以 /27/popular/evolutions 榜单本身为准。",
+    "榜单条数上限未知：/27/popular/evolutions 渲染 500 个卡片节点且页面未给出「共 N 条」计数或分页控件，无法排除服务端截断，故以页面实际渲染的 500 条为准。",
+    "价格上涨/收益预测缺失：本轮不输出任何涨跌或精确收益预测；页面参考价只作持仓成本参考，不构成投资建议。"
+  ],
+  "notes": [
+    "本轮为 2026-09-22 每日调度运行（runId 8894d783-d38e-4bcb-889b-aad05fc89ed7）。浏览器通道（Web Access CDP，独立调试 profile 9333，browser-triage.mjs exit 0）正常，三个来源页均在本轮内打开并实采成功；取数走「宿主页 + 页内同源 fetch」，未导航到榜单页。",
+    "本页状态为 partial：采集与渲染均成功，但存在如实标注的缺失项（进化卡自身无挂牌价、FUTBIN Rating 有卡在来源页缺失、到期时间只有相对口径、逐级挑战步骤未收录等）。evidence.missing 非空时 run-state 会把 success 自动降级为 partial，故此处与权威状态保持一致。",
+    "进化路径 19 条（与 2026-09-21 持平，本日无新增路径、无路径下线，全部处于有效期内）。分布：共 500 张进化卡，按进化名称计数 Creative Crossroads 103 张；Fullback Fork 73 张；Intro to Pathway Evolutions 69 张；Intro to Repeatable Evolutions 38 张；Repeat Delivery 35 张；Believe 34 张；Striker Glow Up 23 张；Winger Glow Up 21 张；Intro to Evolutions 19 张；Shooting Practice 19 张；Intro to Training Camp EVOs 13 张；Tactical Ascent 12 张；Ones to Watch Retro 20 11 张；Midfield Polish 8 张；Pinged Pass 7 张；Ones to Watch Retro 18 6 张；Ones to Watch Retro 19 5 张；Creative or Composed 3 张；Relentless 1 张。",
+    "站点结构（沿用 2026-09-21 变更后的形态，本轮无新变化）：/27/evolutions 总览卡的 DOM 为「深度缩进嵌套」，类型标签与费用/可重复性文案为首字母大写（Evolutions / Training Camp / Cosmetics / Rewards / Season 1 Level: N / Free / Repeatable），Total Upgrades 的逐项为 2 个 token（Overall / “+34 | 79”）。解析侧统一采用「空白归一化 + 大小写不敏感 + 升级块遇首个纯百分比行截断」，本轮 19 条逐条复核通过；若将来出现 requirements 全空、upgrades 项数虚高、类型标签全空或 FREE 读不到，即为「误回退到空白敏感 + 全大写锚定」的旧解析，须按本口径修复。",
+    "外观类路径：Cosmetics 3 条（Ones to Watch Retro 18 / 19 / 20），只把球员卡换成 Ones to Watch Retro 稀有度外观，页面 Player Requirements 与 Total Upgrades 均为空（upgrades 原文只剩投票百分比），**不提供任何属性升级**，已在页面上如实标注为「纯外观/稀有度」。",
+    "付费进化路径 4 条：Creative Crossroads 为 150 FC Points + 15,000 金币、Ones to Watch Retro 20 为 200 FC Points + 25,000 金币、Ones to Watch Retro 18 为 200 FC Points + 25,000 金币、Ones to Watch Retro 19 为 200 FC Points + 25,000 金币（费用格为两行，首行数字带 fc-points 图标 = FC 点数，次行为金币）。其余 15 条均为 Free。",
+    "评分口径：榜单 Rating 列显示的是「进化后」OVR，不是基础卡评分。阅读表格时请勿把该 Rating 当作基础卡评分。",
+    "FUTBIN Rating（页面 div.playercard-27-futbin-rating）在本轮 500 张卡中有 5 张在来源页不存在（DOM 实测 495/500 命中该元素，与提取结果一致）；这 5 条的 futbinRating 如实留空，不用 Rating 列或其他数值顶替。",
+    "到期口径：FUTBIN 只给相对时长（UNLOCK / EXPIRES），未提供绝对到期日期，故 expires 字段按页面原文的相对时长记录，不换算具体日期。本日入门系列（Intro to …）已由 09-21 的 12 Months 递减为 11 Months，Fullback Fork 为 6 days / 1 Weeks，Cosmetics 类为 1 Months，Creative Crossroads 为 1 Weeks / 2 Weeks。",
+    "FUTBIN 对进化卡不公布挂牌价（榜单卡片内价格元素命中数为 0，本轮再次复核），故本页不展示进化卡自身价格；页面中的「参考价（基础卡）」按 baseCardId 在运行时从统一行情 current.json 读取，不是该进化卡的成交价。本任务未为进化卡再次采集或分析任何市场价格，也未写 priceRef 或任何当前价副本。",
+    "本节只写「可证实的卡面事实」与来源页明示的路线整理，不输出无依据的精确收益预测。开服日 launchDate 为 2026-09-18，页面价格口径以当日实测（priceBasis）为准，本页不作涨跌预测。"
+  ],
+  "outputs": [
+    "reports/daily/2026-09-22/evolution.html",
+    "automation/runs/2026-09-22/evolution/evolution.json"
+  ]
+}

@@ -1,33 +1,32 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-20T19:37:25.620Z",
+  "generatedAt": "2026-09-21T19:33:07.407Z",
   "game": "fc27",
   "cardType": "base-icon",
-  "source": "https://www.futbin.com/27/players（列表页翻页 1-26，行内版本标签 Icon；成功页 15/26；未采到页的 0 张台账卡以空价保留，价格未取到）",
+  "source": "https://www.futbin.com/27/players（列表页翻页 1-26，行内版本标签 Icon；成功页 10/26；未采到页的 28 张台账卡以空价保留，价格未取到）",
   "launchDate": "2026-09-18",
   "priceBasis": "partial-live",
-  "priceBasisNote": "本轮 131 张中有 118 张拿到平台级有效价（≥1000 coins），属 FUTBIN 滚动更新的挂单/估价口径，不是成交价。",
+  "priceBasisNote": "本轮 103 张中有 90 张拿到平台级有效价（≥1000 coins），属 FUTBIN 滚动更新的挂单/估价口径，不是成交价。",
   "counts": {
     "total": 131,
-    "collected": 131,
-    "missingFromSource": 0,
-    "withConsolePrice": 116,
-    "withPcPrice": 79
+    "collected": 103,
+    "missingFromSource": 28,
+    "withConsolePrice": 85,
+    "withPcPrice": 65
   },
   "players": [
     {
       "id": "21487",
       "slug": "maradona",
-      "name": "Maradona",
       "rating": 95,
       "version": "",
-      "position": "CAM++",
-      "isEstimate": 60000,
+      "position": "CAM",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 7200000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -40,67 +39,42 @@
     },
     {
       "id": "21488",
-      "slug": "pele",
-      "name": "Pele",
+      "slug": "arantes-nascimento",
       "rating": 95,
       "version": "",
-      "position": "CAM++",
-      "isEstimate": 60000,
+      "position": "CAM",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 7000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 9000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
-      "marketUrl": "https://www.futbin.com/27/player/21488/pele",
+      "marketUrl": "https://www.futbin.com/27/player/21488/arantes-nascimento",
       "launchDate": "2026-09-18",
       "nameZh": "贝利"
     },
     {
-      "id": "21492",
-      "slug": "ronaldo",
-      "name": "Ronaldo",
-      "rating": 94,
-      "version": "",
-      "position": "ST++",
-      "isEstimate": 67500,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 0,
-          "valid": false
-        },
-        "pc": {
-          "price": 0,
-          "valid": false
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21492/ronaldo",
-      "launchDate": "2026-09-18",
-      "nameZh": "罗纳尔多"
-    },
-    {
       "id": "21491",
       "slug": "zidane",
-      "name": "Zidane",
       "rating": 94,
       "version": "",
-      "position": "CAM++",
-      "isEstimate": 45000,
+      "position": "CAM",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2780000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 6000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21491/zidane",
@@ -108,13 +82,56 @@
       "nameZh": "齐达内"
     },
     {
-      "id": "21497",
-      "slug": "cruyff",
-      "name": "Cruyff",
+      "id": "21492",
+      "slug": "nazario-de-lima",
+      "rating": 94,
+      "version": "",
+      "position": "ST",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21492/nazario-de-lima",
+      "launchDate": "2026-09-18",
+      "nameZh": "罗纳尔多"
+    },
+    {
+      "id": "21495",
+      "slug": "franc-dos-santos",
       "rating": 93,
       "version": "",
-      "position": "CAM++",
-      "isEstimate": 56250,
+      "position": "RW",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21495/franc-dos-santos",
+      "launchDate": "2026-09-18",
+      "nameZh": "弗朗茨·贝肯鲍尔"
+    },
+    {
+      "id": "21497",
+      "slug": "cruyff",
+      "rating": 93,
+      "version": "",
+      "position": "CAM",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
@@ -131,64 +148,17 @@
       "nameZh": "克鲁伊夫"
     },
     {
-      "id": "21503",
-      "slug": "franz-beckenbauer",
-      "name": "Franz Beckenbauer",
-      "rating": 93,
-      "version": "",
-      "position": "CB++",
-      "isEstimate": 37500,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 1980000,
-          "valid": true
-        },
-        "pc": {
-          "price": 1700000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21503/franz-beckenbauer",
-      "launchDate": "2026-09-18",
-      "nameZh": "贝肯鲍尔"
-    },
-    {
-      "id": "21495",
-      "slug": "garrincha",
-      "name": "Garrincha",
-      "rating": 93,
-      "version": "",
-      "position": "RW++",
-      "isEstimate": 56250,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 2400000,
-          "valid": true
-        },
-        "pc": {
-          "price": 0,
-          "valid": false
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21495/garrincha",
-      "launchDate": "2026-09-18",
-      "nameZh": "弗朗茨·贝肯鲍尔"
-    },
-    {
       "id": "21498",
       "slug": "hamm",
-      "name": "Hamm",
       "rating": 93,
       "version": "",
-      "position": "ST++",
-      "isEstimate": 56250,
+      "position": "ST",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 7250000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -202,20 +172,19 @@
     {
       "id": "21499",
       "slug": "maldini",
-      "name": "Maldini",
       "rating": 93,
       "version": "",
-      "position": "CB++",
-      "isEstimate": 37500,
+      "position": "CB",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2850000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 5250000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21499/maldini",
@@ -224,49 +193,47 @@
     },
     {
       "id": "21501",
-      "slug": "ronaldinho",
-      "name": "Ronaldinho",
+      "slug": "de-assis-moreira",
       "rating": 93,
       "version": "",
-      "position": "LW++",
-      "isEstimate": 37500,
+      "position": "LW",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 4600000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 8850000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
-      "marketUrl": "https://www.futbin.com/27/player/21501/ronaldinho",
+      "marketUrl": "https://www.futbin.com/27/player/21501/de-assis-moreira",
       "launchDate": "2026-09-18",
       "nameZh": "罗纳尔迪尼奥"
     },
     {
-      "id": "21507",
-      "slug": "angerer",
-      "name": "Angerer",
-      "rating": 92,
+      "id": "21503",
+      "slug": "franz-beckenbauer",
+      "rating": 93,
       "version": "",
-      "position": "GK++",
-      "isEstimate": 45000,
+      "position": "CB",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 979000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 1000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
-      "marketUrl": "https://www.futbin.com/27/player/21507/angerer",
+      "marketUrl": "https://www.futbin.com/27/player/21503/franz-beckenbauer",
       "launchDate": "2026-09-18",
-      "nameZh": "安格勒"
+      "nameZh": "贝肯鲍尔"
     },
     {
       "id": "21519",
@@ -279,7 +246,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2500000,
+          "price": 1150000,
           "valid": true
         },
         "pc": {
@@ -292,64 +259,39 @@
       "nameZh": "布冯"
     },
     {
-      "id": "21514",
-      "slug": "charlton",
-      "name": "Charlton",
+      "id": "21507",
+      "slug": "angerer",
       "rating": 92,
       "version": "",
-      "position": "CAM++",
-      "isEstimate": 30000,
+      "position": "GK",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2550000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 2940000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
-      "marketUrl": "https://www.futbin.com/27/player/21514/charlton",
+      "marketUrl": "https://www.futbin.com/27/player/21507/angerer",
       "launchDate": "2026-09-18",
-      "nameZh": "博比·查尔顿"
-    },
-    {
-      "id": "21509",
-      "slug": "iniesta-lujan",
-      "name": "Iniesta Luján",
-      "rating": 92,
-      "version": "",
-      "position": "CM++",
-      "isEstimate": 30000,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 1400000,
-          "valid": true
-        },
-        "pc": {
-          "price": 3000000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21509/iniesta-lujan",
-      "launchDate": "2026-09-18",
-      "nameZh": "伊涅斯塔"
+      "nameZh": "安格勒"
     },
     {
       "id": "21508",
       "slug": "muller",
-      "name": "Müller",
       "rating": 92,
       "version": "",
-      "position": "ST++",
-      "isEstimate": 45000,
+      "position": "ST",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1700000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -361,59 +303,34 @@
       "nameZh": "穆勒"
     },
     {
-      "id": "21511",
-      "slug": "prinz",
-      "name": "Prinz",
+      "id": "21509",
+      "slug": "iniesta-lujan",
       "rating": 92,
       "version": "",
-      "position": "ST++",
-      "isEstimate": 45000,
+      "position": "CM",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1170000,
-          "valid": true
-        },
-        "pc": {
-          "price": 1360000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21511/prinz",
-      "launchDate": "2026-09-18",
-      "nameZh": "普林茨"
-    },
-    {
-      "id": "21513",
-      "slug": "puskas",
-      "name": "Puskás",
-      "rating": 92,
-      "version": "",
-      "position": "ST++",
-      "isEstimate": 45000,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 2790000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
           "valid": false
         }
       },
-      "marketUrl": "https://www.futbin.com/27/player/21513/puskas",
+      "marketUrl": "https://www.futbin.com/27/player/21509/iniesta-lujan",
       "launchDate": "2026-09-18",
-      "nameZh": "普斯卡什"
+      "nameZh": "伊涅斯塔"
     },
     {
       "id": "21510",
       "slug": "sinclair",
-      "name": "Sinclair",
       "rating": 92,
       "version": "",
-      "position": "ST++",
-      "isEstimate": 45000,
+      "position": "ST",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
@@ -430,6 +347,72 @@
       "nameZh": "克里斯汀·辛克莱"
     },
     {
+      "id": "21511",
+      "slug": "prinz",
+      "rating": 92,
+      "version": "",
+      "position": "ST",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21511/prinz",
+      "launchDate": "2026-09-18",
+      "nameZh": "普林茨"
+    },
+    {
+      "id": "21513",
+      "slug": "puskas",
+      "rating": 92,
+      "version": "",
+      "position": "ST",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21513/puskas",
+      "launchDate": "2026-09-18",
+      "nameZh": "普斯卡什"
+    },
+    {
+      "id": "21514",
+      "slug": "charlton",
+      "rating": 92,
+      "version": "",
+      "position": "CAM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21514/charlton",
+      "launchDate": "2026-09-18",
+      "nameZh": "博比·查尔顿"
+    },
+    {
       "id": "21530",
       "slug": "baggio",
       "name": "Baggio",
@@ -440,11 +423,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1190000,
+          "price": 1100000,
           "valid": true
         },
         "pc": {
-          "price": 1100000,
+          "price": 1400000,
           "valid": true
         }
       },
@@ -463,11 +446,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 320000,
+          "price": 340000,
           "valid": true
         },
         "pc": {
-          "price": 329000,
+          "price": 325000,
           "valid": true
         }
       },
@@ -486,11 +469,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1250000,
+          "price": 1280000,
           "valid": true
         },
         "pc": {
-          "price": 1250000,
+          "price": 1370000,
           "valid": true
         }
       },
@@ -509,12 +492,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1520000,
-          "valid": true
-        },
-        "pc": {
           "price": 0,
           "valid": false
+        },
+        "pc": {
+          "price": 3500000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21526/carlos-alberto-torres",
@@ -532,11 +515,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 5180000,
+          "price": 6900000,
           "valid": true
         },
         "pc": {
-          "price": 9400000,
+          "price": 8000000,
           "valid": true
         }
       },
@@ -578,11 +561,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 3250000,
+          "price": 3520000,
           "valid": true
         },
         "pc": {
-          "price": 4600000,
+          "price": 7000000,
           "valid": true
         }
       },
@@ -601,11 +584,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 710000,
+          "price": 733000,
           "valid": true
         },
         "pc": {
-          "price": 755000,
+          "price": 999000,
           "valid": true
         }
       },
@@ -628,8 +611,8 @@
           "valid": false
         },
         "pc": {
-          "price": 5250000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21538/ibrahimovic",
@@ -647,12 +630,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1080000,
+          "price": 999000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 1450000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21528/kahn",
@@ -670,11 +653,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 3150000,
+          "price": 3290000,
           "valid": true
         },
         "pc": {
-          "price": 3490000,
+          "price": 4200000,
           "valid": true
         }
       },
@@ -693,7 +676,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1600000,
+          "price": 1700000,
           "valid": true
         },
         "pc": {
@@ -716,11 +699,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 425000,
+          "price": 465000,
           "valid": true
         },
         "pc": {
-          "price": 392000,
+          "price": 487000,
           "valid": true
         }
       },
@@ -739,11 +722,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 3700000,
+          "price": 4500000,
           "valid": true
         },
         "pc": {
-          "price": 7420000,
+          "price": 7140000,
           "valid": true
         }
       },
@@ -762,12 +745,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 900000,
+          "price": 950000,
           "valid": true
         },
         "pc": {
-          "price": 1350000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21558/abily",
@@ -785,11 +768,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1000000,
+          "price": 493000,
           "valid": true
         },
         "pc": {
-          "price": 460000,
+          "price": 510000,
           "valid": true
         }
       },
@@ -808,11 +791,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1770000,
+          "price": 1700000,
           "valid": true
         },
         "pc": {
-          "price": 1770000,
+          "price": 1890000,
           "valid": true
         }
       },
@@ -831,11 +814,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 638000,
+          "price": 661000,
           "valid": true
         },
         "pc": {
-          "price": 680000,
+          "price": 799000,
           "valid": true
         }
       },
@@ -854,11 +837,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2000000,
+          "price": 2050000,
           "valid": true
         },
         "pc": {
-          "price": 3800000,
+          "price": 4500000,
           "valid": true
         }
       },
@@ -877,11 +860,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1040000,
+          "price": 1060000,
           "valid": true
         },
         "pc": {
-          "price": 1100000,
+          "price": 1070000,
           "valid": true
         }
       },
@@ -900,11 +883,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 415000,
+          "price": 435000,
           "valid": true
         },
         "pc": {
-          "price": 900000,
+          "price": 574000,
           "valid": true
         }
       },
@@ -923,8 +906,8 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1290000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -946,12 +929,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 15000000,
+          "price": 3000000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 15000000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21779/kaka",
@@ -969,11 +952,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 503000,
+          "price": 535000,
           "valid": true
         },
         "pc": {
-          "price": 500000,
+          "price": 659000,
           "valid": true
         }
       },
@@ -992,11 +975,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 620000,
+          "price": 665000,
           "valid": true
         },
         "pc": {
-          "price": 630000,
+          "price": 739000,
           "valid": true
         }
       },
@@ -1015,7 +998,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 4720000,
+          "price": 2500000,
           "valid": true
         },
         "pc": {
@@ -1038,11 +1021,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 433000,
+          "price": 532000,
           "valid": true
         },
         "pc": {
-          "price": 615000,
+          "price": 843000,
           "valid": true
         }
       },
@@ -1061,11 +1044,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 920000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 1050000,
+          "price": 1020000,
           "valid": true
         }
       },
@@ -1084,7 +1067,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 800000,
+          "price": 966000,
           "valid": true
         },
         "pc": {
@@ -1107,11 +1090,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 589000,
+          "price": 560000,
           "valid": true
         },
         "pc": {
-          "price": 534000,
+          "price": 630000,
           "valid": true
         }
       },
@@ -1130,8 +1113,8 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1700000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -1153,11 +1136,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1010000,
+          "price": 1070000,
           "valid": true
         },
         "pc": {
-          "price": 990000,
+          "price": 2250000,
           "valid": true
         }
       },
@@ -1176,11 +1159,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1390000,
+          "price": 1410000,
           "valid": true
         },
         "pc": {
-          "price": 1320000,
+          "price": 1800000,
           "valid": true
         }
       },
@@ -1199,11 +1182,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1180000,
+          "price": 1260000,
           "valid": true
         },
         "pc": {
-          "price": 1500000,
+          "price": 1570000,
           "valid": true
         }
       },
@@ -1222,11 +1205,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1200000,
+          "price": 1300000,
           "valid": true
         },
         "pc": {
-          "price": 1100000,
+          "price": 1200000,
           "valid": true
         }
       },
@@ -1291,11 +1274,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1860000,
+          "price": 1880000,
           "valid": true
         },
         "pc": {
-          "price": 1800000,
+          "price": 2000000,
           "valid": true
         }
       },
@@ -1314,7 +1297,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 864000,
+          "price": 790000,
           "valid": true
         },
         "pc": {
@@ -1337,7 +1320,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2000000,
+          "price": 1820000,
           "valid": true
         },
         "pc": {
@@ -1360,12 +1343,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1000000,
-          "valid": true
-        },
-        "pc": {
           "price": 0,
           "valid": false
+        },
+        "pc": {
+          "price": 999000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21816/desailly",
@@ -1383,11 +1366,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 999000,
+          "price": 980000,
           "valid": true
         },
         "pc": {
-          "price": 1000000,
+          "price": 1250000,
           "valid": true
         }
       },
@@ -1406,7 +1389,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2700000,
+          "price": 8000000,
           "valid": true
         },
         "pc": {
@@ -1429,8 +1412,8 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -1452,7 +1435,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1350000,
+          "price": 960000,
           "valid": true
         },
         "pc": {
@@ -1498,11 +1481,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 280000,
+          "price": 291000,
           "valid": true
         },
         "pc": {
-          "price": 350000,
+          "price": 360000,
           "valid": true
         }
       },
@@ -1521,11 +1504,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 762000,
+          "price": 705000,
           "valid": true
         },
         "pc": {
-          "price": 535000,
+          "price": 699000,
           "valid": true
         }
       },
@@ -1544,12 +1527,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 642000,
+          "price": 600000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 680000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21809/koeman",
@@ -1567,12 +1550,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 814000,
+          "price": 860000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 4800000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21823/lahm",
@@ -1590,12 +1573,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 850000,
+          "price": 800000,
           "valid": true
         },
         "pc": {
-          "price": 735000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21844/lampard",
@@ -1613,8 +1596,8 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 0,
-          "valid": false
+          "price": 1180000,
+          "valid": true
         },
         "pc": {
           "price": 0,
@@ -1636,11 +1619,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 255000,
+          "price": 261000,
           "valid": true
         },
         "pc": {
-          "price": 250000,
+          "price": 350000,
           "valid": true
         }
       },
@@ -1682,11 +1665,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 799000,
+          "price": 877000,
           "valid": true
         },
         "pc": {
-          "price": 1500000,
+          "price": 3000000,
           "valid": true
         }
       },
@@ -1705,7 +1688,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 630000,
+          "price": 892000,
           "valid": true
         },
         "pc": {
@@ -1728,11 +1711,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 580000,
+          "price": 543000,
           "valid": true
         },
         "pc": {
-          "price": 649000,
+          "price": 630000,
           "valid": true
         }
       },
@@ -1751,12 +1734,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 513000,
+          "price": 512000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 15000000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21824/papin",
@@ -1774,11 +1757,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 280000,
+          "price": 270000,
           "valid": true
         },
         "pc": {
-          "price": 300000,
+          "price": 269000,
           "valid": true
         }
       },
@@ -1797,11 +1780,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 432000,
+          "price": 478000,
           "valid": true
         },
         "pc": {
-          "price": 536000,
+          "price": 510000,
           "valid": true
         }
       },
@@ -1820,12 +1803,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 520000,
+          "price": 540000,
           "valid": true
         },
         "pc": {
-          "price": 699000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21813/schmeichel",
@@ -1866,7 +1849,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 699000,
+          "price": 565000,
           "valid": true
         },
         "pc": {
@@ -1889,11 +1872,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 429000,
+          "price": 400000,
           "valid": true
         },
         "pc": {
-          "price": 499000,
+          "price": 610000,
           "valid": true
         }
       },
@@ -1912,12 +1895,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 15000000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 900000,
-          "valid": true
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21806/smith",
@@ -1935,11 +1918,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 769000,
+          "price": 748000,
           "valid": true
         },
         "pc": {
-          "price": 1100000,
+          "price": 1090000,
           "valid": true
         }
       },
@@ -1958,7 +1941,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1500000,
+          "price": 1470000,
           "valid": true
         },
         "pc": {
@@ -2004,11 +1987,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1340000,
+          "price": 1440000,
           "valid": true
         },
         "pc": {
-          "price": 1630000,
+          "price": 1400000,
           "valid": true
         }
       },
@@ -2027,11 +2010,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 571000,
+          "price": 518000,
           "valid": true
         },
         "pc": {
-          "price": 699000,
+          "price": 727000,
           "valid": true
         }
       },
@@ -2050,7 +2033,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 624000,
+          "price": 600000,
           "valid": true
         },
         "pc": {
@@ -2063,29 +2046,6 @@
       "nameZh": "萨内蒂"
     },
     {
-      "id": "21935",
-      "slug": "alonso-olano",
-      "name": "Alonso Olano",
-      "rating": 88,
-      "version": "",
-      "position": "CDM++",
-      "isEstimate": 18675,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 580000,
-          "valid": true
-        },
-        "pc": {
-          "price": 600000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21935/alonso-olano",
-      "launchDate": "2026-09-18",
-      "nameZh": "阿隆索"
-    },
-    {
       "id": "21901",
       "slug": "bale",
       "name": "Bale",
@@ -2096,11 +2056,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2510000,
+          "price": 2600000,
           "valid": true
         },
         "pc": {
-          "price": 2900000,
+          "price": 3900000,
           "valid": true
         }
       },
@@ -2119,11 +2079,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 374000,
+          "price": 529000,
           "valid": true
         },
         "pc": {
-          "price": 380000,
+          "price": 370000,
           "valid": true
         }
       },
@@ -2142,7 +2102,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1200000,
+          "price": 900000,
           "valid": true
         },
         "pc": {
@@ -2165,7 +2125,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 15000000,
+          "price": 900000,
           "valid": true
         },
         "pc": {
@@ -2188,11 +2148,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 570000,
+          "price": 539000,
           "valid": true
         },
         "pc": {
-          "price": 666000,
+          "price": 630000,
           "valid": true
         }
       },
@@ -2211,7 +2171,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 631000,
+          "price": 600000,
           "valid": true
         },
         "pc": {
@@ -2234,63 +2194,17 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 971000,
-          "valid": true
-        },
-        "pc": {
           "price": 0,
           "valid": false
+        },
+        "pc": {
+          "price": 1800000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21899/cha",
       "launchDate": "2026-09-18",
       "nameZh": "车范根"
-    },
-    {
-      "id": "21932",
-      "slug": "chiellini",
-      "name": "Chiellini",
-      "rating": 88,
-      "version": "",
-      "position": "CB++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 680000,
-          "valid": true
-        },
-        "pc": {
-          "price": 799000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21932/chiellini",
-      "launchDate": "2026-09-18",
-      "nameZh": "基耶利尼"
-    },
-    {
-      "id": "21938",
-      "slug": "cole",
-      "name": "Cole",
-      "rating": 88,
-      "version": "",
-      "position": "LB++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 420000,
-          "valid": true
-        },
-        "pc": {
-          "price": 750000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21938/cole",
-      "launchDate": "2026-09-18",
-      "nameZh": "阿什利·科尔"
     },
     {
       "id": "21890",
@@ -2303,86 +2217,17 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 530000,
+          "price": 515000,
           "valid": true
         },
         "pc": {
-          "price": 545000,
+          "price": 565000,
           "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21890/crespo",
       "launchDate": "2026-09-18",
       "nameZh": "克雷斯波"
-    },
-    {
-      "id": "21924",
-      "slug": "dunga",
-      "name": "Dunga",
-      "rating": 88,
-      "version": "",
-      "position": "CDM++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 0,
-          "valid": false
-        },
-        "pc": {
-          "price": 0,
-          "valid": false
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21924/dunga",
-      "launchDate": "2026-09-18",
-      "nameZh": "卡福"
-    },
-    {
-      "id": "21941",
-      "slug": "essien",
-      "name": "Essien",
-      "rating": 88,
-      "version": "",
-      "position": "CDM++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 840000,
-          "valid": true
-        },
-        "pc": {
-          "price": 815000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21941/essien",
-      "launchDate": "2026-09-18",
-      "nameZh": "埃辛"
-    },
-    {
-      "id": "21920",
-      "slug": "gattuso",
-      "name": "Gattuso",
-      "rating": 88,
-      "version": "",
-      "position": "CDM++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 248000,
-          "valid": true
-        },
-        "pc": {
-          "price": 225000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21920/gattuso",
-      "launchDate": "2026-09-18",
-      "nameZh": "加图索"
     },
     {
       "id": "21911",
@@ -2395,40 +2240,17 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 333000,
+          "price": 334000,
           "valid": true
         },
         "pc": {
-          "price": 350000,
+          "price": 800000,
           "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21911/hagi",
       "launchDate": "2026-09-18",
       "nameZh": "哈吉"
-    },
-    {
-      "id": "21918",
-      "slug": "hierro-ruiz",
-      "name": "Hierro Ruiz",
-      "rating": 88,
-      "version": "",
-      "position": "CB++",
-      "isEstimate": 18675,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 451000,
-          "valid": true
-        },
-        "pc": {
-          "price": 550000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21918/hierro-ruiz",
-      "launchDate": "2026-09-18",
-      "nameZh": "耶罗"
     },
     {
       "id": "21888",
@@ -2441,7 +2263,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 530000,
+          "price": 660000,
           "valid": true
         },
         "pc": {
@@ -2464,12 +2286,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 523000,
+          "price": 559000,
           "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 3000000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21884/klose",
@@ -2487,11 +2309,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 315000,
+          "price": 390000,
           "valid": true
         },
         "pc": {
-          "price": 299000,
+          "price": 500000,
           "valid": true
         }
       },
@@ -2510,11 +2332,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 550000,
+          "price": 584000,
           "valid": true
         },
         "pc": {
-          "price": 565000,
+          "price": 519000,
           "valid": true
         }
       },
@@ -2533,7 +2355,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1000000,
+          "price": 1140000,
           "valid": true
         },
         "pc": {
@@ -2556,11 +2378,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 625000,
+          "price": 630000,
           "valid": true
         },
         "pc": {
-          "price": 570000,
+          "price": 599000,
           "valid": true
         }
       },
@@ -2583,7 +2405,7 @@
           "valid": false
         },
         "pc": {
-          "price": 470000,
+          "price": 500000,
           "valid": true
         }
       },
@@ -2602,12 +2424,12 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 0,
-          "valid": false
+          "price": 1000000,
+          "valid": true
         },
         "pc": {
-          "price": 0,
-          "valid": false
+          "price": 1150000,
+          "valid": true
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21908/owen",
@@ -2625,7 +2447,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 750000,
+          "price": 668000,
           "valid": true
         },
         "pc": {
@@ -2648,11 +2470,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 490000,
+          "price": 550000,
           "valid": true
         },
         "pc": {
-          "price": 550000,
+          "price": 560000,
           "valid": true
         }
       },
@@ -2671,11 +2493,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 405000,
+          "price": 447000,
           "valid": true
         },
         "pc": {
-          "price": 485000,
+          "price": 500000,
           "valid": true
         }
       },
@@ -2694,11 +2516,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1150000,
+          "price": 1180000,
           "valid": true
         },
         "pc": {
-          "price": 1300000,
+          "price": 1250000,
           "valid": true
         }
       },
@@ -2717,7 +2539,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 649000,
+          "price": 620000,
           "valid": true
         },
         "pc": {
@@ -2730,29 +2552,6 @@
       "nameZh": "里杰卡尔德"
     },
     {
-      "id": "21925",
-      "slug": "riquelme",
-      "name": "Riquelme",
-      "rating": 88,
-      "version": "",
-      "position": "CAM++",
-      "isEstimate": 18675,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 410000,
-          "valid": true
-        },
-        "pc": {
-          "price": 495000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21925/riquelme",
-      "launchDate": "2026-09-18",
-      "nameZh": "里克尔梅"
-    },
-    {
       "id": "21903",
       "slug": "rush",
       "name": "Rush",
@@ -2763,11 +2562,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 189000,
+          "price": 198000,
           "valid": true
         },
         "pc": {
-          "price": 250000,
+          "price": 225000,
           "valid": true
         }
       },
@@ -2786,11 +2585,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 715000,
+          "price": 695000,
           "valid": true
         },
         "pc": {
-          "price": 750000,
+          "price": 669000,
           "valid": true
         }
       },
@@ -2809,11 +2608,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 650000,
+          "price": 655000,
           "valid": true
         },
         "pc": {
-          "price": 680000,
+          "price": 770000,
           "valid": true
         }
       },
@@ -2832,7 +2631,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1500000,
+          "price": 1600000,
           "valid": true
         },
         "pc": {
@@ -2855,11 +2654,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 2000000,
+          "price": 2100000,
           "valid": true
         },
         "pc": {
-          "price": 2400000,
+          "price": 2850000,
           "valid": true
         }
       },
@@ -2868,22 +2667,241 @@
       "nameZh": "亚亚·图雷"
     },
     {
-      "id": "21945",
-      "slug": "van-der-sar",
-      "name": "van der Sar",
+      "id": "21917",
+      "slug": "zambrotta",
       "rating": 88,
       "version": "",
-      "position": "GK++",
-      "isEstimate": 12450,
+      "position": "RB",
+      "isEstimate": null,
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 515000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
-          "price": 636000,
-          "valid": true
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21917/zambrotta",
+      "launchDate": "2026-09-18",
+      "nameZh": "赞布罗塔"
+    },
+    {
+      "id": "21918",
+      "slug": "hierro-ruiz",
+      "rating": 88,
+      "version": "",
+      "position": "CB",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21918/hierro-ruiz",
+      "launchDate": "2026-09-18",
+      "nameZh": "耶罗"
+    },
+    {
+      "id": "21919",
+      "slug": "vidic",
+      "rating": 88,
+      "version": "",
+      "position": "CB",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21919/vidic",
+      "launchDate": "2026-09-18",
+      "nameZh": "维迪奇"
+    },
+    {
+      "id": "21920",
+      "slug": "gattuso",
+      "rating": 88,
+      "version": "",
+      "position": "CDM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21920/gattuso",
+      "launchDate": "2026-09-18",
+      "nameZh": "加图索"
+    },
+    {
+      "id": "21924",
+      "slug": "bledorn-verri",
+      "rating": 88,
+      "version": "",
+      "position": "CDM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21924/bledorn-verri",
+      "launchDate": "2026-09-18",
+      "nameZh": "卡福"
+    },
+    {
+      "id": "21925",
+      "slug": "riquelme",
+      "rating": 88,
+      "version": "",
+      "position": "CAM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21925/riquelme",
+      "launchDate": "2026-09-18",
+      "nameZh": "里克尔梅"
+    },
+    {
+      "id": "21932",
+      "slug": "chiellini",
+      "rating": 88,
+      "version": "",
+      "position": "CB",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21932/chiellini",
+      "launchDate": "2026-09-18",
+      "nameZh": "基耶利尼"
+    },
+    {
+      "id": "21935",
+      "slug": "alonso-olano",
+      "rating": 88,
+      "version": "",
+      "position": "CDM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21935/alonso-olano",
+      "launchDate": "2026-09-18",
+      "nameZh": "阿隆索"
+    },
+    {
+      "id": "21938",
+      "slug": "cole",
+      "rating": 88,
+      "version": "",
+      "position": "LB",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21938/cole",
+      "launchDate": "2026-09-18",
+      "nameZh": "阿什利·科尔"
+    },
+    {
+      "id": "21941",
+      "slug": "essien",
+      "rating": 88,
+      "version": "",
+      "position": "CDM",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
+        }
+      },
+      "marketUrl": "https://www.futbin.com/27/player/21941/essien",
+      "launchDate": "2026-09-18",
+      "nameZh": "埃辛"
+    },
+    {
+      "id": "21945",
+      "slug": "van-der-sar",
+      "rating": 88,
+      "version": "",
+      "position": "GK",
+      "isEstimate": null,
+      "currentPrice": null,
+      "prices": {
+        "console": {
+          "price": 0,
+          "valid": false
+        },
+        "pc": {
+          "price": 0,
+          "valid": false
         }
       },
       "marketUrl": "https://www.futbin.com/27/player/21945/van-der-sar",
@@ -2901,7 +2919,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 700000,
+          "price": 899000,
           "valid": true
         },
         "pc": {
@@ -2924,8 +2942,8 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1850000,
-          "valid": true
+          "price": 0,
+          "valid": false
         },
         "pc": {
           "price": 0,
@@ -2935,29 +2953,6 @@
       "marketUrl": "https://www.futbin.com/27/player/21875/varane",
       "launchDate": "2026-09-18",
       "nameZh": "拉斐尔·瓦拉内"
-    },
-    {
-      "id": "21919",
-      "slug": "vidic",
-      "name": "Vidic",
-      "rating": 88,
-      "version": "",
-      "position": "CB++",
-      "isEstimate": 18675,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 1300000,
-          "valid": true
-        },
-        "pc": {
-          "price": 1080000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21919/vidic",
-      "launchDate": "2026-09-18",
-      "nameZh": "维迪奇"
     },
     {
       "id": "21898",
@@ -2970,11 +2965,11 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 1820000,
+          "price": 2000000,
           "valid": true
         },
         "pc": {
-          "price": 3190000,
+          "price": 3150000,
           "valid": true
         }
       },
@@ -2993,7 +2988,7 @@
       "currentPrice": null,
       "prices": {
         "console": {
-          "price": 598000,
+          "price": 540000,
           "valid": true
         },
         "pc": {
@@ -3004,29 +2999,6 @@
       "marketUrl": "https://www.futbin.com/27/player/21892/wright",
       "launchDate": "2026-09-18",
       "nameZh": "伊恩·赖特"
-    },
-    {
-      "id": "21917",
-      "slug": "zambrotta",
-      "name": "Zambrotta",
-      "rating": 88,
-      "version": "",
-      "position": "RB++",
-      "isEstimate": 12450,
-      "currentPrice": null,
-      "prices": {
-        "console": {
-          "price": 475000,
-          "valid": true
-        },
-        "pc": {
-          "price": 660000,
-          "valid": true
-        }
-      },
-      "marketUrl": "https://www.futbin.com/27/player/21917/zambrotta",
-      "launchDate": "2026-09-18",
-      "nameZh": "赞布罗塔"
     }
   ]
 }
